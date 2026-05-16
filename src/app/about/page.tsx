@@ -13,14 +13,14 @@ export default function AboutPage() {
   return (
     <>
       {/* PAGE HEADER */}
-      <section className="flex flex-col md:flex-row min-h-0 md:min-h-[88vh] overflow-hidden border-b-[0.5px] border-rule">
-        <div className="relative hidden md:flex w-[72px] flex-shrink-0 items-start pt-[72px] pl-6">
+      <section className="flex flex-col lg:flex-row min-h-0 lg:min-h-[88vh] overflow-hidden border-b-[0.5px] border-rule">
+        <div className="relative hidden lg:flex w-[72px] flex-shrink-0 items-start pt-[72px] pl-6">
           <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
         </div>
 
-        <div className="flex flex-col md:flex-row flex-1 items-stretch">
+        <div className="flex flex-col lg:flex-row flex-1 items-stretch">
           {/* Text */}
-          <div className="flex w-full md:w-[480px] flex-shrink-0 flex-col justify-center border-b-[0.5px] md:border-b-0 md:border-r-[0.5px] border-rule px-6 py-12 md:pt-[72px] md:pr-10 md:pb-[72px] md:pl-14">
+          <div className="flex w-full lg:w-[480px] flex-shrink-0 flex-col justify-center border-b-[0.5px] lg:border-b-0 lg:border-r-[0.5px] border-rule px-6 py-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14">
             <p className="mb-6 text-eyebrow uppercase tracking-wide-10 text-light opacity-0 animate-fade-up [animation-delay:0.1s]">
               Founder · Simpleworks Consulting
             </p>

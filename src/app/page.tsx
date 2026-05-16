@@ -40,16 +40,16 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="flex flex-col md:flex-row md:min-h-[88vh] relative overflow-hidden">
+      <section className="flex flex-col lg:flex-row lg:min-h-[88vh] relative overflow-hidden">
         {/* Narrow brand column (desktop only) */}
-        <div className="hidden md:flex w-[72px] flex-shrink-0 relative items-start pt-[72px] pl-6">
+        <div className="hidden lg:flex w-[72px] flex-shrink-0 relative items-start pt-[72px] pl-6">
           <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
         </div>
 
         {/* Right zone */}
-        <div className="flex-1 flex flex-col md:flex-row items-stretch overflow-hidden">
+        <div className="flex-1 flex flex-col lg:flex-row items-stretch overflow-hidden">
           {/* Text */}
-          <div className="w-full md:flex-none md:w-[470px] pt-12 pb-10 px-6 md:pt-[72px] md:pr-10 md:pb-[72px] md:pl-14 flex flex-col justify-center">
+          <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
             <p
               className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
               style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
@@ -80,7 +80,7 @@ export default function HomePage() {
 
           {/* Illustration */}
           <div
-            className="flex-1 flex items-center justify-center px-6 pb-10 md:pt-5 md:pr-8 md:pl-5 md:pb-0 min-w-0 opacity-0 animate-fade-in"
+            className="flex-1 flex items-center justify-center px-6 pb-10 lg:pt-5 lg:pr-8 lg:pl-5 lg:pb-0 min-w-0 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.65s" }}
           >
             <Image
@@ -89,7 +89,7 @@ export default function HomePage() {
               width={605}
               height={529}
               priority
-              className="mix-blend-multiply max-w-[300px] md:max-w-[605px] max-h-[300px] md:max-h-[529px] w-auto h-auto block"
+              className="mix-blend-multiply max-w-[420px] lg:max-w-[605px] max-h-[400px] lg:max-h-[529px] w-auto h-auto block"
             />
           </div>
         </div>

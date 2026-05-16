@@ -201,53 +201,6 @@ function MessagePanel({
             placeholder="Mumbai, Maharashtra"
           />
 
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="sector"
-              className="text-eyebrow tracking-wide-8 uppercase text-light"
-            >
-              Sector
-            </label>
-            <select
-              id="sector"
-              name="sector"
-              defaultValue=""
-              className="font-serif text-[15px] text-ink bg-bg border border-rule/100 rounded-[1px] px-4 py-[13px] outline-none transition-colors focus:border-ink w-full appearance-none cursor-pointer bg-no-repeat"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23878787' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E\")",
-                backgroundPosition: "right 16px center",
-              }}
-            >
-              <option value="" disabled>
-                Select a sector…
-              </option>
-              <option>Manufacturing</option>
-              <option>Consumer Goods &amp; Retail</option>
-              <option>Technology</option>
-              <option>SaaS</option>
-              <option>Distribution</option>
-              <option>Professional Services</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="message"
-              className="text-eyebrow tracking-wide-8 uppercase text-light"
-            >
-              Brief note
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              placeholder="Anything you'd like me to know before we speak…"
-              className="font-serif text-[15px] text-ink bg-bg border border-rule/100 rounded-[1px] px-4 py-[13px] outline-none transition-colors focus:border-ink resize-none w-full h-[120px]"
-            />
-          </div>
-
           <button
             type="submit"
             className="inline-flex items-center gap-[10px] font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit"
