@@ -4,7 +4,7 @@ You are about to work on **Simpleworks Consulting's** website (simpleworks.in). 
 
 ## What this is
 
-A 5-page brochure site for Prem Menon's management consulting firm in Bengaluru. Next.js 16 (App Router) + React 19 + TypeScript + Tailwind. Blog content is managed via **Keystatic** (markdown files in `content/posts/`). Deployed to **Vercel**, domain at **GoDaddy**.
+A 5-page brochure site for Prem Menon's management consulting firm in Bengaluru. Next.js 16 (App Router) + React 19 + TypeScript + Tailwind. Blog content is **git-only**: markdown files in `content/posts/`. No CMS admin route exists — Prem writes posts directly via the GitHub web UI. The `@keystatic/core` reader still parses frontmatter at build time (the schema lives in `keystatic.config.ts`), but no Keystatic admin routes are exposed.
 
 ## Pages
 
@@ -15,7 +15,8 @@ A 5-page brochure site for Prem Menon's management consulting firm in Bengaluru.
 | `/blog` | `src/app/blog/page.tsx` | Listing — server-rendered category filter via `?category=` |
 | `/blog/[slug]` | `src/app/blog/[slug]/page.tsx` | Post template (derived, no separate mockup) |
 | `/contact` | `src/app/contact/page.tsx` | 3 tabs: form / calendar / WhatsApp |
-| `/keystatic` | `src/app/keystatic/*` | CMS admin UI (GitHub OAuth in prod) |
+
+There is intentionally **no `/keystatic` route** — neither admin UI nor API. Authoring is done through GitHub directly.
 
 `src/app/layout.tsx` renders Nav, Footer, WhatsAppButton, and Google Analytics around every page — do NOT include them in individual pages.
 
@@ -25,7 +26,7 @@ These come from the design handoff. Future agents must obey:
 
 1. **Color palette is locked**: `#FFFFFF` bg, `#0F0F0F` text, `#464646` mid, `#878787` light, `#ED1C24` red, `#E1E1E1` rule, `#F9F8F6` warm. Defined as CSS vars in `globals.css` and as Tailwind tokens in `tailwind.config.ts`. **Never introduce new colors** without a brand decision.
 2. **Red is used sparingly** — one accent per section. Hover states, accents, the vertical rule. Never as a section background or for body text.
-3. **Lora serif only**. No sans-serif (except inside Keystatic admin which has its own UI). Set via `next/font/google` in layout.tsx, available as `--font-lora` and the `font-serif` Tailwind class.
+3. **Lora serif only**. No sans-serif. Set via `next/font/google` in layout.tsx, available as `--font-lora` and the `font-serif` Tailwind class.
 4. **Vertical 2px red rule** on the left side of certain hero / page-header sections. See `simpleworks-landing-mock.html` for the pattern.
 5. **`mix-blend-mode: multiply`** on `hero-illustration.png` and `prem-menon.png`. Removes the white background so they blend into the page. Use the `mix-blend-multiply` Tailwind class.
 6. **Generous whitespace**. Do not compress sections to fit smaller viewports — let it scroll.
@@ -51,10 +52,29 @@ These are pixel-perfect HTML/CSS specs. **When changing a page, open the corresp
 ## Stack-specific gotchas
 
 - **Next.js 16 async params/searchParams**: `params` and `searchParams` are `Promise<>`. Always `await` them in server components. Type as `Promise<{ slug: string }>`.
-- **Keystatic config path**: posts live in `content/posts/*` (not `src/content/posts/*` as in some Keystatic examples).
-- **Keystatic storage**: in dev (`NODE_ENV === 'development'`), uses `local`. In prod, uses `github` mode — requires `KEYSTATIC_GITHUB_REPO` env var ("owner/repo" format).
+- **Blog posts live at `content/posts/*.mdoc` (or `.md`)** in the repo. The Keystatic reader (`createReader` from `@keystatic/core/reader`) parses them at build time against the schema in `keystatic.config.ts`. There is no Keystatic admin route — posts are authored through the GitHub web UI.
 - **next/image**: ALL images go through `next/image` for optimization. The 3 brand assets are pre-imported via static imports for type safety.
 - **`use client`** components in `src/components/`: `Nav.tsx` (usePathname), `Reveal.tsx` (IntersectionObserver), `FAQAccordion.tsx`, `ContactTabs.tsx`. Server components everywhere else.
+
+## Authoring a blog post (the canonical workflow)
+
+1. Visit https://github.com/Simpleworks-in/website/tree/main/content/posts
+2. Click **Add file → Create new file**.
+3. Filename: `your-slug.mdoc` (kebab-case, ends in `.mdoc` so Keystatic's reader picks it up).
+4. Paste frontmatter at the top, write the post body below:
+   ```markdown
+   ---
+   title: Your post title
+   date: 2026-05-16
+   category: strategy   # or growth | execution | leadership
+   excerpt: One-line summary shown on the blog grid.
+   seoTitle: ""
+   seoDescription: ""
+   ---
+
+   Your post body. Use **bold**, *italic*, [links](https://...), ## headings.
+   ```
+5. Click **Commit changes**. Vercel rebuilds; post is live in ~60 seconds at `/blog/<slug>`.
 
 ## Security namespace rule
 
@@ -62,12 +82,11 @@ These are pixel-perfect HTML/CSS specs. **When changing a page, open the corresp
 
 | Public-by-design (client OK) | Server-only (secrets) |
 |---|---|
-| `NEXT_PUBLIC_FORMSPREE_ID` | `KEYSTATIC_GITHUB_CLIENT_ID` |
-| `NEXT_PUBLIC_CALENDAR_EMBED_URL` | `KEYSTATIC_GITHUB_CLIENT_SECRET` |
-| `NEXT_PUBLIC_GA_ID` | `KEYSTATIC_SECRET` |
-|  | `KEYSTATIC_GITHUB_REPO` |
+| `NEXT_PUBLIC_FORMSPREE_ID` | (none currently) |
+| `NEXT_PUBLIC_CALENDAR_EMBED_URL` | |
+| `NEXT_PUBLIC_GA_ID` | |
 
-If you need to add a new secret, **never** prefix it `NEXT_PUBLIC_`. Read it inside a server component or API route only.
+If you ever add a new secret, **never** prefix it `NEXT_PUBLIC_`. Read it inside a server component or API route only.
 
 ## Never do
 

@@ -33,14 +33,14 @@ website/
 ├── README.md
 ├── CLAUDE.md                # AI-agent bootstrap
 ├── .env.example             # required env vars (no real values)
-├── keystatic.config.ts      # blog post schema + storage
+├── keystatic.config.ts      # blog post frontmatter schema (reader-only — no admin route exposed)
 ├── tailwind.config.ts       # design tokens (colors, fonts, sizes)
 ├── next.config.mjs          # security headers
 ├── public/                  # static assets
 │   ├── hero-illustration.png
 │   ├── prem-menon.png
 │   └── Simpleworks_image_only_S.png
-├── content/posts/           # blog posts (markdown, managed by Keystatic)
+├── content/posts/           # blog posts (markdown — authored via GitHub web UI)
 ├── scripts/
 │   └── check-secrets.sh     # pre-commit secret scanner
 ├── .github/workflows/       # CI (gitleaks, audit)
@@ -53,8 +53,9 @@ website/
     │   ├── blog/page.tsx             # listing
     │   ├── blog/[slug]/page.tsx      # post template
     │   ├── contact/page.tsx
-    │   ├── keystatic/                # CMS admin UI (gated by GitHub OAuth)
-    │   ├── api/keystatic/[...]/route.ts # CMS API
+    │   ├── manifest.ts              # PWA manifest
+    │   ├── sw.ts                    # PWA service worker (Serwist)
+    │   ├── offline/page.tsx         # PWA offline fallback
     │   ├── sitemap.ts
     │   └── robots.ts
     └── components/
@@ -75,15 +76,11 @@ Copy `.env.example` to `.env.local` for development; configure the same variable
 
 | Variable | Class | Purpose |
 |---|---|---|
-| `KEYSTATIC_GITHUB_REPO` | server | `<owner>/<repo>` — where Keystatic commits posts |
-| `KEYSTATIC_GITHUB_CLIENT_ID` | server | Keystatic OAuth app, for `/keystatic` login |
-| `KEYSTATIC_GITHUB_CLIENT_SECRET` | **SECRET** | Same OAuth app's secret |
-| `KEYSTATIC_SECRET` | **SECRET** | 64-char hex; signs CMS session cookies. Generate with `openssl rand -hex 32` |
-| `NEXT_PUBLIC_FORMSPREE_ID` | public | Form ID at formspree.io (e.g. `xpwzrknb`) |
+| `NEXT_PUBLIC_FORMSPREE_ID` | public | Form ID at formspree.io (e.g. `xnjrandy`) |
 | `NEXT_PUBLIC_CALENDAR_EMBED_URL` | public | Google Calendar appointment-page iframe URL |
 | `NEXT_PUBLIC_GA_ID` | public | Google Analytics 4 Measurement ID (e.g. `G-XXXXXXXXXX`) |
 
-**Rule:** only variables prefixed with `NEXT_PUBLIC_` ever leave the server. Everything else is server-only — never reference them in components without the `"use server"` boundary or in a server component.
+**Rule:** only variables prefixed with `NEXT_PUBLIC_` ever leave the server. If you ever add a server-only secret, never prefix it `NEXT_PUBLIC_` — read it inside a server component or API route only.
 
 ---
 
@@ -102,42 +99,36 @@ git push -u origin main
 2. Framework: Next.js (auto-detected). Click Deploy.
 3. Settings → Environment Variables → add every var from the table above. Set per environment (Production / Preview / Development).
 
-### 3. Keystatic GitHub OAuth (so `/keystatic` admin works in production)
-Follow [keystatic.com/docs/github-mode](https://keystatic.com/docs/github-mode) (~10 min).
-- Create a GitHub OAuth app, copy Client ID and Secret.
-- Generate `KEYSTATIC_SECRET`: `openssl rand -hex 32`.
-- Add all three to Vercel.
-
-### 4. Formspree (Phase 5)
+### 3. Formspree
 - formspree.io → Sign up → New Form "Simpleworks Contact".
 - Copy the Form ID into Vercel as `NEXT_PUBLIC_FORMSPREE_ID`.
 - Enable hCaptcha in the form's dashboard for spam protection.
 - Test: submit the contact form once; expect an email at pm@simpleworks.in within 2 minutes.
 
-### 5. Google Calendar booking (Phase 6 — Prem does this in his Google account)
+### 4. Google Calendar booking (Prem does this in his Google account)
 1. calendar.google.com → + Other Calendars → Create new → "Simpleworks Consultations".
 2. Appointment Schedules → Create → "Consultation with Prem Menon — Simpleworks".
 3. Duration: 30 + 60 min. Mon-Fri 9:00-18:00 IST.
 4. Share → Embed → copy iframe `src` URL.
 5. Paste into Vercel as `NEXT_PUBLIC_CALENDAR_EMBED_URL`.
 
-### 6. Domain connect (Phase 8)
+### 5. Domain connect
 1. Vercel → Domains → Add `simpleworks.in` and `www.simpleworks.in`.
 2. GoDaddy → DNS → add:
    - `A` @ → `76.76.21.21`
    - `CNAME` www → `cname.vercel-dns.com`
 3. Propagation: 10-30 min. `simpleworks.in` then serves over HTTPS.
 
-### 7. Google Analytics (Phase 9)
+### 6. Google Analytics
 - analytics.google.com → Create GA4 Property for simpleworks.in.
 - Copy Measurement ID. Paste into Vercel as `NEXT_PUBLIC_GA_ID`. Redeploy.
 
-### 8. Search Console (Phase 9)
+### 7. Search Console
 - search.google.com/search-console → Add property → Domain → simpleworks.in.
 - Verify via TXT record in GoDaddy DNS.
 - Submit sitemap: `https://simpleworks.in/sitemap.xml`.
 
-### 9. Professional email (Phase 10 — Prem)
+### 8. Professional email (Prem)
 - workspace.google.com → start trial → add domain simpleworks.in.
 - Add MX records in GoDaddy as Google instructs.
 - `pm@simpleworks.in` becomes the inbox for Formspree submissions.
@@ -146,7 +137,7 @@ Follow [keystatic.com/docs/github-mode](https://keystatic.com/docs/github-mode) 
 
 ## Writing blog posts
 
-**Recommended (Prem's workflow):** go to `https://simpleworks.in/keystatic`, log in with GitHub, click Posts → New Post.
+**Recommended (Prem's workflow):** GitHub web UI — visit https://github.com/Simpleworks-in/website/tree/main/content/posts → **Add file → Create new file** → name it `your-slug.mdoc` → paste frontmatter (below) → write the post → **Commit changes**. Vercel rebuilds, post is live in ~60 seconds.
 
 **Developer shortcut:** in Claude Code, run `/new-post "<title>"` — see `.claude/commands/new-post.md`.
 
