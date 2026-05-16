@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lora } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
@@ -14,6 +14,16 @@ const lora = Lora({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ED1C24" },
+    { media: "(prefers-color-scheme: dark)", color: "#ED1C24" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://simpleworks.in"),
   title: {
@@ -22,6 +32,17 @@ export const metadata: Metadata = {
   },
   description:
     "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Prem Menon — 39 years of experience.",
+  applicationName: "Simpleworks",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Simpleworks",
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -31,6 +52,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 

@@ -1,3 +1,5 @@
+import withSerwistInit from "@serwist/next";
+
 /** @type {import('next').NextConfig} */
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -26,6 +28,8 @@ const csp = [
   "form-action 'self' https://formspree.io https://*.substack.com",
   "base-uri 'self'",
   "object-src 'none'",
+  "worker-src 'self'",
+  "manifest-src 'self'",
   ...(isDev ? [] : ["upgrade-insecure-requests"]),
 ].join("; ");
 
@@ -44,6 +48,16 @@ const securityHeaders = [
   { key: "Content-Security-Policy", value: csp },
 ];
 
+const withSerwist = withSerwistInit({
+  swSrc: "src/app/sw.ts",
+  swDest: "public/sw.js",
+  cacheOnNavigation: true,
+  reloadOnOnline: true,
+  disable: isDev,
+  additionalPrecacheEntries: [{ url: "/offline", revision: null }],
+});
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -53,8 +67,18 @@ const nextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      {
+        source: "/sw.js",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
+          },
+          { key: "Service-Worker-Allowed", value: "/" },
+        ],
+      },
     ];
   },
 };
 
-export default nextConfig;
+export default withSerwist(nextConfig);
