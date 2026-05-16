@@ -1,0 +1,43 @@
+{
+  "name": "simpleworks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simpleworks Consulting — corporate website (simpleworks.in)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "check-secrets": "bash scripts/check-secrets.sh",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@keystatic/core": "^0.5.50",
+    "@keystatic/next": "^5.0.4",
+    "@markdoc/markdoc": "^0.5.7",
+    "@next/third-parties": "^16.2.6",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.4.0",
+    "eslint-config-next": "^16.2.6",
+    "husky": "^9.1.7",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss@<8.5.10": ">=8.5.10"
+    },
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
+  }
+}
