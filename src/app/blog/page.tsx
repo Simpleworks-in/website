@@ -54,10 +54,10 @@ export default async function BlogPage({
     <>
       {/* PAGE HEADER */}
       <div className="flex border-b border-rule">
-        <div className="relative flex w-[72px] flex-shrink-0 items-start pt-14 pl-6">
+        <div className="relative hidden md:flex w-[72px] flex-shrink-0 items-start pt-14 pl-6">
           <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
         </div>
-        <div className="flex flex-1 flex-wrap items-end justify-between gap-10 px-[60px] py-14 pl-14">
+        <div className="flex flex-1 flex-col md:flex-row md:flex-wrap md:items-end md:justify-between gap-8 md:gap-10 px-6 py-10 md:px-[60px] md:py-14 md:pl-14">
           <div className="max-w-[520px]">
             <p
               className="text-eyebrow uppercase tracking-wide-10 text-light"
@@ -66,7 +66,7 @@ export default async function BlogPage({
               Simpleworks · Insights &amp; Perspectives
             </p>
             <h1
-              className="mt-[18px] text-[52px] font-bold leading-[1.1] tracking-tight-2"
+              className="mt-[18px] text-[36px] font-bold leading-[1.1] tracking-tight-2 md:text-[52px]"
               style={{ opacity: 0, animation: "fadeUp 0.7s ease 0.2s both" }}
             >
               Thinking clearly
@@ -90,7 +90,7 @@ export default async function BlogPage({
           </div>
 
           {/* Category filter */}
-          <div className="flex flex-wrap gap-2.5">
+          <div className="flex flex-wrap gap-2 md:gap-2.5">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.value;
               const href = cat.value === "all" ? "/blog" : `/blog?category=${cat.value}`;
@@ -98,7 +98,7 @@ export default async function BlogPage({
                 <Link
                   key={cat.value}
                   href={href}
-                  className={`rounded-[1px] border px-5 py-2 text-[12px] tracking-wide-4 uppercase transition-colors ${
+                  className={`rounded-[1px] border px-4 py-2 text-[11px] md:px-5 md:text-[12px] tracking-wide-4 uppercase transition-colors ${
                     isActive
                       ? "border-red bg-red text-white"
                       : "border-rule text-mid hover:border-red hover:text-red"
@@ -113,9 +113,9 @@ export default async function BlogPage({
       </div>
 
       {/* BLOG GRID */}
-      <section className="reveal px-[60px] py-20 pl-[132px]">
+      <section className="reveal px-6 py-14 md:px-[60px] md:py-20 md:pl-[132px]">
         {posts.length === 0 ? (
-          <div className="mx-auto max-w-[640px] py-20 text-center">
+          <div className="mx-auto max-w-[640px] px-6 py-20 text-center">
             <p className="text-eyebrow uppercase tracking-wide-9 text-light">
               Coming Soon
             </p>
@@ -129,7 +129,7 @@ export default async function BlogPage({
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-x-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:grid-cols-3">
             {posts.map((post) => (
               <article
                 key={post.slug}
@@ -167,12 +167,12 @@ export default async function BlogPage({
       </section>
 
       {/* SUBSCRIBE STRIP */}
-      <div className="reveal flex flex-wrap items-center justify-between gap-10 border-t border-rule bg-warm px-[60px] py-14 pl-[132px]">
+      <div className="reveal flex flex-col md:flex-row md:flex-wrap md:items-center md:justify-between gap-6 md:gap-10 border-t border-rule bg-warm px-6 py-10 md:px-[60px] md:py-14 md:pl-[132px]">
         <div className="max-w-[520px]">
           <p className="text-eyebrow uppercase tracking-wide-9 text-light">
             Simpleworks · Business Consultant Bengaluru · Substack
           </p>
-          <p className="mt-5 text-[28px] font-bold leading-[1.2] tracking-tight-1">
+          <p className="mt-5 text-[22px] md:text-[28px] font-bold leading-[1.2] tracking-tight-1">
             Get new posts delivered
             <br />
             directly to your inbox.{" "}
@@ -184,18 +184,18 @@ export default async function BlogPage({
           method="get"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-1 min-w-[300px] items-stretch gap-0"
+          className="flex flex-col sm:flex-row md:flex-1 sm:min-w-[300px] items-stretch gap-2 sm:gap-0"
         >
           <input
             type="email"
             name="email"
             required
             placeholder="Your email address"
-            className="flex-1 rounded-l-[1px] border-[0.5px] border-rule bg-white px-4 py-3 font-serif text-[15px] outline-none transition-colors focus:border-ink"
+            className="flex-1 rounded-[1px] sm:rounded-l-[1px] sm:rounded-r-none border-[0.5px] border-rule bg-white px-4 py-3 font-serif text-[15px] outline-none transition-colors focus:border-ink"
           />
           <button
             type="submit"
-            className="rounded-r-[1px] border-[1.5px] border-l-0 border-red bg-red px-6 py-3 font-serif text-[14px] tracking-wide-3 text-white transition-colors hover:bg-ink hover:border-ink"
+            className="rounded-[1px] sm:rounded-l-none sm:rounded-r-[1px] border-[1.5px] sm:border-l-0 border-red bg-red px-6 py-3 font-serif text-[14px] tracking-wide-3 text-white transition-colors hover:bg-ink hover:border-ink"
           >
             Subscribe →
           </button>

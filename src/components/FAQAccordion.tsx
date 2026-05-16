@@ -27,7 +27,7 @@ export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="faq-list mt-12 max-w-[640px]">
+    <div className="faq-list mt-8 md:mt-12 max-w-[640px]">
       {FAQS.map((item, i) => {
         const open = openIndex === i;
         return (

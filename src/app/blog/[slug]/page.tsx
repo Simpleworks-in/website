@@ -58,7 +58,7 @@ export default async function PostPage({
   const renderable = Markdoc.transform(node);
 
   return (
-    <article className="mx-auto max-w-prose-col px-6 py-20 md:px-0 md:py-24">
+    <article className="mx-auto max-w-prose-col px-6 py-16 md:py-24">
       <Link
         href="/blog"
         className="mb-10 inline-flex items-center gap-2 text-[12px] uppercase tracking-wide-4 text-light transition-colors hover:text-red"

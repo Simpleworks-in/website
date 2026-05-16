@@ -4,9 +4,9 @@ import logo from "../../public/Simpleworks_image_only_S.png";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-rule bg-[#F2F2F0] px-[60px]">
+    <footer className="border-t border-rule bg-[#F2F2F0] px-6 md:px-[60px]">
       {/* Row 1: logo + social */}
-      <div className="flex items-center justify-between border-b border-rule py-10 pt-10 pb-7">
+      <div className="flex flex-col gap-6 border-b border-rule py-8 md:flex-row md:items-center md:justify-between md:py-10 md:pt-10 md:pb-7">
         <div className="flex flex-col gap-2.5">
           <Link href="/" className="flex items-center gap-3">
             <Image src={logo} alt="Simpleworks S mark" height={32} className="h-8 w-auto" />
@@ -18,7 +18,7 @@ export default function Footer() {
             Simple answers to hard business questions.
           </p>
         </div>
-        <div className="mt-1 flex items-center gap-3.5">
+        <div className="flex items-center gap-3.5 md:mt-1">
           <a
             href="https://www.linkedin.com/in/premraj/"
             target="_blank"
@@ -56,7 +56,7 @@ export default function Footer() {
       </div>
 
       {/* Row 2: contact details centred */}
-      <div className="flex items-center justify-center gap-12 border-b border-rule py-7">
+      <div className="flex flex-col items-start gap-3 border-b border-rule py-6 md:flex-row md:items-center md:justify-center md:gap-12 md:py-7">
         <div className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid">
           <svg
             viewBox="0 0 24 24"
@@ -76,7 +76,7 @@ export default function Footer() {
             pm@simpleworks.in
           </a>
         </div>
-        <div className="h-7 w-px flex-shrink-0 bg-rule" />
+        <div className="hidden h-7 w-px flex-shrink-0 bg-rule md:block" />
         <div className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid">
           <svg
             viewBox="0 0 24 24"
@@ -90,7 +90,7 @@ export default function Footer() {
           </svg>
           <span>+91 90360 99000</span>
         </div>
-        <div className="h-7 w-px flex-shrink-0 bg-rule" />
+        <div className="hidden h-7 w-px flex-shrink-0 bg-rule md:block" />
         <div className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid">
           <svg
             viewBox="0 0 24 24"
@@ -108,8 +108,8 @@ export default function Footer() {
       </div>
 
       {/* Row 3: nav + copyright */}
-      <div className="flex items-center justify-between py-[18px]">
-        <ul className="flex list-none gap-7">
+      <div className="flex flex-col items-start gap-3 py-5 md:flex-row md:items-center md:justify-between md:py-[18px]">
+        <ul className="flex list-none gap-6 md:gap-7">
           <li>
             <Link
               href="/about"

@@ -33,14 +33,14 @@ export default async function ContactPage({
       <Reveal />
 
       {/* PAGE HEADER */}
-      <div className="flex border-b border-rule/100 min-h-[220px]">
-        <div className="w-[72px] flex-shrink-0 relative" />
-        <div className="flex-1 px-[60px] pt-14 pb-[52px] pl-14 flex flex-col justify-end gap-8">
+      <div className="flex border-b border-rule/100 md:min-h-[220px]">
+        <div className="hidden md:block w-[72px] flex-shrink-0 relative" />
+        <div className="flex-1 px-6 py-10 md:px-[60px] md:pt-14 md:pb-[52px] md:pl-14 flex flex-col justify-end gap-6 md:gap-8">
           <div>
             <p className="text-eyebrow tracking-wide-10 uppercase text-light mb-4 animate-fade-up">
               Simpleworks Consulting · Get In Touch
             </p>
-            <h1 className="text-hero-h1 font-bold leading-[1.1] tracking-tight-2 animate-fade-up">
+            <h1 className="text-[36px] md:text-hero-h1 font-bold leading-[1.1] tracking-tight-2 animate-fade-up">
               Let&apos;s talk about
               <br />
               your <span className="text-red">business.</span>
@@ -53,7 +53,7 @@ export default async function ContactPage({
             </p>
           </div>
 
-          <div className="flex flex-row gap-10 items-center animate-fade-up">
+          <div className="flex flex-col gap-3 md:flex-row md:gap-8 md:items-center animate-fade-up">
             <div className="flex items-center gap-3 text-sm text-mid">
               <svg
                 className="w-4 h-4 flex-shrink-0 fill-none stroke-red stroke-[1.8]"
@@ -100,7 +100,7 @@ export default async function ContactPage({
 
       {/* THANK-YOU BANNER */}
       {isSent && (
-        <div className="ml-[72px] border-b border-rule/100 bg-warm px-[60px] py-5 animate-fade-in">
+        <div className="md:ml-[72px] border-b border-rule/100 bg-warm px-6 md:px-[60px] py-5 animate-fade-in">
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-[#4CAF50] flex-shrink-0" />
             <p className="text-sm text-ink">

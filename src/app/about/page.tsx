@@ -13,18 +13,18 @@ export default function AboutPage() {
   return (
     <>
       {/* PAGE HEADER */}
-      <section className="flex min-h-[88vh] overflow-hidden border-b-[0.5px] border-rule">
-        <div className="relative flex w-[72px] flex-shrink-0 items-start pt-[72px] pl-6">
+      <section className="flex flex-col md:flex-row min-h-0 md:min-h-[88vh] overflow-hidden border-b-[0.5px] border-rule">
+        <div className="relative hidden md:flex w-[72px] flex-shrink-0 items-start pt-[72px] pl-6">
           <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
         </div>
 
-        <div className="flex flex-1 items-stretch">
+        <div className="flex flex-col md:flex-row flex-1 items-stretch">
           {/* Text */}
-          <div className="flex w-[480px] flex-shrink-0 flex-col justify-center border-r-[0.5px] border-rule pt-[72px] pr-10 pb-[72px] pl-14">
+          <div className="flex w-full md:w-[480px] flex-shrink-0 flex-col justify-center border-b-[0.5px] md:border-b-0 md:border-r-[0.5px] border-rule px-6 py-12 md:pt-[72px] md:pr-10 md:pb-[72px] md:pl-14">
             <p className="mb-6 text-eyebrow uppercase tracking-wide-10 text-light opacity-0 animate-fade-up [animation-delay:0.1s]">
               Founder · Simpleworks Consulting
             </p>
-            <h1 className="mb-2 text-about-name font-bold tracking-tight-2 opacity-0 animate-fade-up [animation-delay:0.2s]">
+            <h1 className="mb-2 text-[40px] leading-[1.05] md:text-about-name md:leading-[1] font-bold tracking-tight-2 opacity-0 animate-fade-up [animation-delay:0.2s]">
               Prem
               <br />
               <span className="text-red">Menon</span>
@@ -33,12 +33,12 @@ export default function AboutPage() {
               Management Consultant · India &amp; Bengaluru
             </p>
             <div className="mb-7 h-[2px] w-10 bg-red opacity-0 animate-fade-up [animation-delay:0.35s]" />
-            <p className="mb-9 max-w-[400px] text-[22px] italic leading-[1.55] text-ink opacity-0 animate-fade-up [animation-delay:0.45s]">
+            <p className="mb-9 max-w-[400px] text-[18px] md:text-[22px] italic leading-[1.55] text-ink opacity-0 animate-fade-up [animation-delay:0.45s]">
               &ldquo;Business growth doesn&rsquo;t have to be complicated. Most of the time, it just needs clarity.&rdquo;
             </p>
             <div className="flex gap-8 opacity-0 animate-fade-up [animation-delay:0.55s]">
               <div className="flex flex-col gap-1">
-                <span className="text-[32px] font-bold leading-none text-ink">
+                <span className="text-[28px] md:text-[32px] font-bold leading-none text-ink">
                   39<em className="not-italic text-red">+</em>
                 </span>
                 <span className="text-eyebrow-lg uppercase tracking-wide-5 text-light">
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 </span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[32px] font-bold leading-none text-ink">6</span>
+                <span className="text-[28px] md:text-[32px] font-bold leading-none text-ink">6</span>
                 <span className="text-eyebrow-lg uppercase tracking-wide-5 text-light">
                   Major Industries
                 </span>
@@ -55,13 +55,13 @@ export default function AboutPage() {
           </div>
 
           {/* Portrait */}
-          <div className="flex flex-1 items-center justify-center p-10 opacity-0 animate-fade-in [animation-delay:0.6s]">
+          <div className="flex flex-1 items-center justify-center p-6 md:p-10 opacity-0 animate-fade-in [animation-delay:0.6s]">
             <Image
               src="/prem-menon.png"
               alt="Prem Menon — Founder, Simpleworks Consulting"
               width={800}
               height={1000}
-              className="mix-blend-multiply max-h-[62vh] max-w-[88%] w-auto h-auto object-contain"
+              className="mix-blend-multiply max-h-[400px] md:max-h-[62vh] max-w-[88%] w-auto h-auto object-contain"
               priority
             />
           </div>
@@ -69,12 +69,12 @@ export default function AboutPage() {
       </section>
 
       {/* COMPANIES */}
-      <div className="reveal border-b-[0.5px] border-rule bg-warm py-[60px] pl-[132px] pr-[60px]">
+      <div className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-[60px] md:pl-[132px] md:pr-[60px]">
         <p className="mb-9 text-[15px] font-medium uppercase tracking-wide-5 text-light">
           Career — Organisations Across Four Sectors
         </p>
-        <div className="grid grid-cols-4 gap-[2px]">
-          <div className="border-r-[0.5px] border-rule py-6 pl-0 pr-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[2px]">
+          <div className="lg:border-r-[0.5px] border-rule py-6 pl-0 pr-7">
             <span className="mb-4 block text-eyebrow-lg font-semibold uppercase tracking-wide-8 text-red">
               Consumer Durables
             </span>
@@ -87,7 +87,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="border-r-[0.5px] border-rule py-6 pl-0 pr-7">
+          <div className="lg:border-r-[0.5px] border-rule py-6 pl-0 pr-7">
             <span className="mb-4 block text-eyebrow-lg font-semibold uppercase tracking-wide-8 text-red">
               Automotive &amp; Tyres
             </span>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="border-r-[0.5px] border-rule py-6 pl-0 pr-7">
+          <div className="lg:border-r-[0.5px] border-rule py-6 pl-0 pr-7">
             <span className="mb-4 block text-eyebrow-lg font-semibold uppercase tracking-wide-8 text-red">
               Telecom
             </span>
@@ -139,17 +139,17 @@ export default function AboutPage() {
       </div>
 
       {/* STORY */}
-      <section className="reveal grid grid-cols-[1fr_380px] items-start gap-20 border-b-[0.5px] border-rule py-[88px] pl-[132px] pr-[60px]">
+      <section className="reveal flex flex-col md:grid md:grid-cols-[1fr_380px] items-start gap-12 md:gap-20 border-b-[0.5px] border-rule px-6 py-12 md:py-[88px] md:pl-[132px] md:pr-[60px]">
         <div>
           <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
             The Story
           </p>
-          <h2 className="mb-7 text-sec-h2 font-bold leading-[1.15] tracking-tight-1">
+          <h2 className="mb-7 text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
             39 years in the thick of it —
             <br />
             building, scaling, turning around.
           </h2>
-          <div className="text-[17px] leading-[1.82] text-mid">
+          <div className="text-[16px] md:text-[17px] leading-[1.75] md:leading-[1.82] text-mid">
             <p className="mb-[22px]">
               I started my corporate career on the front line — as a{" "}
               <strong className="font-semibold text-ink">
@@ -214,9 +214,9 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="sticky top-[100px] pt-[52px]">
+        <div className="w-full md:w-[380px] md:sticky md:top-[100px] md:pt-[52px]">
           <div className="border-l-[3px] border-red bg-warm py-7 pl-6 pr-7">
-            <p className="mb-4 text-[18px] italic leading-[1.6] text-ink">
+            <p className="mb-4 text-[17px] md:text-[18px] italic leading-[1.6] text-ink">
               &ldquo;What I bring is not a framework from a textbook. It&rsquo;s 39 years of real
               decisions, real teams, and real markets — distilled into advice that is simple enough
               to act on by Monday morning.&rdquo;
@@ -229,16 +229,16 @@ export default function AboutPage() {
       </section>
 
       {/* EDUCATION */}
-      <section className="reveal border-b-[0.5px] border-rule bg-warm py-20 pl-[132px] pr-[60px]">
+      <section className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]">
         <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
           Education
         </p>
-        <h2 className="text-sec-h2 font-bold leading-[1.15] tracking-tight-1">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
           Grounded in practice.
           <br />
           Sharpened by learning.
         </h2>
-        <div className="mt-11 grid grid-cols-3 gap-[2px]">
+        <div className="mt-11 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[2px]">
           <div className="border-t-2 border-rule bg-bg px-7 py-8 transition-colors duration-[250ms] hover:border-t-red">
             <p className="mb-3 text-eyebrow-lg font-semibold uppercase tracking-wide-6 text-red">
               1987
@@ -284,18 +284,18 @@ export default function AboutPage() {
       </section>
 
       {/* WHAT I HELP WITH */}
-      <section className="reveal border-b-[0.5px] border-rule py-20 pl-[132px] pr-[60px]">
+      <section className="reveal border-b-[0.5px] border-rule px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]">
         <div className="mb-12 max-w-[560px]">
           <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
             What I Can Help You With
           </p>
-          <h2 className="text-sec-h2 font-bold leading-[1.15] tracking-tight-1">
+          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
             Practical advice. Clear direction. Real execution.
           </h2>
         </div>
 
-        <div className="grid grid-cols-3 gap-[2px]">
-          <div className="border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[2px]">
+          <div className="lg:border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
             <span className="mb-4 block text-[28px] font-bold leading-none tracking-tight-2 text-red opacity-25">
               01
             </span>
@@ -307,7 +307,7 @@ export default function AboutPage() {
               can follow.
             </p>
           </div>
-          <div className="border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
+          <div className="lg:border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
             <span className="mb-4 block text-[28px] font-bold leading-none tracking-tight-2 text-red opacity-25">
               02
             </span>
@@ -330,7 +330,7 @@ export default function AboutPage() {
               Goals, accountability structures, and review rhythms that turn strategy into progress.
             </p>
           </div>
-          <div className="border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
+          <div className="lg:border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
             <span className="mb-4 block text-[28px] font-bold leading-none tracking-tight-2 text-red opacity-25">
               04
             </span>
@@ -341,7 +341,7 @@ export default function AboutPage() {
               Build a leadership team that can run the business — not just report to you.
             </p>
           </div>
-          <div className="border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
+          <div className="lg:border-r-[0.5px] border-t-2 border-rule pt-6 pr-8 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red">
             <span className="mb-4 block text-[28px] font-bold leading-none tracking-tight-2 text-red opacity-25">
               05
             </span>
@@ -354,22 +354,22 @@ export default function AboutPage() {
             </p>
           </div>
           {/* Empty cell for grid balance */}
-          <div className="pointer-events-none border-t-2 border-transparent bg-transparent pt-6 pr-8 pb-7 pl-0" />
+          <div className="hidden lg:block pointer-events-none border-t-2 border-transparent bg-transparent pt-6 pr-8 pb-7 pl-0" />
         </div>
       </section>
 
       {/* IS THIS YOU */}
-      <section className="reveal border-b-[0.5px] border-rule bg-warm py-20 pl-[132px] pr-[60px]">
+      <section className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]">
         <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
           Is This You?
         </p>
-        <h2 className="text-sec-h2 font-bold leading-[1.15] tracking-tight-1">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
           If any of these sound familiar,
           <br />
           we should talk.
         </h2>
         <div className="mt-11 flex flex-col">
-          <div className="group grid grid-cols-[56px_1fr] items-start gap-7 border-b-[0.5px] border-rule py-8 pt-0">
+          <div className="group grid grid-cols-[48px_1fr] md:grid-cols-[56px_1fr] items-start gap-4 md:gap-7 border-b-[0.5px] border-rule py-8 pt-0">
             <div className="mt-[3px] flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-[1.5px] border-rule transition-colors duration-[250ms] group-hover:border-red">
               <svg
                 viewBox="0 0 24 24"
@@ -394,7 +394,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="group grid grid-cols-[56px_1fr] items-start gap-7 border-b-[0.5px] border-rule py-8">
+          <div className="group grid grid-cols-[48px_1fr] md:grid-cols-[56px_1fr] items-start gap-4 md:gap-7 border-b-[0.5px] border-rule py-8">
             <div className="mt-[3px] flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-[1.5px] border-rule transition-colors duration-[250ms] group-hover:border-red">
               <svg
                 viewBox="0 0 24 24"
@@ -419,7 +419,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="group grid grid-cols-[56px_1fr] items-start gap-7 py-8">
+          <div className="group grid grid-cols-[48px_1fr] md:grid-cols-[56px_1fr] items-start gap-4 md:gap-7 py-8">
             <div className="mt-[3px] flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-[1.5px] border-rule transition-colors duration-[250ms] group-hover:border-red">
               <svg
                 viewBox="0 0 24 24"
@@ -449,18 +449,18 @@ export default function AboutPage() {
       {/* CTA */}
       <section
         id="contact"
-        className="reveal grid grid-cols-2 items-center gap-20 border-t-[0.5px] border-b-[0.5px] border-rule bg-bg py-20 pl-[132px] pr-[60px]"
+        className="reveal grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-20 border-t-[0.5px] border-b-[0.5px] border-rule bg-bg px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]"
       >
-        <div className="flex flex-col justify-center gap-5 border-l-2 border-red pl-7">
+        <div className="flex flex-col justify-center gap-5 border-l-2 border-red pl-6 md:pl-7">
           <p className="text-[14px] font-medium uppercase tracking-wide-5 text-light">
             Start Here
           </p>
-          <p className="text-[34px] font-bold leading-[1.2] tracking-tight-1 text-ink">
+          <p className="text-[28px] md:text-[34px] font-bold leading-[1.2] tracking-tight-1 text-ink">
             The first conversation
             <br />
             is free.
           </p>
-          <p className="text-[24px] font-normal italic leading-[1.3] text-mid">
+          <p className="text-[20px] md:text-[24px] font-normal italic leading-[1.3] text-mid">
             The clarity usually isn&rsquo;t.
           </p>
           <p className="mt-1 max-w-[360px] text-[15px] italic leading-[1.7] text-light">
