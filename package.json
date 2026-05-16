@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Simpleworks Consulting — corporate website (simpleworks.in)",
+  "packageManager": "pnpm@11.1.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -32,9 +33,6 @@
     "typescript": "^5"
   },
   "pnpm": {
-    "overrides": {
-      "postcss@<8.5.10": ">=8.5.10"
-    },
     "onlyBuiltDependencies": [
       "sharp",
       "unrs-resolver"
