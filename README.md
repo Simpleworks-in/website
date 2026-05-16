@@ -137,24 +137,59 @@ git push -u origin main
 
 ## Writing blog posts
 
-**Recommended (Prem's workflow):** GitHub web UI — visit https://github.com/Simpleworks-in/website/tree/main/content/posts → **Add file → Create new file** → name it `your-slug.mdoc` → paste frontmatter (below) → write the post → **Commit changes**. Vercel rebuilds, post is live in ~60 seconds.
+There are three ways to publish a post. Pick whichever fits your day.
 
-**Developer shortcut:** in Claude Code, run `/new-post "<title>"` — see `.claude/commands/new-post.md`.
+### Option 1 — Claude Code slash command (recommended for devs)
 
-Manual: create `content/posts/<slug>.md` with frontmatter:
+From this repo, in Claude Code:
+
+```
+/new-post "Your post title here"
+```
+
+The command walks you end-to-end:
+
+1. **Title** — taken from your argument (or asks if you didn't provide one)
+2. **Category** — picker for Strategy / Growth / Execution / Leadership
+3. **Excerpt** — the one-line summary that shows on the blog grid
+4. **Scaffolds** `content/posts/<slug>.mdoc` with valid frontmatter + a body skeleton
+5. **Pauses** so you can open the file and write the body in your editor
+6. **Asks** when you're done — **Publish now** / **Save as draft** / **Discard**
+7. If publish: runs the secret scanner, commits, pushes, and watches the Vercel rebuild — you get a notification when the URL is live (~60s)
+
+Safety rails: slug is URL-sanitised, won't overwrite an existing post, refuses to push if `scripts/check-secrets.sh` finds anything suspicious, and confirms before pushing from a non-`main` branch (preview deploys, not the live URL).
+
+The command lives at `.claude/commands/new-post.md` — edit it if the workflow changes.
+
+### Option 2 — GitHub web UI (Prem's preferred workflow, no terminal)
+
+1. Open https://github.com/Simpleworks-in/website/tree/main/content/posts
+2. **Add file → Create new file**
+3. Filename: `your-slug.mdoc`
+4. Paste the frontmatter (template below), write the post in the body
+5. **Commit changes** — Vercel rebuilds, post is live in ~60 seconds at `https://simpleworks.vercel.app/blog/<slug>`
+
+GitHub's web editor has a **Preview** tab — use it to check your markdown renders before committing.
+
+### Option 3 — Manual file (any text editor)
+
+Create `content/posts/<slug>.mdoc` with this frontmatter:
 
 ```yaml
 ---
 title: Your post title
 date: 2026-05-16
 category: strategy   # or growth | execution | leadership
-excerpt: A two-line summary that shows on the listing page.
+excerpt: One-line summary that shows on the blog grid.
 seoTitle: ""         # optional override (max 60 chars)
 seoDescription: ""   # optional (max 155 chars)
 ---
 
-Body content in Markdown.
+Body content in Markdown. Use **bold**, *italic*, [links](https://...),
+and ## headings to structure the post.
 ```
+
+Then `git add content/posts/<slug>.mdoc && git commit -m "post: …" && git push`.
 
 ---
 
