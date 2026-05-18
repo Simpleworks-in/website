@@ -6,7 +6,7 @@ import { NextResponse, type NextRequest } from "next/server";
 // successful login. Without it, the admin shell loads publicly — anyone
 // could see the collection structure even if API reads fail.
 //
-// This middleware enforces a stricter contract: if you don't have the
+// This proxy enforces a stricter contract: if you don't have the
 // auth cookie when you hit /keystatic, you get redirected through the
 // GitHub OAuth dance first. Only users with write access to the
 // Simpleworks-in/website repo will succeed.
@@ -14,7 +14,7 @@ import { NextResponse, type NextRequest } from "next/server";
 // The /api/keystatic routes themselves are NOT gated here — they need to
 // be reachable so the OAuth callback can complete and set the cookie.
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const accessToken = req.cookies.get("keystatic-gh-access-token");
   if (accessToken) return NextResponse.next();
 
