@@ -22,11 +22,13 @@ const csp = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: https: blob:",
   "font-src 'self' https://fonts.gstatic.com data:",
-  // Keystatic admin needs:
-  //   api.github.com (GraphQL + REST for repo content)
-  //   raw.githubusercontent.com (download file content)
-  //   fonts.googleapis.com (Inter UI font CSS)
-  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://formspree.io https://api.github.com https://raw.githubusercontent.com https://fonts.googleapis.com",
+  // Keystatic admin needs (all via fetch, so connect-src):
+  //   api.github.com — GraphQL + REST for repo content
+  //   raw.githubusercontent.com — raw file blobs
+  //   avatars.githubusercontent.com — user avatars in the admin UI
+  //   fonts.googleapis.com — Inter UI font CSS
+  //   fonts.gstatic.com — actual WOFF2 binary blobs (fetched via JS)
+  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://formspree.io https://api.github.com https://raw.githubusercontent.com https://avatars.githubusercontent.com https://fonts.googleapis.com https://fonts.gstatic.com",
   "frame-src 'self' https://calendar.google.com https://*.google.com",
   "frame-ancestors 'self'",
   "form-action 'self' https://formspree.io https://*.substack.com",
