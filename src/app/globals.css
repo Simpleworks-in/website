@@ -74,3 +74,13 @@ body:has(.keystatic-shell) > a[aria-label="Chat with Prem on WhatsApp"] {
 .keystatic-shell {
   color-scheme: dark;
 }
+
+/* Lift Keystatic's tooltips, popovers, dialogs above its own header
+   border. React Spectrum's defaults sometimes sit at z-index 1, which
+   is below our overall keystatic-shell stacking context. */
+.kui-theme [role="tooltip"],
+.kui-theme [role="dialog"],
+.kui-theme [role="menu"],
+.kui-theme [data-rac]:where([data-overlay-trigger], [data-popover]) {
+  z-index: 9999 !important;
+}
