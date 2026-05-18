@@ -10,15 +10,14 @@ import { config, fields, collection } from "@keystatic/core";
 
 const REPO_OWNER = "Simpleworks-in";
 const REPO_NAME = "website";
-const APP_SLUG = process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG;
 
-const storage =
-  process.env.NODE_ENV === "development" || !APP_SLUG
-    ? ({ kind: "local" } as const)
-    : ({
-        kind: "github",
-        repo: { owner: REPO_OWNER, name: REPO_NAME },
-      } as const);
+// Always use github storage so Keystatic's setup wizard becomes
+// reachable at /keystatic/setup. The wizard auto-creates the GitHub
+// App for us on first run.
+const storage = {
+  kind: "github",
+  repo: { owner: REPO_OWNER, name: REPO_NAME },
+} as const;
 
 export default config({
   storage,
