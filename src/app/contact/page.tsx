@@ -1,5 +1,4 @@
 import ContactTabs from "@/components/ContactTabs";
-import PageRedRule from "@/components/PageRedRule";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
@@ -29,12 +28,13 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageRedRule />
       <Reveal />
 
       {/* PAGE HEADER */}
       <div className="flex border-b border-rule/100 md:min-h-[220px]">
-        <div className="hidden md:block w-[72px] flex-shrink-0 relative" />
+        <div className="hidden md:flex w-[72px] flex-shrink-0 relative items-start pt-14 pl-6">
+          <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
+        </div>
         <div className="flex-1 px-6 py-10 md:px-[60px] md:pt-14 md:pb-[52px] md:pl-14 flex flex-col justify-end gap-6 md:gap-8">
           <div>
             <p className="text-eyebrow tracking-wide-10 uppercase text-light mb-4 animate-fade-up">
