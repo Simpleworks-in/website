@@ -1,5 +1,5 @@
 import KeystaticApp from "../keystatic";
-import PushStatePatch from "../PushStatePatch";
+import KeystaticClientPatches from "../PushStatePatch";
 
 export const metadata = {
   title: "Keystatic — Simpleworks CMS",
@@ -9,7 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <PushStatePatch />
+      <KeystaticClientPatches />
       <KeystaticApp />
     </>
   );
