@@ -303,50 +303,6 @@ export default function HomePage() {
               className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full"
             />
           </div>
-          <div className="flex flex-col gap-[7px]">
-            <label
-              htmlFor="fsector"
-              className="text-[10px] tracking-wide-7 uppercase text-light"
-            >
-              Sector
-            </label>
-            <select
-              id="fsector"
-              name="sector"
-              defaultValue=""
-              className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full appearance-none cursor-pointer"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23878787' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E\")",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "right 14px center",
-              }}
-            >
-              <option value="" disabled>
-                Select your sector
-              </option>
-              <option>Manufacturing</option>
-              <option>Consumer Goods &amp; Retail</option>
-              <option>Technology / SaaS</option>
-              <option>Distribution</option>
-              <option>Professional Services</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-[7px]">
-            <label
-              htmlFor="fmsg"
-              className="text-[10px] tracking-wide-7 uppercase text-light"
-            >
-              What are you working on?
-            </label>
-            <textarea
-              id="fmsg"
-              name="message"
-              placeholder="Tell us about your business and the challenge you're facing…"
-              className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full resize-none h-[108px]"
-            />
-          </div>
           <button
             type="submit"
             className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit mt-1"
