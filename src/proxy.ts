@@ -15,6 +15,11 @@ import { NextResponse, type NextRequest } from "next/server";
 // be reachable so the OAuth callback can complete and set the cookie.
 
 export function proxy(req: NextRequest) {
+  // No GitHub App configured → local mode → no auth gate (dev/local only).
+  if (!process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG) {
+    return NextResponse.next();
+  }
+
   const accessToken = req.cookies.get("keystatic-gh-access-token");
   if (accessToken) return NextResponse.next();
 
