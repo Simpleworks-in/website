@@ -4,15 +4,16 @@ import { useEffect } from "react";
 
 // Two unrelated patches applied to the /keystatic admin shell:
 //
-// 1. pushState/replaceState — Next.js 16 wraps these to postMessage the new
-//    route into an internal app-router Worker. URL objects aren't
+// 1. pushState/replaceState — Next.js 16 wraps these to postMessage the
+//    new route into an internal app-router Worker. URL objects aren't
 //    structured-clone safe, so the postMessage throws DataCloneError.
 //    Coerce URL → string before Next's wrapper sees it.
 //
 // 2. Force dark theme — Keystatic adds `kui-scheme--auto` which follows
 //    the OS preference. We want a consistent dark admin regardless of
-//    the visitor's OS, so swap `--auto` for `--dark` once on mount and
-//    keep it that way through any rerender.
+//    the visitor's OS. Patch the class once on mount and re-check only
+//    when the theme-class container changes — NOT on every DOM mutation
+//    (which would interfere with React Spectrum's dialogs/popovers).
 
 export default function KeystaticClientPatches() {
   useEffect(() => {
@@ -43,21 +44,35 @@ export default function KeystaticClientPatches() {
       wrap("replaceState");
     }
 
-    // --- force dark theme on the Keystatic shell ---
-    const forceDark = () => {
-      document
-        .querySelectorAll<HTMLElement>(".kui-scheme--auto, .kui-scheme--light")
-        .forEach((el) => {
-          el.classList.remove("kui-scheme--auto", "kui-scheme--light");
-          el.classList.add("kui-scheme--dark");
-        });
+    // --- force dark theme ---
+    const swap = (el: Element) => {
+      el.classList.remove("kui-scheme--auto", "kui-scheme--light");
+      el.classList.add("kui-scheme--dark");
     };
-    forceDark();
+    document
+      .querySelectorAll(".kui-scheme--auto, .kui-scheme--light")
+      .forEach(swap);
 
-    // Keystatic re-renders the theme container on some interactions —
-    // re-apply whenever the body subtree changes.
-    const observer = new MutationObserver(forceDark);
-    observer.observe(document.body, { childList: true, subtree: true });
+    // Re-check ONLY when a class attribute changes on existing theme
+    // containers — not on every node insertion. Keeps dialogs/popovers
+    // from being interrupted mid-render.
+    const observer = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.type === "attributes" && m.target instanceof Element) {
+          if (
+            m.target.classList.contains("kui-scheme--auto") ||
+            m.target.classList.contains("kui-scheme--light")
+          ) {
+            swap(m.target);
+          }
+        }
+      }
+    });
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+      subtree: true,
+    });
     return () => observer.disconnect();
   }, []);
 
