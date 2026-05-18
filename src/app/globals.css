@@ -70,8 +70,15 @@ body:has(.keystatic-shell) > a[aria-label="Chat with Prem on WhatsApp"] {
   display: none;
 }
 
-/* Force the Keystatic admin into dark mode regardless of OS preference. */
-.keystatic-shell {
+/* Force the Keystatic admin into dark mode regardless of OS preference.
+   Apply to <body> too so React Spectrum's portal'd overlays (dialogs,
+   popovers, menus) — rendered outside .keystatic-shell — also inherit
+   dark color-scheme. Without this, dialog body text and Cancel buttons
+   render with light-mode foreground colors against dark surfaces and
+   become invisible. */
+body:has(.keystatic-shell),
+.keystatic-shell,
+.kui-scheme--dark {
   color-scheme: dark;
 }
 

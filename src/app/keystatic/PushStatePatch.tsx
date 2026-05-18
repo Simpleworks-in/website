@@ -45,32 +45,49 @@ export default function KeystaticClientPatches() {
     }
 
     // --- force dark theme ---
+    // React Spectrum portals overlays (dialogs, popovers) to <body> with
+    // their own `kui-scheme--auto` container. Outside `.keystatic-shell`
+    // they don't inherit color-scheme: dark, so their text and form
+    // controls render with light-mode colors against the dark surface —
+    // making body text and the Cancel button invisible.
     const swap = (el: Element) => {
-      el.classList.remove("kui-scheme--auto", "kui-scheme--light");
-      el.classList.add("kui-scheme--dark");
+      if (
+        el.classList.contains("kui-scheme--auto") ||
+        el.classList.contains("kui-scheme--light")
+      ) {
+        el.classList.remove("kui-scheme--auto", "kui-scheme--light");
+        el.classList.add("kui-scheme--dark");
+      }
     };
-    document
-      .querySelectorAll(".kui-scheme--auto, .kui-scheme--light")
-      .forEach(swap);
+    const swapAllIn = (root: ParentNode) => {
+      root
+        .querySelectorAll(".kui-scheme--auto, .kui-scheme--light")
+        .forEach(swap);
+    };
+    swapAllIn(document);
 
-    // Re-check ONLY when a class attribute changes on existing theme
-    // containers — not on every node insertion. Keeps dialogs/popovers
-    // from being interrupted mid-render.
+    // Watch both class-attribute flips AND newly-portal'd subtrees.
+    // We only mutate elements that ARE kui-scheme containers — we never
+    // touch their children, so React Spectrum's dialog rendering isn't
+    // interrupted mid-flight.
     const observer = new MutationObserver((mutations) => {
       for (const m of mutations) {
         if (m.type === "attributes" && m.target instanceof Element) {
-          if (
-            m.target.classList.contains("kui-scheme--auto") ||
-            m.target.classList.contains("kui-scheme--light")
-          ) {
-            swap(m.target);
-          }
+          swap(m.target);
+        } else if (m.type === "childList") {
+          m.addedNodes.forEach((node) => {
+            if (node instanceof Element) {
+              swap(node);
+              swapAllIn(node);
+            }
+          });
         }
       }
     });
     observer.observe(document.body, {
       attributes: true,
       attributeFilter: ["class"],
+      childList: true,
       subtree: true,
     });
     return () => observer.disconnect();
