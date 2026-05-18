@@ -67,6 +67,15 @@ const withSerwist = withSerwistInit({
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // The /blog listing reads `content/posts/*.mdoc` at runtime via the
+  // Keystatic reader (it's a dynamic route — depends on searchParams).
+  // By default Vercel's serverless bundle only includes files reached
+  // through JS imports, so content/ would be missing and the reader
+  // returns []. Force-include the markdown source.
+  outputFileTracingIncludes: {
+    "/blog": ["./content/**/*"],
+    "/blog/[slug]": ["./content/**/*"],
+  },
   async headers() {
     return [
       {
