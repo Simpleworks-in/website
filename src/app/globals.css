@@ -60,3 +60,12 @@
     transform: translateY(0);
   }
 }
+
+/* Hide the public-site Nav, Footer and WhatsApp button on /keystatic
+   routes — Keystatic has its own UI chrome and the global header was
+   covering tooltips, dropdowns and the Add-button. */
+body:has(.keystatic-shell) > nav,
+body:has(.keystatic-shell) > footer,
+body:has(.keystatic-shell) > a[aria-label="Chat with Prem on WhatsApp"] {
+  display: none;
+}
