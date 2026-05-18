@@ -1,12 +1,24 @@
 import { config, fields, collection } from "@keystatic/core";
 
-const githubRepo = process.env.KEYSTATIC_GITHUB_REPO; // expected format: "owner/repo"
-const [owner, name] = (githubRepo ?? "/").split("/");
+// Storage strategy:
+// - In production (Vercel), `KEYSTATIC_GITHUB_APP_SLUG` is set and we use
+//   GitHub App mode. Anyone with write access to the repo can sign in via
+//   the Keystatic admin UI; commits go straight to the repo.
+// - Locally, we default to `local` mode: writes go to your filesystem.
+//   The first time you visit /keystatic on localhost, Keystatic's setup
+//   wizard offers to create the GitHub App for you.
+
+const REPO_OWNER = "Simpleworks-in";
+const REPO_NAME = "website";
+const APP_SLUG = process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG;
 
 const storage =
-  process.env.NODE_ENV === "development" || !owner || !name
+  process.env.NODE_ENV === "development" || !APP_SLUG
     ? ({ kind: "local" } as const)
-    : ({ kind: "github", repo: { owner, name } } as const);
+    : ({
+        kind: "github",
+        repo: { owner: REPO_OWNER, name: REPO_NAME },
+      } as const);
 
 export default config({
   storage,

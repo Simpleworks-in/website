@@ -11,6 +11,9 @@ importers:
       '@keystatic/core':
         specifier: ^0.5.50
         version: 0.5.50(@react-spectrum/provider@3.11.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@keystatic/next':
+        specifier: ^5.0.4
+        version: 5.0.4(@keystatic/core@0.5.50(@react-spectrum/provider@3.11.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@markdoc/markdoc':
         specifier: ^0.5.7
         version: 0.5.7(@types/react@19.2.14)(react@19.2.6)
@@ -497,6 +500,14 @@ packages:
   '@keystatic/core@0.5.50':
     resolution: {integrity: sha512-ilgG9hw1iWZsT8iCV+1WFX1VNo6eK+iHIs61x4vRtce6SstKad6ib7BLhXEP41Q8ja6JIKWXvv6qBPVumyy88Q==}
     peerDependencies:
+      react: ^18.2.0 || ^19.0.0
+      react-dom: ^18.2.0 || ^19.0.0
+
+  '@keystatic/next@5.0.4':
+    resolution: {integrity: sha512-48R0ZvjYZAyWyXQh/gTtV29Xs1f0BnB3/NBdTDHgcuWPNT5em9A5KMYsSNHDLhkKdbhlPAIV1T2/6JSzKsyBIA==}
+    peerDependencies:
+      '@keystatic/core': '*'
+      next: '>=14'
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
 
@@ -3017,6 +3028,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+
   serwist@9.5.11:
     resolution: {integrity: sha512-Bq6uwJFd4ET60BWI77v3VbazKHv6k7lECOiiCFwKyBu/slaCn0GHJ5L5RfsuJUKrnbD9lYUCDo6sqaKRM5M2vA==}
     peerDependencies:
@@ -4011,6 +4025,17 @@ snapshots:
       - '@react-spectrum/provider'
       - next
       - supports-color
+
+  '@keystatic/next@5.0.4(@keystatic/core@0.5.50(@react-spectrum/provider@3.11.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@babel/runtime': 7.29.2
+      '@keystatic/core': 0.5.50(@react-spectrum/provider@3.11.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@types/react': 19.2.14
+      chokidar: 3.6.0
+      next: 16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+      server-only: 0.0.1
 
   '@markdoc/markdoc@0.4.0(@types/react@19.2.14)(react@19.2.6)':
     optionalDependencies:
@@ -7028,6 +7053,8 @@ snapshots:
   semver@7.7.4: {}
 
   semver@7.8.0: {}
+
+  server-only@0.0.1: {}
 
   serwist@9.5.11(browserslist@4.28.2)(typescript@5.9.3):
     dependencies:
