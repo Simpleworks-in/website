@@ -13,7 +13,7 @@ export default function KeystaticLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="keystatic-shell relative z-[300] min-h-screen">
+    <div className="keystatic-shell min-h-screen">
       {children}
     </div>
   );

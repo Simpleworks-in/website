@@ -82,12 +82,27 @@ body:has(.keystatic-shell),
   color-scheme: dark;
 }
 
-/* Lift Keystatic's tooltips, popovers, dialogs above its own header
-   border. React Spectrum's defaults sometimes sit at z-index 1, which
-   is below our overall keystatic-shell stacking context. */
-.kui-theme [role="tooltip"],
-.kui-theme [role="dialog"],
-.kui-theme [role="menu"],
-.kui-theme [data-rac]:where([data-overlay-trigger], [data-popover]) {
+/* Lift Keystatic's tooltips, popovers, dialogs above the admin shell.
+   React Aria portals overlays to <body>, so they sit OUTSIDE the
+   .kui-theme container — selector must match at the document root.
+   Without this, overlays render underneath form inputs and their middle
+   rows (body text, Cancel button) get clipped behind taller fields. */
+/* Keystar UI's modal overlay sits at z-index: 2 with position: fixed,
+   while the public-site header on top of which Keystatic renders had
+   z-index: 300 on .keystatic-shell. That trapped the dialog body text
+   behind shell content (textareas, inputs) — only the title and the
+   primary button protruded outside any field's bounds.
+
+   Walk back from the dialog to its fixed-positioned overlay ancestor
+   using :has(), and lift the whole stack above anything else. */
+.kui-theme :has(> div > [role="dialog"]),
+.kui-theme :has(> div > [role="alertdialog"]) {
+  z-index: 9999 !important;
+}
+
+/* Tooltips and menus stay role-targeted — they're typically positioned
+   directly. */
+[role="tooltip"],
+[role="menu"] {
   z-index: 9999 !important;
 }
