@@ -69,3 +69,8 @@ body:has(.keystatic-shell) > footer,
 body:has(.keystatic-shell) > a[aria-label="Chat with Prem on WhatsApp"] {
   display: none;
 }
+
+/* Force the Keystatic admin into dark mode regardless of OS preference. */
+.keystatic-shell {
+  color-scheme: dark;
+}
