@@ -10,16 +10,23 @@ import { config, fields, collection } from "@keystatic/core";
 
 const REPO_OWNER = "Simpleworks-in";
 const REPO_NAME = "website";
-const HAS_GITHUB_AUTH =
-  !!process.env.KEYSTATIC_GITHUB_CLIENT_ID &&
-  !!process.env.KEYSTATIC_GITHUB_CLIENT_SECRET;
 
-// Storage strategy:
-// - GitHub mode when the OAuth credentials are present (typically Vercel).
-// - Local mode otherwise — including local dev before the GitHub App is
-//   created, and the production build itself (so the build doesn't fail
-//   when env vars aren't wired yet).
-const storage = HAS_GITHUB_AUTH
+// Storage strategy is decided by NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG.
+//
+// CRITICAL: we must use a NEXT_PUBLIC_* variable here because this config
+// file is imported by the Keystatic React app (a client component). Any
+// server-only env var (no NEXT_PUBLIC_ prefix) is undefined in the client
+// bundle, so a check against `KEYSTATIC_GITHUB_CLIENT_ID` would make the
+// client always think we're in local mode — which makes the UI call the
+// `/api/keystatic/tree` (local-filesystem) endpoint that doesn't exist
+// in github mode, producing 404s and a broken admin UI.
+//
+// `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` is the same variable Keystatic
+// already needs for the GitHub-App OAuth flow, so it doubles as the
+// "we have a GitHub App configured" sentinel.
+const HAS_GITHUB_APP = !!process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG;
+
+const storage = HAS_GITHUB_APP
   ? ({
       kind: "github",
       repo: { owner: REPO_OWNER, name: REPO_NAME },
