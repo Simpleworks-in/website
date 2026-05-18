@@ -10,14 +10,21 @@ import { config, fields, collection } from "@keystatic/core";
 
 const REPO_OWNER = "Simpleworks-in";
 const REPO_NAME = "website";
+const HAS_GITHUB_AUTH =
+  !!process.env.KEYSTATIC_GITHUB_CLIENT_ID &&
+  !!process.env.KEYSTATIC_GITHUB_CLIENT_SECRET;
 
-// Always use github storage so Keystatic's setup wizard becomes
-// reachable at /keystatic/setup. The wizard auto-creates the GitHub
-// App for us on first run.
-const storage = {
-  kind: "github",
-  repo: { owner: REPO_OWNER, name: REPO_NAME },
-} as const;
+// Storage strategy:
+// - GitHub mode when the OAuth credentials are present (typically Vercel).
+// - Local mode otherwise — including local dev before the GitHub App is
+//   created, and the production build itself (so the build doesn't fail
+//   when env vars aren't wired yet).
+const storage = HAS_GITHUB_AUTH
+  ? ({
+      kind: "github",
+      repo: { owner: REPO_OWNER, name: REPO_NAME },
+    } as const)
+  : ({ kind: "local" } as const);
 
 export default config({
   storage,
