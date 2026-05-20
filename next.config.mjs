@@ -94,6 +94,28 @@ const nextConfig = {
       },
     ];
   },
+  // Canonicalize Keystatic admin to the apex host. Both simpleworks.in
+  // and www.simpleworks.in alias the same deployment, but Keystatic's
+  // GitHub OAuth cookie is host-scoped (no Domain attribute) — so a
+  // session established on apex doesn't apply to www and vice versa.
+  // Pinning admin traffic to apex means the GitHub App only needs one
+  // callback URL and there's a single source of truth for the session.
+  async redirects() {
+    return [
+      {
+        source: "/keystatic/:path*",
+        has: [{ type: "host", value: "www.simpleworks.in" }],
+        destination: "https://simpleworks.in/keystatic/:path*",
+        permanent: true,
+      },
+      {
+        source: "/api/keystatic/:path*",
+        has: [{ type: "host", value: "www.simpleworks.in" }],
+        destination: "https://simpleworks.in/api/keystatic/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withSerwist(nextConfig);
