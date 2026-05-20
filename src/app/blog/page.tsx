@@ -93,7 +93,7 @@ export default async function BlogPage({
             >
               You can also read my blogs on my{" "}
               <a
-                href="https://www.premraj.substack.com"
+                href="https://premraj.substack.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 font-semibold text-[#FF6719] hover:underline"
