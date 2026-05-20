@@ -88,7 +88,7 @@ export default async function BlogPage({
               MSME and family business founders.
             </p>
             <p
-              className="mt-4 max-w-[480px] text-[15px] leading-[1.65] text-mid flex items-center gap-2"
+              className="mt-4 max-w-[480px] text-[13px] leading-[1.65] text-mid"
               style={{ opacity: 0, animation: "fadeUp 0.7s ease 0.4s both" }}
             >
               You can also read my blogs on my{" "}
@@ -96,13 +96,13 @@ export default async function BlogPage({
                 href="https://premraj.substack.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-semibold text-[#FF6719] hover:underline"
+                className="inline-flex items-center gap-1 font-semibold text-[#FF6719] hover:underline"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="#FF6719"
-                  className="w-4 h-4 flex-shrink-0"
+                  className="w-3 h-3 flex-shrink-0"
                   aria-hidden="true"
                 >
                   <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
