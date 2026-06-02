@@ -8,6 +8,9 @@ export const metadata = {
   },
   description:
     "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Prem Menon — 39 years of experience.",
+  alternates: {
+    canonical: "https://simpleworks.in",
+  },
 };
 
 const TAGLINE_ITEMS = [

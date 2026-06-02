@@ -41,6 +41,7 @@ export async function generateMetadata({
   return {
     title: { absolute: `${title} | Simpleworks Blog` },
     description,
+    alternates: { canonical: `https://simpleworks.in/blog/${slug}` },
     openGraph: { title, description, type: "article" },
   };
 }

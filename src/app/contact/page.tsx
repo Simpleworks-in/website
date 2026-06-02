@@ -7,6 +7,9 @@ export const metadata = {
   },
   description:
     "Get in touch with Prem Menon, business consultant in Bengaluru. Book a free consultation, send a message, or connect on WhatsApp. Simpleworks Consulting.",
+  alternates: {
+    canonical: "https://simpleworks.in/contact",
+  },
 };
 
 const WHATSAPP_HREF = `https://wa.me/919036099000?text=${encodeURIComponent(

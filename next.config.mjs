@@ -76,6 +76,16 @@ const nextConfig = {
     "/blog": ["./content/**/*"],
     "/blog/[slug]": ["./content/**/*"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.simpleworks.in" }],
+        destination: "https://simpleworks.in/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

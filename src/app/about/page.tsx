@@ -7,6 +7,9 @@ export const metadata = {
   },
   description:
     "Prem Menon — management consultant in India with 39 years across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru. MSME business growth consultant.",
+  alternates: {
+    canonical: "https://simpleworks.in/about",
+  },
 };
 
 export default function AboutPage() {

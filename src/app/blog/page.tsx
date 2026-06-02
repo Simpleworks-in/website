@@ -7,6 +7,9 @@ export const metadata = {
   title: { absolute: "Blog | Simpleworks | Business Consultant Bengaluru" },
   description:
     "Practical business insights from Prem Menon — management consultant with 39 years of experience. Strategy, growth, execution and leadership for Indian MSMEs.",
+  alternates: {
+    canonical: "https://simpleworks.in/blog",
+  },
 };
 
 type Category = "strategy" | "growth" | "execution" | "leadership";

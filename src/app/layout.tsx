@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     url: "https://simpleworks.in",
     siteName: "Simpleworks Consulting",
   },
+  alternates: {
+    canonical: "https://simpleworks.in",
+  },
   robots: {
     index: true,
     follow: true,
