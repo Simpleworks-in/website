@@ -161,7 +161,7 @@ export default function HomePage() {
               className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
               style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
             >
-              Management Consulting &nbsp;·&nbsp; Indian MSMEs &nbsp;·&nbsp; Bengaluru
+              Business Consulting for Indian MSME - Bengaluru
             </p>
             <h1
               className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] mb-5 md:mb-[26px] opacity-0 animate-fade-up"
