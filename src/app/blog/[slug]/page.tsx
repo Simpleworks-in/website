@@ -1,11 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
 import { notFound } from "next/navigation";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../../keystatic.config";
 import type { Metadata } from "next";
-
 const reader = () => createReader(process.cwd(), keystaticConfig);
 
 const formatDate = (iso: string | null) => {
@@ -17,9 +17,15 @@ const formatDate = (iso: string | null) => {
       year: "numeric",
     });
   } catch {
-    return iso;
+    return iso ?? "";
   }
 };
+
+/** Rough reading-time estimate: ~200 words per minute. */
+function readingTime(text: string): number {
+  const words = text.trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
+}
 
 export async function generateStaticParams() {
   const posts = await reader().collections.posts.list();
@@ -58,28 +64,80 @@ export default async function PostPage({
   const { node } = await post.content();
   const renderable = Markdoc.transform(node);
 
+  // Plain-text version for reading-time estimate
+  const plainText = Markdoc.renderers.html(renderable).replace(/<[^>]+>/g, " ");
+  const mins = readingTime(plainText);
+
   return (
     <article className="mx-auto max-w-prose-col px-6 py-16 md:py-24">
+
+      {/* Back link */}
       <Link
         href="/blog"
         className="mb-10 inline-flex items-center gap-2 text-[12px] uppercase tracking-wide-4 text-light transition-colors hover:text-red"
       >
         ← Back to all posts
       </Link>
-      <p className="text-eyebrow font-bold uppercase tracking-wide-9 text-red">
-        {post.category}
-      </p>
-      <h1 className="mt-4 text-[44px] font-bold leading-[1.12] tracking-tight-2 md:text-[52px]">
-        {post.title}
-      </h1>
-      <p className="mt-5 text-[14px] italic text-light">
-        {formatDate(post.date)}
-      </p>
-      <div className="mt-6 h-[2px] w-10 bg-red" />
-      <div className="prose-post mt-12 font-serif text-[17px] leading-[1.78] text-ink">
+
+      {/* Post header */}
+      <header className="mb-12">
+        <span className="inline-block bg-red px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide-4 text-white">
+          {post.category}
+        </span>
+        <h1 className="mt-5 text-[38px] font-bold leading-[1.12] tracking-tight-2 md:text-[48px]">
+          {post.title}
+        </h1>
+        {post.excerpt && (
+          <p className="mt-4 text-[17px] italic leading-[1.65] text-mid">
+            {post.excerpt}
+          </p>
+        )}
+        <div className="mt-6 flex flex-wrap items-center gap-3 text-[13px] text-light">
+          <span>Prem Menon</span>
+          <span className="text-rule">·</span>
+          <span>{formatDate(post.date)}</span>
+          <span className="text-rule">·</span>
+          <span>{mins} min read</span>
+        </div>
+        <div className="mt-6 h-[2px] w-10 bg-red" />
+      </header>
+
+      {/* Body — prose-post class defined in globals.css */}
+      <div className="prose-post mt-2">
         {Markdoc.renderers.react(renderable, React)}
       </div>
-      <div className="mt-20 border-t border-rule pt-8">
+
+      {/* Author card */}
+      <div className="mt-16 flex items-start gap-5 border-t border-rule pt-10">
+        <div className="relative h-[72px] w-[72px] flex-shrink-0 overflow-hidden rounded-full">
+          <Image
+            src="/prem-menon.png"
+            alt="Prem Menon"
+            fill
+            sizes="72px"
+            className="object-cover mix-blend-multiply"
+          />
+        </div>
+        <div>
+          <p className="text-[15px] font-bold">Prem Menon</p>
+          <p className="mt-1 text-[13px] leading-[1.65] text-mid">
+            Founder, Simpleworks Consulting. 39 years across Telecom, Automotive
+            and Consumer Durables — now helping Indian MSME and family-business
+            founders grow with clarity.
+          </p>
+          <div className="mt-3 flex gap-4 text-[12px] uppercase tracking-wide-4">
+            <Link href="/about" className="text-red hover:text-ink transition-colors">
+              About Prem →
+            </Link>
+            <Link href="/contact" className="text-red hover:text-ink transition-colors">
+              Work together →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer nav */}
+      <div className="mt-14 border-t border-rule pt-8">
         <Link
           href="/blog"
           className="text-[14px] tracking-wide-3 text-red transition-colors hover:text-ink"

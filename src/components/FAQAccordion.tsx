@@ -21,6 +21,30 @@ const FAQS: FAQ[] = [
     q: "How is Simpleworks different from larger consulting firms?",
     a: "Larger management consulting firms in India are built for large organisations. Simpleworks is different — we are an independent management consultant India-based founder-led businesses can actually work with — they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
   },
+  {
+    q: "What industries do you specialise in?",
+    a: "Our deepest experience is in Consumer Durables, Manufacturing, Tyres, Retail and Distribution, Telecom, and IT/SaaS. That said, the strategic problems most MSMEs face — unclear positioning, stalled growth, weak execution — are industry-agnostic. If your business is at a turning point, the industry rarely limits what we can do together.",
+  },
+  {
+    q: "Can Simpleworks help with a business turnaround?",
+    a: "Yes. Business turnaround consulting is one of our core areas. We work with businesses that are profitable but losing margin, stuck in a growth plateau, or facing a structural shift in their market. The first step is always honest diagnosis — understanding what is actually causing the problem before recommending any intervention.",
+  },
+  {
+    q: "Do you offer OKR consulting for small businesses and MSMEs?",
+    a: "Yes. We design OKR frameworks that are simple enough for a 30-person business to actually use — not the complex systems built for large enterprises. We set objectives, define key results, build accountability rhythms, and run the first review cycle with you so the team knows how it works in practice.",
+  },
+  {
+    q: "What is your consulting fee?",
+    a: "Fees are scoped after the first conversation, based on the nature and duration of the engagement. There is no standard day rate or retainer package — we price each engagement around what it actually needs. The first call is always free, with no obligation.",
+  },
+  {
+    q: "How long does a consulting engagement typically last?",
+    a: "Short engagements — a strategy sprint or go-to-market plan — typically run three to six weeks. Longer advisory mandates, including execution support and OKR coaching, usually run three to twelve months. We define scope, milestones, and an exit point at the start so there are no open-ended commitments.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Fill in the contact form on this page, send a message on WhatsApp, or email pm@simpleworks.in directly. We will get back to you within one business day to schedule a first call. That conversation is free — use it to explain what you are dealing with and we will tell you honestly whether and how we can help.",
+  },
 ];
 
 export default function FAQAccordion() {

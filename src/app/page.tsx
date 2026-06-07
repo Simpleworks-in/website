@@ -4,10 +4,11 @@ import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = {
   title: {
-    absolute: "Simpleworks | Business Consultant in Bengaluru",
+    absolute:
+      "Business Consultant in Bengaluru | MSME Strategy & Growth | Simpleworks",
   },
   description:
-    "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Prem Menon — 39 years of experience.",
+    "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs scale. Business strategy, go-to-market planning & OKR consulting. Led by Prem Menon — 39 years of experience. First call free.",
   alternates: {
     canonical: "https://simpleworks.in",
   },
@@ -39,9 +40,112 @@ const SERVICES = [
   },
 ];
 
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://simpleworks.in/#localbusiness",
+      name: "Simpleworks Consulting",
+      url: "https://simpleworks.in",
+      logo: "https://simpleworks.in/simpleworks-logo.svg",
+      image: "https://simpleworks.in/hero-illustration.png",
+      description:
+        "Independent management consulting firm in Bengaluru helping Indian MSMEs scale with business strategy, go-to-market planning and OKR consulting.",
+      telephone: "",
+      email: "pm@simpleworks.in",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "12.9716",
+        longitude: "77.5946",
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+      priceRange: "₹₹₹",
+      openingHours: "Mo-Fr 09:00-18:00",
+      founder: { "@id": "https://simpleworks.in/#prem-menon" },
+      sameAs: ["https://www.linkedin.com/company/simpleworks-consulting"],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://simpleworks.in/#prem-menon",
+      name: "Prem Menon",
+      jobTitle: "Founder & Management Consultant",
+      worksFor: { "@id": "https://simpleworks.in/#localbusiness" },
+      description:
+        "Senior management consultant with 39 years of experience across Consumer Durables, Tyres, Telecom, and IT/SaaS in India. Founder of Simpleworks Consulting, Bengaluru.",
+      url: "https://simpleworks.in/about",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://simpleworks.in/#professionalservice",
+      name: "Simpleworks Consulting",
+      url: "https://simpleworks.in",
+      description:
+        "Management consulting services for Indian MSMEs — business strategy, go-to-market planning, OKR consulting, and business turnaround. Based in Bengaluru.",
+      provider: { "@id": "https://simpleworks.in/#prem-menon" },
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Consulting Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Business Strategy Consulting",
+              description:
+                "Clarity on where your business should go. We diagnose the real problem and build a plan the organisation can follow.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Go-to-Market Strategy",
+              description:
+                "Define your segment, sharpen your message, and choose channels that work for Indian MSMEs.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Execution & OKR Consulting",
+              description:
+                "Build the goals, accountability structures, and review rhythms that turn plans into outcomes.",
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       {/* ── HERO ── */}
       <section className="flex flex-col lg:flex-row lg:min-h-[88vh] relative overflow-hidden">
         {/* Narrow brand column (desktop only) */}
@@ -88,7 +192,7 @@ export default function HomePage() {
           >
             <Image
               src="/hero-illustration.png"
-              alt="Indian MSME founder — confident, ready to grow"
+              alt="Independent MSME business consultant Bengaluru — Simpleworks Consulting"
               width={605}
               height={529}
               priority
