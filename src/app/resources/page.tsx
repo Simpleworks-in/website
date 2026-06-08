@@ -20,35 +20,7 @@ type Resource = {
   pages: string;
 };
 
-const resources: Resource[] = [
-  {
-    slug: "msme-growth-playbook",
-    title: "The MSME Growth Playbook: Five Levers for the Next Stage",
-    category: "Growth",
-    excerpt:
-      "A practical framework for Indian MSME founders to identify which lever — market, margin, talent, systems or capital — will unlock the next stage of growth.",
-    file: "/resources/msme-growth-playbook.pdf",
-    pages: "12 pages",
-  },
-  {
-    slug: "family-business-succession-checklist",
-    title: "Family Business Succession: A Founder's Checklist",
-    category: "Leadership",
-    excerpt:
-      "The questions every founder should answer before handing over the reins — drawn from three decades of advising Indian family businesses through transitions.",
-    file: "/resources/family-business-succession-checklist.pdf",
-    pages: "8 pages",
-  },
-  {
-    slug: "okr-implementation-guide",
-    title: "OKRs for MSMEs: A No-Nonsense Implementation Guide",
-    category: "Execution",
-    excerpt:
-      "How to set, cascade and review Objectives and Key Results in a small or mid-sized business — without the jargon or the overhead.",
-    file: "/resources/okr-implementation-guide.pdf",
-    pages: "10 pages",
-  },
-];
+const resources: Resource[] = [];
 
 const formatPdfMeta = (r: Resource) => `PDF · ${r.pages}`;
 
@@ -100,6 +72,11 @@ export default function ResourcesPage() {
 
       {/* RESOURCES GRID */}
       <section className="reveal px-6 py-14 md:px-[60px] md:py-20 md:pl-[132px]">
+        {resources.length === 0 ? (
+          <p className="text-[15px] italic leading-[1.7] text-mid">
+            Guides and frameworks are on their way — check back soon.
+          </p>
+        ) : (
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:grid-cols-3">
           {resources.map((resource) => (
             <article
@@ -124,6 +101,7 @@ export default function ResourcesPage() {
             </article>
           ))}
         </div>
+        )}
       </section>
 
       {/* HOW IT WORKS STRIP */}
