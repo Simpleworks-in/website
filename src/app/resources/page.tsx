@@ -63,8 +63,8 @@ export default function ResourcesPage() {
               style={{ opacity: 0, animation: "fadeUp 0.7s ease 0.3s both" }}
             >
               Downloadable guides and frameworks distilled from 39 years of advising
-              Indian MSMEs and family businesses — yours as a free PDF, in exchange
-              for an email address.
+              Indian MSMEs, startups and family businesses — yours as a free PDF.
+              Please share your email address to download. We don&apos;t spam, ever.
             </p>
           </div>
         </div>
