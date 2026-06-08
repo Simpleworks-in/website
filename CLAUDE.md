@@ -53,6 +53,7 @@ These are pixel-perfect HTML/CSS specs. **When changing a page, open the corresp
 
 - **Next.js 16 async params/searchParams**: `params` and `searchParams` are `Promise<>`. Always `await` them in server components. Type as `Promise<{ slug: string }>`.
 - **Blog posts live at `content/posts/*.mdoc` (or `.md`)** in the repo. The Keystatic reader (`createReader` from `@keystatic/core/reader`) parses them at build time against the schema in `keystatic.config.ts`. There is no Keystatic admin route — posts are authored through the GitHub web UI.
+- **Resources live at `content/resources/*.yaml`** (metadata) + `public/resources/*.pdf` (the file). Same git-only pattern as blog posts — `src/app/resources/page.tsx` reads the `resources` collection via the Keystatic reader at build time. See "Adding a downloadable resource" below.
 - **next/image**: ALL images go through `next/image` for optimization. The 3 brand assets are pre-imported via static imports for type safety.
 - **`use client`** components in `src/components/`: `Nav.tsx` (usePathname), `Reveal.tsx` (IntersectionObserver), `FAQAccordion.tsx`, `ContactTabs.tsx`. Server components everywhere else.
 
@@ -75,6 +76,23 @@ These are pixel-perfect HTML/CSS specs. **When changing a page, open the corresp
    Your post body. Use **bold**, *italic*, [links](https://...), ## headings.
    ```
 5. Click **Commit changes**. Vercel rebuilds; post is live in ~60 seconds at `/blog/<slug>`.
+
+## Adding a downloadable resource (the canonical workflow)
+
+Resources work the same git-only way as blog posts: a small metadata file in `content/resources/` plus the PDF in `public/resources/`. No code changes needed.
+
+1. **Upload the PDF**: visit https://github.com/Simpleworks-in/website/tree/main/public/resources, click **Add file → Upload files**, and drop in your PDF (e.g. `my-guide.pdf`).
+2. **Add the metadata file**: visit https://github.com/Simpleworks-in/website/tree/main/content/resources, click **Add file → Create new file**.
+3. Filename: `your-slug.yaml` (kebab-case, ends in `.yaml`).
+4. Paste in the metadata, matching the PDF filename you uploaded:
+   ```yaml
+   title: Your resource title
+   category: Growth   # or Leadership | Execution | Strategy
+   excerpt: One to three sentences shown on the resources grid.
+   pages: 12 pages
+   file: my-guide.pdf
+   ```
+5. Click **Commit changes**. Vercel rebuilds; the resource appears in ~60 seconds at `/resources`, gated behind the email-capture modal (Formspree).
 
 ## Security namespace rule
 

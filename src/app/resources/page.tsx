@@ -1,3 +1,5 @@
+import { createReader } from "@keystatic/core/reader";
+import keystaticConfig from "../../../keystatic.config";
 import Reveal from "@/components/Reveal";
 import ResourceDownloadButton from "@/components/ResourceDownloadButton";
 import ResourceDownloadModal from "@/components/ResourceDownloadModal";
@@ -11,22 +13,22 @@ export const metadata = {
   },
 };
 
-type Resource = {
-  slug: string;
-  title: string;
-  category: string;
-  excerpt: string;
-  file: string;
-  pages: string;
-};
+const formatPdfMeta = (pages: string) => `PDF · ${pages}`;
 
-const resources: Resource[] = [];
-
-const formatPdfMeta = (r: Resource) => `PDF · ${r.pages}`;
-
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
   const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "YOUR_FORM_ID";
   const resourceFormUrl = `https://formspree.io/f/${formspreeId}`;
+
+  const reader = createReader(process.cwd(), keystaticConfig);
+  const entries = await reader.collections.resources.all();
+  const resources = entries.map((r) => ({
+    slug: r.slug,
+    title: r.entry.title,
+    category: r.entry.category,
+    excerpt: r.entry.excerpt,
+    pages: r.entry.pages,
+    file: `/resources/${r.entry.file}`,
+  }));
 
   return (
     <>
@@ -94,7 +96,7 @@ export default function ResourcesPage() {
               </p>
               <div className="mt-6 flex items-center justify-between border-t border-rule pt-4">
                 <span className="text-[12px] tracking-wide-3 text-light">
-                  {formatPdfMeta(resource)}
+                  {formatPdfMeta(resource.pages)}
                 </span>
                 <ResourceDownloadButton title={resource.title} file={resource.file} />
               </div>

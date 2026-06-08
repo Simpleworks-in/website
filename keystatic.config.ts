@@ -78,5 +78,39 @@ export default config({
         }),
       },
     }),
+    resources: collection({
+      label: "Resources",
+      slugField: "title",
+      path: "content/resources/*",
+      format: { data: "yaml" },
+      columns: ["title", "category", "pages"],
+      schema: {
+        title: fields.slug({ name: { label: "Title" } }),
+        category: fields.select({
+          label: "Category",
+          options: [
+            { label: "Growth", value: "Growth" },
+            { label: "Leadership", value: "Leadership" },
+            { label: "Execution", value: "Execution" },
+            { label: "Strategy", value: "Strategy" },
+          ],
+          defaultValue: "Growth",
+        }),
+        excerpt: fields.text({
+          label: "Excerpt",
+          description: "1-3 sentence summary shown on the resources grid",
+          multiline: true,
+        }),
+        pages: fields.text({
+          label: "Page count",
+          description: "Shown next to the PDF badge, e.g. \"12 pages\"",
+        }),
+        file: fields.text({
+          label: "PDF filename",
+          description:
+            "Filename of the PDF you uploaded to public/resources/, e.g. \"my-guide.pdf\"",
+        }),
+      },
+    }),
   },
 });
