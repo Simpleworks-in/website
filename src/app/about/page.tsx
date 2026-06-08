@@ -154,7 +154,7 @@ export default function AboutPage() {
           </h2>
           <div className="text-[16px] md:text-[17px] leading-[1.75] md:leading-[1.82] text-mid">
             <p className="mb-[22px]">
-              I started my corporate career on the front line — as a{" "}
+              I started my corporate career in 1987 on the front line — as a{" "}
               <strong className="font-semibold text-ink">
                 Sales Executive at Usha International
               </strong>
@@ -163,17 +163,17 @@ export default function AboutPage() {
             </p>
             <p className="mb-[22px]">
               Over the next three decades, I moved through some of India&rsquo;s most demanding
-              industries — consumer durables, automotive tyres, telecom, and SaaS. I handled{" "}
+              industries — consumer durables, automotive tyres, telecom, and SaaS. I have handled{" "}
               <strong className="font-semibold text-ink">
-                sales and distribution, marketing, product, growth, call center operations, customer
-                retention,
+                Sales and Distribution, Marketing, Product Management, Growth, Call Center
+                Operations, Customer retention,
               </strong>{" "}
-              and <strong className="font-semibold text-ink">customer management</strong> — and
+              and <strong className="font-semibold text-ink">Customer management</strong> — and
               carried full responsibility for both the{" "}
               <strong className="font-semibold text-ink">
                 top line and bottom line of the P&amp;L
               </strong>{" "}
-              across large geographies. I built and led large teams — and learned that a
+              across large geographies. I have built and led large teams — and learned that a
               well-aligned team is often the difference between a good strategy and one that
               actually works.
             </p>
