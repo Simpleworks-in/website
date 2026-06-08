@@ -19,7 +19,7 @@ const FAQS: FAQ[] = [
   },
   {
     q: "How is Simpleworks different from larger consulting firms?",
-    a: "Larger management consulting firms in India are built for large organisations. Simpleworks is different — we are an independent management consultant India-based founder-led businesses can actually work with — they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
+    a: "Larger management consulting firms in India are built for large organisations.— they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
   },
   {
     q: "What industries do you specialise in?",
@@ -40,6 +40,10 @@ const FAQS: FAQ[] = [
   {
     q: "How long does a consulting engagement typically last?",
     a: "Short engagements — a strategy sprint or go-to-market plan — typically run three to six weeks. Longer advisory mandates, including execution support and OKR coaching, usually run three to twelve months. We define scope, milestones, and an exit point at the start so there are no open-ended commitments.",
+  },
+  {
+    q: "Will you be open for a longer duration Business mentor role with us?",
+    a: "Yes we are open to this possibility of helping the founder reach to his goals and objectives with maybe 2-4 visits per month for a longer duration.",
   },
   {
     q: "How do I get started?",
