@@ -128,12 +128,12 @@ export default function AboutPage() {
             <div className="flex flex-col gap-2.5">
               <div>
                 <p className="text-[15px] font-semibold leading-[1.3] text-ink">
-                  Vi-Works Ventures
+                  Viworks Ventures
                 </p>
               </div>
               <div>
                 <p className="text-[15px] font-semibold leading-[1.3] text-ink">
-                  Neoffice Software
+                  Neoffice AI
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
             </p>
             <p className="mb-[22px]">
               Over the next three decades, I moved through some of India&rsquo;s most demanding
-              industries — consumer durables, automotive, telecom, and SaaS. I handled{" "}
+              industries — consumer durables, automotive, tyres, telecom, and SaaS. I handled{" "}
               <strong className="font-semibold text-ink">
                 sales and distribution, marketing, product, growth, call center operations, customer
                 retention,
@@ -191,9 +191,9 @@ export default function AboutPage() {
             <p className="mb-[22px]">
               At 50, I made a deliberate choice to step off the corporate track and onto the
               entrepreneurial one. I co-founded{" "}
-              <strong className="font-semibold text-ink">Vi-Works Ventures</strong>, then headed
+              <strong className="font-semibold text-ink">Viworks Ventures</strong>, then headed
               product and growth at{" "}
-              <strong className="font-semibold text-ink">Neoffice Software</strong> — a SaaS startup
+              <strong className="font-semibold text-ink">Neoffice AI</strong> — a SaaS startup
               where I learned firsthand what it takes to build from near-zero with limited
               resources and unlimited ambition.
             </p>
