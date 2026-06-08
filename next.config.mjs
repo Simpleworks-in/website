@@ -92,7 +92,10 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        headers: securityHeaders,
+        headers:
+          process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production"
+            ? [...securityHeaders, { key: "X-Robots-Tag", value: "noindex" }]
+            : securityHeaders,
       },
       {
         source: "/sw.js",
