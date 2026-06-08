@@ -163,7 +163,7 @@ export default function AboutPage() {
             </p>
             <p className="mb-[22px]">
               Over the next three decades, I moved through some of India&rsquo;s most demanding
-              industries — consumer durables, automotive, tyres, telecom, and SaaS. I handled{" "}
+              industries — consumer durables, automotive tyres, telecom, and SaaS. I handled{" "}
               <strong className="font-semibold text-ink">
                 sales and distribution, marketing, product, growth, call center operations, customer
                 retention,
