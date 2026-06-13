@@ -11,7 +11,7 @@ const FAQS: FAQ[] = [
   },
   {
     q: "Do you work with businesses outside Bengaluru?",
-    a: "Yes. While we are based in Bengaluru, we travel to our clients across India. Every engagement is conducted in person — we come to you, wherever you are.",
+    a: "Yes. We currently offer in-person counselling in Bengaluru and other major cities across South India, with plans to expand to other regions gradually. For locations we can't yet reach in person, we're happy to work with you through online counselling.",
   },
   {
     q: "What does a typical engagement look like?",
