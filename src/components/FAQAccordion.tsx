@@ -42,12 +42,12 @@ const FAQS: FAQ[] = [
     a: "Short engagements — a strategy sprint or go-to-market plan — typically run three to six weeks. Longer advisory mandates, including execution support and OKR coaching, usually run three to twelve months. We define scope, milestones, and an exit point at the start so there are no open-ended commitments.",
   },
   {
-    q: "Will you be open for a longer duration Business mentor role with us?",
-    a: "Yes we are open to this possibility of helping the founder reach to his goals and objectives with maybe 2-4 visits per month for a longer duration.",
-  },
-  {
     q: "Do you offer a mentorship to my business?",
     a: "Yes, we can offer a business mentorship to the founder and the business for a specific period. This is a structured engagement where we work closely with you to build clarity on goals, sharpen decision-making, and keep execution on track.",
+  },
+  {
+    q: "Will you be open for a longer duration Business mentor role with us?",
+    a: "Yes we are open to this possibility of helping the founder reach to his goals and objectives with maybe 2-4 visits per month for a longer duration.",
   },
   {
     q: "How do I get started?",
