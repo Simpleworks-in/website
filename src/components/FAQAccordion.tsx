@@ -46,6 +46,10 @@ const FAQS: FAQ[] = [
     a: "Yes we are open to this possibility of helping the founder reach to his goals and objectives with maybe 2-4 visits per month for a longer duration.",
   },
   {
+    q: "Do you offer a mentorship to my business?",
+    a: "Yes, we can offer a business mentorship to the founder and the business for a specific period. This is a structured engagement where we work closely with you to build clarity on goals, sharpen decision-making, and keep execution on track.",
+  },
+  {
     q: "How do I get started?",
     a: "Fill in the contact form on this page, send a message on WhatsApp, or email pm@simpleworks.in directly. We will get back to you within one business day to schedule a first call. That conversation is free — use it to explain what you are dealing with and we will tell you honestly whether and how we can help.",
   },
