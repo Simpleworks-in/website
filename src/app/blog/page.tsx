@@ -4,9 +4,9 @@ import keystaticConfig from "../../../keystatic.config";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: { absolute: "Blog | Simpleworks | Business Consultant Bengaluru" },
+  title: { absolute: "MSME Growth Tips India | Business Growth Blog | Simpleworks" },
   description:
-    "Practical business insights from Prem Menon — management consultant with 39 years of experience. Strategy, growth, execution and leadership for Indian MSMEs.",
+    "Simpleworks business growth blog — MSME growth tips and founder advice India from Prem Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
   alternates: {
     canonical: "https://simpleworks.in/blog",
   },

@@ -8,7 +8,7 @@ export const metadata = {
       "Business Consultant in Bengaluru | MSME Strategy & Growth | Simpleworks",
   },
   description:
-    "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs scale. Business strategy, go-to-market planning & OKR consulting. Led by Prem Menon — 39 years of experience. First call free.",
+    "Simpleworks is a management consultant in India for MSMEs — based in Bengaluru. MSME consultant India for business strategy, go-to-market planning & OKR consulting. Led by Prem Menon — 39 years of experience. First call free.",
   alternates: {
     canonical: "https://simpleworks.in",
   },

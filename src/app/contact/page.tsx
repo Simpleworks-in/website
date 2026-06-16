@@ -3,10 +3,10 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: {
-    absolute: "Contact Prem Menon | Business Consultant Bengaluru",
+    absolute: "Hire a Business Consultant in India | Contact | Simpleworks",
   },
   description:
-    "Get in touch with Prem Menon, business consultant in Bengaluru. Book a free consultation, send a message, or connect on WhatsApp. Simpleworks Consulting.",
+    "Looking to hire a business consultant in India? Submit a consulting inquiry or book a free first call with Prem Menon. MSME consultant contact — Simpleworks, Bengaluru.",
   alternates: {
     canonical: "https://simpleworks.in/contact",
   },

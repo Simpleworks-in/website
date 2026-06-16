@@ -3,10 +3,10 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: {
-    absolute: "Prem Menon | Business Consultant Bengaluru | Simpleworks",
+    absolute: "Independent Management Consultant India | Prem Menon | Simpleworks",
   },
   description:
-    "Prem Menon — management consultant in India with 39 years across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru. MSME business growth consultant.",
+    "Prem Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
   alternates: {
     canonical: "https://simpleworks.in/about",
   },
