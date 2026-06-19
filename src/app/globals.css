@@ -165,6 +165,11 @@
   border-top: 1px solid var(--rule);
   margin: 2.5em 0;
 }
+.prose-post hr + h2,
+.prose-post hr + h3,
+.prose-post hr + h4 {
+  margin-top: 1.25em;
+}
 
 /* Images inside prose */
 .prose-post img {
