@@ -279,14 +279,14 @@ export default function ServicesPage() {
       </section>
 
       {/* PILLAR CONTENT BAND */}
-      <section className="border-b-[0.5px] border-rule bg-ink px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
+      <section className="border-b-[0.5px] border-rule bg-warm px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <p className="mb-5 text-eyebrow tracking-wide-9 uppercase text-light">
           Foundational Reading
         </p>
-        <h2 className="mb-5 text-[32px] leading-[1.18] font-bold tracking-tight-1 text-white md:text-sec-h2">
+        <h2 className="mb-5 text-[32px] leading-[1.18] font-bold tracking-tight-1 text-ink md:text-sec-h2">
           Two posts that cut <span className="text-red">across everything.</span>
         </h2>
-        <p className="mb-10 max-w-body-text text-[16px] leading-[1.78] text-white/60 md:text-[17px]">
+        <p className="mb-10 max-w-body-text text-[16px] leading-[1.78] text-mid md:text-[17px]">
           Some questions don&rsquo;t belong to a single service. These two
           posts explain the thinking behind how Simpleworks approaches every
           engagement — regardless of sector or problem type.
@@ -295,15 +295,15 @@ export default function ServicesPage() {
           {PILLAR_POSTS.map((post) => (
             <div
               key={post.title}
-              className="border-l-2 border-red/40 bg-white/[0.03] px-6 py-7"
+              className="border-l-2 border-red/40 bg-white px-6 py-7"
             >
               <span className="mb-3 block text-eyebrow-lg font-semibold uppercase tracking-wide-6 text-red">
                 {post.tag}
               </span>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-white">
+              <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-ink">
                 {post.title}
               </h3>
-              <span className="inline-block rounded-[1px] border border-white/20 px-2.5 py-1 text-[11px] uppercase tracking-wide-3 text-white/40">
+              <span className="inline-block rounded-[1px] border border-rule px-2.5 py-1 text-[11px] uppercase tracking-wide-3 text-light">
                 Coming soon
               </span>
             </div>
