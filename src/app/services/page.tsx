@@ -180,7 +180,7 @@ function ServiceCardItem({ card }: { card: ServiceCard }) {
       <h3 className="mb-3 text-[20px] font-bold leading-[1.3] text-ink">
         {card.title}
       </h3>
-      <p className="mb-5 text-[14px] leading-[1.7] text-mid">{card.description}</p>
+      <p className="mb-5 text-[15px] leading-[1.7] text-mid">{card.description}</p>
 
       <div className="mb-6 flex flex-col gap-2">
         {card.spokes.map((spoke) =>
