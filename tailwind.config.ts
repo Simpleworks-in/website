@@ -1,5 +1,19 @@
 import type { Config } from "tailwindcss";
 
+// Lets Tailwind's color-opacity utilities (e.g. bg-ink/60) generate working
+// CSS for our CSS-variable-backed brand colors. Plain `var(--x)` strings
+// don't support the `/<alpha>` modifier; this `rgb(var(--x-rgb) / <alpha>)`
+// form does. Requires a matching `--x-rgb: R G B` triplet in globals.css.
+function withOpacity(rgbVar: string): string {
+  const fn = ({ opacityValue }: { opacityValue?: string }) =>
+    opacityValue === undefined
+      ? `rgb(var(${rgbVar}))`
+      : `rgb(var(${rgbVar}) / ${opacityValue})`;
+  // Tailwind accepts a color callback at runtime; its TS types only declare
+  // string/RecursiveKeyValuePair, so we cast to match the declared type.
+  return fn as unknown as string;
+}
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,13 +23,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "var(--bg)",
-        ink: "var(--text)",
-        mid: "var(--mid)",
-        light: "var(--light)",
-        red: "var(--red)",
-        rule: "var(--rule)",
-        warm: "var(--warm)",
+        bg: withOpacity("--bg-rgb"),
+        ink: withOpacity("--text-rgb"),
+        mid: withOpacity("--mid-rgb"),
+        light: withOpacity("--light-rgb"),
+        red: withOpacity("--red-rgb"),
+        rule: withOpacity("--rule-rgb"),
+        warm: withOpacity("--warm-rgb"),
         wa: "#25D366",
       },
       fontFamily: {

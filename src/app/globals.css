@@ -10,6 +10,17 @@
   --red: #ed1c24;
   --rule: #e1e1e1;
   --warm: #f9f8f6;
+
+  /* RGB triplets of the same values above — used by Tailwind's color-opacity
+     utilities (e.g. bg-ink/60), which need `rgb(var(--x) / <alpha>)` rather
+     than a hex string to generate working CSS. Keep in sync with the hex vars. */
+  --bg-rgb: 255 255 255;
+  --text-rgb: 15 15 15;
+  --mid-rgb: 70 70 70;
+  --light-rgb: 135 135 135;
+  --red-rgb: 237 28 36;
+  --rule-rgb: 225 225 225;
+  --warm-rgb: 249 248 246;
 }
 
 @layer base {
