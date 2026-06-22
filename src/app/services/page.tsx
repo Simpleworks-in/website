@@ -300,7 +300,7 @@ export default function ServicesPage() {
               <span className="mb-3 block text-eyebrow-lg font-semibold uppercase tracking-wide-6 text-red">
                 {post.tag}
               </span>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-white/50">
+              <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-white">
                 {post.title}
               </h3>
               <span className="inline-block rounded-[1px] border border-white/20 px-2.5 py-1 text-[11px] uppercase tracking-wide-3 text-white/40">
