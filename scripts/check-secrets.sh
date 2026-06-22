@@ -6,7 +6,10 @@
 set -euo pipefail
 
 # Files staged for commit (excluding deletions and the lockfile)
-mapfile -t STAGED < <(git diff --cached --name-only --diff-filter=ACM | grep -vE '^(pnpm-lock\.yaml|package-lock\.json|yarn\.lock)$' || true)
+STAGED=()
+while IFS= read -r file; do
+  STAGED+=("$file")
+done < <(git diff --cached --name-only --diff-filter=ACM | grep -vE '^(pnpm-lock\.yaml|package-lock\.json|yarn\.lock)$' || true)
 
 if [ ${#STAGED[@]} -eq 0 ]; then
   exit 0
