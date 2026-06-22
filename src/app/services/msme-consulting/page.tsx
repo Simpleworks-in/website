@@ -310,7 +310,7 @@ export default function MsmeConsultingPage() {
             src="/msme-consulting-illustration.png"
             alt="MSME consultant in Bengaluru in conversation with Indian business founder — Simpleworks Consulting"
             width={800}
-            height={436}
+            height={537}
             className="w-full rounded-sm"
             priority
           />
