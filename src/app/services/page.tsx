@@ -229,7 +229,7 @@ export default function ServicesPage() {
         <h1 className="mb-6 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
           Consulting built for businesses
           <br />
-          that are ready to move.
+          that are <span className="text-red">ready to move</span>.
         </h1>
         <p className="mb-9 max-w-[560px] text-[18px] italic leading-[1.6] text-mid md:text-[20px]">
           Simpleworks works with Indian MSME founders, startup leaders, and
