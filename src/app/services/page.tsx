@@ -284,7 +284,7 @@ export default function ServicesPage() {
           Foundational Reading
         </p>
         <h2 className="mb-5 text-[32px] leading-[1.18] font-bold tracking-tight-1 text-white md:text-sec-h2">
-          Two posts that cut across everything.
+          Two posts that cut <span className="text-red">across everything.</span>
         </h2>
         <p className="mb-10 max-w-body-text text-[16px] leading-[1.78] text-white/60 md:text-[17px]">
           Some questions don&rsquo;t belong to a single service. These two
