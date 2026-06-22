@@ -8,7 +8,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "check-secrets": "bash scripts/check-secrets.sh",
     "prepare": "husky"
   },
@@ -27,7 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^10.4.0",
+    "eslint": "^9.18.0",
     "eslint-config-next": "^16.2.6",
     "husky": "^9.1.7",
     "postcss": "^8.5.10",

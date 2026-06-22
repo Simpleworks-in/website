@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ResourceDownloadModal({
   formActionUrl,
@@ -16,17 +16,17 @@ export default function ResourceDownloadModal({
     "idle"
   );
 
-  const openModal = (title: string, file: string) => {
-    setResource({ title, file });
-    setEmail("");
-    setStatus("idle");
-    setOpen(true);
-  };
-
   // Expose opener globally so resource cards (server-rendered) can trigger it.
-  if (typeof window !== "undefined") {
-    (window as any).__openResourceDownload = openModal;
-  }
+  useEffect(() => {
+    const openModal = (title: string, file: string) => {
+      setResource({ title, file });
+      setEmail("");
+      setStatus("idle");
+      setOpen(true);
+    };
+    (window as unknown as { __openResourceDownload?: typeof openModal }).__openResourceDownload =
+      openModal;
+  }, []);
 
   const close = () => setOpen(false);
 
