@@ -8,6 +8,7 @@ import logo from "../../public/Simpleworks_image_only_S.png";
 
 const links = [
   { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
   { href: "/blog", label: "Blog" },
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact" },
