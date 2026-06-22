@@ -174,7 +174,7 @@ function GroupDivider({ label, description }: { label: string; description: stri
 function ServiceCardItem({ card }: { card: ServiceCard }) {
   return (
     <div className="flex flex-col border-t-2 border-rule pt-6 pr-0 pb-7 pl-0 transition-colors duration-[250ms] hover:border-t-red md:pr-7">
-      <span className="mb-3 block text-eyebrow-lg font-semibold uppercase tracking-wide-6 text-red">
+      <span className="mb-3 block text-[10px] font-bold uppercase tracking-[0.18em] text-red">
         {card.tag}
       </span>
       <h3 className="mb-3 text-[20px] font-bold leading-[1.3] text-ink">
