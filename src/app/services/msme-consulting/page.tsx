@@ -255,7 +255,7 @@ export default function MsmeConsultingPage() {
               MSME Consulting · Bengaluru, India
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              MSME Consultant
+              MSME Consultant{" "}
               <span className="block italic text-red">in Bengaluru</span>
             </h1>
             <p className="mb-7 max-w-[460px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
@@ -551,7 +551,7 @@ export default function MsmeConsultingPage() {
                   <h3 className="mb-3 text-[17px] font-bold leading-[1.4] text-ink">
                     {item.q}
                   </h3>
-                  <p className="text-[16px] leading-[1.8] text-mid">{item.a}</p>
+                  <p className="text-[16px] leading-[1.8] text-mid md:text-[17px]">{item.a}</p>
                 </div>
               ))}
             </div>
