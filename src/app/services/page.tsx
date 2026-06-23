@@ -140,11 +140,15 @@ const PILLAR_POSTS = [
     tag: "Cross-cluster · Strategy + Execution + OKR",
     title:
       "Why Strategy Execution Fails in Indian MSMEs — and What to Do About It",
+    href: "/blog/why-strategy-execution-fails-in-indian-msm-es-and-what-to-do-about-it",
+    live: true,
   },
   {
     tag: "Cross-cluster · All services",
     title:
       "The Simpleworks 5D Method — How We Turn Business Problems Into Working Plans",
+    href: "",
+    live: false,
   },
 ];
 
@@ -292,22 +296,40 @@ export default function ServicesPage() {
           engagement — regardless of sector or problem type.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-[2px]">
-          {PILLAR_POSTS.map((post) => (
-            <div
-              key={post.title}
-              className="border-l-2 border-red/40 bg-white px-6 py-7"
-            >
-              <span className="mb-3 block text-eyebrow-lg font-semibold uppercase tracking-wide-6 text-red">
-                {post.tag}
-              </span>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-ink">
-                {post.title}
-              </h3>
-              <span className="inline-block rounded-[1px] border border-rule px-2.5 py-1 text-[11px] uppercase tracking-wide-3 text-light">
-                Coming soon
-              </span>
-            </div>
-          ))}
+          {PILLAR_POSTS.map((post) =>
+            post.live ? (
+              <Link
+                key={post.title}
+                href={post.href}
+                className="block border-l-2 border-red bg-white px-6 py-7 transition-colors hover:bg-warm"
+              >
+                <span className="mb-3 block text-eyebrow-lg font-semibold uppercase tracking-wide-6 text-red">
+                  {post.tag}
+                </span>
+                <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-ink">
+                  {post.title}
+                </h3>
+                <span className="text-[13px] font-semibold text-red">
+                  Read article →
+                </span>
+              </Link>
+            ) : (
+              <div
+                key={post.title}
+                className="border-l-2 border-red/40 bg-white px-6 py-7"
+              >
+                <span className="mb-3 block text-eyebrow-lg font-semibold uppercase tracking-wide-6 text-red">
+                  {post.tag}
+                </span>
+                <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-ink">
+                  {post.title}
+                </h3>
+                <span className="inline-block rounded-[1px] border border-rule px-2.5 py-1 text-[11px] uppercase tracking-wide-3 text-light">
+                  Coming soon
+                </span>
+              </div>
+            ),
+          )}
         </div>
       </section>
 
