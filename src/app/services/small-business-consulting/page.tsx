@@ -262,8 +262,9 @@ export default function SmallBusinessConsultingPage() {
               Small Business Consulting · Simpleworks
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              A thinking partner{" "}
-              <span className="block italic text-red">who works, not advises.</span>
+              A thinking partner
+              <br />
+              <span className="italic text-red">who works, not advises.</span>
             </h1>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               For startup founders and small business owners who need more
