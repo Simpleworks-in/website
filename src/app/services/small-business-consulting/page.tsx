@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -313,16 +314,14 @@ export default function SmallBusinessConsultingPage() {
             </Link>
           </div>
 
-          {/* Illustration coming soon — placeholder per handoff */}
-          <div className="flex aspect-[4/3] w-full items-center justify-center rounded-sm border border-dashed border-rule bg-[#f8f8f8]">
-            <p className="px-8 text-center text-[14px] italic text-light">
-              Illustration coming soon
-              <br />
-              Small business / startup context
-              <br />
-              Watercolour style — red palette
-            </p>
-          </div>
+          <Image
+            src="/small-business-consulting-illustration.png"
+            alt="Small business consultant in conversation with startup founder — Simpleworks"
+            width={800}
+            height={600}
+            className="w-full rounded-sm"
+            priority
+          />
         </div>
       </section>
 
