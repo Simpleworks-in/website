@@ -329,7 +329,7 @@ export default function ExecutionConsultingPage() {
             alt="Execution consulting workshop — Simpleworks Consulting with MSME team"
             width={800}
             height={533}
-            className="w-full rounded-sm"
+            className="w-full rounded-sm opacity-70"
             priority
           />
         </div>
