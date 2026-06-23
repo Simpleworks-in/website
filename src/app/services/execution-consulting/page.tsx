@@ -355,9 +355,9 @@ export default function ExecutionConsultingPage() {
             {GAP_STATS.map((stat) => (
               <div
                 key={stat.pct}
-                className="grid grid-cols-[60px_1fr] gap-4 border-t-[0.5px] border-rule py-5 last:border-b-[0.5px]"
+                className="grid grid-cols-[90px_1fr] gap-4 border-t-[0.5px] border-rule py-5 last:border-b-[0.5px]"
               >
-                <span className="text-[32px] font-bold leading-none tracking-tight-1 text-red">
+                <span className="whitespace-nowrap text-[32px] font-bold leading-none tracking-tight-1 text-red">
                   {stat.pct}
                 </span>
                 <p className="pt-1 text-[15px] leading-[1.6] text-mid">
