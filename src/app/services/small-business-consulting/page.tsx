@@ -340,10 +340,7 @@ export default function SmallBusinessConsultingPage() {
         </p>
         <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
           {DISTINCTIONS.map((d) => (
-            <div
-              key={d.title}
-              className={`bg-bg px-7 py-9 ${d.active ? "border-t-[3px] border-t-red" : ""}`}
-            >
+            <div key={d.title} className="bg-bg px-7 py-9">
               <p
                 className={`mb-4 text-[11px] font-bold tracking-wide-6 uppercase ${
                   d.active ? "text-red" : "text-light"
@@ -352,7 +349,13 @@ export default function SmallBusinessConsultingPage() {
                 {d.label}
               </p>
               <h3 className="mb-4 text-[20px] font-bold leading-[1.2] text-ink">
-                {d.title}
+                {d.active ? (
+                  <>
+                    <span className="text-red">Simpleworks Business</span> Mentor
+                  </>
+                ) : (
+                  d.title
+                )}
               </h3>
               <p className="text-[15px] leading-[1.75] text-mid">{d.body}</p>
               <p className="mt-4 border-t-[0.5px] border-rule pt-4 text-[13px] italic text-red">
