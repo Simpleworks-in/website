@@ -272,8 +272,9 @@ export default function ExecutionConsultingPage() {
               Execution Consulting · Simpleworks
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              Strategy means nothing{" "}
-              <span className="block italic text-red">without execution.</span>
+              Strategy means nothing
+              <br />
+              <span className="italic text-red">without execution.</span>
             </h1>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               Simpleworks closes the gap between what leadership decides and

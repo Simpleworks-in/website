@@ -255,8 +255,9 @@ export default function MsmeConsultingPage() {
               MSME Consulting · Bengaluru, India
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              MSME Consultant{" "}
-              <span className="block italic text-red">in Bengaluru</span>
+              MSME Consultant
+              <br />
+              <span className="italic text-red">in Bengaluru</span>
             </h1>
             <p className="mb-7 max-w-[460px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               Business strategy, growth, and execution advisory — built for
