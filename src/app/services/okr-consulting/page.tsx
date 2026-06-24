@@ -385,25 +385,25 @@ export default function OkrConsultingPage() {
               </p>
             </div>
           </div>
-          <div className="bg-ink px-7 py-9">
+          <div className="border-t-[3px] border-red bg-bg px-7 py-9">
             <p className="mb-3 text-[10px] font-bold tracking-wide-8 uppercase text-red">
               The KR
             </p>
-            <h3 className="mb-3.5 text-[22px] font-bold leading-[1.2] text-white">
+            <h3 className="mb-3.5 text-[22px] font-bold leading-[1.2] text-ink">
               Key Results
             </h3>
-            <p className="text-[16px] leading-[1.75] text-[#888]">
+            <p className="text-[16px] leading-[1.75] text-mid">
               Key Results are the measurable outcomes that tell you whether
               the Objective is being achieved. They answer the question: how
               will we know we got there? Each Objective has two to four Key
               Results — specific, time-bound, and owned by a named
               individual.
             </p>
-            <div className="mt-5 rounded-[2px] border-l-2 border-red bg-[#1a1a1a] px-[18px] py-4">
+            <div className="mt-5 rounded-[2px] border-l-2 border-red bg-warm px-[18px] py-4">
               <p className="mb-2 text-[9px] font-bold tracking-wide-8 uppercase text-red">
                 Example Key Results
               </p>
-              <p className="text-[14px] italic leading-[1.6] text-[#888]">
+              <p className="text-[14px] italic leading-[1.6] text-mid">
                 KR1: Win 8 new accounts in Pune by September 30.
                 <br />
                 KR2: Achieve ₹40 lakh in new revenue from the region by Q3
