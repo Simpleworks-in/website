@@ -385,8 +385,8 @@ export default function OkrConsultingPage() {
               </p>
             </div>
           </div>
-          <div className="border-t-[3px] border-red bg-bg px-7 py-9">
-            <p className="mb-3 text-[10px] font-bold tracking-wide-8 uppercase text-red">
+          <div className="bg-bg px-7 py-9">
+            <p className="mb-3 text-[10px] font-bold tracking-wide-8 uppercase text-light">
               The KR
             </p>
             <h3 className="mb-3.5 text-[22px] font-bold leading-[1.2] text-ink">
