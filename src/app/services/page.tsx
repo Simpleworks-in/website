@@ -146,9 +146,9 @@ const PILLAR_POSTS = [
   {
     tag: "Cross-cluster · All services",
     title:
-      "The Simpleworks 5D Method — How We Turn Business Problems Into Working Plans",
-    href: "",
-    live: false,
+      "Business Strategy Consulting for Indian MSMEs: How the Simpleworks 4P Framework Turns Problems Into Plans",
+    href: "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
+    live: true,
   },
 ];
 
