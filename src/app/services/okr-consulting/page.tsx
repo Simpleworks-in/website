@@ -170,10 +170,16 @@ const LIVE_SPOKES = [
       "The best OKR for a sales function starts with absolute clarity on who the target customer is. This article is the prerequisite for designing meaningful growth OKRs.",
     href: "/blog/who-is-your-customer-really",
   },
+  {
+    tag: "OKR Consulting",
+    title: "OKR Consulting for Indian MSMEs: Why Less Is More",
+    excerpt:
+      "Why the complex systems built for Google will kill a 50-person business — and what a lean OKR framework for Indian MSMEs looks like instead.",
+    href: "/blog/okr-consulting-for-indian-msm-es-why-less-is-more",
+  },
 ];
 
 const COMING_SOON_SPOKES = [
-  "Why OKRs Fail in Indian MSMEs — and the 3 Design Mistakes That Cause It",
   "OKR vs. KPI: What Should an MSME Actually Track?",
   "A Simple OKR Template for MSME Founders — With Real Examples",
 ];

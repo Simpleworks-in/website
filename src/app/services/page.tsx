@@ -87,7 +87,11 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
     description:
       "Goals that cascade. Accountability that sticks. OKR frameworks designed for 10-to-200-person businesses — simple enough to actually use without a consultant in the room.",
     spokes: [
-      { title: "Why OKRs fail in Indian MSMEs", href: "", live: false },
+      {
+        title: "OKR Consulting for Indian MSMEs: Why Less Is More",
+        href: "/blog/okr-consulting-for-indian-msm-es-why-less-is-more",
+        live: true,
+      },
       { title: "OKR vs KPI for small business", href: "", live: false },
       { title: "A simple OKR template for MSME founders", href: "", live: false },
     ],
