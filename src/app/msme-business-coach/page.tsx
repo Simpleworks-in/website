@@ -149,16 +149,16 @@ export default function MsmeBusinessCoachPage() {
       />
 
       {/* NAV */}
-      <nav className="flex items-center justify-between px-7 py-3 border-b border-[#E1E1E1] bg-white">
-        <div className="flex items-center gap-2.5">
+      <nav className="flex items-center justify-between gap-3 px-4 py-3 md:px-7 border-b border-[#E1E1E1] bg-white">
+        <div className="flex min-w-0 items-center gap-2 md:gap-2.5">
           <Image
             src="/images/landing/simpleworks-s-mark.png"
             alt="Simpleworks Consulting"
             width={30}
             height={30}
-            className="w-[30px] h-[30px] object-contain"
+            className="w-[26px] h-[26px] md:w-[30px] md:h-[30px] flex-shrink-0 object-contain"
           />
-          <span className="text-[13px] font-bold text-[#0F0F0F] tracking-wide">
+          <span className="truncate text-[12px] md:text-[13px] font-bold text-[#0F0F0F] tracking-wide">
             Simpleworks <span className="text-[#ED1C24]">Consulting</span>
           </span>
         </div>
@@ -166,7 +166,7 @@ export default function MsmeBusinessCoachPage() {
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-[#ED1C24] text-[#ED1C24] text-[11px] font-bold px-4 py-1.5 uppercase tracking-widest rounded-sm hover:bg-[#ED1C24] hover:text-white transition-colors"
+          className="flex-shrink-0 whitespace-nowrap border border-[#ED1C24] text-[#ED1C24] text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 uppercase tracking-wide md:tracking-widest rounded-sm hover:bg-[#ED1C24] hover:text-white transition-colors"
         >
           Book a call
         </a>
