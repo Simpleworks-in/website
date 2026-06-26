@@ -200,13 +200,13 @@ export default function MsmeBusinessCoachPage() {
             Online across India &nbsp;·&nbsp; In-person in Bengaluru
           </p>
         </div>
-        <div className="rounded-sm overflow-hidden">
+        <div className="relative h-[260px] md:h-[420px] w-full overflow-hidden rounded-sm">
           <Image
             src="/images/landing/msme-coach-hero.png"
             alt="MSME business coaching session in progress"
-            width={480}
-            height={400}
-            className="w-full h-[210px] object-cover object-top rounded-sm"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover object-center"
             priority
           />
         </div>
