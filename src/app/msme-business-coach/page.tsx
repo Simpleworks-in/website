@@ -310,7 +310,7 @@ export default function MsmeBusinessCoachPage() {
         <div className="flex flex-col gap-3.5">
           {STEPS.map((step, i) => (
             <div key={step.title} className="flex gap-3.5 items-start">
-              <div className="w-7 h-7 min-w-[28px] bg-[#0F0F0F] text-white rounded-full flex items-center justify-center text-[11px] font-bold mt-0.5">
+              <div className="w-7 h-7 min-w-[28px] border border-[#E1E1E1] text-[#ED1C24] rounded-full flex items-center justify-center text-[11px] font-bold mt-0.5">
                 {i + 1}
               </div>
               <div>
