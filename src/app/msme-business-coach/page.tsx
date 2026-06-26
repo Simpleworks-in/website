@@ -150,7 +150,12 @@ export default function MsmeBusinessCoachPage() {
 
       {/* NAV */}
       <nav className="flex items-center justify-between gap-3 px-4 py-3 md:px-7 border-b border-[#E1E1E1] bg-white">
-        <div className="flex min-w-0 items-center gap-2 md:gap-2.5">
+        <a
+          href="https://simpleworks.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex min-w-0 items-center gap-2 md:gap-2.5 no-underline"
+        >
           <Image
             src="/images/landing/simpleworks-s-mark.png"
             alt="Simpleworks Consulting"
@@ -161,7 +166,7 @@ export default function MsmeBusinessCoachPage() {
           <span className="truncate text-[12px] md:text-[13px] font-bold text-[#0F0F0F] tracking-wide">
             Simpleworks <span className="text-[#ED1C24]">Consulting</span>
           </span>
-        </div>
+        </a>
         <a
           href={WA_LINK}
           target="_blank"
@@ -178,7 +183,7 @@ export default function MsmeBusinessCoachPage() {
           <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#ED1C24] mb-3">
             MSME Business Coach
           </p>
-          <h1 className="text-3xl font-bold leading-tight text-[#0F0F0F] mb-3.5">
+          <h1 className="text-[26px] font-bold leading-[1.2] text-[#0F0F0F] mb-3.5">
             Your business deserves a{" "}
             <span className="text-[#ED1C24]">thinking partner,</span>
             <br />
