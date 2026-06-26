@@ -205,9 +205,18 @@ export default function MsmeBusinessCoachPage() {
             <br />
             not a template.
           </h1>
-          <p className="text-[15px] italic text-[#464646] leading-[1.7] mb-7">
+          <p className="text-[15px] italic text-[#464646] leading-[1.8] mb-7">
             One-to-one coaching for MSME founders who want to grow with
             clarity — not noise.
+            <br />
+            <br />
+            If your business is between ₹1 crore and ₹50 crore and
+            you&rsquo;re stuck — where to sell, how to sell, how to win, how
+            to plan for the next level — this is built for you.
+            <br />
+            <br />
+            We work through your actual challenges together, at your pace,
+            with full attention on your business and nothing else.
           </p>
           <div className="flex flex-wrap gap-3 mb-3">
             <a
