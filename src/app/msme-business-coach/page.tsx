@@ -205,7 +205,7 @@ export default function MsmeBusinessCoachPage() {
             <br />
             not a template.
           </h1>
-          <p className="text-sm italic text-[#464646] leading-relaxed mb-5">
+          <p className="text-[15px] italic text-[#464646] leading-[1.7] mb-7">
             One-to-one coaching for MSME founders who want to grow with
             clarity — not noise.
           </p>
