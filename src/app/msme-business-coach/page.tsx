@@ -138,7 +138,7 @@ const faqSchema = {
 
 export default function MsmeBusinessCoachPage() {
   return (
-    <main>
+    <main className="max-w-[1200px] mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -392,25 +392,6 @@ export default function MsmeBusinessCoachPage() {
           WhatsApp Prem Menon
         </a>
       </div>
-
-      {/* FOOTER */}
-      <footer className="bg-[#F2F2F0] border-t border-[#E1E1E1] px-7 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <Image
-            src="/images/landing/simpleworks-s-mark.png"
-            alt="Simpleworks"
-            width={20}
-            height={20}
-            className="w-5 h-5 object-contain"
-          />
-          <span className="text-[12px] font-semibold text-[#ED1C24]">
-            Simpleworks Consulting · Bengaluru
-          </span>
-        </div>
-        <span className="text-[12px] font-semibold text-[#ED1C24]">
-          simpleworks.in
-        </span>
-      </footer>
     </main>
   );
 }
