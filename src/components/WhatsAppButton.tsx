@@ -1,9 +1,19 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 const WA_NUMBER = "919036099000";
 const WA_MESSAGE =
   "Hi Prem, I came across Simpleworks Consulting and would like to discuss my business.";
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
   const href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+
+  if (pathname?.startsWith("/msme-business-coach")) {
+    return null;
+  }
+
   return (
     <a
       href={href}

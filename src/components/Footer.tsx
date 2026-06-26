@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import logo from "../../public/Simpleworks_image_only_S.png";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/msme-business-coach")) {
+    return null;
+  }
+
   return (
     <footer className="border-t border-rule bg-[#F2F2F0] px-6 md:px-[60px]">
       {/* Row 1: logo + social */}

@@ -21,6 +21,10 @@ export default function Nav() {
   const isActive = (href: string) =>
     pathname === href || pathname?.startsWith(href + "/");
 
+  if (pathname?.startsWith("/msme-business-coach")) {
+    return null;
+  }
+
   return (
     <nav className="sticky top-0 z-[100] border-b border-rule/100 bg-bg">
       <div className="flex items-center justify-between px-6 py-4 md:px-[60px] md:py-5">
