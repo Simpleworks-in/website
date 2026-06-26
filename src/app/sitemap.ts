@@ -10,9 +10,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${SITE}/`, changeFrequency: "monthly", priority: 1.0 },
+    { url: `${SITE}/services`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE}/services/msme-consulting`, changeFrequency: "monthly", priority: 0.9 },
+    {
+      url: `${SITE}/services/small-business-consulting`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE}/services/family-business-consulting`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    { url: `${SITE}/services/okr-consulting`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE}/services/gtm-consulting`, changeFrequency: "monthly", priority: 0.9 },
+    {
+      url: `${SITE}/services/execution-consulting`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE}/blog`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE}/contact`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${SITE}/blog`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE}/contact`, changeFrequency: "yearly", priority: 0.6 },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
