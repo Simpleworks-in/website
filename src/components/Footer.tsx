@@ -131,7 +131,7 @@ export default function Footer() {
 
       {/* Row 3: nav + copyright */}
       <div className="flex flex-col items-start gap-3 py-5 md:flex-row md:items-center md:justify-between md:py-[18px]">
-        <ul className="flex list-none gap-6 md:gap-7">
+        <ul className="flex w-full list-none flex-wrap gap-x-6 gap-y-2 md:w-auto md:gap-x-7">
           <li>
             <Link
               href="/about"
@@ -142,10 +142,26 @@ export default function Footer() {
           </li>
           <li>
             <Link
+              href="/services"
+              className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/blog"
               className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
             >
               Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/resources"
+              className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
+            >
+              Resources
             </Link>
           </li>
           <li>
