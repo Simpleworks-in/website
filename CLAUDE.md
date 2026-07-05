@@ -92,7 +92,7 @@ Resources work the same git-only way as blog posts: a small metadata file in `co
    pages: 12 pages
    file: my-guide.pdf
    ```
-5. Click **Commit changes**. Vercel rebuilds; the resource appears in ~60 seconds at `/resources`, gated behind the email-capture modal (Formspree).
+5. Click **Commit changes**. Vercel rebuilds; the resource appears in ~60 seconds at `/resources` as a direct download — no email gate.
 
 ## Security namespace rule
 

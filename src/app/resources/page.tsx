@@ -2,7 +2,6 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
 import Reveal from "@/components/Reveal";
 import ResourceDownloadButton from "@/components/ResourceDownloadButton";
-import ResourceDownloadModal from "@/components/ResourceDownloadModal";
 
 export const metadata = {
   title: { absolute: "Resources | Simpleworks | Business Consultant Bengaluru" },
@@ -16,9 +15,6 @@ export const metadata = {
 const formatPdfMeta = (pages: string) => `PDF · ${pages}`;
 
 export default async function ResourcesPage() {
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "YOUR_FORM_ID";
-  const resourceFormUrl = `https://formspree.io/f/${formspreeId}`;
-
   const reader = createReader(process.cwd(), keystaticConfig);
   const entries = await reader.collections.resources.all();
   const resources = entries.map((r) => ({
@@ -66,7 +62,6 @@ export default async function ResourcesPage() {
             >
               Downloadable guides and frameworks distilled from 39 years of advising
               Indian MSMEs, startups and family businesses — yours as a free PDF.
-              Please share your email address to download. We don&apos;t spam, ever.
             </p>
           </div>
         </div>
@@ -113,19 +108,22 @@ export default async function ResourcesPage() {
             How downloads work
           </p>
           <p className="mt-5 text-[22px] md:text-[28px] font-bold leading-[1.2] tracking-tight-1">
-            Share your email,
+            Click download,
             <br />
             get the PDF <em className="font-bold italic text-red">instantly.</em>
           </p>
           <p className="mt-4 max-w-[480px] text-[15px] leading-[1.7] text-mid">
-            Each guide is free. We just ask for an email address before the
-            download starts — so we can send you the link and, occasionally,
-            related insights. No spam, ever.
+            We don&apos;t ask for your email address or any other information
+            to download the content. If you like what you read and feel we
+            could add value to your business, do write to me at{" "}
+            <a href="mailto:pm@simpleworks.in" className="font-semibold text-red underline">
+              pm@simpleworks.in
+            </a>
+            .
           </p>
         </div>
       </div>
 
-      <ResourceDownloadModal formActionUrl={resourceFormUrl} />
       <Reveal />
     </>
   );
