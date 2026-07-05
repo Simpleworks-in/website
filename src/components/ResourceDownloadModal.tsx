@@ -35,7 +35,7 @@ export default function ResourceDownloadModal({
     if (!resource) return;
     setStatus("submitting");
     try {
-      await fetch(formActionUrl, {
+      const res = await fetch(formActionUrl, {
         method: "POST",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -44,6 +44,12 @@ export default function ResourceDownloadModal({
           _subject: `Resource download request: ${resource.title}`,
         }),
       });
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        console.error("Formspree submission failed", res.status, body);
+        setStatus("error");
+        return;
+      }
       setStatus("done");
       const link = document.createElement("a");
       link.href = resource.file;
@@ -51,7 +57,8 @@ export default function ResourceDownloadModal({
       document.body.appendChild(link);
       link.click();
       link.remove();
-    } catch {
+    } catch (err) {
+      console.error("Formspree submission threw", err);
       setStatus("error");
     }
   };
