@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
 import Reveal from "@/components/Reveal";
@@ -12,19 +13,40 @@ export const metadata = {
   },
 };
 
+type Category = "Strategy" | "Growth" | "Execution" | "Leadership";
+
+const categories: { value: Category | "all"; label: string }[] = [
+  { value: "all", label: "All" },
+  { value: "Strategy", label: "Strategy" },
+  { value: "Growth", label: "Growth" },
+  { value: "Execution", label: "Execution" },
+  { value: "Leadership", label: "Leadership" },
+];
+
 const formatPdfMeta = (pages: string) => `PDF · ${pages}`;
 
-export default async function ResourcesPage() {
+export default async function ResourcesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const params = await searchParams;
+  const activeCategory = (params?.category ?? "all") as Category | "all";
+
   const reader = createReader(process.cwd(), keystaticConfig);
   const entries = await reader.collections.resources.all();
-  const resources = entries.map((r) => ({
-    slug: r.slug,
-    title: r.entry.title,
-    category: r.entry.category,
-    excerpt: r.entry.excerpt,
-    pages: r.entry.pages,
-    file: `/resources/${r.entry.file}`,
-  }));
+  const resources = entries
+    .map((r) => ({
+      slug: r.slug,
+      title: r.entry.title,
+      category: r.entry.category,
+      excerpt: r.entry.excerpt,
+      pages: r.entry.pages,
+      file: `/resources/${r.entry.file}`,
+    }))
+    .filter((r) =>
+      activeCategory === "all" ? true : r.category === activeCategory
+    );
 
   return (
     <>
@@ -33,7 +55,7 @@ export default async function ResourcesPage() {
         <div className="relative hidden md:flex w-[72px] flex-shrink-0 items-start pt-14 pl-6">
           <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
         </div>
-        <div className="flex flex-1 flex-col gap-8 px-6 py-10 md:px-[60px] md:py-14 md:pl-14">
+        <div className="flex flex-1 flex-col md:flex-row md:flex-wrap md:items-end md:justify-between gap-8 md:gap-10 px-6 py-10 md:px-[60px] md:py-14 md:pl-14">
           <div className="max-w-[640px]">
             <p
               className="text-eyebrow uppercase tracking-wide-10 text-light"
@@ -64,6 +86,28 @@ export default async function ResourcesPage() {
               Indian MSMEs, startups and family businesses — yours as a free PDF.
             </p>
           </div>
+
+          {/* Category filter */}
+          <div className="flex flex-wrap gap-2 md:gap-2.5">
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat.value;
+              const href =
+                cat.value === "all" ? "/resources" : `/resources?category=${cat.value}`;
+              return (
+                <Link
+                  key={cat.value}
+                  href={href}
+                  className={`rounded-[1px] border px-4 py-2 text-[11px] md:px-5 md:text-[12px] tracking-wide-4 uppercase transition-colors ${
+                    isActive
+                      ? "border-red bg-red text-white"
+                      : "border-rule text-mid hover:border-red hover:text-red"
+                  }`}
+                >
+                  {cat.label}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -71,7 +115,9 @@ export default async function ResourcesPage() {
       <section className="reveal px-6 py-14 md:px-[60px] md:py-20 md:pl-[132px]">
         {resources.length === 0 ? (
           <p className="text-[15px] italic leading-[1.7] text-mid">
-            Guides and frameworks are on their way — check back soon.
+            {activeCategory === "all"
+              ? "Guides and frameworks are on their way — check back soon."
+              : `No resources published under "${activeCategory}" yet — try a different category.`}
           </p>
         ) : (
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-14 lg:grid-cols-3">
