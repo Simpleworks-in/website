@@ -131,6 +131,22 @@ const AREAS = [
 
 const LIVE_SPOKES = [
   {
+    tag: "Leadership",
+    title:
+      "The Difference Between Business Coach and Mentor Isn’t Skill — It’s Stage",
+    excerpt:
+      "Mentors give answers while coaches ask questions — most MSME founders hire the wrong one because they misdiagnose whether they're stuck on missing information or on execution.",
+    href: "/blog/the-difference-between-business-coach-and-mentor-isn-t-skill-it-s-stage",
+  },
+  {
+    tag: "Growth",
+    title:
+      "Why Indian MSMEs Should Hire an Independent Consultant — Not a Big Firm",
+    excerpt:
+      "Big consulting firms are structurally mismatched to founder-led Indian MSMEs. An independent consultant is accountable by name and incentivized to solve the problem and move on.",
+    href: "/blog/why-indian-msm-es-should-hire-an-independent-consultant-not-a-big-firm",
+  },
+  {
     tag: "Strategy",
     title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
     excerpt:
@@ -154,8 +170,6 @@ const LIVE_SPOKES = [
 ];
 
 const COMING_SOON_SPOKES = [
-  "Business Mentor vs. Business Coach vs. Consultant — Which Does a Small Business Need?",
-  "When Should a Small Business Hire a Consultant?",
   "How to Pick a Business Mentor for Your Startup in India",
 ];
 
