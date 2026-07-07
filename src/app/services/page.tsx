@@ -58,8 +58,18 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
     description:
       "For early-stage founders and growing businesses that need a thinking partner — not a coach, not a board member, but a working consultant with skin in the outcome.",
     spokes: [
-      { title: "Business mentor vs. business coach", href: "", live: false },
-      { title: "When to hire a business consultant", href: "", live: false },
+      {
+        title:
+          "The Difference Between Business Coach and Mentor Isn’t Skill — It’s Stage",
+        href: "/blog/the-difference-between-business-coach-and-mentor-isn-t-skill-it-s-stage",
+        live: true,
+      },
+      {
+        title:
+          "Why Indian MSMEs Should Hire an Independent Consultant — Not a Big Firm",
+        href: "/blog/why-indian-msm-es-should-hire-an-independent-consultant-not-a-big-firm",
+        live: true,
+      },
       { title: "What to expect in a first engagement", href: "", live: false },
     ],
     cta: "Explore Small Business Consulting",
