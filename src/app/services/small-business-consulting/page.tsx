@@ -167,6 +167,13 @@ const LIVE_SPOKES = [
       "Why a consultant who does one thing well is almost always more useful than one who promises to do everything.",
     href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
   },
+  {
+    tag: "Leadership",
+    title: "What to Expect in a First Consulting Engagement",
+    excerpt:
+      "Most founders judge a first engagement by how fast a big plan lands in their inbox. The right test is whether the process — diagnosis, real interviews, an interim checkpoint — holds up before you've spent a Rupee on the outcome.",
+    href: "/blog/what-to-expect-in-a-first-consulting-engagement-it-s-not-what-you-think",
+  },
 ];
 
 const COMING_SOON_SPOKES = [

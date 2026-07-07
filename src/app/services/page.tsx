@@ -70,7 +70,11 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
         href: "/blog/why-indian-msm-es-should-hire-an-independent-consultant-not-a-big-firm",
         live: true,
       },
-      { title: "What to expect in a first engagement", href: "", live: false },
+      {
+        title: "What to Expect in a First Consulting Engagement",
+        href: "/blog/what-to-expect-in-a-first-consulting-engagement-it-s-not-what-you-think",
+        live: true,
+      },
     ],
     cta: "Explore Small Business Consulting",
   },
