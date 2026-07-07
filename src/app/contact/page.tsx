@@ -44,15 +44,17 @@ export default async function ContactPage({
               Simpleworks Consulting · Get In Touch
             </p>
             <h1 className="text-[36px] md:text-hero-h1 font-bold leading-[1.1] tracking-tight-2 animate-fade-up">
-              Let&apos;s talk about
+              Something feels stuck.
               <br />
-              your <span className="text-red">business.</span>
+              Let&apos;s <span className="text-red">find out what.</span>
             </h1>
             <p className="text-[17px] italic text-mid leading-[1.65] mt-4 max-w-[500px] animate-fade-up">
-              The first conversation is free. Whether you are an MSME founder,
-              family business owner, or startup — send a message, book a call,
-              or reach out on WhatsApp. Prem Menon, independent management
-              consultant in Bengaluru, responds within one business day.
+              The first conversation is free — no pitch, no pressure. Just a
+              straight look at your business.
+            </p>
+            <p className="text-[15px] text-mid leading-[1.65] mt-3 max-w-[500px] animate-fade-up">
+              Send a message, book a call, or reach out on WhatsApp. Prem
+              Menon responds within one business day.
             </p>
           </div>
 
