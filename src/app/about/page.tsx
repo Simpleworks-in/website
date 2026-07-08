@@ -150,7 +150,7 @@ export default function AboutPage() {
           <h2 className="mb-7 text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
             39 years in the thick of it —
             <br />
-            building, scaling, turning around.
+            building, scaling, <span className="text-red">turning around.</span>
           </h2>
           <div className="text-[16px] md:text-[17px] leading-[1.75] md:leading-[1.82] text-mid">
             <p className="mb-[22px]">

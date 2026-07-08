@@ -223,7 +223,7 @@ export default function HomePage() {
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
             Strategy. Growth.
             <br />
-            Execution. Nothing more.
+            Execution. <span className="text-red">Nothing more.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
             We are an independent management consulting firm in Bengaluru working with founders and leadership teams across India. We don&apos;t hand over a report and walk away — we stay until the plan is moving.
