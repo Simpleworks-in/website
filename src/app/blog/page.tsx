@@ -143,7 +143,19 @@ export default async function BlogPage({
                 </span>
                 <Link href={`/blog/${post.slug}`} className="block">
                   <h2 className="text-[22px] font-bold leading-[1.3] tracking-tight-1 transition-colors group-hover:text-red">
-                    {post.title}
+                    {post.titleAccent
+                      ? (() => {
+                          const idx = post.title.lastIndexOf(post.titleAccent);
+                          if (idx === -1) return post.title;
+                          return (
+                            <>
+                              {post.title.slice(0, idx)}
+                              <span className="text-red">{post.titleAccent}</span>
+                              {post.title.slice(idx + post.titleAccent.length)}
+                            </>
+                          );
+                        })()
+                      : post.title}
                   </h2>
                 </Link>
                 <p className="mt-3.5 line-clamp-3 flex-1 text-[15px] leading-[1.7] text-mid">
