@@ -58,11 +58,6 @@ export default config({
           ],
           defaultValue: "strategy",
         }),
-        titleAccent: fields.text({
-          label: "Title Accent (optional)",
-          description: "2–3 words from the title to highlight in red. Must match exactly as they appear in the title.",
-          multiline: false,
-        }),
         excerpt: fields.text({
           label: "Excerpt",
           description: "2-line summary shown on the blog listing page",

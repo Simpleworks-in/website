@@ -85,19 +85,7 @@ export default async function PostPage({
           {post.category}
         </span>
         <h1 className="mt-5 text-[38px] font-bold leading-[1.12] tracking-tight-2 md:text-[48px]">
-          {post.titleAccent
-            ? (() => {
-                const idx = post.title.lastIndexOf(post.titleAccent);
-                if (idx === -1) return post.title;
-                return (
-                  <>
-                    {post.title.slice(0, idx)}
-                    <span className="text-red">{post.titleAccent}</span>
-                    {post.title.slice(idx + post.titleAccent.length)}
-                  </>
-                );
-              })()
-            : post.title}
+          {post.title}
         </h1>
         {post.excerpt && (
           <p className="mt-4 text-[17px] italic leading-[1.65] text-mid">
