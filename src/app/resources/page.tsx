@@ -42,7 +42,9 @@ export default async function ResourcesPage({
       category: r.entry.category,
       excerpt: r.entry.excerpt,
       pages: r.entry.pages,
-      file: `/resources/${r.entry.file}`,
+      file: r.entry.file.startsWith("/")
+        ? r.entry.file
+        : `/resources/${r.entry.file}`,
     }))
     .filter((r) =>
       activeCategory === "all" ? true : r.category === activeCategory

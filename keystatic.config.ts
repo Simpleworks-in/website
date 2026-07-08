@@ -105,10 +105,12 @@ export default config({
           label: "Page count",
           description: "Shown next to the PDF badge, e.g. \"12 pages\"",
         }),
-        file: fields.text({
-          label: "PDF filename",
-          description:
-            "Filename of the PDF you uploaded to public/resources/, e.g. \"my-guide.pdf\"",
+        file: fields.file({
+          label: "PDF file",
+          description: "Upload the resource PDF — it's committed straight to public/resources/",
+          directory: "public/resources",
+          publicPath: "/resources/",
+          validation: { isRequired: true },
         }),
       },
     }),

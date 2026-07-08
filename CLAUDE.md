@@ -79,20 +79,14 @@ These are pixel-perfect HTML/CSS specs. **When changing a page, open the corresp
 
 ## Adding a downloadable resource (the canonical workflow)
 
-Resources work the same git-only way as blog posts: a small metadata file in `content/resources/` plus the PDF in `public/resources/`. No code changes needed.
+Resources are authored entirely through the Keystatic admin UI at `/keystatic` — one item, one commit, PDF included.
 
-1. **Upload the PDF**: visit https://github.com/Simpleworks-in/website/tree/main/public/resources, click **Add file → Upload files**, and drop in your PDF (e.g. `my-guide.pdf`).
-2. **Add the metadata file**: visit https://github.com/Simpleworks-in/website/tree/main/content/resources, click **Add file → Create new file**.
-3. Filename: `your-slug.yaml` (kebab-case, ends in `.yaml`).
-4. Paste in the metadata, matching the PDF filename you uploaded:
-   ```yaml
-   title: Your resource title
-   category: Growth   # or Leadership | Execution | Strategy
-   excerpt: One to three sentences shown on the resources grid.
-   pages: 12 pages
-   file: my-guide.pdf
-   ```
-5. Click **Commit changes**. Vercel rebuilds; the resource appears in ~60 seconds at `/resources` as a direct download — no email gate.
+1. Visit `https://simpleworks.in/keystatic/branch/main/collection/resources/create`.
+2. Fill in title, category, excerpt, page count.
+3. Drag the PDF itself into the **PDF file** field — Keystatic commits it straight to `public/resources/` and stores the public path in the entry's `file` field. There's no separate GitHub upload step and no filename to type by hand.
+4. Click **Save**. Vercel rebuilds; the resource appears in ~60 seconds at `/resources` as a direct download — no email gate.
+
+The `file` field (`fields.file` in `keystatic.config.ts`, `directory: "public/resources"`, `publicPath: "/resources/"`) reads back as the full public path (e.g. `/resources/my-guide.pdf`). A handful of older entries predate this field type and still store a bare filename (e.g. `my-guide.pdf`) — `src/app/resources/page.tsx` handles both shapes (prefixes with `/resources/` only if the stored value doesn't already start with `/`).
 
 ## Security namespace rule
 
