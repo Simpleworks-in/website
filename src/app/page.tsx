@@ -259,7 +259,7 @@ export default function HomePage() {
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
             We work with businesses
             <br />
-            at turning points.
+            at <span className="text-red">turning points.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
             Our clients are Indian MSMEs, family business owners, and founder-led businesses — typically in manufacturing, consumer goods, retail, distribution, or technology. If you are looking for a business consultant for manufacturing companies in India, this is where we spend most of our time. They are established businesses, often 10 to 30 years old, that have hit a ceiling and need a business growth consultant who understands the ground reality of Indian business.
@@ -289,7 +289,7 @@ export default function HomePage() {
             <br />
             One point of contact.
             <br />
-            No unnecessary complexity.
+            <span className="text-red">No unnecessary complexity.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
             Simpleworks was founded by Prem Menon, a management consultant with nearly four decades of experience across Consumer Durables, Tyres, Telecom, and IT/SaaS — in companies ranging from large corporates to early-growth ventures.
@@ -324,7 +324,7 @@ export default function HomePage() {
             Contact Us
           </p>
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-            Let&apos;s have an honest conversation about your business.
+            Let&apos;s have an <span className="text-red">honest conversation</span> about your business.
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
             The first conversation is free. Tell us what you&apos;re working on — we&apos;ll tell you honestly whether we can help and what that would look like.
