@@ -309,7 +309,7 @@ export default function HomePage() {
           Common Questions
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-          Frequently Asked Questions
+          Frequently Asked <span className="text-red">Questions</span>
         </h2>
         <FAQAccordion />
       </section>
