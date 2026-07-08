@@ -107,7 +107,11 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         live: true,
       },
       { title: "OKR vs KPI for small business", href: "", live: false },
-      { title: "A simple OKR template for MSME founders", href: "", live: false },
+      {
+        title: "How to Build Accountability in a 50-Person MSME Business",
+        href: "/blog/how-to-build-accountability-in-a-50-person-msme-business-without-bureaucracy",
+        live: true,
+      },
     ],
     cta: "Explore OKR Consulting",
   },
