@@ -239,7 +239,7 @@ export default function AboutPage() {
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
           Grounded in practice.
           <br />
-          Sharpened by learning.
+          <span className="text-red">Sharpened by learning.</span>
         </h2>
         <div className="mt-11 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[2px]">
           <div className="border-t-2 border-rule bg-bg px-7 py-8 transition-colors duration-[250ms] hover:border-t-red">
@@ -293,7 +293,7 @@ export default function AboutPage() {
             What I Can Help You With
           </p>
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
-            Practical advice. Clear direction. Real execution.
+            Practical advice. <span className="text-red">Clear direction.</span> Real execution.
           </h2>
         </div>
 
@@ -369,7 +369,7 @@ export default function AboutPage() {
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
           If any of these sound familiar,
           <br />
-          we should talk.
+          <span className="text-red">we should talk.</span>
         </h2>
         <div className="mt-11 flex flex-col">
           <div className="group grid grid-cols-[48px_1fr] md:grid-cols-[56px_1fr] items-start gap-4 md:gap-7 border-b-[0.5px] border-rule py-8 pt-0">
@@ -461,7 +461,7 @@ export default function AboutPage() {
           <p className="text-[28px] md:text-[34px] font-bold leading-[1.2] tracking-tight-1 text-ink">
             The first conversation
             <br />
-            is free.
+            <span className="text-red">is free.</span>
           </p>
           <p className="text-[20px] md:text-[24px] font-normal italic leading-[1.3] text-mid">
             The clarity usually isn&rsquo;t.
