@@ -19,6 +19,9 @@ const WHATSAPP_HREF = `https://wa.me/919036099000?text=${encodeURIComponent(
 export default async function ContactPage() {
   const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "YOUR_FORM_ID";
   const formActionUrl = `https://formspree.io/f/${formspreeId}`;
+  const turnstileSiteKey =
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
+    "0x4AAAAAADyjtfqI6BeeGmuE1oHfN0BOSqI";
 
   return (
     <>
@@ -95,7 +98,11 @@ export default async function ContactPage() {
       </div>
 
       {/* TABS + CONTENT */}
-      <ContactTabs formActionUrl={formActionUrl} whatsappHref={WHATSAPP_HREF} />
+      <ContactTabs
+        formActionUrl={formActionUrl}
+        turnstileSiteKey={turnstileSiteKey}
+        whatsappHref={WHATSAPP_HREF}
+      />
     </>
   );
 }
