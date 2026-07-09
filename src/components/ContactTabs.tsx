@@ -1,25 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Script from "next/script";
-
-declare global {
-  interface Window {
-    turnstile?: { reset: (widgetId?: string) => void };
-  }
-}
+import { useState } from "react";
 
 type TabId = "message" | "whatsapp";
 
 type ContactTabsProps = {
   formActionUrl: string;
-  turnstileSiteKey?: string;
   whatsappHref: string;
 };
 
 export default function ContactTabs({
   formActionUrl,
-  turnstileSiteKey,
   whatsappHref,
 }: ContactTabsProps) {
   const [active, setActive] = useState<TabId>("whatsapp");
@@ -91,10 +82,7 @@ export default function ContactTabs({
         <div className="flex-1 px-6 py-10 md:p-[60px]">
           {active === "whatsapp" && <WhatsAppPanel whatsappHref={whatsappHref} />}
           {active === "message" && (
-            <MessagePanel
-              formActionUrl={formActionUrl}
-              turnstileSiteKey={turnstileSiteKey}
-            />
+            <MessagePanel formActionUrl={formActionUrl} />
           )}
         </div>
       </div>
@@ -104,29 +92,10 @@ export default function ContactTabs({
 
 /* ─────────── PANELS ─────────── */
 
-function MessagePanel({
-  formActionUrl,
-  turnstileSiteKey,
-}: {
-  formActionUrl: string;
-  turnstileSiteKey?: string;
-}) {
+function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
-  const [turnstileReady, setTurnstileReady] = useState(!turnstileSiteKey);
-
-  useEffect(() => {
-    if (!turnstileSiteKey) return;
-    const onVerified = () => setTurnstileReady(true);
-    const onExpired = () => setTurnstileReady(false);
-    window.addEventListener("turnstile-verified", onVerified);
-    window.addEventListener("turnstile-expired", onExpired);
-    return () => {
-      window.removeEventListener("turnstile-verified", onVerified);
-      window.removeEventListener("turnstile-expired", onExpired);
-    };
-  }, [turnstileSiteKey]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -143,16 +112,11 @@ function MessagePanel({
       if (res.ok) {
         setStatus("success");
         form.reset();
-        setTurnstileReady(!turnstileSiteKey);
       } else {
         setStatus("error");
-        window.turnstile?.reset();
-        setTurnstileReady(!turnstileSiteKey);
       }
     } catch {
       setStatus("error");
-      window.turnstile?.reset();
-      setTurnstileReady(!turnstileSiteKey);
     }
   }
 
@@ -182,31 +146,6 @@ function MessagePanel({
               tabIndex={-1}
               autoComplete="off"
             />
-
-            {turnstileSiteKey && (
-              <>
-                <Script
-                  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-                  strategy="afterInteractive"
-                />
-                <div
-                  className="cf-turnstile"
-                  data-sitekey={turnstileSiteKey}
-                  data-callback="onTurnstileVerified"
-                  data-expired-callback="onTurnstileExpired"
-                />
-                <Script id="turnstile-callbacks" strategy="afterInteractive">
-                  {`
-                    window.onTurnstileVerified = function() {
-                      window.dispatchEvent(new Event("turnstile-verified"));
-                    };
-                    window.onTurnstileExpired = function() {
-                      window.dispatchEvent(new Event("turnstile-expired"));
-                    };
-                  `}
-                </Script>
-              </>
-            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Field
@@ -263,7 +202,7 @@ function MessagePanel({
 
             <button
               type="submit"
-              disabled={status === "submitting" || !turnstileReady}
+              disabled={status === "submitting"}
               className="inline-flex items-center gap-[10px] font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white disabled:opacity-50 disabled:cursor-not-allowed w-fit"
             >
               {status === "submitting" ? "Sending…" : <>Send Message &nbsp;→</>}

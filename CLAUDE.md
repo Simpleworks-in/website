@@ -95,10 +95,7 @@ The `file` field (`fields.file` in `keystatic.config.ts`, `directory: "public/re
 | Public-by-design (client OK) | Server-only (secrets) |
 |---|---|
 | `NEXT_PUBLIC_FORMSPREE_ID` | (none currently) |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | |
 | `NEXT_PUBLIC_GA_ID` | |
-
-Cloudflare Turnstile's **Secret Key** (paired with the site key above) lives only in the Formspree dashboard's form settings — never in this repo or Vercel env vars.
 
 If you ever add a new secret, **never** prefix it `NEXT_PUBLIC_`. Read it inside a server component or API route only.
 
