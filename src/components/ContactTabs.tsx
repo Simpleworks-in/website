@@ -6,13 +6,11 @@ type TabId = "message" | "whatsapp";
 
 type ContactTabsProps = {
   formActionUrl: string;
-  formNextUrl: string;
   whatsappHref: string;
 };
 
 export default function ContactTabs({
   formActionUrl,
-  formNextUrl,
   whatsappHref,
 }: ContactTabsProps) {
   const [active, setActive] = useState<TabId>("whatsapp");
@@ -84,7 +82,7 @@ export default function ContactTabs({
         <div className="flex-1 px-6 py-10 md:p-[60px]">
           {active === "whatsapp" && <WhatsAppPanel whatsappHref={whatsappHref} />}
           {active === "message" && (
-            <MessagePanel formActionUrl={formActionUrl} formNextUrl={formNextUrl} />
+            <MessagePanel formActionUrl={formActionUrl} />
           )}
         </div>
       </div>
@@ -94,83 +92,123 @@ export default function ContactTabs({
 
 /* ─────────── PANELS ─────────── */
 
-function MessagePanel({
-  formActionUrl,
-  formNextUrl,
-}: {
-  formActionUrl: string;
-  formNextUrl: string;
-}) {
+function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("submitting");
+
+    try {
+      const res = await fetch(formActionUrl, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <div className="flex flex-col md:grid md:grid-cols-[1fr_340px] gap-10 md:gap-[72px] items-start">
       <div className="w-full">
         <p className="text-[13px] tracking-wide-6 uppercase text-light mb-8 font-medium">
           Send a Message
         </p>
-        <form
-          className="flex flex-col gap-5"
-          action={formActionUrl}
-          method="POST"
-        >
-          {/* Honeypot */}
-          <input
-            type="text"
-            name="_gotcha"
-            style={{ display: "none" }}
-            tabIndex={-1}
-            autoComplete="off"
-          />
-          <input type="hidden" name="_next" value={formNextUrl} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Field
-              id="name"
-              label="Your Name"
-              name="name"
-              type="text"
-              placeholder="Rajan Mehta"
-              required
-            />
-            <Field
-              id="email"
-              label="Email Address"
-              name="email"
-              type="email"
-              placeholder="rajan@company.in"
-              required
-            />
+        {status === "success" ? (
+          <div className="flex items-center gap-3 py-4">
+            <span className="w-2 h-2 rounded-full bg-[#4CAF50] flex-shrink-0" />
+            <p className="text-sm text-ink">
+              <strong className="font-semibold">Thank you.</strong> Your
+              message has been sent. Prem will respond within one business
+              day.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Field
-              id="company"
-              label="Company / Business"
-              name="company"
+        ) : (
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+            {/* Honeypot */}
+            <input
               type="text"
-              placeholder="Mehta Industries Pvt. Ltd."
+              name="_gotcha"
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
             />
-            <Field
-              id="phone"
-              label="Mobile Number"
-              name="phone"
-              type="tel"
-              placeholder="+91 98765 43210"
-            />
-          </div>
-          <Field
-            id="location"
-            label="City / Location"
-            name="location"
-            type="text"
-            placeholder="Mumbai, Maharashtra"
-          />
 
-          <button
-            type="submit"
-            className="inline-flex items-center gap-[10px] font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit"
-          >
-            Send Message &nbsp;→
-          </button>
-        </form>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Field
+                id="name"
+                label="Your Name"
+                name="name"
+                type="text"
+                placeholder="Rajan Mehta"
+                required
+              />
+              <Field
+                id="email"
+                label="Email Address"
+                name="email"
+                type="email"
+                placeholder="rajan@company.in"
+                required
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Field
+                id="company"
+                label="Company / Business"
+                name="company"
+                type="text"
+                placeholder="Mehta Industries Pvt. Ltd."
+              />
+              <Field
+                id="phone"
+                label="Mobile Number"
+                name="phone"
+                type="tel"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+            <Field
+              id="location"
+              label="City / Location"
+              name="location"
+              type="text"
+              placeholder="Mumbai, Maharashtra"
+            />
+
+            {status === "error" && (
+              <p className="text-sm text-red">
+                Something went wrong sending your message. Please try again,
+                or email{" "}
+                <a href="mailto:pm@simpleworks.in" className="underline">
+                  pm@simpleworks.in
+                </a>{" "}
+                directly.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "submitting"}
+              className="inline-flex items-center gap-[10px] font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white disabled:opacity-50 disabled:cursor-not-allowed w-fit"
+            >
+              {status === "submitting" ? "Sending…" : <>Send Message &nbsp;→</>}
+            </button>
+          </form>
+        )}
       </div>
 
       {/* Sidebar */}

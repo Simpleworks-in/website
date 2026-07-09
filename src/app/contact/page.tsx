@@ -16,17 +16,9 @@ const WHATSAPP_HREF = `https://wa.me/919036099000?text=${encodeURIComponent(
   "Hi Prem, I came across Simpleworks Consulting and would like to discuss my business."
 )}`;
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ sent?: string }>;
-}) {
-  const params = await searchParams;
-  const isSent = params?.sent === "true";
-
+export default async function ContactPage() {
   const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "YOUR_FORM_ID";
   const formActionUrl = `https://formspree.io/f/${formspreeId}`;
-  const formNextUrl = "https://simpleworks.in/contact?sent=true";
 
   return (
     <>
@@ -102,25 +94,8 @@ export default async function ContactPage({
         </div>
       </div>
 
-      {/* THANK-YOU BANNER */}
-      {isSent && (
-        <div className="md:ml-[72px] border-b border-rule/100 bg-warm px-6 md:px-[60px] py-5 animate-fade-in">
-          <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#4CAF50] flex-shrink-0" />
-            <p className="text-sm text-ink">
-              <strong className="font-semibold">Thank you.</strong> Your message
-              has been sent. Prem will respond within one business day.
-            </p>
-          </div>
-        </div>
-      )}
-
       {/* TABS + CONTENT */}
-      <ContactTabs
-        formActionUrl={formActionUrl}
-        formNextUrl={formNextUrl}
-        whatsappHref={WHATSAPP_HREF}
-      />
+      <ContactTabs formActionUrl={formActionUrl} whatsappHref={WHATSAPP_HREF} />
     </>
   );
 }
