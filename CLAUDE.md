@@ -14,7 +14,7 @@ A 5-page brochure site for Prem Menon's management consulting firm in Bengaluru.
 | `/about` | `src/app/about/page.tsx` | Prem's bio |
 | `/blog` | `src/app/blog/page.tsx` | Listing — server-rendered category filter via `?category=` |
 | `/blog/[slug]` | `src/app/blog/[slug]/page.tsx` | Post template (derived, no separate mockup) |
-| `/contact` | `src/app/contact/page.tsx` | 3 tabs: form / calendar / WhatsApp |
+| `/contact` | `src/app/contact/page.tsx` | 2 tabs: WhatsApp (default) / form. Calendar/Book-a-Call tab was removed. |
 
 There is intentionally **no `/keystatic` route** — neither admin UI nor API. Authoring is done through GitHub directly.
 
@@ -95,7 +95,6 @@ The `file` field (`fields.file` in `keystatic.config.ts`, `directory: "public/re
 | Public-by-design (client OK) | Server-only (secrets) |
 |---|---|
 | `NEXT_PUBLIC_FORMSPREE_ID` | (none currently) |
-| `NEXT_PUBLIC_CALENDAR_EMBED_URL` | |
 | `NEXT_PUBLIC_GA_ID` | |
 
 If you ever add a new secret, **never** prefix it `NEXT_PUBLIC_`. Read it inside a server component or API route only.

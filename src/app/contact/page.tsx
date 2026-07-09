@@ -27,7 +27,6 @@ export default async function ContactPage({
   const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "YOUR_FORM_ID";
   const formActionUrl = `https://formspree.io/f/${formspreeId}`;
   const formNextUrl = "https://simpleworks.in/contact?sent=true";
-  const calendarEmbedUrl = process.env.NEXT_PUBLIC_CALENDAR_EMBED_URL;
 
   return (
     <>
@@ -53,8 +52,8 @@ export default async function ContactPage({
               straight look at your business.
             </p>
             <p className="text-[15px] text-mid leading-[1.65] mt-3 max-w-[500px] animate-fade-up">
-              Send a message, book a call, or reach out on WhatsApp. Prem
-              Menon responds within one business day.
+              Message on WhatsApp for a quick reply, or send a note below.
+              Prem Menon responds personally.
             </p>
           </div>
 
@@ -120,7 +119,6 @@ export default async function ContactPage({
       <ContactTabs
         formActionUrl={formActionUrl}
         formNextUrl={formNextUrl}
-        calendarEmbedUrl={calendarEmbedUrl}
         whatsappHref={WHATSAPP_HREF}
       />
     </>
