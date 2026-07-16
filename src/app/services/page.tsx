@@ -85,7 +85,12 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
     description:
       "For second-generation founders and family-run firms navigating professionalisation, succession, and the complexity of mixing family with business.",
     spokes: [
-      { title: "Professionalising a family business", href: "", live: false },
+      {
+        title:
+          "Is Your Family Business Ready for the Next Generation? 5 Hard Questions Every Owner Must Answer",
+        href: "/blog/is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
+        live: true,
+      },
       { title: "Second-generation succession", href: "", live: false },
       { title: "Separating ownership from management", href: "", live: false },
     ],

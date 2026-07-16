@@ -178,6 +178,14 @@ const LIVE_SPOKES = [
       "Family businesses often inherit a customer base rather than choose one. This article asks the harder question: is the customer you have the customer you should be serving?",
     href: "/blog/who-is-your-customer-really",
   },
+  {
+    tag: "Succession",
+    title:
+      "Is Your Family Business Ready for the Next Generation? 5 Hard Questions Every Owner Must Answer",
+    excerpt:
+      "Five direct questions every family business owner needs to answer before handing over the reins — on readiness, roles, and what succession actually requires.",
+    href: "/blog/is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
+  },
 ];
 
 const COMING_SOON_SPOKES = [
