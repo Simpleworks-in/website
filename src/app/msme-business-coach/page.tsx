@@ -108,7 +108,11 @@ const STEPS = [
 
 const WHY_CARDS = [
   {
-    title: "Built entirely around your business",
+    title: (
+      <>
+        Built entirely <span className="text-red">around your business</span>
+      </>
+    ),
     body: "Every session begins where your business is — not where the course wants to start. The diagnosis, the plan, and the implementation support are shaped by your actual situation: your market, your margins, your team, your constraints.",
   },
   {
@@ -246,9 +250,12 @@ export default function MsmeBusinessCoachPage() {
             MSME Business Coach — India
           </p>
           <h1 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-4">
-            Your business has outgrown
-            <br />
-            generic advice.
+            Your business has{" "}
+            <span className="text-red">
+              outgrown
+              <br />
+              generic advice.
+            </span>
           </h1>
           <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
             One-to-one MSME business coaching for Indian founders in the
@@ -319,7 +326,7 @@ export default function MsmeBusinessCoachPage() {
           Understanding the role
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
-          What does an MSME business coach actually do?
+          What does an MSME business coach <span className="text-red">actually do?</span>
         </h2>
         <div className="text-[16px] md:text-[17px] text-mid leading-[1.78] flex flex-col gap-3">
           <p>
@@ -383,7 +390,7 @@ export default function MsmeBusinessCoachPage() {
           How it works
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
-          A structured engagement — built around your business
+          A structured engagement — <span className="text-red">built around your business</span>
         </h2>
         <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
           This isn&rsquo;t a course or a workshop. It&rsquo;s one-to-one
@@ -444,7 +451,7 @@ export default function MsmeBusinessCoachPage() {
           Why this, not that
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
-          What makes a one-to-one MSME business coach different
+          What makes a <span className="text-red">one-to-one</span> MSME business coach different
         </h2>
         <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
           There are plenty of coaching options for Indian MSME founders.
@@ -454,9 +461,9 @@ export default function MsmeBusinessCoachPage() {
           design, generic. Simpleworks is built differently.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-          {WHY_CARDS.map((card) => (
+          {WHY_CARDS.map((card, i) => (
             <div
-              key={card.title}
+              key={i}
               className="p-3.5 border border-rule rounded-sm"
             >
               <h4 className="text-[18px] font-bold text-ink mb-1">
@@ -510,7 +517,7 @@ export default function MsmeBusinessCoachPage() {
           Common questions
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-5">
-          What MSME founders usually ask before starting
+          What MSME founders usually <span className="text-red">ask before starting</span>
         </h2>
         <div className="divide-y divide-rule">
           {FAQS.map((item) => (
@@ -529,9 +536,7 @@ export default function MsmeBusinessCoachPage() {
       {/* CTA BAND */}
       <div className="px-7 py-10 text-center bg-bg border-t border-rule border-b border-rule">
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-2">
-          Ready to think clearly
-          <br />
-          about your business?
+          Ready to think clearly about your business?
         </h2>
         <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-6">
           Start with a free 30-minute conversation. No commitment, no pitch
