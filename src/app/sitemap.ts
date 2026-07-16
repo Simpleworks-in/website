@@ -37,6 +37,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${SITE}/msme-business-coach`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
