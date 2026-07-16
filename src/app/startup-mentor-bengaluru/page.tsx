@@ -197,9 +197,7 @@ export default function StartupMentorBengaluruPage() {
           <h1 className="mb-6 text-[clamp(42px,5vw,64px)] font-bold leading-[1.12] text-[#0F0F0F]">
             Your startup has grown.
             <br />
-            Your problems have
-            <br />
-            <em className="not-italic text-[#ED1C24]">changed.</em>
+            Your problems have <em className="not-italic text-[#ED1C24]">changed.</em>
           </h1>
           <p className="mb-8 max-w-[520px] text-[19px] italic leading-[1.65] text-[#464646]">
             One-to-one mentorship for startup founders navigating the hard
@@ -239,7 +237,7 @@ export default function StartupMentorBengaluruPage() {
             </div>
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block -mt-20">
           <Image
             src="/images/startup-mentor-hero.png"
             alt="Startup mentor session in Bengaluru co-working space"
