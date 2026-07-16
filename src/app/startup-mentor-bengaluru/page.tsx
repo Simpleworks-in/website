@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Prem Menon — senior startup mentor in Bengaluru with 39 years of operational experience. One-to-one mentorship for SaaS, D2C, and funded startup founders navigating growth, GTM, and execution.",
   keywords:
     "startup mentor Bengaluru, startup advisor India, business mentor for startups, founder mentor Bangalore, startup mentor for founders, startup scaling mentor, startup execution mentor, mentor for funded startups",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
   alternates: {
     canonical: "https://simpleworks.in/startup-mentor-bengaluru",
   },

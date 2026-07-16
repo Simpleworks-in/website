@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/keystatic", "/api/", "/startup-mentor-bengaluru"],
+        disallow: ["/keystatic", "/api/"],
       },
     ],
     sitemap: "https://simpleworks.in/sitemap.xml",
