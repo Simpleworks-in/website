@@ -364,7 +364,7 @@ export default function MsmeBusinessCoachPage() {
           Is this for you?
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          Recognise any of these?
+          <span className="text-red">Recognise</span> any of these?
         </h2>
         <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
           If you&rsquo;re running a business in the ₹1–50 crore range and
@@ -422,7 +422,7 @@ export default function MsmeBusinessCoachPage() {
           The right fit
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          MSME business coaching works best for these situations
+          MSME business <span className="text-red">coaching works best</span> for these situations
         </h2>
         <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
           Not every business is ready for one-to-one coaching. Here&rsquo;s
