@@ -211,7 +211,7 @@ export default function MsmeBusinessCoachPage() {
       />
 
       {/* NAV */}
-      <nav className="flex items-center justify-between gap-3 px-4 py-3 md:px-7 border-b border-[#E1E1E1] bg-white">
+      <nav className="flex items-center justify-between gap-3 px-4 py-3 md:px-7 border-b border-rule bg-bg">
         <a
           href="https://simpleworks.in"
           target="_blank"
@@ -225,37 +225,37 @@ export default function MsmeBusinessCoachPage() {
             height={30}
             className="w-[26px] h-[26px] md:w-[30px] md:h-[30px] flex-shrink-0 object-contain"
           />
-          <span className="truncate text-[12px] md:text-[13px] font-bold text-[#0F0F0F] tracking-wide">
-            Simpleworks <span className="text-[#ED1C24]">Consulting</span>
+          <span className="truncate text-[14px] md:text-[16px] font-bold text-ink tracking-wide">
+            Simpleworks <span className="text-red">Consulting</span>
           </span>
         </a>
         <a
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 whitespace-nowrap border border-[#ED1C24] text-[#ED1C24] text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 uppercase tracking-wide md:tracking-widest rounded-sm hover:bg-[#ED1C24] hover:text-white transition-colors"
+          className="flex-shrink-0 whitespace-nowrap border border-red text-red text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 uppercase tracking-wide-6 rounded-sm hover:bg-red hover:text-white transition-colors"
         >
           Book a call
         </a>
       </nav>
 
       {/* HERO */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-9 border-b border-[#E1E1E1]">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-9 border-b border-rule">
         <div>
-          <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#ED1C24] mb-3">
+          <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-3">
             MSME Business Coach — India
           </p>
-          <h1 className="text-[26px] font-bold leading-[1.2] text-[#0F0F0F] mb-3.5">
+          <h1 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-4">
             Your business has outgrown
             <br />
             generic advice.
           </h1>
-          <p className="text-[15px] italic text-[#464646] leading-[1.8] mb-4">
+          <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
             One-to-one MSME business coaching for Indian founders in the
             ₹1–50 crore range — built around your actual challenges, not a
             course curriculum.
           </p>
-          <p className="text-[13px] text-[#464646] leading-[1.8] mb-7">
+          <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-7">
             If you&rsquo;re running an MSME in India and feel stuck — on
             growth strategy, on where to sell, on why execution keeps
             falling short — you don&rsquo;t need another seminar. You need a
@@ -266,7 +266,7 @@ export default function MsmeBusinessCoachPage() {
           <div className="flex flex-wrap gap-3 mb-3">
             <a
               href={CONTACT_LINK}
-              className="inline-block bg-[#ED1C24] text-white text-[12px] font-bold px-5 py-2.5 rounded-sm"
+              className="inline-block bg-red text-white text-[14px] font-bold px-5 py-2.5 rounded-sm"
             >
               Book a free call
             </a>
@@ -274,13 +274,13 @@ export default function MsmeBusinessCoachPage() {
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-[1.5px] border-[#0F0F0F] text-[#0F0F0F] text-[12px] font-semibold px-5 py-2.5 rounded-sm"
+              className="inline-flex items-center gap-2 border-[1.5px] border-ink text-ink text-[14px] font-semibold px-5 py-2.5 rounded-sm"
             >
               <WhatsAppIcon />
               WhatsApp
             </a>
           </div>
-          <p className="text-[11px] text-[#878787]">
+          <p className="text-[13px] text-light">
             Online across India &nbsp;·&nbsp; In-person in Bengaluru
           </p>
         </div>
@@ -297,16 +297,16 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* STATS STRIP */}
-      <div className="grid grid-cols-3 border-b border-[#E1E1E1]">
+      <div className="grid grid-cols-3 border-b border-rule">
         {STATS.map((s, i) => (
           <div
             key={s.num}
-            className={`py-4 px-4 text-center ${i < 2 ? "border-r border-[#E1E1E1]" : ""}`}
+            className={`py-4 px-4 text-center ${i < 2 ? "border-r border-rule" : ""}`}
           >
-            <div className="text-2xl font-bold text-[#ED1C24] leading-none mb-1">
+            <div className="text-[28px] font-bold text-red leading-none mb-1">
               {s.num}
             </div>
-            <div className="text-[11px] text-[#464646] leading-snug whitespace-pre-line">
+            <div className="text-[13px] text-mid leading-snug whitespace-pre-line">
               {s.label}
             </div>
           </div>
@@ -314,14 +314,14 @@ export default function MsmeBusinessCoachPage() {
       </div>
 
       {/* WHAT IS AN MSME BUSINESS COACH */}
-      <section className="px-7 py-8 border-b border-[#E1E1E1]">
-        <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#ED1C24] mb-2">
+      <section className="px-7 py-8 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Understanding the role
         </p>
-        <h2 className="text-xl font-bold text-[#0F0F0F] mb-3">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
           What does an MSME business coach actually do?
         </h2>
-        <div className="text-sm text-[#464646] leading-relaxed flex flex-col gap-3">
+        <div className="text-[16px] md:text-[17px] text-mid leading-[1.78] flex flex-col gap-3">
           <p>
             An MSME business coach is not a trainer, not a motivational
             speaker, and not a management consultant in the traditional
@@ -352,14 +352,14 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* PAIN SECTION */}
-      <section className="px-7 py-8 border-b border-[#E1E1E1]">
-        <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#ED1C24] mb-2">
+      <section className="px-7 py-8 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Is this for you?
         </p>
-        <h2 className="text-xl font-bold text-[#0F0F0F] mb-3">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
           Recognise any of these?
         </h2>
-        <p className="text-sm text-[#464646] leading-relaxed mb-4">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
           If you&rsquo;re running a business in the ₹1–50 crore range and
           feeling any of this, you&rsquo;re in the right place.
         </p>
@@ -367,9 +367,9 @@ export default function MsmeBusinessCoachPage() {
           {PAIN_QUOTES.map((quote) => (
             <div
               key={quote}
-              className="bg-[#F9F9F9] border-l-[3px] border-[#ED1C24] px-3.5 py-3 rounded-r-sm"
+              className="bg-warm border-l-[3px] border-red px-3.5 py-3 rounded-r-sm"
             >
-              <p className="text-xs text-[#464646] leading-relaxed italic">
+              <p className="text-[15px] text-mid leading-relaxed italic">
                 {quote}
               </p>
             </div>
@@ -378,14 +378,14 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="px-7 py-8 border-b border-[#E1E1E1]">
-        <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#ED1C24] mb-2">
+      <section className="px-7 py-8 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           How it works
         </p>
-        <h2 className="text-xl font-bold text-[#0F0F0F] mb-3">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
           A structured engagement — built around your business
         </h2>
-        <p className="text-sm text-[#464646] leading-relaxed mb-4">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
           This isn&rsquo;t a course or a workshop. It&rsquo;s one-to-one
           coaching working through your actual challenges — using a proven
           five-stage process.
@@ -393,14 +393,14 @@ export default function MsmeBusinessCoachPage() {
         <div className="flex flex-col gap-3.5">
           {STEPS.map((step, i) => (
             <div key={step.title} className="flex gap-3.5 items-start">
-              <div className="w-7 h-7 min-w-[28px] border border-[#E1E1E1] text-[#ED1C24] rounded-full flex items-center justify-center text-[11px] font-bold mt-0.5">
+              <div className="w-7 h-7 min-w-[28px] border border-rule text-red rounded-full flex items-center justify-center text-[13px] font-bold mt-0.5">
                 {i + 1}
               </div>
               <div>
-                <h4 className="text-[13px] font-bold text-[#0F0F0F] mb-1">
+                <h4 className="text-[18px] font-bold text-ink mb-1">
                   {step.title}
                 </h4>
-                <p className="text-xs text-[#464646] leading-relaxed">
+                <p className="text-[15px] text-mid leading-relaxed">
                   {step.body}
                 </p>
               </div>
@@ -410,14 +410,14 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* WHO IS THIS FOR */}
-      <section className="px-7 py-8 border-b border-[#E1E1E1]">
-        <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#ED1C24] mb-2">
+      <section className="px-7 py-8 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           The right fit
         </p>
-        <h2 className="text-xl font-bold text-[#0F0F0F] mb-3">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
           MSME business coaching works best for these situations
         </h2>
-        <p className="text-sm text-[#464646] leading-relaxed mb-4">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
           Not every business is ready for one-to-one coaching. Here&rsquo;s
           where this engagement creates the most value:
         </p>
@@ -425,12 +425,12 @@ export default function MsmeBusinessCoachPage() {
           {WHO_ITS_FOR.map((card) => (
             <div
               key={card.title}
-              className="p-3.5 border border-[#E1E1E1] rounded-sm"
+              className="p-3.5 border border-rule rounded-sm"
             >
-              <h4 className="text-[13px] font-bold text-[#0F0F0F] mb-1">
+              <h4 className="text-[18px] font-bold text-ink mb-1">
                 {card.title}
               </h4>
-              <p className="text-xs text-[#464646] leading-relaxed">
+              <p className="text-[15px] text-mid leading-relaxed">
                 {card.body}
               </p>
             </div>
@@ -439,14 +439,14 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* WHY SIMPLEWORKS */}
-      <section className="px-7 py-8 border-b border-[#E1E1E1]">
-        <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#ED1C24] mb-2">
+      <section className="px-7 py-8 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Why this, not that
         </p>
-        <h2 className="text-xl font-bold text-[#0F0F0F] mb-3">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
           What makes a one-to-one MSME business coach different
         </h2>
-        <p className="text-sm text-[#464646] leading-relaxed mb-4">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
           There are plenty of coaching options for Indian MSME founders.
           Group programmes, online cohorts, weekend bootcamps — most built
           around a system that works across many businesses simultaneously.
@@ -457,12 +457,12 @@ export default function MsmeBusinessCoachPage() {
           {WHY_CARDS.map((card) => (
             <div
               key={card.title}
-              className="p-3.5 border border-[#E1E1E1] rounded-sm"
+              className="p-3.5 border border-rule rounded-sm"
             >
-              <h4 className="text-[13px] font-bold text-[#0F0F0F] mb-1">
+              <h4 className="text-[18px] font-bold text-ink mb-1">
                 {card.title}
               </h4>
-              <p className="text-xs text-[#464646] leading-relaxed">
+              <p className="text-[15px] text-mid leading-relaxed">
                 {card.body}
               </p>
             </div>
@@ -471,8 +471,8 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* ABOUT STRIP */}
-      <div className="grid grid-cols-[78px_1fr] gap-5 items-center px-7 py-7 border-b border-[#E1E1E1] bg-[#FAFAFA]">
-        <div className="w-[78px] h-[78px] rounded-full overflow-hidden border-2 border-[#E1E1E1] flex-shrink-0">
+      <div className="grid grid-cols-[78px_1fr] gap-5 items-center px-7 py-7 border-b border-rule bg-warm">
+        <div className="w-[78px] h-[78px] rounded-full overflow-hidden border-2 border-rule flex-shrink-0">
           <Image
             src="/images/landing/prem-menon-portrait.png"
             alt="Prem Menon, MSME Business Coach"
@@ -482,13 +482,13 @@ export default function MsmeBusinessCoachPage() {
           />
         </div>
         <div>
-          <h3 className="text-[15px] font-bold text-[#0F0F0F] mb-1.5">
+          <h3 className="text-[18px] font-bold text-ink mb-1.5">
             Prem Menon
           </h3>
-          <p className="text-[11px] font-semibold text-[#878787] mb-1.5">
+          <p className="text-[13px] font-semibold text-light mb-1.5">
             Founder, Simpleworks Consulting | MSME Business Coach, Bengaluru
           </p>
-          <p className="text-xs text-[#464646] leading-relaxed">
+          <p className="text-[15px] text-mid leading-relaxed">
             Prem Menon is a senior management consultant and MSME business
             coach based in Bengaluru with 39 years of experience across Usha
             International, MRF, Apollo Tyres, Airtel, Tata Docomo, and
@@ -505,20 +505,20 @@ export default function MsmeBusinessCoachPage() {
       </div>
 
       {/* FAQ */}
-      <section className="px-7 py-8 border-b border-[#E1E1E1]">
-        <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#ED1C24] mb-2">
+      <section className="px-7 py-8 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Common questions
         </p>
-        <h2 className="text-xl font-bold text-[#0F0F0F] mb-4">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-5">
           What MSME founders usually ask before starting
         </h2>
-        <div className="divide-y divide-[#E1E1E1]">
+        <div className="divide-y divide-rule">
           {FAQS.map((item) => (
-            <div key={item.q} className="py-3.5">
-              <p className="text-[13px] font-bold text-[#0F0F0F] mb-1.5">
+            <div key={item.q} className="py-4">
+              <p className="text-[18px] font-bold text-ink mb-1.5">
                 {item.q}
               </p>
-              <p className="text-xs text-[#464646] leading-relaxed">
+              <p className="text-[15px] text-mid leading-relaxed">
                 {item.a}
               </p>
             </div>
@@ -527,13 +527,13 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* CTA BAND */}
-      <div className="px-7 py-10 text-center bg-white border-t border-[#E1E1E1] border-b border-[#E1E1E1]">
-        <h2 className="text-xl font-bold text-[#0F0F0F] mb-2 leading-snug">
+      <div className="px-7 py-10 text-center bg-bg border-t border-rule border-b border-rule">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-2">
           Ready to think clearly
           <br />
           about your business?
         </h2>
-        <p className="text-sm italic text-[#464646] mb-6">
+        <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-6">
           Start with a free 30-minute conversation. No commitment, no pitch
           — just a clear-eyed look at what your MSME is dealing with and
           whether this helps.
@@ -541,7 +541,7 @@ export default function MsmeBusinessCoachPage() {
         <div className="flex flex-wrap justify-center gap-3">
           <a
             href={CONTACT_LINK}
-            className="inline-block bg-[#ED1C24] text-white text-[13px] font-bold px-7 py-3.5 rounded-sm"
+            className="inline-block bg-red text-white text-[14px] font-bold px-7 py-3.5 rounded-sm"
           >
             Book a free call
           </a>
@@ -549,7 +549,7 @@ export default function MsmeBusinessCoachPage() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 border-[1.5px] border-[#0F0F0F] text-[#0F0F0F] text-[13px] font-bold px-7 py-3.5 rounded-sm"
+            className="inline-flex items-center gap-2.5 border-[1.5px] border-ink text-ink text-[14px] font-bold px-7 py-3.5 rounded-sm"
           >
             <WhatsAppIcon />
             WhatsApp
