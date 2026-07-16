@@ -189,7 +189,7 @@ export default function StartupMentorBengaluruPage() {
       </nav>
 
       {/* HERO */}
-      <section className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 px-6 py-[100px] md:min-h-screen md:grid-cols-2 md:gap-16 md:px-12 md:py-[120px]">
+      <section className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 px-6 py-[100px] md:min-h-screen md:grid-cols-[1fr_1.15fr] md:gap-10 md:px-12 md:py-[120px]">
         <div>
           <p className="relative mb-6 flex items-center gap-3 pl-4 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#878787] before:absolute before:left-0 before:h-5 before:w-[2px] before:bg-[#ED1C24]">
             Startup Mentor &middot; Bengaluru
@@ -241,10 +241,10 @@ export default function StartupMentorBengaluruPage() {
           <Image
             src="/images/startup-mentor-hero.png"
             alt="Startup mentor session in Bengaluru co-working space"
-            width={640}
-            height={480}
+            width={1376}
+            height={768}
             priority
-            className="mix-blend-multiply w-full h-auto max-w-[520px]"
+            className="mix-blend-multiply w-full h-auto max-w-[680px]"
           />
         </div>
       </section>
