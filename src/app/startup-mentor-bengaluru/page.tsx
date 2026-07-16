@@ -168,7 +168,7 @@ export default function StartupMentorBengaluruPage() {
   return (
     <main className="bg-white">
       {/* NAV */}
-      <nav className="sticky top-0 z-[100] flex h-16 items-center justify-between border-b border-[#E1E1E1] bg-white/97 px-6 md:px-12">
+      <nav className="sticky top-0 z-[100] flex h-16 items-center justify-between border-b border-[#E1E1E1] bg-white px-6 md:px-12">
         <a
           href="https://simpleworks.in"
           className="flex items-center gap-3 no-underline"
