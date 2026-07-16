@@ -189,7 +189,7 @@ export default function StartupMentorBengaluruPage() {
       </nav>
 
       {/* HERO */}
-      <section className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 px-6 py-[100px] md:min-h-screen md:grid-cols-[1fr_1.15fr] md:gap-10 md:px-12 md:py-[120px]">
+      <section className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-16 px-6 py-[100px] md:min-h-screen md:grid-cols-[0.85fr_1.15fr] md:gap-8 md:px-10 md:py-[120px]">
         <div>
           <p className="relative mb-6 flex items-center gap-3 pl-4 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#878787] before:absolute before:left-0 before:h-5 before:w-[2px] before:bg-[#ED1C24]">
             Startup Mentor &middot; Bengaluru
@@ -197,7 +197,7 @@ export default function StartupMentorBengaluruPage() {
           <h1 className="mb-6 text-[clamp(42px,5vw,64px)] font-bold leading-[1.12] text-[#0F0F0F]">
             Your startup has grown.
             <br />
-            Your problems have <em className="not-italic text-[#ED1C24]">changed.</em>
+            Your <em className="not-italic text-[#ED1C24]">problems have changed.</em>
           </h1>
           <p className="mb-8 max-w-[520px] text-[19px] italic leading-[1.65] text-[#464646]">
             One-to-one mentorship for startup founders navigating the hard
@@ -244,7 +244,7 @@ export default function StartupMentorBengaluruPage() {
             width={1376}
             height={768}
             priority
-            className="mix-blend-multiply w-full h-auto max-w-[680px]"
+            className="mix-blend-multiply w-full h-auto max-w-[800px]"
           />
         </div>
       </section>
@@ -259,7 +259,7 @@ export default function StartupMentorBengaluruPage() {
             <h2 className="mb-6 text-[clamp(28px,3.5vw,42px)] font-bold leading-[1.2] text-[#0F0F0F]">
               Most startup mentors teach.
               <br />
-              You need someone who has <em className="not-italic text-[#ED1C24]">done.</em>
+              You need <em className="not-italic text-[#ED1C24]">someone who has done.</em>
             </h2>
             <p className="mb-9 text-[17px] leading-[1.75] text-[#464646]">
               Bengaluru&rsquo;s startup ecosystem is exceptional at
