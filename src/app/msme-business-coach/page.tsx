@@ -244,12 +244,12 @@ export default function MsmeBusinessCoachPage() {
       </nav>
 
       {/* HERO */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-9 border-b border-rule">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-12 md:py-16 border-b border-rule">
         <div>
           <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-3">
             MSME Business Coach — India
           </p>
-          <h1 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-4">
+          <h1 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-6">
             Your business has{" "}
             <span className="text-red">
               outgrown
@@ -321,11 +321,11 @@ export default function MsmeBusinessCoachPage() {
       </div>
 
       {/* WHAT IS AN MSME BUSINESS COACH */}
-      <section className="px-7 py-8 border-b border-rule">
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Understanding the role
         </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
           What does an MSME business coach <span className="text-red">actually do?</span>
         </h2>
         <div className="text-[16px] md:text-[17px] text-mid leading-[1.78] flex flex-col gap-3">
@@ -359,18 +359,18 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* PAIN SECTION */}
-      <section className="px-7 py-8 border-b border-rule">
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Is this for you?
         </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
           Recognise any of these?
         </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
           If you&rsquo;re running a business in the ₹1–50 crore range and
           feeling any of this, you&rsquo;re in the right place.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {PAIN_QUOTES.map((quote) => (
             <div
               key={quote}
@@ -385,14 +385,14 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="px-7 py-8 border-b border-rule">
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           How it works
         </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
           A structured engagement — <span className="text-red">built around your business</span>
         </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
           This isn&rsquo;t a course or a workshop. It&rsquo;s one-to-one
           coaching working through your actual challenges — using a proven
           five-stage process.
@@ -417,22 +417,22 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* WHO IS THIS FOR */}
-      <section className="px-7 py-8 border-b border-rule">
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           The right fit
         </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
           MSME business coaching works best for these situations
         </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
           Not every business is ready for one-to-one coaching. Here&rsquo;s
           where this engagement creates the most value:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {WHO_ITS_FOR.map((card) => (
             <div
               key={card.title}
-              className="p-3.5 border border-rule rounded-sm"
+              className="p-5 border border-rule rounded-sm"
             >
               <h4 className="text-[18px] font-bold text-ink mb-1">
                 {card.title}
@@ -446,25 +446,25 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* WHY SIMPLEWORKS */}
-      <section className="px-7 py-8 border-b border-rule">
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Why this, not that
         </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
           What makes a <span className="text-red">one-to-one</span> MSME business coach different
         </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-5">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
           There are plenty of coaching options for Indian MSME founders.
           Group programmes, online cohorts, weekend bootcamps — most built
           around a system that works across many businesses simultaneously.
           That model is efficient and affordable. It&rsquo;s also, by
           design, generic. Simpleworks is built differently.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {WHY_CARDS.map((card, i) => (
             <div
               key={i}
-              className="p-3.5 border border-rule rounded-sm"
+              className="p-5 border border-rule rounded-sm"
             >
               <h4 className="text-[18px] font-bold text-ink mb-1">
                 {card.title}
@@ -512,11 +512,11 @@ export default function MsmeBusinessCoachPage() {
       </div>
 
       {/* FAQ */}
-      <section className="px-7 py-8 border-b border-rule">
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Common questions
         </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-5">
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
           What MSME founders usually <span className="text-red">ask before starting</span>
         </h2>
         <div className="divide-y divide-rule">
