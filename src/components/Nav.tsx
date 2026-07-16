@@ -21,7 +21,10 @@ export default function Nav() {
   const isActive = (href: string) =>
     pathname === href || pathname?.startsWith(href + "/");
 
-  if (pathname?.startsWith("/msme-business-coach")) {
+  if (
+    pathname?.startsWith("/msme-business-coach") ||
+    pathname?.startsWith("/startup-mentor-bengaluru")
+  ) {
     return null;
   }
 

@@ -10,7 +10,10 @@ export default function WhatsAppButton() {
   const pathname = usePathname();
   const href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
 
-  if (pathname?.startsWith("/msme-business-coach")) {
+  if (
+    pathname?.startsWith("/msme-business-coach") ||
+    pathname?.startsWith("/startup-mentor-bengaluru")
+  ) {
     return null;
   }
 
