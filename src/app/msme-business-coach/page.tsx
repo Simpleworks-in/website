@@ -536,7 +536,7 @@ export default function MsmeBusinessCoachPage() {
       {/* CTA BAND */}
       <div className="px-7 py-10 text-center bg-bg border-t border-rule border-b border-rule">
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-2">
-          Ready to think clearly about your business?
+          <span className="text-red">Ready to think</span> clearly about your business?
         </h2>
         <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-6">
           Start with a free 30-minute conversation. No commitment, no pitch
