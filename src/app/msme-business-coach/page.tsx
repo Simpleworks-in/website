@@ -508,6 +508,23 @@ export default function MsmeBusinessCoachPage() {
             businesses in the ₹1 crore to ₹50 crore revenue range — one
             business at a time.
           </p>
+          <div className="flex flex-wrap gap-3 mt-4">
+            <a
+              href={CONTACT_LINK}
+              className="inline-block bg-red text-white text-[14px] font-bold px-5 py-2.5 rounded-sm"
+            >
+              Book a free call
+            </a>
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-[1.5px] border-ink text-ink text-[14px] font-semibold px-5 py-2.5 rounded-sm"
+            >
+              <WhatsAppIcon />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
 
