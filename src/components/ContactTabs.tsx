@@ -337,7 +337,6 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
           </svg>
           Open WhatsApp Chat
         </a>
-        <p className="mt-4 text-[13px] text-light">+91 90360 99000</p>
       </div>
 
       <div className="w-full flex justify-center items-center">
