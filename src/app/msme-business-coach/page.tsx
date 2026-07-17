@@ -160,6 +160,27 @@ const FAQS = [
   },
 ];
 
+const BLOG_LINKS = [
+  {
+    title: "What Does an MSME Business Coach Actually Do?",
+    excerpt:
+      "The role explained clearly — what a coach does, what they don't do, and how it differs from consulting, training, and mentorship.",
+    href: "/blog/what-does-an-msme-business-coach-actually-do",
+  },
+  {
+    title: "How to Choose the Right MSME Business Coach in India",
+    excerpt:
+      "A practical guide for founders — the questions to ask, the red flags to watch for, and what experience actually matters in this context.",
+    href: "/blog/how-to-choose-the-right-msme-business-coach-in-india",
+  },
+  {
+    title: "Business Coach vs Consultant: What Indian MSMEs Actually Need",
+    excerpt:
+      "The difference between coaching and consulting — and why most Indian MSME founders need elements of both, not a choice between them.",
+    href: "/blog/business-coach-vs-consultant-what-indian-msm-es-actually-need",
+  },
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -546,6 +567,40 @@ export default function MsmeBusinessCoachPage() {
                 {item.a}
               </p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FROM THE BLOG */}
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
+          Going deeper
+        </p>
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
+          Read more on MSME business coaching
+        </h2>
+        <p className="text-[16px] md:text-[18px] text-mid leading-[1.65] mb-8">
+          If you&rsquo;re still figuring out whether coaching is right for
+          your business, these articles go deeper on the questions founders
+          ask most.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {BLOG_LINKS.map((post) => (
+            <a
+              key={post.href}
+              href={post.href}
+              className="group p-5 border border-rule rounded-sm flex flex-col"
+            >
+              <h4 className="text-[18px] font-bold text-ink mb-2 leading-snug">
+                {post.title}
+              </h4>
+              <p className="text-[15px] text-mid leading-relaxed mb-4">
+                {post.excerpt}
+              </p>
+              <span className="text-[14px] font-semibold text-ink group-hover:text-red mt-auto">
+                Read article →
+              </span>
+            </a>
           ))}
         </div>
       </section>
