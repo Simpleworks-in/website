@@ -359,6 +359,21 @@ export default function HomePage() {
                 Within one business day
               </span>
             </div>
+            <div className="flex gap-4 items-start">
+              <span className="text-[10px] tracking-[0.12em] uppercase text-light min-w-[68px] pt-0.5 flex-shrink-0">
+                Book
+              </span>
+              <span className="text-[15px] text-mid leading-[1.5]">
+                <a
+                  href="https://calendar.app.google/rVCgwR2PUwPorN658"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-mid transition-colors hover:text-red"
+                >
+                  Book an appointment
+                </a>
+              </span>
+            </div>
           </div>
         </div>
 
