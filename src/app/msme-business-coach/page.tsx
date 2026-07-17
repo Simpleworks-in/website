@@ -577,7 +577,7 @@ export default function MsmeBusinessCoachPage() {
           Going deeper
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          Read more on MSME business coaching
+          <span className="text-red">Read more</span> on MSME business coaching
         </h2>
         <p className="text-[16px] md:text-[18px] text-mid leading-[1.65] mb-8">
           If you&rsquo;re still figuring out whether coaching is right for
