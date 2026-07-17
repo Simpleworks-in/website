@@ -498,15 +498,15 @@ export default function MsmeBusinessCoachPage() {
           <p className="text-[15px] text-mid leading-relaxed">
             Prem Menon is a senior management consultant and MSME business
             coach based in Bengaluru with 39 years of experience across Usha
-            International, MRF, Apollo Tyres, Airtel, Tata Docomo, and
-            early-stage SaaS ventures. He has held COO and senior leadership
-            roles across six industries, managing revenue cycles, channel
-            strategy, execution systems, and growth transitions. He holds an
-            EGMP from IIM Bengaluru and an Advanced Management Programme
-            from Ross School of Business (through TMTC Pune). Simpleworks
-            works exclusively with Indian MSMEs, startups, and family
-            businesses in the ₹1 crore to ₹50 crore revenue range — one
-            business at a time.
+            International, MRF, Apollo Tyres, BPL Mobile, Airtel, Tata
+            Docomo, and early-stage SaaS ventures. He has held COO and
+            senior leadership roles across six industries, managing revenue
+            cycles, channel strategy, execution systems, and growth
+            transitions. He holds an EGMP from IIM Bengaluru and an Advanced
+            Management Programme from Ross School of Business, University
+            of Michigan (through TMTC Pune). Simpleworks works exclusively
+            with Indian MSMEs, startups, and family businesses in the ₹1
+            crore to ₹50 crore revenue range — one business at a time.
           </p>
           <div className="flex flex-wrap gap-3 mt-4">
             <a
