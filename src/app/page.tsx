@@ -221,7 +221,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TAGLINE STRIP ── */}
-      <div className="reveal border-t-[0.5px] border-b-[0.5px] border-rule py-4 md:py-[18px] px-6 md:px-[132px] flex flex-wrap items-center gap-x-6 gap-y-3 md:gap-12 md:flex-nowrap md:overflow-hidden">
+      <div className="reveal border-t-[0.5px] border-rule py-4 md:py-[18px] px-6 md:px-[132px] flex flex-wrap items-center gap-x-6 gap-y-3 md:gap-12 md:flex-nowrap md:overflow-hidden">
         {TAGLINE_ITEMS.map((text) => (
           <div key={text} className="flex items-center gap-[14px] flex-shrink-0">
             <span className="w-[5px] h-[5px] rounded-full bg-red flex-shrink-0" />

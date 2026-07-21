@@ -519,7 +519,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section
         id="contact"
-        className="reveal grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-20 border-t-[0.5px] border-b-[0.5px] border-rule bg-bg px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]"
+        className="reveal grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-20 bg-bg px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]"
       >
         <div className="flex flex-col justify-center gap-5 border-l-2 border-red pl-6 md:pl-7">
           <p className="text-[14px] font-medium uppercase tracking-wide-5 text-light">
