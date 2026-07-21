@@ -533,7 +533,7 @@ export default function AboutPage() {
           <p className="text-[20px] md:text-[24px] font-normal italic leading-[1.3] text-mid">
             The clarity usually isn&rsquo;t.
           </p>
-          <p className="mt-1 max-w-[360px] text-[15px] italic leading-[1.7] text-light">
+          <p className="mt-1 max-w-[360px] text-[15px] leading-[1.7] text-light">
             Whether you run a family business, an MSME, or an early-stage startup — tell me what
             you&rsquo;re working on. I&rsquo;ll tell you honestly whether I can help — and what
             that would look like.
