@@ -26,7 +26,7 @@ export default function ContactTabs({
   return (
     <>
       {/* TABS */}
-      <div className="flex border-t border-b border-rule/100 md:ml-[72px] reveal">
+      <div className="flex border-b border-rule/100 md:ml-[72px] reveal">
         <div
           role="button"
           tabIndex={0}
