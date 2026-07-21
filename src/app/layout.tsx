@@ -10,7 +10,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const lora = Lora({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-lora",
   display: "swap",
 });
