@@ -270,7 +270,7 @@ export default function ServicesPage() {
           <br />
           that are <span className="text-red">ready to move</span>.
         </h1>
-        <p className="mb-9 max-w-[560px] text-[18px] italic leading-[1.6] text-mid md:text-[20px]">
+        <p className="mb-9 max-w-[560px] text-[18px] leading-[1.6] text-mid md:text-[20px]">
           Simpleworks works with Indian MSME founders, startup leaders, and
           family business owners — on strategy, growth, and execution. One
           point of contact. No unnecessary complexity.

@@ -94,7 +94,7 @@ export default function AboutPage() {
             <p className="mb-6 text-eyebrow uppercase tracking-wide-10 text-light opacity-0 animate-fade-up [animation-delay:0.1s]">
               Founder · Simpleworks Consulting
             </p>
-            <h1 className="mb-2 text-[40px] leading-[1.05] md:text-about-name md:leading-[1] font-bold tracking-tight-2 opacity-0 animate-fade-up [animation-delay:0.2s]">
+            <h1 className="mb-2 text-[36px] leading-[1.05] md:text-hero-h1 md:leading-[1] font-bold tracking-tight-2 opacity-0 animate-fade-up [animation-delay:0.2s]">
               Prem
               <br />
               <span className="text-red">Menon</span>
@@ -140,7 +140,7 @@ export default function AboutPage() {
 
       {/* COMPANIES */}
       <div className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-[60px] md:pl-[132px] md:pr-[60px]">
-        <p className="mb-9 text-[15px] font-medium uppercase tracking-wide-5 text-light">
+        <p className="mb-9 text-[14px] font-medium uppercase tracking-wide-5 text-light">
           Career — Organisations Across Four Sectors
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[2px]">
