@@ -140,7 +140,7 @@ export default function AboutPage() {
 
       {/* COMPANIES */}
       <div className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-[60px] md:pl-[132px] md:pr-[60px]">
-        <p className="mb-9 text-[14px] font-medium uppercase tracking-wide-5 text-light">
+        <p className="mb-9 text-eyebrow-lg font-medium uppercase tracking-wide-5 text-light">
           Career — Organisations Across Four Sectors
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[2px]">
@@ -211,7 +211,7 @@ export default function AboutPage() {
       {/* STORY */}
       <section className="reveal flex flex-col md:grid md:grid-cols-[1fr_380px] items-start gap-12 md:gap-20 border-b-[0.5px] border-rule px-6 py-12 md:py-[88px] md:pl-[132px] md:pr-[60px]">
         <div>
-          <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
+          <p className="mb-5 text-eyebrow-lg font-medium uppercase tracking-wide-5 text-light">
             The Story
           </p>
           <h2 className="mb-7 text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
@@ -300,7 +300,7 @@ export default function AboutPage() {
 
       {/* EDUCATION */}
       <section className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]">
-        <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
+        <p className="mb-5 text-eyebrow-lg font-medium uppercase tracking-wide-5 text-light">
           Education
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
@@ -356,7 +356,7 @@ export default function AboutPage() {
       {/* WHAT I HELP WITH */}
       <section className="reveal border-b-[0.5px] border-rule px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]">
         <div className="mb-12 max-w-[560px]">
-          <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
+          <p className="mb-5 text-eyebrow-lg font-medium uppercase tracking-wide-5 text-light">
             What I Can Help You With
           </p>
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
@@ -430,7 +430,7 @@ export default function AboutPage() {
 
       {/* IS THIS YOU */}
       <section className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]">
-        <p className="mb-5 text-[14px] font-medium uppercase tracking-wide-5 text-light">
+        <p className="mb-5 text-eyebrow-lg font-medium uppercase tracking-wide-5 text-light">
           Is This You?
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 md:leading-[1.15] font-bold tracking-tight-1">
@@ -522,7 +522,7 @@ export default function AboutPage() {
         className="reveal grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-20 bg-bg px-6 py-12 md:py-20 md:pl-[132px] md:pr-[60px]"
       >
         <div className="flex flex-col justify-center gap-5 border-l-2 border-red pl-6 md:pl-7">
-          <p className="text-[14px] font-medium uppercase tracking-wide-5 text-light">
+          <p className="text-eyebrow-lg font-medium uppercase tracking-wide-5 text-light">
             Start Here
           </p>
           <p className="text-[28px] md:text-[34px] font-bold leading-[1.2] tracking-tight-1 text-ink">
