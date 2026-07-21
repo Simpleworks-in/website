@@ -10,6 +10,13 @@ export const metadata = {
   alternates: {
     canonical: "https://simpleworks.in/contact",
   },
+  openGraph: {
+    title: "Hire a Business Consultant in India | Contact | Simpleworks",
+    description:
+      "Looking to hire a business consultant in India? Submit a consulting inquiry or book a free first call with Prem Menon. MSME consultant contact — Simpleworks, Bengaluru.",
+    url: "https://simpleworks.in/contact",
+    type: "website",
+  },
 };
 
 const WHATSAPP_HREF = `https://wa.me/919036099000?text=${encodeURIComponent(

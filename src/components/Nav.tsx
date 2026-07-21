@@ -38,7 +38,7 @@ export default function Nav() {
         >
           <Image
             src={logo}
-            alt="Simpleworks S mark"
+            alt="Simpleworks Consulting logo"
             height={38}
             className="h-[34px] w-auto md:h-[38px]"
             priority

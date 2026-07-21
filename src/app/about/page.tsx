@@ -10,11 +10,78 @@ export const metadata = {
   alternates: {
     canonical: "https://simpleworks.in/about",
   },
+  openGraph: {
+    title: "Independent Management Consultant India | Prem Menon | Simpleworks",
+    description:
+      "Prem Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
+    url: "https://simpleworks.in/about",
+    type: "website",
+  },
+};
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://simpleworks.in/#localbusiness",
+      name: "Simpleworks Consulting",
+      description:
+        "Independent management consulting firm in Bengaluru working with Indian MSMEs and startup founders on business strategy, go-to-market planning, and OKR consulting.",
+      url: "https://simpleworks.in",
+      telephone: "+919036099000",
+      email: "pm@simpleworks.in",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 12.9716,
+        longitude: 77.5946,
+      },
+      founder: { "@id": "https://simpleworks.in/#prem-menon" },
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+      priceRange: "₹₹₹",
+      openingHours: "Mo-Fr 09:00-18:00",
+    },
+    {
+      "@type": "Person",
+      "@id": "https://simpleworks.in/#prem-menon",
+      name: "Prem Menon",
+      jobTitle: "Founder & Principal Consultant",
+      worksFor: { "@id": "https://simpleworks.in/#localbusiness" },
+      url: "https://simpleworks.in/about",
+      sameAs: [
+        "https://www.linkedin.com/in/premraj/",
+        "https://premraj.substack.com/",
+        "https://x.com/nonemmerp",
+      ],
+      description:
+        "Management consultant with 39 years of experience across Consumer Durables, Automotive, Telecom, and IT/SaaS in India.",
+      knowsAbout: [
+        "Business Strategy",
+        "Go-to-Market Planning",
+        "OKR Consulting",
+        "MSME Advisory",
+        "Business Turnaround",
+      ],
+    },
+  ],
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       {/* PAGE HEADER */}
       <section className="flex flex-col lg:flex-row min-h-0 lg:min-h-[88vh] overflow-hidden border-b-[0.5px] border-rule">
         <div className="relative hidden lg:flex w-[72px] flex-shrink-0 items-start pt-[72px] pl-6">

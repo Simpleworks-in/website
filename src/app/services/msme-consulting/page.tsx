@@ -11,6 +11,14 @@ export const metadata = {
   alternates: {
     canonical: "https://simpleworks.in/services/msme-consulting",
   },
+  openGraph: {
+    title:
+      "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks",
+    description:
+      "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Prem Menon, 39 years of experience. First call free.",
+    url: "https://simpleworks.in/services/msme-consulting",
+    type: "website",
+  },
 };
 
 const WHAT_WE_DO = [

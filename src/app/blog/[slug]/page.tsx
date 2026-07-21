@@ -43,12 +43,20 @@ export async function generateMetadata({
 
   const title = post.seoTitle?.trim() || post.title;
   const description = post.seoDescription?.trim() || post.excerpt;
+  const url = `https://simpleworks.in/blog/${slug}`;
 
   return {
     title: { absolute: `${title} | Simpleworks Blog` },
     description,
-    alternates: { canonical: `https://simpleworks.in/blog/${slug}` },
-    openGraph: { title, description, type: "article" },
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      publishedTime: post.date ?? undefined,
+      authors: ["Prem Menon"],
+    },
   };
 }
 
@@ -68,8 +76,37 @@ export default async function PostPage({
   const plainText = Markdoc.renderers.html(renderable).replace(/<[^>]+>/g, " ");
   const mins = readingTime(plainText);
 
+  const url = `https://simpleworks.in/blog/${slug}`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    author: {
+      "@type": "Person",
+      name: "Prem Menon",
+      url: "https://simpleworks.in/about",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Simpleworks Consulting",
+      url: "https://simpleworks.in",
+    },
+    datePublished: post.date ?? undefined,
+    dateModified: post.date ?? undefined,
+    url,
+    description: post.seoDescription?.trim() || post.excerpt,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  };
+
   return (
     <article className="mx-auto max-w-prose-col px-6 py-16 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
 
       {/* Back link */}
       <Link
