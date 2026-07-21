@@ -90,7 +90,7 @@ export default function AboutPage() {
 
         <div className="flex flex-col lg:flex-row flex-1 items-stretch">
           {/* Text */}
-          <div className="flex w-full lg:w-[480px] flex-shrink-0 flex-col justify-center border-b-[0.5px] lg:border-b-0 lg:border-r-[0.5px] border-rule px-6 py-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14">
+          <div className="flex w-full lg:w-[480px] flex-shrink-0 flex-col justify-center px-6 py-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14">
             <p className="mb-6 text-eyebrow uppercase tracking-wide-10 text-light opacity-0 animate-fade-up [animation-delay:0.1s]">
               Founder · Simpleworks Consulting
             </p>

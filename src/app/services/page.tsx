@@ -203,7 +203,7 @@ const schemaMarkup = {
 
 function GroupDivider({ label, description }: { label: string; description: string }) {
   return (
-    <div className="flex flex-col gap-2 border-t-[0.5px] border-rule pt-6 md:flex-row md:items-baseline md:justify-between md:gap-6">
+    <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-6">
       <p className="text-eyebrow uppercase tracking-wide-9 text-light">{label}</p>
       <p className="text-[13px] italic text-light">{description}</p>
     </div>
