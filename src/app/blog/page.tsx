@@ -19,7 +19,13 @@ export const metadata = {
   },
 };
 
-type Category = "strategy" | "growth" | "execution" | "leadership";
+type Category =
+  | "strategy"
+  | "growth"
+  | "execution"
+  | "leadership"
+  | "okr"
+  | "business-coach";
 
 const categories: { value: Category | "all"; label: string }[] = [
   { value: "all", label: "All" },
@@ -27,6 +33,8 @@ const categories: { value: Category | "all"; label: string }[] = [
   { value: "growth", label: "Growth" },
   { value: "execution", label: "Execution" },
   { value: "leadership", label: "Leadership" },
+  { value: "okr", label: "OKR" },
+  { value: "business-coach", label: "Business Coach" },
 ];
 
 const formatDate = (iso: string | null) => {

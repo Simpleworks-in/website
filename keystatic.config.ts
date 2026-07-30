@@ -55,6 +55,8 @@ export default config({
             { label: "Growth", value: "growth" },
             { label: "Execution", value: "execution" },
             { label: "Leadership", value: "leadership" },
+            { label: "OKR", value: "okr" },
+            { label: "Business Coach", value: "business-coach" },
           ],
           defaultValue: "strategy",
         }),
