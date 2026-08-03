@@ -15,7 +15,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "How is Simpleworks different from larger consulting firms?",
-    a: "Larger management consulting firms in India are built for large organisations.— they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
+    a: "Larger management consulting firms in India are built for large organisations — they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
   },
   {
     q: "What industries do you specialise in?",

@@ -25,7 +25,8 @@ type Category =
   | "execution"
   | "leadership"
   | "okr"
-  | "business-coach";
+  | "business-coach"
+  | "startup";
 
 const categories: { value: Category | "all"; label: string }[] = [
   { value: "all", label: "All" },
@@ -35,6 +36,7 @@ const categories: { value: Category | "all"; label: string }[] = [
   { value: "leadership", label: "Leadership" },
   { value: "okr", label: "OKR" },
   { value: "business-coach", label: "Business Coach" },
+  { value: "startup", label: "Startup" },
 ];
 
 const formatDate = (iso: string | null) => {
