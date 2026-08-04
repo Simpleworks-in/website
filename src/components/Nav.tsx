@@ -9,6 +9,7 @@ import logo from "../../public/Simpleworks_image_only_S.png";
 const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/startup-mentor-bengaluru", label: "Startups" },
   { href: "/blog", label: "Blog" },
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact" },
@@ -21,10 +22,7 @@ export default function Nav() {
   const isActive = (href: string) =>
     pathname === href || pathname?.startsWith(href + "/");
 
-  if (
-    pathname?.startsWith("/msme-business-coach") ||
-    pathname?.startsWith("/startup-mentor-bengaluru")
-  ) {
+  if (pathname?.startsWith("/msme-business-coach")) {
     return null;
   }
 
