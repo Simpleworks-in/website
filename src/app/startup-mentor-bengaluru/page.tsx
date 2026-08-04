@@ -352,15 +352,15 @@ export default function StartupMentorBengaluruPage() {
                 href={CALENDAR_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-[1px] bg-red px-9 py-[15px] text-[15px] font-bold text-white transition-opacity hover:opacity-90"
+                className="inline-block w-fit cursor-pointer rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
               >
                 Schedule a Call
               </a>
               <a
                 href="#what-i-bring"
-                className="rounded-[1px] border-[1.5px] border-rule px-9 py-[13.5px] text-[15px] font-semibold text-ink transition-colors hover:border-ink"
+                className="inline-block w-fit cursor-pointer rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
               >
-                See how I work ↓
+                See how I work
               </a>
             </div>
             <div className="flex flex-wrap gap-8 border-t-[0.5px] border-rule pt-8">
