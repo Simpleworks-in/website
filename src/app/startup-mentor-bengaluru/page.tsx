@@ -333,14 +333,13 @@ export default function StartupMentorBengaluruPage() {
 
       {/* HERO */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.15fr_1fr] md:gap-12">
           <div>
             <p className="relative mb-5 flex items-center gap-3 pl-4 text-[11px] tracking-[0.16em] uppercase text-light before:absolute before:left-0 before:h-5 before:w-[2px] before:bg-red">
               Startup Mentor · Bengaluru
             </p>
-            <h1 className="mb-6 text-[36px] font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-[56px]">
-              Your startup has grown.
-              <br />
+            <h1 className="mb-6 text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-[52px]">
+              <span className="block whitespace-nowrap">Your startup has grown.</span>
               Your <span className="italic text-red">problems have changed.</span>
             </h1>
             <p className="mb-8 max-w-[520px] text-[18px] italic leading-[1.65] text-mid">
@@ -348,18 +347,18 @@ export default function StartupMentorBengaluruPage() {
               stretch — post-product-fit, pre-scale. No cohorts. No templates.
               Just 39 years of real operating experience, in the room with you.
             </p>
-            <div className="mb-10 flex flex-wrap items-center gap-6">
+            <div className="mb-10 flex flex-wrap items-center gap-4">
               <a
-                href={WA_LINK}
+                href={CALENDAR_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-[1px] bg-red px-9 py-[15px] text-[15px] font-bold text-white transition-opacity hover:opacity-90"
               >
-                Start a Conversation
+                Schedule a Call
               </a>
               <a
                 href="#what-i-bring"
-                className="text-[15px] font-semibold text-ink underline underline-offset-4 transition-colors hover:text-red"
+                className="rounded-[1px] border-[1.5px] border-rule px-9 py-[13.5px] text-[15px] font-semibold text-ink transition-colors hover:border-ink"
               >
                 See how I work ↓
               </a>
@@ -393,7 +392,7 @@ export default function StartupMentorBengaluruPage() {
             width={800}
             height={600}
             priority
-            className="mix-blend-multiply h-auto w-full"
+            className="mix-blend-multiply h-auto w-full self-start md:-mt-12"
           />
         </div>
       </section>
@@ -448,7 +447,7 @@ export default function StartupMentorBengaluruPage() {
           I work with a small number of founders at a time. Fit matters more
           than sector.
         </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] md:grid-cols-3">
           {WHO.map((c) => (
             <div key={c.n} className="bg-bg px-7 py-9">
               <p className="mb-3.5 text-[11px] font-bold tracking-[0.14em] uppercase text-red">
@@ -480,7 +479,7 @@ export default function StartupMentorBengaluruPage() {
               key={item}
               className="flex items-start gap-3.5 border-[0.5px] border-rule px-6 py-5"
             >
-              <div className="w-0.5 min-h-[48px] shrink-0 self-stretch bg-rule" />
+              <div className="w-0.5 min-h-[48px] shrink-0 self-stretch bg-red" />
               <p className="text-[15px] leading-[1.65] text-mid">{item}</p>
             </div>
           ))}
@@ -493,7 +492,7 @@ export default function StartupMentorBengaluruPage() {
         <h2 className="mb-12 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:mb-14 md:text-[36px]">
           39 years of operating. Not <span className="text-red">advising — operating.</span>
         </h2>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] md:grid-cols-2">
           {WHAT_I_BRING.map((item) => (
             <div key={item.title} className="bg-bg px-7 py-9">
               <h3 className="mb-2.5 text-[20px] font-bold leading-[1.3] text-ink">
@@ -569,7 +568,7 @@ export default function StartupMentorBengaluruPage() {
           Most mentorship programmes put you in a room with eleven other
           founders. This isn&rsquo;t that.
         </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] sm:grid-cols-2 md:grid-cols-4">
           {STEPS.map((s) => (
             <div key={s.n} className="bg-bg px-6 py-8">
               <span className="mb-4 block text-[11px] font-bold tracking-[0.14em] uppercase text-red">
@@ -633,7 +632,7 @@ export default function StartupMentorBengaluruPage() {
           Not frameworks in a slide deck. Working systems inside the
           business.
         </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] md:grid-cols-3">
           {OUTCOMES.map((o) => (
             <div key={o.title} className="bg-bg px-7 py-9">
               <h3 className="mb-2.5 text-[17px] font-bold leading-[1.3] text-ink">
