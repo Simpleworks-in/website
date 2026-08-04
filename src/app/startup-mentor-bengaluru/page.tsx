@@ -389,8 +389,8 @@ export default function StartupMentorBengaluruPage() {
           <Image
             src="/images/startup-mentor-hero.png"
             alt="Startup mentor Prem Menon, Bengaluru"
-            width={800}
-            height={600}
+            width={1376}
+            height={768}
             priority
             className="mix-blend-multiply h-auto w-full self-start"
           />
