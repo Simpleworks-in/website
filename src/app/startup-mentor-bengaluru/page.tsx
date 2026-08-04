@@ -585,11 +585,11 @@ export default function StartupMentorBengaluruPage() {
           <h3 className="mb-3.5 text-[17px] font-bold leading-[1.3] text-ink">
             What a Diagnostic Session actually covers
           </h3>
-          <ul className="flex list-none flex-col gap-0">
+          <ul className="flex list-none flex-col gap-3">
             {DIAGNOSTIC_COVERS.map((d) => (
               <li
                 key={d}
-                className="relative border-t-[0.5px] border-rule py-2.5 pl-5 text-[14px] leading-[1.65] text-mid before:absolute before:left-0 before:content-['—'] before:text-red"
+                className="relative pl-5 text-[14px] leading-[1.65] text-mid before:absolute before:left-0 before:content-['—'] before:text-red"
               >
                 {d}
               </li>
