@@ -392,7 +392,7 @@ export default function StartupMentorBengaluruPage() {
             width={1376}
             height={768}
             priority
-            className="mix-blend-multiply h-auto w-full self-start"
+            className="mix-blend-multiply h-auto w-full self-start mt-9 md:mt-10"
           />
         </div>
       </section>
