@@ -339,7 +339,7 @@ export default function StartupMentorBengaluruPage() {
               Startup Mentor · Bengaluru
             </p>
             <h1 className="mb-6 text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-[52px]">
-              <span className="block whitespace-nowrap">Your startup has grown.</span>
+              <span className="block md:whitespace-nowrap">Your startup has grown.</span>
               Your <span className="italic text-red">problems have changed.</span>
             </h1>
             <p className="mb-8 max-w-[520px] text-[18px] italic leading-[1.65] text-mid">
