@@ -43,7 +43,7 @@ export async function generateMetadata({
 
   const title = post.seoTitle?.trim() || post.title;
   const description = post.seoDescription?.trim() || post.excerpt;
-  const url = `https://simpleworks.in/blog/${slug}`;
+  const url = `https://www.simpleworks.in/blog/${slug}`;
 
   return {
     title: { absolute: `${title} | Simpleworks Blog` },
@@ -76,7 +76,7 @@ export default async function PostPage({
   const plainText = Markdoc.renderers.html(renderable).replace(/<[^>]+>/g, " ");
   const mins = readingTime(plainText);
 
-  const url = `https://simpleworks.in/blog/${slug}`;
+  const url = `https://www.simpleworks.in/blog/${slug}`;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -84,12 +84,12 @@ export default async function PostPage({
     author: {
       "@type": "Person",
       name: "Prem Menon",
-      url: "https://simpleworks.in/about",
+      url: "https://www.simpleworks.in/about",
     },
     publisher: {
       "@type": "Organization",
       name: "Simpleworks Consulting",
-      url: "https://simpleworks.in",
+      url: "https://www.simpleworks.in",
     },
     datePublished: post.date ?? undefined,
     dateModified: post.date ?? undefined,

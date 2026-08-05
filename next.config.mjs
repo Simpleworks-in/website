@@ -76,18 +76,9 @@ const nextConfig = {
     "/blog": ["./content/**/*"],
     "/blog/[slug]": ["./content/**/*"],
   },
-  // Redirect all www traffic to apex. Keystatic's GitHub OAuth cookie is
-  // host-scoped, so pinning to apex also ensures a single session origin.
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.simpleworks.in" }],
-        destination: "https://simpleworks.in/:path*",
-        permanent: true,
-      },
-    ];
-  },
+  // No hostname redirects here. The apex → www canonicalization is owned by
+  // the Vercel domain config, which runs before the app — a redirect in this
+  // file pointing the other way produced an infinite 308 loop.
   async headers() {
     return [
       {

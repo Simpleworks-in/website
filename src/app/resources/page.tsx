@@ -9,13 +9,13 @@ export const metadata = {
   description:
     "Downloadable industry insights, frameworks and guides from Prem Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
   alternates: {
-    canonical: "https://simpleworks.in/resources",
+    canonical: "https://www.simpleworks.in/resources",
   },
   openGraph: {
     title: "Resources | Simpleworks | Business Consultant Bengaluru",
     description:
       "Downloadable industry insights, frameworks and guides from Prem Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
-    url: "https://simpleworks.in/resources",
+    url: "https://www.simpleworks.in/resources",
     type: "website",
   },
 };

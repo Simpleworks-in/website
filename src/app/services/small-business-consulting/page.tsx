@@ -9,14 +9,14 @@ export const metadata = {
   description:
     "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Prem Menon, Bengaluru. First call free.",
   alternates: {
-    canonical: "https://simpleworks.in/services/small-business-consulting",
+    canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
   openGraph: {
     title:
       "Small Business Consultant India | Business Mentor for Startups | Simpleworks",
     description:
       "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Prem Menon, Bengaluru. First call free.",
-    url: "https://simpleworks.in/services/small-business-consulting",
+    url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",
   },
@@ -214,18 +214,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://simpleworks.in" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://simpleworks.in/services",
+      item: "https://www.simpleworks.in/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Small Business Consulting",
-      item: "https://simpleworks.in/services/small-business-consulting",
+      item: "https://www.simpleworks.in/services/small-business-consulting",
     },
   ],
 };

@@ -9,13 +9,13 @@ export const metadata = {
   description:
     "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Prem Menon, Bengaluru.",
   alternates: {
-    canonical: "https://simpleworks.in/services/okr-consulting",
+    canonical: "https://www.simpleworks.in/services/okr-consulting",
   },
   openGraph: {
     title: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks",
     description:
       "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Prem Menon, Bengaluru.",
-    url: "https://simpleworks.in/services/okr-consulting",
+    url: "https://www.simpleworks.in/services/okr-consulting",
     locale: "en_IN",
     type: "website",
   },
@@ -218,18 +218,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://simpleworks.in" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://simpleworks.in/services",
+      item: "https://www.simpleworks.in/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "OKR Consulting",
-      item: "https://simpleworks.in/services/okr-consulting",
+      item: "https://www.simpleworks.in/services/okr-consulting",
     },
   ],
 };

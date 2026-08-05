@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://simpleworks.in"),
+  metadataBase: new URL("https://www.simpleworks.in"),
   title: {
     default: "Simpleworks | Business Consultant in Bengaluru",
     template: "%s | Simpleworks",
@@ -47,11 +47,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://simpleworks.in",
+    url: "https://www.simpleworks.in",
     siteName: "Simpleworks Consulting",
   },
   alternates: {
-    canonical: "https://simpleworks.in",
+    canonical: "https://www.simpleworks.in",
   },
   robots: {
     index: true,

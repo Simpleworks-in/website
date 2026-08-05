@@ -8,14 +8,14 @@ export const metadata = {
   description:
     "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Prem Menon — independent management consultant, Bengaluru. First call free.",
   alternates: {
-    canonical: "https://simpleworks.in/services",
+    canonical: "https://www.simpleworks.in/services",
   },
   openGraph: {
     title:
       "Consulting Services | MSME, Startup & Family Business | Simpleworks Bengaluru",
     description:
       "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Prem Menon — independent management consultant, Bengaluru. First call free.",
-    url: "https://simpleworks.in/services",
+    url: "https://www.simpleworks.in/services",
     type: "website",
   },
 };
@@ -191,12 +191,12 @@ const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://simpleworks.in" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://simpleworks.in/services",
+      item: "https://www.simpleworks.in/services",
     },
   ],
 };

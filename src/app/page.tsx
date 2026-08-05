@@ -11,7 +11,7 @@ export const metadata = {
   description:
     "Simpleworks is an independent management consultant in Bengaluru for Indian MSMEs and startups. Expert help with business strategy, go-to-market planning & OKR consulting. Led by Prem Menon — 39 years of experience. First call free.",
   alternates: {
-    canonical: "https://simpleworks.in",
+    canonical: "https://www.simpleworks.in",
   },
 };
 
@@ -46,11 +46,11 @@ const schemaMarkup = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://simpleworks.in/#localbusiness",
+      "@id": "https://www.simpleworks.in/#localbusiness",
       name: "Simpleworks Consulting",
-      url: "https://simpleworks.in",
-      logo: "https://simpleworks.in/simpleworks-logo.svg",
-      image: "https://simpleworks.in/hero-illustration.png",
+      url: "https://www.simpleworks.in",
+      logo: "https://www.simpleworks.in/simpleworks-logo.svg",
+      image: "https://www.simpleworks.in/hero-illustration.png",
       description:
         "Independent management consulting firm in Bengaluru helping Indian MSMEs scale with business strategy, go-to-market planning and OKR consulting.",
       telephone: "",
@@ -72,18 +72,18 @@ const schemaMarkup = {
       },
       priceRange: "₹₹₹",
       openingHours: "Mo-Fr 09:00-18:00",
-      founder: { "@id": "https://simpleworks.in/#prem-menon" },
+      founder: { "@id": "https://www.simpleworks.in/#prem-menon" },
       sameAs: ["https://www.linkedin.com/company/simpleworks-consulting"],
     },
     {
       "@type": "Person",
-      "@id": "https://simpleworks.in/#prem-menon",
+      "@id": "https://www.simpleworks.in/#prem-menon",
       name: "Prem Menon",
       jobTitle: "Founder & Management Consultant",
-      worksFor: { "@id": "https://simpleworks.in/#localbusiness" },
+      worksFor: { "@id": "https://www.simpleworks.in/#localbusiness" },
       description:
         "Senior management consultant with 39 years of experience across Consumer Durables, Tyres, Telecom, and IT/SaaS in India. Founder of Simpleworks Consulting, Bengaluru.",
-      url: "https://simpleworks.in/about",
+      url: "https://www.simpleworks.in/about",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bengaluru",
@@ -93,12 +93,12 @@ const schemaMarkup = {
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://simpleworks.in/#professionalservice",
+      "@id": "https://www.simpleworks.in/#professionalservice",
       name: "Simpleworks Consulting",
-      url: "https://simpleworks.in",
+      url: "https://www.simpleworks.in",
       description:
         "Management consulting services for Indian MSMEs — business strategy, go-to-market planning, OKR consulting, and business turnaround. Based in Bengaluru.",
-      provider: { "@id": "https://simpleworks.in/#prem-menon" },
+      provider: { "@id": "https://www.simpleworks.in/#prem-menon" },
       areaServed: {
         "@type": "Country",
         name: "India",

@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/keystatic", "/api/"],
       },
     ],
-    sitemap: "https://simpleworks.in/sitemap.xml",
-    host: "https://simpleworks.in",
+    sitemap: "https://www.simpleworks.in/sitemap.xml",
+    host: "https://www.simpleworks.in",
   };
 }

@@ -9,14 +9,14 @@ export const metadata = {
   description:
     "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Prem Menon, Bengaluru.",
   alternates: {
-    canonical: "https://simpleworks.in/services/execution-consulting",
+    canonical: "https://www.simpleworks.in/services/execution-consulting",
   },
   openGraph: {
     title:
       "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks",
     description:
       "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Prem Menon, Bengaluru.",
-    url: "https://simpleworks.in/services/execution-consulting",
+    url: "https://www.simpleworks.in/services/execution-consulting",
     locale: "en_IN",
     type: "website",
   },
@@ -203,18 +203,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://simpleworks.in" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://simpleworks.in/services",
+      item: "https://www.simpleworks.in/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Execution Consulting",
-      item: "https://simpleworks.in/services/execution-consulting",
+      item: "https://www.simpleworks.in/services/execution-consulting",
     },
   ],
 };

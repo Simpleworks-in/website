@@ -15,13 +15,6 @@ import { NextResponse, type NextRequest } from "next/server";
 // be reachable so the OAuth callback can complete and set the cookie.
 
 export function proxy(req: NextRequest) {
-  // Canonicalize the apex domain to www.
-  if (req.headers.get("host") === "simpleworks.in") {
-    const url = req.nextUrl.clone();
-    url.host = "www.simpleworks.in";
-    return NextResponse.redirect(url, 308);
-  }
-
   // No GitHub App configured → local mode → no auth gate (dev/local only).
   if (!process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG) {
     return NextResponse.next();
@@ -41,7 +34,8 @@ export function proxy(req: NextRequest) {
 
 export const config = {
   matcher: [
-    // Run on every path so the apex→www redirect always fires.
-    "/((?!_next/static|_next/image|favicon.ico).*)",
+    "/keystatic",
+    // Anything under /keystatic except the OAuth callbacks themselves
+    "/keystatic/((?!api).*)",
   ],
 };

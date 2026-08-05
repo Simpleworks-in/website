@@ -9,14 +9,14 @@ export const metadata = {
   description:
     "Simpleworks builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
   alternates: {
-    canonical: "https://simpleworks.in/services/gtm-consulting",
+    canonical: "https://www.simpleworks.in/services/gtm-consulting",
   },
   openGraph: {
     title:
       "GTM Consulting India | Go-to-Market Strategy for MSMEs & Startups | Simpleworks",
     description:
       "Simpleworks builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
-    url: "https://simpleworks.in/services/gtm-consulting",
+    url: "https://www.simpleworks.in/services/gtm-consulting",
     locale: "en_IN",
     type: "website",
   },
@@ -214,18 +214,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://simpleworks.in" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://simpleworks.in/services",
+      item: "https://www.simpleworks.in/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "GTM Consulting",
-      item: "https://simpleworks.in/services/gtm-consulting",
+      item: "https://www.simpleworks.in/services/gtm-consulting",
     },
   ],
 };

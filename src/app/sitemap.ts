@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../keystatic.config";
 
-const SITE = "https://simpleworks.in";
+const SITE = "https://www.simpleworks.in";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const reader = createReader(process.cwd(), keystaticConfig);

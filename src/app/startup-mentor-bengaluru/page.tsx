@@ -6,13 +6,13 @@ export const metadata = {
   description:
     "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Prem Menon, Bengaluru.",
   alternates: {
-    canonical: "https://simpleworks.in/startup-mentor-bengaluru",
+    canonical: "https://www.simpleworks.in/startup-mentor-bengaluru",
   },
   openGraph: {
     title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
     description:
       "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Prem Menon, Bengaluru.",
-    url: "https://simpleworks.in/startup-mentor-bengaluru",
+    url: "https://www.simpleworks.in/startup-mentor-bengaluru",
     type: "website",
   },
 };
@@ -29,13 +29,13 @@ const jsonLd = {
         "@type": "Person",
         name: "Prem Menon",
         jobTitle: "Startup Mentor & Management Consultant",
-        url: "https://simpleworks.in/about",
+        url: "https://www.simpleworks.in/about",
       },
       areaServed: {
         "@type": "City",
         name: "Bengaluru",
       },
-      url: "https://simpleworks.in/startup-mentor-bengaluru",
+      url: "https://www.simpleworks.in/startup-mentor-bengaluru",
     },
     {
       "@type": "FAQPage",

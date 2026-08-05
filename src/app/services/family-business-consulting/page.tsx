@@ -9,14 +9,14 @@ export const metadata = {
   description:
     "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Prem Menon, Bengaluru. First call free.",
   alternates: {
-    canonical: "https://simpleworks.in/services/family-business-consulting",
+    canonical: "https://www.simpleworks.in/services/family-business-consulting",
   },
   openGraph: {
     title:
       "Family Business Consultant India | Professionalisation & Succession | Simpleworks",
     description:
       "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Prem Menon, Bengaluru. First call free.",
-    url: "https://simpleworks.in/services/family-business-consulting",
+    url: "https://www.simpleworks.in/services/family-business-consulting",
     locale: "en_IN",
     type: "website",
   },
@@ -228,18 +228,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://simpleworks.in" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://simpleworks.in/services",
+      item: "https://www.simpleworks.in/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Family Business Consulting",
-      item: "https://simpleworks.in/services/family-business-consulting",
+      item: "https://www.simpleworks.in/services/family-business-consulting",
     },
   ],
 };

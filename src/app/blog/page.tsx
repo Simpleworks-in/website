@@ -8,13 +8,13 @@ export const metadata = {
   description:
     "Simpleworks business growth blog — MSME growth tips and founder advice India from Prem Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
   alternates: {
-    canonical: "https://simpleworks.in/blog",
+    canonical: "https://www.simpleworks.in/blog",
   },
   openGraph: {
     title: "MSME Growth Tips India | Business Growth Blog | Simpleworks",
     description:
       "Simpleworks business growth blog — MSME growth tips and founder advice India from Prem Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
-    url: "https://simpleworks.in/blog",
+    url: "https://www.simpleworks.in/blog",
     type: "website",
   },
 };

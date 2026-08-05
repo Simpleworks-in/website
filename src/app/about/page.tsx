@@ -8,13 +8,13 @@ export const metadata = {
   description:
     "Prem Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
   alternates: {
-    canonical: "https://simpleworks.in/about",
+    canonical: "https://www.simpleworks.in/about",
   },
   openGraph: {
     title: "Independent Management Consultant India | Prem Menon | Simpleworks",
     description:
       "Prem Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
-    url: "https://simpleworks.in/about",
+    url: "https://www.simpleworks.in/about",
     type: "website",
   },
 };
@@ -24,11 +24,11 @@ const schemaMarkup = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://simpleworks.in/#localbusiness",
+      "@id": "https://www.simpleworks.in/#localbusiness",
       name: "Simpleworks Consulting",
       description:
         "Independent management consulting firm in Bengaluru working with Indian MSMEs and startup founders on business strategy, go-to-market planning, and OKR consulting.",
-      url: "https://simpleworks.in",
+      url: "https://www.simpleworks.in",
       telephone: "+919036099000",
       email: "pm@simpleworks.in",
       address: {
@@ -42,7 +42,7 @@ const schemaMarkup = {
         latitude: 12.9716,
         longitude: 77.5946,
       },
-      founder: { "@id": "https://simpleworks.in/#prem-menon" },
+      founder: { "@id": "https://www.simpleworks.in/#prem-menon" },
       areaServed: {
         "@type": "Country",
         name: "India",
@@ -52,11 +52,11 @@ const schemaMarkup = {
     },
     {
       "@type": "Person",
-      "@id": "https://simpleworks.in/#prem-menon",
+      "@id": "https://www.simpleworks.in/#prem-menon",
       name: "Prem Menon",
       jobTitle: "Founder & Principal Consultant",
-      worksFor: { "@id": "https://simpleworks.in/#localbusiness" },
-      url: "https://simpleworks.in/about",
+      worksFor: { "@id": "https://www.simpleworks.in/#localbusiness" },
+      url: "https://www.simpleworks.in/about",
       sameAs: [
         "https://www.linkedin.com/in/premraj/",
         "https://premraj.substack.com/",

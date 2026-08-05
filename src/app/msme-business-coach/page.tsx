@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://simpleworks.in/msme-business-coach",
+    canonical: "https://www.simpleworks.in/msme-business-coach",
   },
   openGraph: {
     title: "MSME Business Coach India | Prem Menon | Simpleworks Consulting",
     description:
       "One-to-one coaching for MSME founders who want to grow with clarity — not noise.",
-    url: "https://simpleworks.in/msme-business-coach",
+    url: "https://www.simpleworks.in/msme-business-coach",
     siteName: "Simpleworks Consulting",
     type: "website",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const WA_LINK =
   "https://wa.me/919036099000?text=Hi%20Prem%2C%20I%20found%20your%20MSME%20coaching%20page%20and%20would%20like%20to%20connect.";
-const CONTACT_LINK = "https://simpleworks.in/contact";
+const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -190,8 +190,8 @@ const jsonLd = {
       jobTitle: "MSME Business Coach",
       description:
         "Senior management consultant and MSME business coach with 39 years of experience across Consumer Durables, Automotive, Telecom, and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
-      url: "https://simpleworks.in/about",
-      image: "https://simpleworks.in/images/landing/prem-menon-photo.jpg",
+      url: "https://www.simpleworks.in/about",
+      image: "https://www.simpleworks.in/images/landing/prem-menon-photo.jpg",
       sameAs: [
         "https://www.linkedin.com/in/premraj/",
         "https://premraj.substack.com/",
@@ -199,7 +199,7 @@ const jsonLd = {
       worksFor: {
         "@type": "LocalBusiness",
         name: "Simpleworks Consulting",
-        url: "https://simpleworks.in",
+        url: "https://www.simpleworks.in",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Bengaluru",
@@ -238,7 +238,7 @@ export default function MsmeBusinessCoachPage() {
       {/* NAV */}
       <nav className="flex items-center justify-between gap-3 px-4 py-3 md:px-7 border-b border-rule bg-bg">
         <a
-          href="https://simpleworks.in"
+          href="https://www.simpleworks.in"
           target="_blank"
           rel="noopener noreferrer"
           className="flex min-w-0 items-center gap-2 md:gap-2.5 no-underline"

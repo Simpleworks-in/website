@@ -9,14 +9,14 @@ export const metadata = {
   description:
     "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Prem Menon, 39 years of experience. First call free.",
   alternates: {
-    canonical: "https://simpleworks.in/services/msme-consulting",
+    canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
   openGraph: {
     title:
       "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks",
     description:
       "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Prem Menon, 39 years of experience. First call free.",
-    url: "https://simpleworks.in/services/msme-consulting",
+    url: "https://www.simpleworks.in/services/msme-consulting",
     type: "website",
   },
 };
@@ -169,18 +169,18 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://simpleworks.in" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://simpleworks.in/services",
+      item: "https://www.simpleworks.in/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "MSME Consulting",
-      item: "https://simpleworks.in/services/msme-consulting",
+      item: "https://www.simpleworks.in/services/msme-consulting",
     },
   ],
 };
@@ -202,7 +202,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Simpleworks Consulting",
-    url: "https://simpleworks.in",
+    url: "https://www.simpleworks.in",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Bengaluru",
@@ -213,7 +213,7 @@ const serviceSchema = {
   areaServed: { "@type": "Country", name: "India" },
   description:
     "Independent management consulting for Indian MSMEs — strategy, growth, and execution advisory led by Prem Menon, Bengaluru.",
-  url: "https://simpleworks.in/services/msme-consulting",
+  url: "https://www.simpleworks.in/services/msme-consulting",
 };
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
