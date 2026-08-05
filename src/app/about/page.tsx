@@ -95,7 +95,7 @@ export default function AboutPage() {
               Founder · Simpleworks Consulting
             </p>
             <h1 className="mb-2 text-[36px] leading-[1.05] md:text-hero-h1 md:leading-[1] font-bold tracking-tight-2 opacity-0 animate-fade-up [animation-delay:0.2s]">
-              Prem
+              Premraj
               <br />
               <span className="text-red">Menon</span>
             </h1>
