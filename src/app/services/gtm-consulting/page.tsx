@@ -506,7 +506,7 @@ export default function GtmConsultingPage() {
               manufacturing business whose customers still make buying
               decisions based on personal relationships and site visits,
               this playbook is worse than useless — it directs effort toward
-              channels your buyers don't use.
+              channels your buyers don&rsquo;t use.
             </p>
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
               Simpleworks brings 39 years of experience in Consumer Durables,
