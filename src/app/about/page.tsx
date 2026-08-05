@@ -3,17 +3,17 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: {
-    absolute: "Independent Management Consultant India | Prem Menon | Simpleworks",
+    absolute: "Independent Management Consultant India | Premraj Menon | Simpleworks",
   },
   description:
-    "Prem Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
+    "Premraj Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/about",
   },
   openGraph: {
-    title: "Independent Management Consultant India | Prem Menon | Simpleworks",
+    title: "Independent Management Consultant India | Premraj Menon | Simpleworks",
     description:
-      "Prem Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
+      "Premraj Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
     url: "https://www.simpleworks.in/about",
     type: "website",
   },
@@ -53,7 +53,7 @@ const schemaMarkup = {
     {
       "@type": "Person",
       "@id": "https://www.simpleworks.in/#prem-menon",
-      name: "Prem Menon",
+      name: "Premraj Menon",
       jobTitle: "Founder & Principal Consultant",
       worksFor: { "@id": "https://www.simpleworks.in/#localbusiness" },
       url: "https://www.simpleworks.in/about",
@@ -128,7 +128,7 @@ export default function AboutPage() {
           <div className="flex flex-1 items-center justify-center p-6 md:p-10 opacity-0 animate-fade-in [animation-delay:0.6s]">
             <Image
               src="/prem-menon.png"
-              alt="Prem Menon — Founder, Simpleworks Consulting"
+              alt="Premraj Menon — Founder, Simpleworks Consulting"
               width={800}
               height={1000}
               className="mix-blend-multiply max-h-[400px] md:max-h-[62vh] max-w-[88%] w-auto h-auto object-contain"
@@ -292,7 +292,7 @@ export default function AboutPage() {
               to act on by Monday morning.&rdquo;
             </p>
             <cite className="text-eyebrow-lg uppercase not-italic tracking-wide-5 text-light">
-              — Prem Menon, Founder
+              — Premraj Menon, Founder
             </cite>
           </div>
         </div>
