@@ -263,7 +263,7 @@ export default function ServicesPage() {
       {/* PAGE HERO */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <p className="mb-5 text-eyebrow tracking-wide-9 uppercase text-light">
-          What We Do
+          Consulting Services · Bengaluru
         </p>
         <h1 className="mb-6 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
           Consulting built for businesses
