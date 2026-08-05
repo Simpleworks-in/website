@@ -16,7 +16,7 @@ A 5-page brochure site for Prem Menon's management consulting firm in Bengaluru.
 | `/blog/[slug]` | `src/app/blog/[slug]/page.tsx` | Post template (derived, no separate mockup) |
 | `/contact` | `src/app/contact/page.tsx` | 2 tabs: WhatsApp (default) / form. Calendar/Book-a-Call tab was removed. |
 
-There is intentionally **no `/keystatic` route** — neither admin UI nor API. Authoring is done through GitHub directly.
+The Keystatic admin **does** exist: `src/app/keystatic/[[...params]]/page.tsx` (UI) and `src/app/api/keystatic/[...params]/route.ts` (API + GitHub OAuth). `src/proxy.ts` gates the UI behind a GitHub login — only users with write access to `Simpleworks-in/website` get in; the `/api/keystatic/*` routes stay ungated so the OAuth callback can complete. Blog posts are usually authored through GitHub directly (see below); resources go through the admin because it commits the PDF for you.
 
 `src/app/layout.tsx` renders Nav, Footer, WhatsAppButton, and Google Analytics around every page — do NOT include them in individual pages.
 
@@ -81,7 +81,7 @@ These are pixel-perfect HTML/CSS specs. **When changing a page, open the corresp
 
 Resources are authored entirely through the Keystatic admin UI at `/keystatic` — one item, one commit, PDF included.
 
-1. Visit `https://simpleworks.in/keystatic/branch/main/collection/resources/create`.
+1. Visit `https://www.simpleworks.in/keystatic/branch/main/collection/resources/create`.
 2. Fill in title, category, excerpt, page count.
 3. Drag the PDF itself into the **PDF file** field — Keystatic commits it straight to `public/resources/` and stores the public path in the entry's `file` field. There's no separate GitHub upload step and no filename to type by hand.
 4. Click **Save**. Vercel rebuilds; the resource appears in ~60 seconds at `/resources` as a direct download — no email gate.
@@ -108,11 +108,12 @@ If you ever add a new secret, **never** prefix it `NEXT_PUBLIC_`. Read it inside
 - Don't bypass `next/image` and use raw `<img>`.
 - Don't hardcode the Formspree URL — read from `NEXT_PUBLIC_FORMSPREE_ID`.
 - Don't `--no-verify` to skip the pre-commit secret scanner.
+- Don't add a hostname redirect in `next.config.mjs` or `src/proxy.ts`. **`www.simpleworks.in` is the canonical host**, and the apex → www 308 is owned by the Vercel domain config, which runs before the app. A redirect in the app pointing the other way ping-pongs against it and takes both hostnames down (this happened — see commit `40b110e`). New absolute URLs (canonical, OG, JSON-LD, sitemap) use `https://www.simpleworks.in`.
 
 ## When you're about to ship
 
 1. `pnpm build` — must pass with zero TS / ESLint errors.
-2. `pnpm exec next lint` — must pass.
+2. `pnpm lint` — must pass. (`next lint` was removed in Next 16; the script runs `eslint .` directly.)
 3. `pnpm check-secrets` — must report clean (no entropy-flagged strings in staged diff).
 4. Open each page in Chrome MCP and compare against its mockup.
 5. Submit a test through the contact form (if Formspree is configured) — confirm email arrives at pm@simpleworks.in.

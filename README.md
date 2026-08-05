@@ -118,15 +118,23 @@ git push -u origin main
    - `A` @ → `76.76.21.21`
    - `CNAME` www → `cname.vercel-dns.com`
 3. Propagation: 10-30 min. `simpleworks.in` then serves over HTTPS.
+4. In Vercel's domain settings, `simpleworks.in` is configured to redirect to
+   `www.simpleworks.in` — **www is the canonical host**. Do not add a competing
+   hostname redirect in `next.config.mjs` or `src/proxy.ts`; two redirects
+   pointing at each other produce an infinite 308 loop that takes the whole
+   site down.
 
 ### 6. Google Analytics
 - analytics.google.com → Create GA4 Property for simpleworks.in.
 - Copy Measurement ID. Paste into Vercel as `NEXT_PUBLIC_GA_ID`. Redeploy.
 
 ### 7. Search Console
-- search.google.com/search-console → Add property → Domain → simpleworks.in.
+- search.google.com/search-console → Add property → Domain → simpleworks.in
+  (a Domain property covers both the apex and www).
 - Verify via TXT record in GoDaddy DNS.
-- Submit sitemap: `https://simpleworks.in/sitemap.xml`.
+- Submit sitemap: `https://www.simpleworks.in/sitemap.xml`.
+- Use `https://www.simpleworks.in/` for URL Inspection — www is the canonical
+  host, and the apex just 308s to it.
 
 ### 8. Professional email (Prem)
 - workspace.google.com → start trial → add domain simpleworks.in.
