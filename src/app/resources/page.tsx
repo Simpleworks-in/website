@@ -7,14 +7,14 @@ import ResourceDownloadButton from "@/components/ResourceDownloadButton";
 export const metadata = {
   title: { absolute: "Resources | Simpleworks | Business Consultant Bengaluru" },
   description:
-    "Downloadable industry insights, frameworks and guides from Prem Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
+    "Downloadable industry insights, frameworks and guides from Premraj Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
   alternates: {
     canonical: "https://www.simpleworks.in/resources",
   },
   openGraph: {
     title: "Resources | Simpleworks | Business Consultant Bengaluru",
     description:
-      "Downloadable industry insights, frameworks and guides from Prem Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
+      "Downloadable industry insights, frameworks and guides from Premraj Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
     url: "https://www.simpleworks.in/resources",
     type: "website",
   },
@@ -84,7 +84,7 @@ export default async function ResourcesPage({
               className="mt-2.5 text-[13px] tracking-wide-3 text-light"
               style={{ opacity: 0, animation: "fadeUp 0.7s ease 0.25s both" }}
             >
-              Prem Menon · Business Consultant in Bengaluru · MSME Consultant · OKR
+              Premraj Menon · Business Consultant in Bengaluru · MSME Consultant · OKR
               Consultant · Family Business Advisory
             </p>
             <p

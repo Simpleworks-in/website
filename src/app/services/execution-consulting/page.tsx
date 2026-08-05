@@ -7,7 +7,7 @@ export const metadata = {
       "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks",
   },
   description:
-    "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Prem Menon, Bengaluru.",
+    "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/execution-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks",
     description:
-      "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Prem Menon, Bengaluru.",
+      "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/services/execution-consulting",
     locale: "en_IN",
     type: "website",
@@ -129,7 +129,7 @@ const DIFFERENTIATORS = [
     body: "We start with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we'll help you choose one. But the system works without it.",
   },
   {
-    title: "Prem Menon leads every engagement personally",
+    title: "Premraj Menon leads every engagement personally",
     body: "No junior consultants. No templates applied from a distance. Prem works directly with your leadership team — in person where possible, structured online sessions where not.",
   },
   {
@@ -195,7 +195,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first conversation look like?",
-    a: "A free 30-minute call with Prem Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks can help. If it's not the right fit, we'll say so and point you in the right direction.",
+    a: "A free 30-minute call with Premraj Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks can help. If it's not the right fit, we'll say so and point you in the right direction.",
   },
 ];
 
@@ -516,7 +516,7 @@ export default function ExecutionConsultingPage() {
                 work.&rdquo;
               </blockquote>
               <cite className="text-[12px] not-italic text-light">
-                — Prem Menon, Founder, Simpleworks Consulting
+                — Premraj Menon, Founder, Simpleworks Consulting
               </cite>
             </div>
 
@@ -651,7 +651,7 @@ export default function ExecutionConsultingPage() {
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
           >
-            WhatsApp Prem Menon
+            WhatsApp Premraj Menon
           </a>
           <p className="text-center text-[12px] text-light">
             Response within one business day · Based in Bengaluru · Working

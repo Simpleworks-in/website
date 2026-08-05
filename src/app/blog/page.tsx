@@ -6,14 +6,14 @@ import Reveal from "@/components/Reveal";
 export const metadata = {
   title: { absolute: "MSME Growth Tips India | Business Growth Blog | Simpleworks" },
   description:
-    "Simpleworks business growth blog — MSME growth tips and founder advice India from Prem Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
+    "Simpleworks business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
   alternates: {
     canonical: "https://www.simpleworks.in/blog",
   },
   openGraph: {
     title: "MSME Growth Tips India | Business Growth Blog | Simpleworks",
     description:
-      "Simpleworks business growth blog — MSME growth tips and founder advice India from Prem Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
+      "Simpleworks business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
     url: "https://www.simpleworks.in/blog",
     type: "website",
   },
@@ -96,7 +96,7 @@ export default async function BlogPage({
             <p
               className="mt-2.5 text-[13px] tracking-wide-3 text-light"
             >
-              Prem Menon · Business Consultant in Bengaluru · MSME Consultant · OKR
+              Premraj Menon · Business Consultant in Bengaluru · MSME Consultant · OKR
               Consultant · Family Business Advisory
             </p>
             <p
@@ -104,7 +104,7 @@ export default async function BlogPage({
               style={{ opacity: 0, animation: "fadeUp 0.7s ease 0.3s both" }}
             >
               Practical perspectives on strategy, growth, and execution — written by
-              Prem Menon, an independent management consultant in India, for Indian
+              Premraj Menon, an independent management consultant in India, for Indian
               MSME and family business founders.
             </p>
           </div>

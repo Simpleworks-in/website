@@ -55,7 +55,7 @@ export async function generateMetadata({
       url,
       type: "article",
       publishedTime: post.date ?? undefined,
-      authors: ["Prem Menon"],
+      authors: ["Premraj Menon"],
     },
   };
 }
@@ -83,7 +83,7 @@ export default async function PostPage({
     headline: post.title,
     author: {
       "@type": "Person",
-      name: "Prem Menon",
+      name: "Premraj Menon",
       url: "https://www.simpleworks.in/about",
     },
     publisher: {
@@ -130,7 +130,7 @@ export default async function PostPage({
           </p>
         )}
         <div className="mt-6 flex flex-wrap items-center gap-3 text-[13px] text-light">
-          <span>Prem Menon</span>
+          <span>Premraj Menon</span>
           <span className="text-rule">·</span>
           <span>{formatDate(post.date)}</span>
           <span className="text-rule">·</span>
@@ -149,14 +149,14 @@ export default async function PostPage({
         <div className="relative h-[72px] w-[72px] flex-shrink-0 overflow-hidden rounded-full">
           <Image
             src="/prem-menon.png"
-            alt="Prem Menon"
+            alt="Premraj Menon"
             fill
             sizes="72px"
             className="object-cover mix-blend-multiply"
           />
         </div>
         <div>
-          <p className="text-[15px] font-bold">Prem Menon</p>
+          <p className="text-[15px] font-bold">Premraj Menon</p>
           <p className="mt-1 text-[13px] leading-[1.65] text-mid">
             Founder, Simpleworks Consulting. 39 years across Telecom, Automotive
             and Consumer Durables — now helping Indian MSME and family-business

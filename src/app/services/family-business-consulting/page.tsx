@@ -7,7 +7,7 @@ export const metadata = {
       "Family Business Consultant India | Professionalisation & Succession | Simpleworks",
   },
   description:
-    "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Prem Menon, Bengaluru. First call free.",
+    "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/family-business-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "Family Business Consultant India | Professionalisation & Succession | Simpleworks",
     description:
-      "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Prem Menon, Bengaluru. First call free.",
+      "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
     url: "https://www.simpleworks.in/services/family-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -125,7 +125,7 @@ const DIFFERENTIATORS = [
     body: "We hold both dimensions simultaneously. The business needs to work commercially. The family needs to stay intact. Simpleworks keeps both outcomes in view — not just the one that's easier to measure.",
   },
   {
-    title: "Prem Menon leads every engagement personally",
+    title: "Premraj Menon leads every engagement personally",
     body: "No junior consultants. No hand-offs. Family business work depends on trust — and trust takes time to build. Prem is in every conversation, from the first call to the final handover.",
   },
   {
@@ -220,7 +220,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A 30-minute conversation — free, with no agenda except understanding where your family business is and what is making it difficult right now. Prem Menon will ask a few direct questions and tell you honestly what kind of engagement would be useful, what it would look like, and approximately how long it would take. If Simpleworks is not the right fit, he will say so directly.",
+    a: "A 30-minute conversation — free, with no agenda except understanding where your family business is and what is making it difficult right now. Premraj Menon will ask a few direct questions and tell you honestly what kind of engagement would be useful, what it would look like, and approximately how long it would take. If Simpleworks is not the right fit, he will say so directly.",
   },
 ];
 
@@ -539,12 +539,12 @@ export default function FamilyBusinessConsultingPage() {
                 make sure something changes because of it.&rdquo;
               </blockquote>
               <cite className="text-[12px] not-italic text-light">
-                — Prem Menon, Founder, Simpleworks Consulting
+                — Premraj Menon, Founder, Simpleworks Consulting
               </cite>
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Prem Menon brings 39 years of experience across Consumer
+              Premraj Menon brings 39 years of experience across Consumer
               Durables, Automotive, Telecom, and SaaS. He has worked inside
               businesses where family and commercial decisions were
               inseparable, and alongside founders navigating the handover to
@@ -705,7 +705,7 @@ export default function FamilyBusinessConsultingPage() {
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
           >
-            WhatsApp Prem Menon
+            WhatsApp Premraj Menon
           </a>
           <p className="text-center text-[12px] text-light">
             Response within one business day · Based in Bengaluru · Working

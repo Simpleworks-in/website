@@ -7,7 +7,7 @@ export const metadata = {
       "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks",
   },
   description:
-    "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Prem Menon, 39 years of experience. First call free.",
+    "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks",
     description:
-      "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Prem Menon, 39 years of experience. First call free.",
+      "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
     url: "https://www.simpleworks.in/services/msme-consulting",
     type: "website",
   },
@@ -69,7 +69,7 @@ const SITUATIONS = [
 
 const DIFFERENTIATORS = [
   {
-    title: "One point of contact — always Prem Menon",
+    title: "One point of contact — always Premraj Menon",
     body: "No junior team. No account manager. When you engage Simpleworks, you work directly with Prem — in your office, with your team, on your problem.",
   },
   {
@@ -146,7 +146,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do you work with manufacturing businesses specifically?",
-    a: "Yes. Manufacturing, consumer goods, and distribution businesses make up a significant part of our client base. Prem Menon's experience includes Consumer Durables at Usha International and Automotive & Tyres at MRF and Apollo Tyres — businesses where distribution, dealer networks, and operational efficiency are central.",
+    a: "Yes. Manufacturing, consumer goods, and distribution businesses make up a significant part of our client base. Premraj Menon's experience includes Consumer Durables at Usha International and Automotive & Tyres at MRF and Apollo Tyres — businesses where distribution, dealer networks, and operational efficiency are central.",
   },
 ];
 
@@ -212,7 +212,7 @@ const serviceSchema = {
   },
   areaServed: { "@type": "Country", name: "India" },
   description:
-    "Independent management consulting for Indian MSMEs — strategy, growth, and execution advisory led by Prem Menon, Bengaluru.",
+    "Independent management consulting for Indian MSMEs — strategy, growth, and execution advisory led by Premraj Menon, Bengaluru.",
   url: "https://www.simpleworks.in/services/msme-consulting",
 };
 
@@ -433,7 +433,7 @@ export default function MsmeConsultingPage() {
                 on by Monday morning.&rdquo;
               </blockquote>
               <cite className="text-[12px] not-italic text-light">
-                — Prem Menon, Founder, Simpleworks Consulting
+                — Premraj Menon, Founder, Simpleworks Consulting
               </cite>
             </div>
 
@@ -596,7 +596,7 @@ export default function MsmeConsultingPage() {
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
           >
-            WhatsApp Prem Menon
+            WhatsApp Premraj Menon
           </a>
           <p className="text-center text-[12px] text-light">
             Response within one business day · Based in Bengaluru · Working

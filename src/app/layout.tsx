@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Simpleworks",
   },
   description:
-    "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Prem Menon — 39 years of experience.",
+    "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Premraj Menon — 39 years of experience.",
   applicationName: "Simpleworks",
   appleWebApp: {
     capable: true,

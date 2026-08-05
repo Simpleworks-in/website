@@ -6,7 +6,7 @@ export const metadata = {
       "Consulting Services | MSME, Startup & Family Business | Simpleworks Bengaluru",
   },
   description:
-    "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Prem Menon — independent management consultant, Bengaluru. First call free.",
+    "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in/services",
   },
@@ -14,7 +14,7 @@ export const metadata = {
     title:
       "Consulting Services | MSME, Startup & Family Business | Simpleworks Bengaluru",
     description:
-      "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Prem Menon — independent management consultant, Bengaluru. First call free.",
+      "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. First call free.",
     url: "https://www.simpleworks.in/services",
     type: "website",
   },
@@ -392,7 +392,7 @@ export default function ServicesPage() {
               rel="noopener noreferrer"
               className="inline-flex w-fit items-center gap-2.5 rounded-[1px] border-[1.5px] border-red px-8 py-3.5 text-[14px] tracking-wide-3 text-red transition-colors hover:bg-red hover:text-white"
             >
-              WhatsApp Prem Menon &nbsp;→
+              WhatsApp Premraj Menon &nbsp;→
             </a>
           </div>
           <p className="mt-6 text-[13px] tracking-wide-1 text-light">

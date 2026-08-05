@@ -7,7 +7,7 @@ export const metadata = {
       "Small Business Consultant India | Business Mentor for Startups | Simpleworks",
   },
   description:
-    "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Prem Menon, Bengaluru. First call free.",
+    "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "Small Business Consultant India | Business Mentor for Startups | Simpleworks",
     description:
-      "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Prem Menon, Bengaluru. First call free.",
+      "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
     url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -94,7 +94,7 @@ const SITUATIONS = [
 
 const DIFFERENTIATORS = [
   {
-    title: "One consultant, always Prem Menon",
+    title: "One consultant, always Premraj Menon",
     body: "No junior team. No hand-offs. When you engage Simpleworks you work directly with Prem — in person where possible, structured online sessions where not.",
   },
   {
@@ -198,7 +198,7 @@ const FAQ_COLUMN_1 = [
 const FAQ_COLUMN_2 = [
   {
     q: "How is Simpleworks different from other small business consultants?",
-    a: "Three things: Prem Menon leads every engagement personally — no junior consultants, no hand-offs. Engagements are scoped to the specific problem — not packaged into standard formats. And Simpleworks stays until the plan is moving — not until an agreed number of sessions is complete.",
+    a: "Three things: Premraj Menon leads every engagement personally — no junior consultants, no hand-offs. Engagements are scoped to the specific problem — not packaged into standard formats. And Simpleworks stays until the plan is moving — not until an agreed number of sessions is complete.",
   },
   {
     q: "How long does a small business consulting engagement typically last?",
@@ -480,7 +480,7 @@ export default function SmallBusinessConsultingPage() {
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
               Simpleworks sits in a different position. We work on the
               business directly — strategy, go-to-market, execution — led
-              personally by Prem Menon, with 39 years of experience across
+              personally by Premraj Menon, with 39 years of experience across
               Consumer Durables, Automotive, Telecom, and SaaS. The
               engagement is scoped for what the business actually needs, not
               what fits a standard package.
@@ -494,7 +494,7 @@ export default function SmallBusinessConsultingPage() {
                 will stay until it&rsquo;s resolved.&rdquo;
               </blockquote>
               <cite className="text-[12px] not-italic text-light">
-                — Prem Menon, Founder, Simpleworks Consulting
+                — Premraj Menon, Founder, Simpleworks Consulting
               </cite>
             </div>
 
@@ -655,7 +655,7 @@ export default function SmallBusinessConsultingPage() {
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
           >
-            WhatsApp Prem Menon
+            WhatsApp Premraj Menon
           </a>
           <p className="text-center text-[12px] text-light">
             Response within one business day · Based in Bengaluru · Working

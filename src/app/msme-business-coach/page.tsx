@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "MSME Business Coach India | Prem Menon | Simpleworks Consulting",
+  title: "MSME Business Coach India | Premraj Menon | Simpleworks Consulting",
   description:
-    "Prem Menon is a senior MSME business coach based in Bengaluru with 39 years of industry experience. One-to-one coaching for Indian MSME founders in the ₹1–50 crore range. Online across India. Book a free 30-minute call.",
+    "Premraj Menon is a senior MSME business coach based in Bengaluru with 39 years of industry experience. One-to-one coaching for Indian MSME founders in the ₹1–50 crore range. Online across India. Book a free 30-minute call.",
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: "https://www.simpleworks.in/msme-business-coach",
   },
   openGraph: {
-    title: "MSME Business Coach India | Prem Menon | Simpleworks Consulting",
+    title: "MSME Business Coach India | Premraj Menon | Simpleworks Consulting",
     description:
       "One-to-one coaching for MSME founders who want to grow with clarity — not noise.",
     url: "https://www.simpleworks.in/msme-business-coach",
@@ -117,7 +117,7 @@ const WHY_CARDS = [
   },
   {
     title: "39 years of senior operating experience",
-    body: "Prem Menon has held COO-level roles across six industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That's not theory or certification. It's tested judgment applied to your reality.",
+    body: "Premraj Menon has held COO-level roles across six industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That's not theory or certification. It's tested judgment applied to your reality.",
   },
   {
     title: "No reports left behind on a desk",
@@ -186,7 +186,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      name: "Prem Menon",
+      name: "Premraj Menon",
       jobTitle: "MSME Business Coach",
       description:
         "Senior management consultant and MSME business coach with 39 years of experience across Consumer Durables, Automotive, Telecom, and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
@@ -503,7 +503,7 @@ export default function MsmeBusinessCoachPage() {
         <div className="w-[78px] h-[78px] rounded-full overflow-hidden border-2 border-rule flex-shrink-0">
           <Image
             src="/images/landing/prem-menon-portrait.png"
-            alt="Prem Menon, MSME Business Coach"
+            alt="Premraj Menon, MSME Business Coach"
             width={78}
             height={78}
             className="w-full h-full object-cover object-top"
@@ -511,13 +511,13 @@ export default function MsmeBusinessCoachPage() {
         </div>
         <div>
           <h3 className="text-[18px] font-bold text-ink mb-1.5">
-            Prem Menon
+            Premraj Menon
           </h3>
           <p className="text-[13px] font-semibold text-light mb-1.5">
             Founder, Simpleworks Consulting | MSME Business Coach, Bengaluru
           </p>
           <p className="text-[15px] text-mid leading-relaxed">
-            Prem Menon is a senior management consultant and MSME business
+            Premraj Menon is a senior management consultant and MSME business
             coach based in Bengaluru with 39 years of experience across Usha
             International, MRF, Apollo Tyres, BPL Mobile, Airtel, Tata
             Docomo, and early-stage SaaS ventures. He has held COO and

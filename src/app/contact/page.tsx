@@ -6,14 +6,14 @@ export const metadata = {
     absolute: "Hire a Business Consultant in India | Contact | Simpleworks",
   },
   description:
-    "Looking to hire a business consultant in India? Submit a consulting inquiry or book a free first call with Prem Menon. MSME consultant contact — Simpleworks, Bengaluru.",
+    "Looking to hire a business consultant in India? Submit a consulting inquiry or book a free first call with Premraj Menon. MSME consultant contact — Simpleworks, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/contact",
   },
   openGraph: {
     title: "Hire a Business Consultant in India | Contact | Simpleworks",
     description:
-      "Looking to hire a business consultant in India? Submit a consulting inquiry or book a free first call with Prem Menon. MSME consultant contact — Simpleworks, Bengaluru.",
+      "Looking to hire a business consultant in India? Submit a consulting inquiry or book a free first call with Premraj Menon. MSME consultant contact — Simpleworks, Bengaluru.",
     url: "https://www.simpleworks.in/contact",
     type: "website",
   },
@@ -52,7 +52,7 @@ export default async function ContactPage() {
             </p>
             <p className="text-[15px] text-mid leading-[1.65] mt-3 max-w-[500px] animate-fade-up">
               Message on WhatsApp for a quick reply, or send a note below.
-              Prem Menon responds personally.
+              Premraj Menon responds personally.
             </p>
           </div>
 

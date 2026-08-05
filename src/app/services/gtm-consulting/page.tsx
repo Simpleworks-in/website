@@ -127,7 +127,7 @@ const DIFFERENTIATORS = [
     body: "A GTM plan that requires headcount you don't have and a marketing budget you can't afford is not a plan — it's a wish. Simpleworks builds GTM strategies around what the business can actually execute in the next 90 days.",
   },
   {
-    title: "Prem Menon leads every engagement personally",
+    title: "Premraj Menon leads every engagement personally",
     body: "39 years across Consumer Durables, Automotive, Telecom, and SaaS. No junior consultants. No generic frameworks. GTM advice grounded in how Indian markets actually work.",
   },
 ];
@@ -198,7 +198,7 @@ const FAQ_COLUMN_1 = [
 const FAQ_COLUMN_2 = [
   {
     q: "We sell through distributors and dealers. Can Simpleworks help with that kind of GTM?",
-    a: "Yes — and this is where Simpleworks' experience is most distinctive. Prem Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
+    a: "Yes — and this is where Simpleworks' experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
   },
   {
     q: "How long does a GTM consulting engagement last?",
@@ -206,7 +206,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A free 30-minute conversation with Prem Menon. No pitch, no proposal. You describe where your current GTM is breaking down — inconsistent sales, unclear positioning, a new market you're trying to enter. Prem asks a few direct questions and tells you honestly whether a GTM engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so.",
+    a: "A free 30-minute conversation with Premraj Menon. No pitch, no proposal. You describe where your current GTM is breaking down — inconsistent sales, unclear positioning, a new market you're trying to enter. Prem asks a few direct questions and tells you honestly whether a GTM engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so.",
   },
 ];
 
@@ -512,7 +512,7 @@ export default function GtmConsultingPage() {
               Simpleworks brings 39 years of experience in Consumer Durables,
               Automotive, Telecom, and SaaS — businesses where distribution
               networks, dealer relationships, and regional sales structures
-              are the core of the GTM, not an afterthought. Prem Menon has
+              are the core of the GTM, not an afterthought. Premraj Menon has
               built and rebuilt go-to-market strategies across industries
               where the market is physical, the sales cycle is long, and the
               buyer makes decisions based on trust as much as specification.
@@ -528,7 +528,7 @@ export default function GtmConsultingPage() {
                 visit.&rdquo;
               </blockquote>
               <cite className="text-[12px] not-italic text-light">
-                — Prem Menon, Founder, Simpleworks Consulting
+                — Premraj Menon, Founder, Simpleworks Consulting
               </cite>
             </div>
 
@@ -690,7 +690,7 @@ export default function GtmConsultingPage() {
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
           >
-            WhatsApp Prem Menon
+            WhatsApp Premraj Menon
           </a>
           <p className="text-center text-[12px] text-light">
             Response within one business day · Based in Bengaluru · Working

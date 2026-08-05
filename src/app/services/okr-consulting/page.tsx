@@ -7,14 +7,14 @@ export const metadata = {
     absolute: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks",
   },
   description:
-    "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Prem Menon, Bengaluru.",
+    "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/okr-consulting",
   },
   openGraph: {
     title: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks",
     description:
-      "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Prem Menon, Bengaluru.",
+      "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/services/okr-consulting",
     locale: "en_IN",
     type: "website",
@@ -143,7 +143,7 @@ const DIFFERENTIATORS = [
     body: "We don't hand over a framework and disappear. Simpleworks runs the first two OKR cycles alongside your team — including weekly reviews, mid-cycle adjustments, and the end-of-cycle reset — before stepping back.",
   },
   {
-    title: "Prem Menon leads every engagement personally",
+    title: "Premraj Menon leads every engagement personally",
     body: "No junior consultants. No workshops delivered by an associate. Prem works directly with your leadership team on the OKR design, the launch, and the first two review cycles.",
   },
 ];
@@ -210,7 +210,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A free 30-minute conversation with Prem Menon. No pitch, no proposal. You describe where your business is and what is making goal-setting and accountability difficult — Prem asks a few direct questions and tells you honestly whether an OKR engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so and point you in the right direction.",
+    a: "A free 30-minute conversation with Premraj Menon. No pitch, no proposal. You describe where your business is and what is making goal-setting and accountability difficult — Prem asks a few direct questions and tells you honestly whether an OKR engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so and point you in the right direction.",
   },
 ];
 
@@ -614,7 +614,7 @@ export default function OkrConsultingPage() {
                 and replaces three bad ones.&rdquo;
               </blockquote>
               <cite className="text-[12px] not-italic text-light">
-                — Prem Menon, Founder, Simpleworks Consulting
+                — Premraj Menon, Founder, Simpleworks Consulting
               </cite>
             </div>
 
@@ -750,7 +750,7 @@ export default function OkrConsultingPage() {
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
           >
-            WhatsApp Prem Menon
+            WhatsApp Premraj Menon
           </a>
           <p className="text-center text-[12px] text-light">
             Response within one business day · Based in Bengaluru · Working

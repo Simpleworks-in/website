@@ -9,7 +9,7 @@ export const metadata = {
       "Business Consultant in Bengaluru | MSME Strategy & Growth | Simpleworks",
   },
   description:
-    "Simpleworks is an independent management consultant in Bengaluru for Indian MSMEs and startups. Expert help with business strategy, go-to-market planning & OKR consulting. Led by Prem Menon — 39 years of experience. First call free.",
+    "Simpleworks is an independent management consultant in Bengaluru for Indian MSMEs and startups. Expert help with business strategy, go-to-market planning & OKR consulting. Led by Premraj Menon — 39 years of experience. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
@@ -78,7 +78,7 @@ const schemaMarkup = {
     {
       "@type": "Person",
       "@id": "https://www.simpleworks.in/#prem-menon",
-      name: "Prem Menon",
+      name: "Premraj Menon",
       jobTitle: "Founder & Management Consultant",
       worksFor: { "@id": "https://www.simpleworks.in/#localbusiness" },
       description:
@@ -310,10 +310,10 @@ export default function HomePage() {
             <span className="text-red">No unnecessary complexity.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks was founded by Prem Menon, a management consultant with nearly four decades of experience across Consumer Durables, Tyres, Telecom, and IT/SaaS — in companies ranging from large corporates to early-growth ventures.
+            Simpleworks was founded by Premraj Menon, a management consultant with nearly four decades of experience across Consumer Durables, Tyres, Telecom, and IT/SaaS — in companies ranging from large corporates to early-growth ventures.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are an independent consulting firm in Bengaluru by deliberate choice. Every engagement is led by Prem Menon directly — not handed to a junior team.
+            We are an independent consulting firm in Bengaluru by deliberate choice. Every engagement is led by Premraj Menon directly — not handed to a junior team.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Our advice is practical, plain-spoken, and built to be understood and acted on — not buried in thick presentations. We work alongside you through execution, not just strategy, staying engaged until the plan is actually moving on the ground.

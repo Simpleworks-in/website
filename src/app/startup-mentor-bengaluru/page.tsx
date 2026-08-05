@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata = {
   title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
   description:
-    "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Prem Menon, Bengaluru.",
+    "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/startup-mentor-bengaluru",
   },
   openGraph: {
     title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
     description:
-      "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Prem Menon, Bengaluru.",
+      "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/startup-mentor-bengaluru",
     type: "website",
   },
@@ -27,7 +27,7 @@ const jsonLd = {
         "One-to-one startup mentorship for post-Series A founders. GTM architecture, OKR systems, execution discipline, and strategic thinking partnership.",
       provider: {
         "@type": "Person",
-        name: "Prem Menon",
+        name: "Premraj Menon",
         jobTitle: "Startup Mentor & Management Consultant",
         url: "https://www.simpleworks.in/about",
       },
@@ -388,7 +388,7 @@ export default function StartupMentorBengaluruPage() {
           </div>
           <Image
             src="/images/startup-mentor-hero.png"
-            alt="Startup mentor Prem Menon, Bengaluru"
+            alt="Startup mentor Premraj Menon, Bengaluru"
             width={1376}
             height={768}
             priority
@@ -432,7 +432,7 @@ export default function StartupMentorBengaluruPage() {
             been built yet.&rdquo;
           </p>
           <cite className="mt-4 block text-[11px] tracking-[0.12em] uppercase text-light not-italic">
-            — Prem Menon, Startup Mentor · Bengaluru
+            — Premraj Menon, Startup Mentor · Bengaluru
           </cite>
         </blockquote>
       </section>
@@ -511,7 +511,7 @@ export default function StartupMentorBengaluruPage() {
           <div className="aspect-square w-full overflow-hidden bg-[#F7F5F2]">
             <Image
               src="/prem-menon.png"
-              alt="Prem Menon, Startup Mentor Bengaluru"
+              alt="Premraj Menon, Startup Mentor Bengaluru"
               width={480}
               height={480}
               className="h-full w-full object-cover"
@@ -519,7 +519,7 @@ export default function StartupMentorBengaluruPage() {
           </div>
           <div>
             <h3 className="mb-1.5 text-[24px] font-bold leading-[1.3] text-ink">
-              Prem Menon
+              Premraj Menon
             </h3>
             <p className="mb-6 text-[13px] tracking-[0.1em] uppercase text-red">
               Startup Mentor · Bengaluru

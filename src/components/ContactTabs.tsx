@@ -346,7 +346,7 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
               PM
             </div>
             <div className="flex-1">
-              <p className="text-sm font-semibold text-white">Prem Menon</p>
+              <p className="text-sm font-semibold text-white">Premraj Menon</p>
               <p className="text-[11px] text-[#B2DFDB]">
                 Simpleworks Consulting
               </p>
