@@ -314,8 +314,8 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
         </h2>
         <p className="text-base text-mid leading-[1.75] mb-9 max-w-[420px]">
           Sometimes the fastest way to figure out if we&apos;re a good fit is a
-          quick message. Tell us about your business and what&apos;s stuck —
-          we&apos;ll take it from there.
+          quick message. Tell us your business name, turnover and number of
+          people — we&apos;ll take it from there.
         </p>
         <a
           href={whatsappHref}
