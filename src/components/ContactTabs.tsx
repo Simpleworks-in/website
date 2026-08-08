@@ -307,15 +307,6 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-[72px] items-center md:min-h-[400px]">
       <div className="w-full">
-        <div className="inline-flex items-center gap-[10px] bg-[#E8F8EE] border border-[#B7E4C7] rounded-[2px] px-4 py-2 mb-7">
-          <span
-            className="w-2 h-2 bg-wa rounded-full"
-            style={{ animation: "pulse 2s infinite" }}
-          />
-          <span className="text-xs text-[#2D6A4F] tracking-wide-3 uppercase font-semibold">
-            Usually responds within the hour
-          </span>
-        </div>
         <h2 className="text-[28px] md:text-[36px] font-bold leading-[1.2] tracking-tight-1 mb-4">
           Got a quick question?
           <br />
@@ -323,8 +314,8 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
         </h2>
         <p className="text-base text-mid leading-[1.75] mb-9 max-w-[420px]">
           Sometimes the fastest way to figure out if we&apos;re a good fit is a
-          quick message. No forms, no formality. Just send a note and we&apos;ll
-          take it from there.
+          quick message. Tell us about your business and what&apos;s stuck —
+          we&apos;ll take it from there.
         </p>
         <a
           href={whatsappHref}

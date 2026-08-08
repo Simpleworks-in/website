@@ -5,7 +5,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -95,7 +94,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Nav />
         {children}
         <Footer />
-        <WhatsAppButton />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>
