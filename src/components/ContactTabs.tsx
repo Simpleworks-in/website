@@ -266,7 +266,7 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
         <AsideBlock label="Travel">
           <span className="text-sm">
             We start with a call to understand your situation. All subsequent
-            engagements are conducted in person — we travel to you.
+            engagements will be scoped based on complexity of problem.
           </span>
         </AsideBlock>
       </div>
