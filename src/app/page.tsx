@@ -280,7 +280,7 @@ export default function HomePage() {
             at <span className="text-red">turning points.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Our clients are founder-led, family-run, and professionally managed businesses in manufacturing, consumer goods, retail, distribution, and technology — typically 10 to 30 years old, and at the point where what got them here will not get them further.
+            Our clients are established founder-led, family-run, and professionally managed businesses in manufacturing, consumer goods, retail, distribution, and technology — typically between ₹10 crore and ₹500 crore in revenue, and at the point where what got them here will not get them further.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
             Some are navigating a business turnaround. Some are entering a new market. Some are profitable but stuck — growing in revenue, shrinking in margin. All of them need simple answers, not complex frameworks.
