@@ -181,6 +181,29 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
                 placeholder="+91 98765 43210"
               />
             </div>
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="revenue"
+                className="text-eyebrow tracking-wide-8 uppercase text-light"
+              >
+                Annual Revenue
+              </label>
+              <select
+                id="revenue"
+                name="revenue"
+                required
+                defaultValue=""
+                className="font-serif text-[15px] text-ink bg-bg border border-rule/100 rounded-[1px] px-4 py-[13px] outline-none transition-colors focus:border-ink w-full"
+              >
+                <option value="" disabled>
+                  Select revenue band
+                </option>
+                <option value="Below ₹10 crore">Below ₹10 crore</option>
+                <option value="₹10 – 100 crore">₹10 – 100 crore</option>
+                <option value="₹100 – 500 crore">₹100 – 500 crore</option>
+                <option value="Above ₹500 crore">Above ₹500 crore</option>
+              </select>
+            </div>
             <Field
               id="location"
               label="City / Location"

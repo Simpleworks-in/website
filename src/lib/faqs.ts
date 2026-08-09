@@ -3,7 +3,7 @@ export type FAQ = { q: string; a: string };
 export const FAQS: FAQ[] = [
   {
     q: "What kind of businesses does Simpleworks work with?",
-    a: "As an MSME consultant based in Bengaluru, we work primarily with Indian MSMEs and small-to-medium businesses in manufacturing, consumer goods, retail, distribution, and technology. Our clients are typically founder-led or family-run businesses with 20 to 500 employees.",
+    a: "As an MSME consultant based in Bengaluru, we work primarily with Indian small and medium enterprises in manufacturing, consumer goods, retail, distribution, and technology. Small enterprises are typically ₹10 to ₹100 crore in revenue; medium enterprises ₹100 to ₹500 crore. Our clients are founder-led, family-run, or professionally managed businesses, usually with 50 to 500 employees.",
   },
   {
     q: "Do you work with businesses outside Bengaluru?",
@@ -31,7 +31,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "What is your consulting fee?",
-    a: "Fees are scoped after the first conversation, based on the nature and duration of the engagement. There is no standard day rate or retainer package — we price each engagement around what it actually needs. The first call is always free, with no obligation.",
+    a: "We have a pricing model for a project and a monthly fixed-day retainer package. Fees are scoped after the first conversation, based on the nature and duration of the engagement. We share pricing once we understand the complexity of the problem. The first call is always free, with no obligation.",
   },
   {
     q: "How long does a consulting engagement typically last?",

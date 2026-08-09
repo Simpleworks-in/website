@@ -280,7 +280,7 @@ export default function HomePage() {
             at <span className="text-red">turning points.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Our clients are Indian MSMEs, family business owners, and founder-led businesses — typically in manufacturing, consumer goods, retail, distribution, or technology. If you are looking for a business consultant for manufacturing companies in India, this is where we spend most of our time. They are established businesses, often 10 to 30 years old, that have hit a ceiling and need a business growth consultant who understands the ground reality of Indian business.
+            Our clients are founder-led, family-run, and professionally managed businesses in manufacturing, consumer goods, retail, distribution, and technology — typically 10 to 30 years old, and at the point where what got them here will not get them further.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
             Some are navigating a business turnaround. Some are entering a new market. Some are profitable but stuck — growing in revenue, shrinking in margin. All of them need simple answers, not complex frameworks.
@@ -442,6 +442,29 @@ export default function HomePage() {
               placeholder="Mehta Industries Pvt. Ltd."
               className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full"
             />
+          </div>
+          <div className="flex flex-col gap-[7px]">
+            <label
+              htmlFor="frevenue"
+              className="text-[10px] tracking-wide-7 uppercase text-light"
+            >
+              Annual Revenue
+            </label>
+            <select
+              id="frevenue"
+              name="revenue"
+              required
+              defaultValue=""
+              className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full"
+            >
+              <option value="" disabled>
+                Select revenue band
+              </option>
+              <option value="Below ₹10 crore">Below ₹10 crore</option>
+              <option value="₹10 – 100 crore">₹10 – 100 crore</option>
+              <option value="₹100 – 500 crore">₹100 – 500 crore</option>
+              <option value="Above ₹500 crore">Above ₹500 crore</option>
+            </select>
           </div>
           <button
             type="submit"
