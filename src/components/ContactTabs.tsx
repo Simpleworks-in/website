@@ -368,24 +368,9 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
           </div>
           <div className="px-[14px] py-4 flex flex-col gap-[10px] min-h-[200px]">
             <div className="max-w-[84%] px-[13px] py-[9px] text-[13px] leading-[1.5] bg-[#DCF8C6] text-[#1a1a1a] rounded-[8px_8px_0_8px] self-end">
-              Hi Prem, I came across Simpleworks and would like to discuss my
-              business.
-              <p className="text-[10px] text-[#999] text-right mt-1">10:32 AM ✓✓</p>
-            </div>
-            <div className="max-w-[84%] px-[13px] py-[9px] text-[13px] leading-[1.5] bg-white text-[#1a1a1a] rounded-[0_8px_8px_8px] self-start">
-              Hello! Thanks for reaching out. I&apos;d be happy to connect. What
-              kind of business do you run?
-              <p className="text-[10px] text-[#999] text-right mt-1">10:35 AM</p>
-            </div>
-            <div className="max-w-[84%] px-[13px] py-[9px] text-[13px] leading-[1.5] bg-[#DCF8C6] text-[#1a1a1a] rounded-[8px_8px_0_8px] self-end">
               We&apos;re a manufacturing firm in Pune, around ₹12 Cr revenue.
               Struggling with growth.
               <p className="text-[10px] text-[#999] text-right mt-1">10:37 AM ✓✓</p>
-            </div>
-            <div className="max-w-[84%] px-[13px] py-[9px] text-[13px] leading-[1.5] bg-white text-[#1a1a1a] rounded-[0_8px_8px_8px] self-start">
-              That&apos;s a common turning point. Let&apos;s set up a quick call
-              — no charge for the first conversation.
-              <p className="text-[10px] text-[#999] text-right mt-1">10:38 AM</p>
             </div>
           </div>
           <div className="bg-[#F0F0F0] px-[14px] py-[10px] flex items-center gap-[10px] border-t border-[#DDD]">
