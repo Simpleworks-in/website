@@ -164,7 +164,11 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
         live: true,
       },
-      { title: "The 5D Method", href: "", live: false },
+      {
+        title: "Simpleworks 4P Framework",
+        href: "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
+        live: true,
+      },
     ],
     cta: "Explore Execution Consulting",
   },
