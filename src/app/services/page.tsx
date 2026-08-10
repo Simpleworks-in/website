@@ -140,7 +140,11 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         href: "/blog/who-is-your-customer-really",
         live: true,
       },
-      { title: "GTM vs growth strategy", href: "", live: false },
+      {
+        title: "GTM vs growth strategy",
+        href: "/blog/gtm-strategy-vs-growth-strategy-why-confusing-the-two-stalls-your-revenue",
+        live: true,
+      },
       { title: "Channel strategy for Indian manufacturers", href: "", live: false },
     ],
     cta: "Explore GTM Consulting",
