@@ -9,7 +9,7 @@ export const metadata = {
       "Business Consultant in Bengaluru | MSME Strategy & Growth | Simpleworks",
   },
   description:
-    "Simpleworks is an independent management consultant in Bengaluru for Indian MSMEs and startups. Expert help with business strategy, go-to-market planning & OKR consulting. Led by Premraj Menon — 39 years of experience. First call free.",
+    "MSME consultant in Bengaluru. Strategy, go-to-market and OKR consulting for founder-led businesses. Led by Premraj Menon, ex-COO Tata Docomo. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
@@ -192,7 +192,7 @@ export default function HomePage() {
               className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              We work with established Indian businesses that are stuck on growth, short on clarity, and unsure of the next move. Led by Premraj Menon — thirty-nine years running sales, distribution and operations, including Chief Operating Officer, Kerala Circle, at Tata Docomo.
+              We work with established Indian businesses that are stuck on growth, short on clarity, and unsure of the next move. Led by Premraj Menon — thirty-nine years running sales, distribution and operations, including full P&L as Chief Operating Officer of Tata Docomo&apos;s Kerala Circle.
             </p>
             <a
               href="#contact"
