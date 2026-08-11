@@ -308,13 +308,13 @@ export default function HomePage() {
             <span className="text-red">Not advising on them.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks was founded by Premraj Menon after thirty-nine years on the operating side of business. He began as a sales trainee in 1987 and finished as Chief Operating Officer, Kerala Circle, at Tata Docomo — by way of MRF, Apollo Tyres, BPL Mobile and Bharti Airtel. Along the way he ran a ₹120 crore corporate and SME business covering 2,500 accounts, and held full P&L responsibility for a ₹72 crore state broadband operation.
+            Simpleworks was founded by Premraj Menon after thirty-nine years of running businesses. He started as a sales trainee in 1987 and finished as Chief Operating Officer of Tata Docomo&apos;s Kerala Circle, carrying the full circle P&L — by way of MRF, Apollo Tyres, BPL Mobile and Bharti Airtel. He was part of the team that launched Tata Docomo in Karnataka and built it into the largest circle in the country.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            Through most of those years his customers were other people&apos;s businesses — distributor owners, dealers and modern trade retailers, founder-run and usually multi-brand, turning over anywhere between ₹12 crore and ₹150 crore. His working day was spent in their offices, looking at their stock, their credit and their margins. From 2016 to 2025 he ran two ventures of his own, Viworks Ventures and Neoffice.ai, with small teams and tight cash. Large-company discipline, small-business reality, and a decade of building with very little.
+            For most of those years his customers were owner-run businesses — distributors, dealers and modern trade retailers, usually multi-brand, turning over ₹12 to ₹150 crore. His day was spent in their offices, on their stock, their credit, their margins. Then, from 2016 to 2025, two ventures of his own: Viworks Ventures and Neoffice.ai. Small teams, tight cash, nothing to delegate to.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Every engagement is led by Premraj Menon directly — not handed to a junior team. The advice is practical and plain-spoken, built to be acted on rather than buried in a deck. And we work alongside you through execution, not just strategy, staying engaged until the plan is actually moving on the ground.
+            Every engagement is led by Premraj directly — never handed to a junior team. The advice is plain-spoken and built to be acted on, not buried in a deck. And we stay through execution, not just strategy, until the plan is actually moving.
           </p>
           <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mt-8 pt-6 border-t border-rule">
             Sales, distribution and operating roles across <strong className="text-ink font-bold">MRF</strong> · <strong className="text-ink font-bold">Apollo Tyres</strong> · <strong className="text-ink font-bold">BPL Mobile</strong> · <strong className="text-ink font-bold">Bharti Airtel</strong> · <strong className="text-ink font-bold">Tata Docomo</strong>
