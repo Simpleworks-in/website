@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FAQAccordion from "@/components/FAQAccordion";
 import { FAQS } from "@/lib/faqs";
@@ -315,6 +316,16 @@ export default function HomePage() {
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Every engagement is led by Premraj directly — never handed to a junior team. The advice is plain-spoken and built to be acted on, not buried in a deck. And we stay through execution, not just strategy, until the plan is actually moving.
+          </p>
+          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
+            Thinking about bringing in outside help? Read{" "}
+            <Link
+              href="/blog/how-to-choose-the-right-msme-business-coach-in-india"
+              className="text-red underline hover:no-underline"
+            >
+              how to choose the right MSME business coach
+            </Link>{" "}
+            before you commit.
           </p>
           <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mt-8 pt-6 border-t border-rule">
             Sales, distribution and operating roles across <strong className="text-ink font-bold">MRF</strong> · <strong className="text-ink font-bold">Apollo Tyres</strong> · <strong className="text-ink font-bold">BPL Mobile</strong> · <strong className="text-ink font-bold">Bharti Airtel</strong> · <strong className="text-ink font-bold">Tata Docomo</strong>

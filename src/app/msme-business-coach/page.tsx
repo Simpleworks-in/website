@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "MSME Business Coach India | Premraj Menon | Simpleworks Consulting",
@@ -375,6 +376,16 @@ export default function MsmeBusinessCoachPage() {
             process is yours — not a template adapted to fit. And the
             execution support that follows is built around your pace and
             capacity.
+          </p>
+          <p>
+            Not sure how to tell a real fit from a generic one? Read{" "}
+            <Link
+              href="/blog/how-to-choose-the-right-msme-business-coach-in-india"
+              className="text-red underline hover:no-underline"
+            >
+              how to choose the right MSME business coach
+            </Link>{" "}
+            for the five questions worth asking before you commit.
           </p>
         </div>
       </section>
