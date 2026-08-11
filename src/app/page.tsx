@@ -6,13 +6,20 @@ import { FAQS } from "@/lib/faqs";
 
 export const metadata = {
   title: {
-    absolute:
-      "Business Consultant in Bengaluru | MSME Strategy & Growth | Simpleworks",
+    absolute: "SME Management Consulting Bengaluru | Premraj Menon | Simpleworks",
   },
   description:
-    "MSME consultant in Bengaluru. Strategy, go-to-market and OKR consulting for founder-led businesses. Led by Premraj Menon, ex-COO Tata Docomo. First call free.",
+    "Management consultancy for established Indian SMEs (₹10 Cr+). We partner with founders to break through execution bottlenecks and drive operational growth.",
   alternates: {
     canonical: "https://www.simpleworks.in",
+  },
+  openGraph: {
+    title: "Management Consulting for Established Indian SMEs | Simpleworks",
+    description: "Strategy. Growth. Execution. Nothing more.",
+    url: "https://www.simpleworks.in",
+    siteName: "Simpleworks",
+    locale: "en_IN",
+    type: "website",
   },
 };
 
@@ -176,24 +183,26 @@ export default function HomePage() {
         <div className="flex-1 flex flex-col lg:flex-row items-stretch overflow-hidden">
           {/* Text */}
           <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
-            <p
-              className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
-              style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
-            >
-              Strategy, Growth & Execution Advisory · Bengaluru
-            </p>
-            <h1
-              className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] mb-5 md:mb-[26px] opacity-0 animate-fade-up"
-              style={{ animationDelay: "0.25s" }}
-            >
-              Your business has more in it than your current{" "}
-              <span className="text-red">results</span> show.
+            <h1 className="flex flex-col mb-5 md:mb-[26px]">
+              <span
+                className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
+                style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
+              >
+                Management Consulting for Established MSMEs · Bengaluru
+              </span>
+              <span
+                className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
+                style={{ animationDelay: "0.25s" }}
+              >
+                Your business has more in it than your current{" "}
+                <span className="text-red">results</span> show.
+              </span>
             </h1>
             <p
               className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              We work with established Indian businesses that are stuck on growth, short on clarity, and unsure of the next move. Led by Premraj Menon — thirty-nine years running sales, distribution and operations, including full P&L as Chief Operating Officer of Tata Docomo&apos;s Kerala Circle.
+              We work with established Indian Small and Medium Business that are stuck in growth, short on clarity, and unsure of the next move.
             </p>
             <a
               href="#contact"
@@ -245,7 +254,10 @@ export default function HomePage() {
             Execution. <span className="text-red">Nothing more.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are an independent management consulting firm in Bengaluru working with founders and leadership teams across India. We don&apos;t hand over a report and walk away — we stay until the plan is moving.
+            We are an independent management consulting firm in Bengaluru working with founders of established Indian small and medium businesses. We don&apos;t hand over a report and walk away — we stay until the plan is moving.
+          </p>
+          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
+            Led by Premraj Menon — thirty-nine years running sales, distribution, and ground operations—including full P&amp;L accountability as Chief Operating Officer of Tata Docomo&apos;s Kerala Circle. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2px]">
