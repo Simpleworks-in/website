@@ -6,14 +6,14 @@ export const metadata = {
     absolute: "Independent Management Consultant India | Premraj Menon | Simpleworks",
   },
   description:
-    "Premraj Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
+    "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo's Kerala Circle.",
   alternates: {
     canonical: "https://www.simpleworks.in/about",
   },
   openGraph: {
     title: "Independent Management Consultant India | Premraj Menon | Simpleworks",
     description:
-      "Premraj Menon is an independent management consultant in India with 39 years of experience across Consumer Durables, Telecom and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
+      "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo's Kerala Circle.",
     url: "https://www.simpleworks.in/about",
     type: "website",
   },
@@ -116,9 +116,9 @@ export default function AboutPage() {
                 </span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[28px] md:text-[32px] font-bold leading-none text-ink">6</span>
+                <span className="text-[28px] md:text-[32px] font-bold leading-none text-ink">1987</span>
                 <span className="text-eyebrow-lg uppercase tracking-wide-5 text-light">
-                  Major Industries
+                  Started on the front line
                 </span>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-[15px] font-semibold leading-[1.3] text-ink">
-                  Neoffice AI
+                  Neoffice.ai
                 </p>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function AboutPage() {
             <p className="mb-[22px]">
               I started my corporate career in 1987 on the front line — as a{" "}
               <strong className="font-semibold text-ink">
-                Sales Executive at Usha International
+                Sales Trainee at Usha International
               </strong>
               . That ground-level beginning shaped everything that followed. I learned early that
               real business insight comes from being where the customer is, not from a head office.
@@ -245,12 +245,25 @@ export default function AboutPage() {
               actually works.
             </p>
             <p className="mb-[22px]">
-              That journey took me from Sales Executive all the way to{" "}
+              There is a part of that career that matters more than the job titles. For most of
+              those years my customers were other people&rsquo;s businesses — distributor owners,
+              dealers and modern trade retailers, almost all of them founder-run and usually
+              carrying several brands at once, turning over anywhere between ₹12 crore and ₹150
+              crore. My working day was spent in their offices, not mine: looking at their stock,
+              their credit cycle, their margins, and the question of which son would run which
+              division. At Airtel I ran a ₹120 crore business built on 2,500 corporate and SME
+              accounts. So while the roles were in large companies, the businesses I actually
+              worked with were the size of the ones I advise today.
+            </p>
+            <p className="mb-[22px]">
+              That journey took me from trainee all the way to{" "}
               <strong className="font-semibold text-ink">
                 Chief Operating Officer of Kerala Circle at Tata Docomo
               </strong>{" "}
-              — one of India&rsquo;s most competitive telecom markets. At Tata Docomo, I also took
-              on the additional responsibility of serving as an{" "}
+              — carrying the full circle P&amp;L in one of India&rsquo;s most competitive telecom
+              markets. Earlier, I was part of the team that launched Tata Docomo in Karnataka and
+              built it into the largest circle in the country. At Tata Docomo, I also took on the
+              additional responsibility of serving as an{" "}
               <strong className="font-semibold text-ink">Ethics Counselor</strong>, a role that
               cemented my belief that the best business decisions are always values-led. You build
               trust before you build market share.
@@ -260,7 +273,7 @@ export default function AboutPage() {
               entrepreneurial one. I co-founded{" "}
               <strong className="font-semibold text-ink">Viworks Ventures</strong>, then headed
               product and growth at{" "}
-              <strong className="font-semibold text-ink">Neoffice AI</strong> — a SaaS startup
+              <strong className="font-semibold text-ink">Neoffice.ai</strong> — a SaaS startup
               where I learned firsthand what it takes to build from near-zero with limited
               resources and unlimited ambition.
             </p>
@@ -268,7 +281,9 @@ export default function AboutPage() {
               That experience changed how I see business problems. When you&rsquo;ve worked inside
               large organisations with deep resources <em>and</em> inside startups with none, you
               develop a very clear sense of what actually moves the needle — and what just looks
-              like progress.
+              like progress. I work in English, Hindi, Malayalam, Kannada, Tamil and Gujarati —
+              which, in a family business, is often the difference between a polite meeting and a
+              real conversation.
             </p>
             <p className="mb-0">
               <strong className="font-semibold text-ink">
@@ -317,7 +332,7 @@ export default function AboutPage() {
               Bachelor of Arts
             </h3>
             <p className="text-[14px] leading-[1.5] text-mid">
-              Bengaluru University
+              Christ College, Bengaluru University
               <br />
               Bengaluru, India
             </p>
