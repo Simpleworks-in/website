@@ -221,80 +221,56 @@ export default function AboutPage() {
           </h2>
           <div className="text-[16px] md:text-[17px] leading-[1.75] md:leading-[1.82] text-mid">
             <p className="mb-[22px]">
-              I started my corporate career in 1987 on the front line — as a{" "}
+              I started my corporate career in 1987 as a{" "}
               <strong className="font-semibold text-ink">
                 Sales Trainee at Usha International
               </strong>
-              . That ground-level beginning shaped everything that followed. I learned early that
-              real business insight comes from being where the customer is, not from a head office.
+              . That ground-level beginning taught me early that real business insight comes from
+              being where the customer is, not from a head office.
             </p>
             <p className="mb-[22px]">
-              Over the next three decades, I moved through some of India&rsquo;s most demanding
-              industries — consumer durables, automotive tyres, telecom, and SaaS. I have handled{" "}
+              Over the next three decades, I moved through consumer durables, automotive tyres,
+              telecom, and SaaS—managing{" "}
               <strong className="font-semibold text-ink">
-                Sales and Distribution, Marketing, Product Management, Growth, Call Center
-                Operations, Customer retention,
+                Sales &amp; Distribution, Marketing, Product Management, Growth, and Customer
+                Operations
               </strong>{" "}
-              and <strong className="font-semibold text-ink">Customer management</strong> — and
-              carried full responsibility for both the{" "}
+              while carrying full P&amp;L responsibility across large geographies. I built and led
+              major teams, learning firsthand that alignment turns good strategy into execution.
+            </p>
+            <p className="mb-[22px]">
+              Beyond the job titles, my daily reality was spent working directly with founder-run
+              distributors, dealers, and retailers turning over ₹12–150 crore. My days were spent
+              in their offices analyzing stock, credit cycles, margins, and succession planning. At
+              Airtel, I managed a ₹120 crore business across 2,500 corporate and SME accounts.
+              Though I worked within corporations, the businesses I actually built were the exact
+              size of the ones I advise today.
+            </p>
+            <p className="mb-[22px]">
+              That path led me from trainee to{" "}
               <strong className="font-semibold text-ink">
-                top line and bottom line of the P&amp;L
-              </strong>{" "}
-              across large geographies. I have built and led large teams — and learned that a
-              well-aligned team is often the difference between a good strategy and one that
-              actually works.
+                Chief Operating Officer of the Kerala Circle at Tata Docomo
+              </strong>
+              , managing a competitive telecom P&amp;L after previously helping launch Tata Docomo
+              in Karnataka and building it into the country&rsquo;s largest circle. As an{" "}
+              <strong className="font-semibold text-ink">Ethics Counselor</strong> there, I
+              reinforced a core belief: trust precedes market share.
             </p>
             <p className="mb-[22px]">
-              There is a part of that career that matters more than the job titles. For most of
-              those years my customers were other people&rsquo;s businesses — distributor owners,
-              dealers and modern trade retailers, almost all of them founder-run and usually
-              carrying several brands at once, turning over anywhere between ₹12 crore and ₹150
-              crore. My working day was spent in their offices, not mine: looking at their stock,
-              their credit cycle, their margins, and the question of which son would run which
-              division. At Airtel I ran a ₹120 crore business built on 2,500 corporate and SME
-              accounts. So while the roles were in large companies, the businesses I actually
-              worked with were the size of the ones I advise today.
-            </p>
-            <p className="mb-[22px]">
-              That journey took me from trainee all the way to{" "}
-              <strong className="font-semibold text-ink">
-                Chief Operating Officer of Kerala Circle at Tata Docomo
-              </strong>{" "}
-              — carrying the full circle P&amp;L in one of India&rsquo;s most competitive telecom
-              markets. Earlier, I was part of the team that launched Tata Docomo in Karnataka and
-              built it into the largest circle in the country. At Tata Docomo, I also took on the
-              additional responsibility of serving as an{" "}
-              <strong className="font-semibold text-ink">Ethics Counselor</strong>, a role that
-              cemented my belief that the best business decisions are always values-led. You build
-              trust before you build market share.
-            </p>
-            <p className="mb-[22px]">
-              At 50, I made a deliberate choice to step off the corporate track and onto the
-              entrepreneurial one. I co-founded{" "}
-              <strong className="font-semibold text-ink">Viworks Ventures</strong>, then headed
-              product and growth at{" "}
-              <strong className="font-semibold text-ink">Neoffice.ai</strong> — a SaaS startup
-              where I learned firsthand what it takes to build from near-zero with limited
-              resources and unlimited ambition.
-            </p>
-            <p className="mb-[22px]">
-              That experience changed how I see business problems. When you&rsquo;ve worked inside
-              large organisations with deep resources <em>and</em> inside startups with none, you
-              develop a very clear sense of what actually moves the needle — and what just looks
-              like progress. I work in English, Hindi, Malayalam, Kannada, Tamil and Gujarati —
-              which, in a family business, is often the difference between a polite meeting and a
-              real conversation.
+              At 50, I deliberately pivoted to entrepreneurship. I co-founded{" "}
+              <strong className="font-semibold text-ink">Viworks Ventures</strong> and headed
+              product and growth at <strong className="font-semibold text-ink">Neoffice.ai</strong>,
+              learning what it takes to scale from near-zero. Having operated both with deep
+              corporate resources and startup constraints, I know what actually moves the needle
+              versus what merely looks like progress. Fluency in English, Hindi, Malayalam,
+              Kannada, Tamil, and Gujarati allows me to bridge the gap between formal strategy and
+              real, personal conversations with family business owners.
             </p>
             <p className="mb-0">
-              <strong className="font-semibold text-ink">
-                Simpleworks Consulting — an independent management consulting firm — is the natural
-                outcome of that entire journey — and my answer to a question many Indian MSME
-                founders and family business owners ask: where do I find a management consultant in
-                India — not a large firm, but an independent business growth consultant — who
-                actually understands my business?
-              </strong>{" "}
-              It exists for founders and business leaders who know their business has more
-              potential, but can&rsquo;t quite find the lever that unlocks the next stage.
+              Simpleworks Consulting is the natural outcome of that journey: practical, independent
+              management consulting for Indian MSME founders and family business owners who know
+              their company has more potential, but need the right lever to unlock its next phase
+              of growth.
             </p>
           </div>
         </div>
