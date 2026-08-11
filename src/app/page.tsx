@@ -339,9 +339,6 @@ export default function HomePage() {
             </Link>{" "}
             before you commit.
           </p>
-          <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mt-8 pt-6 border-t border-rule">
-            Sales, distribution and operating roles across <strong className="text-ink font-bold">MRF</strong> · <strong className="text-ink font-bold">Apollo Tyres</strong> · <strong className="text-ink font-bold">BPL Mobile</strong> · <strong className="text-ink font-bold">Bharti Airtel</strong> · <strong className="text-ink font-bold">Tata Docomo</strong>
-          </p>
         </div>
       </section>
 
