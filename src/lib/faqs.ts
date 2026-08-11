@@ -6,6 +6,10 @@ export const FAQS: FAQ[] = [
     a: "As an MSME consultant based in Bengaluru, we work primarily with Indian small and medium enterprises in manufacturing, consumer goods, retail, distribution, and technology. Small enterprises are typically ₹10 to ₹100 crore in revenue; medium enterprises ₹100 to ₹500 crore. Our clients are founder-led, family-run, or professionally managed businesses, usually with 50 to 500 employees.",
   },
   {
+    q: "You've spent your career in large companies. How does that apply to a business like mine?",
+    a: "It's a fair question, and the honest answer is that a ₹25 crore business is not a small Airtel — you don't have a planning department or six layers to absorb a bad decision. But the career looks different from the inside. Through the corporate years my customers were businesses much like yours: distributor owners, dealers and retailers turning over between ₹12 crore and ₹150 crore, most of them family-owned and carrying several brands at once. At Airtel I ran a ₹120 crore business built on 2,500 corporate and SME accounts, so a large part of my working life has been spent understanding how smaller businesses actually buy, operate and decide. I spent those years in their offices, not mine. And from 2016 to 2025 I ran two ventures of my own with small teams and tight cash. So the judgement comes from large companies, but the context is one I've worked in for most of forty years — and it gets stripped down to what a business your size can actually carry, run by the people you already have.",
+  },
+  {
     q: "Do you work with businesses outside Bengaluru?",
     a: "Yes. We currently offer in-person counselling in Bengaluru and other major cities across South India, with plans to expand to other regions gradually. For locations we can't yet reach in person, we're happy to work with you through online counselling.",
   },

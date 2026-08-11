@@ -19,8 +19,8 @@ const TAGLINE_ITEMS = [
   "Business Strategy",
   "Go-to-Market Planning",
   "Execution & OKRs",
-  "39 Years Experience",
-  "Bengaluru, India",
+  "39 Years Operating Experience",
+  "Bengaluru · Across India",
 ];
 
 const SERVICES = [
@@ -179,7 +179,7 @@ export default function HomePage() {
               className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
               style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
             >
-              Management Consulting for MSMEs & Startups · Bengaluru
+              Strategy, Growth & Execution Advisory · Bengaluru
             </p>
             <h1
               className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] mb-5 md:mb-[26px] opacity-0 animate-fade-up"
@@ -192,7 +192,7 @@ export default function HomePage() {
               className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              We work with Indian MSME and Startup businesses that are stuck on growth, short on clarity, and unsure of the next move. We help you navigate through it.
+              We work with established Indian businesses that are stuck on growth, short on clarity, and unsure of the next move. Led by Premraj Menon — thirty-nine years running sales, distribution and operations, including Chief Operating Officer, Kerala Circle, at Tata Docomo.
             </p>
             <a
               href="#contact"
@@ -303,20 +303,21 @@ export default function HomePage() {
             Why Simpleworks
           </p>
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-            39 years of experience.
+            39 years running businesses.
             <br />
-            One point of contact.
-            <br />
-            <span className="text-red">No unnecessary complexity.</span>
+            <span className="text-red">Not advising on them.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks was founded by Premraj Menon, a management consultant with nearly four decades of experience across Consumer Durables, Tyres, Telecom, and IT/SaaS — in companies ranging from large corporates to early-growth ventures.
+            Simpleworks was founded by Premraj Menon after thirty-nine years on the operating side of business. He began as a sales trainee in 1987 and finished as Chief Operating Officer, Kerala Circle, at Tata Docomo — by way of MRF, Apollo Tyres, BPL Mobile and Bharti Airtel. Along the way he ran a ₹120 crore corporate and SME business covering 2,500 accounts, and held full P&L responsibility for a ₹72 crore state broadband operation.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are an independent consulting firm in Bengaluru by deliberate choice. Every engagement is led by Premraj Menon directly — not handed to a junior team.
+            Through most of those years his customers were other people&apos;s businesses — distributor owners, dealers and modern trade retailers, founder-run and usually multi-brand, turning over anywhere between ₹12 crore and ₹150 crore. His working day was spent in their offices, looking at their stock, their credit and their margins. From 2016 to 2025 he ran two ventures of his own, Viworks Ventures and Neoffice.ai, with small teams and tight cash. Large-company discipline, small-business reality, and a decade of building with very little.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Our advice is practical, plain-spoken, and built to be understood and acted on — not buried in thick presentations. We work alongside you through execution, not just strategy, staying engaged until the plan is actually moving on the ground.
+            Every engagement is led by Premraj Menon directly — not handed to a junior team. The advice is practical and plain-spoken, built to be acted on rather than buried in a deck. And we work alongside you through execution, not just strategy, staying engaged until the plan is actually moving on the ground.
+          </p>
+          <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mt-8 pt-6 border-t border-rule">
+            Sales, distribution and operating roles across <strong className="text-ink font-bold">MRF</strong> · <strong className="text-ink font-bold">Apollo Tyres</strong> · <strong className="text-ink font-bold">BPL Mobile</strong> · <strong className="text-ink font-bold">Bharti Airtel</strong> · <strong className="text-ink font-bold">Tata Docomo</strong>
           </p>
         </div>
       </section>
