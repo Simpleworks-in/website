@@ -355,10 +355,10 @@ export default function AboutPage() {
               2013
             </p>
             <h3 className="mb-2.5 text-[17px] font-bold leading-[1.3] text-ink">
-              Advanced Management Programme
+              19th Tata Group Executive Leadership Seminar
             </h3>
             <p className="text-[14px] leading-[1.5] text-mid">
-              Ross School of Business
+              Ross School of Management
               <br />
               University of Michigan
               <br />
