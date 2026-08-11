@@ -321,13 +321,13 @@ export default function HomePage() {
             <span className="text-red">Not advising on them.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks was founded by Premraj Menon after thirty-nine years of running businesses. He started as a sales trainee in 1987 and finished as Chief Operating Officer of Tata Docomo&apos;s Kerala Circle, carrying the full circle P&L — by way of MRF, Apollo Tyres, BPL Mobile and Bharti Airtel. He was part of the team that launched Tata Docomo in Karnataka and built it into the largest circle in the country.
+            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from sales trainee in 1987 to COO of Tata Docomo&apos;s Kerala Circle (full P&L), with executive and leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel. He also helped build Tata Docomo Karnataka into the country&apos;s largest circle, before running two tech ventures Viworks Ventures and Neoffice AI (2016–2025) where we had small teams, tight cash, nothing to delegate to.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            For most of those years his customers were owner-run businesses — distributors, dealers and modern trade retailers, usually multi-brand, turning over ₹12 to ₹150 crore. His day was spent in their offices, on their stock, their credit, their margins. Then, from 2016 to 2025, two ventures of his own: Viworks Ventures and Neoffice.ai. Small teams, tight cash, nothing to delegate to.
+            Most of those years were spent inside owner-run businesses—distributors, dealers, and retailers turning over ₹12 to ₹150 crore—working directly on their stock, credit, and margins.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Every engagement is led by Premraj directly — never handed to a junior team. The advice is plain-spoken and built to be acted on, not buried in a deck. And we stay through execution, not just strategy, until the plan is actually moving.
+            Every engagement is led directly by Premraj—never handed off to juniors. We skip the dense slide decks for plain-spoken strategy, staying embedded through execution until the plan is actually moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Thinking about bringing in outside help? Read{" "}
