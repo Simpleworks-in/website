@@ -99,7 +99,11 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
         href: "/blog/is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
         live: true,
       },
-      { title: "Second-generation succession", href: "", live: false },
+      {
+        title: "How to Prepare a Second Generation Leader to Take Over",
+        href: "/blog/how-do-you-prepare-a-second-generation-leader-to-take-over-a-family-business-a-practical-succession-plan",
+        live: true,
+      },
       { title: "Separating ownership from management", href: "", live: false },
     ],
     cta: "Explore Family Business Consulting",
