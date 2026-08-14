@@ -149,7 +149,12 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         href: "/blog/gtm-strategy-vs-growth-strategy-why-confusing-the-two-stalls-your-revenue",
         live: true,
       },
-      { title: "Channel strategy for Indian manufacturers", href: "", live: false },
+      {
+        title:
+          "Online Sales Strategy for Manufacturers in India, Why the Marketplace Listing Is Only the Start",
+        href: "https://www.simpleworks.in/blog/online-sales-strategy-for-manufacturers-in-india-why-the-marketplace-listing-is-only-the-start",
+        live: true,
+      },
     ],
     cta: "Explore GTM Consulting",
   },
