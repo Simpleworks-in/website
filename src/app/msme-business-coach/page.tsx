@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "MSME Business Coach India | Premraj Menon | Simpleworks Consulting",
   description:
-    "Premraj Menon is a senior MSME business coach based in Bengaluru with 39 years of industry experience. One-to-one coaching for Indian MSME founders in the ₹1–50 crore range. Online across India. Book a free 30-minute call.",
+    "Premraj Menon is a senior MSME business coach based in Bengaluru with 39 years of industry experience. One-to-one coaching for Indian MSME founders in the ₹10–100 crore range. Book a free 30-minute call.",
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -72,7 +72,7 @@ const WHO_ITS_FOR = [
   },
   {
     title: "First-generation entrepreneurs",
-    body: "You've crossed ₹5 crore in revenue but growth has plateaued — and you're not sure whether the problem is strategy, sales, or execution.",
+    body: "You've crossed ₹10 crore in revenue but growth has plateaued — and you're not sure whether the problem is strategy, sales, or execution.",
   },
   {
     title: "Startups moving from early traction to scale",
@@ -125,23 +125,23 @@ const WHY_CARDS = [
     body: "Most consultants deliver a document and exit. This engagement stays through implementation — weekly cadence, OKR tracking, course corrections as the business moves.",
   },
   {
-    title: "In-person in Bengaluru, online across India",
-    body: "Founders in Mumbai, Chennai, Hyderabad, Delhi, Pune, and Kochi connect online with the same depth as face-to-face. If you're in Bengaluru, Prem meets in person.",
+    title: "Built for founders Prem can sit across the table from",
+    body: "This engagement is based in Bengaluru — full coaching happens face-to-face, in person. A quick advisory conversation works well over a call from anywhere. But the actual diagnostic and execution work needs to happen in person, so this is best suited to founders based in or able to meet regularly in Bengaluru.",
   },
 ];
 
 const FAQS = [
   {
     q: "What does an MSME business coach do differently from a consultant?",
-    a: "A management consultant typically arrives with a framework, applies it, produces a plan, and hands it over. A business coach stays in the conversation longer — asking the right questions, challenging assumptions, and working alongside you as you implement. In practice, Prem's engagements combine both: structured consulting thinking with the continuity of a coaching relationship. You don't just get a plan. You get someone who stays until the plan is moving.",
+    a: "A management consultant typically arrives with a framework, applies it, produces a plan, and hands it over. A business coach stays in the conversation longer — asking the right questions, challenging assumptions, and working alongside you as you implement. In practice, Prem's engagements combine both — structured consulting thinking with the continuity of a coaching relationship. You don't just get a plan; you get someone who stays until it's moving.",
   },
   {
     q: "Is MSME business coaching available online across India?",
-    a: "Yes. Founders from Mumbai, Chennai, Hyderabad, Delhi, Pune, Kochi, and other cities connect online. The sessions are structured and focused — video calls work as well as in-person for this kind of work. In-person sessions are available for founders based in Bengaluru.",
+    a: "Not for the full engagement. A first call or a simple advisory conversation works well online, from anywhere in India. But the diagnostic depth and execution work this coaching is built around — going deep into your numbers, your team, your specific constraints — only works in person. This engagement is currently best suited to founders based in Bengaluru, or able to meet in person regularly.",
   },
   {
     q: "What size of business benefits most from MSME business coaching?",
-    a: "The engagement works best for businesses in the ₹1 crore to ₹50 crore revenue range. This includes early-growth startups with initial traction, established MSMEs that have hit a growth ceiling, and family businesses navigating a transition. The common thread is a founder or leadership team making real decisions about strategy, market, or execution — and needing a rigorous thinking partner.",
+    a: "The engagement works best for established businesses in the ₹10 crore to ₹100 crore revenue range. This includes MSMEs that have hit a growth ceiling and family businesses navigating a transition. The common thread is a founder or leadership team making real decisions about strategy, market, or execution — and needing a rigorous thinking partner.",
   },
   {
     q: "How many sessions does a coaching engagement involve?",
@@ -281,7 +281,7 @@ export default function MsmeBusinessCoachPage() {
           </h1>
           <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
             One-to-one MSME business coaching for Indian founders in the
-            ₹1–50 crore range — built around your actual challenges, not a
+            ₹10–100 crore range — built around your actual challenges, not a
             course curriculum.
           </p>
           <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-7">
@@ -310,13 +310,13 @@ export default function MsmeBusinessCoachPage() {
             </a>
           </div>
           <p className="text-[13px] text-light">
-            Online across India &nbsp;·&nbsp; In-person in Bengaluru
+            Simple advisory calls across India &nbsp;·&nbsp; In-depth coaching in-person, Bengaluru
           </p>
         </div>
         <div className="relative h-[260px] md:h-[420px] w-full overflow-hidden rounded-sm">
           <Image
-            src="/images/landing/msme-coach-hero-2.png"
-            alt="MSME business coach presenting a GTM strategy session to a founder's leadership team"
+            src="/images/landing/msme-coach-hero-3.png"
+            alt="MSME business coach walking a founder through a GTM strategy session"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover object-center"
@@ -399,7 +399,7 @@ export default function MsmeBusinessCoachPage() {
           <span className="text-red">Recognise</span> any of these?
         </h2>
         <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
-          If you&rsquo;re running a business in the ₹1–50 crore range and
+          If you&rsquo;re running a business in the ₹10–100 crore range and
           feeling any of this, you&rsquo;re in the right place.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -529,16 +529,16 @@ export default function MsmeBusinessCoachPage() {
           </p>
           <p className="text-[15px] text-mid leading-relaxed">
             Premraj Menon is a senior management consultant and MSME business
-            coach based in Bengaluru with 39 years of experience across Usha
-            International, MRF, Apollo Tyres, BPL Mobile, Airtel, Tata
-            Docomo, and early-stage SaaS ventures. He has held COO and
-            senior leadership roles across six industries, managing revenue
-            cycles, channel strategy, execution systems, and growth
-            transitions. He holds an EGMP from IIM Bengaluru and an Advanced
-            Management Programme from Ross School of Business, University
-            of Michigan (through TMTC Pune). Simpleworks works exclusively
-            with Indian MSMEs, startups, and family businesses in the ₹1
-            crore to ₹50 crore revenue range — one business at a time.
+            coach based in Bengaluru, with 39 years of experience across
+            Consumer Durables, Automotive, Telecom, and SaaS. He has held
+            COO-level and senior leadership roles across six industries —
+            managing revenue cycles, channel strategy, execution systems, and
+            growth transitions. He holds an EGMP from IIM Bengaluru and an
+            Advanced Management Programme from Ross School of Business,
+            University of Michigan (through TMTC Pune). Simpleworks works
+            exclusively with Indian MSMEs, startups, and family businesses in
+            the ₹10 crore to ₹100 crore revenue range — one business at a
+            time.
           </p>
           <div className="flex flex-wrap gap-3 mt-4">
             <a
