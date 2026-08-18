@@ -306,7 +306,7 @@ export default function MsmeBusinessCoachPage() {
             </a>
           </div>
           <p className="text-[13px] text-light">
-            Simple advisory calls across India &nbsp;·&nbsp; In-depth coaching in-person, Bengaluru
+            In-person coaching for Bengaluru &nbsp;·&nbsp; Online advisory calls across India
           </p>
         </div>
         <div className="relative h-[260px] md:h-[420px] w-full overflow-hidden rounded-sm">
