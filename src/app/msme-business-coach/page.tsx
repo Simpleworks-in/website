@@ -109,11 +109,7 @@ const STEPS = [
 
 const WHY_CARDS = [
   {
-    title: (
-      <>
-        Built entirely <span className="text-red">around your business</span>
-      </>
-    ),
+    title: "Built entirely around your business",
     body: "Every session begins where your business is — not where the course wants to start. The diagnosis, the plan, and the implementation support are shaped by your actual situation: your market, your margins, your team, your constraints.",
   },
   {
@@ -510,7 +506,7 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* ABOUT STRIP */}
-      <div className="grid grid-cols-[78px_1fr] gap-5 items-center px-7 py-7 border-b border-rule bg-warm">
+      <div className="flex flex-col items-start gap-5 md:grid md:grid-cols-[78px_1fr] md:items-center px-7 py-7 border-b border-rule bg-warm">
         <div className="w-[78px] h-[78px] rounded-full overflow-hidden border-2 border-rule flex-shrink-0">
           <Image
             src="/images/landing/prem-menon-portrait.png"
@@ -535,7 +531,7 @@ export default function MsmeBusinessCoachPage() {
             managing revenue cycles, channel strategy, execution systems, and
             growth transitions. He holds an EGMP from IIM Bengaluru and an
             Advanced Management Programme from Ross School of Business,
-            University of Michigan (through TMTC Pune). Simpleworks works
+            University of Michigan. Simpleworks works
             exclusively with Indian MSMEs, startups, and family businesses in
             the ₹10 crore to ₹100 crore revenue range — one business at a
             time.
