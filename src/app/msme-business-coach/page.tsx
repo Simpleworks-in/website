@@ -25,8 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-const WA_LINK =
-  "https://wa.me/919036099000?text=Hi%20Prem%2C%20I%20found%20your%20MSME%20coaching%20page%20and%20would%20like%20to%20connect.";
 const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 const STATS = [
@@ -237,12 +235,10 @@ export default function MsmeBusinessCoachPage() {
           </span>
         </a>
         <a
-          href={WA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={CONTACT_LINK}
           className="flex-shrink-0 whitespace-nowrap border border-red text-red text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 uppercase tracking-wide-6 rounded-sm hover:bg-red hover:text-white transition-colors"
         >
-          Book a call
+          Let&rsquo;s Talk
         </a>
       </nav>
 
