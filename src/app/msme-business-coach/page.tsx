@@ -97,7 +97,7 @@ const WHY_CARDS = [
   },
   {
     title: "39 years of senior operating experience",
-    body: "Premraj Menon has held COO-level roles across six industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That's not theory or certification. It's tested judgment applied to your reality.",
+    body: "Premraj has held senior leadership roles across six industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That's not theory or certification. It's tested judgment applied to your reality.",
   },
   {
     title: "No reports left behind on a desk",
