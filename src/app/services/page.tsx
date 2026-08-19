@@ -104,7 +104,11 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
         href: "/blog/how-do-you-prepare-a-second-generation-leader-to-take-over-a-family-business-a-practical-succession-plan",
         live: true,
       },
-      { title: "Separating ownership from management", href: "", live: false },
+      {
+        title: "Why Family MSMEs Must Separate Ownership from Management to Scale",
+        href: "/blog/why-family-msm-es-must-separate-ownership-from-management-to-scale",
+        live: true,
+      },
     ],
     cta: "Explore Family Business Consulting",
   },
