@@ -127,7 +127,11 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         href: "/blog/okr-consulting-for-indian-msm-es-why-less-is-more",
         live: true,
       },
-      { title: "OKR vs KPI for small business", href: "", live: false },
+      {
+        title: "OKR for Small Business India: Why You Probably Need KPIs First",
+        href: "/blog/okr-for-small-business-india-why-you-probably-need-kp-is-first",
+        live: true,
+      },
       {
         title: "How to Build Accountability in a 50-Person MSME Business",
         href: "/blog/how-to-build-accountability-in-a-50-person-msme-business-without-bureaucracy",
