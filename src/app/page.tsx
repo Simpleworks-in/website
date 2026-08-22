@@ -321,10 +321,10 @@ export default function HomePage() {
             <span className="text-red">Not advising on them.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&apos;s Kerala Circle (full P&L), with executive and leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel. He also helped build Tata Docomo Karnataka into the country&apos;s largest circle, before running two tech ventures Viworks Ventures and Neoffice AI (2016–2025) where we had small teams, tight cash, nothing to delegate to.
+            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&apos;s Kerala Circle (full P&L), with leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel, including helping build Tata Docomo Karnataka into the country&apos;s largest circle. He then ran two tech ventures, Viworks Ventures and Neoffice Ai (2016–2025), where small teams and tight cash meant nothing to delegate to.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Every engagement is led directly by Premraj. We skip the dense slide decks for plain-spoken strategy, staying embedded through execution until the plan is actually moving.
+            Every engagement is led directly by Premraj—plain-spoken strategy over dense slide decks, staying embedded through execution until the plan is actually moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Thinking about bringing in outside help? Read{" "}
