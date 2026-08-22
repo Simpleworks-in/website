@@ -234,37 +234,35 @@ export default function AboutPage() {
               <strong className="font-semibold text-ink">
                 Sales &amp; Distribution, Marketing, Product Management, Growth, and Customer
                 Operations
-              </strong>{" "}
-              while carrying full P&amp;L responsibility across large geographies. I built and led
-              major teams, learning firsthand that alignment turns good strategy into execution.
+              </strong>
+              , with full P&amp;L responsibility across large geographies. Building and leading
+              major teams taught me that alignment is what turns good strategy into execution.
             </p>
             <p className="mb-[22px]">
-              Beyond the job titles, my daily reality was spent working directly with founder-run
-              distributors, dealers, and retailers turning over ₹12–150 crore. My days were spent
-              in their offices analyzing stock, credit cycles, margins, and succession planning. At
-              Airtel, I managed a ₹120 crore business across 2,500 corporate and SME accounts.
-              Though I worked within corporations, the businesses I actually built were the exact
-              size of the ones I advise today.
+              Beyond the job titles, my daily reality was working directly with founder-run
+              distributors, dealers, and retailers turning over ₹12–150 crore—in their offices,
+              analyzing stock, credit cycles, margins, and succession planning. At Airtel, I
+              managed a ₹120 crore business across 2,500 corporate and SME accounts. Though I
+              worked within corporations, the businesses I actually built were the exact size of
+              the ones I advise today.
             </p>
             <p className="mb-[22px]">
-              That path led me from trainee to{" "}
+              That path led to{" "}
               <strong className="font-semibold text-ink">
                 Chief Operating Officer of the Kerala Circle at Tata Docomo
               </strong>
-              , managing a competitive telecom P&amp;L after previously helping launch Tata Docomo
-              in Karnataka and building it into the country&rsquo;s largest circle. As an{" "}
+              , after helping launch Tata Docomo in Karnataka and building it into the
+              country&rsquo;s largest circle. As{" "}
               <strong className="font-semibold text-ink">Ethics Counselor</strong> there, I
               reinforced a core belief: trust precedes market share.
             </p>
             <p className="mb-[22px]">
-              At 50, I deliberately pivoted to entrepreneurship. I co-founded{" "}
-              <strong className="font-semibold text-ink">Viworks Ventures</strong> and headed
-              product and growth at <strong className="font-semibold text-ink">Neoffice.ai</strong>,
-              learning what it takes to scale from near-zero. Having operated both with deep
+              At 50, I pivoted deliberately to entrepreneurship—co-founding{" "}
+              <strong className="font-semibold text-ink">Viworks Ventures</strong> and heading
+              product and growth at <strong className="font-semibold text-ink">Neoffice.ai</strong>
+              —learning what it takes to scale from near-zero. Having operated with both deep
               corporate resources and startup constraints, I know what actually moves the needle
-              versus what merely looks like progress. Fluency in English, Hindi, Malayalam,
-              Kannada, Tamil, and Gujarati allows me to bridge the gap between formal strategy and
-              real, personal conversations with family business owners.
+              versus what merely looks like progress.
             </p>
             <p className="mb-0">
               Simpleworks Consulting is the natural outcome of that journey: practical, independent
