@@ -168,7 +168,7 @@ const WHAT_I_BRING = [
 const CREDENTIALS = [
   "EGMP, IIM Bengaluru",
   "Advanced Management Programme, Ross School of Business (via TMTC Pune)",
-  "COO-level experience across 6 industries",
+  "Senior Management Experience across 6 industries",
   "Bengaluru-based. In-person preferred.",
 ];
 
@@ -360,7 +360,7 @@ export default function StartupMentorBengaluruPage() {
                 href="#what-i-bring"
                 className="inline-block w-fit cursor-pointer rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
               >
-                See how I work
+                How I work
               </a>
             </div>
             <div className="flex flex-wrap gap-8 border-t-[0.5px] border-rule pt-8">
@@ -379,9 +379,9 @@ export default function StartupMentorBengaluruPage() {
                 </div>
               </div>
               <div className="border-l-[0.5px] border-rule pl-8">
-                <div className="text-[32px] font-bold leading-none text-ink">COO</div>
+                <div className="text-[32px] font-bold leading-none text-ink">C</div>
                 <div className="mt-1.5 text-[11px] tracking-[0.12em] uppercase text-light">
-                  Level practitioner
+                  Suite practitioner
                 </div>
               </div>
             </div>

@@ -254,7 +254,7 @@ export default function HomePage() {
             Execution. <span className="text-red">Nothing more.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are a independent Business Management Consulting firm started in June 2026 at Bengaluru working with founders of Established Indian Small and Medium Businesses. We don&apos;t hand over a report and walk away — we stay until the plan is moving.
+            We are a independent Business Management Consulting practice started in June 2026 at Bengaluru working with founders of Established Indian Small and Medium Businesses. We don&apos;t hand over a report and walk away — we stay until the plan is moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Led by Premraj Menon — thirty-nine years running sales, distribution, and ground operations—including full P&amp;L accountability as Chief Operating Officer of Tata Docomo&apos;s Kerala Circle. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
