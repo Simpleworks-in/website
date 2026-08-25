@@ -1,0 +1,26 @@
+# Simpleworks Consulting
+
+> Independent management consulting firm based in Bengaluru, working with founder-led Indian MSMEs and family businesses (₹10–100 crore revenue) on go-to-market strategy, OKR execution, and business coaching. Led directly by founder Premraj Menon — no junior consultants, no handoffs. Full engagements are in-person in Bengaluru; advisory calls are available remotely.
+
+## Core pages
+- [Home](https://www.simpleworks.in/): Overview of Simpleworks and what the firm does
+- [About](https://www.simpleworks.in/about): Premraj Menon's background — 39 years across MRF, Apollo Tyres, BPL Mobile, Bharti Airtel, COO Tata Docomo Kerala Circle, Viworks Ventures, Neoffice.ai
+- [Services](https://www.simpleworks.in/services): Full service overview — GTM strategy, OKR execution, business coaching
+- [Contact](https://www.simpleworks.in/contact): How to reach Simpleworks, book a first call
+
+## Service pages
+- [MSME Consulting](https://www.simpleworks.in/services/msme-consulting)
+- [Small Business Consulting](https://www.simpleworks.in/services/small-business-consulting)
+- [Family Business Consulting](https://www.simpleworks.in/services/family-business-consulting)
+- [OKR Consulting](https://www.simpleworks.in/services/okr-consulting)
+- [GTM Consulting](https://www.simpleworks.in/services/gtm-consulting)
+- [Execution Consulting](https://www.simpleworks.in/services/execution-consulting)
+- [MSME Business Coach](https://www.simpleworks.in/msme-business-coach)
+- [Startup Mentor Bengaluru](https://www.simpleworks.in/startup-mentor-bengaluru)
+
+## Resources
+- [Blog](https://www.simpleworks.in/blog): Articles on MSME growth, GTM, execution, and business coaching
+- [Resources](https://www.simpleworks.in/resources)
+
+## Optional
+- [Sitemap](https://www.simpleworks.in/sitemap.xml)
