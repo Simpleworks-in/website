@@ -295,8 +295,23 @@ export default function HomePage() {
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
             Our clients are established founder-led, family-run, and professionally managed businesses in manufacturing, consumer goods, retail, distribution, and technology — typically between ₹10 crore and ₹500 crore in revenue, and at the point where what got them here will not get them further.
           </p>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
+          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
             Some are navigating a business turnaround. Some are entering a new market. Some are profitable but stuck — growing in revenue, shrinking in margin. All of them need simple answers, not complex frameworks.
+          </p>
+          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
+            Depending on where you sit, that might mean{" "}
+            <Link href="/services/msme-consulting" className="text-red underline hover:no-underline">
+              MSME consulting
+            </Link>
+            ,{" "}
+            <Link href="/services/small-business-consulting" className="text-red underline hover:no-underline">
+              small business consulting
+            </Link>
+            , or{" "}
+            <Link href="/services/family-business-consulting" className="text-red underline hover:no-underline">
+              family business consulting
+            </Link>
+            .
           </p>
         </div>
       </section>

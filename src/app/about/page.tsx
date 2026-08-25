@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
@@ -523,9 +524,20 @@ export default function AboutPage() {
             The clarity usually isn&rsquo;t.
           </p>
           <p className="mt-1 max-w-[360px] text-[15px] leading-[1.7] text-light">
-            Whether you run a family business, an MSME, or an early-stage startup — tell me what
-            you&rsquo;re working on. I&rsquo;ll tell you honestly whether I can help — and what
-            that would look like.
+            Whether you run a{" "}
+            <Link href="/services/family-business-consulting" className="text-red underline hover:no-underline">
+              family business
+            </Link>
+            , an{" "}
+            <Link href="/services/msme-consulting" className="text-red underline hover:no-underline">
+              MSME
+            </Link>
+            , or an{" "}
+            <Link href="/services/small-business-consulting" className="text-red underline hover:no-underline">
+              early-stage startup
+            </Link>{" "}
+            — tell me what you&rsquo;re working on. I&rsquo;ll tell you honestly whether I can
+            help — and what that would look like.
           </p>
         </div>
 
