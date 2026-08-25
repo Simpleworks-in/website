@@ -333,7 +333,7 @@ export default function FamilyBusinessConsultingPage() {
               <div className="w-px self-stretch bg-rule" />
               <div>
                 <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  ₹1–50<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
+                  ₹10–100<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
                 </p>
                 <p className="mt-1 text-[12px] leading-[1.4] text-light">
                   Revenue range
@@ -426,7 +426,7 @@ export default function FamilyBusinessConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Simpleworks works with Indian family businesses typically between
-          ₹1 crore and ₹50 crore in revenue — at the point where informal
+          ₹10 crore and ₹100 crore in revenue — at the point where informal
           structures and founder instinct are no longer enough to manage what
           the business has become.
         </p>

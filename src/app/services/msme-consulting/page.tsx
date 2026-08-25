@@ -142,7 +142,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "What size of MSME does Simpleworks typically work with?",
-    a: "We work primarily with Indian MSMEs between ₹1 crore and ₹50 crore in annual revenue — founder-led or family-run, with 10 to 300 employees. The right fit is less about revenue and more about the nature of the problem and the readiness to act on clear direction.",
+    a: "We work primarily with Indian MSMEs between ₹10 crore and ₹100 crore in annual revenue — founder-led or family-run, with 10 to 300 employees. The right fit is less about revenue and more about the nature of the problem and the readiness to act on clear direction.",
   },
   {
     q: "Do you work with manufacturing businesses specifically?",
@@ -297,7 +297,7 @@ export default function MsmeConsultingPage() {
               <div className="w-px self-stretch bg-rule" />
               <div>
                 <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  ₹1–50<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
+                  ₹10–100<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
                 </p>
                 <p className="mt-1 text-[12px] leading-[1.4] text-light">
                   Revenue range
@@ -360,8 +360,8 @@ export default function MsmeConsultingPage() {
           The MSME founders <span className="text-red">we work with</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Simpleworks works with Indian MSMEs typically between ₹1 crore and
-          ₹50 crore in revenue — founder-led or family-run, with 10 to 300
+          Simpleworks works with Indian MSMEs typically between ₹10 crore and
+          ₹100 crore in revenue — founder-led or family-run, with 10 to 300
           employees, across manufacturing, consumer goods, retail, and
           distribution.
         </p>

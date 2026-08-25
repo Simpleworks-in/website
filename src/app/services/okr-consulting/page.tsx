@@ -191,7 +191,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do we need OKR software?",
-    a: "No. Simpleworks starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we'll recommend and help implement one. But for most MSMEs between ₹1 crore and ₹50 crore, the overhead of a software platform is higher than its benefit in the first year.",
+    a: "No. Simpleworks starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we'll recommend and help implement one. But for most MSMEs between ₹10 crore and ₹100 crore, the overhead of a software platform is higher than its benefit in the first year.",
   },
   {
     q: "We already set annual targets. Is that the same as OKRs?",
@@ -323,7 +323,7 @@ export default function OkrConsultingPage() {
               <div className="w-px self-stretch bg-rule" />
               <div>
                 <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  ₹1–50<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
+                  ₹10–100<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
                 </p>
                 <p className="mt-1 text-[12px] leading-[1.4] text-light">
                   Revenue range

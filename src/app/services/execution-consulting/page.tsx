@@ -176,7 +176,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do we need OKR software to make this work?",
-    a: "No. We start every engagement with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we'll help you evaluate and choose one. But the system works without it, and for most MSMEs between ₹1 crore and ₹50 crore, a lightweight manual system is more sustainable than a platform the team doesn't have time to maintain.",
+    a: "No. We start every engagement with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we'll help you evaluate and choose one. But the system works without it, and for most MSMEs between ₹10 crore and ₹100 crore, a lightweight manual system is more sustainable than a platform the team doesn't have time to maintain.",
   },
   {
     q: "What is the 5D method?",
@@ -307,7 +307,7 @@ export default function ExecutionConsultingPage() {
               <div className="w-px self-stretch bg-rule" />
               <div>
                 <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  ₹1–50<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
+                  ₹10–100<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
                 </p>
                 <p className="mt-1 text-[12px] leading-[1.4] text-light">
                   Revenue range

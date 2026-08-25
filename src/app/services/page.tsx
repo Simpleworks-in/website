@@ -37,7 +37,7 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
     title: "MSME Consulting",
     href: "/services/msme-consulting",
     description:
-      "Strategy, growth, and execution advisory for Indian MSMEs between ₹1 crore and ₹50 crore — manufacturing, consumer goods, retail, and distribution.",
+      "Strategy, growth, and execution advisory for Indian MSMEs between ₹10 crore and ₹100 crore — manufacturing, consumer goods, retail, and distribution.",
     spokes: [
       {
         title:
