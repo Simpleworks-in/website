@@ -28,7 +28,7 @@ const TAGLINE_ITEMS = [
   "Go-to-Market Planning",
   "Execution & OKRs",
   "39 Years Operating Experience",
-  "Bengaluru · Across India",
+  "Bengaluru",
 ];
 
 const SERVICES = [
