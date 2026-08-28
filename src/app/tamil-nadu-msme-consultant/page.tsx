@@ -126,11 +126,11 @@ const OUTCOMES = [
 
 const CREDENTIALS = [
   { role: "COO, Kerala Circle", org: "Tata Docomo" },
-  { role: "Direct Sales Leadership", org: "Bharti Airtel" },
+  { role: "Direct Sales Leadership", org: "Usha International · Bharti Airtel" },
   { role: "Sales & Distribution", org: "MRF · Apollo Tyres · BPL Mobile" },
   { role: "Entrepreneur", org: "Viworks Ventures · Neoffice.ai" },
   { role: "EGMP", org: "IIM Bengaluru" },
-  { role: "Advanced Management Programme", org: "Ross School of Business" },
+  { role: "Advanced Management Programme", org: "Ross School of Business, University of Michigan" },
 ];
 
 const CLUSTERS = [
