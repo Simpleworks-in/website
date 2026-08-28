@@ -266,22 +266,22 @@ export default function TamilNaduMsmeConsultantPage() {
           <div className="flex flex-wrap gap-3 items-center mb-3">
             <a
               href={CONTACT_LINK}
-              className="inline-block bg-red text-white text-[14px] font-bold px-5 py-2.5 rounded-sm"
+              className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent transition-colors hover:bg-red hover:text-white"
             >
               Book a first conversation →
             </a>
             <a
               href="#how-we-start"
-              className="inline-block text-[14px] font-bold text-ink hover:text-red transition-colors px-2 py-2.5"
+              className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent transition-colors hover:bg-red hover:text-white"
             >
               See how we work
             </a>
           </div>
         </div>
-        <div className="relative h-[260px] md:h-[420px] w-full overflow-hidden rounded-sm">
+        <div className="relative h-[320px] md:h-[420px] w-full overflow-hidden rounded-sm">
           <Image
-            src="/images/landing/prem-menon-portrait.png"
-            alt="Premraj Menon, MSME consultant for Tamil Nadu founder-led businesses"
+            src="/images/landing/tamil-nadu-hero.png"
+            alt="Premraj Menon, MSME consultant for Tamil Nadu founder-led manufacturing businesses"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover object-center"
@@ -596,7 +596,7 @@ export default function TamilNaduMsmeConsultantPage() {
         <div className="flex flex-wrap justify-center gap-3 mb-3">
           <a
             href={CONTACT_LINK}
-            className="inline-block bg-red text-white text-[14px] font-bold px-7 py-3.5 rounded-sm"
+            className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent transition-colors hover:bg-red hover:text-white"
           >
             Book a first conversation →
           </a>
