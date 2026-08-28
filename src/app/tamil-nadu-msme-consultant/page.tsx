@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
@@ -163,6 +162,27 @@ const CLUSTERS = [
     tag: "ENGINEERING & MACHINERY",
     body: "Pump and motor manufacturers, textile machinery, foundries, and machine tools — with CODISSIA as the sector's collective voice.",
     start: "Where we usually start: product focus versus diversification, and the shift from job-shop to product business.",
+  },
+];
+
+const BLOG_LINKS = [
+  {
+    title: "Founder Dependency: Fix the Decisions Before the Org Chart",
+    excerpt:
+      "Founder dependency is a decision-rights problem, not an org-structure one — why redesigning the org chart first just formalises the passivity founders complain about.",
+    href: "/blog/founder-dependency-fix-the-decisions-before-the-org-chart",
+  },
+  {
+    title: "How to Grow Your MSME: Stop Adding, Start Removing the Constraint Holding You Back",
+    excerpt:
+      "Most founders try to grow by adding more products, markets, and hours, yet stall anyway. Real MSME growth comes from finding and removing the one constraint holding the business back.",
+    href: "/blog/how-to-grow-your-msme-stop-adding-start-removing-the-constraint-holding-you-back",
+  },
+  {
+    title: "Business Strategy Consulting for Indian MSMEs: How the Simpleworks 4P Framework Turns Problems Into Plans",
+    excerpt:
+      "The presenting problem is almost never the real one. How the Simpleworks 4P Framework diagnoses the actual constraint and turns it into a plan built for execution.",
+    href: "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
   },
 ];
 
@@ -547,14 +567,25 @@ export default function TamilNaduMsmeConsultantPage() {
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
           Tamil Nadu, <span className="text-red">in more depth</span>
         </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-          Longer reads on the specific problems these clusters run into are
-          on the way — check back soon, or{" "}
-          <Link href="/blog" className="text-red underline hover:no-underline">
-            browse the blog
-          </Link>{" "}
-          in the meantime.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {BLOG_LINKS.map((post) => (
+            <a
+              key={post.href}
+              href={post.href}
+              className="group p-5 border border-rule rounded-sm flex flex-col"
+            >
+              <h4 className="text-[18px] font-bold text-ink mb-2 leading-snug">
+                {post.title}
+              </h4>
+              <p className="text-[15px] text-mid leading-relaxed mb-4">
+                {post.excerpt}
+              </p>
+              <span className="text-[14px] font-semibold text-ink group-hover:text-red mt-auto">
+                Read article →
+              </span>
+            </a>
+          ))}
+        </div>
       </section>
 
       {/* FAQ */}
