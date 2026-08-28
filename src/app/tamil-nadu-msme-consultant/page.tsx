@@ -28,10 +28,10 @@ export const metadata: Metadata = {
 const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 const CREDIBILITY = [
-  { num: "39 years", label: "Operating experience" },
-  { num: "MRF · Apollo Tyres", label: "Airtel · Tata Docomo" },
+  { num: "39 years", label: "Senior Leadership Operating Experience" },
+  { num: "Usha-MRF · Apollo", label: "BPL · Airtel · Tata" },
   { num: "₹10–100 crore", label: "Founder-led businesses" },
-  { num: "Remote + on-site", label: "Across Tamil Nadu" },
+  { num: "Onsite + Remote", label: "Across Tamil Nadu" },
 ];
 
 const PAIN_POINTS = [
