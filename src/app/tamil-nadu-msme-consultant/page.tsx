@@ -29,7 +29,7 @@ const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 const CREDIBILITY = [
   { num: "39 years", label: "Senior Leadership Operating Experience" },
-  { num: "Usha-MRF · Apollo", label: "BPL · Airtel · Tata" },
+  { num: "Usha - MRF - Apollo Tyres", label: "BPL , Airtel , Tata" },
   { num: "₹10–100 crore", label: "Founder-led businesses" },
   { num: "Onsite + Remote", label: "Across Tamil Nadu" },
 ];
