@@ -364,7 +364,7 @@ export default async function TamilNaduMsmeConsultantPage() {
       </div>
 
       {/* THE PROBLEM */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule bg-[#F2F2F0]">
+      <section className="px-7 py-12 md:py-16 border-b border-rule bg-bg">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Sound familiar?
         </p>
