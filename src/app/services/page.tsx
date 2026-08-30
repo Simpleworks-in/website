@@ -424,6 +424,17 @@ export default function ServicesPage() {
             Based in Bengaluru · Working across India · Response within one
             business day
           </p>
+          <p className="mt-3 text-[13px] tracking-wide-1 text-light">
+            Founder-led manufacturing and export business in Tamil Nadu?{" "}
+            <Link
+              href="/tamil-nadu-msme-consultant"
+              className="text-red underline hover:no-underline"
+            >
+              See how we work across Chennai, Hosur, Salem, Tiruppur and
+              Coimbatore
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </>

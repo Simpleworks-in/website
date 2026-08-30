@@ -27,10 +27,10 @@ export const metadata: Metadata = {
 const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 const CREDIBILITY = [
-  { num: "39 years", label: "Senior Leadership Operating Experience" },
-  { num: "Usha - MRF - Apollo Tyres", label: "BPL , Airtel , Tata" },
+  { num: "39 years", label: "Operating experience" },
+  { num: "MRF · Apollo Tyres", label: "Airtel · Tata Docomo" },
   { num: "₹10–100 crore", label: "Founder-led businesses" },
-  { num: "Onsite + Remote", label: "Across Tamil Nadu" },
+  { num: "Remote + on-site", label: "Across Tamil Nadu" },
 ];
 
 const PAIN_POINTS = [
@@ -129,7 +129,7 @@ const CREDENTIALS = [
   { role: "Sales & Distribution", org: "MRF · Apollo Tyres · BPL Mobile" },
   { role: "Entrepreneur", org: "Viworks Ventures · Neoffice.ai" },
   { role: "EGMP", org: "IIM Bengaluru" },
-  { role: "Advanced Management Programme", org: "Ross School of Business, University of Michigan" },
+  { role: "19th Tata Group Executive Leadership Seminar", org: "Ross School of Management, University of Michigan" },
 ];
 
 const CLUSTERS = [
@@ -162,27 +162,6 @@ const CLUSTERS = [
     tag: "ENGINEERING & MACHINERY",
     body: "Pump and motor manufacturers, textile machinery, foundries, and machine tools — with CODISSIA as the sector's collective voice.",
     start: "Where we usually start: product focus versus diversification, and the shift from job-shop to product business.",
-  },
-];
-
-const BLOG_LINKS = [
-  {
-    title: "Founder Dependency: Fix the Decisions Before the Org Chart",
-    excerpt:
-      "Founder dependency is a decision-rights problem, not an org-structure one — why redesigning the org chart first just formalises the passivity founders complain about.",
-    href: "/blog/founder-dependency-fix-the-decisions-before-the-org-chart",
-  },
-  {
-    title: "How to Grow Your MSME: Stop Adding, Start Removing the Constraint Holding You Back",
-    excerpt:
-      "Most founders try to grow by adding more products, markets, and hours, yet stall anyway. Real MSME growth comes from finding and removing the one constraint holding the business back.",
-    href: "/blog/how-to-grow-your-msme-stop-adding-start-removing-the-constraint-holding-you-back",
-  },
-  {
-    title: "Business Strategy Consulting for Indian MSMEs: How the Simpleworks 4P Framework Turns Problems Into Plans",
-    excerpt:
-      "The presenting problem is almost never the real one. How the Simpleworks 4P Framework diagnoses the actual constraint and turns it into a plan built for execution.",
-    href: "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
   },
 ];
 
@@ -330,7 +309,7 @@ export default function TamilNaduMsmeConsultantPage() {
       </div>
 
       {/* THE PROBLEM */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule">
+      <section className="px-7 py-12 md:py-16 border-b border-rule bg-[#F2F2F0]">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Sound familiar?
         </p>
@@ -465,39 +444,53 @@ export default function TamilNaduMsmeConsultantPage() {
           39 years on the <span className="text-red">operating side</span>,
           not the slide-deck side
         </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
-          Simpleworks is Prem Menon. Not a team of analysts — the person you
-          speak to on the first call is the person who does the work.
-        </p>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
-          He spent 39 years in sales, distribution, and P&amp;L leadership
-          before starting this practice: <strong>MRF</strong> and{" "}
-          <strong>Apollo Tyres</strong>, both built on the same Tamil Nadu
-          manufacturing economy your business operates in; direct sales
-          leadership at <strong>Bharti Airtel</strong>; and{" "}
-          <strong>Chief Operating Officer of the Kerala Circle at Tata
-          Docomo</strong>, running a full circle P&amp;L. He then built and
-          ran two businesses of his own as an entrepreneur — with all the
-          operating risk that carries.
-        </p>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
-          That matters for a specific reason. When a Hosur machine-shop owner
-          describes losing leverage with an OEM, or a Salem foundry founder
-          talks around a succession problem, it isn&rsquo;t a case study —
-          it&rsquo;s a conversation he&rsquo;s been on the other side of.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 border-t border-rule pt-6">
-          {CREDENTIALS.map((c) => (
-            <div
-              key={c.role}
-              className="flex justify-between gap-4 text-[14px] py-1"
-            >
-              <span className="text-mid">{c.role}</span>
-              <span className="text-ink font-semibold text-right">
-                {c.org}
-              </span>
+        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8 md:gap-12">
+          <div className="relative h-[260px] md:h-auto md:aspect-[4/5] w-full overflow-hidden rounded-sm">
+            <Image
+              src="/prem-menon.png"
+              alt="Premraj Menon, founder of Simpleworks Consulting"
+              fill
+              sizes="(min-width: 768px) 240px, 100vw"
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
+            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
+              Simpleworks is Prem Menon. Not a team of analysts — the person
+              you speak to on the first call is the person who does the work.
+            </p>
+            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
+              He spent 39 years in sales, distribution, and P&amp;L leadership
+              before starting this practice: <strong>MRF</strong> and{" "}
+              <strong>Apollo Tyres</strong>, both built on the same Tamil Nadu
+              manufacturing economy your business operates in; direct sales
+              leadership at <strong>Bharti Airtel</strong>; and{" "}
+              <strong>Chief Operating Officer of the Kerala Circle at Tata
+              Docomo</strong>, running a full circle P&amp;L. He then built
+              and ran two businesses of his own as an entrepreneur — with all
+              the operating risk that carries.
+            </p>
+            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
+              That matters for a specific reason. When a Hosur machine-shop
+              owner describes losing leverage with an OEM, or a Salem foundry
+              founder talks around a succession problem, it isn&rsquo;t a
+              case study — it&rsquo;s a conversation he&rsquo;s been on the
+              other side of.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 border-t border-rule pt-6">
+              {CREDENTIALS.map((c) => (
+                <div
+                  key={c.role}
+                  className="flex justify-between gap-4 text-[14px] py-1"
+                >
+                  <span className="text-mid">{c.role}</span>
+                  <span className="text-ink font-semibold text-right">
+                    {c.org}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -559,35 +552,6 @@ export default function TamilNaduMsmeConsultantPage() {
         </p>
       </section>
 
-      {/* BLOG SPOKES */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          From the blog
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          Tamil Nadu, <span className="text-red">in more depth</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {BLOG_LINKS.map((post) => (
-            <a
-              key={post.href}
-              href={post.href}
-              className="group p-5 border border-rule rounded-sm flex flex-col"
-            >
-              <h4 className="text-[18px] font-bold text-ink mb-2 leading-snug">
-                {post.title}
-              </h4>
-              <p className="text-[15px] text-mid leading-relaxed mb-4">
-                {post.excerpt}
-              </p>
-              <span className="text-[14px] font-semibold text-ink group-hover:text-red mt-auto">
-                Read article →
-              </span>
-            </a>
-          ))}
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
@@ -611,7 +575,7 @@ export default function TamilNaduMsmeConsultantPage() {
       </section>
 
       {/* CTA BAND */}
-      <div className="px-7 py-10 text-center border-b border-rule">
+      <div className="px-7 py-10 text-center border-b border-rule bg-[#F2F2F0]">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Next step
         </p>
@@ -633,7 +597,7 @@ export default function TamilNaduMsmeConsultantPage() {
           </a>
         </div>
         <p className="text-[13px] text-light">
-          Or call directly: 090360 99000 · pm@simpleworks.in
+          Call on 90360 99000 or write at pm@simpleworks.in
         </p>
       </div>
     </main>

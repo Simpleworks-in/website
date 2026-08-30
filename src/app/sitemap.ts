@@ -43,6 +43,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${SITE}/tamil-nadu-msme-consultant`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
