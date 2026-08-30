@@ -696,7 +696,7 @@ export default async function TamilNaduMsmeConsultantPage() {
       </section>
 
       {/* CTA BAND */}
-      <div className="px-7 py-14 md:py-16 text-center border-b border-rule bg-[#F2F2F0]">
+      <div className="px-7 py-14 md:py-16 text-center border-b border-rule bg-bg">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Next step
         </p>
