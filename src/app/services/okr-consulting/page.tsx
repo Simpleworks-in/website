@@ -4,17 +4,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks",
+    absolute: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks Consulting",
   },
   description:
-    "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
+    "Simpleworks Consulting designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/okr-consulting",
   },
   openGraph: {
-    title: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks",
+    title: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks Consulting",
     description:
-      "Simpleworks designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
+      "Simpleworks Consulting designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/services/okr-consulting",
     locale: "en_IN",
     type: "website",
@@ -48,22 +48,22 @@ const WHAT_WE_DO = [
   {
     num: "01 — OKR Design",
     title: "Building OKRs that actually fit your business",
-    body: "Most OKR failures happen at the design stage — goals that are too vague, too many, or too disconnected from the strategy. Simpleworks designs the full OKR framework: company Objectives, function-level Key Results, and the ownership map that tells every team member exactly what they are accountable for this quarter.",
+    body: "Most OKR failures happen at the design stage — goals that are too vague, too many, or too disconnected from the strategy. Simpleworks Consulting designs the full OKR framework: company Objectives, function-level Key Results, and the ownership map that tells every team member exactly what they are accountable for this quarter.",
   },
   {
     num: "02 — Cascade & Alignment",
     title: "Connecting company goals to team action",
-    body: "The most common OKR mistake is setting company-level goals that never reach the team. Simpleworks builds the cascade — translating each company Objective into function-level OKRs for sales, operations, finance, and wherever else the work happens. Every team member knows how their work connects to the company's direction.",
+    body: "The most common OKR mistake is setting company-level goals that never reach the team. Simpleworks Consulting builds the cascade — translating each company Objective into function-level OKRs for sales, operations, finance, and wherever else the work happens. Every team member knows how their work connects to the company's direction.",
   },
   {
     num: "03 — Review Rhythm",
     title: "Designing the cadence that keeps OKRs alive",
-    body: "OKRs don't maintain themselves. Simpleworks designs the review rhythm: weekly check-ins that take 20 minutes, monthly reviews with clear decisions, and quarterly resets that adjust goals to what the business has learned. Without this rhythm, even the best OKRs become irrelevant within six weeks.",
+    body: "OKRs don't maintain themselves. Simpleworks Consulting designs the review rhythm: weekly check-ins that take 20 minutes, monthly reviews with clear decisions, and quarterly resets that adjust goals to what the business has learned. Without this rhythm, even the best OKRs become irrelevant within six weeks.",
   },
   {
     num: "04 — Live Cycle Support",
     title: "Running the first two cycles alongside your team",
-    body: "We don't hand over a framework and leave. Simpleworks runs the first two OKR cycles with your team — coaching leaders through the weekly reviews, adjusting the system where it isn't working, and building the muscle memory for goal-setting and accountability that the organisation will rely on long after we've stepped back.",
+    body: "We don't hand over a framework and leave. Simpleworks Consulting runs the first two OKR cycles with your team — coaching leaders through the weekly reviews, adjusting the system where it isn't working, and building the muscle memory for goal-setting and accountability that the organisation will rely on long after we've stepped back.",
   },
 ];
 
@@ -95,13 +95,13 @@ const STEPS = [
     num: "01",
     label: "Diagnose",
     title: "Understand the strategy before designing the goals",
-    body: "OKRs are only as good as the strategy they express. Before designing any framework, Simpleworks works with the founder and leadership team to clarify the three to five things that matter most for the business this year. Not twenty things. Three to five. Everything else waits — or doesn't make it into the OKR system at all.",
+    body: "OKRs are only as good as the strategy they express. Before designing any framework, Simpleworks Consulting works with the founder and leadership team to clarify the three to five things that matter most for the business this year. Not twenty things. Three to five. Everything else waits — or doesn't make it into the OKR system at all.",
   },
   {
     num: "02",
     label: "Design",
     title: "Write the Objectives and Key Results at every level",
-    body: "Company OKRs first, then function-level OKRs that cascade from them. Each Objective has two to four Key Results — specific, measurable, and owned by a named individual. Simpleworks writes the first draft and refines it with the team through structured workshops, not through a template dropped in a shared folder.",
+    body: "Company OKRs first, then function-level OKRs that cascade from them. Each Objective has two to four Key Results — specific, measurable, and owned by a named individual. Simpleworks Consulting writes the first draft and refines it with the team through structured workshops, not through a template dropped in a shared folder.",
   },
   {
     num: "03",
@@ -113,19 +113,19 @@ const STEPS = [
     num: "04",
     label: "Launch",
     title: "Introduce the system to the full team — not just leadership",
-    body: "OKRs fail when they are designed in the boardroom and handed down to the team as a completed document. Simpleworks runs the launch session with the full team — every function head, every Key Result owner — so that each person understands their OKRs, has had a chance to challenge them, and starts the cycle with genuine commitment rather than compliance.",
+    body: "OKRs fail when they are designed in the boardroom and handed down to the team as a completed document. Simpleworks Consulting runs the launch session with the full team — every function head, every Key Result owner — so that each person understands their OKRs, has had a chance to challenge them, and starts the cycle with genuine commitment rather than compliance.",
   },
   {
     num: "05",
     label: "Review",
     title: "Run the first cycle alongside the team",
-    body: "Simpleworks attends and facilitates the first four to six weekly check-ins and the mid-cycle review. This is where most OKR systems fall apart — the first time a Key Result is off track and nobody knows whether to adjust the target, accelerate the effort, or escalate. We build the judgment in the team to make those calls confidently.",
+    body: "Simpleworks Consulting attends and facilitates the first four to six weekly check-ins and the mid-cycle review. This is where most OKR systems fall apart — the first time a Key Result is off track and nobody knows whether to adjust the target, accelerate the effort, or escalate. We build the judgment in the team to make those calls confidently.",
   },
   {
     num: "06",
     label: "Reset",
     title: "Run the second cycle — then hand over to the team",
-    body: "The end-of-cycle reset — scoring the OKRs, learning from what worked and didn't, and setting the next quarter's goals — is the hardest part of running OKRs and the skill most teams lack. Simpleworks runs the first reset with the team, then progressively reduces involvement in the second cycle so the organisation builds the capability to run it independently.",
+    body: "The end-of-cycle reset — scoring the OKRs, learning from what worked and didn't, and setting the next quarter's goals — is the hardest part of running OKRs and the skill most teams lack. Simpleworks Consulting runs the first reset with the team, then progressively reduces involvement in the second cycle so the organisation builds the capability to run it independently.",
   },
 ];
 
@@ -140,7 +140,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Two live cycles before handover",
-    body: "We don't hand over a framework and disappear. Simpleworks runs the first two OKR cycles alongside your team — including weekly reviews, mid-cycle adjustments, and the end-of-cycle reset — before stepping back.",
+    body: "We don't hand over a framework and disappear. Simpleworks Consulting runs the first two OKR cycles alongside your team — including weekly reviews, mid-cycle adjustments, and the end-of-cycle reset — before stepping back.",
   },
   {
     title: "Premraj Menon leads every engagement personally",
@@ -191,11 +191,11 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do we need OKR software?",
-    a: "No. Simpleworks starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we'll recommend and help implement one. But for most MSMEs between ₹10 crore and ₹100 crore, the overhead of a software platform is higher than its benefit in the first year.",
+    a: "No. Simpleworks Consulting starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we'll recommend and help implement one. But for most MSMEs between ₹10 crore and ₹100 crore, the overhead of a software platform is higher than its benefit in the first year.",
   },
   {
     q: "We already set annual targets. Is that the same as OKRs?",
-    a: "Not quite. Annual targets tell you where you want to end up. OKRs tell you — quarter by quarter — what specific progress you are making towards those targets, who is responsible for each piece of that progress, and whether the plan is working or needs to change. Annual targets without quarterly OKRs are goals without a game plan. Most MSME founders who engage Simpleworks for OKR consulting have targets. What they are missing is the structure beneath them.",
+    a: "Not quite. Annual targets tell you where you want to end up. OKRs tell you — quarter by quarter — what specific progress you are making towards those targets, who is responsible for each piece of that progress, and whether the plan is working or needs to change. Annual targets without quarterly OKRs are goals without a game plan. Most MSME founders who engage Simpleworks Consulting for OKR consulting have targets. What they are missing is the structure beneath them.",
   },
 ];
 
@@ -206,7 +206,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "How long does an OKR consulting engagement typically last?",
-    a: "A full OKR engagement — covering design, launch, and two live cycles — typically runs four to six months. The first four to six weeks cover the strategy diagnosis and OKR design. The following two to three months cover the first live cycle with Simpleworks' active involvement. The final month covers the second cycle with progressively reduced support as the team builds the capability to run the system independently.",
+    a: "A full OKR engagement — covering design, launch, and two live cycles — typically runs four to six months. The first four to six weeks cover the strategy diagnosis and OKR design. The following two to three months cover the first live cycle with Simpleworks Consulting's active involvement. The final month covers the second cycle with progressively reduced support as the team builds the capability to run the system independently.",
   },
   {
     q: "What does the first step look like?",
@@ -284,7 +284,7 @@ export default function OkrConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              OKR Consulting · Simpleworks
+              OKR Consulting · Simpleworks Consulting
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
               Goals that cascade.
@@ -292,7 +292,7 @@ export default function OkrConsultingPage() {
               <span className="italic text-red">Accountability that sticks.</span>
             </h1>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Simpleworks designs OKR frameworks for Indian MSMEs and startups
+              Simpleworks Consulting designs OKR frameworks for Indian MSMEs and startups
               — simple enough for a 20-person team to use without a
               consultant in the room, specific enough to actually move the
               business.
@@ -472,7 +472,7 @@ export default function OkrConsultingPage() {
           What OKR consulting <span className="text-red">looks like in practice</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          OKR consulting at Simpleworks is not a training workshop. It is
+          OKR consulting at Simpleworks Consulting is not a training workshop. It is
           the work of designing and launching a goal system that fits your
           specific business — and staying until the team can run it without
           us.
@@ -542,10 +542,10 @@ export default function OkrConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>How We Work</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          How Simpleworks builds <span className="text-red">an OKR system that lasts</span>
+          How Simpleworks Consulting builds <span className="text-red">an OKR system that lasts</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every OKR engagement at Simpleworks follows the same six-step
+          Every OKR engagement at Simpleworks Consulting follows the same six-step
           process — adapted to the size and context of your business, not
           copied from an enterprise template.
         </p>
@@ -575,14 +575,14 @@ export default function OkrConsultingPage() {
 
       {/* SECTION 5 — WHY SIMPLEWORKS */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks</SectionEyebrow>
+        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
           Why OKRs built for MSMEs <span className="text-red">work differently</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Most OKR frameworks are designed for technology companies with
           dedicated HR business partners, OKR software, and quarterly
-          planning cycles that involve fifty people. Simpleworks builds OKR
+          planning cycles that involve fifty people. Simpleworks Consulting builds OKR
           systems for businesses that have none of this.
         </p>
 
@@ -598,7 +598,7 @@ export default function OkrConsultingPage() {
               immediately.
             </p>
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Simpleworks designs OKR frameworks that fit within the actual
+              Simpleworks Consulting designs OKR frameworks that fit within the actual
               capacity of lean teams. Fewer Objectives — never more than
               three to five per quarter. Shorter review cycles — weekly
               check-ins that take 20 minutes, not two hours. No dependency on
@@ -619,9 +619,9 @@ export default function OkrConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Every OKR engagement at Simpleworks ends with the team able to
+              Every OKR engagement at Simpleworks Consulting ends with the team able to
               run the system independently. If the team still needs
-              Simpleworks to manage their OKRs after six months, we
+              Simpleworks Consulting to manage their OKRs after six months, we
               haven&rsquo;t done our job.
             </p>
           </div>
@@ -654,7 +654,7 @@ export default function OkrConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           These articles explore the OKR questions most MSME founders are
-          working through — and how Simpleworks thinks about them.
+          working through — and how Simpleworks Consulting thinks about them.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {LIVE_SPOKES.map((spoke) => (

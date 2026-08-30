@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Offline | Simpleworks",
+  title: "Offline | Simpleworks Consulting",
   robots: { index: false, follow: false },
 };
 

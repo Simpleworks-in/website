@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: {
-    absolute: "Independent Management Consultant India | Premraj Menon | Simpleworks",
+    absolute: "Independent Management Consultant India | Premraj Menon | Simpleworks Consulting",
   },
   description:
     "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo's Kerala Circle.",
@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/about",
   },
   openGraph: {
-    title: "Independent Management Consultant India | Premraj Menon | Simpleworks",
+    title: "Independent Management Consultant India | Premraj Menon | Simpleworks Consulting",
     description:
       "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo's Kerala Circle.",
     url: "https://www.simpleworks.in/about",

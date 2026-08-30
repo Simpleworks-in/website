@@ -4,16 +4,16 @@ import keystaticConfig from "../../../keystatic.config";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: { absolute: "MSME Growth Tips India | Business Growth Blog | Simpleworks" },
+  title: { absolute: "MSME Growth Tips India | Business Growth Blog | Simpleworks Consulting" },
   description:
-    "Simpleworks business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
+    "Simpleworks Consulting business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
   alternates: {
     canonical: "https://www.simpleworks.in/blog",
   },
   openGraph: {
-    title: "MSME Growth Tips India | Business Growth Blog | Simpleworks",
+    title: "MSME Growth Tips India | Business Growth Blog | Simpleworks Consulting",
     description:
-      "Simpleworks business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
+      "Simpleworks Consulting business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
     url: "https://www.simpleworks.in/blog",
     type: "website",
   },
@@ -83,7 +83,7 @@ export default async function BlogPage({
               className="text-eyebrow uppercase tracking-wide-10 text-light"
               style={{ opacity: 0, animation: "fadeUp 0.6s ease 0.1s both" }}
             >
-              Simpleworks · Insights &amp; Perspectives
+              Simpleworks Consulting · Insights &amp; Perspectives
             </p>
             <h1
               className="mt-[18px] text-[36px] font-bold leading-[1.1] tracking-tight-2 md:text-[52px]"
@@ -190,7 +190,7 @@ export default async function BlogPage({
       <div className="reveal flex flex-col md:flex-row md:flex-wrap md:items-center md:justify-between gap-6 md:gap-10 border-t border-rule bg-warm px-6 py-10 md:px-[60px] md:py-14 md:pl-[132px]">
         <div className="max-w-[520px]">
           <p className="text-eyebrow uppercase tracking-wide-9 text-light">
-            Simpleworks · Business Consultant Bengaluru · Substack
+            Simpleworks Consulting · Business Consultant Bengaluru · Substack
           </p>
           <p className="mt-5 text-[22px] md:text-[28px] font-bold leading-[1.2] tracking-tight-1">
             Get new posts delivered

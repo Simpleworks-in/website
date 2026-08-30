@@ -5,14 +5,14 @@ import Reveal from "@/components/Reveal";
 import ResourceDownloadButton from "@/components/ResourceDownloadButton";
 
 export const metadata = {
-  title: { absolute: "Resources | Simpleworks | Business Consultant Bengaluru" },
+  title: { absolute: "Resources | Simpleworks Consulting | Business Consultant Bengaluru" },
   description:
     "Downloadable industry insights, frameworks and guides from Premraj Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
   alternates: {
     canonical: "https://www.simpleworks.in/resources",
   },
   openGraph: {
-    title: "Resources | Simpleworks | Business Consultant Bengaluru",
+    title: "Resources | Simpleworks Consulting | Business Consultant Bengaluru",
     description:
       "Downloadable industry insights, frameworks and guides from Premraj Menon — management consultant with 39 years of experience, for Indian MSME and family business founders.",
     url: "https://www.simpleworks.in/resources",
@@ -70,7 +70,7 @@ export default async function ResourcesPage({
               className="text-eyebrow uppercase tracking-wide-10 text-light"
               style={{ opacity: 0, animation: "fadeUp 0.6s ease 0.1s both" }}
             >
-              Simpleworks · Resources &amp; Downloads
+              Simpleworks Consulting · Resources &amp; Downloads
             </p>
             <h1
               className="mt-[18px] text-[36px] font-bold leading-[1.1] tracking-tight-2 md:text-[52px]"

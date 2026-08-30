@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: {
     absolute:
-      "Consulting Services | MSME, Startup & Family Business | Simpleworks Bengaluru",
+      "Consulting Services | MSME, Startup & Family Business | Simpleworks Consulting Bengaluru",
   },
   description:
     "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. First call free.",
@@ -12,7 +12,7 @@ export const metadata = {
   },
   openGraph: {
     title:
-      "Consulting Services | MSME, Startup & Family Business | Simpleworks Bengaluru",
+      "Consulting Services | MSME, Startup & Family Business | Simpleworks Consulting Bengaluru",
     description:
       "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. First call free.",
     url: "https://www.simpleworks.in/services",
@@ -171,7 +171,7 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
     title: "Execution Consulting",
     href: "/services/execution-consulting",
     description:
-      "Strategy is rarely the problem. Execution is. Simpleworks closes the gap between what leadership decides and what the team actually delivers — with OKRs, accountability structures, and review rhythms.",
+      "Strategy is rarely the problem. Execution is. Simpleworks Consulting closes the gap between what leadership decides and what the team actually delivers — with OKRs, accountability structures, and review rhythms.",
     spokes: [
       {
         title:
@@ -186,7 +186,7 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         live: true,
       },
       {
-        title: "Simpleworks 4P Framework",
+        title: "Simpleworks Consulting 4P Framework",
         href: "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
         live: true,
       },
@@ -206,7 +206,7 @@ const PILLAR_POSTS = [
   {
     tag: "Cross-cluster · All services",
     title:
-      "Business Strategy Consulting for Indian MSMEs: How the Simpleworks 4P Framework Turns Problems Into Plans",
+      "Business Strategy Consulting for Indian MSMEs: How the Simpleworks Consulting 4P Framework Turns Problems Into Plans",
     href: "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
     live: true,
   },
@@ -296,13 +296,13 @@ export default function ServicesPage() {
           that are <span className="text-red">ready to move</span>.
         </h1>
         <p className="mb-9 max-w-[560px] text-[18px] italic leading-[1.6] text-mid md:text-[20px]">
-          Simpleworks works with Indian MSME founders, startup leaders, and
+          Simpleworks Consulting works with Indian MSME founders, startup leaders, and
           family business owners — on strategy, growth, and execution. One
           point of contact. No unnecessary complexity.
         </p>
         <div className="max-w-body-text text-[16px] leading-[1.78] text-mid md:text-[17px]">
           <p className="mb-[18px]">
-            Every business Simpleworks works with is at some kind of turning
+            Every business Simpleworks Consulting works with is at some kind of turning
             point. Revenue has plateaued. Margins are shrinking. A market has
             shifted. A founder has realised the old approach won&rsquo;t take
             the business to the next stage.
@@ -310,7 +310,7 @@ export default function ServicesPage() {
           <p>
             What they need is not a report. They need a plan that is clear
             enough to execute and a consultant who stays until it is moving.
-            That is what Simpleworks does — across six focused service areas,
+            That is what Simpleworks Consulting does — across six focused service areas,
             in two groupings.
           </p>
         </div>
@@ -352,7 +352,7 @@ export default function ServicesPage() {
         </h2>
         <p className="mb-10 max-w-body-text text-[16px] leading-[1.78] text-mid md:text-[17px]">
           Some questions don&rsquo;t belong to a single service. These two
-          posts explain the thinking behind how Simpleworks approaches every
+          posts explain the thinking behind how Simpleworks Consulting approaches every
           engagement — regardless of sector or problem type.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-[2px]">

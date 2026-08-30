@@ -4,18 +4,18 @@ import Link from "next/link";
 export const metadata = {
   title: {
     absolute:
-      "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks",
+      "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks Consulting",
   },
   description:
-    "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
+    "Simpleworks Consulting closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/execution-consulting",
   },
   openGraph: {
     title:
-      "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks",
+      "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks Consulting",
     description:
-      "Simpleworks closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
+      "Simpleworks Consulting closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/services/execution-consulting",
     locale: "en_IN",
     type: "website",
@@ -44,7 +44,7 @@ const WHAT_WE_DO = [
   {
     num: "01 — Diagnosis",
     title: "Where execution is breaking down",
-    body: "Before prescribing anything, Simpleworks diagnoses where the real gap is. Goals that don't cascade. Teams that don't own their numbers. Reviews that happen but don't change anything. The problem is rarely what it appears to be on the surface.",
+    body: "Before prescribing anything, Simpleworks Consulting diagnoses where the real gap is. Goals that don't cascade. Teams that don't own their numbers. Reviews that happen but don't change anything. The problem is rarely what it appears to be on the surface.",
   },
   {
     num: "02 — Goal Architecture",
@@ -59,7 +59,7 @@ const WHAT_WE_DO = [
   {
     num: "04 — Live Execution Support",
     title: "Running the first two cycles with you",
-    body: "The biggest reason execution systems fail is that they're handed over and forgotten. Simpleworks runs the first two OKR cycles alongside your team — coaching leaders through reviews, adjusting the system where it isn't working, and exiting only when the organisation can run it independently.",
+    body: "The biggest reason execution systems fail is that they're handed over and forgotten. Simpleworks Consulting runs the first two OKR cycles alongside your team — coaching leaders through reviews, adjusting the system where it isn't working, and exiting only when the organisation can run it independently.",
   },
 ];
 
@@ -109,7 +109,7 @@ const FIVE_D = [
     letter: "D4",
     label: "Deploy",
     title: "Launch the system with the team",
-    body: "We run the first OKR cycle launch with the full team — not just the founders. Every function head understands their objectives, owns their key results, and knows when and how they will be reviewed. The system goes live with Simpleworks in the room for the first cycle.",
+    body: "We run the first OKR cycle launch with the full team — not just the founders. Every function head understands their objectives, owns their key results, and knows when and how they will be reviewed. The system goes live with Simpleworks Consulting in the room for the first cycle.",
   },
   {
     letter: "D5",
@@ -134,7 +134,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Exit when the team can run it alone",
-    body: "We stay until the system is self-sustaining — not until a contract period ends. The goal is that Simpleworks becomes unnecessary. That is how we measure success.",
+    body: "We stay until the system is self-sustaining — not until a contract period ends. The goal is that Simpleworks Consulting becomes unnecessary. That is how we measure success.",
   },
 ];
 
@@ -172,7 +172,7 @@ const COMING_SOON_SPOKES = [
 const FAQ_COLUMN_1 = [
   {
     q: "What is execution consulting — and how is it different from strategy consulting?",
-    a: "Strategy consulting answers the question: what should we do? Execution consulting answers: how do we make sure it actually happens? Simpleworks does both — but most clients come to us because the strategy is already clear and the organisation is failing to execute it. The gap between decision and delivery is where we do our best work.",
+    a: "Strategy consulting answers the question: what should we do? Execution consulting answers: how do we make sure it actually happens? Simpleworks Consulting does both — but most clients come to us because the strategy is already clear and the organisation is failing to execute it. The gap between decision and delivery is where we do our best work.",
   },
   {
     q: "Do we need OKR software to make this work?",
@@ -180,14 +180,14 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "What is the 5D method?",
-    a: "The 5D method is Simpleworks' execution framework: Diagnose, Define, Design, Deploy, Drive. It is the structured process we follow in every engagement — understanding the real constraint first, building the right goals second, launching the system with the team third, and staying until the organisation can run it independently. The 5D method ensures every engagement ends with a system that works, not just a plan that was agreed.",
+    a: "The 5D method is Simpleworks Consulting's execution framework: Diagnose, Define, Design, Deploy, Drive. It is the structured process we follow in every engagement — understanding the real constraint first, building the right goals second, launching the system with the team third, and staying until the organisation can run it independently. The 5D method ensures every engagement ends with a system that works, not just a plan that was agreed.",
   },
 ];
 
 const FAQ_COLUMN_2 = [
   {
     q: "How long does an execution consulting engagement typically last?",
-    a: "A full execution engagement — from diagnosis through two OKR cycles — typically runs four to six months. The first month covers diagnosis and design. The second and third months cover the first OKR cycle launch and review. The fourth through sixth months cover the second cycle with progressively less Simpleworks involvement.",
+    a: "A full execution engagement — from diagnosis through two OKR cycles — typically runs four to six months. The first month covers diagnosis and design. The second and third months cover the first OKR cycle launch and review. The fourth through sixth months cover the second cycle with progressively less Simpleworks Consulting involvement.",
   },
   {
     q: "We already have KPIs. Why would we also need OKRs?",
@@ -195,7 +195,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first conversation look like?",
-    a: "A free 30-minute call with Premraj Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks can help. If it's not the right fit, we'll say so and point you in the right direction.",
+    a: "A free 30-minute call with Premraj Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks Consulting can help. If it's not the right fit, we'll say so and point you in the right direction.",
   },
 ];
 
@@ -269,7 +269,7 @@ export default function ExecutionConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              Execution Consulting · Simpleworks
+              Execution Consulting · Simpleworks Consulting
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
               Strategy means nothing
@@ -277,7 +277,7 @@ export default function ExecutionConsultingPage() {
               <span className="italic text-red">without execution.</span>
             </h1>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Simpleworks closes the gap between what leadership decides and
+              Simpleworks Consulting closes the gap between what leadership decides and
               what the team actually delivers — with clear goals, accountable
               ownership, and a review rhythm that holds.
             </p>
@@ -447,10 +447,10 @@ export default function ExecutionConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>How We Work</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          The Simpleworks <span className="text-red">5D Method</span>
+          The Simpleworks Consulting <span className="text-red">5D Method</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every execution engagement at Simpleworks follows the same
+          Every execution engagement at Simpleworks Consulting follows the same
           five-step process — adapted to your business, not applied from a
           template.
         </p>
@@ -479,7 +479,7 @@ export default function ExecutionConsultingPage() {
 
       {/* SECTION — WHY SIMPLEWORKS */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks</SectionEyebrow>
+        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
           Why execution consulting works{" "}
           <span className="text-red">differently here</span>
@@ -487,7 +487,7 @@ export default function ExecutionConsultingPage() {
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Most execution frameworks are designed for enterprises with
           dedicated OKR teams, HR systems, and performance management
-          software. Simpleworks builds execution systems for businesses that
+          software. Simpleworks Consulting builds execution systems for businesses that
           have none of that — and don&rsquo;t need it.
         </p>
 
@@ -521,7 +521,7 @@ export default function ExecutionConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Simpleworks designs execution systems that fit the actual
+              Simpleworks Consulting designs execution systems that fit the actual
               capacity of your team — not the theoretical capacity of a
               large enterprise function. Fewer metrics. Sharper ownership.
               Shorter review cycles. More action per meeting.
@@ -555,7 +555,7 @@ export default function ExecutionConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           These articles explore the execution problems most MSME founders
-          face — and the thinking behind how Simpleworks approaches them.
+          face — and the thinking behind how Simpleworks Consulting approaches them.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {LIVE_SPOKES.map((spoke) => (

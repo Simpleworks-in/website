@@ -4,18 +4,18 @@ import Link from "next/link";
 export const metadata = {
   title: {
     absolute:
-      "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks",
+      "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
   },
   description:
-    "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
+    "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
   openGraph: {
     title:
-      "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks",
+      "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
     description:
-      "Simpleworks is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
+      "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
     url: "https://www.simpleworks.in/services/msme-consulting",
     type: "website",
   },
@@ -40,7 +40,7 @@ const WHAT_WE_DO = [
   {
     num: "04 — The difference",
     title: "We stay until the plan is moving",
-    body: "Simpleworks doesn't hand over a report and walk away. Every engagement ends when the plan is in motion on the ground — not when the invoice is settled.",
+    body: "Simpleworks Consulting doesn't hand over a report and walk away. Every engagement ends when the plan is in motion on the ground — not when the invoice is settled.",
   },
 ];
 
@@ -70,7 +70,7 @@ const SITUATIONS = [
 const DIFFERENTIATORS = [
   {
     title: "One point of contact — always Premraj Menon",
-    body: "No junior team. No account manager. When you engage Simpleworks, you work directly with Prem — in your office, with your team, on your problem.",
+    body: "No junior team. No account manager. When you engage Simpleworks Consulting, you work directly with Prem — in your office, with your team, on your problem.",
   },
   {
     title: "Scoped for MSMEs — not enterprise minimums",
@@ -141,7 +141,7 @@ const FAQ_COLUMN_1 = [
     a: "A CA manages compliance, tax, and financial reporting. A business coach works on mindset and leadership behaviour. An MSME consultant works on business decisions — strategy, market positioning, growth planning, and execution. We are not a replacement for your CA. We work on what sits between the numbers and the person making them.",
   },
   {
-    q: "What size of MSME does Simpleworks typically work with?",
+    q: "What size of MSME does Simpleworks Consulting typically work with?",
     a: "We work primarily with Indian MSMEs between ₹10 crore and ₹100 crore in annual revenue — founder-led or family-run, with 10 to 300 employees. The right fit is less about revenue and more about the nature of the problem and the readiness to act on clear direction.",
   },
   {
@@ -157,7 +157,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "Do you work only in Bengaluru?",
-    a: "Simpleworks is based in Bengaluru and works in person across South India. For founders in other parts of India, we work through a combination of in-person visits and structured online sessions. The preference is always in-person — especially for diagnosis and early planning.",
+    a: "Simpleworks Consulting is based in Bengaluru and works in person across South India. For founders in other parts of India, we work through a combination of in-person visits and structured online sessions. The preference is always in-person — especially for diagnosis and early planning.",
   },
   {
     q: "What does the first step look like?",
@@ -360,7 +360,7 @@ export default function MsmeConsultingPage() {
           The MSME founders <span className="text-red">we work with</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Simpleworks works with Indian MSMEs typically between ₹10 crore and
+          Simpleworks Consulting works with Indian MSMEs typically between ₹10 crore and
           ₹100 crore in revenue — founder-led or family-run, with 10 to 300
           employees, across manufacturing, consumer goods, retail, and
           distribution.
@@ -401,14 +401,14 @@ export default function MsmeConsultingPage() {
 
       {/* SECTION 3 — WHY SIMPLEWORKS */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks</SectionEyebrow>
+        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
           Why an independent consultant —{" "}
           <span className="text-red">not a large firm</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Large consulting firms are built for large organisations.
-          Simpleworks is built for businesses where the founder is in the
+          Simpleworks Consulting is built for businesses where the founder is in the
           room and the plan must be executable by the existing team.
         </p>
 
@@ -422,7 +422,7 @@ export default function MsmeConsultingPage() {
               board rooms, not founder offices.
             </p>
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Simpleworks is built differently — by deliberate choice.
+              Simpleworks Consulting is built differently — by deliberate choice.
             </p>
 
             <div className="mb-8 border-l-2 border-red pl-[22px]">
@@ -438,7 +438,7 @@ export default function MsmeConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Every engagement at Simpleworks is led personally by Prem
+              Every engagement at Simpleworks Consulting is led personally by Prem
               Menon — a consultant with 39 years across Consumer Durables,
               Automotive, Telecom, and SaaS. He has worked inside large
               corporates at P&amp;L level and inside startups with no budget.
@@ -474,7 +474,7 @@ export default function MsmeConsultingPage() {
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Strategy, growth, and execution are interconnected. A plan without
           execution is a wish. Execution without direction is just activity.
-          Simpleworks works across all three — because that&rsquo;s what
+          Simpleworks Consulting works across all three — because that&rsquo;s what
           actually moves a business forward.
         </p>
         <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
@@ -500,7 +500,7 @@ export default function MsmeConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           These articles explore the problems most MSME founders face — and
-          the thinking behind how Simpleworks approaches them.
+          the thinking behind how Simpleworks Consulting approaches them.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {LIVE_SPOKES.map((spoke) => (

@@ -2,7 +2,7 @@ export type FAQ = { q: string; a: string };
 
 export const FAQS: FAQ[] = [
   {
-    q: "What kind of businesses does Simpleworks work with?",
+    q: "What kind of businesses does Simpleworks Consulting work with?",
     a: "As an MSME consultant based in Bengaluru, we work primarily with Indian small and medium enterprises in manufacturing, consumer goods, retail, distribution, and technology. Small enterprises are typically ₹10 to ₹100 crore in revenue; medium enterprises ₹100 to ₹500 crore. Our clients are founder-led, family-run, or professionally managed businesses, usually with 50 to 500 employees.",
   },
   {
@@ -18,15 +18,15 @@ export const FAQS: FAQ[] = [
     a: "It depends on the problem. Some clients need a focused strategy sprint — three to four weeks to diagnose, decide, and plan. Others need longer-term advisory support through a growth phase or business turnaround. We scope every engagement around the actual need, not a standard package.",
   },
   {
-    q: "How is Simpleworks different from larger consulting firms?",
-    a: "Larger management consulting firms in India are built for large organisations — they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
+    q: "How is Simpleworks Consulting different from larger consulting firms?",
+    a: "Larger management consulting firms in India are built for large organisations — they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks Consulting is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
   },
   {
     q: "What industries do you specialise in?",
     a: "Our deepest experience is in Consumer Durables, Manufacturing, Tyres, Retail and Distribution, Telecom, and IT/SaaS. That said, the strategic problems most MSMEs face — unclear positioning, stalled growth, weak execution — are industry-agnostic. If your business is at a turning point, the industry rarely limits what we can do together.",
   },
   {
-    q: "Can Simpleworks help with a business turnaround?",
+    q: "Can Simpleworks Consulting help with a business turnaround?",
     a: "Yes. Business turnaround consulting is one of our core areas. We work with businesses that are profitable but losing margin, stuck in a growth plateau, or facing a structural shift in their market. The first step is always honest diagnosis — understanding what is actually causing the problem before recommending any intervention.",
   },
   {

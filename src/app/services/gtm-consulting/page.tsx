@@ -4,18 +4,18 @@ import Link from "next/link";
 export const metadata = {
   title: {
     absolute:
-      "GTM Consulting India | Go-to-Market Strategy for MSMEs & Startups | Simpleworks",
+      "GTM Consulting India | Go-to-Market Strategy for MSMEs & Startups | Simpleworks Consulting",
   },
   description:
-    "Simpleworks builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
+    "Simpleworks Consulting builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/gtm-consulting",
   },
   openGraph: {
     title:
-      "GTM Consulting India | Go-to-Market Strategy for MSMEs & Startups | Simpleworks",
+      "GTM Consulting India | Go-to-Market Strategy for MSMEs & Startups | Simpleworks Consulting",
     description:
-      "Simpleworks builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
+      "Simpleworks Consulting builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
     url: "https://www.simpleworks.in/services/gtm-consulting",
     locale: "en_IN",
     type: "website",
@@ -44,22 +44,22 @@ const WHAT_WE_DO = [
   {
     num: "01 — Segmentation",
     title: "Defining the customer with precision",
-    body: "Most businesses define their target customer too broadly — which means their sales effort is spread thin and their messaging resonates with no one in particular. Simpleworks works with founders to identify the two or three customer segments most likely to convert, most likely to pay, and most likely to generate referrals — and builds the GTM strategy around those segments first.",
+    body: "Most businesses define their target customer too broadly — which means their sales effort is spread thin and their messaging resonates with no one in particular. Simpleworks Consulting works with founders to identify the two or three customer segments most likely to convert, most likely to pay, and most likely to generate referrals — and builds the GTM strategy around those segments first.",
   },
   {
     num: "02 — Positioning",
     title: "Finding the angle that makes you the obvious choice",
-    body: "Positioning is not a tagline. It is a clear statement of who you serve, what problem you solve, and why you solve it better than the alternative. Simpleworks develops positioning that is specific enough to be meaningful and honest enough to be defensible — starting from a rigorous analysis of what buyers actually care about, not what the founders want to say about themselves.",
+    body: "Positioning is not a tagline. It is a clear statement of who you serve, what problem you solve, and why you solve it better than the alternative. Simpleworks Consulting develops positioning that is specific enough to be meaningful and honest enough to be defensible — starting from a rigorous analysis of what buyers actually care about, not what the founders want to say about themselves.",
   },
   {
     num: "03 — Channel Strategy",
     title: "Choosing where and how to sell",
-    body: "The right channel for an industrial components manufacturer in Pune is not the right channel for a SaaS startup in Bengaluru. Simpleworks builds channel strategy from the ground up — understanding which channels your target segment actually uses to find and evaluate suppliers, and which you can win in given your current resources and relationships.",
+    body: "The right channel for an industrial components manufacturer in Pune is not the right channel for a SaaS startup in Bengaluru. Simpleworks Consulting builds channel strategy from the ground up — understanding which channels your target segment actually uses to find and evaluate suppliers, and which you can win in given your current resources and relationships.",
   },
   {
     num: "04 — GTM Execution Plan",
     title: "Turning strategy into a sequenced action plan",
-    body: "A GTM strategy that lives in a presentation is not a GTM strategy — it is a hypothesis. Simpleworks converts the strategy into a phased execution plan: which segment to pursue first, which channel to prove in the first 90 days, what the sales motion looks like, and what the milestones are that will tell you whether the strategy is working or needs to change.",
+    body: "A GTM strategy that lives in a presentation is not a GTM strategy — it is a hypothesis. Simpleworks Consulting converts the strategy into a phased execution plan: which segment to pursue first, which channel to prove in the first 90 days, what the sales motion looks like, and what the milestones are that will tell you whether the strategy is working or needs to change.",
   },
 ];
 
@@ -91,25 +91,25 @@ const STEPS = [
     num: "01",
     label: "Diagnose",
     title: "Understand the current state before building anything new",
-    body: "Before recommending a new GTM, Simpleworks analyses the existing one. Who are the current customers — and which ones are actually profitable? Which channels produced them? What is the win rate in each segment and why? What does the sales process look like and where does it lose? The current state, diagnosed honestly, is the foundation for everything that follows.",
+    body: "Before recommending a new GTM, Simpleworks Consulting analyses the existing one. Who are the current customers — and which ones are actually profitable? Which channels produced them? What is the win rate in each segment and why? What does the sales process look like and where does it lose? The current state, diagnosed honestly, is the foundation for everything that follows.",
   },
   {
     num: "02",
     label: "Define",
     title: "Identify the segments and build the ICP",
-    body: "The Ideal Customer Profile (ICP) is the most important output of a GTM strategy — and most businesses don't have one they can state precisely. Simpleworks builds the ICP from the data: which existing customers deliver the most revenue at the lowest cost to acquire and serve, what they have in common, and how to find more of them. The ICP becomes the filter for every GTM decision that follows.",
+    body: "The Ideal Customer Profile (ICP) is the most important output of a GTM strategy — and most businesses don't have one they can state precisely. Simpleworks Consulting builds the ICP from the data: which existing customers deliver the most revenue at the lowest cost to acquire and serve, what they have in common, and how to find more of them. The ICP becomes the filter for every GTM decision that follows.",
   },
   {
     num: "03",
     label: "Design",
     title: "Build the positioning, messaging, and channel strategy",
-    body: "With the ICP defined, Simpleworks builds the positioning (why you, for them, vs. the alternative), the messaging (what you say and how), and the channel strategy (how you reach them at scale). For Indian MSMEs, this almost always involves a combination of direct sales, dealer or distributor networks, and digital channels — sequenced in the order that the business can actually execute with its current team and budget.",
+    body: "With the ICP defined, Simpleworks Consulting builds the positioning (why you, for them, vs. the alternative), the messaging (what you say and how), and the channel strategy (how you reach them at scale). For Indian MSMEs, this almost always involves a combination of direct sales, dealer or distributor networks, and digital channels — sequenced in the order that the business can actually execute with its current team and budget.",
   },
   {
     num: "04",
     label: "Deploy",
     title: "Launch the first 90-day GTM sprint and measure what works",
-    body: "The GTM strategy launches as a 90-day sprint — a focused effort on one segment, one channel, and one message, with clear milestones that define what success looks like at the end of 90 days. Simpleworks stays involved through this sprint, reviewing results weekly and adjusting the strategy based on what the market is telling you. At the end of the sprint, you have either a proven model to scale or a clear understanding of what to change — not a guess.",
+    body: "The GTM strategy launches as a 90-day sprint — a focused effort on one segment, one channel, and one message, with clear milestones that define what success looks like at the end of 90 days. Simpleworks Consulting stays involved through this sprint, reviewing results weekly and adjusting the strategy based on what the market is telling you. At the end of the sprint, you have either a proven model to scale or a clear understanding of what to change — not a guess.",
   },
 ];
 
@@ -124,7 +124,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Strategy that fits your current team and budget",
-    body: "A GTM plan that requires headcount you don't have and a marketing budget you can't afford is not a plan — it's a wish. Simpleworks builds GTM strategies around what the business can actually execute in the next 90 days.",
+    body: "A GTM plan that requires headcount you don't have and a marketing budget you can't afford is not a plan — it's a wish. Simpleworks Consulting builds GTM strategies around what the business can actually execute in the next 90 days.",
   },
   {
     title: "Premraj Menon leads every engagement personally",
@@ -146,7 +146,7 @@ const AREAS = [
   {
     num: "03",
     title: "90-Day Execution Sprint",
-    body: "A sequenced plan for the first 90 days — one segment, one channel, one message, clear milestones. Simpleworks stays involved through the sprint, reviewing results and adjusting in real time. At the end you have a validated model, not a hypothesis.",
+    body: "A sequenced plan for the first 90 days — one segment, one channel, one message, clear milestones. Simpleworks Consulting stays involved through the sprint, reviewing results and adjusting in real time. At the end you have a validated model, not a hypothesis.",
   },
 ];
 
@@ -187,22 +187,22 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Does GTM consulting apply to B2B businesses or B2C businesses?",
-    a: "Both — but the approach is different. Most of Simpleworks' GTM work is with B2B businesses: manufacturing companies, industrial suppliers, SaaS businesses, and professional services firms. In B2B, the GTM strategy focuses on segment definition, sales motion, and channel strategy. In B2C, the emphasis shifts toward positioning and distribution. The three core questions — who is the customer, why you, how do you reach them — apply in both cases.",
+    a: "Both — but the approach is different. Most of Simpleworks Consulting's GTM work is with B2B businesses: manufacturing companies, industrial suppliers, SaaS businesses, and professional services firms. In B2B, the GTM strategy focuses on segment definition, sales motion, and channel strategy. In B2C, the emphasis shifts toward positioning and distribution. The three core questions — who is the customer, why you, how do you reach them — apply in both cases.",
   },
   {
     q: "How is GTM consulting different from hiring a marketing agency?",
-    a: "A marketing agency executes a GTM strategy — they run campaigns, produce content, manage digital channels. Simpleworks builds the GTM strategy that the agency then executes. If you hire a marketing agency before you have a clear GTM, you are paying an agency to run campaigns that haven't been aimed correctly. The GTM strategy comes first; the agency comes second. Many of our clients engage Simpleworks specifically because they have a marketing agency relationship that isn't producing results — and the root cause is always a GTM problem, not an execution problem.",
+    a: "A marketing agency executes a GTM strategy — they run campaigns, produce content, manage digital channels. Simpleworks Consulting builds the GTM strategy that the agency then executes. If you hire a marketing agency before you have a clear GTM, you are paying an agency to run campaigns that haven't been aimed correctly. The GTM strategy comes first; the agency comes second. Many of our clients engage Simpleworks Consulting specifically because they have a marketing agency relationship that isn't producing results — and the root cause is always a GTM problem, not an execution problem.",
   },
 ];
 
 const FAQ_COLUMN_2 = [
   {
-    q: "We sell through distributors and dealers. Can Simpleworks help with that kind of GTM?",
-    a: "Yes — and this is where Simpleworks' experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
+    q: "We sell through distributors and dealers. Can Simpleworks Consulting help with that kind of GTM?",
+    a: "Yes — and this is where Simpleworks Consulting's experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
   },
   {
     q: "How long does a GTM consulting engagement last?",
-    a: "A full GTM engagement — covering diagnosis, ICP definition, positioning, channel strategy, and the first 90-day sprint — typically runs three to five months. The first four to six weeks cover diagnosis and strategy design. The following ten to twelve weeks cover the 90-day sprint with Simpleworks' active involvement in weekly reviews and adjustments. Shorter engagements focused on a specific GTM question — ICP definition only, or channel strategy for a new market — can run four to six weeks.",
+    a: "A full GTM engagement — covering diagnosis, ICP definition, positioning, channel strategy, and the first 90-day sprint — typically runs three to five months. The first four to six weeks cover diagnosis and strategy design. The following ten to twelve weeks cover the 90-day sprint with Simpleworks Consulting's active involvement in weekly reviews and adjustments. Shorter engagements focused on a specific GTM question — ICP definition only, or channel strategy for a new market — can run four to six weeks.",
   },
   {
     q: "What does the first step look like?",
@@ -280,7 +280,7 @@ export default function GtmConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              GTM Consulting · Simpleworks
+              GTM Consulting · Simpleworks Consulting
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
               The right customers.
@@ -288,7 +288,7 @@ export default function GtmConsultingPage() {
               <span className="italic text-red">The right way to reach them.</span>
             </h1>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Simpleworks builds go-to-market strategies for Indian MSMEs and
+              Simpleworks Consulting builds go-to-market strategies for Indian MSMEs and
               startups — specific to your market, your distribution reality,
               and the customers who will actually pay for what you sell.
             </p>
@@ -380,7 +380,7 @@ export default function GtmConsultingPage() {
           What GTM consulting <span className="text-red">looks like in practice</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          GTM consulting at Simpleworks is not brand strategy or a digital
+          GTM consulting at Simpleworks Consulting is not brand strategy or a digital
           marketing brief. It is the structured work of answering the three
           GTM questions with enough precision to actually direct a sales and
           marketing effort.
@@ -451,10 +451,10 @@ export default function GtmConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>How We Work</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          How Simpleworks builds <span className="text-red">a GTM strategy that works</span>
+          How Simpleworks Consulting builds <span className="text-red">a GTM strategy that works</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every GTM engagement at Simpleworks follows four steps — in order.
+          Every GTM engagement at Simpleworks Consulting follows four steps — in order.
           Skipping any one of them produces a strategy that looks complete
           on paper but fails in the field.
         </p>
@@ -484,14 +484,14 @@ export default function GtmConsultingPage() {
 
       {/* SECTION 5 — WHY SIMPLEWORKS */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks</SectionEyebrow>
+        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
           GTM strategy built for <span className="text-red">Indian market reality</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Most GTM frameworks are built for technology companies with large
           marketing budgets, inside sales teams, and digital-first
-          distribution. Simpleworks builds GTM strategies for businesses
+          distribution. Simpleworks Consulting builds GTM strategies for businesses
           where distribution is physical, budgets are real, and the sales
           team is two people.
         </p>
@@ -509,7 +509,7 @@ export default function GtmConsultingPage() {
               channels your buyers don&rsquo;t use.
             </p>
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Simpleworks brings 39 years of experience in Consumer Durables,
+              Simpleworks Consulting brings 39 years of experience in Consumer Durables,
               Automotive, Telecom, and SaaS — businesses where distribution
               networks, dealer relationships, and regional sales structures
               are the core of the GTM, not an afterthought. Premraj Menon has
@@ -567,7 +567,7 @@ export default function GtmConsultingPage() {
           Three components of every <span className="text-red">GTM engagement</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every GTM engagement at Simpleworks produces three things. Each
+          Every GTM engagement at Simpleworks Consulting produces three things. Each
           one is necessary. None of them alone is sufficient.
         </p>
         <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
@@ -593,7 +593,7 @@ export default function GtmConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           These articles explore the go-to-market questions most Indian
-          MSME founders are working through — and how Simpleworks approaches
+          MSME founders are working through — and how Simpleworks Consulting approaches
           them.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -674,7 +674,7 @@ export default function GtmConsultingPage() {
           <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
             Tell us where your current GTM is breaking down — or what market
             you&rsquo;re trying to enter. We&rsquo;ll tell you honestly
-            whether and how Simpleworks can help.
+            whether and how Simpleworks Consulting can help.
           </p>
         </div>
         <div className="flex flex-shrink-0 flex-col gap-3">

@@ -3,7 +3,7 @@
 // global header was covering tooltips and Add-buttons.
 
 export const metadata = {
-  title: "Keystatic — Simpleworks CMS",
+  title: "Keystatic — Simpleworks Consulting CMS",
   robots: { index: false, follow: false },
 };
 

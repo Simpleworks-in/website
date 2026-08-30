@@ -4,18 +4,18 @@ import Link from "next/link";
 export const metadata = {
   title: {
     absolute:
-      "Family Business Consultant India | Professionalisation & Succession | Simpleworks",
+      "Family Business Consultant India | Professionalisation & Succession | Simpleworks Consulting",
   },
   description:
-    "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
+    "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/family-business-consulting",
   },
   openGraph: {
     title:
-      "Family Business Consultant India | Professionalisation & Succession | Simpleworks",
+      "Family Business Consultant India | Professionalisation & Succession | Simpleworks Consulting",
     description:
-      "Simpleworks works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
+      "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
     url: "https://www.simpleworks.in/services/family-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -49,17 +49,17 @@ const WHAT_WE_DO = [
   {
     num: "02 — Succession Planning",
     title: "Designing the handover before it becomes urgent",
-    body: "Succession is not a document — it is a multi-year process of transferring authority, building capability, and aligning the family on what the next chapter looks like. Simpleworks helps families design that process while there is still time to do it well, not when the situation forces it.",
+    body: "Succession is not a document — it is a multi-year process of transferring authority, building capability, and aligning the family on what the next chapter looks like. Simpleworks Consulting helps families design that process while there is still time to do it well, not when the situation forces it.",
   },
   {
     num: "03 — Next-Generation Leadership",
     title: "Preparing the second generation to actually lead",
-    body: "Most second-generation leaders in Indian family businesses inherit a title and a business simultaneously — with no structured preparation for either. Simpleworks works with the next generation on the specific skills, decisions, and relationships that the transition will demand of them before it arrives.",
+    body: "Most second-generation leaders in Indian family businesses inherit a title and a business simultaneously — with no structured preparation for either. Simpleworks Consulting works with the next generation on the specific skills, decisions, and relationships that the transition will demand of them before it arrives.",
   },
   {
     num: "04 — Business Strategy",
     title: "Setting the direction for the next chapter",
-    body: "Many family businesses reach a transition point where the strategy that built the business is no longer the strategy that will grow it. New markets, new competition, new generations with different ambitions. Simpleworks works with family leadership to define where the business goes next — and how to get family alignment on that direction.",
+    body: "Many family businesses reach a transition point where the strategy that built the business is no longer the strategy that will grow it. New markets, new competition, new generations with different ambitions. Simpleworks Consulting works with family leadership to define where the business goes next — and how to get family alignment on that direction.",
   },
 ];
 
@@ -109,7 +109,7 @@ const PATHWAY = [
     num: "04",
     label: "Build",
     title: "Develop the next generation's capability to lead",
-    body: "Succession without capability development is just a title change. Simpleworks works with the next generation on the specific leadership, commercial, and relational skills that the transition will demand — before the transition happens. This includes structured exposure to the decisions the business depends on, not just the ones they currently handle.",
+    body: "Succession without capability development is just a title change. Simpleworks Consulting works with the next generation on the specific leadership, commercial, and relational skills that the transition will demand — before the transition happens. This includes structured exposure to the decisions the business depends on, not just the ones they currently handle.",
   },
   {
     num: "05",
@@ -122,7 +122,7 @@ const PATHWAY = [
 const DIFFERENTIATORS = [
   {
     title: "Commercial and human — not one or the other",
-    body: "We hold both dimensions simultaneously. The business needs to work commercially. The family needs to stay intact. Simpleworks keeps both outcomes in view — not just the one that's easier to measure.",
+    body: "We hold both dimensions simultaneously. The business needs to work commercially. The family needs to stay intact. Simpleworks Consulting keeps both outcomes in view — not just the one that's easier to measure.",
   },
   {
     title: "Premraj Menon leads every engagement personally",
@@ -130,11 +130,11 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Direct when directness is required",
-    body: "Family businesses often have conversations they need to have but haven't. Simpleworks does not soften difficult realities. We name what we observe, clearly and respectfully — because the alternative is more expensive.",
+    body: "Family businesses often have conversations they need to have but haven't. Simpleworks Consulting does not soften difficult realities. We name what we observe, clearly and respectfully — because the alternative is more expensive.",
   },
   {
     title: "Structured for the Indian family business context",
-    body: "Western succession frameworks don't map directly to Indian family business structures — joint family dynamics, multi-generation involvement, and the social dimension of the business all require a different approach. Simpleworks works in this context, not against it.",
+    body: "Western succession frameworks don't map directly to Indian family business structures — joint family dynamics, multi-generation involvement, and the social dimension of the business all require a different approach. Simpleworks Consulting works in this context, not against it.",
   },
 ];
 
@@ -152,7 +152,7 @@ const AREAS = [
   {
     num: "03",
     title: "Business Strategy",
-    body: "The next generation often inherits a business that was designed for a different market. Simpleworks works with family leadership to define the commercial strategy for the next chapter — growth, diversification, or disciplined consolidation.",
+    body: "The next generation often inherits a business that was designed for a different market. Simpleworks Consulting works with family leadership to define the commercial strategy for the next chapter — growth, diversification, or disciplined consolidation.",
   },
 ];
 
@@ -197,30 +197,30 @@ const COMING_SOON_SPOKES = [
 const FAQ_COLUMN_1 = [
   {
     q: "What exactly is family business consulting — and how is it different from management consulting?",
-    a: "Management consulting addresses commercial problems: strategy, growth, execution, operations. Family business consulting addresses problems that exist at the intersection of family and business — succession, professionalisation, governance, next-generation leadership. The commercial and the personal are inseparable in a family business, and a consultant who addresses only one will make the other worse. Simpleworks works at that intersection.",
+    a: "Management consulting addresses commercial problems: strategy, growth, execution, operations. Family business consulting addresses problems that exist at the intersection of family and business — succession, professionalisation, governance, next-generation leadership. The commercial and the personal are inseparable in a family business, and a consultant who addresses only one will make the other worse. Simpleworks Consulting works at that intersection.",
   },
   {
-    q: "Is Simpleworks a mediator or a therapist for family conflict?",
-    a: "Neither. Simpleworks is a management consultant who understands the family dimension of business problems — and knows when to bring in a mediator or therapist if the situation calls for it. We do not do conflict resolution or family therapy. We do help families have the business conversations they have been avoiding, in a structured environment where decisions can actually be made and acted on.",
+    q: "Is Simpleworks Consulting a mediator or a therapist for family conflict?",
+    a: "Neither. Simpleworks Consulting is a management consultant who understands the family dimension of business problems — and knows when to bring in a mediator or therapist if the situation calls for it. We do not do conflict resolution or family therapy. We do help families have the business conversations they have been avoiding, in a structured environment where decisions can actually be made and acted on.",
   },
   {
     q: "At what stage should a family business engage a consultant?",
-    a: "Earlier than most families do. The ideal time to plan succession is five to ten years before it becomes necessary. The ideal time to professionalise is when the business is growing well — not when it is in crisis. Simpleworks works with families who are thinking ahead as well as families who are managing an immediate situation. The work is different in each case, but the earlier it starts, the more options remain available.",
+    a: "Earlier than most families do. The ideal time to plan succession is five to ten years before it becomes necessary. The ideal time to professionalise is when the business is growing well — not when it is in crisis. Simpleworks Consulting works with families who are thinking ahead as well as families who are managing an immediate situation. The work is different in each case, but the earlier it starts, the more options remain available.",
   },
 ];
 
 const FAQ_COLUMN_2 = [
   {
     q: "What if not all family members agree to engage a consultant?",
-    a: "It is common. The founding generation may see the need; the second generation may resist. Or vice versa. Simpleworks starts with whoever in the family is ready for the conversation and works from there. We do not require full family alignment as a precondition for starting — but we are transparent that alignment is a goal of the process, not a starting assumption.",
+    a: "It is common. The founding generation may see the need; the second generation may resist. Or vice versa. Simpleworks Consulting starts with whoever in the family is ready for the conversation and works from there. We do not require full family alignment as a precondition for starting — but we are transparent that alignment is a goal of the process, not a starting assumption.",
   },
   {
     q: "How long does a family business consulting engagement last?",
-    a: "It depends on the scope. A strategic clarity engagement for a family business — defining direction and aligning the family on priorities — typically runs four to eight weeks. A full professionalisation and succession engagement — covering structure, governance, capability development, and phased handover — runs six to eighteen months, with Simpleworks' involvement tapering as the family develops the capability to manage independently.",
+    a: "It depends on the scope. A strategic clarity engagement for a family business — defining direction and aligning the family on priorities — typically runs four to eight weeks. A full professionalisation and succession engagement — covering structure, governance, capability development, and phased handover — runs six to eighteen months, with Simpleworks Consulting's involvement tapering as the family develops the capability to manage independently.",
   },
   {
     q: "What does the first step look like?",
-    a: "A 30-minute conversation — free, with no agenda except understanding where your family business is and what is making it difficult right now. Premraj Menon will ask a few direct questions and tell you honestly what kind of engagement would be useful, what it would look like, and approximately how long it would take. If Simpleworks is not the right fit, he will say so directly.",
+    a: "A 30-minute conversation — free, with no agenda except understanding where your family business is and what is making it difficult right now. Premraj Menon will ask a few direct questions and tell you honestly what kind of engagement would be useful, what it would look like, and approximately how long it would take. If Simpleworks Consulting is not the right fit, he will say so directly.",
   },
 ];
 
@@ -294,7 +294,7 @@ export default function FamilyBusinessConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              Family Business Consulting · Simpleworks
+              Family Business Consulting · Simpleworks Consulting
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
               The business built by one generation
@@ -302,7 +302,7 @@ export default function FamilyBusinessConsultingPage() {
               <span className="italic text-red">must be led by the next.</span>
             </h1>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Simpleworks works with Indian family businesses navigating
+              Simpleworks Consulting works with Indian family businesses navigating
               professionalisation, succession, and the complexity of
               separating family from the company — without losing what made
               the business work in the first place.
@@ -397,7 +397,7 @@ export default function FamilyBusinessConsultingPage() {
           <span className="text-red">looks like in practice</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Family business consulting at Simpleworks is not conflict mediation
+          Family business consulting at Simpleworks Consulting is not conflict mediation
           or legal restructuring — those have their own specialists. We work
           on the business decisions that sit at the intersection of family
           and commercial reality.
@@ -425,7 +425,7 @@ export default function FamilyBusinessConsultingPage() {
           <span className="text-red">family businesses to us</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Simpleworks works with Indian family businesses typically between
+          Simpleworks Consulting works with Indian family businesses typically between
           ₹10 crore and ₹100 crore in revenue — at the point where informal
           structures and founder instinct are no longer enough to manage what
           the business has become.
@@ -468,11 +468,11 @@ export default function FamilyBusinessConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>How We Work</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          The Simpleworks{" "}
+          The Simpleworks Consulting{" "}
           <span className="text-red">Professionalisation Pathway</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every family business engagement at Simpleworks follows a
+          Every family business engagement at Simpleworks Consulting follows a
           structured sequence. The steps are consistent — the pace and depth
           depend on where the family is starting from.
         </p>
@@ -502,9 +502,9 @@ export default function FamilyBusinessConsultingPage() {
 
       {/* SECTION 4 — WHY SIMPLEWORKS */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks</SectionEyebrow>
+        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Why family businesses work <span className="text-red">with Simpleworks</span>
+          Why family businesses work <span className="text-red">with Simpleworks Consulting</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Family business consulting requires a consultant who can hold both
@@ -526,7 +526,7 @@ export default function FamilyBusinessConsultingPage() {
               Consultants who approach family business as a pure management
               problem miss the emotional reality. Therapists and mediators
               who approach it as a pure family problem miss the commercial
-              urgency. Simpleworks works at the intersection — understanding
+              urgency. Simpleworks Consulting works at the intersection — understanding
               the family dynamics well enough to navigate them, while keeping
               the business outcomes clearly in view.
             </p>
@@ -579,7 +579,7 @@ export default function FamilyBusinessConsultingPage() {
           Three areas we work in <span className="text-red">for family businesses</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Family business consulting at Simpleworks always addresses all
+          Family business consulting at Simpleworks Consulting always addresses all
           three of these areas — because they are inseparable. You cannot
           professionalise without a succession plan. You cannot plan
           succession without a strategy for what the business is becoming.
@@ -688,7 +688,7 @@ export default function FamilyBusinessConsultingPage() {
           <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
             Tell us where your family business is right now — what&rsquo;s
             working, what isn&rsquo;t, and what&rsquo;s been avoided.
-            We&rsquo;ll tell you honestly whether and how Simpleworks can
+            We&rsquo;ll tell you honestly whether and how Simpleworks Consulting can
             help.
           </p>
         </div>

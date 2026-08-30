@@ -6,7 +6,7 @@ import { FAQS } from "@/lib/faqs";
 
 export const metadata = {
   title: {
-    absolute: "SME Management Consulting Bengaluru | Premraj Menon | Simpleworks",
+    absolute: "SME Management Consulting Bengaluru | Premraj Menon | Simpleworks Consulting",
   },
   description:
     "Management consultancy for established Indian SMEs (₹10 Cr+). We partner with founders to break through execution bottlenecks and drive operational growth.",
@@ -14,10 +14,10 @@ export const metadata = {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
-    title: "Management Consulting for Established Indian SMEs | Simpleworks",
+    title: "Management Consulting for Established Indian SMEs | Simpleworks Consulting",
     description: "Strategy. Growth. Execution. Nothing more.",
     url: "https://www.simpleworks.in",
-    siteName: "Simpleworks",
+    siteName: "Simpleworks Consulting",
     locale: "en_IN",
     type: "website",
   },
@@ -328,7 +328,7 @@ export default function HomePage() {
         </div>
         <div className="md:pt-[14px]">
           <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
-            Why Simpleworks
+            Why Simpleworks Consulting
           </p>
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
             39 years running businesses.

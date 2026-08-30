@@ -4,18 +4,18 @@ import Link from "next/link";
 export const metadata = {
   title: {
     absolute:
-      "Small Business Consultant India | Business Mentor for Startups | Simpleworks",
+      "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
   },
   description:
-    "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
+    "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
   openGraph: {
     title:
-      "Small Business Consultant India | Business Mentor for Startups | Simpleworks",
+      "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
     description:
-      "Simpleworks works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
+      "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
     url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -38,9 +38,9 @@ const DISTINCTIONS = [
     active: false,
   },
   {
-    label: "Simpleworks",
-    title: "Simpleworks Business Mentor",
-    body: "Simpleworks Business Mentor works on the business — not you, and not from a distance. Simpleworks diagnoses the real problem, builds the plan with you, and stays until the plan is moving. The engagement ends when the business has changed — not when an hour is up or a session is complete.",
+    label: "Simpleworks Consulting",
+    title: "Simpleworks Consulting Business Mentor",
+    body: "Simpleworks Consulting Business Mentor works on the business — not you, and not from a distance. Simpleworks Consulting diagnoses the real problem, builds the plan with you, and stays until the plan is moving. The engagement ends when the business has changed — not when an hour is up or a session is complete.",
     note: "Right when: the business itself needs to change",
     active: true,
   },
@@ -55,17 +55,17 @@ const WHAT_WE_DO = [
   {
     num: "02 — Growth",
     title: "Finding and winning the right customers",
-    body: "Growth for a small business is not a marketing campaign. It is a clear answer to three questions: who exactly is the customer, why would they choose you over the alternative, and how do you reach them efficiently. Simpleworks works through these with founders who are ready to be specific.",
+    body: "Growth for a small business is not a marketing campaign. It is a clear answer to three questions: who exactly is the customer, why would they choose you over the alternative, and how do you reach them efficiently. Simpleworks Consulting works through these with founders who are ready to be specific.",
   },
   {
     num: "03 — Structure",
     title: "Building a business that doesn't need you for everything",
-    body: "Most small business founders are the bottleneck in their own company. Every decision, every client call, every important email runs through them. Simpleworks builds the structure — roles, accountability, decision rights — that allows the business to operate independently of the founder's constant attention.",
+    body: "Most small business founders are the bottleneck in their own company. Every decision, every client call, every important email runs through them. Simpleworks Consulting builds the structure — roles, accountability, decision rights — that allows the business to operate independently of the founder's constant attention.",
   },
   {
     num: "04 — Execution",
     title: "Making the plan actually happen",
-    body: "A plan that stays in a document is not a plan — it is a good intention. Simpleworks builds the execution rhythm that turns strategy into weekly action: clear priorities, clear owners, and a review cadence that keeps the business accountable to its own decisions.",
+    body: "A plan that stays in a document is not a plan — it is a good intention. Simpleworks Consulting builds the execution rhythm that turns strategy into weekly action: clear priorities, clear owners, and a review cadence that keeps the business accountable to its own decisions.",
   },
 ];
 
@@ -95,7 +95,7 @@ const SITUATIONS = [
 const DIFFERENTIATORS = [
   {
     title: "One consultant, always Premraj Menon",
-    body: "No junior team. No hand-offs. When you engage Simpleworks you work directly with Prem — in person where possible, structured online sessions where not.",
+    body: "No junior team. No hand-offs. When you engage Simpleworks Consulting you work directly with Prem — in person where possible, structured online sessions where not.",
   },
   {
     title: "Scoped to what your business actually needs",
@@ -107,7 +107,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Available across India, based in Bengaluru",
-    body: "Simpleworks works in person across South India and through structured online sessions for founders elsewhere. The preference is always to be in the room — especially for diagnosis.",
+    body: "Simpleworks Consulting works in person across South India and through structured online sessions for founders elsewhere. The preference is always to be in the room — especially for diagnosis.",
   },
 ];
 
@@ -183,22 +183,22 @@ const COMING_SOON_SPOKES = [
 const FAQ_COLUMN_1 = [
   {
     q: "What is the difference between a business consultant and a business mentor?",
-    a: "A mentor shares experience and perspective — what they would do, what worked for them. A consultant works on the business directly — diagnosing problems, building plans, and staying until the plan is moving. Simpleworks is a consulting practice, not a mentoring arrangement. The difference matters because a mentor is not accountable for the outcome. A consultant is.",
+    a: "A mentor shares experience and perspective — what they would do, what worked for them. A consultant works on the business directly — diagnosing problems, building plans, and staying until the plan is moving. Simpleworks Consulting is a consulting practice, not a mentoring arrangement. The difference matters because a mentor is not accountable for the outcome. A consultant is.",
   },
   {
-    q: "What stage of business does Simpleworks typically work with?",
+    q: "What stage of business does Simpleworks Consulting typically work with?",
     a: "We work with small businesses and startups typically between ₹10 crore and ₹100 crore in annual revenue. The business has usually found its first customers and proven the model works — but is struggling to scale, clarify direction, or execute consistently. If you are pre-revenue, we are likely not the right fit yet.",
   },
   {
-    q: "Can Simpleworks work with early-stage startups?",
+    q: "Can Simpleworks Consulting work with early-stage startups?",
     a: "Yes — but with a caveat. Early-stage startups benefit most from consulting when they have enough customer feedback to know what is and isn't working. If you are still testing the core assumption of your business, the right engagement is a short diagnostic — not a full consulting programme.",
   },
 ];
 
 const FAQ_COLUMN_2 = [
   {
-    q: "How is Simpleworks different from other small business consultants?",
-    a: "Three things: Premraj Menon leads every engagement personally — no junior consultants, no hand-offs. Engagements are scoped to the specific problem — not packaged into standard formats. And Simpleworks stays until the plan is moving — not until an agreed number of sessions is complete.",
+    q: "How is Simpleworks Consulting different from other small business consultants?",
+    a: "Three things: Premraj Menon leads every engagement personally — no junior consultants, no hand-offs. Engagements are scoped to the specific problem — not packaged into standard formats. And Simpleworks Consulting stays until the plan is moving — not until an agreed number of sessions is complete.",
   },
   {
     q: "How long does a small business consulting engagement typically last?",
@@ -206,7 +206,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A 30-minute conversation. Free, with no agenda except understanding your situation. You describe what you are dealing with — Prem asks a few direct questions and tells you honestly whether Simpleworks can help and what that engagement would look like in practice.",
+    a: "A 30-minute conversation. Free, with no agenda except understanding your situation. You describe what you are dealing with — Prem asks a few direct questions and tells you honestly whether Simpleworks Consulting can help and what that engagement would look like in practice.",
   },
 ];
 
@@ -280,7 +280,7 @@ export default function SmallBusinessConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              Small Business Consulting · Simpleworks
+              Small Business Consulting · Simpleworks Consulting
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
               A thinking partner
@@ -338,7 +338,7 @@ export default function SmallBusinessConsultingPage() {
 
           <Image
             src="/small-business-consulting-illustration.png"
-            alt="Small business consultant in conversation with startup founder — Simpleworks"
+            alt="Small business consultant in conversation with startup founder — Simpleworks Consulting"
             width={800}
             height={600}
             className="w-full rounded-sm"
@@ -389,7 +389,7 @@ export default function SmallBusinessConsultingPage() {
           <span className="text-red">looks like in practice</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every small business Simpleworks works with is at a turning point.
+          Every small business Simpleworks Consulting works with is at a turning point.
           The work is always specific to the business — but it almost always
           falls into one of these four areas.
         </p>
@@ -415,7 +415,7 @@ export default function SmallBusinessConsultingPage() {
           The founders <span className="text-red">we work with</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Simpleworks works with startup founders and small business owners
+          Simpleworks Consulting works with startup founders and small business owners
           typically between ₹10 crore and ₹100 crore in revenue — at the stage
           where the business has proven it can work, but hasn&rsquo;t yet
           proven it can scale.
@@ -456,13 +456,13 @@ export default function SmallBusinessConsultingPage() {
 
       {/* SECTION 3 — WHY SIMPLEWORKS */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks</SectionEyebrow>
+        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
           Why small business founders{" "}
-          <span className="text-red">choose Simpleworks</span>
+          <span className="text-red">choose Simpleworks Consulting</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Most consultants are built for large organisations. Simpleworks is
+          Most consultants are built for large organisations. Simpleworks Consulting is
           built for businesses where the founder is still in every
           conversation and the team is still figuring out what it means to
           work together.
@@ -478,7 +478,7 @@ export default function SmallBusinessConsultingPage() {
               perspective but no accountability.
             </p>
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Simpleworks sits in a different position. We work on the
+              Simpleworks Consulting sits in a different position. We work on the
               business directly — strategy, go-to-market, execution — led
               personally by Premraj Menon, with 39 years of experience across
               Consumer Durables, Automotive, Telecom, and SaaS. The
@@ -500,7 +500,7 @@ export default function SmallBusinessConsultingPage() {
 
             <p className="text-[17px] leading-[1.8] text-mid">
               The first call is free and takes 30 minutes. We will tell you
-              honestly whether Simpleworks can help — and if not, where to
+              honestly whether Simpleworks Consulting can help — and if not, where to
               look instead.
             </p>
           </div>
@@ -531,7 +531,7 @@ export default function SmallBusinessConsultingPage() {
           Three areas we work in <span className="text-red">for small businesses</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Small business consulting at Simpleworks is not a menu. Strategy,
+          Small business consulting at Simpleworks Consulting is not a menu. Strategy,
           growth, and execution connect to each other — and a change in one
           always affects the other two.
         </p>
@@ -559,7 +559,7 @@ export default function SmallBusinessConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           These articles cover the questions most small business founders
-          are working through — and how Simpleworks thinks about them.
+          are working through — and how Simpleworks Consulting thinks about them.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {LIVE_SPOKES.map((spoke) => (

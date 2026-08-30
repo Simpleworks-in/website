@@ -27,11 +27,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.simpleworks.in"),
   title: {
-    default: "Simpleworks | Business Consultant in Bengaluru",
-    template: "%s | Simpleworks",
+    default: "Simpleworks Consulting | Business Consultant in Bengaluru",
+    template: "%s | Simpleworks Consulting",
   },
   description:
-    "Simpleworks is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Premraj Menon — 39 years of experience.",
+    "Simpleworks Consulting is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Premraj Menon — 39 years of experience.",
   applicationName: "Simpleworks",
   appleWebApp: {
     capable: true,

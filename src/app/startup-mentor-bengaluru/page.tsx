@@ -527,7 +527,7 @@ export default function StartupMentorBengaluruPage() {
             <p className="mb-7 text-[17px] leading-[1.78] text-mid">
               39 years of management experience rising to COO-level roles
               across Consumer Durables, Automotive, Telecom, and SaaS.
-              Independent management consultant since founding Simpleworks
+              Independent management consultant since founding Simpleworks Consulting
               Consulting — working exclusively one-to-one with founders who
               need a senior operator in their corner.
             </p>

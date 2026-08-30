@@ -131,7 +131,7 @@ const FAQS = [
     a: "Group programmes work through a shared curriculum applied to dozens or hundreds of businesses simultaneously. They're affordable and useful for building frameworks. But they can't diagnose your specific business, surface your specific growth constraint, or build a plan around your specific market. A one-to-one MSME business coach does exactly that. This engagement is built entirely around your business — nothing generic.",
   },
   {
-    q: "What industries does Simpleworks work with?",
+    q: "What industries does Simpleworks Consulting work with?",
     a: "Most clients are in manufacturing, consumer goods, retail and distribution, professional services, or early-stage technology and SaaS businesses. Prem has operating experience across Consumer Durables, Automotive and Tyres, Telecom, and SaaS — so these are the verticals where the coaching is most grounded.",
   },
   {
@@ -458,7 +458,7 @@ export default function MsmeBusinessCoachPage() {
           Group programmes, online cohorts, weekend bootcamps — most built
           around a system that works across many businesses simultaneously.
           That model is efficient and affordable. It&rsquo;s also, by
-          design, generic. Simpleworks is built differently.
+          design, generic. Simpleworks Consulting is built differently.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {WHY_CARDS.map((card, i) => (
@@ -503,7 +503,7 @@ export default function MsmeBusinessCoachPage() {
             managing revenue cycles, channel strategy, execution systems, and
             growth transitions. He holds an EGMP from IIM Bengaluru and an
             Advanced Management Programme from Ross School of Business,
-            University of Michigan. Simpleworks works
+            University of Michigan. Simpleworks Consulting works
             exclusively with Indian MSMEs, startups, and family businesses in
             the ₹10 crore to ₹100 crore revenue range — one business at a
             time.
