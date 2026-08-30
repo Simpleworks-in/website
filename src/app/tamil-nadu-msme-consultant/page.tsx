@@ -511,7 +511,7 @@ export default async function TamilNaduMsmeConsultantPage() {
           </div>
           <div>
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
-              Simpleworks is Prem Menon. Not a team of analysts — the person
+              Simpleworks is Premraj Menon. Not a team of analysts — the person
               you speak to on the first call is the person who does the work.
             </p>
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
