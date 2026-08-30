@@ -312,7 +312,7 @@ export default async function TamilNaduMsmeConsultantPage() {
             <span className="text-red">execution, not ambition.</span>
           </h1>
           <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-7">
-            Simpleworks works with founder-led manufacturing and export
+            Simpleworks Consulting works with founder-led manufacturing and export
             businesses across Chennai-Sriperumbudur, Hosur-Krishnagiri, Salem,
             Tiruppur, and Coimbatore — on strategy, go-to-market, execution,
             and the decisions only a founder can make.
@@ -405,7 +405,7 @@ export default async function TamilNaduMsmeConsultantPage() {
           Four things. <span className="text-red">Done properly.</span>
         </h2>
         <p className="text-[19px] text-mid leading-[1.7] mb-10">
-          Simpleworks is not a broad-scope strategy firm. We do four things
+          Simpleworks Consulting is not a broad-scope strategy firm. We do four things
           for founder-led businesses in the ₹10–100 crore range — and we do
           them as hands-on execution work, not advice you&rsquo;re left to
           implement alone.
@@ -511,7 +511,7 @@ export default async function TamilNaduMsmeConsultantPage() {
           </div>
           <div>
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
-              Simpleworks is Premraj Menon. Not a team of analysts — the person
+              Simpleworks Consulting is Premraj Menon. Not a team of analysts — the person
               you speak to on the first call is the person who does the work.
             </p>
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
