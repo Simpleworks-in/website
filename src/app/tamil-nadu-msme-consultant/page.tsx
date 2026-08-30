@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { createReader } from "@keystatic/core/reader";
+import keystaticConfig from "../../../keystatic.config";
 
 export const metadata: Metadata = {
   title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
@@ -21,6 +24,18 @@ export const metadata: Metadata = {
     url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
     siteName: "Simpleworks Consulting",
     type: "website",
+    images: [
+      {
+        url: "https://www.simpleworks.in/images/landing/tamil-nadu-hero.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
+    description:
+      "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu's manufacturing and export clusters.",
+    images: ["https://www.simpleworks.in/images/landing/tamil-nadu-hero.png"],
   },
 };
 
@@ -28,9 +43,9 @@ const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 const CREDIBILITY = [
   { num: "39 years", label: "Operating experience" },
-  { num: "MRF · Apollo Tyres", label: "Airtel · Tata Docomo" },
+  { num: "Usha · MRF · Apollo", label: "BPL · Airtel · Tata" },
   { num: "₹10–100 crore", label: "Founder-led businesses" },
-  { num: "Remote + on-site", label: "Across Tamil Nadu" },
+  { num: "Onsite + Remote", label: "Across Tamil Nadu" },
 ];
 
 const PAIN_POINTS = [
@@ -129,7 +144,7 @@ const CREDENTIALS = [
   { role: "Sales & Distribution", org: "MRF · Apollo Tyres · BPL Mobile" },
   { role: "Entrepreneur", org: "Viworks Ventures · Neoffice.ai" },
   { role: "EGMP", org: "IIM Bengaluru" },
-  { role: "19th Tata Group Executive Leadership Seminar", org: "Ross School of Management, University of Michigan" },
+  { role: "19th Tata Group Executive Leadership Seminar", org: "Ross School of Business, University of Michigan" },
 ];
 
 const CLUSTERS = [
@@ -137,32 +152,62 @@ const CLUSTERS = [
     title: "Chennai · Sriperumbudur · Oragadam",
     tag: "AUTO & ELECTRONICS",
     body: "Tier-1 and Tier-2 auto component suppliers, EMS and electronics contract manufacturers, and ancillary units feeding Chennai's OEM belt — many out of the SIPCOT estates at Sriperumbudur and Oragadam.",
-    start: "Where we usually start: order-book concentration and capacity planning against OEM cycles.",
+    problem:
+      "orders aren't scarce, leverage is. Price pressure from procurement, stretched payment cycles, and no clear read on how the OEM actually ranks you against the next supplier.",
   },
   {
     title: "Hosur · Krishnagiri",
     tag: "PRECISION ENGINEERING",
     body: "Machining, forging, and precision component units serving Bengaluru and Chennai OEMs from the Hosur-Krishnagiri corridor, anchored by the SIPCOT Hosur estates.",
-    start: "Where we usually start: scaling beyond founder-led quality control, and winning a second anchor customer.",
+    problem:
+      "one anchor customer carries most of the order book. Everyone knows it's a risk; nobody has a worked-out plan for winning the second one.",
   },
   {
     title: "Salem",
     tag: "TEXTILES, STEEL & FOUNDRIES",
-    body: "Textile processing, steel re-rolling, and foundry units around Salem Steel and the local re-rolling mills — a large share of them multi-generational family businesses.",
-    start: "Where we usually start: succession, role clarity, and decisions that sit only with the founder.",
+    body: "Textile processing, steel re-rolling, and foundry units around Salem Steel and the local re-rolling mills — largely multi-generational family businesses.",
+    problem:
+      "The next generation is in the business but the decisions still aren't. Roles are assumed rather than agreed, and the succession conversation keeps getting postponed.",
   },
   {
     title: "Tiruppur",
     tag: "KNITWEAR & EXPORT APPAREL",
     body: "India's knitwear and hosiery export hub, built around the TEA network — job-work heavy, buyer-driven, and highly seasonal.",
-    start: "Where we usually start: buyer dependency, margin discipline, and moving beyond pure sub-contracting.",
+    problem:
+      "turnover is known; per-buyer margin after a full season of price pressure and rejections isn't. Commercial discipline lags behind the relationship.",
   },
   {
     title: "Coimbatore",
     tag: "ENGINEERING & MACHINERY",
     body: "Pump and motor manufacturers, textile machinery, foundries, and machine tools — with CODISSIA as the sector's collective voice.",
-    start: "Where we usually start: product focus versus diversification, and the shift from job-shop to product business.",
+    problem:
+      "The product range grew by accretion, not decision. Too many SKUs, unclear which ones earn their place, and no agreed basis for choosing.",
   },
+];
+
+const DISCIPLINES = [
+  {
+    title: "Business strategy",
+    body: "Which customers, products, and segments actually make money — and what the business should stop doing.",
+  },
+  {
+    title: "Go-to-market",
+    body: "Reducing dependency on the customers you have, and building a repeatable way to win the ones you don't.",
+  },
+  {
+    title: "Execution efficiency",
+    body: "Turning intent into quarterly objectives your team owns and gets reviewed against.",
+  },
+  {
+    title: "MSME coaching",
+    body: "The founder and family questions: delegation, decision rights, and succession.",
+  },
+];
+
+const BLOG_SLUGS = [
+  "business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
+  "the-go-to-market-strategy-most-indian-msm-es-skip-and-why-it-s-costing-them",
+  "is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
 ];
 
 const FAQS = [
@@ -234,7 +279,17 @@ const faqSchema = {
   })),
 };
 
-export default function TamilNaduMsmeConsultantPage() {
+export default async function TamilNaduMsmeConsultantPage() {
+  const reader = createReader(process.cwd(), keystaticConfig);
+  const blogPosts = (
+    await Promise.all(
+      BLOG_SLUGS.map(async (slug) => {
+        const entry = await reader.collections.posts.read(slug);
+        return entry ? { slug, ...entry } : null;
+      }),
+    )
+  ).filter((p): p is NonNullable<typeof p> => p !== null);
+
   return (
     <main className="max-w-[1200px] mx-auto">
       <script
@@ -503,10 +558,9 @@ export default function TamilNaduMsmeConsultantPage() {
           Five clusters. <span className="text-red">Five different problems.</span>
         </h2>
         <p className="text-[19px] text-mid leading-[1.7] mb-10">
-          We don&rsquo;t run one playbook across Tamil Nadu. The go-to-market
-          problem for a Hosur component supplier looks nothing like the
-          succession problem in a Salem foundry, or the buyer-dependency
-          problem in Tiruppur.
+          We don&rsquo;t run one playbook across Tamil Nadu. The problem
+          holding back a Hosur component supplier looks nothing like the one
+          in a Salem foundry, or the one in Tiruppur.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {CLUSTERS.map((c) => (
@@ -520,14 +574,50 @@ export default function TamilNaduMsmeConsultantPage() {
               <p className="text-[15px] text-mid leading-relaxed mb-3">
                 {c.body}
               </p>
-              <p className="text-[13px] text-light italic">{c.start}</p>
+              <p className="text-[13px] text-mid leading-relaxed">
+                <strong className="font-bold text-ink">The problem:</strong>{" "}
+                {c.problem}
+              </p>
             </div>
           ))}
         </div>
-        <p className="text-[14px] text-light">
+        <p className="text-[14px] text-light mb-14">
           Vellore-Ranipet-Ambur (leather) and Karur (home textiles) — get in
           touch if that&rsquo;s you; we&rsquo;re actively looking at both.
         </p>
+
+        <div className="border-t border-rule pt-14">
+          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
+            Different problems.{" "}
+            <span className="text-red">The same four disciplines.</span>
+          </h2>
+          <p className="text-[19px] text-mid leading-[1.7] mb-10">
+            We don&rsquo;t claim sector expertise in five industries. What
+            these businesses have in common is that the problem is rarely
+            technical — it&rsquo;s commercial and organisational. That&rsquo;s
+            what we work on.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+            {DISCIPLINES.map((d) => (
+              <div key={d.title} className="border-t border-rule pt-4">
+                <h4 className="text-[16px] font-bold text-ink mb-1.5">
+                  {d.title}
+                </h4>
+                <p className="text-[14px] text-mid leading-relaxed">
+                  {d.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="text-[17px] text-mid leading-[1.7] pt-8 border-t border-rule">
+            Prem spent 39 years on the operating side, including at{" "}
+            <strong className="font-bold text-ink">MRF</strong> and{" "}
+            <strong className="font-bold text-ink">Apollo Tyres</strong> —
+            the kind of large buyer many of these businesses sell into.
+            Knowing how the other side of that table evaluates a supplier is
+            often where the useful conversation starts.
+          </p>
+        </div>
       </section>
 
       {/* ENGAGEMENT MODEL */}
@@ -552,6 +642,37 @@ export default function TamilNaduMsmeConsultantPage() {
         </p>
       </section>
 
+      {/* FROM THE BLOG */}
+      {blogPosts.length > 0 && (
+        <section className="px-7 py-12 md:py-16 border-b border-rule">
+          <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
+            From the blog
+          </p>
+          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
+            Related <span className="text-red">reading</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {blogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group p-5 border border-rule rounded-sm flex flex-col"
+              >
+                <h4 className="text-[18px] font-bold text-ink mb-2 leading-snug">
+                  {post.title}
+                </h4>
+                <p className="text-[15px] text-mid leading-relaxed mb-4">
+                  {post.excerpt}
+                </p>
+                <span className="text-[14px] font-semibold text-ink group-hover:text-red mt-auto">
+                  Read article →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="px-7 py-12 md:py-16 border-b border-rule">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
@@ -575,7 +696,7 @@ export default function TamilNaduMsmeConsultantPage() {
       </section>
 
       {/* CTA BAND */}
-      <div className="px-7 py-10 text-center border-b border-rule bg-[#F2F2F0]">
+      <div className="px-7 py-14 md:py-16 text-center border-b border-rule bg-[#F2F2F0]">
         <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
           Next step
         </p>

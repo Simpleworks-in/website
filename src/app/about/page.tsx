@@ -333,7 +333,7 @@ export default function AboutPage() {
               19th Tata Group Executive Leadership Seminar
             </h3>
             <p className="text-[14px] leading-[1.5] text-mid">
-              Ross School of Management
+              Ross School of Business
               <br />
               University of Michigan
               <br />
