@@ -191,14 +191,6 @@ export default function Footer() {
               Contact
             </Link>
           </li>
-          <li>
-            <Link
-              href="/tamil-nadu-msme-consultant"
-              className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
-            >
-              MSME Consultant Tamil Nadu
-            </Link>
-          </li>
         </ul>
         <span className="text-[11px] tracking-wide-3 text-light">
           © {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.
