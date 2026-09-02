@@ -42,6 +42,14 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
+          name: "Your experience is Airtel and MRF. Why would that help a Series A SaaS company?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Because the problem is not the product — it is the selling system, and I have been building those for thirty-nine years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person's relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "How is this different from an accelerator or incubator?",
           acceptedAnswer: {
             "@type": "Answer",
@@ -53,7 +61,7 @@ const jsonLd = {
           name: "What stage of startup do you typically work with?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Post-product-market fit, typically ₹2–50 crore in revenue or Series A/B stage. The challenges I'm most useful for — GTM scaling, execution discipline, OKR design, board-readiness — tend to appear at this stage.",
+            text: "Post-product-market fit — you have paying customers and repeat revenue, and the constraint has shifted from whether anyone will buy to whether anyone but you can sell it. In practice that is usually ₹2 crore ARR and above. Earlier than that, an accelerator will serve you better than I will.",
           },
         },
         {
@@ -70,14 +78,6 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "I prefer in-person for the primary relationship — I'm based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you only work with tech startups?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. My experience spans Consumer Durables, Automotive, Telecom, and SaaS — so I'm comfortable with both tech and non-tech businesses.",
           },
         },
         {
@@ -113,22 +113,12 @@ const GAP_BULLETS = [
   "Advisors give frameworks. You need someone who has held the P&L when it mattered.",
 ];
 
-const WHO = [
-  {
-    n: "01",
-    title: "SaaS & B2B Tech Founders",
-    body: "Post-PMF, pre-Series B. Revenue between ₹2–25 crore ARR. Struggling with GTM repeatability, sales hiring, or investor-grade operational rigour.",
-  },
-  {
-    n: "02",
-    title: "D2C & Consumer Founders",
-    body: "Past early traction, building for real distribution. Unit economics improving but execution velocity isn't. Needing a senior operator's lens on the business.",
-  },
-  {
-    n: "03",
-    title: "Funded Startup Teams",
-    body: "Series A/B companies where the founding team needs an external thinking partner — for strategy, OKR design, or operational accountability investors can't provide.",
-  },
+const WHO_SIGNALS = [
+  "Revenue is real, but every significant deal still closes through you.",
+  "You have hired salespeople and they have not produced what you expected.",
+  "Your pipeline lives in your head, or in a CRM nobody updates.",
+  "You are about to make your first senior sales hire and you know what getting it wrong costs.",
+  "Growth is capped by your calendar, not by demand.",
 ];
 
 const NOT_FOR_YOU = [
@@ -139,6 +129,10 @@ const NOT_FOR_YOU = [
 ];
 
 const WHAT_I_BRING = [
+  {
+    title: "First Sales Leader Hire",
+    body: "Helping founders define the right profile, structure the interview, and set up accountability architecture — so the hire doesn't fail in six months.",
+  },
   {
     title: "GTM Architecture",
     body: "Designing go-to-market engines that don't depend on the founder to close every deal. Channel strategy, sales team structure, pricing, and revenue accountability — built for scale.",
@@ -157,11 +151,7 @@ const WHAT_I_BRING = [
   },
   {
     title: "Investor-Grade Discipline",
-    body: "Board-ready numbers, structured reviews, and a management operating system that gives investors confidence between rounds — without waiting for the board to demand it.",
-  },
-  {
-    title: "First Sales Leader Hire",
-    body: "Helping founders define the right profile, structure the interview, and set up accountability architecture — so the hire doesn't fail in six months.",
+    body: "Numbers you can defend, reviews that actually happen on schedule, and an operating rhythm that holds between rounds instead of being assembled the week before a board meeting.",
   },
 ];
 
@@ -249,8 +239,8 @@ const OUTCOMES = [
     body: "A quarterly review cadence and OKR structure that your team actually runs — not a spreadsheet that gets updated once and forgotten.",
   },
   {
-    title: "Investor-Grade Operating Discipline",
-    body: "Board-ready numbers, structured reviews, and a management operating system that gives investors confidence between rounds.",
+    title: "Operating Discipline That Holds",
+    body: "A management operating rhythm your team runs without you chasing it — numbers that are current, reviews that happen, and decisions that are recorded.",
   },
   {
     title: "Decisions with Senior Perspective",
@@ -264,12 +254,16 @@ const OUTCOMES = [
 
 const FAQS = [
   {
+    q: "Your experience is Airtel and MRF. Why would that help a Series A SaaS company?",
+    a: "Because the problem is not the product — it is the selling system, and I have been building those for thirty-nine years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person's relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
+  },
+  {
     q: "How is this different from an accelerator or incubator?",
     a: "Accelerators run programmes for cohorts of 10–20 startups simultaneously. I work with a small number of founders at a time, one-to-one, with no fixed curriculum. The engagement is built entirely around your specific business and challenge — not a generalised programme.",
   },
   {
     q: "What stage of startup do you typically work with?",
-    a: "Post-product-market fit, typically ₹2–50 crore in revenue or Series A/B stage. The challenges I'm most useful for — GTM scaling, execution discipline, OKR design, board-readiness — tend to appear at this stage. Earlier-stage founders are better served by accelerator programmes.",
+    a: "Post-product-market fit — you have paying customers and repeat revenue, and the constraint has shifted from whether anyone will buy to whether anyone but you can sell it. In practice that is usually ₹2 crore ARR and above. Earlier than that, an accelerator will serve you better than I will.",
   },
   {
     q: "Do you take equity or only fees?",
@@ -278,10 +272,6 @@ const FAQS = [
   {
     q: "Is this in-person or virtual?",
     a: "I prefer in-person for the primary relationship — I'm based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well. The first diagnostic session is always in-person where possible.",
-  },
-  {
-    q: "Do you only work with tech startups?",
-    a: "No. My experience spans Consumer Durables, Automotive, Telecom, and SaaS — so I'm comfortable with both tech and non-tech businesses. The principles of GTM, execution, and operational scaling apply across sectors.",
   },
   {
     q: "How long does a typical engagement run?",
@@ -339,13 +329,14 @@ export default function StartupMentorBengaluruPage() {
               Startup Mentor · Bengaluru
             </p>
             <h1 className="mb-6 text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-[52px]">
-              <span className="block md:whitespace-nowrap">Your startup has grown.</span>
-              Your <span className="italic text-red">problems have changed.</span>
+              Your first ₹2 crore came from you.{" "}
+              <span className="text-red">The next ₹20 crore can&apos;t.</span>
             </h1>
             <p className="mb-8 max-w-[520px] text-[18px] italic leading-[1.65] text-mid">
-              One-to-one mentorship for startup founders navigating the hard
-              stretch — post-product-fit, pre-scale. No cohorts. No templates.
-              Just 39 years of real operating experience, in the room with you.
+              One-to-one work with founders building a sales organisation that
+              runs without them. Post-product-fit, pre-scale. No cohorts, no
+              templates — 39 years of building distribution, most of it on
+              the ground rather than in a boardroom.
             </p>
             <div className="mb-10 flex flex-wrap items-center gap-4">
               <a
@@ -385,6 +376,11 @@ export default function StartupMentorBengaluruPage() {
                 </div>
               </div>
             </div>
+            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mt-8 max-w-[640px]">
+              At 50 I co-founded a venture, then ran product and growth at
+              Neoffice AI — near-zero resources, unlimited ambition. I have
+              been inside a startup, not beside one.
+            </p>
           </div>
           <Image
             src="/images/startup-mentor-hero.png"
@@ -403,7 +399,7 @@ export default function StartupMentorBengaluruPage() {
           <div>
             <SectionEyebrow>The Problem</SectionEyebrow>
             <h2 className="mb-5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-              Most startup mentors teach. You need{" "}
+              Most advisors teach. You need{" "}
               <span className="text-red">someone who has done.</span>
             </h2>
             <p className="text-[17px] leading-[1.78] text-mid">
@@ -432,7 +428,7 @@ export default function StartupMentorBengaluruPage() {
             been built yet.&rdquo;
           </p>
           <cite className="mt-4 block text-[11px] tracking-[0.12em] uppercase text-light not-italic">
-            — Premraj Menon, Startup Mentor · Bengaluru
+            — Premraj Menon, Operating Advisor · Bengaluru
           </cite>
         </blockquote>
       </section>
@@ -441,25 +437,19 @@ export default function StartupMentorBengaluruPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>Who I Work With</SectionEyebrow>
         <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          Startup founders at the <span className="text-red">growth inflection.</span>
+          You are in the right place if{" "}
+          <span className="text-red">this sounds familiar.</span>
         </h2>
-        <p className="mb-12 max-w-[600px] text-[17px] italic leading-[1.65] text-mid md:mb-14">
-          I work with a small number of founders at a time. Fit matters more
-          than sector.
-        </p>
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] md:grid-cols-3">
-          {WHO.map((c) => (
-            <div key={c.n} className="bg-bg px-7 py-9">
-              <p className="mb-3.5 text-[11px] font-bold tracking-[0.14em] uppercase text-red">
-                {c.n}
-              </p>
-              <h3 className="mb-3 text-[20px] font-bold leading-[1.3] text-ink">
-                {c.title}
-              </h3>
-              <p className="text-[15px] leading-[1.7] text-mid">{c.body}</p>
-            </div>
+        <ul className="mt-8 space-y-5 max-w-[720px]">
+          {WHO_SIGNALS.map((s) => (
+            <li
+              key={s}
+              className="text-[16px] md:text-[17px] text-mid leading-[1.78]"
+            >
+              {s}
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* THIS ENGAGEMENT ISN'T FOR EVERYONE */}
@@ -710,7 +700,7 @@ export default function StartupMentorBengaluruPage() {
             Ready to talk?
           </p>
           <h2 className="mb-5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-            A startup mentor who has <span className="text-red">been there.</span>
+            An operator who has <span className="text-red">been there.</span>
           </h2>
           <p className="mb-10 text-[17px] italic leading-[1.65] text-mid">
             Start with a 30-minute call. No pitch. No cohort. Just a direct
