@@ -461,7 +461,7 @@ export default function StartupMentorBengaluruPage() {
           You are in the right place if{" "}
           <span className="text-red">this sounds familiar.</span>
         </h2>
-        <ul className="mt-8 space-y-5 max-w-[720px]">
+        <ul className="mt-8 space-y-5 max-w-[50%]">
           {WHO_SIGNALS.map((s) => (
             <li
               key={s}
@@ -479,7 +479,7 @@ export default function StartupMentorBengaluruPage() {
         <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
           This engagement <span className="text-red">isn&rsquo;t for everyone.</span>
         </h2>
-        <p className="mb-12 max-w-[600px] text-[17px] leading-[1.78] text-mid md:mb-14">
+        <p className="mb-12 max-w-[50%] text-[17px] leading-[1.78] text-mid md:mb-14">
           I work with very few founders at a time. If any of these describe
           you, we&rsquo;re probably not the right fit — and I&rsquo;ll tell
           you so in the first call.
