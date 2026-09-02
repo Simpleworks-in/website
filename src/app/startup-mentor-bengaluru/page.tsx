@@ -109,7 +109,7 @@ const GAP_BULLETS = [
   "Your GTM was founder-led. Now you need a team and a system to replace you.",
   "You've raised a round. Now investors expect quarterly accountability you haven't built.",
   "The product works. Execution — across teams, processes, and priorities — is breaking down.",
-  "You're making ₹10–50 crore decisions with no one senior enough to pressure-test them.",
+  "You're making decisions with consequences larger than anything you've decided before, and no one senior enough in the room to pressure-test them.",
   "Advisors give frameworks. You need someone who has held the P&L when it mattered.",
 ];
 
@@ -360,7 +360,7 @@ export default function StartupMentorBengaluruPage() {
                   39<span className="text-red">+</span>
                 </div>
                 <div className="mt-1.5 text-[11px] tracking-[0.12em] uppercase text-light">
-                  Years experience
+                  Years operating
                 </div>
               </div>
               <div className="border-l-[0.5px] border-rule pl-8">
@@ -370,17 +370,26 @@ export default function StartupMentorBengaluruPage() {
                 </div>
               </div>
               <div className="border-l-[0.5px] border-rule pl-8">
-                <div className="text-[32px] font-bold leading-none text-ink">C</div>
+                <div className="text-[32px] font-bold leading-none text-ink">COO</div>
                 <div className="mt-1.5 text-[11px] tracking-[0.12em] uppercase text-light">
-                  Suite practitioner
+                  Circle P&amp;L, Tata Docomo
                 </div>
               </div>
             </div>
-            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mt-8 max-w-[640px]">
-              At 50 I co-founded a venture, then ran product and growth at
-              Neoffice AI — near-zero resources, unlimited ambition. I have
-              been inside a startup, not beside one.
-            </p>
+            <div className="mt-10 max-w-[680px] space-y-5">
+              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+                Sales trainee in 1987. Chief Operating Officer of Tata Docomo&apos;s Kerala
+                Circle, carrying full P&amp;L, by the time the industry had reinvented itself
+                twice. In between — dealer networks at MRF and Apollo Tyres, the Bharti Airtel
+                years, and the Tata Docomo Karnataka launch that became the country&apos;s
+                largest circle.
+              </p>
+              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+                Then, at 50, I went the other way. Co-founded Viworks Ventures, ran product and
+                growth at Neoffice AI. Small teams, tight cash, nothing to delegate. I have been
+                inside a startup, not beside one.
+              </p>
+            </div>
           </div>
           <Image
             src="/images/startup-mentor-hero.png"
@@ -402,12 +411,26 @@ export default function StartupMentorBengaluruPage() {
               Most advisors teach. You need{" "}
               <span className="text-red">someone who has done.</span>
             </h2>
-            <p className="text-[17px] leading-[1.78] text-mid">
-              Bengaluru&rsquo;s startup ecosystem is exceptional at
-              early-stage support — accelerators, angel networks, cohort
-              programmes. But once you&rsquo;re past ₹2 crore ARR and
-              actually trying to scale, the support thins out.
-            </p>
+            <div className="space-y-5 max-w-[720px]">
+              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+                Bengaluru&apos;s startup ecosystem is exceptional at early-stage support.
+                Accelerators, angel networks, cohort programmes, demo days — there is more help
+                available for getting from zero to first revenue than almost anywhere else in
+                the country.
+              </p>
+              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+                Then it thins out. Past roughly ₹2 crore ARR the questions change shape. They
+                stop being about whether the idea works and start being about whether the
+                business can run without you in every conversation. That is a harder problem,
+                and the people qualified to help with it are mostly employed running someone
+                else&apos;s company.
+              </p>
+              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+                What is left is advice from people who have studied the stage rather than lived
+                in it — frameworks, benchmarks, and the confident opinions of someone who has
+                never had to make payroll while a sales plan was failing.
+              </p>
+            </div>
           </div>
           <ul className="flex list-none flex-col gap-0 pt-1">
             {GAP_BULLETS.map((b) => (
@@ -512,7 +535,7 @@ export default function StartupMentorBengaluruPage() {
               Premraj Menon
             </h3>
             <p className="mb-6 text-[13px] tracking-[0.1em] uppercase text-red">
-              Startup Mentor · Bengaluru
+              Operating Advisor · Bengaluru
             </p>
             <p className="mb-7 text-[17px] leading-[1.78] text-mid">
               39 years of management experience rising to COO-level roles
