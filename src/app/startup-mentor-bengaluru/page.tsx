@@ -404,35 +404,33 @@ export default function StartupMentorBengaluruPage() {
 
       {/* THE PROBLEM */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
+        <SectionEyebrow>The Problem</SectionEyebrow>
+        <h2 className="mb-8 max-w-[720px] text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
+          Most advisors teach. You need{" "}
+          <span className="text-red">someone who has done.</span>
+        </h2>
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:items-start">
-          <div>
-            <SectionEyebrow>The Problem</SectionEyebrow>
-            <h2 className="mb-5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-              Most advisors teach. You need{" "}
-              <span className="text-red">someone who has done.</span>
-            </h2>
-            <div className="space-y-5 max-w-[720px]">
-              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Bengaluru&apos;s startup ecosystem is exceptional at early-stage support.
-                Accelerators, angel networks, cohort programmes, demo days — there is more help
-                available for getting from zero to first revenue than almost anywhere else in
-                the country.
-              </p>
-              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Then it thins out. Past roughly ₹2 crore ARR the questions change shape. They
-                stop being about whether the idea works and start being about whether the
-                business can run without you in every conversation. That is a harder problem,
-                and the people qualified to help with it are mostly employed running someone
-                else&apos;s company.
-              </p>
-              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                What is left is advice from people who have studied the stage rather than lived
-                in it — frameworks, benchmarks, and the confident opinions of someone who has
-                never had to make payroll while a sales plan was failing.
-              </p>
-            </div>
+          <div className="space-y-5 max-w-[720px]">
+            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+              Bengaluru&apos;s startup ecosystem is exceptional at early-stage support.
+              Accelerators, angel networks, cohort programmes, demo days — there is more help
+              available for getting from zero to first revenue than almost anywhere else in
+              the country.
+            </p>
+            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+              Then it thins out. Past roughly ₹2 crore ARR the questions change shape. They
+              stop being about whether the idea works and start being about whether the
+              business can run without you in every conversation. That is a harder problem,
+              and the people qualified to help with it are mostly employed running someone
+              else&apos;s company.
+            </p>
+            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
+              What is left is advice from people who have studied the stage rather than lived
+              in it — frameworks, benchmarks, and the confident opinions of someone who has
+              never had to make payroll while a sales plan was failing.
+            </p>
           </div>
-          <ul className="flex list-none flex-col gap-0 pt-1">
+          <ul className="flex list-none flex-col gap-0">
             {GAP_BULLETS.map((b) => (
               <li
                 key={b}
