@@ -617,7 +617,7 @@ export default function StartupMentorBengaluruPage() {
         <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
           Structured for <span className="text-red">real outcomes.</span>
         </h2>
-        <p className="mb-12 max-w-[600px] text-[17px] leading-[1.78] text-mid md:mb-14">
+        <p className="mb-12 max-w-[50%] text-[17px] leading-[1.78] text-mid md:mb-14">
           Not per-session billing. Not a retainer that drifts. A defined
           engagement with clear accountability — structured so the business
           moves, not just the conversation.
