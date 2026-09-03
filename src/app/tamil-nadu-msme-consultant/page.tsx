@@ -205,6 +205,7 @@ const DISCIPLINES = [
 ];
 
 const BLOG_SLUGS = [
+  "when-one-oem-is-60-of-your-revenue-customer-concentration-risk-in-hosur-s-auto-component-belt",
   "business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
   "the-go-to-market-strategy-most-indian-msm-es-skip-and-why-it-s-costing-them",
   "is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
@@ -669,6 +670,21 @@ export default async function TamilNaduMsmeConsultantPage() {
                 </span>
               </Link>
             ))}
+            {Array.from({ length: Math.max(0, 6 - blogPosts.length) }).map(
+              (_, i) => (
+                <div
+                  key={`coming-soon-${i}`}
+                  className="p-5 border border-dashed border-rule rounded-sm flex flex-col items-start justify-center min-h-[160px]"
+                >
+                  <span className="text-[10px] font-bold tracking-wide-7 uppercase text-light mb-2">
+                    Coming soon
+                  </span>
+                  <p className="text-[15px] text-light leading-relaxed">
+                    A new piece for this cluster is on its way.
+                  </p>
+                </div>
+              ),
+            )}
           </div>
         </section>
       )}
