@@ -6,7 +6,7 @@ export const metadata = {
       "Consulting Services | MSME, Startup & Family Business | Simpleworks Consulting Bengaluru",
   },
   description:
-    "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. Free introductory call.",
+    "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. Let's have a quick introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services",
   },
@@ -14,7 +14,7 @@ export const metadata = {
     title:
       "Consulting Services | MSME, Startup & Family Business | Simpleworks Consulting Bengaluru",
     description:
-      "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. Free introductory call.",
+      "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. Let's have a quick introductory call.",
     url: "https://www.simpleworks.in/services",
     type: "website",
   },
@@ -410,7 +410,7 @@ export default function ServicesPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2.5 rounded-[1px] border-[1.5px] border-red bg-red px-8 py-3.5 text-[14px] tracking-wide-3 text-white transition-colors hover:bg-transparent hover:text-red"
             >
-              Book a Free Conversation &nbsp;→
+              Let&apos;s Talk &nbsp;→
             </Link>
             <a
               href="https://wa.me/919036099000"

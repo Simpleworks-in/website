@@ -7,7 +7,7 @@ export const metadata = {
       "Family Business Consultant India | Professionalisation & Succession | Simpleworks Consulting",
   },
   description:
-    "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. Free introductory call.",
+    "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. Let's have a quick introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/family-business-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "Family Business Consultant India | Professionalisation & Succession | Simpleworks Consulting",
     description:
-      "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. Free introductory call.",
+      "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. Let's have a quick introductory call.",
     url: "https://www.simpleworks.in/services/family-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -347,7 +347,7 @@ export default function FamilyBusinessConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Book a Free Conversation &nbsp;→
+              Let&apos;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -697,7 +697,7 @@ export default function FamilyBusinessConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Book a Free Conversation
+            Let&apos;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"

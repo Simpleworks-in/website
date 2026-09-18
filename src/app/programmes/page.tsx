@@ -85,14 +85,14 @@ export default function ProgrammesPage() {
           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full">
             <Image
               src="/prem-menon.png"
-              alt="Prem Menon"
+              alt="Premraj Menon"
               width={96}
               height={96}
               className="h-full w-full object-cover"
             />
           </div>
           <div>
-            <p className="mb-1 text-[15px] font-bold text-ink">Prem Menon</p>
+            <p className="mb-1 text-[15px] font-bold text-ink">Premraj Menon</p>
             <p className="mb-3 text-[12px] uppercase tracking-[0.15em] text-light">
               Founder, Simpleworks Consulting
             </p>

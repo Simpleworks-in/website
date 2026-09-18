@@ -6,14 +6,14 @@ export const metadata = {
     absolute: "Book a Free Strategy Call | Simpleworks Consulting, Bengaluru",
   },
   description:
-    "Talk directly to Prem Menon, an MSME and startup strategy consultant with 39 years of experience. Book a free 30-minute call to diagnose your growth problem.",
+    "Talk directly to Premraj Menon, an MSME and startup strategy consultant with 39 years of experience. Book a free 30-minute call to diagnose your growth problem.",
   alternates: {
     canonical: "https://www.simpleworks.in/contact",
   },
   openGraph: {
     title: "Book a Free Strategy Call | Simpleworks Consulting, Bengaluru",
     description:
-      "Talk directly to Prem Menon, an MSME and startup strategy consultant with 39 years of experience. Book a free 30-minute call to diagnose your growth problem.",
+      "Talk directly to Premraj Menon, an MSME and startup strategy consultant with 39 years of experience. Book a free 30-minute call to diagnose your growth problem.",
     url: "https://www.simpleworks.in/contact",
     type: "website",
   },

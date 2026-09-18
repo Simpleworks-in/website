@@ -7,7 +7,7 @@ export const metadata = {
       "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
   },
   description:
-    "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Free introductory call.",
+    "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Let's have a quick introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
     description:
-      "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Free introductory call.",
+      "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Let's have a quick introductory call.",
     url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -332,7 +332,7 @@ export default function SmallBusinessConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Book a Free Conversation &nbsp;→
+              Let&apos;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -647,7 +647,7 @@ export default function SmallBusinessConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Book a Free Conversation
+            Let&apos;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"

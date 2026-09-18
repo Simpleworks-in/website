@@ -7,7 +7,7 @@ export const metadata = {
       "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
   },
   description:
-    "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Free introductory call.",
+    "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Let's have a quick introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
     description:
-      "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Free introductory call.",
+      "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Let's have a quick introductory call.",
     url: "https://www.simpleworks.in/services/msme-consulting",
     type: "website",
   },
@@ -311,7 +311,7 @@ export default function MsmeConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Book a Free Conversation &nbsp;→
+              Let&apos;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -588,7 +588,7 @@ export default function MsmeConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Book a Free Conversation
+            Let&apos;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"
