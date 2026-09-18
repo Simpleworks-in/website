@@ -42,12 +42,8 @@ export const FAQS: FAQ[] = [
     a: "<p>That depends on the programme, and the length is fixed before we start:</p><ul><li><strong>The Simple Diagnostic:</strong> half a day, in person or online.</li><li><strong>The Simple Reset:</strong> 30 or 60 days, with weekly on-site visits.</li><li><strong>The Simple Counsel:</strong> ongoing monthly advisory, with a minimum of three months.</li><li><strong>Custom Engagement:</strong> scope, duration and fee are agreed in writing before we begin.</li></ul><p>Every engagement has a defined scope and a clear end point, so there are no open-ended commitments. Not sure which fits? <a href=\"https://www.simpleworks.in/contact\">Let's have a quick introductory call.</a></p><p><a href=\"https://www.simpleworks.in/programmes\">See full programme details →</a></p>",
   },
   {
-    q: "Do you offer a mentorship to my business?",
-    a: "Yes, we can offer a business mentorship to the founder and the business for a specific period. This is a structured engagement where we work closely with you to build clarity on goals, sharpen decision-making, and keep execution on track.",
-  },
-  {
-    q: "Will you be open for a longer duration Business mentor role with us?",
-    a: "Yes we are open to this possibility of helping the founder reach to his goals and objectives with maybe 2-4 visits per month for a longer duration.",
+    q: "Do you offer business mentoring?",
+    a: "<p>Yes. The Simple Counsel is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you've set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. The programme runs for a minimum of three months.</p><p>If you need more time together, we can increase the number of visits.</p><p><a href=\"https://www.simpleworks.in/programmes\">See The Simple Counsel →</a></p>",
   },
   {
     q: "How do I get started?",
