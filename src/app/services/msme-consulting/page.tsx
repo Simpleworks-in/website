@@ -7,7 +7,7 @@ export const metadata = {
       "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
   },
   description:
-    "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
+    "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Free introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
     description:
-      "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. First call free.",
+      "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Free introductory call.",
     url: "https://www.simpleworks.in/services/msme-consulting",
     type: "website",
   },
@@ -161,7 +161,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A 30-minute conversation. The first call is free and has no agenda except understanding your situation. No pitch. No proposal before we've spoken. You describe what you're dealing with — we tell you honestly whether we can help and what that would look like in practice.",
+    a: "Let's have a quick introductory call — 30 minutes, free, with no agenda except understanding your situation. No pitch. No proposal before we've spoken. You describe what you're dealing with — we tell you honestly whether we can help and what that would look like in practice.",
   },
 ];
 
@@ -394,7 +394,7 @@ export default function MsmeConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            The first call is free →
+            Let&apos;s have a quick introductory call →
           </Link>
         </div>
       </section>

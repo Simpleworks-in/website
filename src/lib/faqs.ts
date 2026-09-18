@@ -35,7 +35,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "What is your consulting fee?",
-    a: "We have a pricing model for a project and a monthly fixed-day retainer package. Fees are scoped after the first conversation, based on the nature and duration of the engagement. We share pricing once we understand the complexity of the problem. The first call is always free, with no obligation.",
+    a: "We have a pricing model for a project and a monthly fixed-day retainer package. Fees are scoped after the first conversation, based on the nature and duration of the engagement. We share pricing once we understand the complexity of the problem. Let's have a quick introductory call — it's always free, with no obligation.",
   },
   {
     q: "How long does a consulting engagement typically last?",

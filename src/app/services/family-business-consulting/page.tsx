@@ -7,7 +7,7 @@ export const metadata = {
       "Family Business Consultant India | Professionalisation & Succession | Simpleworks Consulting",
   },
   description:
-    "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
+    "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. Free introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/family-business-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "Family Business Consultant India | Professionalisation & Succession | Simpleworks Consulting",
     description:
-      "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. First call free.",
+      "Simpleworks Consulting works with Indian family businesses on professionalisation, succession planning, and next-generation leadership. Led by Premraj Menon, Bengaluru. Free introductory call.",
     url: "https://www.simpleworks.in/services/family-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -459,7 +459,7 @@ export default function FamilyBusinessConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            The first call is free →
+            Let&apos;s have a quick introductory call →
           </Link>
         </div>
       </section>

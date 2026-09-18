@@ -7,7 +7,7 @@ export const metadata = {
       "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
   },
   description:
-    "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
+    "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Free introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title:
       "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
     description:
-      "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. First call free.",
+      "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Free introductory call.",
     url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -449,7 +449,7 @@ export default function SmallBusinessConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            The first call is free →
+            Let&apos;s have a quick introductory call →
           </Link>
         </div>
       </section>
@@ -499,9 +499,9 @@ export default function SmallBusinessConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              The first call is free and takes 30 minutes. We will tell you
-              honestly whether Simpleworks Consulting can help — and if not, where to
-              look instead.
+              Let&apos;s have a quick introductory call — free, 30 minutes.
+              We will tell you honestly whether Simpleworks Consulting can
+              help — and if not, where to look instead.
             </p>
           </div>
 

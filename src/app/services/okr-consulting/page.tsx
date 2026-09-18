@@ -533,7 +533,7 @@ export default function OkrConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            The first call is free →
+            Let&apos;s have a quick introductory call →
           </Link>
         </div>
       </section>
