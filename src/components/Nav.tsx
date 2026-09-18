@@ -8,7 +8,6 @@ import logo from "../../public/Simpleworks_image_only_S.png";
 
 const links = [
   { href: "/about", label: "About" },
-  { href: "/how-we-work", label: "How We Work" },
   { href: "/services", label: "Services" },
   { href: "/startup-mentor-bengaluru", label: "Startups" },
   { href: "/blog", label: "Blog" },
