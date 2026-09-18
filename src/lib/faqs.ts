@@ -35,11 +35,11 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "What is your consulting fee?",
-    a: "We have a pricing model for a project and a monthly fixed-day retainer package. Fees are scoped after the first conversation, based on the nature and duration of the engagement. We share pricing once we understand the complexity of the problem. Let's have a quick introductory call — it's always free, with no obligation.",
+    a: "<p>That depends on the programme, and the length is fixed before we start:</p><ul><li><strong>The Simple Diagnostic:</strong> half a day, in person or online.</li><li><strong>The Simple Reset:</strong> 30 or 60 days, with weekly on-site visits.</li><li><strong>The Simple Counsel:</strong> ongoing monthly advisory, with a minimum of three months.</li><li><strong>Custom Engagement:</strong> scope, duration and fee are agreed in writing before we begin.</li></ul><p>Every engagement has a defined scope and a clear end point, so there are no open-ended commitments. Not sure which fits? <a href=\"https://www.simpleworks.in/contact\">Let's have a quick introductory call.</a></p><p><a href=\"https://www.simpleworks.in/programmes\">See full programme details →</a></p>",
   },
   {
     q: "How long does a consulting engagement typically last?",
-    a: "Short engagements — a strategy sprint or go-to-market plan — typically run three to six weeks. Longer advisory mandates, including execution support and OKR coaching, usually run three to twelve months. We define scope, milestones, and an exit point at the start so there are no open-ended commitments.",
+    a: "<p>That depends on the programme, and the length is fixed before we start:</p><ul><li><strong>The Simple Diagnostic:</strong> half a day, in person or online.</li><li><strong>The Simple Reset:</strong> 30 or 60 days, with weekly on-site visits.</li><li><strong>The Simple Counsel:</strong> ongoing monthly advisory, with a minimum of three months.</li><li><strong>Custom Engagement:</strong> scope, duration and fee are agreed in writing before we begin.</li></ul><p>Every engagement has a defined scope and a clear end point, so there are no open-ended commitments. Not sure which fits? <a href=\"https://www.simpleworks.in/contact\">Let's have a quick introductory call.</a></p><p><a href=\"https://www.simpleworks.in/programmes\">See full programme details →</a></p>",
   },
   {
     q: "Do you offer a mentorship to my business?",

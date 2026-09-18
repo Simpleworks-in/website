@@ -49,16 +49,15 @@ export default function FAQAccordion() {
               </span>
             </button>
             <div
-              className="text-sm text-mid leading-[1.75] overflow-hidden"
+              className="faq-answer text-sm text-mid leading-[1.75] overflow-hidden [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1.5 [&_strong]:text-ink [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline"
               style={{
-                maxHeight: open ? "240px" : "0px",
+                maxHeight: open ? "640px" : "0px",
                 paddingBottom: open ? "22px" : "0px",
                 transition:
                   "max-height 0.35s ease, padding-bottom 0.35s ease",
               }}
-            >
-              {item.a}
-            </div>
+              dangerouslySetInnerHTML={{ __html: item.a }}
+            />
           </div>
         );
       })}
