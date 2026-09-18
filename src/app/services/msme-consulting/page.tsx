@@ -142,7 +142,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "What size of MSME does Simpleworks Consulting typically work with?",
-    a: "We work primarily with Indian MSMEs between ₹10 crore and ₹100 crore in annual revenue — founder-led or family-run, with 10 to 300 employees. The right fit is less about revenue and more about the nature of the problem and the readiness to act on clear direction.",
+    a: "We work primarily with Indian MSMEs between ₹10 crore and ₹200 crore in annual revenue — founder-led or family-run, with 10 to 300 employees. The right fit is less about revenue and more about the nature of the problem and the readiness to act on clear direction.",
   },
   {
     q: "Do you work with manufacturing businesses specifically?",
@@ -361,7 +361,7 @@ export default function MsmeConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Simpleworks Consulting works with Indian MSMEs typically between ₹10 crore and
-          ₹100 crore in revenue — founder-led or family-run, with 10 to 300
+          ₹200 crore in revenue — founder-led or family-run, with 10 to 300
           employees, across manufacturing, consumer goods, retail, and
           distribution.
         </p>

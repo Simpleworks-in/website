@@ -1,9 +1,50 @@
 import Image from "next/image";
+import FAQAccordion from "@/components/FAQAccordion";
+import { FAQS } from "@/lib/faqs";
 
 export const metadata = {
-  title: "Programmes — Simpleworks Consulting",
+  title: {
+    absolute: "Business Consulting Fees & Programmes | Simpleworks, Bengaluru",
+  },
   description:
-    "Three fixed-fee programmes for founder-led businesses between ₹10 Cr and ₹200 Cr. The Simple Diagnostic, The Simple Reset, and The Simple Counsel.",
+    "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing. Bengaluru & online.",
+  alternates: {
+    canonical: "https://www.simpleworks.in/programmes",
+  },
+  openGraph: {
+    title: "Business Consulting Fees & Programmes | Simpleworks, Bengaluru",
+    description:
+      "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing. Bengaluru & online.",
+    url: "https://www.simpleworks.in/programmes",
+    type: "website",
+  },
+};
+
+const PROGRAMMES_FAQS = FAQS.filter((item) =>
+  [
+    "What is your consulting fee?",
+    "How long does a consulting engagement typically last?",
+  ].includes(item.q)
+);
+
+function stripHtml(html: string) {
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: PROGRAMMES_FAQS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: stripHtml(item.a),
+    },
+  })),
 };
 
 function Deliverables({ items }: { items: string[] }) {
@@ -24,7 +65,12 @@ function Deliverables({ items }: { items: string[] }) {
 
 export default function ProgrammesPage() {
   return (
-    <main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main>
       {/* 1. Hero */}
       <section className="grid grid-cols-[2px_1fr] gap-x-10 px-6 py-14 md:px-14 md:py-24">
         <div className="w-[2px] bg-red" />
@@ -32,13 +78,17 @@ export default function ProgrammesPage() {
           <p className="mb-6 text-[11px] font-light uppercase tracking-[0.2em] text-light">
             Our Programmes
           </p>
-          <h1 className="mb-6 text-[40px] font-bold leading-[1.06] tracking-tight text-ink md:text-[56px]">
+          <h1 className="mb-4 text-[40px] font-bold leading-[1.06] tracking-tight text-ink md:text-[56px]">
             Three programmes.
             <br />
             <span className="text-red">Fixed fees,</span>
             <br />
             agreed first.
           </h1>
+          <p className="mb-6 text-[20px] font-semibold leading-[1.4] text-ink">
+            Fixed-fee consulting and business mentoring programmes for Indian
+            MSMEs.
+          </p>
           <p className="max-w-[540px] text-[18px] italic leading-[1.65] text-mid">
             One senior advisor — you get me, not a team. For founder-led
             businesses between ₹10 Cr and ₹200 Cr, in Bengaluru and across
@@ -596,7 +646,18 @@ export default function ProgrammesPage() {
         </ul>
       </section>
 
-      {/* 11. CTA band */}
+      {/* 11. FAQ */}
+      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+        <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
+          Common Questions
+        </p>
+        <h2 className="mb-4 text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
+          Fees and <span className="text-red">duration.</span>
+        </h2>
+        <FAQAccordion faqs={PROGRAMMES_FAQS} />
+      </section>
+
+      {/* 12. CTA band */}
       <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
         <h2 className="mb-4 text-[40px] font-bold leading-[1.1] tracking-tight text-ink">
           Start with
@@ -624,6 +685,7 @@ export default function ProgrammesPage() {
           </a>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

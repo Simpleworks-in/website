@@ -426,7 +426,7 @@ export default function FamilyBusinessConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Simpleworks Consulting works with Indian family businesses typically between
-          ₹10 crore and ₹100 crore in revenue — at the point where informal
+          ₹10 crore and ₹200 crore in revenue — at the point where informal
           structures and founder instinct are no longer enough to manage what
           the business has become.
         </p>

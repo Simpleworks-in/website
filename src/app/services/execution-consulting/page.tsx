@@ -176,7 +176,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do we need OKR software to make this work?",
-    a: "No. We start every engagement with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we'll help you evaluate and choose one. But the system works without it, and for most MSMEs between ₹10 crore and ₹100 crore, a lightweight manual system is more sustainable than a platform the team doesn't have time to maintain.",
+    a: "No. We start every engagement with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we'll help you evaluate and choose one. But the system works without it, and for most MSMEs between ₹10 crore and ₹200 crore, a lightweight manual system is more sustainable than a platform the team doesn't have time to maintain.",
   },
   {
     q: "What is the 5D method?",

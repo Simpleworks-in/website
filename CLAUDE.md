@@ -20,6 +20,18 @@ The Keystatic admin **does** exist: `src/app/keystatic/[[...params]]/page.tsx` (
 
 `src/app/layout.tsx` renders Nav, Footer, WhatsAppButton, and Google Analytics around every page — do NOT include them in individual pages.
 
+## Adding a new page — update the sitemap
+
+**Every time you add a new static route** (a new `page.tsx` under `src/app/...` that should be indexed by Google), add it to `staticRoutes` in `src/app/sitemap.ts`. This is easy to forget when a page is renamed or added outside the usual page-creation flow — it happened with `/programmes` (originally `/how-we-work`), which had a correct canonical tag and no `noindex` but was never in the sitemap, so Google had no signal to crawl it. A page can look fully SEO-correct (canonical, metadata, internal links) and still not get indexed if it's missing from the sitemap.
+
+Checklist when adding a page:
+1. Add the route to `staticRoutes` in `src/app/sitemap.ts` with an appropriate `priority`/`changeFrequency`.
+2. Confirm it has `alternates.canonical` pointing to `https://www.simpleworks.in/<path>` (www subdomain, not apex) in its `metadata` export.
+3. Link to it from the nav or another indexed page — pages with no internal inlinks are harder for Google to discover even when they're in the sitemap.
+4. Do NOT add `/keystatic` or `/offline` to the sitemap — they are intentionally `noindex`.
+
+Blog posts don't need this — `/blog/[slug]` routes are added to the sitemap automatically from `content/posts/*.mdoc` via the Keystatic reader.
+
 ## Brand rules — non-negotiable
 
 These come from the design handoff. Future agents must obey:

@@ -191,7 +191,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do we need OKR software?",
-    a: "No. Simpleworks Consulting starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we'll recommend and help implement one. But for most MSMEs between ₹10 crore and ₹100 crore, the overhead of a software platform is higher than its benefit in the first year.",
+    a: "No. Simpleworks Consulting starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we'll recommend and help implement one. But for most MSMEs between ₹10 crore and ₹200 crore, the overhead of a software platform is higher than its benefit in the first year.",
   },
   {
     q: "We already set annual targets. Is that the same as OKRs?",

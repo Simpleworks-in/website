@@ -187,7 +187,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "What stage of business does Simpleworks Consulting typically work with?",
-    a: "We work with small businesses and startups typically between ₹10 crore and ₹100 crore in annual revenue. The business has usually found its first customers and proven the model works — but is struggling to scale, clarify direction, or execute consistently. If you are pre-revenue, we are likely not the right fit yet.",
+    a: "We work with small businesses and startups typically between ₹10 crore and ₹200 crore in annual revenue. The business has usually found its first customers and proven the model works — but is struggling to scale, clarify direction, or execute consistently. If you are pre-revenue, we are likely not the right fit yet.",
   },
   {
     q: "Can Simpleworks Consulting work with early-stage startups?",
@@ -416,7 +416,7 @@ export default function SmallBusinessConsultingPage() {
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Simpleworks Consulting works with startup founders and small business owners
-          typically between ₹10 crore and ₹100 crore in revenue — at the stage
+          typically between ₹10 crore and ₹200 crore in revenue — at the stage
           where the business has proven it can work, but hasn&rsquo;t yet
           proven it can scale.
         </p>

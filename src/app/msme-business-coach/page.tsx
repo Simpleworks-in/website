@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "MSME Business Coach India | Premraj Menon | Simpleworks Consulting",
   description:
-    "Premraj Menon is a senior MSME business coach based in Bengaluru with 39 years of industry experience. One-to-one coaching for Indian MSME founders in the ₹10–100 crore range. Book a free 30-minute call.",
+    "Premraj Menon is a senior MSME business coach based in Bengaluru with 39 years of industry experience. One-to-one coaching for Indian MSME founders in the ₹10–200 crore range. Book a free 30-minute call.",
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -120,7 +120,7 @@ const FAQS = [
   },
   {
     q: "What size of business benefits most from MSME business coaching?",
-    a: "The engagement works best for established businesses in the ₹10 crore to ₹100 crore revenue range. This includes MSMEs that have hit a growth ceiling and family businesses navigating a transition. The common thread is a founder or leadership team making real decisions about strategy, market, or execution — and needing a rigorous thinking partner.",
+    a: "The engagement works best for established businesses in the ₹10 crore to ₹200 crore revenue range. This includes MSMEs that have hit a growth ceiling and family businesses navigating a transition. The common thread is a founder or leadership team making real decisions about strategy, market, or execution — and needing a rigorous thinking partner.",
   },
   {
     q: "How many sessions does a coaching engagement involve?",
@@ -258,7 +258,7 @@ export default function MsmeBusinessCoachPage() {
           </h1>
           <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
             One-to-one MSME business coaching for Indian founders in the
-            ₹10–100 crore range — built around your actual challenges, not a
+            ₹10–200 crore range — built around your actual challenges, not a
             course curriculum.
           </p>
           <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-7">
@@ -367,7 +367,7 @@ export default function MsmeBusinessCoachPage() {
           <span className="text-red">Recognise</span> any of these?
         </h2>
         <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
-          If you&rsquo;re running a business in the ₹10–100 crore range and
+          If you&rsquo;re running a business in the ₹10–200 crore range and
           feeling any of this, you&rsquo;re in the right place.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -505,7 +505,7 @@ export default function MsmeBusinessCoachPage() {
             Advanced Management Programme from Ross School of Business,
             University of Michigan. Simpleworks Consulting works
             exclusively with Indian MSMEs, startups, and family businesses in
-            the ₹10 crore to ₹100 crore revenue range — one business at a
+            the ₹10 crore to ₹200 crore revenue range — one business at a
             time.
           </p>
           <div className="flex flex-wrap gap-3 mt-4">

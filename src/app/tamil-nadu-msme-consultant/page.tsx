@@ -44,7 +44,7 @@ const CONTACT_LINK = "https://www.simpleworks.in/contact";
 const CREDIBILITY = [
   { num: "39 years", label: "Operating experience" },
   { num: "Usha · MRF · Apollo", label: "BPL · Airtel · Tata" },
-  { num: "₹10–100 crore", label: "Founder-led businesses" },
+  { num: "₹10–200 crore", label: "Founder-led businesses" },
   { num: "Onsite + Remote", label: "Across Tamil Nadu" },
 ];
 
@@ -218,7 +218,7 @@ const FAQS = [
   },
   {
     q: "What size of business do you work with?",
-    a: "Founder-led businesses roughly in the ₹10–100 crore revenue range. Below that, the problems are usually different; above it, you likely need a larger firm than this one.",
+    a: "Founder-led businesses roughly in the ₹10–200 crore revenue range. Below that, the problems are usually different; above it, you likely need a larger firm than this one.",
   },
   {
     q: "What's Prem's background with Tamil Nadu businesses specifically?",
@@ -407,7 +407,7 @@ export default async function TamilNaduMsmeConsultantPage() {
         </h2>
         <p className="text-[19px] text-mid leading-[1.7] mb-10">
           Simpleworks Consulting is not a broad-scope strategy firm. We do four things
-          for founder-led businesses in the ₹10–100 crore range — and we do
+          for founder-led businesses in the ₹10–200 crore range — and we do
           them as hands-on execution work, not advice you&rsquo;re left to
           implement alone.
         </p>

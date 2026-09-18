@@ -3,7 +3,7 @@ export type FAQ = { q: string; a: string };
 export const FAQS: FAQ[] = [
   {
     q: "What kind of businesses does Simpleworks Consulting work with?",
-    a: "As an MSME consultant based in Bengaluru, we work primarily with Indian small and medium enterprises in manufacturing, consumer goods, retail, distribution, and technology. Small enterprises are typically ₹10 to ₹100 crore in revenue; medium enterprises ₹100 to ₹500 crore. Our clients are founder-led, family-run, or professionally managed businesses, usually with 50 to 500 employees.",
+    a: "As an MSME consultant based in Bengaluru, we work primarily with Indian small and medium enterprises in manufacturing, consumer goods, retail, distribution, and technology. Our clients are typically ₹10 to ₹200 crore in revenue — founder-led, family-run, or professionally managed businesses, usually with 50 to 500 employees.",
   },
   {
     q: "Your background is corporate. How does that apply to a business my size?",
