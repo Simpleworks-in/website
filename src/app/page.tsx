@@ -385,7 +385,7 @@ export default function HomePage() {
             Let&apos;s have an <span className="text-red">honest conversation</span> about your business.
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            The first conversation is free. Tell us what you&apos;re working on — we&apos;ll tell you honestly whether we can help and what that would look like.
+            Let&apos;s have a quick introductory call. Tell us what you&apos;re working on — we&apos;ll tell you honestly whether we can help and what that would look like.
           </p>
           <div className="mt-9 flex flex-col gap-[14px]">
             <div className="flex gap-4 items-start">
