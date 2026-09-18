@@ -342,7 +342,14 @@ export default function HomePage() {
             Every engagement is led directly by Premraj—plain-spoken strategy over dense slide decks, staying embedded through execution until the plan is actually moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Thinking about bringing in outside help? Read{" "}
+            Thinking about bringing in outside help? See{" "}
+            <Link
+              href="/msme-business-coach"
+              className="text-red underline hover:no-underline"
+            >
+              how MSME business coaching works at Simpleworks
+            </Link>
+            , or read{" "}
             <Link
               href="/blog/how-to-choose-the-right-msme-business-coach-in-india"
               className="text-red underline hover:no-underline"
