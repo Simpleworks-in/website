@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = {
   title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
@@ -255,7 +256,7 @@ const OUTCOMES = [
 const FAQS = [
   {
     q: "Your experience is Airtel and MRF. Why would that help a Series A SaaS company?",
-    a: "Because the problem is not the product — it is the selling system, and I have been building those for thirty-nine years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person's relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
+    a: "Because the problem is not the product — it is the selling system, and I have been building those for thirty-nine years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&amp;L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person's relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
   },
   {
     q: "How is this different from an accelerator or incubator?",
@@ -661,19 +662,7 @@ export default function StartupMentorBengaluruPage() {
         <h2 className="mb-10 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
           What founders <span className="text-red">ask first.</span>
         </h2>
-        <div className="grid grid-cols-1 gap-x-16 gap-y-0 md:grid-cols-2">
-          {FAQS.map((item) => (
-            <div
-              key={item.q}
-              className="border-t-[0.5px] border-rule py-6 md:[&:nth-last-child(-n+2)]:border-b-[0.5px]"
-            >
-              <h3 className="mb-3 text-[17px] font-bold leading-[1.4] text-ink">
-                {item.q}
-              </h3>
-              <p className="text-[15px] leading-[1.75] text-mid">{item.a}</p>
-            </div>
-          ))}
-        </div>
+        <FAQAccordion faqs={FAQS} />
       </section>
 
       {/* FROM THE BLOG */}
@@ -732,15 +721,15 @@ export default function StartupMentorBengaluruPage() {
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-[1px] bg-red px-9 py-[15px] text-[15px] font-bold text-white transition-opacity hover:opacity-90"
+              className="rounded-[1px] border-[1.5px] border-red px-9 py-3.5 text-[15px] font-bold text-red transition-colors hover:bg-red hover:text-white"
             >
-              WhatsApp Prem
+              WhatsApp Premraj
             </a>
             <a
               href={CALENDAR_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-[15px] font-semibold text-ink transition-colors hover:border-ink"
+              className="rounded-[1px] border-[1.5px] border-red px-9 py-3.5 text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
             >
               Book a 30-min Call
             </a>

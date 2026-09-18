@@ -477,10 +477,10 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 8. At a Glance */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-[72px]">
-        <p className="mb-10 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-          At a Glance
-        </p>
+      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+        <h2 className="mb-10 text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
+          At a <span className="text-red">Glance</span>
+        </h2>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[560px] border-collapse">
             <thead>
@@ -552,7 +552,7 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 9. How the money works */}
-      <section className="grid grid-cols-1 gap-6 border-t border-rule px-6 py-14 md:grid-cols-2 md:gap-20 md:px-14 md:py-[72px]">
+      <section className="grid grid-cols-1 gap-6 border-t border-rule px-6 py-14 md:grid-cols-2 md:gap-20 md:px-14 md:py-20">
         <h2 className="text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
           How the
           <br />
@@ -572,7 +572,7 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 10. What I don't do */}
-      <section className="grid grid-cols-1 gap-6 border-t border-rule px-6 py-14 md:grid-cols-2 md:gap-20 md:px-14 md:py-[72px]">
+      <section className="grid grid-cols-1 gap-6 border-t border-rule px-6 py-14 md:grid-cols-2 md:gap-20 md:px-14 md:py-20">
         <h2 className="text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
           What I
           <br />

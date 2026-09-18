@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { FAQS } from "@/lib/faqs";
+import { FAQS, type FAQ } from "@/lib/faqs";
 
-export default function FAQAccordion() {
+export default function FAQAccordion({ faqs = FAQS }: { faqs?: FAQ[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="faq-list mt-8 md:mt-12 max-w-[640px]">
-      {FAQS.map((item, i) => {
+      {faqs.map((item, i) => {
         const open = openIndex === i;
         return (
           <div
