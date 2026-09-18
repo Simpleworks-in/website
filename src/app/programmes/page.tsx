@@ -20,12 +20,22 @@ export const metadata = {
   },
 };
 
-const PROGRAMMES_FAQS = FAQS.filter((item) =>
-  [
-    "What is your consulting fee?",
-    "How long does a consulting engagement typically last?",
-  ].includes(item.q)
-);
+const PROGRAMMES_FAQS = [
+  ...FAQS.filter((item) =>
+    [
+      "What is your consulting fee?",
+      "How long does a consulting engagement typically last?",
+    ].includes(item.q)
+  ),
+  {
+    q: "Can the engagement be done remotely?",
+    a: "<p>Yes, for two of the three programmes. The Simple Diagnostic (₹15,000 online) and The Simple Counsel can both run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, because the work happens inside your business with your team. Outside Bengaluru, travel for it is charged at actuals.</p>",
+  },
+  {
+    q: "Will you sign an NDA?",
+    a: "<p>Yes. We're happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>",
+  },
+];
 
 function stripHtml(html: string) {
   return html
