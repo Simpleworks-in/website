@@ -2,19 +2,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute:
-      "Consulting Services | MSME, Startup & Family Business | Simpleworks Consulting Bengaluru",
+    absolute: "Consulting Services | Simpleworks, Bengaluru",
   },
   description:
-    "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. Let's have a quick introductory call.",
+    "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let's have a quick introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services",
   },
   openGraph: {
-    title:
-      "Consulting Services | MSME, Startup & Family Business | Simpleworks Consulting Bengaluru",
+    title: "Consulting Services | Simpleworks, Bengaluru",
     description:
-      "Strategy, growth, and execution consulting for Indian MSMEs, startups, and family businesses. Led by Premraj Menon — independent management consultant, Bengaluru. Let's have a quick introductory call.",
+      "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let's have a quick introductory call.",
     url: "https://www.simpleworks.in/services",
     type: "website",
   },

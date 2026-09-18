@@ -3,19 +3,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute:
-      "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
+    absolute: "Small Business Consultant India | Simpleworks",
   },
   description:
-    "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Let's have a quick introductory call.",
+    "Strategy, growth and execution consulting for small business and startup founders across India, led by Premraj Menon.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
   openGraph: {
-    title:
-      "Small Business Consultant India | Business Mentor for Startups | Simpleworks Consulting",
+    title: "Small Business Consultant India | Simpleworks",
     description:
-      "Simpleworks Consulting works with small business founders and startup leaders across India — on strategy, growth, and execution. Independent consultant led by Premraj Menon, Bengaluru. Let's have a quick introductory call.",
+      "Strategy, growth and execution consulting for small business and startup founders across India, led by Premraj Menon.",
     url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",

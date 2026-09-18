@@ -3,19 +3,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute:
-      "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks Consulting",
+    absolute: "Execution Consulting India | Simpleworks",
   },
   description:
-    "Simpleworks Consulting closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
+    "Simpleworks closes the gap between strategy and results for Indian MSMEs, with OKRs and the 5D execution method. Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/execution-consulting",
   },
   openGraph: {
-    title:
-      "Execution Consulting India | Strategy to Action for MSMEs | Simpleworks Consulting",
+    title: "Execution Consulting India | Simpleworks",
     description:
-      "Simpleworks Consulting closes the gap between strategy and results for Indian MSMEs. OKR frameworks, accountability structures, and the 5D execution method — led by Premraj Menon, Bengaluru.",
+      "Simpleworks closes the gap between strategy and results for Indian MSMEs, with OKRs and the 5D execution method. Bengaluru.",
     url: "https://www.simpleworks.in/services/execution-consulting",
     locale: "en_IN",
     type: "website",

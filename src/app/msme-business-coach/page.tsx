@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "MSME Business Coach India | Premraj Menon | Simpleworks Consulting",
+  title: "MSME Business Coach India | Premraj Menon",
   description:
-    "Premraj Menon is a senior MSME business coach based in Bengaluru with 39 years of industry experience. One-to-one coaching for Indian MSME founders in the ₹10–200 crore range. Book a free 30-minute call.",
+    "One-to-one MSME business coaching in Bengaluru with Premraj Menon, 39 years of experience. Book a free 30-minute call.",
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://www.simpleworks.in/msme-business-coach",
   },
   openGraph: {
-    title: "MSME Business Coach India | Premraj Menon | Simpleworks Consulting",
+    title: "MSME Business Coach India | Premraj Menon",
     description:
       "One-to-one coaching for MSME founders who want to grow with clarity — not noise.",
     url: "https://www.simpleworks.in/msme-business-coach",

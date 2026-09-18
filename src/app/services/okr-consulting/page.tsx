@@ -4,17 +4,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks Consulting",
+    absolute: "OKR Consulting India | Simpleworks, Bengaluru",
   },
   description:
-    "Simpleworks Consulting designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
+    "OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/okr-consulting",
   },
   openGraph: {
-    title: "OKR Consulting India | OKR Framework for MSMEs & Startups | Simpleworks Consulting",
+    title: "OKR Consulting India | Simpleworks, Bengaluru",
     description:
-      "Simpleworks Consulting designs OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business. Led by Premraj Menon, Bengaluru.",
+      "OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business.",
     url: "https://www.simpleworks.in/services/okr-consulting",
     locale: "en_IN",
     type: "website",

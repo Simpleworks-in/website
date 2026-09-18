@@ -3,19 +3,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute:
-      "GTM Consulting India | Go-to-Market Strategy for MSMEs & Startups | Simpleworks Consulting",
+    absolute: "GTM Consulting India | Simpleworks, Bengaluru",
   },
   description:
-    "Simpleworks Consulting builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
+    "Go-to-market strategy for Indian MSMEs and startups — built for your market, distribution and paying customers.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/gtm-consulting",
   },
   openGraph: {
-    title:
-      "GTM Consulting India | Go-to-Market Strategy for MSMEs & Startups | Simpleworks Consulting",
+    title: "GTM Consulting India | Simpleworks, Bengaluru",
     description:
-      "Simpleworks Consulting builds go-to-market strategies for Indian MSMEs and startups — specific to your market, your distribution reality, and the customers who will actually pay. Bengaluru.",
+      "Go-to-market strategy for Indian MSMEs and startups — built for your market, distribution and paying customers.",
     url: "https://www.simpleworks.in/services/gtm-consulting",
     locale: "en_IN",
     type: "website",

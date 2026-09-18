@@ -3,19 +3,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute:
-      "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
+    absolute: "MSME Consultant in Bengaluru | Simpleworks",
   },
   description:
-    "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Let's have a quick introductory call.",
+    "Independent MSME consultant in Bengaluru: strategy, execution and growth advisory, led by Premraj Menon, 39 years of experience.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
   openGraph: {
-    title:
-      "MSME Consultant in Bengaluru | Business Growth for Indian MSMEs | Simpleworks Consulting",
+    title: "MSME Consultant in Bengaluru | Simpleworks",
     description:
-      "Simpleworks Consulting is an independent MSME consultant in Bengaluru. Business strategy, execution, and growth advisory for Indian MSMEs — led by Premraj Menon, 39 years of experience. Let's have a quick introductory call.",
+      "Independent MSME consultant in Bengaluru: strategy, execution and growth advisory, led by Premraj Menon, 39 years of experience.",
     url: "https://www.simpleworks.in/services/msme-consulting",
     type: "website",
   },

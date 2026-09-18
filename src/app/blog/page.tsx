@@ -4,16 +4,16 @@ import keystaticConfig from "../../../keystatic.config";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: { absolute: "MSME Growth Tips India | Business Growth Blog | Simpleworks Consulting" },
+  title: { absolute: "MSME Growth Blog | Simpleworks Consulting" },
   description:
-    "Simpleworks Consulting business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
+    "Practical strategy, execution and leadership advice for Indian MSME founders, from Premraj Menon of Simpleworks Consulting.",
   alternates: {
     canonical: "https://www.simpleworks.in/blog",
   },
   openGraph: {
-    title: "MSME Growth Tips India | Business Growth Blog | Simpleworks Consulting",
+    title: "MSME Growth Blog | Simpleworks Consulting",
     description:
-      "Simpleworks Consulting business growth blog — MSME growth tips and founder advice India from Premraj Menon. Practical strategy, execution and leadership insights for Indian MSMEs.",
+      "Practical strategy, execution and leadership advice for Indian MSME founders, from Premraj Menon of Simpleworks Consulting.",
     url: "https://www.simpleworks.in/blog",
     type: "website",
   },
