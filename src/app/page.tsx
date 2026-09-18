@@ -6,16 +6,17 @@ import { FAQS } from "@/lib/faqs";
 
 export const metadata = {
   title: {
-    absolute: "SME Management Consulting Bengaluru | Premraj Menon | Simpleworks Consulting",
+    absolute: "MSME Management Consultant in Bengaluru | Simpleworks Consulting",
   },
   description:
-    "Management consultancy for established Indian SMEs (₹10 Cr+). We partner with founders to break through execution bottlenecks and drive operational growth.",
+    "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
-    title: "Management Consulting for Established Indian SMEs | Simpleworks Consulting",
-    description: "Strategy. Growth. Execution. Nothing more.",
+    title: "MSME Management Consultant in Bengaluru | Simpleworks Consulting",
+    description:
+      "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
     url: "https://www.simpleworks.in",
     siteName: "Simpleworks Consulting",
     locale: "en_IN",
@@ -183,26 +184,26 @@ export default function HomePage() {
         <div className="flex-1 flex flex-col lg:flex-row items-stretch overflow-hidden">
           {/* Text */}
           <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
-            <h1 className="flex flex-col mb-5 md:mb-[26px]">
-              <span
+            <div className="flex flex-col mb-5 md:mb-[26px]">
+              <h1
                 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
                 style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
               >
                 Management Consulting for Established MSMEs · Bengaluru
-              </span>
-              <span
+              </h1>
+              <p
                 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.25s" }}
               >
                 Your business has more in it than your current{" "}
                 <span className="text-red">results</span> show.
-              </span>
-            </h1>
+              </p>
+            </div>
             <p
               className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              We work with established Indian Small and Medium Business that are stuck in growth, short on clarity, and unsure of the next move.
+              We work with established Indian small and medium businesses that are stuck in growth, short on clarity, and unsure of the next move.
             </p>
             <a
               href="#contact"
