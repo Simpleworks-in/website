@@ -12,7 +12,7 @@ const links = [
   { href: "/startup-mentor-bengaluru", label: "Startups" },
   { href: "/blog", label: "Blog" },
   { href: "/resources", label: "Resources" },
-  { href: "/how-we-work", label: "How We Work" },
+  { href: "/programmes", label: "Programmes" },
   { href: "/contact", label: "Contact" },
 ];
 

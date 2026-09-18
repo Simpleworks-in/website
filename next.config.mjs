@@ -79,6 +79,15 @@ const nextConfig = {
   // No hostname redirects here. The apex → www canonicalization is owned by
   // the Vercel domain config, which runs before the app — a redirect in this
   // file pointing the other way produced an infinite 308 loop.
+  async redirects() {
+    return [
+      {
+        source: "/how-we-work",
+        destination: "/programmes",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

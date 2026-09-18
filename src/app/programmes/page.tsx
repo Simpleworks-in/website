@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "How We Work — Simpleworks Consulting",
+  title: "Programmes — Simpleworks Consulting",
   description:
-    "Three fixed-fee programmes for founder-led businesses between ₹10 Cr and ₹200 Cr — plus custom, scoped engagements. The Simple Diagnostic, The Simple Reset, The Simple Counsel, and Custom Engagement.",
+    "Three fixed-fee programmes for founder-led businesses between ₹10 Cr and ₹200 Cr. The Simple Diagnostic, The Simple Reset, and The Simple Counsel.",
 };
 
 function Deliverables({ items }: { items: string[] }) {
@@ -22,7 +22,7 @@ function Deliverables({ items }: { items: string[] }) {
   );
 }
 
-export default function HowWeWorkPage() {
+export default function ProgrammesPage() {
   return (
     <main>
       {/* 1. Hero */}
@@ -30,10 +30,10 @@ export default function HowWeWorkPage() {
         <div className="w-[2px] bg-red" />
         <div>
           <p className="mb-6 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-            How We Work
+            Our Programmes
           </p>
           <h1 className="mb-6 text-[40px] font-bold leading-[1.06] tracking-tight text-ink md:text-[56px]">
-            Three ways in.
+            Three programmes.
             <br />
             <span className="text-red">Fixed fees,</span>
             <br />
@@ -208,14 +208,14 @@ export default function HowWeWorkPage() {
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-              Then, If Needed
+              Fixed Engagement
             </p>
             <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
               The Simple <span className="text-red">Reset</span>
             </h2>
             <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-              Four to eight weeks, on site, to put the fixes in place — not
-              just point at them.
+              Four weeks to work out what to do. Four more to make sure it
+              happens.
             </p>
           </div>
           <span className="-mt-4 hidden select-none text-[120px] font-bold leading-none tracking-[-0.04em] text-rule md:block">
@@ -251,9 +251,11 @@ export default function HowWeWorkPage() {
         </div>
 
         <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For owners who&apos;ve had the Diagnostic — or already know the
-          problem — and want it actually fixed, with someone in the room
-          each week until it sticks.
+          For owners who have a problem area they can name but have not
+          been able to crack. You bring the problem. Option 1 gives you the
+          diagnosis and a designed solution — you execute. Option 2 adds 30
+          days of Prem alongside your team to make sure execution actually
+          starts.
         </p>
 
         <div className="mb-10 grid grid-cols-1 md:grid-cols-2">
@@ -263,13 +265,14 @@ export default function HowWeWorkPage() {
             </p>
             <p className="mb-1 text-[22px] font-bold text-ink">30 days</p>
             <p className="mb-5 text-[13px] italic text-light">
-              Four weekly visits
+              Four weekly visits · you execute
             </p>
             <ul className="mb-6">
               {[
-                "Weekly on-site sessions with the owner and core team",
-                "One priority area diagnosed and reset end to end",
-                "A short written close-out with what changed and what to watch",
+                "Structured discovery of the named problem area — root cause, not symptoms",
+                "The gaps costed in rupees, ranked by impact",
+                "A designed solution: what to do, who owns it, by when",
+                "One page. Plain language. No deck.",
               ].map((item) => (
                 <li
                   key={item}
@@ -293,13 +296,14 @@ export default function HowWeWorkPage() {
             </p>
             <p className="mb-1 text-[22px] font-bold text-ink">60 days</p>
             <p className="mb-5 text-[13px] italic text-light">
-              Eight weekly visits
+              Eight weekly visits · Prem stays for execution
             </p>
             <ul className="mb-6">
               {[
-                "Everything in the 30-day option",
-                "A second priority area addressed, or deeper work on the first",
-                "A written handover so the fix outlives the engagement",
+                "Everything in Option 1, delivered in the first four weeks",
+                "Four more weeks in person with your leadership team",
+                "Obstacles cleared while they are still small",
+                "A weekly review rhythm installed and handed over — your team runs it, not Prem",
               ].map((item) => (
                 <li
                   key={item}
@@ -320,9 +324,9 @@ export default function HowWeWorkPage() {
         </div>
 
         <p className="max-w-[600px] border-t border-rule pt-5 text-[14px] italic leading-[1.65] text-light">
-          Finding the problems takes four weeks. Making sure they get fixed
-          takes the other four — and that is the half most businesses skip.
-          It is why analysis sits in drawers.
+          Most clients know what they need to do. The question is whether
+          they want help doing it. Option 1 gives you the answer. Option 2
+          makes sure the answer gets implemented.
         </p>
       </section>
 
@@ -331,14 +335,14 @@ export default function HowWeWorkPage() {
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-              Ongoing
+              Monthly Retainer
             </p>
             <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
               The Simple <span className="text-red">Counsel</span>
             </h2>
             <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-              A standing sounding board for the decisions that don&apos;t
-              wait for a quarterly review.
+              A business mentor in your corner — every month, for as long
+              as it is useful.
             </p>
           </div>
           <span className="-mt-4 hidden select-none text-[120px] font-bold leading-none tracking-[-0.04em] text-rule md:block">
@@ -352,7 +356,7 @@ export default function HowWeWorkPage() {
               Duration
             </span>
             <span className="text-[15px] font-bold text-ink">
-              Monthly, min. 6 months
+              Monthly, min. 3 months
             </span>
           </div>
           <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
@@ -374,16 +378,19 @@ export default function HowWeWorkPage() {
         </div>
 
         <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For owners past the Reset who want a senior second opinion on
-          hand — on hiring, pricing, channel bets, and the calls that are
-          hard to make alone.
+          For founders who want a senior thinking partner on call — before
+          a hire, a price change, a new market, or a difficult family
+          conversation. Often how the relationship continues after the
+          Reset. Also works as a standalone engagement for founders who do
+          not need a project, just clear-headed counsel.
         </p>
 
         <Deliverables
           items={[
-            "A standing monthly session, plus ad-hoc calls as decisions come up",
-            "Direct access — you reach me, not a team inbox",
-            "A light written note after each session, not a formal deck",
+            "Two sessions a month, agenda set by you — at your office in Bengaluru, online anywhere else in India",
+            "WhatsApp access for the decisions that will not wait",
+            "Quarterly business review, and one leadership meeting a quarter if useful",
+            "No deliverables. This is thinking, not documents",
           ]}
         />
 
@@ -396,7 +403,7 @@ export default function HowWeWorkPage() {
               ₹75,000
             </span>
             <span className="text-[13px] italic text-light">
-              per month · minimum six months
+              per month · minimum three months
             </span>
           </div>
         </div>
@@ -529,17 +536,9 @@ export default function HowWeWorkPage() {
                   <span className="font-bold text-red">
                     ₹75,000 / month
                   </span>
-                </td>
-              </tr>
-              <tr className="border-b border-rule">
-                <td className="py-[18px] text-[15px] font-bold text-ink">
-                  Custom Engagement
-                </td>
-                <td className="py-[18px] text-[15px] text-mid">
-                  Scoped to fit
-                </td>
-                <td className="py-[18px] text-right text-[15px] text-mid">
-                  Quoted before we begin
+                  <span className="mt-1 block text-[12px] italic text-light">
+                    3-month minimum
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -581,10 +580,10 @@ export default function HowWeWorkPage() {
         </h2>
         <ul>
           {[
-            "Retainer relationships with no defined end point",
-            "Capacity planning or quality systems work",
-            "Remote-only delivery for full engagements",
-            "Generic GTM consulting outside channel-sold businesses",
+            "Run your sales function or sit in your customer meetings. I build the system and train the people who run it",
+            "Produce decks. You get short written documents your team can actually use",
+            "Bring an associate who does the work while I attend the first meeting. You get me, every visit",
+            "Take on work outside my expertise. If the problem area is not one I can serve well, I will tell you upfront — and share someone who can do a better job than me",
           ].map((item) => (
             <li
               key={item}
@@ -598,41 +597,31 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* 11. CTA band */}
-      <section className="grid grid-cols-1 items-center gap-8 border-t border-rule px-6 py-14 md:grid-cols-[1fr_auto] md:gap-16 md:px-14 md:py-20">
-        <div>
-          <h2 className="mb-4 text-[40px] font-bold leading-[1.1] tracking-tight text-ink">
-            Start with
-            <br />
-            <span className="text-red">half a day.</span>
-          </h2>
-          <p className="max-w-[460px] text-[16px] leading-[1.7] text-mid">
-            Most clients begin with the Diagnostic. ₹20,000 in person,
-            ₹15,000 online. Credited in full against whatever comes next.
-            If you only need the Diagnostic, that is perfectly fine too.
-          </p>
-        </div>
-        <div className="flex flex-col items-start gap-5 md:items-end">
-          <a
-            href="https://wa.me/919036099000"
-            className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-4 font-serif text-[15px] text-red transition-colors hover:bg-red hover:text-white"
-          >
-            Book the Diagnostic
+      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+        <h2 className="mb-4 text-[40px] font-bold leading-[1.1] tracking-tight text-ink">
+          Start with
+          <br />
+          <span className="text-red">half a day.</span>
+        </h2>
+        <p className="mb-8 max-w-[460px] text-[16px] leading-[1.7] text-mid">
+          Most clients begin with the Diagnostic. ₹20,000 in person,
+          ₹15,000 online. Credited in full against whatever comes next.
+          If you only need the Diagnostic, that is perfectly fine too.
+        </p>
+        <a
+          href="https://wa.me/919036099000"
+          className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-4 font-serif text-[15px] text-red transition-colors hover:bg-red hover:text-white"
+        >
+          Book the Diagnostic
+        </a>
+        <div className="mt-5 text-[13px] leading-[1.8] text-light">
+          <a href="mailto:pm@simpleworks.in" className="text-mid transition-colors hover:text-red">
+            pm@simpleworks.in
           </a>
-          <div className="text-[13px] leading-[1.8] text-light md:text-right">
-            <a
-              href="mailto:pm@simpleworks.in"
-              className="text-mid transition-colors hover:text-red"
-            >
-              pm@simpleworks.in
-            </a>
-            <br />
-            <a
-              href="tel:+919036099000"
-              className="text-mid transition-colors hover:text-red"
-            >
-              +91 90360 99000
-            </a>
-          </div>
+          <br />
+          <a href="tel:+919036099000" className="text-mid transition-colors hover:text-red">
+            +91 90360 99000
+          </a>
         </div>
       </section>
     </main>
