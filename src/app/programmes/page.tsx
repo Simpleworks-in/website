@@ -253,6 +253,9 @@ export default function ProgrammesPage() {
           >
             Schedule an Introductory Call
           </Link>
+          <p className="mt-3 max-w-[460px] text-[14px] leading-[1.65] text-light">
+            A first conversation, not the Diagnostic. I&apos;ll hear the situation and tell you honestly whether I can help.
+          </p>
         </div>
       </section>
 
@@ -678,6 +681,9 @@ export default function ProgrammesPage() {
         >
           Schedule an Introductory Call
         </Link>
+        <p className="mt-3 max-w-[460px] text-[14px] leading-[1.65] text-light">
+          A first conversation, not the Diagnostic. I&apos;ll hear the situation and tell you honestly whether I can help.
+        </p>
         <div className="mt-5 text-[13px] leading-[1.8] text-light">
           <a href="mailto:pm@simpleworks.in" className="text-mid transition-colors hover:text-red">
             pm@simpleworks.in
