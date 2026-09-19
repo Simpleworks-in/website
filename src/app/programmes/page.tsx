@@ -251,7 +251,7 @@ export default function ProgrammesPage() {
             href="/contact"
             className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-3.5 font-serif text-[14px] text-red transition-colors hover:bg-red hover:text-white"
           >
-            Schedule a Call
+            Schedule an Introductory Call
           </Link>
         </div>
       </section>
@@ -676,7 +676,7 @@ export default function ProgrammesPage() {
           href="/contact"
           className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-4 font-serif text-[15px] text-red transition-colors hover:bg-red hover:text-white"
         >
-          Schedule a Call
+          Schedule an Introductory Call
         </Link>
         <div className="mt-5 text-[13px] leading-[1.8] text-light">
           <a href="mailto:pm@simpleworks.in" className="text-mid transition-colors hover:text-red">

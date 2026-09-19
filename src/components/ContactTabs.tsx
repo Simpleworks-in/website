@@ -199,8 +199,8 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
                   Select revenue band
                 </option>
                 <option value="Below ₹10 crore">Below ₹10 crore</option>
-                <option value="₹10 – 100 crore">₹10 – 100 crore</option>
-                <option value="₹100 – 500 crore">₹100 – 500 crore</option>
+                <option value="₹10 – 200 crore">₹10 – 200 crore</option>
+                <option value="₹200 – 500 crore">₹200 – 500 crore</option>
                 <option value="Above ₹500 crore">Above ₹500 crore</option>
               </select>
             </div>
