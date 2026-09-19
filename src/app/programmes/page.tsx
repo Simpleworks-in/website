@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
-import { FAQS } from "@/lib/faqs";
+import { faqs } from "./faqs";
 
 export const metadata = {
   title: {
@@ -21,42 +21,29 @@ export const metadata = {
   },
 };
 
-const PROGRAMMES_FAQS = [
-  ...FAQS.filter((item) =>
-    [
-      "What is your consulting fee?",
-      "How long does a consulting engagement typically last?",
-    ].includes(item.q)
-  ),
-  {
-    q: "Can the engagement be done remotely?",
-    a: "<p>Yes, for two of the three programmes. The Simple Diagnostic (₹15,000 online) and The Simple Counsel can both run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, because the work happens inside your business with your team. Outside Bengaluru, travel for it is charged at actuals.</p>",
-  },
-  {
-    q: "Will you sign an NDA?",
-    a: "<p>Yes. We're happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>",
-  },
-];
-
-function stripHtml(html: string) {
-  return html
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: PROGRAMMES_FAQS.map((item) => ({
+  mainEntity: faqs.map(({ q, a }) => ({
     "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: stripHtml(item.a),
-    },
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
   })),
 };
+
+function escapeHtml(text: string) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// The accordion renders HTML strings; rich answers use aHtml, the rest are
+// wrapped plain text — same words as the schema either way.
+const ACCORDION_FAQS = faqs.map(({ q, a, aHtml }) => ({
+  q,
+  a: aHtml ?? `<p>${escapeHtml(a)}</p>`,
+}));
 
 function Deliverables({ items }: { items: string[] }) {
   return (
@@ -167,7 +154,7 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 4. The Simple Diagnostic */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+      <section id="simple-diagnostic" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
@@ -270,7 +257,7 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 5. The Simple Reset */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+      <section id="simple-reset" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
@@ -397,7 +384,7 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 6. The Simple Counsel */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+      <section id="simple-counsel" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
@@ -670,7 +657,7 @@ export default function ProgrammesPage() {
         <h2 className="mb-4 text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
           Fees and <span className="text-red">duration.</span>
         </h2>
-        <FAQAccordion faqs={PROGRAMMES_FAQS} />
+        <FAQAccordion faqs={ACCORDION_FAQS} />
       </section>
 
       {/* 12. CTA band */}
