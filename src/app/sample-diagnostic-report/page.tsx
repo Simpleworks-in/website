@@ -104,7 +104,7 @@ export default function SampleDiagnosticReportPage() {
           <p className="mb-6 text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
             Simpleworks Consulting · Sample Report
           </p>
-          <h1 className="mb-6 text-[40px] font-bold leading-[1.1] tracking-tight text-ink md:text-[56px]">
+          <h1 className="mb-6 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1 text-ink">
             Three flat years at a <span className="text-red">Hosur pipe maker.</span>
           </h1>
           <p className="max-w-[560px] text-[18px] italic leading-[1.65] text-mid">

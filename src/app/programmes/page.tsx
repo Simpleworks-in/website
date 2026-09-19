@@ -89,11 +89,8 @@ export default function ProgrammesPage() {
           <p className="mb-6 text-[11px] font-light uppercase tracking-[0.2em] text-light">
             Our Programmes
           </p>
-          <h1 className="mb-4 text-[40px] font-bold leading-[1.1] tracking-tight text-ink md:text-[56px]">
+          <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1 text-ink">
             Three business consulting programmes for MSMEs.
-            <span className="mt-3 block text-[0.72em] font-normal text-mid">
-              Fixed fees, agreed first.
-            </span>
           </h1>
           <p className="mb-6 text-[20px] font-semibold leading-[1.4] text-ink">
             Fixed-fee consulting and business mentoring programmes for Indian
