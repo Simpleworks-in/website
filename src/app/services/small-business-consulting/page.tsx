@@ -3,17 +3,17 @@ import Link from "next/link";
 
 export const metadata = {
   title: {
-    absolute: "Small Business Consultant India | Simpleworks",
+    absolute: "Small Business Consultant in India | Simpleworks",
   },
   description:
-    "Strategy, growth and execution consulting for small business and startup founders across India, led by Premraj Menon.",
+    "Strategy, growth and execution consulting for Indian small business and startup founders. One senior advisor, not a team. Bengaluru and across India.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
   openGraph: {
-    title: "Small Business Consultant India | Simpleworks",
+    title: "Small Business Consultant in India | Simpleworks",
     description:
-      "Strategy, growth and execution consulting for small business and startup founders across India, led by Premraj Menon.",
+      "Strategy, growth and execution consulting for Indian small business and startup founders. One senior advisor, not a team. Bengaluru and across India.",
     url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -204,7 +204,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A 30-minute conversation. Free, with no agenda except understanding your situation. You describe what you are dealing with — Prem asks a few direct questions and tells you honestly whether Simpleworks Consulting can help and what that engagement would look like in practice.",
+    a: "A 30-minute conversation, with no agenda except understanding your situation. You describe what you are dealing with — Prem asks a few direct questions and tells you honestly whether Simpleworks Consulting can help and what that engagement would look like in practice.",
   },
 ];
 
@@ -497,7 +497,7 @@ export default function SmallBusinessConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Let&apos;s have a quick introductory call — free, 30 minutes.
+              Let&apos;s have a quick introductory call — 30 minutes.
               We will tell you honestly whether Simpleworks Consulting can
               help — and if not, where to look instead.
             </p>
@@ -632,7 +632,7 @@ export default function SmallBusinessConsultingPage() {
       >
         <div>
           <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            The first conversation <span className="text-red">is free.</span>
+            Start with <span className="text-red">an introductory call.</span>
           </h2>
           <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
             Tell us what your business is dealing with. We will tell you

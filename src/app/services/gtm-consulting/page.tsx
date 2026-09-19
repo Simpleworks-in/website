@@ -204,7 +204,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A free 30-minute conversation with Premraj Menon. No pitch, no proposal. You describe where your current GTM is breaking down — inconsistent sales, unclear positioning, a new market you're trying to enter. Prem asks a few direct questions and tells you honestly whether a GTM engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so.",
+    a: "A quick introductory conversation with Premraj Menon. No pitch, no proposal. You describe where your current GTM is breaking down — inconsistent sales, unclear positioning, a new market you're trying to enter. Prem asks a few direct questions and tells you honestly whether a GTM engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so.",
   },
 ];
 
@@ -667,7 +667,7 @@ export default function GtmConsultingPage() {
       >
         <div>
           <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            The first conversation <span className="text-red">is free.</span>
+            Start with <span className="text-red">an introductory call.</span>
           </h2>
           <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
             Tell us where your current GTM is breaking down — or what market

@@ -20,69 +20,9 @@ export const metadata = {
   },
 };
 
-const schemaMarkup = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://www.simpleworks.in/#localbusiness",
-      name: "Simpleworks Consulting",
-      description:
-        "Independent management consulting firm in Bengaluru working with Indian MSMEs and startup founders on business strategy, go-to-market planning, and OKR consulting.",
-      url: "https://www.simpleworks.in",
-      telephone: "+919036099000",
-      email: "pm@simpleworks.in",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
-        addressCountry: "IN",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 12.9716,
-        longitude: 77.5946,
-      },
-      founder: { "@id": "https://www.simpleworks.in/#prem-menon" },
-      areaServed: {
-        "@type": "Country",
-        name: "India",
-      },
-      priceRange: "₹₹₹",
-      openingHours: "Mo-Fr 09:00-18:00",
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.simpleworks.in/#prem-menon",
-      name: "Premraj Menon",
-      jobTitle: "Founder & Principal Consultant",
-      worksFor: { "@id": "https://www.simpleworks.in/#localbusiness" },
-      url: "https://www.simpleworks.in/about",
-      sameAs: [
-        "https://www.linkedin.com/in/premraj/",
-        "https://premraj.substack.com/",
-        "https://x.com/nonemmerp",
-      ],
-      description:
-        "Management consultant with 39 years of experience across Consumer Durables, Automotive, Telecom, and IT/SaaS in India.",
-      knowsAbout: [
-        "Business Strategy",
-        "Go-to-Market Planning",
-        "OKR Consulting",
-        "MSME Advisory",
-        "Business Turnaround",
-      ],
-    },
-  ],
-};
-
 export default function AboutPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-      />
       {/* PAGE HEADER */}
       <section className="flex flex-col lg:flex-row min-h-0 lg:min-h-[88vh] overflow-hidden border-b-[0.5px] border-rule">
         <div className="relative hidden lg:flex w-[72px] flex-shrink-0 items-start pt-[72px] pl-6">
@@ -102,6 +42,11 @@ export default function AboutPage() {
             </h1>
             <p className="mb-8 text-[16px] tracking-wide-1 text-mid opacity-0 animate-fade-up [animation-delay:0.3s]">
               Management Consultant · India &amp; Bengaluru
+            </p>
+            <p className="mb-8 max-w-[440px] text-[16px] leading-[1.7] text-mid opacity-0 animate-fade-up [animation-delay:0.35s]">
+              Simpleworks Consulting is a management consulting practice in
+              Bengaluru, working with founder-led Indian businesses between
+              ₹10 and ₹200 crore.
             </p>
             <div className="mb-7 h-[2px] w-10 bg-red opacity-0 animate-fade-up [animation-delay:0.35s]" />
             <p className="mb-9 max-w-[400px] text-[18px] md:text-[22px] italic leading-[1.55] text-ink opacity-0 animate-fade-up [animation-delay:0.45s]">
@@ -516,9 +461,9 @@ export default function AboutPage() {
             Start Here
           </p>
           <p className="text-[28px] md:text-[34px] font-bold leading-[1.2] tracking-tight-1 text-ink">
-            The first conversation
+            Start with
             <br />
-            <span className="text-red">is free.</span>
+            <span className="text-red">an introductory call.</span>
           </p>
           <p className="text-[20px] md:text-[24px] font-normal italic leading-[1.3] text-mid">
             The clarity usually isn&rsquo;t.

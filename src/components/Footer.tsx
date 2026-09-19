@@ -17,6 +17,9 @@ export default function Footer() {
           <p className="text-[13px] italic text-light">
             Simple answers to hard business questions.
           </p>
+          <p className="text-[13px] text-light">
+            Simpleworks Consulting · Management consulting for Indian MSMEs
+          </p>
         </div>
         <div className="flex items-center gap-3.5 md:mt-1">
           <a
@@ -57,13 +60,8 @@ export default function Footer() {
 
       {/* Row 2: contact details centred */}
       <address
-        itemScope
-        itemType="https://schema.org/LocalBusiness"
         className="not-italic flex flex-col items-start gap-3 border-b border-rule py-6 md:flex-row md:items-center md:justify-center md:gap-12 md:py-7"
       >
-        <span itemProp="name" className="hidden">
-          Simpleworks Consulting
-        </span>
         <div className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid">
           <svg
             viewBox="0 0 24 24"
@@ -78,7 +76,6 @@ export default function Footer() {
           </svg>
           <a
             href="mailto:pm@simpleworks.in"
-            itemProp="email"
             className="text-mid transition-colors hover:text-red"
           >
             pm@simpleworks.in
@@ -96,16 +93,13 @@ export default function Footer() {
           >
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
           </svg>
-          <a href="tel:+919036099000" itemProp="telephone" className="text-mid transition-colors hover:text-red">
+          <a href="tel:+919036099000" className="text-mid transition-colors hover:text-red">
             +91 90360 99000
           </a>
         </div>
         <div className="hidden h-7 w-px flex-shrink-0 bg-rule md:block" />
         <div
           className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid"
-          itemProp="address"
-          itemScope
-          itemType="https://schema.org/PostalAddress"
         >
           <svg
             viewBox="0 0 24 24"
@@ -119,9 +113,7 @@ export default function Footer() {
             <circle cx="12" cy="10" r="3" />
           </svg>
           <span>
-            <span itemProp="addressLocality">Bengaluru</span>,{" "}
-            <span itemProp="addressRegion">Karnataka</span>,{" "}
-            <span itemProp="addressCountry">India</span>
+            Bengaluru, Karnataka, India
           </span>
         </div>
       </address>

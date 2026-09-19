@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata = {
   title: { absolute: "Sample Diagnostic Report | Simpleworks, Bengaluru" },
   description:
-    "What a Simpleworks half-day Diagnostic produces, written up in full — what I heard, what it adds up to, and the direction I would take. An illustrative report for an Indian MSME.",
+    "What a Simpleworks half-day Diagnostic produces, written up in full: what I heard, what it adds up to, and the direction I would take.",
   alternates: {
     canonical: "https://www.simpleworks.in/sample-diagnostic-report",
   },

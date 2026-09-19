@@ -3,7 +3,7 @@ import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = {
-  title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
+  title: { absolute: "Startup Mentor in Bengaluru | Simpleworks Consulting" },
   description:
     "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
   alternates: {
@@ -26,12 +26,7 @@ const jsonLd = {
       name: "Startup Mentor Bengaluru",
       description:
         "One-to-one startup mentorship for post-Series A founders. GTM architecture, OKR systems, execution discipline, and strategic thinking partnership.",
-      provider: {
-        "@type": "Person",
-        name: "Premraj Menon",
-        jobTitle: "Startup Mentor & Management Consultant",
-        url: "https://www.simpleworks.in/about",
-      },
+      provider: { "@id": "https://www.simpleworks.in/#organization" },
       areaServed: {
         "@type": "City",
         name: "Bengaluru",

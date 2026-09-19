@@ -5,17 +5,17 @@ import { faqs } from "./faqs";
 
 export const metadata = {
   title: {
-    absolute: "Business Consulting Fees & Programmes | Simpleworks, Bengaluru",
+    absolute: "Business Consulting Fees & Programmes | Simpleworks",
   },
   description:
-    "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing. Bengaluru & online.",
+    "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
   alternates: {
     canonical: "https://www.simpleworks.in/programmes",
   },
   openGraph: {
-    title: "Business Consulting Fees & Programmes | Simpleworks, Bengaluru",
+    title: "Business Consulting Fees & Programmes | Simpleworks",
     description:
-      "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing. Bengaluru & online.",
+      "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
     url: "https://www.simpleworks.in/programmes",
     type: "website",
   },

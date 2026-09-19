@@ -6,7 +6,7 @@ import { FAQS } from "@/lib/faqs";
 
 export const metadata = {
   title: {
-    absolute: "MSME Management Consultant in Bengaluru | Simpleworks Consulting",
+    absolute: "MSME Management Consultant in Bengaluru | Simpleworks",
   },
   description:
     "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
-    title: "MSME Management Consultant in Bengaluru | Simpleworks Consulting",
+    title: "MSME Management Consultant in Bengaluru | Simpleworks",
     description:
       "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
     url: "https://www.simpleworks.in",
@@ -50,105 +50,6 @@ const SERVICES = [
   },
 ];
 
-const schemaMarkup = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://www.simpleworks.in/#localbusiness",
-      name: "Simpleworks Consulting",
-      url: "https://www.simpleworks.in",
-      logo: "https://www.simpleworks.in/simpleworks-logo.svg",
-      image: "https://www.simpleworks.in/hero-illustration.png",
-      description:
-        "Independent management consulting firm in Bengaluru helping Indian MSMEs scale with business strategy, go-to-market planning and OKR consulting.",
-      telephone: "",
-      email: "pm@simpleworks.in",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
-        addressCountry: "IN",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: "12.9716",
-        longitude: "77.5946",
-      },
-      areaServed: {
-        "@type": "Country",
-        name: "India",
-      },
-      priceRange: "₹₹₹",
-      openingHours: "Mo-Fr 09:00-18:00",
-      founder: { "@id": "https://www.simpleworks.in/#prem-menon" },
-      sameAs: ["https://www.linkedin.com/company/simpleworks-consulting"],
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.simpleworks.in/#prem-menon",
-      name: "Premraj Menon",
-      jobTitle: "Founder & Management Consultant",
-      worksFor: { "@id": "https://www.simpleworks.in/#localbusiness" },
-      description:
-        "Senior management consultant with 39 years of experience across Consumer Durables, Tyres, Telecom, and IT/SaaS in India. Founder of Simpleworks Consulting, Bengaluru.",
-      url: "https://www.simpleworks.in/about",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
-        addressCountry: "IN",
-      },
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://www.simpleworks.in/#professionalservice",
-      name: "Simpleworks Consulting",
-      url: "https://www.simpleworks.in",
-      description:
-        "Management consulting services for Indian MSMEs — business strategy, go-to-market planning, OKR consulting, and business turnaround. Based in Bengaluru.",
-      provider: { "@id": "https://www.simpleworks.in/#prem-menon" },
-      areaServed: {
-        "@type": "Country",
-        name: "India",
-      },
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Consulting Services",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Business Strategy Consulting",
-              description:
-                "Clarity on where your business should go. We diagnose the real problem and build a plan the organisation can follow.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Go-to-Market Strategy",
-              description:
-                "Define your segment, sharpen your message, and choose channels that work for Indian MSMEs.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Execution & OKR Consulting",
-              description:
-                "Build the goals, accountability structures, and review rhythms that turn plans into outcomes.",
-            },
-          },
-        ],
-      },
-    },
-  ],
-};
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -165,10 +66,6 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

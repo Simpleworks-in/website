@@ -3,17 +3,17 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: {
-    absolute: "Book a Free Strategy Call | Simpleworks Consulting, Bengaluru",
+    absolute: "Schedule an Introductory Call | Simpleworks, Bengaluru",
   },
   description:
-    "Talk directly to Premraj Menon, an MSME and startup strategy consultant with 39 years of experience. Book a free 30-minute call to diagnose your growth problem.",
+    "Talk directly to Premraj Menon, MSME and startup strategy consultant with 39 years of experience. Book a 15-minute introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/contact",
   },
   openGraph: {
-    title: "Book a Free Strategy Call | Simpleworks Consulting, Bengaluru",
+    title: "Schedule an Introductory Call | Simpleworks, Bengaluru",
     description:
-      "Talk directly to Premraj Menon, an MSME and startup strategy consultant with 39 years of experience. Book a free 30-minute call to diagnose your growth problem.",
+      "Talk directly to Premraj Menon, MSME and startup strategy consultant with 39 years of experience. Book a 15-minute introductory call.",
     url: "https://www.simpleworks.in/contact",
     type: "website",
   },

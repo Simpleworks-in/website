@@ -46,7 +46,7 @@ export async function generateMetadata({
   const url = `https://www.simpleworks.in/blog/${slug}`;
 
   return {
-    title: { absolute: `${title} | Simpleworks Consulting Blog` },
+    title: { absolute: title },
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -82,14 +82,12 @@ export default async function PostPage({
     "@type": "Article",
     headline: post.title,
     author: {
-      "@type": "Person",
+      "@id": "https://www.simpleworks.in/#prem",
       name: "Premraj Menon",
-      url: "https://www.simpleworks.in/about",
     },
     publisher: {
-      "@type": "Organization",
+      "@id": "https://www.simpleworks.in/#organization",
       name: "Simpleworks Consulting",
-      url: "https://www.simpleworks.in",
     },
     datePublished: post.date ?? undefined,
     dateModified: post.date ?? undefined,

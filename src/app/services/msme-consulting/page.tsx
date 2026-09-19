@@ -159,7 +159,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "Let's have a quick introductory call — 30 minutes, free, with no agenda except understanding your situation. No pitch. No proposal before we've spoken. You describe what you're dealing with — we tell you honestly whether we can help and what that would look like in practice.",
+    a: "Let's have a quick introductory call — 30 minutes, with no agenda except understanding your situation. No pitch. No proposal before we've spoken. You describe what you're dealing with — we tell you honestly whether we can help and what that would look like in practice.",
   },
 ];
 
@@ -197,17 +197,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "MSME Consulting",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Simpleworks Consulting",
-    url: "https://www.simpleworks.in",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Bengaluru",
-      addressRegion: "Karnataka",
-      addressCountry: "IN",
-    },
-  },
+  provider: { "@id": "https://www.simpleworks.in/#organization" },
   areaServed: { "@type": "Country", name: "India" },
   description:
     "Independent management consulting for Indian MSMEs — strategy, growth, and execution advisory led by Premraj Menon, Bengaluru.",
@@ -573,7 +563,7 @@ export default function MsmeConsultingPage() {
       >
         <div>
           <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            The first conversation <span className="text-red">is free.</span>
+            Start with <span className="text-red">an introductory call.</span>
           </h2>
           <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
             Tell us what your business is dealing with. We&rsquo;ll tell you

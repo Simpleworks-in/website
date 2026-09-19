@@ -5,7 +5,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
 
 export const metadata: Metadata = {
-  title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
+  title: { absolute: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore" },
   description:
     "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Chennai, Hosur, Salem, Tiruppur and Coimbatore. Book a discovery call.",
   keywords:
@@ -230,7 +230,7 @@ const FAQS = [
   },
   {
     q: "What does an engagement cost?",
-    a: "It depends on the scope, which we define after the discovery call — not before. The discovery call itself is free, and you'll have a defined scope and a number before you commit to anything.",
+    a: "It depends on the scope, which we define after the discovery call — not before. You'll have a defined scope and a number before you commit to anything.",
   },
   {
     q: "How long does an engagement run?",
@@ -240,33 +240,22 @@ const FAQS = [
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfessionalService",
-      name: "Simpleworks Consulting",
-      description:
-        "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu's manufacturing and export clusters.",
-      url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
-      image: "https://www.simpleworks.in/images/landing/prem-menon-photo.jpg",
-      areaServed: [
-        "Chennai",
-        "Sriperumbudur",
-        "Oragadam",
-        "Hosur",
-        "Krishnagiri",
-        "Salem",
-        "Tiruppur",
-        "Coimbatore",
-        "Tamil Nadu",
-      ],
-      provider: {
-        "@type": "Person",
-        name: "Premraj Menon",
-        jobTitle: "Founder, Simpleworks Consulting",
-      },
-      telephone: "+919036099000",
-      email: "pm@simpleworks.in",
-    },
+  "@type": "Service",
+  name: "MSME Consulting in Tamil Nadu",
+  description:
+    "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu's manufacturing and export clusters.",
+  url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
+  provider: { "@id": "https://www.simpleworks.in/#organization" },
+  areaServed: [
+    "Chennai",
+    "Sriperumbudur",
+    "Oragadam",
+    "Hosur",
+    "Krishnagiri",
+    "Salem",
+    "Tiruppur",
+    "Coimbatore",
+    "Tamil Nadu",
   ],
 };
 

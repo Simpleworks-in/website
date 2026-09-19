@@ -218,7 +218,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A 30-minute conversation — free, with no agenda except understanding where your family business is and what is making it difficult right now. Premraj Menon will ask a few direct questions and tell you honestly what kind of engagement would be useful, what it would look like, and approximately how long it would take. If Simpleworks Consulting is not the right fit, he will say so directly.",
+    a: "A 30-minute conversation with no agenda except understanding where your family business is and what is making it difficult right now. Premraj Menon will ask a few direct questions and tell you honestly what kind of engagement would be useful, what it would look like, and approximately how long it would take. If Simpleworks Consulting is not the right fit, he will say so directly.",
   },
 ];
 
@@ -681,7 +681,7 @@ export default function FamilyBusinessConsultingPage() {
       >
         <div>
           <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            The first conversation <span className="text-red">is free.</span>
+            Start with <span className="text-red">an introductory call.</span>
           </h2>
           <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
             Tell us where your family business is right now — what&rsquo;s

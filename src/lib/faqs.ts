@@ -47,6 +47,6 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "How do I get started?",
-    a: "Fill in the contact form on this page, send a message on WhatsApp, or email pm@simpleworks.in directly. We will get back to you within one business day to schedule a first call. That conversation is free — use it to explain what you are dealing with and we will tell you honestly whether and how we can help.",
+    a: "Fill in the contact form on this page, send a message on WhatsApp, or email pm@simpleworks.in directly. We will get back to you within one business day to schedule a first call. Use that conversation to explain what you are dealing with and we will tell you honestly whether and how we can help.",
   },
 ];

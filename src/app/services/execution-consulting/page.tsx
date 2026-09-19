@@ -193,7 +193,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first conversation look like?",
-    a: "A free 30-minute call with Premraj Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks Consulting can help. If it's not the right fit, we'll say so and point you in the right direction.",
+    a: "A quick introductory call with Premraj Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks Consulting can help. If it's not the right fit, we'll say so and point you in the right direction.",
   },
 ];
 
@@ -628,7 +628,7 @@ export default function ExecutionConsultingPage() {
       >
         <div>
           <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            The first conversation <span className="text-red">is free.</span>
+            Start with <span className="text-red">an introductory call.</span>
           </h2>
           <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
             Tell us where execution is breaking down in your business.

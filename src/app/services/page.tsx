@@ -400,8 +400,7 @@ export default function ServicesPage() {
           <p className="mb-9 text-[16px] leading-[1.78] text-mid md:text-[17px]">
             Most clients come in knowing something is wrong — but not which
             problem to solve first. Let&apos;s have a quick introductory
-            call — 30 minutes is usually enough to find out, and it&apos;s
-            always free.
+            call — 30 minutes is usually enough to find out.
           </p>
           <div className="flex flex-wrap items-center gap-5">
             <Link

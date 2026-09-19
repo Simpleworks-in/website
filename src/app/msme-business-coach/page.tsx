@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "MSME Business Coach India | Premraj Menon",
+  title: { absolute: "MSME Business Coach in India | Simpleworks, Bengaluru" },
   description:
-    "One-to-one MSME business coaching in Bengaluru with Premraj Menon, 39 years of experience. Book a free 30-minute call.",
+    "One-to-one MSME business coaching in Bengaluru with Premraj Menon, 39 years of experience. Book an introductory call.",
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://www.simpleworks.in/msme-business-coach",
   },
   openGraph: {
-    title: "MSME Business Coach India | Premraj Menon",
+    title: "MSME Business Coach in India | Simpleworks, Bengaluru",
     description:
       "One-to-one coaching for MSME founders who want to grow with clarity — not noise.",
     url: "https://www.simpleworks.in/msme-business-coach",
@@ -136,7 +136,7 @@ const FAQS = [
   },
   {
     q: "What is the first step?",
-    a: "A free 30-minute conversation — no agenda, no pitch. You share what your business is dealing with and what you're trying to solve. From there, you both decide whether to go further. No commitment until that conversation has happened.",
+    a: "A quick introductory conversation — no agenda, no pitch. You share what your business is dealing with and what you're trying to solve. From there, you both decide whether to go further. No commitment until that conversation has happened.",
   },
 ];
 
@@ -161,38 +161,6 @@ const BLOG_LINKS = [
   },
 ];
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      name: "Premraj Menon",
-      jobTitle: "MSME Business Coach",
-      description:
-        "Senior management consultant and MSME business coach with 39 years of experience across Consumer Durables, Automotive, Telecom, and SaaS. Founder of Simpleworks Consulting, Bengaluru.",
-      url: "https://www.simpleworks.in/about",
-      image: "https://www.simpleworks.in/images/landing/prem-menon-photo.jpg",
-      sameAs: [
-        "https://www.linkedin.com/in/premraj/",
-        "https://premraj.substack.com/",
-      ],
-      worksFor: {
-        "@type": "LocalBusiness",
-        name: "Simpleworks Consulting",
-        url: "https://www.simpleworks.in",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Bengaluru",
-          addressRegion: "Karnataka",
-          addressCountry: "IN",
-        },
-        telephone: "+919036099000",
-        email: "pm@simpleworks.in",
-      },
-    },
-  ],
-};
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -206,10 +174,6 @@ const faqSchema = {
 export default function MsmeBusinessCoachPage() {
   return (
     <main className="max-w-[1200px] mx-auto">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -581,7 +545,7 @@ export default function MsmeBusinessCoachPage() {
           <span className="text-red">Ready to think</span> clearly about your business?
         </h2>
         <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-6">
-          Start with a free 30-minute conversation. No commitment, no pitch
+          Start with a quick introductory conversation. No commitment, no pitch
           — just a clear-eyed look at what your MSME is dealing with and
           whether this helps.
         </p>
