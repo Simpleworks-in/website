@@ -60,7 +60,7 @@ export default async function ContactPage() {
               >
                 Google Meet
               </a>{" "}
-              call, or send a note below. I shall respond personally within 1
+              meeting, or send a message. I shall respond personally within 1
               business day.
             </p>
           </div>
