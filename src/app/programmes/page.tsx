@@ -77,7 +77,7 @@ export default function ProgrammesPage() {
       />
       <main>
       {/* 1. Hero */}
-      <section className="grid grid-cols-[2px_1fr] gap-x-10 px-6 py-14 md:px-14 md:py-24">
+      <section className="grid grid-cols-[2px_1fr] gap-x-10 px-6 pb-10 pt-14 md:px-14 md:pb-12 md:pt-24">
         <div className="w-[2px] bg-red" />
         <div>
           <p className="mb-6 text-[11px] font-light uppercase tracking-[0.2em] text-light">
@@ -101,7 +101,7 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 2. Engagement sequence */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+      <section className="border-t border-rule px-6 pb-14 pt-10 md:px-14 md:pb-20 md:pt-12">
         <div className="max-w-[720px]">
           <ol className="list-none p-0">
             {journey.map(({ n, label, href, sub }) => (
