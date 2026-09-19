@@ -107,13 +107,13 @@ export default function ProgrammesPage() {
             {journey.map(({ n, label, href, sub }) => (
               <li
                 key={n}
-                className="border-t border-rule py-6 first:border-t-0 first:pt-0 md:flex md:gap-8"
+                className="border-t border-rule py-8 first:border-t-0 first:pt-0 md:flex md:gap-10 md:py-11 md:first:pt-0"
               >
-                <span className="mb-2 block text-[11px] font-light uppercase tracking-widest text-light md:mb-0 md:w-12 md:shrink-0 md:pt-1.5 md:text-[13px]">
+                <span className="mb-2 block text-[11px] font-light uppercase tracking-widest text-light md:mb-0 md:w-16 md:shrink-0 md:pt-2 md:text-[13px]">
                   {n}
                 </span>
                 <div>
-                  <h3 className="mb-1 text-[20px] font-bold text-ink md:text-[24px]">
+                  <h3 className="mb-2.5 text-[20px] font-bold text-ink md:text-[24px]">
                     <Link href={href} className="transition-colors hover:text-red">
                       {label}
                     </Link>
@@ -126,11 +126,11 @@ export default function ProgrammesPage() {
             ))}
           </ol>
 
-          <p className="mt-7 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+          <p className="mt-10 text-[16px] leading-[1.78] text-mid md:mt-14 md:text-[17px]">
             Most clients move through in that order. You can stop at any point.
           </p>
 
-          <p className="mt-6 border-t border-rule pt-6 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+          <p className="mt-10 border-t border-rule pt-8 text-[16px] leading-[1.78] text-mid md:text-[17px]">
             <Link href="#custom-engagement" className="transition-colors hover:text-red">
               <strong className="font-bold text-ink">Or a custom engagement.</strong>
             </Link>{" "}
