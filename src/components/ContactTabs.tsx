@@ -132,7 +132,7 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
             <span className="w-2 h-2 rounded-full bg-[#4CAF50] flex-shrink-0" />
             <p className="text-sm text-ink">
               <strong className="font-semibold">Thank you.</strong> Your
-              message has been sent. Prem will respond within one business
+              message has been sent. Premraj will respond within one business
               day.
             </p>
           </div>
@@ -336,9 +336,9 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
           Just WhatsApp.
         </h2>
         <p className="text-base text-mid leading-[1.75] mb-9 max-w-[420px]">
-          Sometimes the fastest way to figure out if we&apos;re a good fit is a
+          Sometimes the fastest way to figure out if we&rsquo;re a good fit is a
           quick message. Tell us your business name, turnover and number of
-          people — we&apos;ll take it from there.
+          people — we&rsquo;ll take it from there.
         </p>
         <a
           href={whatsappHref}
@@ -368,7 +368,7 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
           </div>
           <div className="px-[14px] py-4 flex flex-col gap-[10px] min-h-[200px]">
             <div className="max-w-[84%] px-[13px] py-[9px] text-[13px] leading-[1.5] bg-[#DCF8C6] text-[#1a1a1a] rounded-[8px_8px_0_8px] self-end">
-              We&apos;re a manufacturing firm in Pune, around ₹12 Cr revenue.
+              We&rsquo;re a manufacturing firm in Pune, around ₹12 Cr revenue.
               Struggling with growth.
               <p className="text-[10px] text-[#999] text-right mt-1">10:37 AM ✓✓</p>
             </div>

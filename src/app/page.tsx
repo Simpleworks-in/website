@@ -6,7 +6,7 @@ import { FAQS } from "@/lib/faqs";
 
 export const metadata = {
   title: {
-    absolute: "MSME Management Consultant in Bengaluru | Simpleworks",
+    absolute: "MSME Consultant in Bengaluru | Simpleworks Consulting",
   },
   description:
     "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
-    title: "MSME Management Consultant in Bengaluru | Simpleworks",
+    title: "MSME Consultant in Bengaluru | Simpleworks Consulting",
     description:
       "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
     url: "https://www.simpleworks.in",
@@ -83,22 +83,25 @@ export default function HomePage() {
           <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
             <div className="flex flex-col mb-5 md:mb-[26px]">
               <h1
-                className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
-                style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
-              >
-                Management Consulting for Established MSMEs · Bengaluru
-              </h1>
-              <p
                 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.25s" }}
               >
-                Your business has more in it than your current{" "}
-                <span className="text-red">results</span> show.
-              </p>
+                Management consulting for{" "}
+                <span className="text-red">established MSMEs</span>
+                <span className="mt-3 block text-[0.62em] font-normal text-mid">
+                  Bengaluru and across India
+                </span>
+              </h1>
             </div>
             <p
-              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
+              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-4 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
+            >
+              Your business has more in it than your current results show.
+            </p>
+            <p
+              className="text-[16px] md:text-[17px] text-mid leading-[1.7] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
+              style={{ animationDelay: "0.45s" }}
             >
               We work with established Indian small and medium businesses that are stuck in growth, short on clarity, and unsure of the next move.
             </p>
@@ -107,7 +110,7 @@ export default function HomePage() {
               className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit opacity-0 animate-fade-up"
               style={{ animationDelay: "0.55s" }}
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </a>
           </div>
 
@@ -152,10 +155,11 @@ export default function HomePage() {
             Execution. <span className="text-red">Nothing more.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are a independent Business Management Consulting practice started in June 2026 at Bengaluru working with founders of Established Indian Small and Medium Businesses. We don&apos;t hand over a report and walk away — we stay until the plan is moving.
+            We are an independent Business Management Consulting practice started in June 2026 at Bengaluru working with founders of Established Indian Small and Medium Businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Led by Premraj Menon — thirty-nine years running sales, distribution, and ground operations—including full P&amp;L accountability as Chief Operating Officer of Tata Docomo&apos;s Kerala Circle. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
+            Led by Premraj Menon, 39 years in sales, distribution and P&amp;L,
+            including as COO of Tata Docomo&rsquo;s Kerala Circle. More on the <Link href="/about" className="text-red hover:underline">About page</Link>. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2px]">
@@ -234,7 +238,7 @@ export default function HomePage() {
             <span className="text-red">Not advising on them.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&apos;s Kerala Circle (full P&L), with leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel, including helping build Tata Docomo Karnataka into the country&apos;s largest circle. He then ran two tech ventures, Viworks Ventures and Neoffice Ai (2016–2025), where small teams and tight cash meant nothing to delegate to.
+            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&rsquo;s Kerala Circle (full P&L), with leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel, including helping build Tata Docomo Karnataka into the country&rsquo;s largest circle. He then ran two tech ventures, Viworks Ventures and Neoffice Ai (2016–2025), where small teams and tight cash meant nothing to delegate to.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Every engagement is led directly by Premraj—plain-spoken strategy over dense slide decks, staying embedded through execution until the plan is actually moving.
@@ -280,10 +284,10 @@ export default function HomePage() {
             Contact Us
           </p>
           <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-            Let&apos;s have an <span className="text-red">honest conversation</span> about your business.
+            Let&rsquo;s have an <span className="text-red">honest conversation</span> about your business.
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            Let&apos;s have a quick introductory call. Tell us what you&apos;re working on — we&apos;ll tell you honestly whether we can help and what that would look like.
+            Let&rsquo;s have a quick introductory call. Tell us what you&rsquo;re working on — we&rsquo;ll tell you honestly whether we can help and what that would look like.
           </p>
           <div className="mt-9 flex flex-col gap-[14px]">
             <div className="flex gap-4 items-start">

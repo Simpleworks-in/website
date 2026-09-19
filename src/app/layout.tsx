@@ -28,8 +28,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.simpleworks.in"),
   title: {
-    default: "Simpleworks Consulting | Business Consultant in Bengaluru",
-    template: "%s | Simpleworks Consulting",
+    default: "MSME Consultant in Bengaluru | Simpleworks Consulting",
+    template: "%s", // pages set their own complete title
   },
   description:
     "Simpleworks Consulting is an independent management consulting firm in Bengaluru helping Indian MSMEs grow. Simple, executable strategy. Led by Premraj Menon — 39 years of experience.",

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
     description:
-      "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu's manufacturing and export clusters.",
+      "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu’s manufacturing and export clusters.",
     url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
     siteName: "Simpleworks Consulting",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
     description:
-      "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu's manufacturing and export clusters.",
+      "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu’s manufacturing and export clusters.",
     images: ["https://www.simpleworks.in/images/landing/tamil-nadu-hero.png"],
   },
 };
@@ -50,11 +50,11 @@ const CREDIBILITY = [
 
 const PAIN_POINTS = [
   "One or two customers account for most of your order book — and you know exactly how exposed that makes you.",
-  "Every decision still routes through you. Nothing moves when you're travelling.",
-  "You've set targets for the year, but nobody could tell you what they're accountable for this quarter.",
-  "Sales happens through your personal relationships. There's no process behind it.",
+  "Every decision still routes through you. Nothing moves when you’re travelling.",
+  "You’ve set targets for the year, but nobody could tell you what they’re accountable for this quarter.",
+  "Sales happens through your personal relationships. There’s no process behind it.",
   "The next generation is in the business, but nobody has said out loud who decides what.",
-  "You've been meaning to fix all of this for two years. Something urgent always comes first.",
+  "You’ve been meaning to fix all of this for two years. Something urgent always comes first.",
 ];
 
 const SERVICES = [
@@ -72,9 +72,9 @@ const SERVICES = [
   {
     num: "02",
     title: "Go-to-market",
-    lead: "Reducing your dependency on the customers you already have, and building a way to win the ones you don't.",
+    lead: "Reducing your dependency on the customers you already have, and building a way to win the ones you don’t.",
     items: [
-      "Quantifying customer concentration risk and what it's costing you",
+      "Quantifying customer concentration risk and what it’s costing you",
       "Identifying the next realistic 2–3 accounts or verticals — not a wish list",
       "Building a sales process the business can run without you chasing every lead",
       "Pricing and margin discipline, especially in job-work and sub-contract models",
@@ -86,7 +86,7 @@ const SERVICES = [
     lead: "Turning “grow 20% this year” into something your team can act on next Monday — and be measured against next quarter.",
     items: [
       "OKRs tied to the priorities that actually move the business",
-      "Accountability distributed across the team, not held in the founder's head",
+      "Accountability distributed across the team, not held in the founder’s head",
       "A review cadence that survives past the first quarter",
       "Removing the operational friction that quietly eats capacity",
     ],
@@ -94,7 +94,7 @@ const SERVICES = [
   {
     num: "04",
     title: "MSME coaching — founders & family business",
-    lead: "The problems that aren't on any spreadsheet: who decides what, and what happens when you're not in the room.",
+    lead: "The problems that aren’t on any spreadsheet: who decides what, and what happens when you’re not in the room.",
     items: [
       "Delegation and decision-making — getting out of the operational weeds",
       "Succession planning and role clarity across generations",
@@ -107,7 +107,7 @@ const SERVICES = [
 const STEPS = [
   {
     title: "Discovery call",
-    body: "One call. No deck, no pitch — we work out what's actually going on and whether there's a fit.",
+    body: "One call. No deck, no pitch — we work out what’s actually going on and whether there’s a fit.",
   },
   {
     title: "Scoping",
@@ -119,14 +119,14 @@ const STEPS = [
   },
   {
     title: "Review quarter",
-    body: "We review what's held, correct what hasn't, and hand over — so the motion runs without us.",
+    body: "We review what’s held, correct what hasn’t, and hand over — so the motion runs without us.",
   },
 ];
 
 const OUTCOMES = [
   {
-    title: "You know your concentration risk — and you're acting on it.",
-    body: "A named list of target accounts or segments, with someone owning each one, instead of a worry you've been carrying.",
+    title: "You know your concentration risk — and you’re acting on it.",
+    body: "A named list of target accounts or segments, with someone owning each one, instead of a worry you’ve been carrying.",
   },
   {
     title: "The quarter has owners, not just targets.",
@@ -134,7 +134,7 @@ const OUTCOMES = [
   },
   {
     title: "The business runs without the consultant.",
-    body: "The point isn't a dependency — it's that the process, the cadence, and the accountability stay in place after we've stepped back.",
+    body: "The point isn’t a dependency — it’s that the process, the cadence, and the accountability stay in place after we’ve stepped back.",
   },
 ];
 
@@ -151,35 +151,35 @@ const CLUSTERS = [
   {
     title: "Chennai · Sriperumbudur · Oragadam",
     tag: "AUTO & ELECTRONICS",
-    body: "Tier-1 and Tier-2 auto component suppliers, EMS and electronics contract manufacturers, and ancillary units feeding Chennai's OEM belt — many out of the SIPCOT estates at Sriperumbudur and Oragadam.",
+    body: "Tier-1 and Tier-2 auto component suppliers, EMS and electronics contract manufacturers, and ancillary units feeding Chennai’s OEM belt — many out of the SIPCOT estates at Sriperumbudur and Oragadam.",
     problem:
-      "orders aren't scarce, leverage is. Price pressure from procurement, stretched payment cycles, and no clear read on how the OEM actually ranks you against the next supplier.",
+      "orders aren’t scarce, leverage is. Price pressure from procurement, stretched payment cycles, and no clear read on how the OEM actually ranks you against the next supplier.",
   },
   {
     title: "Hosur · Krishnagiri",
     tag: "PRECISION ENGINEERING",
     body: "Machining, forging, and precision component units serving Bengaluru and Chennai OEMs from the Hosur-Krishnagiri corridor, anchored by the SIPCOT Hosur estates.",
     problem:
-      "one anchor customer carries most of the order book. Everyone knows it's a risk; nobody has a worked-out plan for winning the second one.",
+      "one anchor customer carries most of the order book. Everyone knows it’s a risk; nobody has a worked-out plan for winning the second one.",
   },
   {
     title: "Salem",
     tag: "TEXTILES, STEEL & FOUNDRIES",
     body: "Textile processing, steel re-rolling, and foundry units around Salem Steel and the local re-rolling mills — largely multi-generational family businesses.",
     problem:
-      "The next generation is in the business but the decisions still aren't. Roles are assumed rather than agreed, and the succession conversation keeps getting postponed.",
+      "The next generation is in the business but the decisions still aren’t. Roles are assumed rather than agreed, and the succession conversation keeps getting postponed.",
   },
   {
     title: "Tiruppur",
     tag: "KNITWEAR & EXPORT APPAREL",
-    body: "India's knitwear and hosiery export hub, built around the TEA network — job-work heavy, buyer-driven, and highly seasonal.",
+    body: "India’s knitwear and hosiery export hub, built around the TEA network — job-work heavy, buyer-driven, and highly seasonal.",
     problem:
-      "turnover is known; per-buyer margin after a full season of price pressure and rejections isn't. Commercial discipline lags behind the relationship.",
+      "turnover is known; per-buyer margin after a full season of price pressure and rejections isn’t. Commercial discipline lags behind the relationship.",
   },
   {
     title: "Coimbatore",
     tag: "ENGINEERING & MACHINERY",
-    body: "Pump and motor manufacturers, textile machinery, foundries, and machine tools — with CODISSIA as the sector's collective voice.",
+    body: "Pump and motor manufacturers, textile machinery, foundries, and machine tools — with CODISSIA as the sector’s collective voice.",
     problem:
       "The product range grew by accretion, not decision. Too many SKUs, unclear which ones earn their place, and no agreed basis for choosing.",
   },
@@ -192,7 +192,7 @@ const DISCIPLINES = [
   },
   {
     title: "Go-to-market",
-    body: "Reducing dependency on the customers you have, and building a repeatable way to win the ones you don't.",
+    body: "Reducing dependency on the customers you have, and building a repeatable way to win the ones you don’t.",
   },
   {
     title: "Execution efficiency",
@@ -213,7 +213,7 @@ const BLOG_SLUGS = [
 
 const FAQS = [
   {
-    q: "You're based in Bengaluru. How does that work for a business in Salem or Tiruppur?",
+    q: "You’re based in Bengaluru. How does that work for a business in Salem or Tiruppur?",
     a: "Most of the work is remote by design — structured calls, reviews, and planning done over video and shared documents. On-site visits are built into the engagement plan for kickoff, quarterly reviews, and anything better solved on the shop floor. The split is agreed before we start.",
   },
   {
@@ -221,20 +221,20 @@ const FAQS = [
     a: "Founder-led businesses roughly in the ₹10–200 crore revenue range. Below that, the problems are usually different; above it, you likely need a larger firm than this one.",
   },
   {
-    q: "What's Prem's background with Tamil Nadu businesses specifically?",
-    a: "39 years in sales, distribution, and P&L leadership — including MRF and Apollo Tyres, both rooted in Tamil Nadu's manufacturing economy — plus Bharti Airtel and a full circle P&L as COO at Tata Docomo. He has also built and run two of his own businesses.",
+    q: "What’s Premraj’s background with Tamil Nadu businesses specifically?",
+    a: "39 years in sales, distribution, and P&L leadership — including MRF and Apollo Tyres, both rooted in Tamil Nadu’s manufacturing economy — plus Bharti Airtel and a full circle P&L as COO at Tata Docomo. He has also built and run two of his own businesses.",
   },
   {
     q: "Do you work with family businesses?",
-    a: "Yes — they're a core part of the practice, particularly around succession, role clarity, and formalising decisions that currently sit with one person.",
+    a: "Yes — they’re a core part of the practice, particularly around succession, role clarity, and formalising decisions that currently sit with one person.",
   },
   {
     q: "What does an engagement cost?",
-    a: "It depends on the scope, which we define after the discovery call — not before. You'll have a defined scope and a number before you commit to anything.",
+    a: "It depends on the scope, which we define after the discovery call — not before. You’ll have a defined scope and a number before you commit to anything.",
   },
   {
     q: "How long does an engagement run?",
-    a: "Typically a quarter of execution work, followed by a review quarter. Scope is defined after the discovery call, not before it. Execution work doesn't show results in four weeks, and we'd rather set that expectation upfront.",
+    a: "Typically a quarter of execution work, followed by a review quarter. Scope is defined after the discovery call, not before it. Execution work doesn’t show results in four weeks, and we’d rather set that expectation upfront.",
   },
 ];
 
@@ -243,7 +243,7 @@ const jsonLd = {
   "@type": "Service",
   name: "MSME Consulting in Tamil Nadu",
   description:
-    "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu's manufacturing and export clusters.",
+    "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu’s manufacturing and export clusters.",
   url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
   provider: { "@id": "https://www.simpleworks.in/#organization" },
   areaServed: [
@@ -406,9 +406,9 @@ export default async function TamilNaduMsmeConsultantPage() {
               <div className="text-[13px] font-bold text-red mb-2">
                 {s.num}
               </div>
-              <h4 className="text-[20px] font-bold text-ink mb-1.5">
+              <h3 className="text-[20px] font-bold text-ink mb-1.5">
                 {s.title}
-              </h4>
+              </h3>
               <p className="text-[15px] text-mid leading-relaxed mb-3">
                 {s.lead}
               </p>
@@ -450,9 +450,9 @@ export default async function TamilNaduMsmeConsultantPage() {
                 {i + 1}
               </div>
               <div>
-                <h4 className="text-[18px] font-bold text-ink mb-1">
+                <h3 className="text-[18px] font-bold text-ink mb-1">
                   {step.title}
-                </h4>
+                </h3>
                 <p className="text-[15px] text-mid leading-relaxed">
                   {step.body}
                 </p>
@@ -471,9 +471,9 @@ export default async function TamilNaduMsmeConsultantPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {OUTCOMES.map((o) => (
             <div key={o.title} className="p-5 border border-rule rounded-sm">
-              <h4 className="text-[16px] font-bold text-ink mb-1.5 leading-snug">
+              <h3 className="text-[16px] font-bold text-ink mb-1.5 leading-snug">
                 {o.title}
-              </h4>
+              </h3>
               <p className="text-[15px] text-mid leading-relaxed">{o.body}</p>
             </div>
           ))}
@@ -558,9 +558,9 @@ export default async function TamilNaduMsmeConsultantPage() {
               <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-1.5">
                 {c.tag}
               </p>
-              <h4 className="text-[18px] font-bold text-ink mb-2 leading-snug">
+              <h3 className="text-[18px] font-bold text-ink mb-2 leading-snug">
                 {c.title}
-              </h4>
+              </h3>
               <p className="text-[15px] text-mid leading-relaxed mb-3">
                 {c.body}
               </p>
@@ -590,9 +590,9 @@ export default async function TamilNaduMsmeConsultantPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
             {DISCIPLINES.map((d) => (
               <div key={d.title} className="border-t border-rule pt-4">
-                <h4 className="text-[16px] font-bold text-ink mb-1.5">
+                <h3 className="text-[16px] font-bold text-ink mb-1.5">
                   {d.title}
-                </h4>
+                </h3>
                 <p className="text-[14px] text-mid leading-relaxed">
                   {d.body}
                 </p>
@@ -600,7 +600,7 @@ export default async function TamilNaduMsmeConsultantPage() {
             ))}
           </div>
           <p className="text-[17px] text-mid leading-[1.7] pt-8 border-t border-rule">
-            Prem spent 39 years on the operating side, including at{" "}
+            Premraj spent 39 years on the operating side, including at{" "}
             <strong className="font-bold text-ink">MRF</strong> and{" "}
             <strong className="font-bold text-ink">Apollo Tyres</strong> —
             the kind of large buyer many of these businesses sell into.
@@ -648,9 +648,9 @@ export default async function TamilNaduMsmeConsultantPage() {
                 href={`/blog/${post.slug}`}
                 className="group p-5 border border-rule rounded-sm flex flex-col"
               >
-                <h4 className="text-[18px] font-bold text-ink mb-2 leading-snug">
+                <h3 className="text-[18px] font-bold text-ink mb-2 leading-snug">
                   {post.title}
-                </h4>
+                </h3>
                 <p className="text-[15px] text-mid leading-relaxed mb-4">
                   {post.excerpt}
                 </p>

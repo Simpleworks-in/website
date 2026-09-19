@@ -1,3 +1,5 @@
+import { FACTS } from "../../content/facts";
+
 // Single sitewide entity graph: the practice (ProfessionalService) and its
 // founder (Person). Rendered once in app/layout.tsx. Other pages reference these
 // by @id — they must not define a second Organization / LocalBusiness / Person.
@@ -10,18 +12,18 @@ export const siteSchema = {
     {
       "@type": "ProfessionalService",
       "@id": ORG_ID,
-      name: "Simpleworks Consulting",
-      alternateName: "Simpleworks",
+      name: FACTS.orgName,
+      alternateName: FACTS.orgShortName,
       description:
         "Management consulting practice in Bengaluru working with Indian MSMEs on strategy, go-to-market and execution.",
       url: "https://www.simpleworks.in",
-      email: "pm@simpleworks.in",
-      telephone: "+91-90360-99000",
+      email: FACTS.email,
+      telephone: FACTS.phoneSchema,
       priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
+        addressLocality: FACTS.city,
+        addressRegion: FACTS.region,
         addressCountry: "IN",
       },
       founder: { "@id": PERSON_ID },
@@ -43,12 +45,11 @@ export const siteSchema = {
     {
       "@type": "Person",
       "@id": PERSON_ID,
-      name: "Prem Menon",
-      alternateName: "Premraj Menon",
+      name: FACTS.founder,
       jobTitle: "Founder and Principal Consultant",
       worksFor: { "@id": ORG_ID },
-      email: "pm@simpleworks.in",
-      telephone: "+91-90360-99000",
+      email: FACTS.email,
+      telephone: FACTS.phoneSchema,
       knowsAbout: [
         "Management consulting",
         "Go-to-market strategy",
@@ -58,7 +59,7 @@ export const siteSchema = {
       alumniOf: [
         {
           "@type": "EducationalOrganization",
-          name: "Indian Institute of Management Bangalore",
+          name: "Indian Institute of Management Bengaluru",
         },
         {
           "@type": "EducationalOrganization",

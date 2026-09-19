@@ -46,7 +46,7 @@ export async function generateMetadata({
   const url = `https://www.simpleworks.in/blog/${slug}`;
 
   return {
-    title: { absolute: title },
+    title: { absolute: `${title} | Simpleworks` },
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -162,7 +162,7 @@ export default async function PostPage({
           </p>
           <div className="mt-3 flex gap-4 text-[12px] uppercase tracking-wide-4">
             <Link href="/about" className="text-red hover:text-ink transition-colors">
-              About Prem →
+              About Premraj →
             </Link>
             <Link href="/contact" className="text-red hover:text-ink transition-colors">
               Work together →

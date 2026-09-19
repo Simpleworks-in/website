@@ -3,14 +3,14 @@ import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = {
-  title: { absolute: "Startup Mentor in Bengaluru | Simpleworks Consulting" },
+  title: { absolute: "Startup Mentor in Bengaluru | Simpleworks" },
   description:
     "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/startup-mentor-bengaluru",
   },
   openGraph: {
-    title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
+    title: "Startup Mentor in Bengaluru | Simpleworks",
     description:
       "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/startup-mentor-bengaluru",
@@ -41,7 +41,7 @@ const jsonLd = {
           name: "Your experience is Airtel and MRF. Why would that help a Series A SaaS company?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Because the problem is not the product — it is the selling system, and I have been building those for thirty-nine years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person's relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
+            text: "Because the problem is not the product — it is the selling system, and I have been building those for 39 years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person’s relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
           },
         },
         {
@@ -73,7 +73,7 @@ const jsonLd = {
           name: "Is this in-person or virtual?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "I prefer in-person for the primary relationship — I'm based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well.",
+            text: "I prefer in-person for the primary relationship — I’m based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well.",
           },
         },
         {
@@ -89,7 +89,7 @@ const jsonLd = {
           name: "How many founders do you work with at once?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Deliberately few. The depth I can offer is proportional to the attention I can give each engagement. When I'm at capacity, the wait is worth knowing about early.",
+            text: "Deliberately few. The depth I can offer is proportional to the attention I can give each engagement. When I’m at capacity, the wait is worth knowing about early.",
           },
         },
       ],
@@ -103,9 +103,9 @@ const CALENDAR_LINK = "https://calendar.app.google/ME9vQ9MnqLowqNUW8";
 
 const GAP_BULLETS = [
   "Your GTM was founder-led. Now you need a team and a system to replace you.",
-  "You've raised a round. Now investors expect quarterly accountability you haven't built.",
+  "You’ve raised a round. Now investors expect quarterly accountability you haven’t built.",
   "The product works. Execution — across teams, processes, and priorities — is breaking down.",
-  "You're making decisions with consequences larger than anything you've decided before, and no one senior enough in the room to pressure-test them.",
+  "You’re making decisions with consequences larger than anything you’ve decided before, and no one senior enough in the room to pressure-test them.",
   "Advisors give frameworks. You need someone who has held the P&L when it mattered.",
 ];
 
@@ -121,17 +121,17 @@ const NOT_FOR_YOU = [
   "Pre-revenue or idea-stage founders. Accelerators and incubators serve this stage far better than I can.",
   "Founders who want someone to validate their existing thinking rather than challenge it.",
   "Those looking for a one-session advisory sprint. Meaningful change takes quarters, not hours.",
-  "Founders unwilling to do the hard implementation work between sessions. I don't do the work for you.",
+  "Founders unwilling to do the hard implementation work between sessions. I don’t do the work for you.",
 ];
 
 const WHAT_I_BRING = [
   {
     title: "First Sales Leader Hire",
-    body: "Helping founders define the right profile, structure the interview, and set up accountability architecture — so the hire doesn't fail in six months.",
+    body: "Helping founders define the right profile, structure the interview, and set up accountability architecture — so the hire doesn’t fail in six months.",
   },
   {
     title: "GTM Architecture",
-    body: "Designing go-to-market engines that don't depend on the founder to close every deal. Channel strategy, sales team structure, pricing, and revenue accountability — built for scale.",
+    body: "Designing go-to-market engines that don’t depend on the founder to close every deal. Channel strategy, sales team structure, pricing, and revenue accountability — built for scale.",
   },
   {
     title: "Execution & OKR Systems",
@@ -162,7 +162,7 @@ const STEPS = [
   {
     n: "Step 01",
     title: "Discovery Call",
-    body: "A 30-minute call where I understand your stage, your challenge, and whether I'm the right fit. No sales pitch. Honest assessment on both sides.",
+    body: "A 30-minute call where I understand your stage, your challenge, and whether I’m the right fit. No sales pitch. Honest assessment on both sides.",
   },
   {
     n: "Step 02",
@@ -217,7 +217,7 @@ const ENGAGEMENT_MODEL = [
   {
     label: "Capacity",
     value: "Very few founders",
-    note: "I work with a small number at a time. This is deliberate — depth requires focus. When I'm at capacity, I'll tell you.",
+    note: "I work with a small number at a time. This is deliberate — depth requires focus. When I’m at capacity, I’ll tell you.",
   },
 ];
 
@@ -228,7 +228,7 @@ const OUTCOMES = [
   },
   {
     title: "A GTM System You Can Delegate",
-    body: "A go-to-market motion that doesn't require you to close every deal — with team structure, accountability, and metrics built in.",
+    body: "A go-to-market motion that doesn’t require you to close every deal — with team structure, accountability, and metrics built in.",
   },
   {
     title: "OKR-Based Execution Rhythm",
@@ -240,7 +240,7 @@ const OUTCOMES = [
   },
   {
     title: "Decisions with Senior Perspective",
-    body: "A thinking partner who has held the P&L, managed the team, and faced the board — so your biggest decisions get tested before they're made.",
+    body: "A thinking partner who has held the P&L, managed the team, and faced the board — so your biggest decisions get tested before they’re made.",
   },
   {
     title: "A Relationship, Not a Transaction",
@@ -251,7 +251,7 @@ const OUTCOMES = [
 const FAQS = [
   {
     q: "Your experience is Airtel and MRF. Why would that help a Series A SaaS company?",
-    a: "Because the problem is not the product — it is the selling system, and I have been building those for thirty-nine years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&amp;L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person's relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
+    a: "Because the problem is not the product — it is the selling system, and I have been building those for 39 years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&amp;L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person’s relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
   },
   {
     q: "How is this different from an accelerator or incubator?",
@@ -267,15 +267,15 @@ const FAQS = [
   },
   {
     q: "Is this in-person or virtual?",
-    a: "I prefer in-person for the primary relationship — I'm based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well. The first diagnostic session is always in-person where possible.",
+    a: "I prefer in-person for the primary relationship — I’m based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well. The first diagnostic session is always in-person where possible.",
   },
   {
     q: "How long does a typical engagement run?",
-    a: "Most engagements run for 6–12 months. Meaningful change in business systems takes time — and a strong mentor relationship compounds over quarters, not weeks. I don't offer one-session advisory sprints.",
+    a: "Most engagements run for 6–12 months. Meaningful change in business systems takes time — and a strong mentor relationship compounds over quarters, not weeks. I don’t offer one-session advisory sprints.",
   },
   {
     q: "How many founders do you work with at once?",
-    a: "Deliberately few. The depth I can offer is proportional to the attention I can give each engagement. When I'm at capacity, the wait is worth knowing about early — reach out and I'll be direct about timelines.",
+    a: "Deliberately few. The depth I can offer is proportional to the attention I can give each engagement. When I’m at capacity, the wait is worth knowing about early — reach out and I’ll be direct about timelines.",
   },
 ];
 
@@ -283,19 +283,19 @@ const BLOG_CARDS = [
   {
     tag: "GTM",
     title: "Why Founder-Led Sales Breaks After Series A — And What Replaces It",
-    body: "The GTM motion that closed your first ₹2 crore ARR was built around you. Here's why that motion breaks after Series A, and the system that replaces it.",
+    body: "The GTM motion that closed your first ₹2 crore ARR was built around you. Here’s why that motion breaks after Series A, and the system that replaces it.",
     href: "/blog/why-founder-led-sales-breaks-after-series-a-and-what-replaces-it",
   },
   {
     tag: "Execution",
     title: "OKRs for Startups: Why Most Founders Get Them Wrong After Series A",
-    body: "Most Indian startups adopt OKRs after Series A, then quietly drop them within two quarters. Here's why the startup OKR framework fails — and how to fix it.",
+    body: "Most Indian startups adopt OKRs after Series A, then quietly drop them within two quarters. Here’s why the startup OKR framework fails — and how to fix it.",
     href: "/blog/ok-rs-for-startups-why-most-founders-get-them-wrong-after-series-a",
   },
   {
     tag: "Mentorship",
     title: "Startup Mentor vs Accelerator in India: Two Jobs Founders Keep Confusing",
-    body: "One fixes judgment, the other buys distribution — and confusing them costs founders equity or months they didn't need to spend.",
+    body: "One fixes judgment, the other buys distribution — and confusing them costs founders equity or months they didn’t need to spend.",
     href: "/blog/startup-mentor-vs-accelerator-in-india-two-jobs-founders-keep-confusing",
   },
 ];
@@ -326,7 +326,7 @@ export default function StartupMentorBengaluruPage() {
             </p>
             <h1 className="mb-6 text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-[52px]">
               Your first ₹2 crore came from you.{" "}
-              <span className="text-red">The next ₹20 crore can&apos;t.</span>
+              <span className="text-red">The next ₹20 crore can&rsquo;t.</span>
             </h1>
             <p className="mb-8 max-w-[520px] text-[18px] italic leading-[1.65] text-mid">
               One-to-one work with founders building a sales organisation that
@@ -374,10 +374,10 @@ export default function StartupMentorBengaluruPage() {
             </div>
             <div className="mt-10 max-w-[680px] space-y-5">
               <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Sales trainee in 1987. Chief Operating Officer of Tata Docomo&apos;s Kerala
+                Sales trainee in 1987. Chief Operating Officer of Tata Docomo&rsquo;s Kerala
                 Circle, carrying full P&amp;L, by the time the industry had reinvented itself
                 twice. In between — dealer networks at MRF and Apollo Tyres, the Bharti Airtel
-                years, and the Tata Docomo Karnataka launch that became the country&apos;s
+                years, and the Tata Docomo Karnataka launch that became the country&rsquo;s
                 largest circle.
               </p>
               <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
@@ -408,7 +408,7 @@ export default function StartupMentorBengaluruPage() {
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:items-start">
           <div className="space-y-5 max-w-[720px]">
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-              Bengaluru&apos;s startup ecosystem is exceptional at early-stage support.
+              Bengaluru&rsquo;s startup ecosystem is exceptional at early-stage support.
               Accelerators, angel networks, cohort programmes, demo days — there is more help
               available for getting from zero to first revenue than almost anywhere else in
               the country.
@@ -418,7 +418,7 @@ export default function StartupMentorBengaluruPage() {
               stop being about whether the idea works and start being about whether the
               business can run without you in every conversation. That is a harder problem,
               and the people qualified to help with it are mostly employed running someone
-              else&apos;s company.
+              else&rsquo;s company.
             </p>
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
               What is left is advice from people who have studied the stage rather than lived

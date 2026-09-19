@@ -116,7 +116,7 @@ export default function SampleDiagnosticReportPage() {
             <span className="text-mid">Prepared for:</span> Srikanth Rajagopal,
             Arunodaya Polymers Pvt Ltd, Hosur
             <br />
-            <span className="text-mid">Prepared by:</span> Prem Menon,
+            <span className="text-mid">Prepared by:</span> Premraj Menon,
             Simpleworks Consulting
             <br />
             <span className="text-mid">Date:</span> 6 October 2026
@@ -202,7 +202,7 @@ export default function SampleDiagnosticReportPage() {
             parties and give something, and that it has always worked.
           </p>
 
-          <h3 className={H3}>The sales cycle lives in one man&apos;s head</h3>
+          <h3 className={H3}>The sales cycle lives in one man&rsquo;s head</h3>
           <p className={P}>
             There is no written customer definition, no call plan, no stage
             definitions. You confirmed that directly. What exists instead is
@@ -214,7 +214,7 @@ export default function SampleDiagnosticReportPage() {
           <p className={P}>
             Four hours and ten minutes in August. A pack that takes two people
             three days to build. Of fourteen actions carried over from April,
-            Meghna&apos;s count was that eleven were still open. Nobody owns the
+            Meghna&rsquo;s count was that eleven were still open. Nobody owns the
             minutes and no decision is written down.
           </p>
         </section>
@@ -401,7 +401,7 @@ export default function SampleDiagnosticReportPage() {
           <SectionHead n={5} title="What would change my mind" />
           <p className={P}>
             Four checks. None needs me, and all four together are under a
-            fortnight of your team&apos;s time. I would rather you spent that
+            fortnight of your team&rsquo;s time. I would rather you spent that
             before you spent anything more with me.
           </p>
           <Exhibit
@@ -413,7 +413,7 @@ export default function SampleDiagnosticReportPage() {
                 "If they buy nothing beyond the month, this is a margin problem first and the direction can wait",
               ],
               [
-                "Devanathan's name against last year's billing — his real share",
+                "Devanathan’s name against last year’s billing — his real share",
                 "Farida",
                 "If it is close to half, succession is the urgent problem, not strategy",
               ],
@@ -439,7 +439,7 @@ export default function SampleDiagnosticReportPage() {
           <h3 className={H3}>Two things I have left alone</h3>
           <ul className="mb-5 list-disc space-y-3 pl-5 text-[16px] leading-[1.78] text-mid md:text-[17px]">
             <li>
-              Meghna&apos;s scope came up three times and was described three
+              Meghna&rsquo;s scope came up three times and was described three
               different ways in three hours. The succession question behind it
               is not a consulting question and I will not treat it as one. It
               will surface the moment you make the choice in Section 3.
@@ -458,7 +458,7 @@ export default function SampleDiagnosticReportPage() {
           </PullQuote>
 
           <p className="mt-10 text-[14px] leading-[1.8] text-light">
-            Prem Menon
+            Premraj Menon
             <br />
             Founder and Principal Consultant, Simpleworks Consulting
           </p>

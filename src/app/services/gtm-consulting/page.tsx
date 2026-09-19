@@ -65,7 +65,7 @@ const SITUATIONS = [
   {
     num: "01",
     title: "The product is good but sales are inconsistent",
-    body: "Customers who try the product are happy with it. Referrals come in occasionally. But new customer acquisition is unpredictable — some months are strong, others are not, and the team cannot explain why. The problem is almost always in the GTM: the wrong segment, the wrong channel, or a positioning that doesn't connect with the people most likely to buy.",
+    body: "Customers who try the product are happy with it. Referrals come in occasionally. But new customer acquisition is unpredictable — some months are strong, others are not, and the team cannot explain why. The problem is almost always in the GTM: the wrong segment, the wrong channel, or a positioning that doesn’t connect with the people most likely to buy.",
   },
   {
     num: "02",
@@ -74,7 +74,7 @@ const SITUATIONS = [
   },
   {
     num: "03",
-    title: "The market has shifted and the old approach isn't working",
+    title: "The market has shifted and the old approach isn’t working",
     body: "A new competitor, a change in buyer behaviour, a technology that has disrupted the channel. The business that worked reliably for ten years is now under pressure it has never experienced before. The GTM strategy that built the business needs to be rebuilt — or the business will continue to defend a position that no longer exists.",
   },
   {
@@ -95,7 +95,7 @@ const STEPS = [
     num: "02",
     label: "Define",
     title: "Identify the segments and build the ICP",
-    body: "The Ideal Customer Profile (ICP) is the most important output of a GTM strategy — and most businesses don't have one they can state precisely. Simpleworks Consulting builds the ICP from the data: which existing customers deliver the most revenue at the lowest cost to acquire and serve, what they have in common, and how to find more of them. The ICP becomes the filter for every GTM decision that follows.",
+    body: "The Ideal Customer Profile (ICP) is the most important output of a GTM strategy — and most businesses don’t have one they can state precisely. Simpleworks Consulting builds the ICP from the data: which existing customers deliver the most revenue at the lowest cost to acquire and serve, what they have in common, and how to find more of them. The ICP becomes the filter for every GTM decision that follows.",
   },
   {
     num: "03",
@@ -122,7 +122,7 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Strategy that fits your current team and budget",
-    body: "A GTM plan that requires headcount you don't have and a marketing budget you can't afford is not a plan — it's a wish. Simpleworks Consulting builds GTM strategies around what the business can actually execute in the next 90 days.",
+    body: "A GTM plan that requires headcount you don’t have and a marketing budget you can’t afford is not a plan — it’s a wish. Simpleworks Consulting builds GTM strategies around what the business can actually execute in the next 90 days.",
   },
   {
     title: "Premraj Menon leads every engagement personally",
@@ -173,7 +173,7 @@ const LIVE_SPOKES = [
 ];
 
 const COMING_SOON_SPOKES = [
-  "GTM vs. Growth Strategy — What's the Difference and Which Does Your Business Need?",
+  "GTM vs. Growth Strategy — What’s the Difference and Which Does Your Business Need?",
   "Channel Strategy for Indian MSME Manufacturers — How to Choose and Win",
   "How to Enter a New Market with a Lean Sales Team",
 ];
@@ -181,30 +181,30 @@ const COMING_SOON_SPOKES = [
 const FAQ_COLUMN_1 = [
   {
     q: "What is a GTM strategy — and how is it different from a marketing plan?",
-    a: "A marketing plan describes the activities you will run — campaigns, content, events, advertising. A GTM strategy defines who you are selling to, why they should buy from you, and how you will reach them. The GTM strategy is the foundation; the marketing plan is built on top of it. Most businesses that struggle with marketing are actually struggling with an unclear GTM — the activities cannot work if the fundamentals haven't been defined.",
+    a: "A marketing plan describes the activities you will run — campaigns, content, events, advertising. A GTM strategy defines who you are selling to, why they should buy from you, and how you will reach them. The GTM strategy is the foundation; the marketing plan is built on top of it. Most businesses that struggle with marketing are actually struggling with an unclear GTM — the activities cannot work if the fundamentals haven’t been defined.",
   },
   {
     q: "Does GTM consulting apply to B2B businesses or B2C businesses?",
-    a: "Both — but the approach is different. Most of Simpleworks Consulting's GTM work is with B2B businesses: manufacturing companies, industrial suppliers, SaaS businesses, and professional services firms. In B2B, the GTM strategy focuses on segment definition, sales motion, and channel strategy. In B2C, the emphasis shifts toward positioning and distribution. The three core questions — who is the customer, why you, how do you reach them — apply in both cases.",
+    a: "Both — but the approach is different. Most of Simpleworks Consulting’s GTM work is with B2B businesses: manufacturing companies, industrial suppliers, SaaS businesses, and professional services firms. In B2B, the GTM strategy focuses on segment definition, sales motion, and channel strategy. In B2C, the emphasis shifts toward positioning and distribution. The three core questions — who is the customer, why you, how do you reach them — apply in both cases.",
   },
   {
     q: "How is GTM consulting different from hiring a marketing agency?",
-    a: "A marketing agency executes a GTM strategy — they run campaigns, produce content, manage digital channels. Simpleworks Consulting builds the GTM strategy that the agency then executes. If you hire a marketing agency before you have a clear GTM, you are paying an agency to run campaigns that haven't been aimed correctly. The GTM strategy comes first; the agency comes second. Many of our clients engage Simpleworks Consulting specifically because they have a marketing agency relationship that isn't producing results — and the root cause is always a GTM problem, not an execution problem.",
+    a: "A marketing agency executes a GTM strategy — they run campaigns, produce content, manage digital channels. Simpleworks Consulting builds the GTM strategy that the agency then executes. If you hire a marketing agency before you have a clear GTM, you are paying an agency to run campaigns that haven’t been aimed correctly. The GTM strategy comes first; the agency comes second. Many of our clients engage Simpleworks Consulting specifically because they have a marketing agency relationship that isn’t producing results — and the root cause is always a GTM problem, not an execution problem.",
   },
 ];
 
 const FAQ_COLUMN_2 = [
   {
     q: "We sell through distributors and dealers. Can Simpleworks Consulting help with that kind of GTM?",
-    a: "Yes — and this is where Simpleworks Consulting's experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
+    a: "Yes — and this is where Simpleworks Consulting’s experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
   },
   {
     q: "How long does a GTM consulting engagement last?",
-    a: "A full GTM engagement — covering diagnosis, ICP definition, positioning, channel strategy, and the first 90-day sprint — typically runs three to five months. The first four to six weeks cover diagnosis and strategy design. The following ten to twelve weeks cover the 90-day sprint with Simpleworks Consulting's active involvement in weekly reviews and adjustments. Shorter engagements focused on a specific GTM question — ICP definition only, or channel strategy for a new market — can run four to six weeks.",
+    a: "A full GTM engagement — covering diagnosis, ICP definition, positioning, channel strategy, and the first 90-day sprint — typically runs three to five months. The first four to six weeks cover diagnosis and strategy design. The following ten to twelve weeks cover the 90-day sprint with Simpleworks Consulting’s active involvement in weekly reviews and adjustments. Shorter engagements focused on a specific GTM question — ICP definition only, or channel strategy for a new market — can run four to six weeks.",
   },
   {
     q: "What does the first step look like?",
-    a: "A quick introductory conversation with Premraj Menon. No pitch, no proposal. You describe where your current GTM is breaking down — inconsistent sales, unclear positioning, a new market you're trying to enter. Prem asks a few direct questions and tells you honestly whether a GTM engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so.",
+    a: "A quick introductory conversation with Premraj Menon. No pitch, no proposal. You describe where your current GTM is breaking down — inconsistent sales, unclear positioning, a new market you’re trying to enter. Premraj asks a few direct questions and tells you honestly whether a GTM engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so.",
   },
 ];
 
@@ -330,7 +330,7 @@ export default function GtmConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -440,7 +440,7 @@ export default function GtmConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            Let&apos;s have a quick introductory call →
+            Let&rsquo;s have a quick introductory call →
           </Link>
         </div>
       </section>
@@ -507,14 +507,10 @@ export default function GtmConsultingPage() {
               channels your buyers don&rsquo;t use.
             </p>
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Simpleworks Consulting brings 39 years of experience in Consumer Durables,
-              Automotive, Telecom, and SaaS — businesses where distribution
-              networks, dealer relationships, and regional sales structures
-              are the core of the GTM, not an afterthought. Premraj Menon has
-              built and rebuilt go-to-market strategies across industries
-              where the market is physical, the sales cycle is long, and the
-              buyer makes decisions based on trust as much as specification.
-            </p>
+              Premraj Menon has spent 39 years in businesses where dealer
+              networks and regional sales decide the GTM. Read his background
+              on the <Link href="/about" className="text-red hover:underline">About page</Link>.
+</p>
 
             <div className="mb-8 border-l-2 border-red pl-[22px]">
               <blockquote className="mb-2.5 text-[17px] italic leading-[1.75] text-ink">
@@ -680,7 +676,7 @@ export default function GtmConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Let&apos;s Talk
+            Let&rsquo;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"

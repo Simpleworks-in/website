@@ -4,14 +4,14 @@ import keystaticConfig from "../../../keystatic.config";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: { absolute: "MSME Growth Blog | Simpleworks Consulting" },
+  title: { absolute: "Notes on MSME Strategy and Execution | Simpleworks" },
   description:
     "Practical strategy, execution and leadership advice for Indian MSME founders, from Premraj Menon of Simpleworks Consulting.",
   alternates: {
     canonical: "https://www.simpleworks.in/blog",
   },
   openGraph: {
-    title: "MSME Growth Blog | Simpleworks Consulting",
+    title: "Notes on MSME Strategy and Execution | Simpleworks",
     description:
       "Practical strategy, execution and leadership advice for Indian MSME founders, from Premraj Menon of Simpleworks Consulting.",
     url: "https://www.simpleworks.in/blog",
@@ -144,7 +144,7 @@ export default async function BlogPage({
             </h2>
             <p className="mt-5 text-[17px] leading-[1.78] text-mid">
               {activeCategory === "all"
-                ? "Practical insights on strategy, growth, and execution will appear here as Prem publishes them."
+                ? "Practical insights on strategy, growth, and execution will appear here as Premraj publishes them."
                 : `No posts published under "${activeCategory}" yet — try a different category.`}
             </p>
           </div>

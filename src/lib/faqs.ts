@@ -7,11 +7,11 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "Your background is corporate. How does that apply to a business my size?",
-    a: "A fair question. The honest answer: a ₹25 crore business isn't a scaled-down version of the corporates I ran — you don't have a planning department or six layers to absorb a bad call. But the career looks different from the inside. Through those corporate years, my customers were businesses like yours — distributor owners, dealers, and retailers turning over ₹12 to ₹150 crore, mostly family-owned, often carrying several brands at once. At Airtel, I led a team in direct sales to MSMEs and corporates, covering 2,500 accounts. At Tata Docomo, I managed a multi-crore business across a network of small and large distribution partners. So a large part of my working life has gone into understanding how smaller businesses actually buy, operate, and decide — I spent those years in their offices, not mine. From 2016 to 2025, I ran two ventures of my own — small teams, tight cash. The judgement comes from large companies. The context is one I've worked in for most of forty years, stripped down to what a business your size can actually carry, run by the people you already have.",
+    a: "A fair question. The honest answer: a ₹25 crore business isn’t a scaled-down version of the corporates I ran — you don’t have a planning department or six layers to absorb a bad call. But the career looks different from the inside. Through those corporate years, my customers were businesses like yours — distributor owners, dealers, and retailers turning over ₹12 to ₹150 crore, mostly family-owned, often carrying several brands at once. At Airtel, I led a team in direct sales to MSMEs and corporates, covering 2,500 accounts. At Tata Docomo, I managed a multi-crore business across a network of small and large distribution partners. So a large part of my working life has gone into understanding how smaller businesses actually buy, operate, and decide — I spent those years in their offices, not mine. From 2016 to 2025, I ran two ventures of my own — small teams, tight cash. The judgement comes from large companies. The context is one I’ve worked in for most of 39 years, stripped down to what a business your size can actually carry, run by the people you already have.",
   },
   {
-    q: "I'm not based in Bengaluru — can we still work together?",
-    a: "Full engagements — GTM strategy and OKR execution — are in-person in Bengaluru. That work needs to happen inside your business: on the floor, in the room, watching how decisions actually get made. Coaching can be done remotely. If you're not based here, we offer remote coaching and advisory calls — useful for ongoing guidance, a specific strategic question, or a second opinion.",
+    q: "I’m not based in Bengaluru — can we still work together?",
+    a: "Full engagements — GTM strategy and OKR execution — are in-person in Bengaluru. That work needs to happen inside your business: on the floor, in the room, watching how decisions actually get made. Coaching can be done remotely. If you’re not based here, we offer remote coaching and advisory calls — useful for ongoing guidance, a specific strategic question, or a second opinion.",
   },
   {
     q: "What does a typical engagement look like?",
@@ -19,7 +19,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "How is Simpleworks Consulting different from larger consulting firms?",
-    a: "Larger management consulting firms in India are built for large organisations — they bring frameworks, teams, and timelines that don't fit most Indian MSMEs. Simpleworks Consulting is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
+    a: "Larger management consulting firms in India are built for large organisations — they bring frameworks, teams, and timelines that don’t fit most Indian MSMEs. Simpleworks Consulting is built for businesses where the founder is in the room, decisions happen fast, and the plan must be executable by the existing team.",
   },
   {
     q: "What industries do you specialise in?",

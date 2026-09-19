@@ -5,14 +5,14 @@ export const metadata = {
     absolute: "Consulting Services | Simpleworks, Bengaluru",
   },
   description:
-    "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let's have a quick introductory call.",
+    "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let’s have a quick introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services",
   },
   openGraph: {
     title: "Consulting Services | Simpleworks, Bengaluru",
     description:
-      "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let's have a quick introductory call.",
+      "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let’s have a quick introductory call.",
     url: "https://www.simpleworks.in/services",
     type: "website",
   },
@@ -239,9 +239,9 @@ function ServiceCardItem({ card }: { card: ServiceCard }) {
       <span className="mb-3 block text-[10px] font-bold uppercase tracking-[0.18em] text-red">
         {card.tag}
       </span>
-      <h3 className="mb-3 text-[20px] font-bold leading-[1.3] text-ink">
+      <h2 className="mb-3 text-[20px] font-bold leading-[1.3] text-ink">
         {card.title}
-      </h3>
+      </h2>
       <p className="mb-5 text-[15px] leading-[1.7] text-mid">{card.description}</p>
 
       <div className="mb-6 flex flex-col gap-2">
@@ -399,7 +399,7 @@ export default function ServicesPage() {
           </h2>
           <p className="mb-9 text-[16px] leading-[1.78] text-mid md:text-[17px]">
             Most clients come in knowing something is wrong — but not which
-            problem to solve first. Let&apos;s have a quick introductory
+            problem to solve first. Let&rsquo;s have a quick introductory
             call — 30 minutes is usually enough to find out.
           </p>
           <div className="flex flex-wrap items-center gap-5">
@@ -407,7 +407,7 @@ export default function ServicesPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2.5 rounded-[1px] border-[1.5px] border-red bg-red px-8 py-3.5 text-[14px] tracking-wide-3 text-white transition-colors hover:bg-transparent hover:text-red"
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </Link>
             <a
               href="https://wa.me/919036099000"

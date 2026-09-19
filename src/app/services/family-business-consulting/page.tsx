@@ -34,7 +34,7 @@ const REALITIES = [
   {
     num: "03",
     title: "Professionalisation feels like a betrayal",
-    body: "Bringing in professional management, formalising roles, or separating ownership from operations can feel to the founding generation like an admission that the old way didn't work — or a signal that the family is losing control. This emotional resistance is real. It is also the single biggest reason Indian family businesses fail to professionalise before it becomes a crisis.",
+    body: "Bringing in professional management, formalising roles, or separating ownership from operations can feel to the founding generation like an admission that the old way didn’t work — or a signal that the family is losing control. This emotional resistance is real. It is also the single biggest reason Indian family businesses fail to professionalise before it becomes a crisis.",
   },
 ];
 
@@ -42,7 +42,7 @@ const WHAT_WE_DO = [
   {
     num: "01 — Professionalisation",
     title: "Building a business that runs beyond the founder",
-    body: "Formalising roles, defining decision rights, and creating accountability structures that don't depend on the founder's constant involvement. The goal is a business that operates predictably whether the founder is in the room or not — without losing the speed and trust that made it successful.",
+    body: "Formalising roles, defining decision rights, and creating accountability structures that don’t depend on the founder’s constant involvement. The goal is a business that operates predictably whether the founder is in the room or not — without losing the speed and trust that made it successful.",
   },
   {
     num: "02 — Succession Planning",
@@ -64,7 +64,7 @@ const WHAT_WE_DO = [
 const SITUATIONS = [
   {
     num: "01",
-    title: "The founder is ready to step back but hasn't built a successor",
+    title: "The founder is ready to step back but hasn’t built a successor",
     body: "The business is profitable and growing. The founder wants to reduce daily involvement. But the second generation is either not ready, not willing, or not aligned on who takes what role. The transition has been deferred until the need becomes urgent — and urgency is the worst condition under which to make succession decisions.",
   },
   {
@@ -75,7 +75,7 @@ const SITUATIONS = [
   {
     num: "03",
     title: "The business has outgrown its informal management style",
-    body: "What worked at ₹2 crore does not work at ₹15 crore. The business needs formal systems, professional roles, and a management structure that doesn't depend on the founder knowing everything. The family knows this. But every attempt to formalise has been resisted, delayed, or quietly abandoned.",
+    body: "What worked at ₹2 crore does not work at ₹15 crore. The business needs formal systems, professional roles, and a management structure that doesn’t depend on the founder knowing everything. The family knows this. But every attempt to formalise has been resisted, delayed, or quietly abandoned.",
   },
   {
     num: "04",
@@ -106,7 +106,7 @@ const PATHWAY = [
   {
     num: "04",
     label: "Build",
-    title: "Develop the next generation's capability to lead",
+    title: "Develop the next generation’s capability to lead",
     body: "Succession without capability development is just a title change. Simpleworks Consulting works with the next generation on the specific leadership, commercial, and relational skills that the transition will demand — before the transition happens. This includes structured exposure to the decisions the business depends on, not just the ones they currently handle.",
   },
   {
@@ -120,19 +120,19 @@ const PATHWAY = [
 const DIFFERENTIATORS = [
   {
     title: "Commercial and human — not one or the other",
-    body: "We hold both dimensions simultaneously. The business needs to work commercially. The family needs to stay intact. Simpleworks Consulting keeps both outcomes in view — not just the one that's easier to measure.",
+    body: "We hold both dimensions simultaneously. The business needs to work commercially. The family needs to stay intact. Simpleworks Consulting keeps both outcomes in view — not just the one that’s easier to measure.",
   },
   {
     title: "Premraj Menon leads every engagement personally",
-    body: "No junior consultants. No hand-offs. Family business work depends on trust — and trust takes time to build. Prem is in every conversation, from the first call to the final handover.",
+    body: "No junior consultants. No hand-offs. Family business work depends on trust — and trust takes time to build. Premraj is in every conversation, from the first call to the final handover.",
   },
   {
     title: "Direct when directness is required",
-    body: "Family businesses often have conversations they need to have but haven't. Simpleworks Consulting does not soften difficult realities. We name what we observe, clearly and respectfully — because the alternative is more expensive.",
+    body: "Family businesses often have conversations they need to have but haven’t. Simpleworks Consulting does not soften difficult realities. We name what we observe, clearly and respectfully — because the alternative is more expensive.",
   },
   {
     title: "Structured for the Indian family business context",
-    body: "Western succession frameworks don't map directly to Indian family business structures — joint family dynamics, multi-generation involvement, and the social dimension of the business all require a different approach. Simpleworks Consulting works in this context, not against it.",
+    body: "Western succession frameworks don’t map directly to Indian family business structures — joint family dynamics, multi-generation involvement, and the social dimension of the business all require a different approach. Simpleworks Consulting works in this context, not against it.",
   },
 ];
 
@@ -159,7 +159,7 @@ const LIVE_SPOKES = [
     tag: "Strategy",
     title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
     excerpt:
-      "Applies directly to family businesses where strategy exists in the founder's head but nowhere else. The 3-step fix works whether you are the first or second generation.",
+      "Applies directly to family businesses where strategy exists in the founder’s head but nowhere else. The 3-step fix works whether you are the first or second generation.",
     href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
   },
   {
@@ -187,7 +187,7 @@ const LIVE_SPOKES = [
 ];
 
 const COMING_SOON_SPOKES = [
-  "Why Indian Family Businesses Fail at Succession — and What to Do Before It's Urgent",
+  "Why Indian Family Businesses Fail at Succession — and What to Do Before It’s Urgent",
   "Separating Ownership from Management in an Indian Family Business",
   "Second-Generation Founder: How to Take Charge Without Losing the Business",
 ];
@@ -214,7 +214,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "How long does a family business consulting engagement last?",
-    a: "It depends on the scope. A strategic clarity engagement for a family business — defining direction and aligning the family on priorities — typically runs four to eight weeks. A full professionalisation and succession engagement — covering structure, governance, capability development, and phased handover — runs six to eighteen months, with Simpleworks Consulting's involvement tapering as the family develops the capability to manage independently.",
+    a: "It depends on the scope. A strategic clarity engagement for a family business — defining direction and aligning the family on priorities — typically runs four to eight weeks. A full professionalisation and succession engagement — covering structure, governance, capability development, and phased handover — runs six to eighteen months, with Simpleworks Consulting’s involvement tapering as the family develops the capability to manage independently.",
   },
   {
     q: "What does the first step look like?",
@@ -345,7 +345,7 @@ export default function FamilyBusinessConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -457,7 +457,7 @@ export default function FamilyBusinessConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            Let&apos;s have a quick introductory call →
+            Let&rsquo;s have a quick introductory call →
           </Link>
         </div>
       </section>
@@ -542,13 +542,10 @@ export default function FamilyBusinessConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Premraj Menon brings 39 years of experience across Consumer
-              Durables, Automotive, Telecom, and SaaS. He has worked inside
-              businesses where family and commercial decisions were
-              inseparable, and alongside founders navigating the handover to
-              the next generation. This is not theoretical — it is lived
-              experience brought to bear on your specific situation.
-            </p>
+              Premraj Menon has spent 39 years alongside owner-managed
+              businesses, including founders handing over to the next
+              generation. His full background is on the <Link href="/about" className="text-red hover:underline">About page</Link>.
+</p>
           </div>
 
           <div className="flex flex-col">
@@ -695,7 +692,7 @@ export default function FamilyBusinessConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Let&apos;s Talk
+            Let&rsquo;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"

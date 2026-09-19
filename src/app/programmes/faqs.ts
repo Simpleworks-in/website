@@ -30,14 +30,14 @@ const REMOTE_HTML =
   "<p>Yes, for two of the three programmes. The Simple Diagnostic (₹15,000 online) and The Simple Counsel can both run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, because the work happens inside your business with your team. Outside Bengaluru, travel for it is charged at actuals.</p>";
 
 const NDA_HTML =
-  "<p>Yes. We're happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>";
+  "<p>Yes. We’re happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>";
 
 export const faqs: Faq[] = [
   existing("What is your consulting fee?"),
   existing("How long does a consulting engagement typically last?"),
   {
     q: "Which programme should I start with?",
-    a: "Most founders start with The Simple Diagnostic. In half a day you get a clear, written view of what's working, what isn't, and the one thing to fix first. If the problem is already known and just hasn't been solved, go straight to The Simple Reset. If you want a senior sounding board for ongoing decisions, choose The Simple Counsel.",
+    a: "Most founders start with The Simple Diagnostic. In half a day you get a clear, written view of what’s working, what isn’t, and the one thing to fix first. If the problem is already known and just hasn’t been solved, go straight to The Simple Reset. If you want a senior sounding board for ongoing decisions, choose The Simple Counsel.",
     aHtml:
       "<p>Most founders start with <a href=\"#simple-diagnostic\">The Simple Diagnostic</a>. In half a day you get a clear, written view of what's working, what isn't, and the one thing to fix first. If the problem is already known and just hasn't been solved, go straight to <a href=\"#simple-reset\">The Simple Reset</a>. If you want a senior sounding board for ongoing decisions, choose <a href=\"#simple-counsel\">The Simple Counsel</a>.</p>",
   },
@@ -56,7 +56,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Who will actually do the work?",
-    a: "Prem does, personally. Simpleworks is one senior advisor, not a team. You won't be handed to a junior consultant after the first meeting.",
+    a: "Premraj does, personally. Simpleworks is one senior advisor, not a team. You won’t be handed to a junior consultant after the first meeting.",
   },
   {
     q: "What size of business do you work with?",
@@ -69,8 +69,8 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you offer business mentoring?",
-    a: "Yes. The Simple Counsel is built for this. Prem works alongside you as a senior thinking partner over a longer period and helps you reach the goals you've set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ₹75,000 per month, with a minimum of three months.",
+    a: "Yes. The Simple Counsel is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ₹75,000 per month, with a minimum of three months.",
     aHtml:
-      "<p>Yes. <a href=\"#simple-counsel\">The Simple Counsel</a> is built for this. Prem works alongside you as a senior thinking partner over a longer period and helps you reach the goals you've set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ₹75,000 per month, with a minimum of three months.</p>",
+      "<p>Yes. <a href=\"#simple-counsel\">The Simple Counsel</a> is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ₹75,000 per month, with a minimum of three months.</p>",
   },
 ];

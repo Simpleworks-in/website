@@ -24,7 +24,7 @@ const DISTINCTIONS = [
   {
     label: "Option 1",
     title: "Business Coach",
-    body: "A coach works on you — your mindset, habits, leadership behaviour, and personal effectiveness. Coaching is valuable. But if your business has a structural problem — wrong market, broken pricing, weak execution — coaching won't fix it. You'll be a better-thinking founder with the same broken business.",
+    body: "A coach works on you — your mindset, habits, leadership behaviour, and personal effectiveness. Coaching is valuable. But if your business has a structural problem — wrong market, broken pricing, weak execution — coaching won’t fix it. You’ll be a better-thinking founder with the same broken business.",
     note: "Right when: the problem is personal, not structural",
     active: false,
   },
@@ -57,8 +57,8 @@ const WHAT_WE_DO = [
   },
   {
     num: "03 — Structure",
-    title: "Building a business that doesn't need you for everything",
-    body: "Most small business founders are the bottleneck in their own company. Every decision, every client call, every important email runs through them. Simpleworks Consulting builds the structure — roles, accountability, decision rights — that allows the business to operate independently of the founder's constant attention.",
+    title: "Building a business that doesn’t need you for everything",
+    body: "Most small business founders are the bottleneck in their own company. Every decision, every client call, every important email runs through them. Simpleworks Consulting builds the structure — roles, accountability, decision rights — that allows the business to operate independently of the founder’s constant attention.",
   },
   {
     num: "04 — Execution",
@@ -71,7 +71,7 @@ const SITUATIONS = [
   {
     num: "01",
     title: "The startup that has customers but no clarity",
-    body: "The product works. Customers are paying. But growth is inconsistent, the team is pulling in different directions, and the founder can't describe their business in one clear sentence. The business needs a strategic reset — not more features, not more marketing spend.",
+    body: "The product works. Customers are paying. But growth is inconsistent, the team is pulling in different directions, and the founder can’t describe their business in one clear sentence. The business needs a strategic reset — not more features, not more marketing spend.",
   },
   {
     num: "02",
@@ -81,7 +81,7 @@ const SITUATIONS = [
   {
     num: "03",
     title: "The founder who needs someone to think with",
-    body: "Running a small business is often a lonely exercise. The team looks to the founder for answers. The board wants results. Advisors give broad opinions. The founder needs someone who will sit with the actual problem — not just the version of it that's easy to describe in fifteen minutes.",
+    body: "Running a small business is often a lonely exercise. The team looks to the founder for answers. The board wants results. Advisors give broad opinions. The founder needs someone who will sit with the actual problem — not just the version of it that’s easy to describe in fifteen minutes.",
   },
   {
     num: "04",
@@ -93,7 +93,7 @@ const SITUATIONS = [
 const DIFFERENTIATORS = [
   {
     title: "One consultant, always Premraj Menon",
-    body: "No junior team. No hand-offs. When you engage Simpleworks Consulting you work directly with Prem — in person where possible, structured online sessions where not.",
+    body: "No junior team. No hand-offs. When you engage Simpleworks Consulting you work directly with Premraj — in person where possible, structured online sessions where not.",
   },
   {
     title: "Scoped to what your business actually needs",
@@ -118,7 +118,7 @@ const AREAS = [
   {
     num: "02",
     title: "Go-to-Market Planning",
-    body: "The right customers, reached through the right channels, with the right message. For startups and small businesses, GTM is the difference between a product that sells and one that doesn't — regardless of how good the product is.",
+    body: "The right customers, reached through the right channels, with the right message. For startups and small businesses, GTM is the difference between a product that sells and one that doesn’t — regardless of how good the product is.",
   },
   {
     num: "03",
@@ -133,7 +133,7 @@ const LIVE_SPOKES = [
     title:
       "The Difference Between Business Coach and Mentor Isn’t Skill — It’s Stage",
     excerpt:
-      "Mentors give answers while coaches ask questions — most MSME founders hire the wrong one because they misdiagnose whether they're stuck on missing information or on execution.",
+      "Mentors give answers while coaches ask questions — most MSME founders hire the wrong one because they misdiagnose whether they’re stuck on missing information or on execution.",
     href: "/blog/the-difference-between-business-coach-and-mentor-isn-t-skill-it-s-stage",
   },
   {
@@ -148,7 +148,7 @@ const LIVE_SPOKES = [
     tag: "Strategy",
     title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
     excerpt:
-      "Most small business founders have a plan, not a strategy. Here's the difference — and how to fix it without offsites or 40-page documents.",
+      "Most small business founders have a plan, not a strategy. Here’s the difference — and how to fix it without offsites or 40-page documents.",
     href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
   },
   {
@@ -169,7 +169,7 @@ const LIVE_SPOKES = [
     tag: "Leadership",
     title: "What to Expect in a First Consulting Engagement",
     excerpt:
-      "Most founders judge a first engagement by how fast a big plan lands in their inbox. The right test is whether the process — diagnosis, real interviews, an interim checkpoint — holds up before you've spent a Rupee on the outcome.",
+      "Most founders judge a first engagement by how fast a big plan lands in their inbox. The right test is whether the process — diagnosis, real interviews, an interim checkpoint — holds up before you’ve spent a Rupee on the outcome.",
     href: "/blog/what-to-expect-in-a-first-consulting-engagement-it-s-not-what-you-think",
   },
 ];
@@ -189,7 +189,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Can Simpleworks Consulting work with early-stage startups?",
-    a: "Yes — but with a caveat. Early-stage startups benefit most from consulting when they have enough customer feedback to know what is and isn't working. If you are still testing the core assumption of your business, the right engagement is a short diagnostic — not a full consulting programme.",
+    a: "Yes — but with a caveat. Early-stage startups benefit most from consulting when they have enough customer feedback to know what is and isn’t working. If you are still testing the core assumption of your business, the right engagement is a short diagnostic — not a full consulting programme.",
   },
 ];
 
@@ -204,7 +204,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "A 30-minute conversation, with no agenda except understanding your situation. You describe what you are dealing with — Prem asks a few direct questions and tells you honestly whether Simpleworks Consulting can help and what that engagement would look like in practice.",
+    a: "A 30-minute conversation, with no agenda except understanding your situation. You describe what you are dealing with — Premraj asks a few direct questions and tells you honestly whether Simpleworks Consulting can help and what that engagement would look like in practice.",
   },
 ];
 
@@ -330,7 +330,7 @@ export default function SmallBusinessConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -447,7 +447,7 @@ export default function SmallBusinessConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            Let&apos;s have a quick introductory call →
+            Let&rsquo;s have a quick introductory call →
           </Link>
         </div>
       </section>
@@ -477,11 +477,11 @@ export default function SmallBusinessConsultingPage() {
             </p>
             <p className="mb-8 text-[17px] leading-[1.8] text-mid">
               Simpleworks Consulting sits in a different position. We work on the
-              business directly — strategy, go-to-market, execution — led
-              personally by Premraj Menon, with 39 years of experience across
-              Consumer Durables, Automotive, Telecom, and SaaS. The
-              engagement is scoped for what the business actually needs, not
-              what fits a standard package.
+              business directly — strategy, go-to-market, execution. Led
+              personally by Premraj Menon, who has spent 39 years running sales,
+              distribution and P&amp;L across large and small businesses. His
+              full background is on the <Link href="/about" className="text-red hover:underline">About page</Link>. The engagement is scoped for what
+              the business actually needs, not what fits a standard package.
             </p>
 
             <div className="mb-8 border-l-2 border-red pl-[22px]">
@@ -497,7 +497,7 @@ export default function SmallBusinessConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Let&apos;s have a quick introductory call — 30 minutes.
+              Let&rsquo;s have a quick introductory call — 30 minutes.
               We will tell you honestly whether Simpleworks Consulting can
               help — and if not, where to look instead.
             </p>
@@ -645,7 +645,7 @@ export default function SmallBusinessConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Let&apos;s Talk
+            Let&rsquo;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"

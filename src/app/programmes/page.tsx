@@ -103,6 +103,7 @@ export default function ProgrammesPage() {
       {/* 2. Engagement sequence */}
       <section className="border-t border-rule px-6 pb-14 pt-10 md:px-14 md:pb-20 md:pt-12">
         <div className="max-w-[720px]">
+          <h2 className="sr-only">How the programmes fit together</h2>
           <ol className="list-none p-0">
             {journey.map(({ n, label, href, sub }) => (
               <li
@@ -158,12 +159,10 @@ export default function ProgrammesPage() {
               Founder, Simpleworks Consulting
             </p>
             <p className="max-w-[600px] text-[15px] leading-[1.7] text-mid">
-              39 years across consumer durables, automotive, telecom and
-              IT/SaaS — including senior management roles at Tata Docomo,
-              Airtel, BPL Mobile, Apollo Tyres, MRF and entrepreneur roles at
-              Viwoks &amp; Neoffice. You work directly with me, not a team,
-              from first call to last.
-            </p>
+              You work with me, not a team. 39 years across consumer durables,
+              automotive, telecom and SaaS, ending as COO of Tata Docomo&rsquo;s
+              Kerala Circle. Full background on the <Link href="/about" className="text-red hover:underline">About page</Link>.
+</p>
           </div>
         </div>
       </section>
@@ -215,8 +214,8 @@ export default function ProgrammesPage() {
 
         <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
           For any owner who knows something is off — growth has stalled, a
-          channel isn&apos;t performing, or execution keeps slipping — but
-          doesn&apos;t yet know what to fix first.
+          channel isn&rsquo;t performing, or execution keeps slipping — but
+          doesn&rsquo;t yet know what to fix first.
         </p>
 
         <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-light">
@@ -225,7 +224,7 @@ export default function ProgrammesPage() {
         <Deliverables
           items={[
             "A structured conversation across strategy, buying, selling, execution and people",
-            "A written diagnostic brief naming what's working, what isn't, and why",
+            "A written diagnostic brief naming what’s working, what isn’t, and why",
             "One clear recommendation for what to do first",
           ]}
         />
@@ -269,7 +268,7 @@ export default function ProgrammesPage() {
             Schedule an Introductory Call
           </Link>
           <p className="mt-3 max-w-[460px] text-[14px] leading-[1.65] text-light">
-            A first conversation, not the Diagnostic. I&apos;ll hear the situation and tell you honestly whether I can help.
+            A first conversation, not the Diagnostic. I&rsquo;ll hear the situation and tell you honestly whether I can help.
           </p>
         </div>
       </section>
@@ -325,7 +324,7 @@ export default function ProgrammesPage() {
           For owners who have a problem area they can name but have not
           been able to crack. You bring the problem. Option 1 gives you the
           diagnosis and a designed solution — you execute. Option 2 adds 30
-          days of Prem alongside your team to make sure execution actually
+          days of Premraj alongside your team to make sure execution actually
           starts.
         </p>
 
@@ -367,14 +366,14 @@ export default function ProgrammesPage() {
             </p>
             <p className="mb-1 text-[22px] font-bold text-ink">60 days</p>
             <p className="mb-5 text-[13px] italic text-light">
-              Eight weekly visits · Prem stays for execution
+              Eight weekly visits · Premraj stays for execution
             </p>
             <ul className="mb-6">
               {[
                 "Everything in Option 1, delivered in the first four weeks",
                 "Four more weeks in person with your leadership team",
                 "Obstacles cleared while they are still small",
-                "A weekly review rhythm installed and handed over — your team runs it, not Prem",
+                "A weekly review rhythm installed and handed over — your team runs it, not Premraj",
               ].map((item) => (
                 <li
                   key={item}
@@ -491,7 +490,7 @@ export default function ProgrammesPage() {
               <span className="text-red">Custom</span> Engagement
             </h2>
             <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-              If what you need doesn&apos;t fit the Diagnostic, Reset or
+              If what you need doesn&rsquo;t fit the Diagnostic, Reset or
               Counsel, I will scope it with you directly.
             </p>
           </div>
@@ -528,7 +527,7 @@ export default function ProgrammesPage() {
         </div>
 
         <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For situations that don&apos;t map cleanly to a half-day
+          For situations that don&rsquo;t map cleanly to a half-day
           diagnostic, a four-to-eight week reset, or an ongoing monthly
           counsel — a specific project, a one-time review, or something in
           between.
@@ -547,81 +546,6 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      {/* 8. At a Glance */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <h2 className="mb-10 text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
-          At a <span className="text-red">Glance</span>
-        </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[560px] border-collapse">
-            <thead>
-              <tr className="border-b border-rule">
-                <th className="pb-4 text-left text-[10px] font-light uppercase tracking-[0.2em] text-light">
-                  Programme
-                </th>
-                <th className="pb-4 text-left text-[10px] font-light uppercase tracking-[0.2em] text-light">
-                  Length
-                </th>
-                <th className="pb-4 text-right text-[10px] font-light uppercase tracking-[0.2em] text-light">
-                  Investment
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-rule">
-                <td className="py-[18px] text-[15px] font-bold text-ink">
-                  The Simple Diagnostic
-                </td>
-                <td className="py-[18px] text-[15px] text-mid">
-                  Half a day
-                </td>
-                <td className="py-[18px] text-right">
-                  <span className="font-bold text-red">₹20,000</span>
-                  <span className="mt-1 block text-[12px] italic text-light">
-                    in person · ₹15,000 online
-                  </span>
-                </td>
-              </tr>
-              <tr className="border-b border-rule">
-                <td className="py-[18px] text-[15px] font-bold text-ink">
-                  The Simple Reset
-                </td>
-                <td className="py-[18px] text-[15px] text-mid">30 days</td>
-                <td className="py-[18px] text-right text-[15px]">
-                  <span className="font-bold text-red">₹1,40,000</span>
-                </td>
-              </tr>
-              <tr className="border-b border-rule">
-                <td className="py-[18px]"></td>
-                <td className="py-[18px] text-[15px] text-mid">60 days</td>
-                <td className="py-[18px] text-right text-[15px]">
-                  <span className="font-bold text-red">₹2,80,000</span>
-                </td>
-              </tr>
-              <tr className="border-b border-rule">
-                <td className="py-[18px] text-[15px] font-bold text-ink">
-                  The Simple Counsel
-                </td>
-                <td className="py-[18px] text-[15px] text-mid">Monthly</td>
-                <td className="py-[18px] text-right text-[15px]">
-                  <span className="font-bold text-red">
-                    ₹75,000 / month
-                  </span>
-                  <span className="mt-1 block text-[12px] italic text-light">
-                    3-month minimum
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-5 text-[13px] italic leading-[1.6] text-light">
-          All fees exclusive of GST. Travel outside Bengaluru at actuals.
-          Anything that does not fit these three programmes, I will scope
-          and quote with you before we begin.
-        </p>
-      </section>
-
       {/* 9. How the money works */}
       <section className="grid grid-cols-1 gap-6 border-t border-rule px-6 py-14 md:grid-cols-2 md:gap-20 md:px-14 md:py-20">
         <h2 className="text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
@@ -636,7 +560,7 @@ export default function ProgrammesPage() {
           </p>
           <p className="text-[16px] leading-[1.78] text-mid">
             The Diagnostic fee is credited in full against whatever
-            follows. If you stop there, that&apos;s the whole engagement —
+            follows. If you stop there, that&rsquo;s the whole engagement —
             no further obligation, no upsell conversation.
           </p>
         </div>
@@ -647,7 +571,7 @@ export default function ProgrammesPage() {
         <h2 className="text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
           What I
           <br />
-          <span className="text-red">don&apos;t</span> do.
+          <span className="text-red">don&rsquo;t</span> do.
         </h2>
         <ul>
           {[
@@ -697,7 +621,7 @@ export default function ProgrammesPage() {
           Schedule an Introductory Call
         </Link>
         <p className="mt-3 max-w-[460px] text-[14px] leading-[1.65] text-light">
-          A first conversation, not the Diagnostic. I&apos;ll hear the situation and tell you honestly whether I can help.
+          A first conversation, not the Diagnostic. I&rsquo;ll hear the situation and tell you honestly whether I can help.
         </p>
       </section>
       </main>

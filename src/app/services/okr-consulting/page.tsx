@@ -53,25 +53,25 @@ const WHAT_WE_DO = [
   {
     num: "02 — Cascade & Alignment",
     title: "Connecting company goals to team action",
-    body: "The most common OKR mistake is setting company-level goals that never reach the team. Simpleworks Consulting builds the cascade — translating each company Objective into function-level OKRs for sales, operations, finance, and wherever else the work happens. Every team member knows how their work connects to the company's direction.",
+    body: "The most common OKR mistake is setting company-level goals that never reach the team. Simpleworks Consulting builds the cascade — translating each company Objective into function-level OKRs for sales, operations, finance, and wherever else the work happens. Every team member knows how their work connects to the company’s direction.",
   },
   {
     num: "03 — Review Rhythm",
     title: "Designing the cadence that keeps OKRs alive",
-    body: "OKRs don't maintain themselves. Simpleworks Consulting designs the review rhythm: weekly check-ins that take 20 minutes, monthly reviews with clear decisions, and quarterly resets that adjust goals to what the business has learned. Without this rhythm, even the best OKRs become irrelevant within six weeks.",
+    body: "OKRs don’t maintain themselves. Simpleworks Consulting designs the review rhythm: weekly check-ins that take 20 minutes, monthly reviews with clear decisions, and quarterly resets that adjust goals to what the business has learned. Without this rhythm, even the best OKRs become irrelevant within six weeks.",
   },
   {
     num: "04 — Live Cycle Support",
     title: "Running the first two cycles alongside your team",
-    body: "We don't hand over a framework and leave. Simpleworks Consulting runs the first two OKR cycles with your team — coaching leaders through the weekly reviews, adjusting the system where it isn't working, and building the muscle memory for goal-setting and accountability that the organisation will rely on long after we've stepped back.",
+    body: "We don’t hand over a framework and leave. Simpleworks Consulting runs the first two OKR cycles with your team — coaching leaders through the weekly reviews, adjusting the system where it isn’t working, and building the muscle memory for goal-setting and accountability that the organisation will rely on long after we’ve stepped back.",
   },
 ];
 
 const SITUATIONS = [
   {
     num: "01",
-    title: "The team is busy but the business isn't moving",
-    body: "Everyone is working hard. The founder is working hardest. But at the end of the quarter, the numbers haven't moved and nobody can explain exactly why. Activity is high. Progress is unclear. The problem is the absence of goals specific enough to create direction and accountability at every level of the team.",
+    title: "The team is busy but the business isn’t moving",
+    body: "Everyone is working hard. The founder is working hardest. But at the end of the quarter, the numbers haven’t moved and nobody can explain exactly why. Activity is high. Progress is unclear. The problem is the absence of goals specific enough to create direction and accountability at every level of the team.",
   },
   {
     num: "02",
@@ -80,13 +80,13 @@ const SITUATIONS = [
   },
   {
     num: "03",
-    title: "Previous OKR attempts haven't worked",
-    body: "Many founders have tried OKRs — often after reading a book or attending a workshop — and found that within two quarters, the system was quietly abandoned. This is almost never a failure of intent. It is a failure of design: too many objectives, no review rhythm, and goals that weren't connected to the real work of the business.",
+    title: "Previous OKR attempts haven’t worked",
+    body: "Many founders have tried OKRs — often after reading a book or attending a workshop — and found that within two quarters, the system was quietly abandoned. This is almost never a failure of intent. It is a failure of design: too many objectives, no review rhythm, and goals that weren’t connected to the real work of the business.",
   },
   {
     num: "04",
     title: "The team has grown past what informal management can handle",
-    body: "A 6-person team can be managed through proximity and conversation. A 25-person team cannot. When the business grows past the point where the founder can personally track what everyone is working on, a formal goal system stops being optional. OKRs are the right tool for this transition — if they're designed for the actual capacity of the team.",
+    body: "A 6-person team can be managed through proximity and conversation. A 25-person team cannot. When the business grows past the point where the founder can personally track what everyone is working on, a formal goal system stops being optional. OKRs are the right tool for this transition — if they’re designed for the actual capacity of the team.",
   },
 ];
 
@@ -95,7 +95,7 @@ const STEPS = [
     num: "01",
     label: "Diagnose",
     title: "Understand the strategy before designing the goals",
-    body: "OKRs are only as good as the strategy they express. Before designing any framework, Simpleworks Consulting works with the founder and leadership team to clarify the three to five things that matter most for the business this year. Not twenty things. Three to five. Everything else waits — or doesn't make it into the OKR system at all.",
+    body: "OKRs are only as good as the strategy they express. Before designing any framework, Simpleworks Consulting works with the founder and leadership team to clarify the three to five things that matter most for the business this year. Not twenty things. Three to five. Everything else waits — or doesn’t make it into the OKR system at all.",
   },
   {
     num: "02",
@@ -125,7 +125,7 @@ const STEPS = [
     num: "06",
     label: "Reset",
     title: "Run the second cycle — then hand over to the team",
-    body: "The end-of-cycle reset — scoring the OKRs, learning from what worked and didn't, and setting the next quarter's goals — is the hardest part of running OKRs and the skill most teams lack. Simpleworks Consulting runs the first reset with the team, then progressively reduces involvement in the second cycle so the organisation builds the capability to run it independently.",
+    body: "The end-of-cycle reset — scoring the OKRs, learning from what worked and didn’t, and setting the next quarter’s goals — is the hardest part of running OKRs and the skill most teams lack. Simpleworks Consulting runs the first reset with the team, then progressively reduces involvement in the second cycle so the organisation builds the capability to run it independently.",
   },
 ];
 
@@ -136,15 +136,15 @@ const DIFFERENTIATORS = [
   },
   {
     title: "No software dependency",
-    body: "We start with a spreadsheet. If a software tool would genuinely help your team, we'll recommend one. But the system works without it — which matters when the team is stretched and adoption is fragile.",
+    body: "We start with a spreadsheet. If a software tool would genuinely help your team, we’ll recommend one. But the system works without it — which matters when the team is stretched and adoption is fragile.",
   },
   {
     title: "Two live cycles before handover",
-    body: "We don't hand over a framework and disappear. Simpleworks Consulting runs the first two OKR cycles alongside your team — including weekly reviews, mid-cycle adjustments, and the end-of-cycle reset — before stepping back.",
+    body: "We don’t hand over a framework and disappear. Simpleworks Consulting runs the first two OKR cycles alongside your team — including weekly reviews, mid-cycle adjustments, and the end-of-cycle reset — before stepping back.",
   },
   {
     title: "Premraj Menon leads every engagement personally",
-    body: "No junior consultants. No workshops delivered by an associate. Prem works directly with your leadership team on the OKR design, the launch, and the first two review cycles.",
+    body: "No junior consultants. No workshops delivered by an associate. Premraj works directly with your leadership team on the OKR design, the launch, and the first two review cycles.",
   },
 ];
 
@@ -191,7 +191,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do we need OKR software?",
-    a: "No. Simpleworks Consulting starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we'll recommend and help implement one. But for most MSMEs between ₹10 crore and ₹200 crore, the overhead of a software platform is higher than its benefit in the first year.",
+    a: "No. Simpleworks Consulting starts every OKR engagement with a spreadsheet — a shared Google Sheet that tracks Objectives, Key Results, owners, and progress in one place. If a dedicated OKR tool would genuinely help the team, we’ll recommend and help implement one. But for most MSMEs between ₹10 crore and ₹200 crore, the overhead of a software platform is higher than its benefit in the first year.",
   },
   {
     q: "We already set annual targets. Is that the same as OKRs?",
@@ -206,11 +206,11 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "How long does an OKR consulting engagement typically last?",
-    a: "A full OKR engagement — covering design, launch, and two live cycles — typically runs four to six months. The first four to six weeks cover the strategy diagnosis and OKR design. The following two to three months cover the first live cycle with Simpleworks Consulting's active involvement. The final month covers the second cycle with progressively reduced support as the team builds the capability to run the system independently.",
+    a: "A full OKR engagement — covering design, launch, and two live cycles — typically runs four to six months. The first four to six weeks cover the strategy diagnosis and OKR design. The following two to three months cover the first live cycle with Simpleworks Consulting’s active involvement. The final month covers the second cycle with progressively reduced support as the team builds the capability to run the system independently.",
   },
   {
     q: "What does the first step look like?",
-    a: "A quick introductory conversation with Premraj Menon. No pitch, no proposal. You describe where your business is and what is making goal-setting and accountability difficult — Prem asks a few direct questions and tells you honestly whether an OKR engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so and point you in the right direction.",
+    a: "A quick introductory conversation with Premraj Menon. No pitch, no proposal. You describe where your business is and what is making goal-setting and accountability difficult — Premraj asks a few direct questions and tells you honestly whether an OKR engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so and point you in the right direction.",
   },
 ];
 
@@ -337,7 +337,7 @@ export default function OkrConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -533,7 +533,7 @@ export default function OkrConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            Let&apos;s have a quick introductory call →
+            Let&rsquo;s have a quick introductory call →
           </Link>
         </div>
       </section>
@@ -742,7 +742,7 @@ export default function OkrConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Let&apos;s Talk
+            Let&rsquo;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"

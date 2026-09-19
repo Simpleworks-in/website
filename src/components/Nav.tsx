@@ -69,7 +69,7 @@ export default function Nav() {
               href="/contact"
               className="rounded-[1px] border border-red px-[22px] py-2 text-[13px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
             >
-              Let&apos;s Talk
+              Let&rsquo;s Talk
             </Link>
           </li>
         </ul>
@@ -139,7 +139,7 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 className="inline-block rounded-[1px] border border-red px-6 py-2.5 text-[13px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
               >
-                Let&apos;s Talk
+                Let&rsquo;s Talk
               </Link>
             </li>
           </ul>

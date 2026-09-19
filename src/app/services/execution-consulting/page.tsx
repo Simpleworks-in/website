@@ -42,7 +42,7 @@ const WHAT_WE_DO = [
   {
     num: "01 — Diagnosis",
     title: "Where execution is breaking down",
-    body: "Before prescribing anything, Simpleworks Consulting diagnoses where the real gap is. Goals that don't cascade. Teams that don't own their numbers. Reviews that happen but don't change anything. The problem is rarely what it appears to be on the surface.",
+    body: "Before prescribing anything, Simpleworks Consulting diagnoses where the real gap is. Goals that don’t cascade. Teams that don’t own their numbers. Reviews that happen but don’t change anything. The problem is rarely what it appears to be on the surface.",
   },
   {
     num: "02 — Goal Architecture",
@@ -57,7 +57,7 @@ const WHAT_WE_DO = [
   {
     num: "04 — Live Execution Support",
     title: "Running the first two cycles with you",
-    body: "The biggest reason execution systems fail is that they're handed over and forgotten. Simpleworks Consulting runs the first two OKR cycles alongside your team — coaching leaders through reviews, adjusting the system where it isn't working, and exiting only when the organisation can run it independently.",
+    body: "The biggest reason execution systems fail is that they’re handed over and forgotten. Simpleworks Consulting runs the first two OKR cycles alongside your team — coaching leaders through reviews, adjusting the system where it isn’t working, and exiting only when the organisation can run it independently.",
   },
 ];
 
@@ -69,7 +69,7 @@ const SITUATIONS = [
   },
   {
     num: "02",
-    title: "The founder is doing everyone's job",
+    title: "The founder is doing everyone’s job",
     body: "Every important task flows upward to the founder because no one else is clear on what they own or empowered to decide. The business cannot scale until there is a layer of leadership that operates with genuine accountability — not just the appearance of it.",
   },
   {
@@ -124,11 +124,11 @@ const DIFFERENTIATORS = [
   },
   {
     title: "No software dependency",
-    body: "We start with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we'll help you choose one. But the system works without it.",
+    body: "We start with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we’ll help you choose one. But the system works without it.",
   },
   {
     title: "Premraj Menon leads every engagement personally",
-    body: "No junior consultants. No templates applied from a distance. Prem works directly with your leadership team — in person where possible, structured online sessions where not.",
+    body: "No junior consultants. No templates applied from a distance. Premraj works directly with your leadership team — in person where possible, structured online sessions where not.",
   },
   {
     title: "Exit when the team can run it alone",
@@ -141,7 +141,7 @@ const LIVE_SPOKES = [
     tag: "Strategy",
     title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
     excerpt:
-      "Most MSME founders have a plan, not a strategy. Here's the difference — and how to fix it without offsites or 40-page documents.",
+      "Most MSME founders have a plan, not a strategy. Here’s the difference — and how to fix it without offsites or 40-page documents.",
     href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
   },
   {
@@ -149,7 +149,7 @@ const LIVE_SPOKES = [
     title:
       "MSME Consulting: Why a Focused Firm Delivers More Than a Full-Service One",
     excerpt:
-      "Most consulting firms promise everything and deliver little. Here's why focus and execution discipline wins every time.",
+      "Most consulting firms promise everything and deliver little. Here’s why focus and execution discipline wins every time.",
     href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
   },
   {
@@ -174,11 +174,11 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do we need OKR software to make this work?",
-    a: "No. We start every engagement with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we'll help you evaluate and choose one. But the system works without it, and for most MSMEs between ₹10 crore and ₹200 crore, a lightweight manual system is more sustainable than a platform the team doesn't have time to maintain.",
+    a: "No. We start every engagement with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we’ll help you evaluate and choose one. But the system works without it, and for most MSMEs between ₹10 crore and ₹200 crore, a lightweight manual system is more sustainable than a platform the team doesn’t have time to maintain.",
   },
   {
     q: "What is the 5D method?",
-    a: "The 5D method is Simpleworks Consulting's execution framework: Diagnose, Define, Design, Deploy, Drive. It is the structured process we follow in every engagement — understanding the real constraint first, building the right goals second, launching the system with the team third, and staying until the organisation can run it independently. The 5D method ensures every engagement ends with a system that works, not just a plan that was agreed.",
+    a: "The 5D method is Simpleworks Consulting’s execution framework: Diagnose, Define, Design, Deploy, Drive. It is the structured process we follow in every engagement — understanding the real constraint first, building the right goals second, launching the system with the team third, and staying until the organisation can run it independently. The 5D method ensures every engagement ends with a system that works, not just a plan that was agreed.",
   },
 ];
 
@@ -189,11 +189,11 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "We already have KPIs. Why would we also need OKRs?",
-    a: "KPIs measure the health of the business — revenue, margins, customer satisfaction. They tell you how the business is performing. OKRs define where the business is going and what specific work will get it there. Most MSMEs track KPIs but don't have OKRs — which means they know the score but don't have a game plan. The two work together, not instead of each other.",
+    a: "KPIs measure the health of the business — revenue, margins, customer satisfaction. They tell you how the business is performing. OKRs define where the business is going and what specific work will get it there. Most MSMEs track KPIs but don’t have OKRs — which means they know the score but don’t have a game plan. The two work together, not instead of each other.",
   },
   {
     q: "What does the first conversation look like?",
-    a: "A quick introductory call with Premraj Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks Consulting can help. If it's not the right fit, we'll say so and point you in the right direction.",
+    a: "A quick introductory call with Premraj Menon. No pitch, no proposal. You describe where execution is breaking down in your business — we ask a few questions and tell you honestly whether and how Simpleworks Consulting can help. If it’s not the right fit, we’ll say so and point you in the right direction.",
   },
 ];
 
@@ -319,7 +319,7 @@ export default function ExecutionConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -436,7 +436,7 @@ export default function ExecutionConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            Let&apos;s have a quick introductory call →
+            Let&rsquo;s have a quick introductory call →
           </Link>
         </div>
       </section>
@@ -641,7 +641,7 @@ export default function ExecutionConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Let&apos;s Talk
+            Let&rsquo;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"

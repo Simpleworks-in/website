@@ -28,38 +28,38 @@ export const metadata: Metadata = {
 const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 const STATS = [
-  { num: "39+", label: "Years in business\nleadership" },
+  { num: "39", label: "Years in business\nleadership" },
   { num: "6", label: "Industries: Consumer\nto SaaS" },
   { num: "1-to-1", label: "No group batches.\nOnly your business." },
 ];
 
 const PAIN_QUOTES = [
-  "“We're busy every day but I don't see the growth I expected.”",
+  "“We’re busy every day but I don’t see the growth I expected.”",
   "“My team executes, but we keep missing targets somehow.”",
-  "“We've tried consultants before. Got a report. Nothing changed on the ground.”",
+  "“We’ve tried consultants before. Got a report. Nothing changed on the ground.”",
   "“We have no real GTM plan — we just chase every lead that comes.”",
 ];
 
 const WHO_ITS_FOR = [
   {
     title: "Manufacturing & industrial MSMEs",
-    body: "You run a factory, a component supplier, or a process business — and you're trying to grow revenue without adding complexity you can't manage.",
+    body: "You run a factory, a component supplier, or a process business — and you’re trying to grow revenue without adding complexity you can’t manage.",
   },
   {
     title: "Consumer goods & distribution businesses",
-    body: "You have a product in the market but the channel strategy isn't working — you're over-reliant on one customer, one geography, or one distributor.",
+    body: "You have a product in the market but the channel strategy isn’t working — you’re over-reliant on one customer, one geography, or one distributor.",
   },
   {
     title: "Family business successors",
-    body: "You've taken over from a founder-parent and are navigating the balance between respecting what's been built and leading where it needs to go.",
+    body: "You’ve taken over from a founder-parent and are navigating the balance between respecting what’s been built and leading where it needs to go.",
   },
   {
     title: "First-generation entrepreneurs",
-    body: "You've crossed ₹10 crore in revenue but growth has plateaued — and you're not sure whether the problem is strategy, sales, or execution.",
+    body: "You’ve crossed ₹10 crore in revenue but growth has plateaued — and you’re not sure whether the problem is strategy, sales, or execution.",
   },
   {
     title: "Startups moving from early traction to scale",
-    body: "You have product-market fit and some revenue — but the business isn't yet structured for the next phase of growth.",
+    body: "You have product-market fit and some revenue — but the business isn’t yet structured for the next phase of growth.",
   },
   {
     title: "Founders preparing for a growth leap",
@@ -74,7 +74,7 @@ const STEPS = [
   },
   {
     title: "Diagnose — find the real constraint",
-    body: "Most business problems have a root cause that isn't obvious. We surface what's actually holding growth back, not just the symptoms.",
+    body: "Most business problems have a root cause that isn’t obvious. We surface what’s actually holding growth back, not just the symptoms.",
   },
   {
     title: "Frame the recommendation — a clear path forward",
@@ -82,11 +82,11 @@ const STEPS = [
   },
   {
     title: "Execution cadence — run the plan together",
-    body: "We translate the recommendation into weekly actions. You're not left with a deck — we work through implementation side by side.",
+    body: "We translate the recommendation into weekly actions. You’re not left with a deck — we work through implementation side by side.",
   },
   {
     title: "Set accountability — OKRs that keep you on track",
-    body: "We build an OKR structure so progress is visible, ownership is clear, and course correction happens before it's too late.",
+    body: "We build an OKR structure so progress is visible, ownership is clear, and course correction happens before it’s too late.",
   },
 ];
 
@@ -97,14 +97,14 @@ const WHY_CARDS = [
   },
   {
     title: "39 years of senior operating experience",
-    body: "Premraj has held senior leadership roles across six industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That's not theory or certification. It's tested judgment applied to your reality.",
+    body: "Premraj has held senior leadership roles across six industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That’s not theory or certification. It’s tested judgment applied to your reality.",
   },
   {
     title: "No reports left behind on a desk",
     body: "Most consultants deliver a document and exit. This engagement stays through implementation — weekly cadence, OKR tracking, course corrections as the business moves.",
   },
   {
-    title: "Built for founders Prem can sit across the table from",
+    title: "Built for founders Premraj can sit across the table from",
     body: "This engagement is based in Bengaluru — full coaching happens face-to-face, in person. A quick advisory conversation works well over a call from anywhere. But the actual diagnostic and execution work needs to happen in person, so this is best suited to founders based in or able to meet regularly in Bengaluru.",
   },
 ];
@@ -112,7 +112,7 @@ const WHY_CARDS = [
 const FAQS = [
   {
     q: "What does an MSME business coach do differently from a consultant?",
-    a: "A management consultant typically arrives with a framework, applies it, produces a plan, and hands it over. A business coach stays in the conversation longer — asking the right questions, challenging assumptions, and working alongside you as you implement. In practice, Prem's engagements combine both — structured consulting thinking with the continuity of a coaching relationship. You don't just get a plan; you get someone who stays until it's moving.",
+    a: "A management consultant typically arrives with a framework, applies it, produces a plan, and hands it over. A business coach stays in the conversation longer — asking the right questions, challenging assumptions, and working alongside you as you implement. In practice, Premraj’s engagements combine both — structured consulting thinking with the continuity of a coaching relationship. You don’t just get a plan; you get someone who stays until it’s moving.",
   },
   {
     q: "Is MSME business coaching available online across India?",
@@ -128,15 +128,15 @@ const FAQS = [
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
-    a: "Group programmes work through a shared curriculum applied to dozens or hundreds of businesses simultaneously. They're affordable and useful for building frameworks. But they can't diagnose your specific business, surface your specific growth constraint, or build a plan around your specific market. A one-to-one MSME business coach does exactly that. This engagement is built entirely around your business — nothing generic.",
+    a: "Group programmes work through a shared curriculum applied to dozens or hundreds of businesses simultaneously. They’re affordable and useful for building frameworks. But they can’t diagnose your specific business, surface your specific growth constraint, or build a plan around your specific market. A one-to-one MSME business coach does exactly that. This engagement is built entirely around your business — nothing generic.",
   },
   {
     q: "What industries does Simpleworks Consulting work with?",
-    a: "Most clients are in manufacturing, consumer goods, retail and distribution, professional services, or early-stage technology and SaaS businesses. Prem has operating experience across Consumer Durables, Automotive and Tyres, Telecom, and SaaS — so these are the verticals where the coaching is most grounded.",
+    a: "Most clients are in manufacturing, consumer goods, retail and distribution, professional services, or early-stage technology and SaaS businesses. Premraj has operating experience across Consumer Durables, Automotive and Tyres, Telecom, and SaaS — so these are the verticals where the coaching is most grounded.",
   },
   {
     q: "What is the first step?",
-    a: "A quick introductory conversation — no agenda, no pitch. You share what your business is dealing with and what you're trying to solve. From there, you both decide whether to go further. No commitment until that conversation has happened.",
+    a: "A quick introductory conversation — no agenda, no pitch. You share what your business is dealing with and what you’re trying to solve. From there, you both decide whether to go further. No commitment until that conversation has happened.",
   },
 ];
 
@@ -144,7 +144,7 @@ const BLOG_LINKS = [
   {
     title: "What Does an MSME Business Coach Actually Do?",
     excerpt:
-      "The role explained clearly — what a coach does, what they don't do, and how it differs from consulting, training, and mentorship.",
+      "The role explained clearly — what a coach does, what they don’t do, and how it differs from consulting, training, and mentorship.",
     href: "/blog/what-does-an-msme-business-coach-actually-do",
   },
   {
@@ -368,9 +368,9 @@ export default function MsmeBusinessCoachPage() {
                 {i + 1}
               </div>
               <div>
-                <h4 className="text-[18px] font-bold text-ink mb-1">
+                <h3 className="text-[18px] font-bold text-ink mb-1">
                   {step.title}
-                </h4>
+                </h3>
                 <p className="text-[15px] text-mid leading-relaxed">
                   {step.body}
                 </p>
@@ -398,9 +398,9 @@ export default function MsmeBusinessCoachPage() {
               key={card.title}
               className="p-5 border border-rule rounded-sm"
             >
-              <h4 className="text-[18px] font-bold text-ink mb-1">
+              <h3 className="text-[18px] font-bold text-ink mb-1">
                 {card.title}
-              </h4>
+              </h3>
               <p className="text-[15px] text-mid leading-relaxed">
                 {card.body}
               </p>
@@ -430,9 +430,9 @@ export default function MsmeBusinessCoachPage() {
               key={i}
               className="p-5 border border-rule rounded-sm"
             >
-              <h4 className="text-[18px] font-bold text-ink mb-1">
+              <h3 className="text-[18px] font-bold text-ink mb-1">
                 {card.title}
-              </h4>
+              </h3>
               <p className="text-[15px] text-mid leading-relaxed">
                 {card.body}
               </p>
@@ -460,18 +460,12 @@ export default function MsmeBusinessCoachPage() {
             Founder, Simpleworks Consulting | MSME Business Coach, Bengaluru
           </p>
           <p className="text-[15px] text-mid leading-relaxed">
-            Premraj Menon is a senior management consultant and MSME business
-            coach based in Bengaluru, with 39 years of experience across
-            Consumer Durables, Automotive, Telecom, and SaaS. He has held
-            COO-level and senior leadership roles across six industries —
-            managing revenue cycles, channel strategy, execution systems, and
-            growth transitions. He holds an EGMP from IIM Bengaluru and an
-            Advanced Management Programme from Ross School of Business,
-            University of Michigan. Simpleworks Consulting works
-            exclusively with Indian MSMEs, startups, and family businesses in
-            the ₹10 crore to ₹200 crore revenue range — one business at a
-            time.
-          </p>
+            Premraj Menon has coached founders and led businesses for 39 years,
+            including as COO of Tata Docomo&rsquo;s Kerala Circle. Simpleworks
+            Consulting works only with Indian MSMEs, startups and family
+            businesses in the ₹10–200 crore range. Read his full background on
+            the <Link href="/about" className="text-red hover:underline">About page</Link>.
+</p>
           <div className="flex flex-wrap gap-3 mt-4">
             <a
               href={CONTACT_LINK}
@@ -525,9 +519,9 @@ export default function MsmeBusinessCoachPage() {
               href={post.href}
               className="group p-5 border border-rule rounded-sm flex flex-col"
             >
-              <h4 className="text-[18px] font-bold text-ink mb-2 leading-snug">
+              <h3 className="text-[18px] font-bold text-ink mb-2 leading-snug">
                 {post.title}
-              </h4>
+              </h3>
               <p className="text-[15px] text-mid leading-relaxed mb-4">
                 {post.excerpt}
               </p>

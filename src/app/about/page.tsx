@@ -4,17 +4,17 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: {
-    absolute: "Premraj Menon | Independent Consultant, Bengaluru",
+    absolute: "About Premraj Menon, Founder | Simpleworks Consulting",
   },
   description:
-    "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo's Kerala Circle.",
+    "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo’s Kerala Circle.",
   alternates: {
     canonical: "https://www.simpleworks.in/about",
   },
   openGraph: {
-    title: "Premraj Menon | Independent Consultant, Bengaluru",
+    title: "About Premraj Menon, Founder | Simpleworks Consulting",
     description:
-      "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo's Kerala Circle.",
+      "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo’s Kerala Circle.",
     url: "https://www.simpleworks.in/about",
     type: "website",
   },
@@ -55,7 +55,7 @@ export default function AboutPage() {
             <div className="flex gap-8 opacity-0 animate-fade-up [animation-delay:0.55s]">
               <div className="flex flex-col gap-1">
                 <span className="text-[28px] md:text-[32px] font-bold leading-none text-ink">
-                  39<em className="not-italic text-red">+</em>
+                  39
                 </span>
                 <span className="text-eyebrow-lg uppercase tracking-wide-5 text-light">
                   Years Experience

@@ -168,7 +168,7 @@ export default async function ResourcesPage({
             get the PDF <em className="font-bold italic text-red">instantly.</em>
           </p>
           <p className="mt-4 max-w-[480px] text-[15px] leading-[1.7] text-mid">
-            We don&apos;t ask for your email address or any other information
+            We don&rsquo;t ask for your email address or any other information
             to download the content. If you like what you read and feel we
             could add value to your business, do write to me at{" "}
             <a href="mailto:pm@simpleworks.in" className="font-semibold text-red underline">

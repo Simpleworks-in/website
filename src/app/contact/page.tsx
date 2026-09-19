@@ -1,9 +1,10 @@
 import ContactTabs from "@/components/ContactTabs";
 import Reveal from "@/components/Reveal";
+import { FACTS } from "../../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "Schedule an Introductory Call | Simpleworks, Bengaluru",
+    absolute: "Contact Simpleworks Consulting, Bengaluru",
   },
   description:
     "Talk directly to Premraj Menon, MSME and startup strategy consultant with 39 years of experience. Book a 15-minute introductory call.",
@@ -11,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/contact",
   },
   openGraph: {
-    title: "Schedule an Introductory Call | Simpleworks, Bengaluru",
+    title: "Contact Simpleworks Consulting, Bengaluru",
     description:
       "Talk directly to Premraj Menon, MSME and startup strategy consultant with 39 years of experience. Book a 15-minute introductory call.",
     url: "https://www.simpleworks.in/contact",
@@ -20,7 +21,7 @@ export const metadata = {
 };
 
 const WHATSAPP_HREF = `https://wa.me/919036099000?text=${encodeURIComponent(
-  "Hi Prem — I run a [business] in [city], about ₹__ Cr revenue and __ people. What's stuck: __"
+  "Hi Premraj — I run a [business] in [city], about ₹__ Cr revenue and __ people. What’s stuck: __"
 )}`;
 
 export default async function ContactPage() {
@@ -44,7 +45,7 @@ export default async function ContactPage() {
             <h1 className="text-[36px] md:text-hero-h1 font-bold leading-[1.1] tracking-tight-2 animate-fade-up">
               Something feels stuck.
               <br />
-              Let&apos;s <span className="text-red">find out what.</span>
+              Let&rsquo;s <span className="text-red">find out what.</span>
             </h1>
             <p className="text-[17px] italic text-mid leading-[1.65] mt-4 max-w-[500px] animate-fade-up">
               A 15-minute introductory call to see whether this is a fit — no
@@ -78,10 +79,10 @@ export default async function ContactPage() {
                 <polyline points="2,4 12,13 22,4" />
               </svg>
               <a
-                href="mailto:pm@simpleworks.in"
+                href={`mailto:${FACTS.email}`}
                 className="text-mid transition-colors hover:text-red"
               >
-                pm@simpleworks.in
+                {FACTS.email}
               </a>
             </div>
             <div className="flex items-center gap-3 text-sm text-mid">
@@ -93,7 +94,7 @@ export default async function ContactPage() {
               >
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
               </svg>
-              <span>+91 90360 99000</span>
+              <span>{FACTS.phone}</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-mid">
               <svg
@@ -105,7 +106,9 @@ export default async function ContactPage() {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span>Bengaluru, Karnataka, India</span>
+              <span>
+                {FACTS.city}, {FACTS.region}, India
+              </span>
             </div>
           </div>
         </div>

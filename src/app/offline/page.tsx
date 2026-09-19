@@ -27,7 +27,7 @@ export default function OfflinePage() {
         </li>
         <li>
           <Link className="text-red hover:underline" href="/about">
-            → About Prem
+            → About Premraj
           </Link>
         </li>
         <li>

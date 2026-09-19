@@ -33,12 +33,12 @@ const WHAT_WE_DO = [
   {
     num: "03 — Execution",
     title: "Plans that actually move",
-    body: "OKR frameworks, accountability structures, and review rhythms that turn decisions into progress. Simple enough to use without a consultant in the room once we've set it up.",
+    body: "OKR frameworks, accountability structures, and review rhythms that turn decisions into progress. Simple enough to use without a consultant in the room once we’ve set it up.",
   },
   {
     num: "04 — The difference",
     title: "We stay until the plan is moving",
-    body: "Simpleworks Consulting doesn't hand over a report and walk away. Every engagement ends when the plan is in motion on the ground — not when the invoice is settled.",
+    body: "Simpleworks Consulting doesn’t hand over a report and walk away. Every engagement ends when the plan is in motion on the ground — not when the invoice is settled.",
   },
 ];
 
@@ -46,12 +46,12 @@ const SITUATIONS = [
   {
     num: "01",
     title: "Revenue has plateaued",
-    body: "The business grew steadily for years, then stopped. The founder is working harder than ever but the numbers aren't moving. The cause is rarely obvious — usually a combination of unclear positioning, weak execution, and a team that isn't aligned.",
+    body: "The business grew steadily for years, then stopped. The founder is working harder than ever but the numbers aren’t moving. The cause is rarely obvious — usually a combination of unclear positioning, weak execution, and a team that isn’t aligned.",
   },
   {
     num: "02",
     title: "Growth is up but margins are shrinking",
-    body: "Revenue is increasing but profitability isn't following. Every new customer feels like a win that costs more than it earns. This usually signals a pricing, channel, or cost structure problem — sometimes all three.",
+    body: "Revenue is increasing but profitability isn’t following. Every new customer feels like a win that costs more than it earns. This usually signals a pricing, channel, or cost structure problem — sometimes all three.",
   },
   {
     num: "03",
@@ -68,7 +68,7 @@ const SITUATIONS = [
 const DIFFERENTIATORS = [
   {
     title: "One point of contact — always Premraj Menon",
-    body: "No junior team. No account manager. When you engage Simpleworks Consulting, you work directly with Prem — in your office, with your team, on your problem.",
+    body: "No junior team. No account manager. When you engage Simpleworks Consulting, you work directly with Premraj — in your office, with your team, on your problem.",
   },
   {
     title: "Scoped for MSMEs — not enterprise minimums",
@@ -88,7 +88,7 @@ const AREAS = [
   {
     num: "01",
     title: "Business Strategy for MSMEs",
-    body: "Clarity on where your business should go and why — arrived at through honest diagnosis. Most MSMEs don't lack ideas. They lack clarity on which one to pursue — and the discipline to say no to the rest.",
+    body: "Clarity on where your business should go and why — arrived at through honest diagnosis. Most MSMEs don’t lack ideas. They lack clarity on which one to pursue — and the discipline to say no to the rest.",
   },
   {
     num: "02",
@@ -107,7 +107,7 @@ const LIVE_SPOKES = [
     tag: "Strategy",
     title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
     excerpt:
-      "Most MSME founders have a plan, not a strategy. Here's the difference — and how to fix it without offsites or 40-page documents.",
+      "Most MSME founders have a plan, not a strategy. Here’s the difference — and how to fix it without offsites or 40-page documents.",
     href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
   },
   {
@@ -115,7 +115,7 @@ const LIVE_SPOKES = [
     title:
       "MSME Consulting: Why a Focused Firm Delivers More Than a Full-Service One",
     excerpt:
-      "Most MSME consulting firms promise everything and deliver little. Here's why focus wins every time.",
+      "Most MSME consulting firms promise everything and deliver little. Here’s why focus wins every time.",
     href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
   },
   {
@@ -129,7 +129,7 @@ const LIVE_SPOKES = [
 
 const COMING_SOON_SPOKES = [
   "5 Signs Your Manufacturing Business Needs an Outside Consultant",
-  "MSME Consultant vs. CA vs. MBA Hire — What's Right for You?",
+  "MSME Consultant vs. CA vs. MBA Hire — What’s Right for You?",
   "Why MSME Owners Hit a Growth Ceiling at ₹5 Crore",
 ];
 
@@ -144,7 +144,7 @@ const FAQ_COLUMN_1 = [
   },
   {
     q: "Do you work with manufacturing businesses specifically?",
-    a: "Yes. Manufacturing, consumer goods, and distribution businesses make up a significant part of our client base. Premraj Menon's experience includes Consumer Durables at Usha International and Automotive & Tyres at MRF and Apollo Tyres — businesses where distribution, dealer networks, and operational efficiency are central.",
+    a: "Yes. Manufacturing, consumer goods, and distribution businesses make up a significant part of our client base. Premraj Menon’s experience includes Consumer Durables at Usha International and Automotive & Tyres at MRF and Apollo Tyres — businesses where distribution, dealer networks, and operational efficiency are central.",
   },
 ];
 
@@ -159,7 +159,7 @@ const FAQ_COLUMN_2 = [
   },
   {
     q: "What does the first step look like?",
-    a: "Let's have a quick introductory call — 30 minutes, with no agenda except understanding your situation. No pitch. No proposal before we've spoken. You describe what you're dealing with — we tell you honestly whether we can help and what that would look like in practice.",
+    a: "Let’s have a quick introductory call — 30 minutes, with no agenda except understanding your situation. No pitch. No proposal before we’ve spoken. You describe what you’re dealing with — we tell you honestly whether we can help and what that would look like in practice.",
   },
 ];
 
@@ -299,7 +299,7 @@ export default function MsmeConsultingPage() {
               href="/contact"
               className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
             >
-              Let&apos;s Talk &nbsp;→
+              Let&rsquo;s Talk &nbsp;→
             </Link>
           </div>
 
@@ -382,7 +382,7 @@ export default function MsmeConsultingPage() {
             href="/contact"
             className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
           >
-            Let&apos;s have a quick introductory call →
+            Let&rsquo;s have a quick introductory call →
           </Link>
         </div>
       </section>
@@ -426,12 +426,10 @@ export default function MsmeConsultingPage() {
             </div>
 
             <p className="text-[17px] leading-[1.8] text-mid">
-              Every engagement at Simpleworks Consulting is led personally by Prem
-              Menon — a consultant with 39 years across Consumer Durables,
-              Automotive, Telecom, and SaaS. He has worked inside large
-              corporates at P&amp;L level and inside startups with no budget.
-              That range is what makes advice for an MSME actually useful.
-            </p>
+              Every engagement is led personally by Premraj Menon, with 39 years
+              in operating roles from corporate P&amp;L to startups with no
+              budget. His full background is on the <Link href="/about" className="text-red hover:underline">About page</Link>.
+</p>
           </div>
 
           <div className="flex flex-col">
@@ -576,7 +574,7 @@ export default function MsmeConsultingPage() {
             href="/contact"
             className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
           >
-            Let&apos;s Talk
+            Let&rsquo;s Talk
           </Link>
           <a
             href="https://wa.me/919036099000"
