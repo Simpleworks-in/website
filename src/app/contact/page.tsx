@@ -51,7 +51,8 @@ export default async function ContactPage() {
               pitch, no pressure. Just a straight look at your business.
             </p>
             <p className="text-[15px] text-mid leading-[1.65] mt-3 max-w-[500px] animate-fade-up">
-              Message on WhatsApp, book an online{" "}
+              You can either message me on WhatsApp, block time on my calendar
+              for an online{" "}
               <a
                 href="https://calendar.app.google/rVCgwR2PUwPorN658"
                 target="_blank"
@@ -59,9 +60,9 @@ export default async function ContactPage() {
                 className="text-red underline hover:no-underline"
               >
                 Google Meet
-              </a>{" "}
-              meeting, or send a message. I shall respond personally within 1
-              business day.
+              </a>
+              , or send a message using the form. I shall respond personally
+              within 1 business day.
             </p>
           </div>
 
