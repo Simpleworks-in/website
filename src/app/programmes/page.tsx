@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 import { FAQS } from "@/lib/faqs";
 
@@ -88,12 +89,11 @@ export default function ProgrammesPage() {
           <p className="mb-6 text-[11px] font-light uppercase tracking-[0.2em] text-light">
             Our Programmes
           </p>
-          <h1 className="mb-4 text-[40px] font-bold leading-[1.06] tracking-tight text-ink md:text-[56px]">
-            Three programmes.
-            <br />
-            <span className="text-red">Fixed fees,</span>
-            <br />
-            agreed first.
+          <h1 className="mb-4 text-[40px] font-bold leading-[1.1] tracking-tight text-ink md:text-[56px]">
+            Three business consulting programmes for MSMEs.
+            <span className="mt-3 block text-[0.72em] font-normal text-mid">
+              Fixed fees, agreed first.
+            </span>
           </h1>
           <p className="mb-6 text-[20px] font-semibold leading-[1.4] text-ink">
             Fixed-fee consulting and business mentoring programmes for Indian
@@ -243,6 +243,13 @@ export default function ProgrammesPage() {
           </div>
           <span className="pb-2 text-[15px] text-mid">₹15,000 online</span>
         </div>
+
+        <p className="mt-4 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+          Not sure what you get?{" "}
+          <Link href="/sample-diagnostic-report" className="text-red hover:underline">
+            See a sample Diagnostic report →
+          </Link>
+        </p>
 
         <div className="mt-7 max-w-[560px] border-l-2 border-red pl-4 text-[14px] italic leading-[1.65] text-mid">
           Credited in full against anything that follows. It is a deposit,

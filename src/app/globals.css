@@ -235,3 +235,15 @@ body:has(.keystatic-shell),
 [role="menu"] {
   z-index: 9999 !important;
 }
+
+/* Print: sample diagnostic report is meant to be printed / saved as PDF */
+@media print {
+  nav, footer, .no-print { display: none !important; }
+  body { font-size: 11pt; line-height: 1.55; color: #0F0F0F; }
+  section { border-top: 1px solid #E1E1E1; padding: 18pt 0; break-inside: auto; }
+  h1, h2, h3 { break-after: avoid; }
+  table { break-inside: avoid; font-size: 9.5pt; }
+  blockquote { break-inside: avoid; }
+  a { text-decoration: none; color: #0F0F0F; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #878787; }
+}
