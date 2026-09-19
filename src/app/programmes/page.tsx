@@ -45,6 +45,13 @@ const ACCORDION_FAQS = faqs.map(({ q, a, aHtml }) => ({
   a: aHtml ?? `<p>${escapeHtml(a)}</p>`,
 }));
 
+const journey = [
+  { n: "01", label: "Diagnose", href: "#simple-diagnostic", sub: "Half a day. What\u2019s actually holding the business." },
+  { n: "02", label: "Plan", href: "#simple-reset", sub: "Reset, 30 days. Root cause found, solution designed." },
+  { n: "03", label: "Execute", href: "#simple-reset", sub: "Reset, 60 days. The plan installed, with me alongside." },
+  { n: "04", label: "Counsel", href: "#simple-counsel", sub: "Monthly. A senior thinking partner once it\u2019s running." },
+];
+
 function Deliverables({ items }: { items: string[] }) {
   return (
     <ul className="mb-10">
@@ -93,34 +100,42 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      {/* 2. Journey strip */}
-      <section className="border-t border-rule">
-        <div className="flex flex-col md:grid md:grid-cols-[repeat(4,minmax(140px,1fr))_minmax(220px,320px)]">
-          {[
-            ["01", "Diagnose"],
-            ["02", "Plan"],
-            ["03", "Reset"],
-            ["04", "Counsel"],
-          ].map(([num, label], i) => (
-            <div
-              key={num}
-              className={`flex flex-col gap-[10px] border-rule px-6 py-7 md:px-8 ${
-                i === 0
-                  ? "border-t-0 md:border-l-0 md:pl-14"
-                  : "border-t md:border-l md:border-t-0"
-              }`}
-            >
-              <span className="text-[10px] uppercase leading-none tracking-[0.2em] text-light">
-                {num}
-              </span>
-              <span className="text-[16px] font-bold leading-none text-ink">
-                {label}
-              </span>
-            </div>
-          ))}
-          <p className="hidden items-center border-l border-rule px-10 py-7 pr-14 text-[13px] italic leading-[1.6] text-light md:flex">
-            Most clients move through in that order. You can stop at any
-            point.
+      {/* 2. Engagement sequence */}
+      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+        <div className="max-w-[720px]">
+          <ol className="list-none p-0">
+            {journey.map(({ n, label, href, sub }) => (
+              <li
+                key={n}
+                className="border-t border-rule py-6 first:border-t-0 first:pt-0 md:flex md:gap-8"
+              >
+                <span className="mb-2 block text-[11px] font-light uppercase tracking-widest text-light md:mb-0 md:w-12 md:shrink-0 md:pt-1.5 md:text-[13px]">
+                  {n}
+                </span>
+                <div>
+                  <h3 className="mb-1 text-[20px] font-bold text-ink md:text-[24px]">
+                    <Link href={href} className="transition-colors hover:text-red">
+                      {label}
+                    </Link>
+                  </h3>
+                  <p className="mb-0 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+                    {sub}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-7 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+            Most clients move through in that order. You can stop at any point.
+          </p>
+
+          <p className="mt-6 border-t border-rule pt-6 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+            <Link href="#custom-engagement" className="transition-colors hover:text-red">
+              <strong className="font-bold text-ink">Or a custom engagement.</strong>
+            </Link>{" "}
+            If what you need doesn&rsquo;t fit this sequence, we scope it and quote it
+            before we begin.
           </p>
         </div>
       </section>
@@ -466,7 +481,7 @@ export default function ProgrammesPage() {
       </section>
 
       {/* 7. Custom Engagement */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+      <section id="custom-engagement" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
