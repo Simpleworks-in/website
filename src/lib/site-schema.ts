@@ -35,7 +35,10 @@ export const siteSchema = {
         "Family business advisory",
       ],
       // Only live profiles that are spelled exactly "Simpleworks Consulting".
-      sameAs: ["https://www.instagram.com/simpleworksconsulting/"],
+      sameAs: [
+        "https://www.linkedin.com/company/simpleworks-consulting/",
+        "https://www.instagram.com/simpleworksconsulting/",
+      ],
     },
     {
       "@type": "Person",
