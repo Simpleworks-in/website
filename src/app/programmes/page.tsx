@@ -260,12 +260,12 @@ export default function ProgrammesPage() {
         </div>
 
         <div className="mt-8">
-          <a
-            href="https://wa.me/919036099000"
+          <Link
+            href="/contact"
             className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-3.5 font-serif text-[14px] text-red transition-colors hover:bg-red hover:text-white"
           >
-            Book the Diagnostic
-          </a>
+            Schedule a Call
+          </Link>
         </div>
       </section>
 
@@ -685,12 +685,12 @@ export default function ProgrammesPage() {
           ₹15,000 online. Credited in full against whatever comes next.
           If you only need the Diagnostic, that is perfectly fine too.
         </p>
-        <a
-          href="https://wa.me/919036099000"
+        <Link
+          href="/contact"
           className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-4 font-serif text-[15px] text-red transition-colors hover:bg-red hover:text-white"
         >
-          Book the Diagnostic
-        </a>
+          Schedule a Call
+        </Link>
         <div className="mt-5 text-[13px] leading-[1.8] text-light">
           <a href="mailto:pm@simpleworks.in" className="text-mid transition-colors hover:text-red">
             pm@simpleworks.in

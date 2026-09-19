@@ -47,8 +47,8 @@ export default async function ContactPage() {
               Let&apos;s <span className="text-red">find out what.</span>
             </h1>
             <p className="text-[17px] italic text-mid leading-[1.65] mt-4 max-w-[500px] animate-fade-up">
-              A free 15-minute call to see whether this is a fit — no pitch,
-              no pressure. Just a straight look at your business.
+              A 15-minute introductory call to see whether this is a fit — no
+              pitch, no pressure. Just a straight look at your business.
             </p>
             <p className="text-[15px] text-mid leading-[1.65] mt-3 max-w-[500px] animate-fade-up">
               Message on WhatsApp, book an online{" "}
