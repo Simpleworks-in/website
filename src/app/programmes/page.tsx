@@ -48,7 +48,7 @@ const ACCORDION_FAQS = faqs.map(({ q, a, aHtml }) => ({
 const journey = [
   { n: "01", label: "Diagnose", href: "#simple-diagnostic", sub: "Half a day. What\u2019s actually holding the business." },
   { n: "02", label: "Plan", href: "#simple-reset", sub: "Reset, 30 days. Root cause found, solution designed." },
-  { n: "03", label: "Execute", href: "#simple-reset", sub: "Reset, 60 days. The plan installed, with me alongside." },
+  { n: "03", label: "Execute", href: "#simple-reset", sub: "Reset, 60 days. The same work, plus four weeks putting it in place." },
   { n: "04", label: "Counsel", href: "#simple-counsel", sub: "Monthly. A senior thinking partner once it\u2019s running." },
 ];
 
