@@ -80,27 +80,27 @@ export default function HomePage() {
         {/* Right zone */}
         <div className="flex-1 flex flex-col lg:flex-row items-stretch overflow-hidden">
           {/* Text */}
-          <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
-            <div className="flex flex-col mb-5 md:mb-[26px]">
+          <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 md:pr-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
+            <div className="flex flex-col mb-6 md:mb-8">
               <h1
                 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.25s" }}
               >
                 Management consulting for{" "}
                 <span className="text-red">established MSMEs</span>
-                <span className="mt-3 block text-[0.62em] font-normal text-mid">
+                <span className="mt-4 block text-[12px] font-light uppercase tracking-widest text-light md:text-[13px]">
                   Bengaluru and across India
                 </span>
               </h1>
             </div>
             <p
-              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-4 opacity-0 animate-fade-up"
+              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[360px] mb-4 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
               Your business has more in it than your current results show.
             </p>
             <p
-              className="text-[16px] md:text-[17px] text-mid leading-[1.7] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
+              className="text-[16px] md:text-[17px] text-mid leading-[1.7] max-w-[360px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.45s" }}
             >
               We work with established Indian small and medium businesses that are stuck in growth, short on clarity, and unsure of the next move.
