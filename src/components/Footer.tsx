@@ -128,24 +128,29 @@ export default function Footer() {
             {FACTS.city}, {FACTS.region}, India
           </span>
         </div>
+        <div className="hidden h-7 w-px flex-shrink-0 bg-rule md:block" />
+        <div className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid">
+          <svg
+            viewBox="0 0 24 24"
+            className="h-[15px] w-[15px] flex-shrink-0 stroke-red"
+            fill="none"
+            strokeWidth={1.8}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+          </svg>
+          <a
+            href="https://g.page/r/CUolfwQNa4a2EBM/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-mid transition-colors hover:text-red"
+            data-gtm="footer-review-cta"
+          >
+            Leave a Google Review
+          </a>
+        </div>
       </address>
-
-      {/* Row 2b: Google review prompt */}
-      <div className="border-b border-rule py-6 md:text-center">
-        <p className="font-serif text-[15px] leading-relaxed text-mid">
-          Worked with Simpleworks?{" "}
-          <span className="text-red">A Google review helps other founders find us.</span>
-        </p>
-        <a
-          href="https://g.page/r/CUolfwQNa4a2EBM/review"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-2 inline-block font-serif text-[15px] text-ink underline decoration-black/30 underline-offset-4 transition-colors hover:decoration-red"
-          data-gtm="footer-review-cta"
-        >
-          Leave a review
-        </a>
-      </div>
 
       {/* Row 3: nav + copyright */}
       <div className="flex flex-col items-start gap-3 py-5 md:flex-row md:items-center md:justify-between md:py-[18px]">
