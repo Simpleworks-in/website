@@ -130,6 +130,23 @@ export default function Footer() {
         </div>
       </address>
 
+      {/* Row 2b: Google review prompt */}
+      <div className="border-b border-rule py-6 md:text-center">
+        <p className="font-serif text-[15px] leading-relaxed text-mid">
+          Worked with Simpleworks?{" "}
+          <span className="text-red">A Google review helps other founders find us.</span>
+        </p>
+        <a
+          href="https://g.page/r/CUolfwQNa4a2EBM/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-block font-serif text-[15px] text-ink underline decoration-black/30 underline-offset-4 transition-colors hover:decoration-red"
+          data-gtm="footer-review-cta"
+        >
+          Leave a review
+        </a>
+      </div>
+
       {/* Row 3: nav + copyright */}
       <div className="flex flex-col items-start gap-3 py-5 md:flex-row md:items-center md:justify-between md:py-[18px]">
         <ul className="flex w-full list-none flex-wrap gap-x-6 gap-y-2 md:w-auto md:gap-x-7">
