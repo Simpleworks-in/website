@@ -151,18 +151,18 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href="/programmes"
-              className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
-            >
-              Programmes
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/startup-mentor-bengaluru"
               className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
             >
               Startups
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/programmes"
+              className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
+            >
+              Programmes
             </Link>
           </li>
           <li>
