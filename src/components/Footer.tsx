@@ -174,7 +174,7 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] tracking-wide-3 text-light">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px] tracking-wide-3 text-light">
           <Link href="/privacy-policy" className="transition-colors hover:text-red">
             Privacy Policy
           </Link>

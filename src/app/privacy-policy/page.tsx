@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-[20px] leading-[1.3] md:text-[24px] font-bold">Contact</h2>
           <p className="mt-3 text-[16px] md:text-[17px] text-mid leading-[1.78]">
-            Prem Menon, Founder and Principal Consultant
+            Premraj Menon, Founder and Principal Consultant
             <br />
             Simpleworks Consulting, Bengaluru, Karnataka, India
             <br />
