@@ -27,7 +27,7 @@ const existing = (q: string): Faq => {
 };
 
 const REMOTE_HTML =
-  "<p>Yes, for two of the three programmes. The Simple Diagnostic (₹15,000 online) and The Simple Counsel can both run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, because the work happens inside your business with your team. Outside Bengaluru, travel for it is charged at actuals.</p>";
+  "<p>Yes, for two of the three programmes. The Simple Diagnostic and The Simple Counsel can both run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, because the work happens inside your business with your team. Outside Bengaluru, travel for it is charged at actuals.</p>";
 
 const NDA_HTML =
   "<p>Yes. We’re happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>";

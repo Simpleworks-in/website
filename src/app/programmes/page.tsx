@@ -8,14 +8,14 @@ export const metadata = {
     absolute: "Business Consulting Fees & Programmes | Simpleworks",
   },
   description:
-    "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
+    "Fixed-fee consulting for MSME founders: a ₹20,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
   alternates: {
     canonical: "https://www.simpleworks.in/programmes",
   },
   openGraph: {
     title: "Business Consulting Fees & Programmes | Simpleworks",
     description:
-      "Fixed-fee consulting for MSME founders: a ₹15,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
+      "Fixed-fee consulting for MSME founders: a ₹20,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
     url: "https://www.simpleworks.in/programmes",
     type: "website",
   },
@@ -238,10 +238,9 @@ export default function ProgrammesPage() {
               ₹20,000
             </span>
             <span className="text-[13px] italic text-light">
-              in person · fixed, all-inclusive
+              fixed, all-inclusive
             </span>
           </div>
-          <span className="pb-2 text-[15px] text-mid">₹15,000 online</span>
         </div>
 
         <p className="mt-4 text-[16px] leading-[1.78] text-mid md:text-[17px]">
@@ -610,8 +609,8 @@ export default function ProgrammesPage() {
           <span className="text-red">half a day.</span>
         </h2>
         <p className="mb-8 max-w-[460px] text-[16px] leading-[1.7] text-mid">
-          Most clients begin with the Diagnostic. ₹20,000 in person,
-          ₹15,000 online. Credited in full against whatever comes next.
+          Most clients begin with the Diagnostic. ₹20,000 fixed.
+          Credited in full against whatever comes next.
           If you only need the Diagnostic, that is perfectly fine too.
         </p>
         <Link

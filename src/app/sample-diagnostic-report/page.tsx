@@ -468,8 +468,8 @@ export default function SampleDiagnosticReportPage() {
         <section className={`${SECTION} no-print text-center`}>
           <h2 className={H2}>Your business is not this one.</h2>
           <p className={`${P} mx-auto max-w-[560px]`}>
-            The half day tells you what your own morning adds up to. ₹15,000
-            online, ₹20,000 in person — credited in full against anything that
+            The half day tells you what your own morning adds up to. ₹20,000
+            fixed — credited in full against anything that
             follows.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
