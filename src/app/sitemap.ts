@@ -50,6 +50,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    { url: `${SITE}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${SITE}/terms-of-use`, changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({

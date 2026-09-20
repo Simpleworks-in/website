@@ -174,9 +174,17 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <span className="text-[11px] tracking-wide-3 text-light">
-          © {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.
-        </span>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] tracking-wide-3 text-light">
+          <Link href="/privacy-policy" className="transition-colors hover:text-red">
+            Privacy Policy
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link href="/terms-of-use" className="transition-colors hover:text-red">
+            Terms of Use
+          </Link>
+          <span aria-hidden="true">·</span>
+          <span>© {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.</span>
+        </div>
       </div>
     </footer>
   );
