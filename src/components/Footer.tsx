@@ -16,7 +16,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="text-[13px] italic text-light">
-            Simple answers to hard business questions.
+            More in the business than the results show.
           </p>
           <p className="text-[13px] text-light">
             Udyam Registration No: UDYAM-KR-03-0761415
