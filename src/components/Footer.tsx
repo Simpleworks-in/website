@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/Simpleworks_image_only_S.png";
-import msmeLogo from "../../public/msme-logo.png";
 import { FACTS } from "../../content/facts";
 
 export default function Footer() {
@@ -20,7 +19,7 @@ export default function Footer() {
             Simple answers to hard business questions.
           </p>
           <p className="text-[13px] text-light">
-            {FACTS.orgName} · Management consulting for Indian MSMEs
+            Udyam Registration No: UDYAM-KR-03-0761415
           </p>
         </div>
         <div className="flex items-center gap-3.5 md:mt-1">
@@ -175,21 +174,9 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <div className="flex items-center gap-3">
-          <Image
-            src={msmeLogo}
-            alt="MSME — Micro, Small & Medium Enterprises"
-            className="h-9 w-9 flex-shrink-0 object-contain mix-blend-multiply"
-          />
-          <div className="flex flex-col gap-1 md:items-end">
-            <span className="text-[11px] tracking-wide-3 text-light">
-              Udyam Registration No: UDYAM-KR-03-0761415
-            </span>
-            <span className="text-[11px] tracking-wide-3 text-light">
-              © {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.
-            </span>
-          </div>
-        </div>
+        <span className="text-[11px] tracking-wide-3 text-light">
+          © {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.
+        </span>
       </div>
     </footer>
   );
