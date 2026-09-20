@@ -10,9 +10,9 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/startup-mentor-bengaluru", label: "Startups" },
+  { href: "/programmes", label: "Programmes" },
   { href: "/blog", label: "Blog" },
   { href: "/resources", label: "Resources" },
-  { href: "/programmes", label: "Programmes" },
   { href: "/contact", label: "Contact" },
 ];
 
