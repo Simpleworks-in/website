@@ -154,7 +154,7 @@ export default function Footer() {
 
       {/* Row 3: nav + copyright */}
       <div className="flex flex-col items-start gap-3 py-5 md:flex-row md:items-center md:justify-between md:py-[18px]">
-        <ul className="flex w-full list-none flex-wrap gap-x-6 gap-y-2 md:w-auto md:gap-x-7">
+        <ul className="flex w-full list-none flex-wrap gap-x-6 gap-y-2 md:w-auto md:min-w-0 md:gap-x-5">
           <li>
             <Link
               href="/about"
@@ -212,7 +212,7 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-light">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-light md:flex-nowrap md:gap-x-2.5 md:whitespace-nowrap md:text-[12px]">
           <Link href="/privacy-policy" className="transition-colors hover:text-red">
             Privacy Policy
           </Link>
