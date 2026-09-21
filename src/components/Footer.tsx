@@ -155,9 +155,9 @@ export default function Footer() {
         </div>
       </address>
 
-      {/* Row 3: nav + copyright */}
-      <div className="flex flex-col items-start gap-3 py-5 md:flex-row md:items-center md:justify-between md:py-[18px]">
-        <ul className="flex w-full list-none flex-wrap gap-x-6 gap-y-2 md:w-auto md:min-w-0 md:gap-x-5">
+      {/* Row 3: nav */}
+      <div className="border-b border-rule py-5 md:py-[18px]">
+        <ul className="flex w-full list-none flex-wrap gap-x-6 gap-y-2 md:gap-x-7">
           <li>
             <Link
               href="/about"
@@ -215,25 +215,25 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-light md:flex-nowrap md:gap-x-2.5 md:whitespace-nowrap md:text-[12px]">
+      </div>
+
+      {/* Row 4: legal + copyright */}
+      <div className="flex flex-col items-start gap-3 py-5 text-[12px] text-light md:flex-row md:items-center md:justify-between md:py-[18px]">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Link href="/privacy-policy" className="transition-colors hover:text-red">
             Privacy Policy
           </Link>
-          <span aria-hidden="true">·</span>
           <Link href="/terms-of-use" className="transition-colors hover:text-red">
             Terms of Use
           </Link>
-          <span aria-hidden="true">·</span>
           <Link href="/refund-and-cancellation-policy" className="transition-colors hover:text-red">
             Refund &amp; Cancellation Policy
           </Link>
-          <span aria-hidden="true">·</span>
           <Link href="/shipping-and-delivery-policy" className="transition-colors hover:text-red">
             Shipping &amp; Delivery
           </Link>
-          <span aria-hidden="true">·</span>
-          <span>© {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.</span>
         </div>
+        <span>© {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.</span>
       </div>
     </footer>
   );
