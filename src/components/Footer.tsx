@@ -75,7 +75,7 @@ export default function Footer() {
 
       {/* Row 2: contact details centred */}
       <address
-        className="not-italic flex flex-col items-start gap-3 border-b border-rule py-6 md:flex-row md:items-center md:justify-center md:gap-12 md:py-7"
+        className="not-italic flex flex-col items-start gap-3 border-b border-rule py-4 md:flex-row md:items-center md:justify-center md:gap-12 md:py-3.5"
       >
         <div className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid">
           <svg
