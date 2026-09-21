@@ -251,7 +251,14 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
             Responds within one business day
           </div>
         </AsideBlock>
-        <AsideBlock label="Phone">+91 90360 99000</AsideBlock>
+        <AsideBlock label="Phone">
+          <a
+            href="tel:+919036099000"
+            className="text-mid transition-colors hover:text-red"
+          >
+            +91 90360 99000
+          </a>
+        </AsideBlock>
         <AsideBlock label="Location">
           Bengaluru, Karnataka
           <br />

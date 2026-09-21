@@ -53,6 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE}/terms-of-use`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE}/refund-and-cancellation-policy`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE}/shipping-and-delivery-policy`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({

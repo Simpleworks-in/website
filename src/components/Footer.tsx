@@ -21,6 +21,9 @@ export default function Footer() {
           <p className="text-[13px] text-light">
             Udyam Registration No: UDYAM-KR-03-0761415
           </p>
+          <p className="text-[13px] text-light">
+            {FACTS.orgName} &middot; {FACTS.locality}, {FACTS.city} &ndash; {FACTS.postalCode}
+          </p>
         </div>
         <div className="flex items-center gap-3.5 md:mt-1">
           <a
@@ -223,6 +226,10 @@ export default function Footer() {
           <span aria-hidden="true">·</span>
           <Link href="/refund-and-cancellation-policy" className="transition-colors hover:text-red">
             Refund &amp; Cancellation Policy
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link href="/shipping-and-delivery-policy" className="transition-colors hover:text-red">
+            Shipping &amp; Delivery
           </Link>
           <span aria-hidden="true">·</span>
           <span>© {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.</span>

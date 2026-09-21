@@ -116,6 +116,34 @@ export default async function ContactPage() {
 
       {/* TABS + CONTENT */}
       <ContactTabs formActionUrl={formActionUrl} whatsappHref={WHATSAPP_HREF} />
+
+      {/* REGISTERED OFFICE */}
+      <section className="border-t border-rule/100 px-6 py-10 md:ml-[72px] md:p-[60px]">
+        <p className="text-eyebrow tracking-wide-8 uppercase text-light mb-[10px]">
+          Registered Office
+        </p>
+        <address className="not-italic text-[15px] leading-relaxed text-mid">
+          <strong className="font-semibold text-ink">{FACTS.orgName}</strong>
+          <br />
+          Proprietor: {FACTS.founder}
+          <br />
+          Flat No. 502-B, SJR Spencer Apartments,
+          <br />
+          Varthur Main Road, Marathahalli,
+          <br />
+          {FACTS.city} &ndash; {FACTS.postalCode}, {FACTS.region}, India
+          <br />
+          Email:{" "}
+          <a href={`mailto:${FACTS.email}`} className="transition-colors hover:text-red">
+            {FACTS.email}
+          </a>
+          <br />
+          Phone:{" "}
+          <a href="tel:+919036099000" className="transition-colors hover:text-red">
+            {FACTS.phone}
+          </a>
+        </address>
+      </section>
     </>
   );
 }

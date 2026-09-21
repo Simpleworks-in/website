@@ -22,8 +22,10 @@ export const siteSchema = {
       priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
+        streetAddress: FACTS.streetAddress,
         addressLocality: FACTS.city,
         addressRegion: FACTS.region,
+        postalCode: FACTS.postalCode,
         addressCountry: "IN",
       },
       founder: { "@id": PERSON_ID },
