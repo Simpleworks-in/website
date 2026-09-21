@@ -221,6 +221,10 @@ export default function Footer() {
             Terms of Use
           </Link>
           <span aria-hidden="true">·</span>
+          <Link href="/refund-and-cancellation-policy" className="transition-colors hover:text-red">
+            Refund &amp; Cancellation Policy
+          </Link>
+          <span aria-hidden="true">·</span>
           <span>© {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.</span>
         </div>
       </div>
