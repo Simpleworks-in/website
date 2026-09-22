@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-[20px] leading-[1.3] md:text-[24px] font-bold">Who we are</h2>
           <p className="mt-3 text-[16px] md:text-[17px] text-mid leading-[1.78]">
-            Simpleworks Consulting is a management consulting practice based in Bengaluru,
+            Simpleworks Consulting (Sole Proprietor is Premraj Menon) is a management consulting practice based in Bengaluru,
             Karnataka, India. This policy explains what personal information we collect through
             www.simpleworks.in, why we collect it, and what you can ask us to do with it. For any
             question about this policy, write to pm@simpleworks.in.
