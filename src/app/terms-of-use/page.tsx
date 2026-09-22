@@ -30,6 +30,18 @@ export default function TermsOfUsePage() {
         </section>
 
         <section>
+          <h2 className="text-[20px] leading-[1.3] md:text-[24px] font-bold">Business entity</h2>
+          <p className="mt-3 text-[16px] md:text-[17px] text-mid leading-[1.78]">
+            &ldquo;Simpleworks Consulting&rdquo; (referred to as &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+            &ldquo;the Company&rdquo;) is a sole proprietorship business operated by Premraj Menon,
+            with its principal place of business in Bengaluru, Karnataka, India. Simpleworks
+            Consulting is registered under the Udyam (MSME) registration scheme. All engagements,
+            contracts, and communications entered into under the &ldquo;Simpleworks Consulting&rdquo;
+            name are legally binding on and undertaken by Premraj Menon, the sole proprietor.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-[20px] leading-[1.3] md:text-[24px] font-bold">
             Content is informational
           </h2>
