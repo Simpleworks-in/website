@@ -120,7 +120,7 @@ export default async function ContactPage() {
       {/* REGISTERED OFFICE */}
       <section className="border-t border-rule/100 px-6 py-10 md:ml-[72px] md:p-[60px]">
         <p className="text-eyebrow tracking-wide-8 uppercase text-light mb-[10px]">
-          Registered Office
+          Office Address
         </p>
         <address className="not-italic text-[15px] leading-relaxed text-mid">
           <strong className="font-semibold text-ink">{FACTS.orgName}</strong>
