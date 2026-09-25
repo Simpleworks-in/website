@@ -9,14 +9,14 @@ export const metadata = {
     absolute: "MSME Consultant in Bengaluru | Simpleworks Consulting",
   },
   description:
-    "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
+    "Strategy, go-to-market and execution consulting for Indian MSMEs, ₹2–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
     title: "MSME Consultant in Bengaluru | Simpleworks Consulting",
     description:
-      "Strategy, go-to-market and execution consulting for Indian MSMEs with ₹10–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
+      "Strategy, go-to-market and execution consulting for Indian MSMEs, ₹2–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
     url: "https://www.simpleworks.in",
     siteName: "Simpleworks Consulting",
     locale: "en_IN",
@@ -86,7 +86,7 @@ export default function HomePage() {
                 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
                 style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
               >
-                Management consulting for established MSMEs · Bengaluru and across India
+                MSME Strategy &amp; Growth Consultant in Bengaluru
               </h1>
               <p
                 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
