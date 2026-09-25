@@ -125,6 +125,8 @@ export default async function ContactPage() {
         <address className="not-italic text-[15px] leading-relaxed text-mid">
           <strong className="font-semibold text-ink">{FACTS.orgName}</strong>
           <br />
+          Sole Proprietor: {FACTS.founder}
+          <br />
           Flat No. 502-B, SJR Spencer Apartments,
           <br />
           Varthur Main Road, Marathahalli,
