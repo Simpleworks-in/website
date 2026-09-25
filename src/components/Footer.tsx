@@ -128,7 +128,7 @@ export default function Footer() {
             href="/contact"
             className="text-mid transition-colors hover:text-red"
           >
-            {FACTS.locality}, {FACTS.city} &ndash; {FACTS.postalCode}
+            {FACTS.locality}, {FACTS.city} &ndash; {FACTS.postalCode}, {FACTS.region}, India
           </Link>
         </div>
         <div className="hidden h-7 w-px flex-shrink-0 bg-rule md:block" />
