@@ -142,6 +142,10 @@ export default async function ContactPage() {
           <a href="tel:+919036099000" className="transition-colors hover:text-red">
             {FACTS.phone}
           </a>
+          <br />
+          Udyam Registration No: UDYAM-KR-03-0761415
+          <br />
+          PAN No: AEQPM5671R
         </address>
       </section>
     </>
