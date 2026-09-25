@@ -21,9 +21,6 @@ export default function Footer() {
           <p className="text-[13px] text-light">
             Udyam Registration No: UDYAM-KR-03-0761415
           </p>
-          <p className="text-[13px] text-light">
-            {FACTS.orgName} &middot; {FACTS.locality}, {FACTS.city} &ndash; {FACTS.postalCode}
-          </p>
         </div>
         <div className="flex items-center gap-3.5 md:mt-1">
           <a
@@ -127,9 +124,12 @@ export default function Footer() {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <span>
-            {FACTS.city}, {FACTS.region}, India
-          </span>
+          <Link
+            href="/contact"
+            className="text-mid transition-colors hover:text-red"
+          >
+            {FACTS.locality}, {FACTS.city} &ndash; {FACTS.postalCode}
+          </Link>
         </div>
         <div className="hidden h-7 w-px flex-shrink-0 bg-rule md:block" />
         <div className="flex items-center gap-2.5 text-[13px] leading-relaxed text-mid">
