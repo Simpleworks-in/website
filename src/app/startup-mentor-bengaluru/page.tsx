@@ -374,16 +374,19 @@ export default function StartupMentorBengaluruPage() {
             </div>
             <div className="mt-10 max-w-[680px] space-y-5">
               <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Sales trainee in 1987. Chief Operating Officer of Tata Docomo&rsquo;s Kerala
-                Circle, carrying full P&amp;L, by the time the industry had reinvented itself
-                twice. In between — dealer networks at MRF and Apollo Tyres, the Bharti Airtel
-                years, and the Tata Docomo Karnataka launch that became the country&rsquo;s
-                largest circle.
+                Started as a sales trainee with Usha International in 1987. Moved through MRF
+                and Apollo Tyres, running dealer networks and government sales across different
+                geographies, then shifted to telecom with BPL Mobile in the early days of mobile
+                telephony. At Airtel, I moved from managing large direct sales teams to customer
+                success, across four southern states. Then to Tata Docomo — joining in the launch
+                phase to run sales and distribution end-to-end, and rising to Chief Operating
+                Officer of the Kerala Circle, carrying full P&amp;L, by the time the industry had
+                reinvented itself twice.
               </p>
               <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Then, at 50, I went the other way. Co-founded Viworks Ventures, ran product and
-                growth at Neoffice AI. Small teams, tight cash, nothing to delegate. I have been
-                inside a startup, not beside one.
+                Then, at 50, I went the other way. Co-founded Viworks Ventures, then led
+                strategy, product and growth at Neoffice.ai. Small teams, tight cash, nothing to
+                delegate. I have been inside a startup, not beside one.
               </p>
             </div>
           </div>
