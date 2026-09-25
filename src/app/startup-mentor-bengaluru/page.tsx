@@ -335,14 +335,12 @@ export default function StartupMentorBengaluruPage() {
               the ground rather than in a boardroom.
             </p>
             <div className="mb-10 flex flex-wrap items-center gap-4">
-              <a
-                href={CALENDAR_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="inline-block w-fit cursor-pointer rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
               >
-                Schedule a Call
-              </a>
+                Let&rsquo;s Talk
+              </Link>
               <a
                 href="#what-i-bring"
                 className="inline-block w-fit cursor-pointer rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
