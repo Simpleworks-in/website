@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/Simpleworks_image_only_S.png";
 import { FACTS } from "../../content/facts";
+import FooterOfficeAddress from "./FooterOfficeAddress";
 
 export default function Footer() {
   return (
@@ -22,6 +23,7 @@ export default function Footer() {
             Udyam Registration No: UDYAM-KR-03-0761415
           </p>
         </div>
+        <FooterOfficeAddress />
         <div className="flex items-center gap-3.5 md:mt-1">
           <a
             href="https://www.linkedin.com/in/premraj/"
