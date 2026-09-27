@@ -1,5 +1,4 @@
 import ContactTabs from "@/components/ContactTabs";
-import LegalAddressToggle from "@/components/LegalAddressToggle";
 import Reveal from "@/components/Reveal";
 import { FACTS } from "../../../content/facts";
 
@@ -117,11 +116,6 @@ export default async function ContactPage() {
 
       {/* TABS + CONTENT */}
       <ContactTabs formActionUrl={formActionUrl} whatsappHref={WHATSAPP_HREF} />
-
-      {/* REGISTERED OFFICE */}
-      <section className="border-t border-rule/100 px-6 py-10 md:ml-[72px] md:p-[60px]">
-        <LegalAddressToggle />
-      </section>
     </>
   );
 }

@@ -12,7 +12,7 @@ export default function FooterOfficeAddress() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="flex items-center gap-1.5 text-[13px] font-semibold text-ink transition-colors hover:text-red"
+        className="flex items-center gap-1.5 text-[15px] font-semibold text-mid transition-colors hover:text-red"
       >
         <span>Office Address</span>
         <svg

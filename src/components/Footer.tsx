@@ -23,7 +23,9 @@ export default function Footer() {
             Udyam Registration No: UDYAM-KR-03-0761415
           </p>
         </div>
-        <FooterOfficeAddress />
+        <div className="md:self-start md:mt-0.5">
+          <FooterOfficeAddress />
+        </div>
         <div className="flex items-center gap-3.5 md:mt-1">
           <a
             href="https://www.linkedin.com/in/premraj/"
