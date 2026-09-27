@@ -14,7 +14,7 @@ export default function LegalAddressToggle() {
         aria-expanded={open}
         className="flex items-center gap-1.5 text-[12px] text-light transition-colors hover:text-red"
       >
-        <span>Registered business details</span>
+        <span>Office Address</span>
         <svg
           viewBox="0 0 24 24"
           className={`h-3 w-3 flex-shrink-0 stroke-current transition-transform duration-200 ${open ? "rotate-180" : ""}`}
