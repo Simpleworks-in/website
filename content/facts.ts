@@ -13,6 +13,8 @@ export const FACTS = {
   email: "pm@simpleworks.in",
   phone: "+91 90360 99000",
   phoneSchema: "+91-90360-99000",
+  udyamNo: "UDYAM-KR-03-0761415",
+  panNo: "AEQPM5671R",
   revenueRange: "₹10–200 crore",
   revenueRangeShort: "₹10–200 Cr",
   yearsExperience: "39 years",

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/Simpleworks_image_only_S.png";
 import { FACTS } from "../../content/facts";
+import LegalAddressToggle from "./LegalAddressToggle";
 
 export default function Footer() {
   return (
@@ -234,6 +235,11 @@ export default function Footer() {
           </Link>
         </div>
         <span>© {new Date().getFullYear()} Simpleworks Consulting. All rights reserved.</span>
+      </div>
+
+      {/* Row 5: expandable registered business details */}
+      <div className="border-t border-rule py-5 md:py-[18px]">
+        <LegalAddressToggle />
       </div>
     </footer>
   );
