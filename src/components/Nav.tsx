@@ -5,6 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import logo from "../../public/Simpleworks_image_only_S.png";
+import { FACTS } from "../../content/facts";
+
+const WHATSAPP_HREF = `https://wa.me/${FACTS.whatsappNumber}`;
 
 const links = [
   { href: "/about", label: "About" },
@@ -65,12 +68,14 @@ export default function Nav() {
             );
           })}
           <li>
-            <Link
-              href="/contact"
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-[1px] border border-red px-[22px] py-2 text-[13px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
             >
               Let&rsquo;s Talk
-            </Link>
+            </a>
           </li>
         </ul>
 
@@ -134,13 +139,15 @@ export default function Nav() {
               );
             })}
             <li className="pt-2">
-              <Link
-                href="/contact"
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="inline-block rounded-[1px] border border-red px-6 py-2.5 text-[13px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
               >
                 Let&rsquo;s Talk
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FAQAccordion from "@/components/FAQAccordion";
 import { FAQS } from "@/lib/faqs";
+import { FACTS } from "../../content/facts";
 
 export const metadata = {
   title: {
@@ -103,7 +104,9 @@ export default function HomePage() {
               We work with established Indian small and medium businesses that are stuck in growth, short on clarity, and unsure of the next move.
             </p>
             <a
-              href="#contact"
+              href={`https://wa.me/${FACTS.whatsappNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit opacity-0 animate-fade-up"
               style={{ animationDelay: "0.55s" }}
             >
