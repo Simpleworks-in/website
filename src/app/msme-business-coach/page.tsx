@@ -95,7 +95,7 @@ const PRICING = [
   {
     title: "The Simple Diagnostic",
     price: "₹20,000",
-    body: "A three-hour working session, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first. If you continue, the fee is credited in full against the next programme.",
+    body: "A four-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first. If you continue, the fee is credited in full against the next programme.",
   },
   {
     title: "The Simple Reset",
@@ -143,11 +143,11 @@ const FAQS = [
   },
   {
     q: "How is a coaching engagement structured?",
-    a: "Most founders start with the Simple Diagnostic: a three-hour working session, a written diagnostic brief and a one-hour walkthrough, at a fixed ₹20,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page.",
+    a: "Most founders start with the Simple Diagnostic: a four-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, at a fixed ₹20,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page.",
   },
   {
     q: "How much does MSME business coaching cost?",
-    a: "Fees are fixed and published. The Simple Diagnostic is ₹20,000 for a three-hour working session, a written diagnostic brief and a one-hour walkthrough, and is credited in full against any programme that follows. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
+    a: "Fees are fixed and published. The Simple Diagnostic is ₹20,000 for a four-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, and is credited in full against any programme that follows. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
@@ -229,7 +229,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Diagnostic",
       description:
-        "A three-hour working session, a written diagnostic brief and a one-hour walkthrough of the findings.",
+        "A four-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief and a one-hour walkthrough of the findings.",
       price: "20000",
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
