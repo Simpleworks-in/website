@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: { absolute: "MSME Business Coach in India | Simpleworks, Bengaluru" },
   description:
-    "One-to-one MSME business coaching in Bengaluru with Premraj Menon, 39 years of experience. Book an introductory call.",
+    "One-to-one MSME business coaching in Bengaluru with Premraj Menon, 39 years' experience. Fixed, published fees from ₹20,000. Book an introductory call.",
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -29,7 +29,7 @@ const CONTACT_LINK = "https://www.simpleworks.in/contact";
 
 const STATS = [
   { num: "39", label: "Years in business\nleadership" },
-  { num: "6", label: "Industries: Consumer\nto SaaS" },
+  { num: "5", label: "Industries: Consumer\nto SaaS" },
   { num: "1-to-1", label: "No group batches.\nOnly your business." },
 ];
 
@@ -90,6 +90,24 @@ const STEPS = [
   },
 ];
 
+const PRICING = [
+  {
+    title: "The Simple Diagnostic",
+    price: "₹20,000",
+    body: "A three-hour working session, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first. If you continue, the fee is credited in full against the next programme.",
+  },
+  {
+    title: "The Simple Reset",
+    price: "₹1,40,000 / ₹2,80,000",
+    body: "Work the plan over 30 days, or 60 days if you want Premraj alongside your team for execution.",
+  },
+  {
+    title: "The Simple Counsel",
+    price: "₹75,000 / month",
+    body: "Keep a coach in your corner, month to month, minimum three months.",
+  },
+];
+
 const WHY_CARDS = [
   {
     title: "Built entirely around your business",
@@ -105,7 +123,7 @@ const WHY_CARDS = [
   },
   {
     title: "Built for founders Premraj can sit across the table from",
-    body: "This engagement is based in Bengaluru — full coaching happens face-to-face, in person. A quick advisory conversation works well over a call from anywhere. But the actual diagnostic and execution work needs to happen in person, so this is best suited to founders based in or able to meet regularly in Bengaluru.",
+    body: "This engagement is based in Bengaluru. The Diagnostic and monthly Counsel work well online. But the execution work in the Reset happens in person, on site, so this is best suited to founders based in or able to meet regularly in Bengaluru.",
   },
 ];
 
@@ -116,19 +134,23 @@ const FAQS = [
   },
   {
     q: "Is MSME business coaching available online across India?",
-    a: "Not for the full engagement. A first call or a simple advisory conversation works well online, from anywhere in India. But the diagnostic depth and execution work this coaching is built around — going deep into your numbers, your team, your specific constraints — only works in person. This engagement is currently best suited to founders based in Bengaluru, or able to meet in person regularly.",
+    a: "Partly. The Simple Diagnostic and the Simple Counsel can both run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, so it suits founders based in Bengaluru or able to meet here regularly.",
   },
   {
     q: "What size of business benefits most from MSME business coaching?",
     a: "The engagement works best for established businesses in the ₹10 crore to ₹200 crore revenue range. This includes MSMEs that have hit a growth ceiling and family businesses navigating a transition. The common thread is a founder or leadership team making real decisions about strategy, market, or execution — and needing a rigorous thinking partner.",
   },
   {
-    q: "How many sessions does a coaching engagement involve?",
-    a: "The standard engagement runs over four to six structured sessions, but the cadence is shaped around what the business actually needs. Some clients need more depth at the diagnosis stage. Others move quickly once the plan is clear. The structure is flexible — not a fixed programme.",
+    q: "How is a coaching engagement structured?",
+    a: "Most founders start with the Simple Diagnostic: a three-hour working session, a written diagnostic brief and a one-hour walkthrough, at a fixed ₹20,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page.",
+  },
+  {
+    q: "How much does MSME business coaching cost?",
+    a: "Fees are fixed and published. The Simple Diagnostic is ₹20,000 for a three-hour working session, a written diagnostic brief and a one-hour walkthrough, and is credited in full against any programme that follows. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
-    a: "Group programmes work through a shared curriculum applied to dozens or hundreds of businesses simultaneously. They’re affordable and useful for building frameworks. But they can’t diagnose your specific business, surface your specific growth constraint, or build a plan around your specific market. A one-to-one MSME business coach does exactly that. This engagement is built entirely around your business — nothing generic.",
+    a: "Group programmes work through a shared curriculum applied to dozens or hundreds of businesses simultaneously. They’re affordable and useful for building frameworks. But they can’t diagnose your specific business, surface your specific growth constraint, or build a plan around your specific market. A one-to-one MSME business coach does exactly that. This engagement is built entirely around your business — nothing generic. Group programmes usually publish their fees; most one-to-one coaches don't. Simpleworks does. See the Programmes page.",
   },
   {
     q: "What industries does Simpleworks Consulting work with?",
@@ -159,6 +181,12 @@ const BLOG_LINKS = [
       "The difference between coaching and consulting — and why most Indian MSME founders need elements of both, not a choice between them.",
     href: "/blog/business-coach-vs-consultant-what-indian-msm-es-actually-need",
   },
+  {
+    title: "The Difference Between Business Coach and Mentor Isn’t Skill  - It’s Stage",
+    excerpt:
+      "Why founders need a coach at one stage and a mentor at another, and how to tell which stage you're in.",
+    href: "/blog/the-difference-between-business-coach-and-mentor-isn-t-skill-it-s-stage",
+  },
 ];
 
 const faqSchema = {
@@ -171,12 +199,79 @@ const faqSchema = {
   })),
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "One-to-one MSME business coaching",
+  serviceType: "Business coaching",
+  url: "https://www.simpleworks.in/msme-business-coach",
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Simpleworks Consulting",
+    url: "https://www.simpleworks.in",
+    telephone: "+91 90360 99000",
+    email: "pm@simpleworks.in",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Marathahalli, Bengaluru",
+      postalCode: "560037",
+      addressRegion: "Karnataka",
+      addressCountry: "IN",
+    },
+  },
+  areaServed: [
+    { "@type": "City", name: "Bengaluru" },
+    { "@type": "Country", name: "India" },
+  ],
+  offers: [
+    {
+      "@type": "Offer",
+      name: "The Simple Diagnostic",
+      description:
+        "A three-hour working session, a written diagnostic brief and a one-hour walkthrough of the findings.",
+      price: "20000",
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Reset (30 days)",
+      price: "140000",
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Reset (60 days)",
+      price: "280000",
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Counsel",
+      description: "Monthly business mentoring, minimum three months.",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "75000",
+        priceCurrency: "INR",
+        unitText: "MONTH",
+      },
+      url: "https://www.simpleworks.in/programmes",
+    },
+  ],
+};
+
 export default function MsmeBusinessCoachPage() {
   return (
     <main className="max-w-[1200px] mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
       {/* NAV */}
@@ -378,6 +473,42 @@ export default function MsmeBusinessCoachPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* WHAT IT COSTS */}
+      <section className="px-7 py-12 md:py-16 border-b border-rule">
+        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
+          Fees
+        </p>
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
+          What MSME business coaching <span className="text-red">costs</span>
+        </h2>
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
+          Most coaches tell you their fee only after a sales call. Here it is
+          upfront.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          {PRICING.map((card) => (
+            <div key={card.title} className="p-5 border border-rule rounded-sm">
+              <h3 className="text-[18px] font-bold text-ink mb-1">
+                {card.title}
+              </h3>
+              <p className="text-[22px] font-bold text-red mb-2">{card.price}</p>
+              <p className="text-[15px] text-mid leading-relaxed">
+                {card.body}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="text-[15px] text-mid leading-relaxed mb-4">
+          Fixed fees. No hourly billing.
+        </p>
+        <Link
+          href="/programmes"
+          className="text-[14px] font-semibold text-red underline hover:no-underline"
+        >
+          See how the programmes work →
+        </Link>
       </section>
 
       {/* WHO IS THIS FOR */}

@@ -31,6 +31,74 @@ const jsonLd = {
   })),
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fixed-fee business consulting programmes for MSMEs",
+  serviceType: "Management consulting",
+  url: "https://www.simpleworks.in/programmes",
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Simpleworks Consulting",
+    url: "https://www.simpleworks.in",
+    telephone: "+91 90360 99000",
+    email: "pm@simpleworks.in",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Marathahalli, Bengaluru",
+      postalCode: "560037",
+      addressRegion: "Karnataka",
+      addressCountry: "IN",
+    },
+  },
+  areaServed: [
+    { "@type": "City", name: "Bengaluru" },
+    { "@type": "Country", name: "India" },
+  ],
+  offers: [
+    {
+      "@type": "Offer",
+      name: "The Simple Diagnostic",
+      description:
+        "Half a day: a three-hour structured conversation, a written diagnostic brief and a one-hour walkthrough. The fee is credited in full against any programme that follows.",
+      price: "20000",
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Reset (30 days)",
+      description:
+        "Structured discovery of the named problem area, the gaps costed in rupees and ranked by impact, and a designed one-page solution.",
+      price: "140000",
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Reset (60 days)",
+      description:
+        "The 30-day Reset plus four more weeks in person with your leadership team, and a weekly review rhythm installed and handed over.",
+      price: "280000",
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Counsel",
+      description:
+        "Two sessions a month, WhatsApp access for urgent decisions, and a quarterly business review. Minimum three months.",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "75000",
+        priceCurrency: "INR",
+        unitText: "MONTH",
+      },
+      url: "https://www.simpleworks.in/programmes",
+    },
+  ],
+};
+
 function escapeHtml(text: string) {
   return text
     .replace(/&/g, "&amp;")
@@ -74,6 +142,10 @@ export default function ProgrammesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <main>
       {/* 1. Hero */}
@@ -223,8 +295,9 @@ export default function ProgrammesPage() {
         </p>
         <Deliverables
           items={[
-            "A structured conversation across strategy, buying, selling, execution and people",
+            "A three-hour structured conversation across strategy, buying, selling, execution and people",
             "A written diagnostic brief naming what’s working, what isn’t, and why",
+            "A one-hour walkthrough of the brief with you",
             "One clear recommendation for what to do first",
           ]}
         />
