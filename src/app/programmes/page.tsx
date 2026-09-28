@@ -8,14 +8,14 @@ export const metadata = {
     absolute: "Business Consulting Fees & Programmes | Simpleworks",
   },
   description:
-    "Fixed-fee consulting for MSME founders: a ₹20,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
+    "Fixed-fee consulting for MSME founders: a ₹25,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
   alternates: {
     canonical: "https://www.simpleworks.in/programmes",
   },
   openGraph: {
     title: "Business Consulting Fees & Programmes | Simpleworks",
     description:
-      "Fixed-fee consulting for MSME founders: a ₹20,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
+      "Fixed-fee consulting for MSME founders: a ₹25,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
     url: "https://www.simpleworks.in/programmes",
     type: "website",
   },
@@ -60,8 +60,8 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Diagnostic",
       description:
-        "Half a day: a three-hour structured conversation, a written diagnostic brief and a one-hour walkthrough. The fee is credited in full against any programme that follows.",
-      price: "20000",
+        "Half a day, across 2-3 sessions: a four-hour structured conversation, a written diagnostic brief and a one-hour walkthrough. The fee is credited in full against any programme that follows.",
+      price: "25000",
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
     },
@@ -295,7 +295,7 @@ export default function ProgrammesPage() {
         </p>
         <Deliverables
           items={[
-            "A three-hour structured conversation across strategy, buying, selling, execution and people",
+            "A four-hour structured conversation, broken into 2-3 sessions, across strategy, buying, selling, execution and people",
             "A written diagnostic brief naming what’s working, what isn’t, and why",
             "A one-hour walkthrough of the brief with you",
             "One clear recommendation for what to do first",
@@ -308,10 +308,10 @@ export default function ProgrammesPage() {
               Investment
             </span>
             <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red">
-              ₹20,000
+              ₹25,000
             </span>
             <span className="text-[13px] italic text-light">
-              fixed, all-inclusive
+              fixed
             </span>
           </div>
         </div>
@@ -682,7 +682,7 @@ export default function ProgrammesPage() {
           <span className="text-red">half a day.</span>
         </h2>
         <p className="mb-8 max-w-[460px] text-[16px] leading-[1.7] text-mid">
-          Most clients begin with the Diagnostic. ₹20,000 fixed.
+          Most clients begin with the Diagnostic. ₹25,000 fixed.
           Credited in full against whatever comes next.
           If you only need the Diagnostic, that is perfectly fine too.
         </p>

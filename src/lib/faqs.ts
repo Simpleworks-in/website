@@ -35,7 +35,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "What is your consulting fee?",
-    a: "<p>Every programme has a fixed fee, agreed before we start. The Simple Diagnostic is ₹20,000. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a minimum of three months. A Custom Engagement gets a fixed written quote before we begin. There's no hourly billing.</p><p><a href=\"https://www.simpleworks.in/programmes\">See full programme details →</a></p>",
+    a: "<p>Every programme has a fixed fee, agreed before we start. The Simple Diagnostic is ₹25,000. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a minimum of three months. A Custom Engagement gets a fixed written quote before we begin. There's no hourly billing.</p><p><a href=\"https://www.simpleworks.in/programmes\">See full programme details →</a></p>",
   },
   {
     q: "How long does a consulting engagement typically last?",
