@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FACTS } from "../../../../content/facts";
 
 export const metadata = {
   title: {
@@ -648,7 +649,7 @@ export default function SmallBusinessConsultingPage() {
             Let&rsquo;s Talk
           </Link>
           <a
-            href="https://wa.me/919036099000"
+            href={`https://wa.me/${FACTS.whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"

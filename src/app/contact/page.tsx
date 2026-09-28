@@ -20,7 +20,7 @@ export const metadata = {
   },
 };
 
-const WHATSAPP_HREF = `https://wa.me/919036099000?text=${encodeURIComponent(
+const WHATSAPP_HREF = `https://wa.me/${FACTS.whatsappNumber}?text=${encodeURIComponent(
   "Hi Premraj — I run a [business] in [city], about ₹__ Cr revenue and __ people. What’s stuck: __"
 )}`;
 

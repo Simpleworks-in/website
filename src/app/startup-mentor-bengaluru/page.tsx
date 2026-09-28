@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
+import { FACTS } from "../../../content/facts";
 
 export const metadata = {
   title: { absolute: "Startup Mentor in Bengaluru | Simpleworks" },
@@ -97,8 +98,7 @@ const jsonLd = {
   ],
 };
 
-const WA_LINK =
-  "https://wa.me/919036099000?text=Hi%20Prem%2C%20I%20am%20looking%20for%20a%20startup%20mentor%20in%20Bengaluru.%20Can%20we%20talk%3F";
+const WA_LINK = `https://wa.me/${FACTS.whatsappNumber}?text=Hi%20Prem%2C%20I%20am%20looking%20for%20a%20startup%20mentor%20in%20Bengaluru.%20Can%20we%20talk%3F`;
 const CALENDAR_LINK = "https://calendar.app.google/ME9vQ9MnqLowqNUW8";
 
 const GAP_BULLETS = [
