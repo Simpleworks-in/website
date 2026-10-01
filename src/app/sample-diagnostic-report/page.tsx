@@ -469,8 +469,7 @@ export default function SampleDiagnosticReportPage() {
           <h2 className={H2}>Your business is not this one.</h2>
           <p className={`${P} mx-auto max-w-[560px]`}>
             The half day tells you what your own morning adds up to. ₹25,000
-            fixed — credited in full against anything that
-            follows.
+            fixed.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/contact" className={BTN}>

@@ -60,7 +60,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Diagnostic",
       description:
-        "Half a day, across 2-3 sessions: a four-hour structured conversation, a written diagnostic brief and a one-hour walkthrough. The fee is credited in full against any programme that follows.",
+        "Half a day, across 2-3 sessions: a four-hour structured conversation, a written diagnostic brief and a one-hour walkthrough.",
       price: "25000",
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
@@ -302,6 +302,12 @@ export default function ProgrammesPage() {
           ]}
         />
 
+        <p className="mb-8 -mt-4 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+          <Link href="/business-growth-review" className="text-red hover:underline">
+            What the review covers →
+          </Link>
+        </p>
+
         <div className="flex flex-wrap items-end gap-12 pt-2">
           <div className="flex flex-col gap-1">
             <span className="text-[10px] uppercase tracking-[0.2em] text-light">
@@ -324,12 +330,8 @@ export default function ProgrammesPage() {
         </p>
 
         <div className="mt-7 max-w-[560px] border-l-2 border-red pl-4 text-[14px] italic leading-[1.65] text-mid">
-          Credited in full against anything that follows. It is a deposit,
-          not a cost.
-          <br />
-          <br />
-          If you are satisfied with just the Diagnostic, the invoice for the
-          same will be raised — no further obligation.
+          If you are satisfied with just the Diagnostic, that is the whole
+          engagement — no further obligation.
         </div>
 
         <div className="mt-8">
@@ -631,8 +633,7 @@ export default function ProgrammesPage() {
             hourly billing, no scope creep, no surprise invoice at the end.
           </p>
           <p className="text-[16px] leading-[1.78] text-mid">
-            The Diagnostic fee is credited in full against whatever
-            follows. If you stop there, that&rsquo;s the whole engagement —
+            If you stop after the Diagnostic, that&rsquo;s the whole engagement —
             no further obligation, no upsell conversation.
           </p>
         </div>

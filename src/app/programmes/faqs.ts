@@ -42,10 +42,6 @@ export const faqs: Faq[] = [
       "<p>Most founders start with <a href=\"#simple-diagnostic\">The Simple Diagnostic</a>. In half a day you get a clear, written view of what's working, what isn't, and the one thing to fix first. If the problem is already known and just hasn't been solved, go straight to <a href=\"#simple-reset\">The Simple Reset</a>. If you want a senior sounding board for ongoing decisions, choose <a href=\"#simple-counsel\">The Simple Counsel</a>.</p>",
   },
   {
-    q: "Is the Diagnostic fee adjusted if I continue?",
-    a: "Yes. The Diagnostic fee is credited in full against any programme that follows, so the half day costs you nothing extra if we continue working together.",
-  },
-  {
     q: "How is payment structured?",
     a: "The Diagnostic is paid up front. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel is billed monthly. All fees are fixed and agreed before we begin, and exclusive of GST. Travel outside Bengaluru is charged at actuals.",
   },

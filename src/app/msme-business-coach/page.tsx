@@ -95,7 +95,8 @@ const PRICING = [
   {
     title: "The Simple Diagnostic",
     price: "₹25,000",
-    body: "A four-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first. If you continue, the fee is credited in full against the next programme.",
+    href: "/business-growth-review",
+    body: "An introductory call, then a four-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first.",
   },
   {
     title: "The Simple Reset",
@@ -147,7 +148,7 @@ const FAQS = [
   },
   {
     q: "How much does MSME business coaching cost?",
-    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000 for a four-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, and is credited in full against any programme that follows. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
+    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000 for a four-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
@@ -502,6 +503,14 @@ export default function MsmeBusinessCoachPage() {
               <p className="text-[15px] text-mid leading-relaxed">
                 {card.body}
               </p>
+              {"href" in card && card.href && (
+                <Link
+                  href={card.href}
+                  className="mt-3 inline-block text-[14px] font-semibold text-red underline hover:no-underline"
+                >
+                  Start with the Simple Diagnostic →
+                </Link>
+              )}
             </div>
           ))}
         </div>
