@@ -53,7 +53,7 @@ const STEPS = [
     text: "A short call to understand the issue and whether Simpleworks can help. If it is a fit, we agree what to share and sign an NDA if you want one.",
   },
   {
-    label: "Four hours",
+    label: "Three hours",
     title: "The working session",
     text: "A structured conversation across strategy, buying, selling, operations, execution and people. At your office in Bengaluru, or online in two or three shorter sessions.",
   },
@@ -72,7 +72,7 @@ const STEPS = [
 const INCLUDED = [
   {
     label: "Working session",
-    text: "Four hours with you and, if useful, your senior team. Online, it runs as two or three shorter sessions.",
+    text: "Three hours with you and, if useful, your senior team. Online, it runs as two or three shorter sessions.",
   },
   { label: "Written brief", text: "What's working, what isn't, and why." },
   {
@@ -110,7 +110,7 @@ const CAREER = [
 const FAQS = [
   {
     q: "What is the growth review?",
-    a: "A fixed-fee look at why your business has stopped growing: an introductory call, a four-hour working session, a written brief, and a one-hour walkthrough. On the Programmes page it is listed as the Simple Diagnostic.",
+    a: "A fixed-fee look at why your business has stopped growing: an introductory call, a three-hour working session, a written brief, and a one-hour walkthrough. On the Programmes page it is listed as the Simple Diagnostic.",
   },
   {
     q: "How is this different from a free business health check?",
@@ -122,7 +122,7 @@ const FAQS = [
   },
   {
     q: "Can it be done online?",
-    a: "Yes. In person, the working session runs as one four-hour block in Bengaluru. Online, wherever you are in India, it is split into two or three shorter sessions.",
+    a: "Yes. In person, the working session runs as one three-hour block in Bengaluru. Online, wherever you are in India, it is split into two or three shorter sessions.",
   },
   {
     q: "What happens after the review?",
@@ -170,7 +170,7 @@ const serviceJsonLd = {
   serviceType: "Business growth consulting",
   url: URL,
   description:
-    "A fixed-fee, half-day review for founder-led MSMEs whose revenue has stopped growing: an introductory call, a four-hour working session (two or three sessions online), a written brief and a one-hour walkthrough.",
+    "A fixed-fee, half-day review for founder-led MSMEs whose revenue has stopped growing: an introductory call, a three-hour working session (two or three sessions online), a written brief and a one-hour walkthrough.",
   provider: {
     "@type": "ProfessionalService",
     name: "Simpleworks Consulting",
@@ -195,7 +195,7 @@ const serviceJsonLd = {
     price: "25000",
     priceCurrency: "INR",
     description:
-      "Four-hour working session, written growth brief and one-hour walkthrough.",
+      "Three-hour working session, written growth brief and one-hour walkthrough.",
     url: URL,
   },
 };
@@ -257,7 +257,7 @@ export default function BusinessGrowthReviewPage() {
             </h1>
             <p className="mb-8 max-w-[520px] text-[16px] italic leading-[1.65] text-mid md:text-[18px]">
               A fixed-fee growth review for founders whose revenue has
-              flattened. Four hours on your business, a written brief, and one
+              flattened. Three hours on your business, a written brief, and one
               clear thing to fix first.
             </p>
             <a href={CTA_HREF} className={btn}>
@@ -325,7 +325,7 @@ export default function BusinessGrowthReviewPage() {
                 ₹25,000
               </p>
               <p className="mt-4 text-[14px] text-light">
-                Paid up front. No hourly billing.
+                Paid post engagement. No hourly billing.
               </p>
             </div>
             <div>
@@ -360,7 +360,7 @@ export default function BusinessGrowthReviewPage() {
             itself. These are the areas Premraj has run for 39 years, so the
             review looks at all of them, not only the sales line.
           </p>
-          <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-3 md:gap-12">
+          <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-16 md:max-w-[880px]">
             <div>
               <h3 className={`${h3} mb-5`}>A good fit if</h3>
               <FitList items={GOOD_FIT} />
@@ -369,26 +369,24 @@ export default function BusinessGrowthReviewPage() {
               <h3 className={`${h3} mb-5`}>Not the right fit if</h3>
               <FitList items={NOT_FIT} />
             </div>
-            <Image
-              src="/images/business-growth-review/founder-port.webp"
-              alt="Illustration of a founder at a port with cranes and a cargo ship behind him"
-              width={1152}
-              height={896}
-              className="h-auto w-full"
-            />
           </div>
         </section>
 
         {/* 6. Who does the work */}
         <section className={section}>
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[260px_1fr] md:gap-16">
-            <Image
-              src="/images/business-growth-review/premraj-menon.webp"
-              alt="Illustrated portrait of Premraj Menon"
-              width={1024}
-              height={1024}
-              className="h-auto w-full max-w-[260px]"
-            />
+            <div>
+              <Image
+                src="/images/business-growth-review/premraj-menon.webp"
+                alt="Illustrated portrait of Premraj Menon"
+                width={1024}
+                height={1024}
+                className="h-auto w-full max-w-[260px]"
+              />
+              <a href={CTA_HREF} className={`${btn} mt-8`}>
+                Book a growth review
+              </a>
+            </div>
             <div>
               <p className={eyebrow}>Who does the work</p>
               <h2 className={h2}>
@@ -496,16 +494,6 @@ export default function BusinessGrowthReviewPage() {
           <a href={CTA_HREF} className={btn}>
             Book an introductory call
           </a>
-          <p className="mt-4 text-[14px] text-light">
-            Or call{" "}
-            <a href="tel:+919036099000" className="hover:text-red">
-              {FACTS.phone}
-            </a>{" "}
-            ·{" "}
-            <a href={`mailto:${FACTS.email}`} className="hover:text-red">
-              {FACTS.email}
-            </a>
-          </p>
         </section>
       </main>
     </>

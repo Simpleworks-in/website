@@ -60,7 +60,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Diagnostic",
       description:
-        "Half a day, across 2-3 sessions: a four-hour structured conversation, a written diagnostic brief and a one-hour walkthrough.",
+        "Half a day, across 2-3 sessions: a three-hour structured conversation, a written diagnostic brief and a one-hour walkthrough.",
       price: "25000",
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
@@ -295,7 +295,7 @@ export default function ProgrammesPage() {
         </p>
         <Deliverables
           items={[
-            "A four-hour structured conversation, broken into 2-3 sessions, across strategy, buying, selling, execution and people",
+            "A three-hour structured conversation, broken into 2-3 sessions, across strategy, buying, selling, execution and people",
             "A written diagnostic brief naming what’s working, what isn’t, and why",
             "A one-hour walkthrough of the brief with you",
             "One clear recommendation for what to do first",
