@@ -539,7 +539,7 @@ export default function MsmeBusinessCoachPage() {
                 {stage.name}
               </h3>
               <p className="mb-4 text-[14px] text-light">{stage.covers}</p>
-              <p className="mb-1 text-[28px] font-bold leading-[1.15] text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[34px]">
+              <p className="mb-1 whitespace-nowrap text-[22px] font-bold leading-[1.15] text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[clamp(17px,2vw,26px)]">
                 <span className="whitespace-nowrap">{stage.price}</span>
                 {stage.priceSuffix && (
                   <>
@@ -570,7 +570,7 @@ export default function MsmeBusinessCoachPage() {
                   </Link>
                 )}
               </p>
-              <p className="mt-auto border-t border-rule pt-4 text-[15px] leading-[1.65] text-mid">
+              <p className="mt-auto border-t border-rule pt-4 min-[860px]:mt-0 min-[860px]:self-start min-[860px]:w-full text-[15px] leading-[1.65] text-mid">
                 <strong className="font-bold text-ink">Then:</strong> {stage.then}
               </p>
             </div>
