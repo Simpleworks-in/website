@@ -6,7 +6,7 @@ import { FACTS } from "../../../content/facts";
 const URL = "https://www.simpleworks.in/business-growth-review";
 const TITLE = "Revenue Not Growing? A Half-Day Growth Review | Simpleworks";
 const DESCRIPTION =
-  "Revenue stuck at the same level? A fixed-fee, half-day growth review for MSME owners in Bengaluru. Fixed fee of ₹25,000, written brief included.";
+  "Revenue stuck at the same level? A half-day growth review for MSME owners in Bengaluru and across India. Fixed fee of ₹25,000, written brief included.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -274,7 +274,7 @@ export default function BusinessGrowthReviewPage() {
             />
           </div>
           <div className="md:order-1">
-            <p className={eyebrow}>For founder-led MSMEs · Bengaluru</p>
+            <p className={eyebrow}>For founder-led MSMEs · Bengaluru and online across India</p>
             <h1 className="mb-6 text-[40px] font-bold leading-[1.1] tracking-tight text-ink text-balance md:text-[56px]">
               Your business has stopped growing.{" "}
               <span className="text-red">Find out why in half a day.</span>

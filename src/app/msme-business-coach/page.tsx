@@ -96,7 +96,7 @@ const PRICING = [
     title: "The Simple Diagnostic",
     price: "₹25,000",
     href: "/business-growth-review",
-    body: "An introductory call, then a three-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first.",
+    body: "A three-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first.",
   },
   {
     title: "The Simple Reset",
