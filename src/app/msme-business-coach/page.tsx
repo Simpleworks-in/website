@@ -517,11 +517,11 @@ export default function MsmeBusinessCoachPage() {
           upfront, stage by stage. Each stage has its own fixed fee, and you
           move to the next one only if the last one earned it.
         </p>
-        <div className="mb-10 flex flex-col min-[860px]:flex-row">
+        <div className="mb-10 flex flex-col min-[860px]:grid min-[860px]:grid-cols-3">
           {STAGES.map((stage, i) => (
             <div
               key={stage.name}
-              className="relative flex flex-1 flex-col border-l border-ink pb-10 pl-[34px] last:pb-0 min-[860px]:border-l-0 min-[860px]:border-t min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-8 min-[860px]:pt-[34px] min-[860px]:last:pr-0"
+              className="relative flex flex-1 flex-col border-l border-ink pb-10 pl-[34px] last:pb-0 min-[860px]:border-l-0 min-[860px]:border-t min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-8 min-[860px]:pt-[34px]"
             >
               <span
                 aria-hidden="true"
