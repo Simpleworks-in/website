@@ -43,7 +43,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How is payment structured?",
-    a: "The Diagnostic is paid up front. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel is billed monthly. All fees are fixed and agreed before we begin, and exclusive of GST. Travel outside Bengaluru is charged at actuals.",
+    a: "The Diagnostic is paid post engagement. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel is billed monthly. All fees are fixed and agreed before we begin, and exclusive of GST. Travel outside Bengaluru is charged at actuals.",
   },
   {
     q: "Can the engagement be done remotely?",
