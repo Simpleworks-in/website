@@ -56,6 +56,7 @@ export default async function ContactPage() {
               for an online{" "}
               <a
                 href="https://calendar.app.google/rVCgwR2PUwPorN658"
+                data-cta="contact-header"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-red underline hover:no-underline"
@@ -80,6 +81,7 @@ export default async function ContactPage() {
               </svg>
               <a
                 href={`mailto:${FACTS.email}`}
+                data-cta="contact-header"
                 className="text-mid transition-colors hover:text-red"
               >
                 {FACTS.email}

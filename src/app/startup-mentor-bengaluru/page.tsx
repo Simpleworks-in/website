@@ -98,7 +98,7 @@ const jsonLd = {
   ],
 };
 
-const WA_LINK = `https://wa.me/${FACTS.whatsappNumber}?text=Hi%20Prem%2C%20I%20am%20looking%20for%20a%20startup%20mentor%20in%20Bengaluru.%20Can%20we%20talk%3F`;
+const WA_LINK = `https://wa.me/${FACTS.whatsappNumber}?text=Hi%20Premraj%2C%20I%20am%20looking%20for%20a%20startup%20mentor%20in%20Bengaluru.%20Can%20we%20talk%3F`;
 const CALENDAR_LINK = "https://calendar.app.google/ME9vQ9MnqLowqNUW8";
 
 const GAP_BULLETS = [

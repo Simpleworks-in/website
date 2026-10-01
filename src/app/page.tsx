@@ -10,14 +10,14 @@ export const metadata = {
     absolute: "MSME Consultant in Bengaluru | Simpleworks Consulting",
   },
   description:
-    "Strategy, go-to-market and execution consulting for Indian MSMEs, ₹2–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
+    "MSME strategy and growth consultant in Bengaluru. Fixed-fee programmes for founder-led businesses with ₹10–200 crore revenue, from a ₹25,000 growth review.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
     title: "MSME Consultant in Bengaluru | Simpleworks Consulting",
     description:
-      "Strategy, go-to-market and execution consulting for Indian MSMEs, ₹2–200 Cr revenue. 39 years of operating experience. Bengaluru & across India.",
+      "MSME strategy and growth consultant in Bengaluru. Fixed-fee programmes for founder-led businesses with ₹10–200 crore revenue, from a ₹25,000 growth review.",
     url: "https://www.simpleworks.in",
     siteName: "Simpleworks Consulting",
     locale: "en_IN",
@@ -105,6 +105,7 @@ export default function HomePage() {
             </p>
             <a
               href={`https://wa.me/${FACTS.whatsappNumber}`}
+              data-cta="hero"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit opacity-0 animate-fade-up"
@@ -297,6 +298,7 @@ export default function HomePage() {
               <span className="text-[15px] text-mid leading-[1.5]">
                 <a
                   href="mailto:pm@simpleworks.in"
+                  data-cta="contact-email"
                   className="text-mid transition-colors hover:text-red"
                 >
                   pm@simpleworks.in
@@ -326,6 +328,7 @@ export default function HomePage() {
               <span className="text-[15px] text-mid leading-[1.5]">
                 <a
                   href="https://calendar.app.google/rVCgwR2PUwPorN658"
+                  data-cta="contact-calendar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-mid transition-colors hover:text-red"

@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { pushEvent } from "@/lib/tracking";
 
 type TabId = "message" | "whatsapp";
 
@@ -14,6 +16,12 @@ export default function ContactTabs({
   whatsappHref,
 }: ContactTabsProps) {
   const [active, setActive] = useState<TabId>("whatsapp");
+
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has("interest")) {
+      setActive("message");
+    }
+  }, []);
 
   const tabClass = (id: TabId) =>
     `flex-1 px-3 py-3 md:px-6 md:py-5 border-r border-rule/100 last:border-r-0 cursor-pointer flex items-center gap-2 md:gap-[14px] transition-colors select-none hover:bg-warm ${
@@ -92,10 +100,48 @@ export default function ContactTabs({
 
 /* ─────────── PANELS ─────────── */
 
+const INTEREST_OPTIONS = [
+  "Growth review (Simple Diagnostic)",
+  "Simple Reset",
+  "Simple Counsel",
+  "Not sure yet",
+] as const;
+
+const INTEREST_FROM_PARAM: Record<string, (typeof INTEREST_OPTIONS)[number]> = {
+  "growth-review": "Growth review (Simple Diagnostic)",
+  reset: "Simple Reset",
+  counsel: "Simple Counsel",
+};
+
+const REVENUE_OPTIONS = [
+  "Below ₹2 crore",
+  "₹2–10 crore",
+  "₹10–50 crore",
+  "₹50–200 crore",
+  "Above ₹200 crore",
+];
+
 function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
+  const [interest, setInterest] = useState<string>("Not sure yet");
+  const [interestParam, setInterestParam] = useState("");
+  const [sourcePage, setSourcePage] = useState("");
+
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search).get("interest") ?? "";
+    setInterestParam(param);
+    setInterest(INTEREST_FROM_PARAM[param] ?? "Not sure yet");
+    try {
+      if (document.referrer) {
+        const ref = new URL(document.referrer);
+        if (ref.origin === window.location.origin) setSourcePage(ref.pathname);
+      }
+    } catch {
+      /* no referrer */
+    }
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -103,14 +149,22 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
     setStatus("submitting");
 
     try {
+      const data = new FormData(form);
       const res = await fetch(formActionUrl, {
         method: "POST",
-        body: new FormData(form),
+        body: data,
         headers: { Accept: "application/json" },
       });
 
       if (res.ok) {
         setStatus("success");
+        pushEvent({
+          event: "generate_lead",
+          page_path: window.location.pathname,
+          source_page: sourcePage,
+          interest: String(data.get("interest") ?? ""),
+          revenue_band: String(data.get("revenue") ?? ""),
+        });
         form.reset();
       } else {
         setStatus("error");
@@ -131,9 +185,8 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
           <div className="flex items-center gap-3 py-4">
             <span className="w-2 h-2 rounded-full bg-[#4CAF50] flex-shrink-0" />
             <p className="text-sm text-ink">
-              <strong className="font-semibold">Thank you.</strong> Your
-              message has been sent. Premraj will respond within one business
-              day.
+              <strong className="font-semibold">Thank you.</strong> Premraj will
+              reply personally within one business day.
             </p>
           </div>
         ) : (
@@ -147,6 +200,18 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
               autoComplete="off"
             />
 
+            <p className="max-w-[560px] text-[15px] leading-[1.65] text-mid">
+              Simpleworks works with founder-led businesses with ₹10–200 crore
+              in revenue. If your business is pre-revenue or below ₹2 crore, the{" "}
+              <Link href="/blog" className="text-red underline hover:no-underline">
+                blog
+              </Link>{" "}
+              and{" "}
+              <Link href="/resources" className="text-red underline hover:no-underline">
+                resources
+              </Link>{" "}
+              are a better place to start.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Field
                 id="name"
@@ -166,6 +231,80 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="revenue"
+                  className="text-eyebrow tracking-wide-8 uppercase text-light"
+                >
+                  Annual Revenue
+                </label>
+                <select
+                  id="revenue"
+                  name="revenue"
+                  required
+                  defaultValue=""
+                  className="font-serif text-[15px] text-ink bg-bg border border-rule/100 rounded-[1px] px-4 py-[13px] outline-none transition-colors focus:border-ink w-full"
+                >
+                  <option value="" disabled>
+                    Select revenue band
+                  </option>
+                  {REVENUE_OPTIONS.map((o) => (
+                    <option key={o} value={o}>
+                      {o}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="interest"
+                  className="text-eyebrow tracking-wide-8 uppercase text-light"
+                >
+                  What are you interested in?
+                </label>
+                <select
+                  id="interest"
+                  name="interest"
+                  required
+                  value={interest}
+                  onChange={(e) => setInterest(e.target.value)}
+                  className="font-serif text-[15px] text-ink bg-bg border border-rule/100 rounded-[1px] px-4 py-[13px] outline-none transition-colors focus:border-ink w-full"
+                >
+                  {INTEREST_OPTIONS.map((o) => (
+                    <option key={o} value={o}>
+                      {o}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="one_thing"
+                className="text-eyebrow tracking-wide-8 uppercase text-light"
+              >
+                What&rsquo;s the one thing you&rsquo;d most like to fix?
+              </label>
+              <textarea
+                id="one_thing"
+                name="one_thing"
+                required
+                minLength={20}
+                rows={4}
+                placeholder="For example: sales have been flat for two years and dealers are pushing back on price."
+                onInvalid={(e) =>
+                  e.currentTarget.setCustomValidity(
+                    e.currentTarget.validity.valueMissing ||
+                      e.currentTarget.validity.tooShort
+                      ? "A sentence or two is enough."
+                      : ""
+                  )
+                }
+                onInput={(e) => e.currentTarget.setCustomValidity("")}
+                className="font-serif text-[15px] text-ink bg-bg border border-rule/100 rounded-[1px] px-4 py-[13px] outline-none transition-colors focus:border-ink w-full resize-y"
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Field
                 id="company"
                 label="Company / Business"
@@ -181,29 +320,6 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
                 placeholder="+91 98765 43210"
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor="revenue"
-                className="text-eyebrow tracking-wide-8 uppercase text-light"
-              >
-                Annual Revenue
-              </label>
-              <select
-                id="revenue"
-                name="revenue"
-                required
-                defaultValue=""
-                className="font-serif text-[15px] text-ink bg-bg border border-rule/100 rounded-[1px] px-4 py-[13px] outline-none transition-colors focus:border-ink w-full"
-              >
-                <option value="" disabled>
-                  Select revenue band
-                </option>
-                <option value="Below ₹10 crore">Below ₹10 crore</option>
-                <option value="₹10 – 200 crore">₹10 – 200 crore</option>
-                <option value="₹200 – 500 crore">₹200 – 500 crore</option>
-                <option value="Above ₹500 crore">Above ₹500 crore</option>
-              </select>
-            </div>
             <Field
               id="location"
               label="City / Location"
@@ -211,6 +327,8 @@ function MessagePanel({ formActionUrl }: { formActionUrl: string }) {
               type="text"
               placeholder="Mumbai, Maharashtra"
             />
+            <input type="hidden" name="source_page" value={sourcePage} />
+            <input type="hidden" name="interest_param" value={interestParam} />
 
             {status === "error" && (
               <p className="text-sm text-red">
@@ -349,6 +467,7 @@ function WhatsAppPanel({ whatsappHref }: { whatsappHref: string }) {
         </p>
         <a
           href={whatsappHref}
+          data-cta="contact-whatsapp"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-wa text-white font-serif text-[15px] font-semibold px-8 py-4 rounded-[2px] cursor-pointer transition-all hover:opacity-90 hover:-translate-y-[1px]"

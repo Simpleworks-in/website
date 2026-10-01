@@ -336,7 +336,7 @@ export default function ProgrammesPage() {
 
         <div className="mt-8">
           <Link
-            href="/contact"
+            href="/contact?interest=growth-review"
             className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-3.5 font-serif text-[14px] text-red transition-colors hover:bg-red hover:text-white"
           >
             Schedule an Introductory Call

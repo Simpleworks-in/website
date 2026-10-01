@@ -323,6 +323,7 @@ export default function MsmeBusinessCoachPage() {
         </a>
         <a
           href={CONTACT_LINK}
+          data-cta="header"
           target="_blank"
           rel="noopener noreferrer"
           className="flex-shrink-0 whitespace-nowrap border border-red text-red text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 uppercase tracking-wide-6 rounded-sm hover:bg-red hover:text-white transition-colors"
@@ -361,6 +362,7 @@ export default function MsmeBusinessCoachPage() {
           <div className="flex flex-wrap gap-3 mb-3">
             <a
               href={CONTACT_LINK}
+              data-cta="hero"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-red text-white text-[14px] font-bold px-5 py-2.5 rounded-sm"
@@ -678,6 +680,7 @@ export default function MsmeBusinessCoachPage() {
           <div className="flex flex-wrap gap-3 mt-4">
             <a
               href={CONTACT_LINK}
+              data-cta="about"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-red text-white text-[14px] font-bold px-5 py-2.5 rounded-sm"
@@ -757,6 +760,7 @@ export default function MsmeBusinessCoachPage() {
         <div className="flex flex-wrap justify-center gap-3">
           <a
             href={CONTACT_LINK}
+            data-cta="final-cta"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-red text-white text-[14px] font-bold px-7 py-3.5 rounded-sm"

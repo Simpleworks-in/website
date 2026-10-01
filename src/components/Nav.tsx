@@ -31,7 +31,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="sticky top-0 z-[100] border-b border-rule/100 bg-bg">
+    <nav data-cta="nav" className="sticky top-0 z-[100] border-b border-rule/100 bg-bg">
       <div className="flex items-center justify-between px-6 py-4 md:px-[60px] md:py-5">
         <Link
           href="/"

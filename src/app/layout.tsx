@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import LeadTracking from "@/components/LeadTracking";
 import { siteSchema } from "@/lib/site-schema";
 
 const lora = Lora({
@@ -99,6 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Nav />
         {children}
         <Footer />
+        <LeadTracking />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>

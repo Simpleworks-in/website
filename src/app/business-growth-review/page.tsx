@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 // Every CTA on this page goes to WhatsApp.
 const CTA_HREF = `https://wa.me/${FACTS.whatsappNumber}?text=${encodeURIComponent(
-  "Hi Prem, I'd like to book a growth review for my business.",
+  "Hi Premraj, I'd like to book a growth review for my business.",
 )}`;
 
 const btn =
@@ -284,7 +284,7 @@ export default function BusinessGrowthReviewPage() {
               flattened. Three hours on your business, a written brief, and one
               clear thing to fix first.
             </p>
-            <a href={CTA_HREF} className={btn}>
+            <a href={CTA_HREF} data-cta="hero" className={btn}>
               Book a growth review
             </a>
             <p className="mt-4 text-[14px] text-light">
@@ -407,7 +407,7 @@ export default function BusinessGrowthReviewPage() {
                 height={1024}
                 className="h-auto w-full max-w-[260px]"
               />
-              <a href={CTA_HREF} className={`${btn} mt-8`}>
+              <a href={CTA_HREF} data-cta="portrait" className={`${btn} mt-8`}>
                 Book a growth review
               </a>
             </div>
@@ -548,7 +548,7 @@ export default function BusinessGrowthReviewPage() {
             Start with a short introductory call. If the review isn&rsquo;t the
             right fit, we will say so before you pay anything.
           </p>
-          <a href={CTA_HREF} className={btn}>
+          <a href={CTA_HREF} data-cta="final-cta" className={btn}>
             Book an introductory call
           </a>
         </section>

@@ -6,7 +6,7 @@ import FooterOfficeAddress from "./FooterOfficeAddress";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-rule bg-[#F2F2F0] px-6 md:px-[60px]">
+    <footer data-cta="footer" className="border-t border-rule bg-[#F2F2F0] px-6 md:px-[60px]">
       {/* Row 1: logo + social */}
       <div className="flex flex-col gap-6 border-b border-rule py-8 md:flex-row md:items-center md:justify-between md:py-10 md:pt-10 md:pb-7">
         <div className="flex flex-col gap-2.5">
