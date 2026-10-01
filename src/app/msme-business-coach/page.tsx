@@ -98,6 +98,7 @@ const STAGES = [
     covers: "Discover, Diagnose, Frame the recommendation",
     price: "₹25,000",
     priceSuffix: "",
+    suffixIsPrice: false,
     term: "Half a day",
     description:
       "A three-hour working session (two or three shorter sessions if online), a written diagnostic brief, and a one-hour walkthrough. You come away knowing what's working, what isn't, and the one thing to do first.",
@@ -111,6 +112,7 @@ const STAGES = [
     covers: "Execution cadence",
     price: "₹1,40,000",
     priceSuffix: "/ ₹2,80,000",
+    suffixIsPrice: true,
     term: "30 days, or 60 days",
     description:
       "Work the plan on the problem the Diagnostic named. In 30 days the gaps are costed in rupees and the fix is designed. Choose 60 days to have Premraj on site with your leadership team while it is put in place, with a weekly review rhythm handed over.",
@@ -124,6 +126,7 @@ const STAGES = [
     covers: "Set accountability",
     price: "₹75,000",
     priceSuffix: "/ month",
+    suffixIsPrice: false,
     term: "Minimum three months",
     description:
       "Two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team.",
@@ -517,11 +520,11 @@ export default function MsmeBusinessCoachPage() {
           upfront, stage by stage. Each stage has its own fixed fee, and you
           move to the next one only if the last one earned it.
         </p>
-        <div className="mb-10 flex flex-col min-[860px]:grid min-[860px]:grid-cols-3">
+        <div className="mb-10 flex flex-col min-[860px]:grid min-[860px]:grid-cols-3 min-[860px]:grid-rows-[repeat(8,auto)]">
           {STAGES.map((stage, i) => (
             <div
               key={stage.name}
-              className="relative flex flex-1 flex-col border-l border-ink pb-10 pl-[34px] last:pb-0 min-[860px]:border-l-0 min-[860px]:border-t min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-8 min-[860px]:pt-[34px]"
+              className="relative flex flex-col border-l border-ink pb-10 pl-[34px] last:pb-0 min-[860px]:row-span-8 min-[860px]:grid min-[860px]:grid-rows-subgrid min-[860px]:border-l-0 min-[860px]:border-t min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-8 min-[860px]:pt-[34px]"
             >
               <span
                 aria-hidden="true"
@@ -536,28 +539,37 @@ export default function MsmeBusinessCoachPage() {
                 {stage.name}
               </h3>
               <p className="mb-4 text-[14px] text-light">{stage.covers}</p>
-              <p className="mb-1 text-[28px] font-bold leading-none text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[34px]">
-                {stage.price}
+              <p className="mb-1 text-[28px] font-bold leading-[1.15] text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[34px]">
+                <span className="whitespace-nowrap">{stage.price}</span>
                 {stage.priceSuffix && (
-                  <span className="ml-2 text-[16px] font-normal text-mid">
-                    {stage.priceSuffix}
-                  </span>
+                  <>
+                    {" "}
+                    <span
+                      className={
+                        stage.suffixIsPrice
+                          ? "whitespace-nowrap"
+                          : "text-[16px] font-normal text-mid"
+                      }
+                    >
+                      {stage.priceSuffix}
+                    </span>
+                  </>
                 )}
               </p>
               <p className="mb-4 text-[14px] text-light">{stage.term}</p>
               <p className="mb-4 text-[16px] md:text-[17px] leading-[1.78] text-mid">
                 {stage.description}
               </p>
-              {stage.linkHref && (
-                <p className="mb-4">
+              <p className="mb-4 min-[860px]:min-h-0">
+                {stage.linkHref && (
                   <Link
                     href={stage.linkHref}
                     className="text-[15px] text-red hover:underline"
                   >
                     {stage.linkLabel}
                   </Link>
-                </p>
-              )}
+                )}
+              </p>
               <p className="mt-auto border-t border-rule pt-4 text-[15px] leading-[1.65] text-mid">
                 <strong className="font-bold text-ink">Then:</strong> {stage.then}
               </p>
