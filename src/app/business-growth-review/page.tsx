@@ -50,7 +50,7 @@ const STEPS = [
   {
     label: "First",
     title: "An introductory call",
-    text: "A short call to understand the issue and whether Simpleworks can help. If it is a fit, we agree what to share and sign an NDA if you want one.",
+    text: "A short call to understand the issue and whether Simpleworks Consulting can help. If it is a fit, we agree what to share and sign an NDA if you want one.",
   },
   {
     label: "Three hours",
@@ -134,7 +134,7 @@ const FAQS = [
   },
   {
     q: "Who will I be working with?",
-    a: "Premraj, personally. Simpleworks is one senior advisor, not a team, so you will not be handed to someone junior after the first meeting.",
+    a: "Premraj, personally. Simpleworks Consulting is one senior advisor, not a team, so you will not be handed to someone junior after the first meeting.",
   },
 ];
 
@@ -394,10 +394,10 @@ export default function BusinessGrowthReviewPage() {
                 <span className="text-red">not a junior team.</span>
               </h2>
               <p className={`${body} mb-8 max-w-[640px]`}>
-                Simpleworks is one senior advisor. Premraj Menon spent 39 years
+                Simpleworks Consulting is one senior advisor. Premraj Menon spent 39 years
                 running businesses in India: sales and distribution, business
                 operations, turnarounds, and full P&amp;L responsibility. He
-                started Simpleworks in Bengaluru to bring that experience to
+                started Simpleworks Consulting in Bengaluru to bring that experience to
                 founder-led businesses.
               </p>
               <div className="max-w-[640px]">
