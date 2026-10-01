@@ -81,6 +81,30 @@ const INCLUDED = [
   },
 ];
 
+const NEXT_STEPS = [
+  {
+    label: "30 days",
+    title: "The Simple Reset",
+    price: "₹1,40,000",
+    note: "Fixed · billed at month end",
+    text: "Four weekly visits. We find the root cause of the problem area you name, cost the gaps in rupees, and design a one-page solution. You execute.",
+  },
+  {
+    label: "60 days",
+    title: "The Simple Reset",
+    price: "₹2,80,000",
+    note: "Fixed · billed monthly, two parts",
+    text: "The 30-day Reset plus four more weeks in person with your leadership team, and a weekly review rhythm installed and handed over.",
+  },
+  {
+    label: "Monthly",
+    title: "The Simple Counsel",
+    price: "₹75,000 a month",
+    note: "Minimum three months",
+    text: "Two sessions a month, WhatsApp access for decisions that won't wait, and a quarterly business review. A senior thinking partner, not a report.",
+  },
+];
+
 const GOOD_FIT = [
   "You run a founder-led business with ₹10–200 crore in revenue.",
   "The pressure is in sales, distribution, operations or margins.",
@@ -480,7 +504,40 @@ export default function BusinessGrowthReviewPage() {
           </div>
         </section>
 
-        {/* 9. Closing CTA */}
+        {/* 9. Other programmes */}
+        <section id="programmes" className={section}>
+          <p className={eyebrow}>If you want to go further</p>
+          <h2 className={h2}>
+            After the review, <span className="text-red">our other programmes.</span>
+          </h2>
+          <p className={`${body} mb-10 max-w-[720px]`}>
+            The review stands on its own. If the brief points to work you want
+            help with, these are the fixed-fee programmes that follow. Every
+            fee is agreed before we start.
+          </p>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-3">
+            {NEXT_STEPS.map((n) => (
+              <div key={n.label} className="border-t border-ink pt-5">
+                <p className="mb-3 text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
+                  {n.label}
+                </p>
+                <h3 className={`${h3} mb-3`}>{n.title}</h3>
+                <p className="mb-4 text-[16px] leading-[1.7] text-mid">{n.text}</p>
+                <p className="text-[20px] font-bold text-ink">{n.price}</p>
+                <p className="text-[14px] text-light">{n.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className={`${body} mt-10 max-w-[720px]`}>
+            Need something that doesn&rsquo;t fit these? A custom engagement is
+            scoped with you and quoted before we begin.{" "}
+            <Link href="/programmes" className="text-red hover:underline">
+              See all programmes →
+            </Link>
+          </p>
+        </section>
+
+        {/* 10. Closing CTA */}
         <section id="book" className={`${section} border-b border-rule`}>
           <p className={eyebrow}>Next step</p>
           <h2 className={h2}>
