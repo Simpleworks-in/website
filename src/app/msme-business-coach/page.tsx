@@ -91,22 +91,45 @@ const STEPS = [
   },
 ];
 
-const PRICING = [
+const STAGES = [
   {
-    title: "The Simple Diagnostic",
+    stepLabel: "Stage 1 · Find it",
+    name: "The Simple Diagnostic",
+    covers: "Discover, Diagnose, Frame the recommendation",
     price: "₹25,000",
-    href: "/business-growth-review",
-    body: "A three-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief, and a one-hour walkthrough of the findings. You come away knowing what's working, what isn't, and the one thing to do first.",
+    priceSuffix: "",
+    term: "Half a day",
+    description:
+      "A three-hour working session (two or three shorter sessions if online), a written diagnostic brief, and a one-hour walkthrough. You come away knowing what's working, what isn't, and the one thing to do first.",
+    then: "act on the brief yourself, or move to the Reset.",
+    linkLabel: "Start with the Simple Diagnostic →",
+    linkHref: "/business-growth-review",
   },
   {
-    title: "The Simple Reset",
-    price: "₹1,40,000 / ₹2,80,000",
-    body: "Work the plan over 30 days, or 60 days if you want Premraj alongside your team for execution.",
+    stepLabel: "Stage 2 · Fix it",
+    name: "The Simple Reset",
+    covers: "Execution cadence",
+    price: "₹1,40,000",
+    priceSuffix: "/ ₹2,80,000",
+    term: "30 days, or 60 days",
+    description:
+      "Work the plan on the problem the Diagnostic named. In 30 days the gaps are costed in rupees and the fix is designed. Choose 60 days to have Premraj on site with your leadership team while it is put in place, with a weekly review rhythm handed over.",
+    then: "run it with your own team, or keep Premraj in your corner.",
+    linkLabel: "",
+    linkHref: "",
   },
   {
-    title: "The Simple Counsel",
-    price: "₹75,000 / month",
-    body: "Keep a coach in your corner, month to month, minimum three months.",
+    stepLabel: "Stage 3 · Keep it on track",
+    name: "The Simple Counsel",
+    covers: "Set accountability",
+    price: "₹75,000",
+    priceSuffix: "/ month",
+    term: "Minimum three months",
+    description:
+      "Two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team.",
+    then: "stop when the business no longer needs it.",
+    linkLabel: "",
+    linkHref: "",
   },
 ];
 
@@ -487,42 +510,71 @@ export default function MsmeBusinessCoachPage() {
           Fees
         </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          What MSME business coaching <span className="text-red">costs</span>
+          One path, three stages. <span className="text-red">Stop at any of them.</span>
         </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-10 max-w-[720px]">
           Most coaches tell you their fee only after a sales call. Here it is
-          upfront.
+          upfront, stage by stage. Each stage has its own fixed fee, and you
+          move to the next one only if the last one earned it.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          {PRICING.map((card) => (
-            <div key={card.title} className="p-5 border border-rule rounded-sm">
-              <h3 className="text-[18px] font-bold text-ink mb-1">
-                {card.title}
-              </h3>
-              <p className="text-[22px] font-bold text-red mb-2">{card.price}</p>
-              <p className="text-[15px] text-mid leading-relaxed">
-                {card.body}
+        <div className="mb-10 flex flex-col min-[860px]:flex-row">
+          {STAGES.map((stage, i) => (
+            <div
+              key={stage.name}
+              className="relative flex flex-1 flex-col border-l border-ink pb-10 pl-[34px] last:pb-0 min-[860px]:border-l-0 min-[860px]:border-t min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-8 min-[860px]:pt-[34px] min-[860px]:last:pr-0"
+            >
+              <span
+                aria-hidden="true"
+                className={`absolute -left-[7px] top-[2px] h-[13px] w-[13px] rounded-full border border-ink min-[860px]:-top-[7px] min-[860px]:left-0 ${
+                  i === 0 ? "bg-ink" : "bg-white"
+                }`}
+              />
+              <p className="mb-3 text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
+                {stage.stepLabel}
               </p>
-              {"href" in card && card.href && (
-                <Link
-                  href={card.href}
-                  className="mt-3 inline-block text-[14px] font-semibold text-red underline hover:no-underline"
-                >
-                  Start with the Simple Diagnostic →
-                </Link>
+              <h3 className="mb-1 text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]">
+                {stage.name}
+              </h3>
+              <p className="mb-4 text-[14px] text-light">{stage.covers}</p>
+              <p className="mb-1 text-[28px] font-bold leading-none text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[34px]">
+                {stage.price}
+                {stage.priceSuffix && (
+                  <span className="ml-2 text-[16px] font-normal text-mid">
+                    {stage.priceSuffix}
+                  </span>
+                )}
+              </p>
+              <p className="mb-4 text-[14px] text-light">{stage.term}</p>
+              <p className="mb-4 text-[16px] md:text-[17px] leading-[1.78] text-mid">
+                {stage.description}
+              </p>
+              {stage.linkHref && (
+                <p className="mb-4">
+                  <Link
+                    href={stage.linkHref}
+                    className="text-[15px] text-red hover:underline"
+                  >
+                    {stage.linkLabel}
+                  </Link>
+                </p>
               )}
+              <p className="mt-auto border-t border-rule pt-4 text-[15px] leading-[1.65] text-mid">
+                <strong className="font-bold text-ink">Then:</strong> {stage.then}
+              </p>
             </div>
           ))}
         </div>
-        <p className="text-[15px] text-mid leading-relaxed mb-4">
-          Fixed fees. No hourly billing.
-        </p>
-        <Link
-          href="/programmes"
-          className="text-[14px] font-semibold text-red underline hover:no-underline"
-        >
-          See how the programmes work →
-        </Link>
+        <div className="flex flex-col gap-2 border-t border-rule pt-5 sm:flex-row sm:items-baseline sm:justify-between">
+          <p className="text-[15px] leading-relaxed text-mid">
+            Fixed fees. No hourly billing. Each stage is agreed on its own.
+          </p>
+          <Link
+            href="/programmes"
+            className="text-[15px] text-red hover:underline"
+          >
+            See how the programmes work →
+          </Link>
+        </div>
       </section>
 
       {/* WHO IS THIS FOR */}
