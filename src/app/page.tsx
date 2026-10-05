@@ -47,7 +47,7 @@ const SERVICES = [
   {
     num: "03",
     title: "Execution & Operations Consulting",
-    desc: "Turning decisions into progress. As a business operations consultant for growing Indian businesses, we provide the execution oversight, accountability and review rhythms that turn plans into outcomes. OKRs are part of the toolkit, kept simple enough to use.",
+    desc: "Turning decisions into progress. As a business operations consultant, we provide the execution oversight, accountability and review rhythms that turn plans into outcomes. OKRs are part of the toolkit, kept simple enough to use.",
   },
 ];
 
