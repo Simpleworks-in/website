@@ -46,7 +46,7 @@ const WAYS = [
     href: WHATSAPP_HREF,
     cta: "contact-whatsapp",
     external: true,
-    note: FACTS.whatsapp,
+    note: "",
   },
   {
     label: "Pick a time · 15 minutes",
@@ -73,11 +73,6 @@ const WAYS = [
 const DETAILS = [
   { label: "Email", value: FACTS.email, href: `mailto:${FACTS.email}` },
   { label: "Phone", value: FACTS.phone, href: "tel:+919036099000" },
-  {
-    label: "WhatsApp",
-    value: FACTS.whatsapp,
-    href: `https://wa.me/${FACTS.whatsappNumber}`,
-  },
 ];
 
 export default function ContactPage() {
@@ -122,7 +117,9 @@ export default function ContactPage() {
                 >
                   {w.button}
                 </a>
-                <p className="mt-3 text-[14px] text-light">{w.note}</p>
+                {w.note && (
+                  <p className="mt-3 text-[14px] text-light">{w.note}</p>
+                )}
               </div>
             </div>
           ))}
