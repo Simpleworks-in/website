@@ -302,36 +302,6 @@ export default function MsmeBusinessCoachPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* NAV */}
-      <nav className="flex items-center justify-between gap-3 px-4 py-3 md:px-7 border-b border-rule bg-bg">
-        <a
-          href="https://www.simpleworks.in"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex min-w-0 items-center gap-2 md:gap-2.5 no-underline"
-        >
-          <Image
-            src="/images/landing/simpleworks-s-mark.png"
-            alt="Simpleworks Consulting"
-            width={30}
-            height={30}
-            className="w-[26px] h-[26px] md:w-[30px] md:h-[30px] flex-shrink-0 object-contain"
-          />
-          <span className="truncate text-[14px] md:text-[16px] font-bold text-ink tracking-wide">
-            Simpleworks <span className="text-red">Consulting</span>
-          </span>
-        </a>
-        <a
-          href={CONTACT_LINK}
-          data-cta="header"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-shrink-0 whitespace-nowrap border border-red text-red text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 uppercase tracking-wide-6 rounded-sm hover:bg-red hover:text-white transition-colors"
-        >
-          Let&rsquo;s Talk
-        </a>
-      </nav>
-
       {/* HERO */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-12 md:py-16 border-b border-rule">
         <div>
