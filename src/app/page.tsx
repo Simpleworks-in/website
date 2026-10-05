@@ -46,8 +46,8 @@ const SERVICES = [
   },
   {
     num: "03",
-    title: "Execution & OKR Consulting",
-    desc: "Turning decisions into progress. As an OKR consultant for growing Indian businesses, we build the goals, accountability structures, and review rhythms that turn plans into outcomes — simple enough to actually use.",
+    title: "Execution & Operations Consulting",
+    desc: "Turning decisions into progress. As a business operations consultant for growing Indian businesses, we provide the execution oversight, accountability and review rhythms that turn plans into outcomes. OKRs are part of the toolkit, kept simple enough to use.",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function HomePage() {
               className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              We work with established Indian small and medium businesses that are stuck in growth, short on clarity, and unsure of the next move.
+              We work with established Indian small and medium businesses that are stuck in growth, stretched in operations, short on clarity about the next move.
             </p>
             <a
               href={`https://wa.me/${FACTS.whatsappNumber}`}
@@ -159,7 +159,7 @@ export default function HomePage() {
             We are an independent Business Management Consulting practice started in June 2026 at Bengaluru working with founders of Established Indian Small and Medium Businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Led by Premraj Menon, 39 years in sales, distribution and P&amp;L,
+            Led by Premraj Menon, 39 years in sales, distribution, business operations, and P&amp;L,
             including as COO of Tata Docomo&rsquo;s Kerala Circle. More on the <Link href="/about" className="text-red hover:underline">About page</Link>. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
           </p>
         </div>
