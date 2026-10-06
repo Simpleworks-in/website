@@ -27,8 +27,8 @@ export const metadata = {
 
 const TAGLINE_ITEMS = [
   "Business Strategy",
-  "Go-to-Market Planning",
-  "Execution & OKRs",
+  "Sales & Distribution",
+  "Execution & Accountability",
   "39 Years Operating Experience",
   "Bengaluru",
 ];
