@@ -298,6 +298,12 @@ const BLOG_CARDS = [
     body: "One fixes judgment, the other buys distribution — and confusing them costs founders equity or months they didn’t need to spend.",
     href: "/blog/startup-mentor-vs-accelerator-in-india-two-jobs-founders-keep-confusing",
   },
+  {
+    tag: "Cofounders",
+    title: "How Aarav Chose a Cofounder, Friend or Skill-Fit?",
+    body: "Aarav had built the product but had no one who could sell it. Part 1 of the Loopwise AI story follows his choice between a skilled stranger and his college roommate.",
+    href: "/blog/how-aarav-chose-a-cofounder-friend-or-skill-fit",
+  },
 ];
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
@@ -675,7 +681,7 @@ export default function StartupMentorBengaluruPage() {
             All articles →
           </Link>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {BLOG_CARDS.map((card) => (
             <Link
               key={card.href}
