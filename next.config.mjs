@@ -86,6 +86,11 @@ const nextConfig = {
         destination: "/programmes",
         permanent: true,
       },
+      {
+        source: "/blog/how-aarav-chose-a-cofounder-friend-or-skill-fit",
+        destination: "/blog/how-to-choose-a-cofounder-for-your-startup",
+        permanent: true,
+      },
     ];
   },
   async headers() {

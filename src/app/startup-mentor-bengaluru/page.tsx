@@ -302,7 +302,7 @@ const BLOG_CARDS = [
     tag: "Cofounders",
     title: "How Aarav Chose a Cofounder, Friend or Skill-Fit?",
     body: "Aarav had built the product but had no one who could sell it. Part 1 of the Loopwise AI story follows his choice between a skilled stranger and his college roommate.",
-    href: "/blog/how-aarav-chose-a-cofounder-friend-or-skill-fit",
+    href: "/blog/how-to-choose-a-cofounder-for-your-startup",
   },
 ];
 
