@@ -15,7 +15,9 @@ export default function Reveal() {
           }
         });
       },
-      { threshold: 0.1 }
+      // threshold 0: a ratio like 0.1 can never be met by an element taller
+      // than 10x the viewport (e.g. the full blog grid), leaving it invisible.
+      { threshold: 0 }
     );
     elements.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
