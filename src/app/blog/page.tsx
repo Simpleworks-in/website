@@ -39,6 +39,8 @@ const categories: { value: Category | "all"; label: string }[] = [
   { value: "startup", label: "Startup" },
 ];
 
+const POSTS_PER_BATCH = 9;
+
 const formatDate = (iso: string | null) => {
   if (!iso) return "";
   try {
@@ -56,19 +58,25 @@ const formatDate = (iso: string | null) => {
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; page?: string }>;
 }) {
   const params = await searchParams;
   const activeCategory = (params?.category ?? "all") as Category | "all";
+  const pageNum = Math.max(1, Math.floor(Number(params?.page)) || 1);
 
   const reader = createReader(process.cwd(), keystaticConfig);
   const allPosts = await reader.collections.posts.all();
-  const posts = allPosts
+  const filteredPosts = allPosts
     .map((p) => ({ slug: p.slug, ...p.entry }))
     .filter((p) =>
       activeCategory === "all" ? true : p.category === activeCategory
     )
     .sort((a, b) => ((a.date ?? "") < (b.date ?? "") ? 1 : -1));
+  const posts = filteredPosts.slice(0, pageNum * POSTS_PER_BATCH);
+  const remaining = filteredPosts.length - posts.length;
+  const loadMoreHref = `/blog?${
+    activeCategory === "all" ? "" : `category=${activeCategory}&`
+  }page=${pageNum + 1}`;
 
   return (
     <>
@@ -182,6 +190,18 @@ export default async function BlogPage({
                 </div>
               </article>
             ))}
+          </div>
+        )}
+
+        {remaining > 0 && (
+          <div className="mt-14 flex justify-center md:mt-20">
+            <Link
+              href={loadMoreHref}
+              scroll={false}
+              className="rounded-[1px] border-[1.5px] border-red px-8 py-3 text-[13px] font-semibold uppercase tracking-wide-4 text-red transition-colors hover:bg-red hover:text-white"
+            >
+              Load more ({Math.min(remaining, POSTS_PER_BATCH)} of {remaining})
+            </Link>
           </div>
         )}
       </section>
