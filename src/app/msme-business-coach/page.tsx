@@ -357,7 +357,7 @@ const serviceSchema = {
 };
 
 const WRAP = "max-w-[1200px] mx-auto px-4 md:px-10";
-const SECTION = "border-t border-rule py-16 md:py-28";
+const SECTION = "border-t border-rule py-12 md:py-20";
 const EYEBROW =
   "text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light mb-3";
 const H2 =
@@ -399,7 +399,7 @@ export default function MsmeBusinessCoachPage() {
       />
 
       {/* 1. HERO + STATS */}
-      <section className="py-12 md:py-20">
+      <section className="py-10 md:py-14">
         <div className={WRAP}>
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-center md:gap-12">
             <div className="md:basis-[55%]">
@@ -454,11 +454,11 @@ export default function MsmeBusinessCoachPage() {
             </div>
           </div>
 
-          <div className="mt-16 md:mt-20 grid grid-cols-1 min-[700px]:grid-cols-3 border-t border-rule">
+          <div className="mt-12 md:mt-14 grid grid-cols-1 min-[700px]:grid-cols-3 border-t border-rule">
             {STATS.map((s, i) => (
               <div
                 key={s.num}
-                className={`py-8 min-[700px]:px-8 first:min-[700px]:pl-0 ${
+                className={`py-6 min-[700px]:px-8 first:min-[700px]:pl-0 ${
                   i > 0
                     ? "border-t border-rule min-[700px]:border-t-0 min-[700px]:border-l"
                     : ""
@@ -479,7 +479,7 @@ export default function MsmeBusinessCoachPage() {
       {/* 2. RECOGNISE */}
       <section id="signs" className={SECTION}>
         <div className={WRAP}>
-          <div className="max-w-[720px] mb-12">
+          <div className="max-w-[720px] mb-8 md:mb-10">
             <Eyebrow>Is this for you?</Eyebrow>
             <h2 className={`${H2} mb-5`}>
               Recognise <span className="text-red">any of these?</span>
@@ -520,7 +520,7 @@ export default function MsmeBusinessCoachPage() {
               ))}
             </ul>
           </div>
-          <div className="mt-12 border-t border-rule pt-8">
+          <div className="mt-10 border-t border-rule pt-6">
             <p className={`${BODY} mb-3`}>
               Sound familiar? The first step is finding which one is really the
               problem.
@@ -535,9 +535,9 @@ export default function MsmeBusinessCoachPage() {
       {/* 3. WHAT CHANGES */}
       <section id="changes" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-12">
+          <div className="mb-8 md:mb-10">
             <Eyebrow>What changes</Eyebrow>
-            <h2 className={`${H2} mb-5 md:whitespace-nowrap`}>
+            <h2 className={`${H2} mb-5 lg:whitespace-nowrap`}>
               What&rsquo;s different{" "}
               <span className="text-red">after we work together</span>
             </h2>
@@ -564,7 +564,7 @@ export default function MsmeBusinessCoachPage() {
               {CHANGES.map((row, i) => (
                 <li
                   key={row.area}
-                  className={`grid grid-cols-1 gap-3 py-7 min-[700px]:grid-cols-[1fr_40px_1.25fr] min-[700px]:items-center min-[700px]:gap-6 border-t ${
+                  className={`grid grid-cols-1 gap-3 py-5 min-[700px]:grid-cols-[1fr_40px_1.25fr] min-[700px]:items-center min-[700px]:gap-6 border-t ${
                     i === 0 ? "border-ink" : "border-rule"
                   } ${i === CHANGES.length - 1 ? "border-b border-b-rule" : ""}`}
                 >
@@ -603,7 +603,7 @@ export default function MsmeBusinessCoachPage() {
       {/* 4. THE ROLE */}
       <section id="role" className={SECTION}>
         <div className={WRAP}>
-          <div className="max-w-[720px] mb-14">
+          <div className="max-w-[720px] mb-10">
             <Eyebrow>Understanding the role</Eyebrow>
             <h2 className={H2}>
               What does an MSME business coach{" "}
@@ -643,7 +643,7 @@ export default function MsmeBusinessCoachPage() {
             </div>
           </div>
 
-          <div className="mt-20 md:mt-[100px]">
+          <div className="mt-14 md:mt-16">
             <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-4">
               Group coaching or one-to-one?
             </h3>
@@ -716,7 +716,7 @@ export default function MsmeBusinessCoachPage() {
       {/* 5. HOW IT WORKS */}
       <section id="how" className={SECTION}>
         <div className={WRAP}>
-          <div className="max-w-[720px] mb-14">
+          <div className="max-w-[720px] mb-10">
             <Eyebrow>How it works</Eyebrow>
             <h2 className={`${H2} mb-5`}>
               A structured engagement —{" "}
@@ -823,15 +823,13 @@ export default function MsmeBusinessCoachPage() {
       {/* 7. WHY DIFFERENT + PREMRAJ */}
       <section id="why" className={SECTION}>
         <div className={WRAP}>
-          <div className="grid gap-6 md:grid-cols-2 md:items-end md:gap-14 mb-14">
-            <div>
-              <Eyebrow>Why this, not that</Eyebrow>
-              <h2 className={H2}>
-                What makes a one-to-one MSME business coach{" "}
-                <span className="text-red">different</span>
-              </h2>
-            </div>
-            <p className={BODY}>
+          <div className="mb-10">
+            <Eyebrow>Why this, not that</Eyebrow>
+            <h2 className={`${H2} mb-5 min-[1100px]:whitespace-nowrap`}>
+              What makes a one-to-one MSME business coach{" "}
+              <span className="text-red">different</span>
+            </h2>
+            <p className={`${BODY} max-w-[860px]`}>
               There are plenty of coaching options for Indian MSME founders.
               Group programmes, online cohorts, weekend bootcamps — most built
               around a system that works across many businesses
@@ -846,7 +844,7 @@ export default function MsmeBusinessCoachPage() {
                 <div className="flex items-baseline gap-4 mb-2">
                   <span
                     aria-hidden="true"
-                    className="text-[15px] font-bold text-light"
+                    className="text-[15px] font-bold text-red"
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -861,7 +859,7 @@ export default function MsmeBusinessCoachPage() {
             ))}
           </div>
 
-          <div className="mt-20 md:mt-[100px] border-t border-rule pt-14 grid gap-10 md:grid-cols-[300px_1fr] md:gap-14">
+          <div className="mt-14 md:mt-16 border-t border-rule pt-10 md:pt-12 grid gap-10 md:grid-cols-[300px_1fr] md:gap-14">
             <div>
               <Image
                 src="/images/business-growth-review/premraj-menon.webp"
@@ -1056,7 +1054,7 @@ export default function MsmeBusinessCoachPage() {
       {/* 10. READ MORE */}
       <section id="read" className={SECTION}>
         <div className={WRAP}>
-          <div className="max-w-[720px] mb-12">
+          <div className="max-w-[720px] mb-8 md:mb-10">
             <Eyebrow>Going deeper</Eyebrow>
             <h2 className={`${H2} mb-5`}>
               <span className="text-red">Read more</span> on MSME business
@@ -1095,7 +1093,7 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* 11. CLOSING CTA */}
-      <section id="book" className="border-t border-rule border-b py-20 md:py-32">
+      <section id="book" className="border-t border-rule border-b py-14 md:py-24">
         <div className={`${WRAP} text-center`}>
           <div className="max-w-[820px] mx-auto">
             <Eyebrow>Next step</Eyebrow>
