@@ -346,7 +346,7 @@ export default function MsmeBusinessCoachPage() {
         </div>
         <div className="relative h-[260px] md:h-[420px] w-full overflow-hidden rounded-sm">
           <Image
-            src="/images/landing/msme-coach-hero-3.png"
+            src="/images/landing/msme-coach-hero-4.webp"
             alt="MSME business coach walking a founder through a GTM strategy session"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
