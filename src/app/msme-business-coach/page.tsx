@@ -303,7 +303,7 @@ export default function MsmeBusinessCoachPage() {
       />
 
       {/* HERO */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-12 md:py-16 border-b border-rule">
+      <section className="grid grid-cols-1 md:grid-cols-[5fr_7fr] md:items-center gap-6 px-7 py-12 md:py-16 border-b border-rule">
         <div>
           <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-3">
             MSME Business Coach — India
