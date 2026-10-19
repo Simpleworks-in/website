@@ -303,7 +303,7 @@ export default function MsmeBusinessCoachPage() {
       />
 
       {/* HERO */}
-      <section className="grid grid-cols-1 md:grid-cols-[5fr_7fr] md:items-center gap-6 px-7 py-12 md:py-16 border-b border-rule">
+      <section className="grid grid-cols-1 md:grid-cols-[11fr_13fr] md:items-start gap-6 px-7 py-12 md:py-16 border-b border-rule">
         <div>
           <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-3">
             MSME Business Coach — India
@@ -344,7 +344,7 @@ export default function MsmeBusinessCoachPage() {
             In-person coaching for Bengaluru &nbsp;·&nbsp; Online advisory calls across India
           </p>
         </div>
-        <div className="relative aspect-[1376/768] w-full overflow-hidden rounded-sm">
+        <div className="relative aspect-[1376/768] w-full overflow-hidden rounded-sm md:mt-7">
           <Image
             src="/images/landing/msme-coach-hero-4.webp"
             alt="MSME business coach walking a founder through a GTM strategy session"
