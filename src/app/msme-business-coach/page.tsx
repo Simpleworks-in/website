@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 const CONTACT_LINK = `https://wa.me/${FACTS.whatsappNumber}`;
 
 const STATS = [
-  { num: "39", label: "Years in business\nleadership" },
-  { num: "5", label: "Industries, from\nConsumer to SaaS" },
-  { num: "1-to-1", label: "No group batches.\nOnly your business." },
+  { num: "39", label: "Years running\nbusinesses" },
+  { num: "1-to-1", label: "Just you and Premraj.\nNo junior team." },
+  { num: "On site", label: "On the ground with your team,\nnot only on paper." },
 ];
 
 const PAIN_QUOTES = [
@@ -414,8 +414,8 @@ export default function MsmeBusinessCoachPage() {
               </h1>
               <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
                 One-to-one MSME business coaching for Indian founders in the
-                ₹10–200 crore range — built around your actual challenges, not
-                a course curriculum.
+                ₹10–200 crore range. Not a course. Someone senior who helps
+                you decide what to do, then helps you get it done.
               </p>
               <p className={`${BODY} mb-8`}>
                 If you&rsquo;re running an MSME in India and feel stuck — on
@@ -464,7 +464,7 @@ export default function MsmeBusinessCoachPage() {
                     : ""
                 }`}
               >
-                <div className="text-[56px] md:text-[84px] italic font-normal text-red tracking-tight-1 leading-none mb-4">
+                <div className="whitespace-nowrap text-[56px] md:text-[64px] lg:text-[84px] italic font-normal text-red tracking-tight-1 leading-none mb-4">
                   {s.num}
                 </div>
                 <div className="text-[12px] uppercase tracking-widest font-light text-light leading-relaxed whitespace-pre-line">
@@ -631,7 +631,8 @@ export default function MsmeBusinessCoachPage() {
                 It is
               </p>
               <p className="text-[28px] md:text-[38px] font-bold leading-[1.15] text-ink mb-6">
-                A <span className="text-red">thinking partner</span> for the founder.
+                Someone who has sat in your chair, thinking it through with you and{" "}
+                <span className="text-red">staying until it&rsquo;s done.</span>
               </p>
               <p className={BODY}>
                 The role sits in a specific space: helping a founder or
@@ -790,8 +791,10 @@ export default function MsmeBusinessCoachPage() {
                 situations
               </h2>
               <p className={BODY}>
-                Not every business is ready for one-to-one coaching.
-                Here&rsquo;s where this engagement creates the most value:
+                This is for established businesses that have grown, but still run
+                the way they did when they were small: on the owner&rsquo;s
+                memory, the owner&rsquo;s calls and the owner&rsquo;s time.
+                These are the situations where this engagement helps most:
               </p>
               <div className="mt-10">
                 <Image
