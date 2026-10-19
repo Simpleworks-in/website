@@ -344,7 +344,7 @@ export default function MsmeBusinessCoachPage() {
             In-person coaching for Bengaluru &nbsp;·&nbsp; Online advisory calls across India
           </p>
         </div>
-        <div className="relative h-[260px] md:h-[420px] w-full overflow-hidden rounded-sm">
+        <div className="relative aspect-[1376/768] w-full overflow-hidden rounded-sm">
           <Image
             src="/images/landing/msme-coach-hero-4.webp"
             alt="MSME business coach walking a founder through a GTM strategy session"
