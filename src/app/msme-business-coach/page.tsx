@@ -443,10 +443,10 @@ export default function MsmeBusinessCoachPage() {
             </div>
             <div className="md:basis-[45%]">
               <Image
-                src="/images/msme-business-coach/hero-founder-port.webp"
-                alt="Illustration of an MSME founder at a port with cranes and a cargo ship behind him"
-                width={1152}
-                height={896}
+                src="/images/msme-business-coach/hero-coaching-session.webp"
+                alt="Illustration of an MSME business coach presenting a GTM strategy on a flipchart to three founders around a table"
+                width={1376}
+                height={768}
                 sizes="(min-width: 768px) 45vw, 100vw"
                 className="w-full h-auto"
                 priority
@@ -464,7 +464,7 @@ export default function MsmeBusinessCoachPage() {
                     : ""
                 }`}
               >
-                <div className="text-[56px] md:text-[84px] italic font-normal text-light tracking-tight-1 leading-none mb-4">
+                <div className="text-[56px] md:text-[84px] italic font-normal text-red tracking-tight-1 leading-none mb-4">
                   {s.num}
                 </div>
                 <div className="text-[12px] uppercase tracking-widest font-light text-light leading-relaxed whitespace-pre-line">
@@ -508,12 +508,13 @@ export default function MsmeBusinessCoachPage() {
                 >
                   <span
                     aria-hidden="true"
-                    className="text-[44px] leading-[0.9] text-[#CDCDCD]"
+                    className="text-[44px] leading-[0.9] text-red"
                   >
                     &ldquo;
                   </span>
                   <p className="italic text-[19px] md:text-[22px] leading-[1.4] text-ink">
-                    {quote}
+                    {quote.replace(/^[“"]|[”"]$/g, "")}
+                    <span aria-hidden="true" className="text-red">&rdquo;</span>
                   </p>
                 </li>
               ))}
@@ -534,15 +535,13 @@ export default function MsmeBusinessCoachPage() {
       {/* 3. WHAT CHANGES */}
       <section id="changes" className={SECTION}>
         <div className={WRAP}>
-          <div className="grid gap-6 md:grid-cols-2 md:items-end md:gap-14 mb-12">
-            <div>
-              <Eyebrow>What changes</Eyebrow>
-              <h2 className={H2}>
-                What&rsquo;s different{" "}
-                <span className="text-red">after we work together</span>
-              </h2>
-            </div>
-            <p className={BODY}>
+          <div className="mb-12">
+            <Eyebrow>What changes</Eyebrow>
+            <h2 className={`${H2} mb-5 md:whitespace-nowrap`}>
+              What&rsquo;s different{" "}
+              <span className="text-red">after we work together</span>
+            </h2>
+            <p className={`${BODY} max-w-[720px]`}>
               Recent engagements have been with trading and manufacturing
               companies. The problems differ, but the work usually lands in one
               of four places.
@@ -620,7 +619,7 @@ export default function MsmeBusinessCoachPage() {
                 {NOT_LIST.map((item) => (
                   <li
                     key={item}
-                    className="border-b border-rule py-4 text-[22px] md:text-[28px] leading-[1.25] text-light line-through decoration-[#CDCDCD] decoration-1"
+                    className="border-b border-rule py-4 text-[22px] md:text-[28px] leading-[1.25] text-light line-through decoration-red decoration-1"
                   >
                     {item}
                   </li>
@@ -632,7 +631,7 @@ export default function MsmeBusinessCoachPage() {
                 It is
               </p>
               <p className="text-[28px] md:text-[38px] font-bold leading-[1.15] text-ink mb-6">
-                A thinking partner for the founder.
+                A <span className="text-red">thinking partner</span> for the founder.
               </p>
               <p className={BODY}>
                 The role sits in a specific space: helping a founder or
