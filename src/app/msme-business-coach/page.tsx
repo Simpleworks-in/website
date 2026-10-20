@@ -382,12 +382,9 @@ export default function MsmeBusinessCoachPage() {
             <div className="md:basis-[55%]">
               <Eyebrow>MSME Business Coach — India</Eyebrow>
               <h1 className="text-[40px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-6">
-                Your business has{" "}
-                <span className="text-red">
-                  outgrown
-                  <br />
-                  generic advice.
-                </span>
+                Is your{" "}
+                <span className="text-red">MSME business not growing</span>{" "}
+                the way it should?
               </h1>
               <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
                 One-to-one MSME business coaching for Indian founders in the
