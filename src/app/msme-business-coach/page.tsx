@@ -443,12 +443,12 @@ export default function MsmeBusinessCoachPage() {
             </div>
             <div className="md:basis-[45%]">
               <Image
-                src="/images/msme-business-coach/hero-coaching-session.webp"
-                alt="Illustration of an MSME business coach presenting a GTM strategy on a flipchart to three founders around a table"
-                width={1376}
-                height={768}
-                sizes="(min-width: 768px) 45vw, 100vw"
-                className="w-full h-auto"
+                src="/images/msme-business-coach/hero-founder-factory-floor.webp"
+                alt="Illustration of a founder standing with arms crossed on a factory floor, with machining centres and workers behind him"
+                width={944}
+                height={1136}
+                sizes="(min-width: 768px) 40vw, 80vw"
+                className="w-full max-w-[460px] md:max-w-none mx-auto h-auto"
                 priority
               />
             </div>
@@ -796,16 +796,6 @@ export default function MsmeBusinessCoachPage() {
                 memory, the owner&rsquo;s calls and the owner&rsquo;s time.
                 These are the situations where this engagement helps most:
               </p>
-              <div className="mt-10">
-                <Image
-                  src="/images/msme-business-coach/founder-factory.webp"
-                  alt="Illustration of a founder on his factory floor, with robotic arms and machining centres behind him"
-                  width={1152}
-                  height={896}
-                  sizes="(min-width: 768px) 36vw, 100vw"
-                  className="w-full h-auto"
-                />
-              </div>
             </div>
             <div className="grid grid-cols-1 gap-x-10 gap-y-10 min-[900px]:grid-cols-2 content-start">
               {WHO_ITS_FOR.map((card) => (
