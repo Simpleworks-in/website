@@ -378,7 +378,7 @@ export default function MsmeBusinessCoachPage() {
       {/* 1. HERO + STATS */}
       <section className="py-10 md:py-14">
         <div className={WRAP}>
-          <div className="flex flex-col-reverse gap-10 md:flex-row md:items-center md:gap-12">
+          <div className="flex flex-col-reverse gap-10 md:flex-row md:items-start md:gap-12">
             <div className="md:basis-[55%]">
               <Eyebrow>MSME Business Coach — India</Eyebrow>
               <h1 className="text-[40px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-6">
@@ -435,7 +435,7 @@ export default function MsmeBusinessCoachPage() {
                 calls across India
               </p>
             </div>
-            <div className="md:basis-[45%]">
+            <div className="md:basis-[45%] md:pt-8">
               <Image
                 src="/images/msme-business-coach/hero-founder-factory-floor.webp"
                 alt="Illustration of a founder standing with arms crossed on a factory floor, with machining centres and workers behind him"
