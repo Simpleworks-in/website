@@ -441,8 +441,8 @@ export default function MsmeBusinessCoachPage() {
                 alt="Illustration of a founder standing with arms crossed on a factory floor, with machining centres and workers behind him"
                 width={944}
                 height={1136}
-                sizes="(min-width: 768px) 40vw, 80vw"
-                className="w-full max-w-[460px] md:max-w-none mx-auto h-auto"
+                sizes="(min-width: 768px) 380px, 80vw"
+                className="w-full max-w-[340px] md:max-w-[380px] md:ml-auto mx-auto h-auto"
                 priority
               />
             </div>
@@ -529,33 +529,30 @@ export default function MsmeBusinessCoachPage() {
       {/* 6. THE RIGHT FIT */}
       <section id="fit" className={SECTION}>
         <div className={WRAP}>
-          <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:gap-16">
-            <div>
-              <Eyebrow>The right fit</Eyebrow>
-              <h2 className={`${H2} mb-5`}>
-                MSME business coaching{" "}
-                <span className="text-red">works best</span> for these
-                situations
-              </h2>
-              <p className={BODY}>
-                This is for established businesses that have grown, but still run
-                the way they did when they were small: on the owner&rsquo;s
-                memory, the owner&rsquo;s calls and the owner&rsquo;s time.
-                These are the situations where this engagement helps most:
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-x-10 gap-y-10 min-[900px]:grid-cols-2 content-start">
-              {WHO_ITS_FOR.map((card) => (
-                <div key={card.title} className="border-t border-ink pt-5">
-                  <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
-                    {card.title}
-                  </h3>
-                  <p className="text-[15px] text-mid leading-relaxed">
-                    {card.body}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mb-10">
+            <Eyebrow>The right fit</Eyebrow>
+            <h2 className={`${H2} mb-5 min-[1200px]:whitespace-nowrap`}>
+              MSME business coaching{" "}
+              <span className="text-red">works best</span> for these situations
+            </h2>
+            <p className={`${BODY} max-w-[860px]`}>
+              This is for established businesses that have grown, but still run
+              the way they did when they were small: on the owner&rsquo;s
+              memory, the owner&rsquo;s calls and the owner&rsquo;s time. These
+              are the situations where this engagement helps most:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            {WHO_ITS_FOR.map((card) => (
+              <div key={card.title} className="border-t border-ink pt-5">
+                <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-[15px] text-mid leading-relaxed">
+                  {card.body}
+                </p>
+              </div>
+            ))}
           </div>
           <div className="mt-12 border-t border-rule pt-6">
             <p className="text-[16px] leading-[1.7] text-mid max-w-[860px]">
@@ -888,28 +885,24 @@ export default function MsmeBusinessCoachPage() {
       {/* 9. THE ROLE */}
       <section id="role" className={SECTION}>
         <div className={WRAP}>
-          <div className="grid gap-8 md:grid-cols-2 md:gap-14">
-            <div>
-              <Eyebrow>Understanding the role</Eyebrow>
-              <h2 className={H2}>
-                What does an MSME business coach{" "}
-                <span className="text-red">actually do?</span>
-              </h2>
-            </div>
-            <div>
-              <p className="text-[19px] md:text-[22px] leading-[1.45] text-ink mb-5">
-                An MSME business coach is not a trainer, not a motivational
-                speaker, and not a management consultant in the traditional
-                sense.
-              </p>
-              <p className={BODY}>
-                The role sits in a specific space: helping a founder or
-                business leader think more clearly, make better decisions, and
-                build the structures — strategy, GTM, execution, OKRs — that
-                allow the business to grow without depending entirely on the
-                founder&rsquo;s bandwidth.
-              </p>
-            </div>
+          <div className="max-w-[860px]">
+            <Eyebrow>Understanding the role</Eyebrow>
+            <h2 className={`${H2} mb-6 min-[900px]:whitespace-nowrap`}>
+              What does an MSME business coach{" "}
+              <span className="text-red">actually do?</span>
+            </h2>
+            <p className="text-[19px] md:text-[22px] leading-[1.45] text-ink mb-5">
+              An MSME business coach is not a trainer, not a motivational
+              speaker, and not a management consultant in the traditional
+              sense.
+            </p>
+            <p className={BODY}>
+              The role sits in a specific space: helping a founder or business
+              leader think more clearly, make better decisions, and build the
+              structures — strategy, GTM, execution, OKRs — that allow the
+              business to grow without depending entirely on the
+              founder&rsquo;s bandwidth.
+            </p>
           </div>
           <div className="mt-12 md:mt-[70px] grid gap-10 md:grid-cols-2 md:gap-14">
             <div className="border-t border-rule pt-5">
@@ -933,7 +926,7 @@ export default function MsmeBusinessCoachPage() {
               <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-bold text-ink mb-3">
                 One-to-one coaching
               </p>
-              <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-3">
+              <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-red mb-3">
                 One business. Yours.
               </h3>
               <p className="text-[16px] leading-[1.7] text-mid">
@@ -955,8 +948,9 @@ export default function MsmeBusinessCoachPage() {
           <div className="mb-10">
             <Eyebrow>Why this, not that</Eyebrow>
             <h2 className={`${H2} mb-5 min-[1100px]:whitespace-nowrap`}>
-              What makes a one-to-one MSME business coach{" "}
-              <span className="text-red">different</span>
+              What makes a{" "}
+              <span className="text-red">one-to-one MSME business coach</span>{" "}
+              different
             </h2>
             <p className={`${BODY} max-w-[860px]`}>
               There are plenty of coaching options for Indian MSME founders.
