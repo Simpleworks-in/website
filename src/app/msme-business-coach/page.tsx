@@ -31,7 +31,7 @@ const CONTACT_LINK = `https://wa.me/${FACTS.whatsappNumber}`;
 const STATS = [
   { num: "39", label: "Years running\nbusinesses" },
   { num: "1-to-1", label: "Just you and Premraj.\nNo junior team." },
-  { num: "On site", label: "On the ground with your team,\nnot only on paper." },
+  { num: "Hands-on", label: "Stays through execution,\nnot just the plan." },
 ];
 
 const PAIN_QUOTES = [
@@ -184,33 +184,10 @@ const CHANGES = [
   },
 ];
 
-const NOT_LIST = [
-  "A trainer",
-  "A motivational speaker",
-  "A management consultant, in the traditional sense",
-];
-
-const COMPARE = [
-  {
-    label: "Format",
-    group: "Seminars, bootcamps and online cohorts",
-    one: "Works only on your business",
-  },
-  {
-    label: "Where it starts",
-    group: "The same framework, applied to 200 businesses at once",
-    one: "Your market, your numbers, your team and your specific constraints",
-  },
-  {
-    label: "The plan",
-    group: "A template, adapted to fit",
-    one: "Comes out of your diagnosis. It’s yours.",
-  },
-  {
-    label: "Execution",
-    group: "Left to you after the session",
-    one: "Supported, at your pace and capacity",
-  },
+const CTA_STEPS = [
+  "You send a short WhatsApp message.",
+  "Premraj replies himself.",
+  "You talk it through. No pitch, no commitment.",
 ];
 
 const CAREER = [
@@ -425,7 +402,7 @@ export default function MsmeBusinessCoachPage() {
                 through your specific situation with you. That&rsquo;s what
                 this engagement is.
               </p>
-              <div className="mb-4">
+              <div className="mb-3">
                 <a
                   href={CONTACT_LINK}
                   data-cta="hero"
@@ -435,6 +412,23 @@ export default function MsmeBusinessCoachPage() {
                 >
                   Let&rsquo;s Talk
                 </a>
+              </div>
+              <p className="text-[14px] text-light mb-6">
+                Premraj replies personally. No pitch, no commitment.
+              </p>
+              <div className="flex items-center gap-4 border-t border-rule pt-5 mb-4">
+                <Image
+                  src="/images/landing/prem-menon-portrait.png"
+                  alt="Premraj Menon"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 rounded-full object-cover object-top"
+                />
+                <p className="text-[15px] leading-snug text-mid">
+                  <strong className="font-bold text-ink">Premraj Menon</strong>
+                  <br />
+                  Founder / Former COO, Tata Docomo Kerala Circle
+                </p>
               </div>
               <p className="text-[14px] text-light">
                 In-person coaching for Bengaluru &nbsp;·&nbsp; Online advisory
@@ -464,7 +458,7 @@ export default function MsmeBusinessCoachPage() {
                     : ""
                 }`}
               >
-                <div className="whitespace-nowrap text-[56px] md:text-[64px] lg:text-[84px] italic font-normal text-red tracking-tight-1 leading-none mb-4">
+                <div className="whitespace-nowrap text-[56px] min-[700px]:text-[clamp(36px,4.6vw,66px)] italic font-normal text-red tracking-tight-1 leading-none mb-4">
                   {s.num}
                 </div>
                 <div className="text-[12px] uppercase tracking-widest font-light text-light leading-relaxed whitespace-pre-line">
@@ -528,6 +522,48 @@ export default function MsmeBusinessCoachPage() {
             <Link href="/business-growth-review" className={`${TEXT_LINK} block text-[16px]`}>
               Start with the Simple Diagnostic →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. THE RIGHT FIT */}
+      <section id="fit" className={SECTION}>
+        <div className={WRAP}>
+          <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:gap-16">
+            <div>
+              <Eyebrow>The right fit</Eyebrow>
+              <h2 className={`${H2} mb-5`}>
+                MSME business coaching{" "}
+                <span className="text-red">works best</span> for these
+                situations
+              </h2>
+              <p className={BODY}>
+                This is for established businesses that have grown, but still run
+                the way they did when they were small: on the owner&rsquo;s
+                memory, the owner&rsquo;s calls and the owner&rsquo;s time.
+                These are the situations where this engagement helps most:
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-x-10 gap-y-10 min-[900px]:grid-cols-2 content-start">
+              {WHO_ITS_FOR.map((card) => (
+                <div key={card.title} className="border-t border-ink pt-5">
+                  <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-[15px] text-mid leading-relaxed">
+                    {card.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-12 border-t border-rule pt-6">
+            <p className="text-[16px] leading-[1.7] text-mid max-w-[860px]">
+              <strong className="font-bold text-ink">Where we work.</strong>{" "}
+              Based in Bengaluru. The Diagnostic and monthly Counsel run online
+              anywhere in India. The Reset happens on site, so it suits
+              founders in or able to meet regularly in Bengaluru.
+            </p>
           </div>
         </div>
       </section>
@@ -600,277 +636,29 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
-      {/* 4. THE ROLE */}
-      <section id="role" className={SECTION}>
+      {/* 5. WHO YOU'LL WORK WITH */}
+      <section id="who" className={SECTION}>
         <div className={WRAP}>
-          <div className="max-w-[720px] mb-10">
-            <Eyebrow>Understanding the role</Eyebrow>
-            <h2 className={H2}>
-              What does an MSME business coach{" "}
-              <span className="text-red">actually do?</span>
-            </h2>
-          </div>
-          <div className="grid gap-12 md:grid-cols-[45fr_55fr] md:gap-16">
-            <div>
-              <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light mb-4">
-                An MSME business coach is not
-              </p>
-              <ul>
-                {NOT_LIST.map((item) => (
-                  <li
-                    key={item}
-                    className="border-b border-rule py-4 text-[22px] md:text-[28px] leading-[1.25] text-light line-through decoration-red decoration-1"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border-t-2 border-ink pt-5">
-              <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-bold text-ink mb-4">
-                It is
-              </p>
-              <p className="text-[28px] md:text-[38px] font-bold leading-[1.15] text-ink mb-6">
-                Someone who has sat in your chair, thinking it through with you and{" "}
-                <span className="text-red">staying until it&rsquo;s done.</span>
-              </p>
-              <p className={BODY}>
-                The role sits in a specific space: helping a founder or
-                business leader think more clearly, make better decisions, and
-                build the structures — strategy, GTM, execution, OKRs — that
-                allow the business to grow without depending entirely on the
-                founder&rsquo;s bandwidth.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-14 md:mt-16">
-            <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-4">
-              Group coaching or one-to-one?
-            </h3>
-            <p className={`${BODY} max-w-[720px] mb-10`}>
-              In India, most MSME coaching happens in groups. That model has
-              its place. But for a family business navigating succession, a
-              manufacturer trying to break into a new channel, or a founder
-              whose team keeps missing targets, generic frameworks rarely reach
-              the root cause.
-            </p>
-            <div role="table" aria-label="Group programmes compared with one-to-one coaching">
-              <div role="row" className="hidden min-[700px]:grid grid-cols-[200px_1fr_1fr] gap-6">
-                <div role="columnheader" />
-                <div
-                  role="columnheader"
-                  className="border-t border-[#CDCDCD] pt-3 text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light"
-                >
-                  Group programmes
-                </div>
-                <div
-                  role="columnheader"
-                  className="border-t-2 border-ink pt-3 text-[11px] md:text-[13px] uppercase tracking-widest font-bold text-ink"
-                >
-                  One-to-one coaching
-                </div>
-              </div>
-              {COMPARE.map((r, i) => (
-                <div
-                  key={r.label}
-                  role="row"
-                  className={`grid grid-cols-1 gap-2 py-5 min-[700px]:grid-cols-[200px_1fr_1fr] min-[700px]:gap-6 border-t border-rule ${
-                    i === COMPARE.length - 1 ? "border-b" : ""
-                  }`}
-                >
-                  <div
-                    role="rowheader"
-                    className="text-[15px] text-light min-[700px]:col-auto col-span-full"
-                  >
-                    {r.label}
-                  </div>
-                  <div role="cell" className="text-[17px] text-light">
-                    <span className="min-[700px]:hidden block text-[11px] uppercase tracking-widest mb-1">
-                      Group programmes
-                    </span>
-                    {r.group}
-                  </div>
-                  <div role="cell" className="text-[17px] text-ink">
-                    <span className="min-[700px]:hidden block text-[11px] uppercase tracking-widest font-bold mb-1">
-                      One-to-one coaching
-                    </span>
-                    {r.one}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className={`${BODY} mt-10 max-w-[720px]`}>
-              Not sure how to tell a real fit from a generic one? Read{" "}
-              <Link
-                href="/blog/how-to-choose-the-right-msme-business-coach-in-india"
-                className={TEXT_LINK}
-              >
-                how to choose the right MSME business coach
-              </Link>{" "}
-              for the five questions worth asking before you commit.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. HOW IT WORKS */}
-      <section id="how" className={SECTION}>
-        <div className={WRAP}>
-          <div className="max-w-[720px] mb-10">
-            <Eyebrow>How it works</Eyebrow>
-            <h2 className={`${H2} mb-5`}>
-              A structured engagement —{" "}
-              <span className="text-red">built around your business</span>
-            </h2>
-            <p className={BODY}>
-              This isn&rsquo;t a course or a workshop. It&rsquo;s one-to-one
-              coaching working through your actual challenges — using a proven
-              five-stage process.
-            </p>
-          </div>
-          <ol className="grid grid-cols-1 gap-10 min-[900px]:grid-cols-5 min-[900px]:gap-7">
-            {STEPS.map((step, i) => (
-              <li key={step.title} className="border-t border-ink pt-5">
-                <p
-                  aria-hidden="true"
-                  className="text-[44px] font-bold leading-none text-ink mb-5"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="text-[19px] font-bold text-ink leading-snug mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-[15px] text-ink mb-3">{step.subline}</p>
-                <p className="text-[15px] text-mid leading-relaxed">
-                  {step.body}
-                </p>
-              </li>
-            ))}
-          </ol>
-          <div
-            aria-hidden="true"
-            className="hidden min-[900px]:grid grid-cols-5 gap-7 mt-11"
-          >
-            <div className="col-span-3">
-              <div className="h-[10px] border-t border-l border-r border-ink" />
-              <p className="mt-3 text-[15px] text-mid">
-                <strong className="font-bold text-ink">{STAGES[0].name}</strong>{" "}
-                · {STAGES[0].price} · half a day
-              </p>
-            </div>
-            <div>
-              <div className="h-[10px] border-t border-l border-r border-ink" />
-              <p className="mt-3 text-[15px] text-mid">
-                <strong className="font-bold text-ink">{STAGES[1].name}</strong>
-                <br />
-                30 or 60 days
-              </p>
-            </div>
-            <div>
-              <div className="h-[10px] border-t border-l border-r border-ink" />
-              <p className="mt-3 text-[15px] text-mid">
-                <strong className="font-bold text-ink">{STAGES[2].name}</strong>
-                <br />
-                Monthly
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. THE RIGHT FIT */}
-      <section id="fit" className={SECTION}>
-        <div className={WRAP}>
-          <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:gap-16">
-            <div>
-              <Eyebrow>The right fit</Eyebrow>
-              <h2 className={`${H2} mb-5`}>
-                MSME business coaching{" "}
-                <span className="text-red">works best</span> for these
-                situations
-              </h2>
-              <p className={BODY}>
-                This is for established businesses that have grown, but still run
-                the way they did when they were small: on the owner&rsquo;s
-                memory, the owner&rsquo;s calls and the owner&rsquo;s time.
-                These are the situations where this engagement helps most:
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-x-10 gap-y-10 min-[900px]:grid-cols-2 content-start">
-              {WHO_ITS_FOR.map((card) => (
-                <div key={card.title} className="border-t border-ink pt-5">
-                  <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
-                    {card.title}
-                  </h3>
-                  <p className="text-[15px] text-mid leading-relaxed">
-                    {card.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. WHY DIFFERENT + PREMRAJ */}
-      <section id="why" className={SECTION}>
-        <div className={WRAP}>
-          <div className="mb-10">
-            <Eyebrow>Why this, not that</Eyebrow>
-            <h2 className={`${H2} mb-5 min-[1100px]:whitespace-nowrap`}>
-              What makes a one-to-one MSME business coach{" "}
-              <span className="text-red">different</span>
-            </h2>
-            <p className={`${BODY} max-w-[860px]`}>
-              There are plenty of coaching options for Indian MSME founders.
-              Group programmes, online cohorts, weekend bootcamps — most built
-              around a system that works across many businesses
-              simultaneously. That model is efficient and affordable.
-              It&rsquo;s also, by design, generic. Simpleworks Consulting is
-              built differently.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-            {WHY_CARDS.map((card, i) => (
-              <div key={card.title} className="border-t border-ink pt-5">
-                <div className="flex items-baseline gap-4 mb-2">
-                  <span
-                    aria-hidden="true"
-                    className="text-[15px] font-bold text-red"
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-[20px] font-bold leading-[1.3] text-ink">
-                    {card.title}
-                  </h3>
-                </div>
-                <p className="text-[15px] text-mid leading-relaxed md:pl-[34px]">
-                  {card.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-14 md:mt-16 border-t border-rule pt-10 md:pt-12 grid gap-10 md:grid-cols-[300px_1fr] md:gap-14">
+          <div className="grid gap-10 md:grid-cols-[340px_1fr] md:gap-14 md:items-center">
             <div>
               <Image
-                src="/images/business-growth-review/premraj-menon.webp"
-                alt="Illustrated portrait of Premraj Menon"
+                src="/images/landing/prem-menon-portrait.png"
+                alt="Premraj Menon, MSME Business Coach"
                 width={1024}
-                height={973}
-                sizes="(min-width: 768px) 300px, 100vw"
-                className="w-full max-w-[300px] h-auto"
+                height={1024}
+                sizes="(min-width: 768px) 340px, 80vw"
+                className="w-full max-w-[340px] h-auto mx-auto md:mx-0"
               />
             </div>
             <div>
-              <Eyebrow>Who does the work</Eyebrow>
-              <h3 className="text-[24px] md:text-[28px] font-bold text-ink mb-2">
-                Premraj Menon
-              </h3>
-              <p className="text-[14px] text-light mb-5">
-                Founder, Simpleworks Consulting · MSME Business Coach,
-                Bengaluru
+              <Eyebrow>Who you&rsquo;ll work with</Eyebrow>
+              <h2 className={`${H2} mb-3`}>
+                You work with Premraj,{" "}
+                <span className="text-red">not a junior team.</span>
+              </h2>
+              <p className="text-[15px] text-light mb-5">
+                Premraj Menon · Founder, Simpleworks Consulting · MSME Business
+                Coach, Bengaluru
               </p>
               <p className={`${BODY} mb-6`}>
                 Premraj Menon has coached founders and led businesses for 39
@@ -894,17 +682,69 @@ export default function MsmeBusinessCoachPage() {
                   </div>
                 ))}
               </dl>
-              <a
-                href={CONTACT_LINK}
-                data-cta="bio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={BTN}
-              >
-                Let&rsquo;s Talk
-              </a>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+                <a
+                  href={CONTACT_LINK}
+                  data-cta="bio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={BTN}
+                >
+                  Let&rsquo;s Talk
+                </a>
+                <span className="text-[14px] text-light">
+                  No pitch, no commitment.
+                </span>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 5. HOW IT WORKS */}
+      <section id="how" className={SECTION}>
+        <div className={WRAP}>
+          <div className="max-w-[720px] mb-10">
+            <Eyebrow>How it works</Eyebrow>
+            <h2 className={`${H2} mb-5`}>
+              A structured engagement —{" "}
+              <span className="text-red">built around your business</span>
+            </h2>
+            <p className={BODY}>
+              This isn&rsquo;t a course, a seminar or a report left on your desk.
+              It&rsquo;s one-to-one work on your business, using a proven
+              five-stage process.
+            </p>
+          </div>
+          <ol className="grid grid-cols-1 gap-10 min-[900px]:grid-cols-5 min-[900px]:gap-7">
+            {STEPS.map((step, i) => (
+              <li key={step.title} className="border-t border-ink pt-5">
+                <p
+                  aria-hidden="true"
+                  className="text-[44px] font-bold leading-none text-ink mb-5"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="text-[19px] font-bold text-ink leading-snug mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-[15px] text-ink mb-3">{step.subline}</p>
+                <p className="text-[15px] text-mid leading-relaxed">
+                  {step.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-10 text-[15px] leading-[1.7] text-mid max-w-[860px]">
+            Not sure how to tell a real fit from a generic one? Read{" "}
+            <Link
+              href="/blog/how-to-choose-the-right-msme-business-coach-in-india"
+              className={TEXT_LINK}
+            >
+              how to choose the right MSME business coach
+            </Link>{" "}
+            for the five questions worth asking before you commit.
+          </p>
         </div>
       </section>
 
@@ -918,8 +758,9 @@ export default function MsmeBusinessCoachPage() {
           </h2>
           <p className={`${BODY} mb-10 max-w-[720px]`}>
             Most coaches tell you their fee only after a sales call. Here it is
-            upfront, stage by stage. Each stage has its own fixed fee, and you
-            move to the next one only if the last one earned it.
+            upfront. You start small: the first stage is {STAGES[0].price} for
+            half a day. Each stage has its own fixed fee, and you move to the
+            next one only if the last one earned it.
           </p>
           <div className="mb-10 flex flex-col min-[860px]:grid min-[860px]:grid-cols-3 min-[860px]:grid-rows-[repeat(8,auto)]">
             {STAGES.map((stage, i) => (
@@ -1044,11 +885,166 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
+      {/* 9. THE ROLE */}
+      <section id="role" className={SECTION}>
+        <div className={WRAP}>
+          <div className="grid gap-8 md:grid-cols-2 md:gap-14">
+            <div>
+              <Eyebrow>Understanding the role</Eyebrow>
+              <h2 className={H2}>
+                What does an MSME business coach{" "}
+                <span className="text-red">actually do?</span>
+              </h2>
+            </div>
+            <div>
+              <p className="text-[19px] md:text-[22px] leading-[1.45] text-ink mb-5">
+                An MSME business coach is not a trainer, not a motivational
+                speaker, and not a management consultant in the traditional
+                sense.
+              </p>
+              <p className={BODY}>
+                The role sits in a specific space: helping a founder or
+                business leader think more clearly, make better decisions, and
+                build the structures — strategy, GTM, execution, OKRs — that
+                allow the business to grow without depending entirely on the
+                founder&rsquo;s bandwidth.
+              </p>
+            </div>
+          </div>
+          <div className="mt-12 md:mt-[70px] grid gap-10 md:grid-cols-2 md:gap-14">
+            <div className="border-t border-rule pt-5">
+              <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light mb-3">
+                Most MSME coaching in India
+              </p>
+              <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-light mb-3">
+                One framework, many businesses
+              </h3>
+              <p className="text-[16px] leading-[1.7] text-mid">
+                In India, most coaching in the MSME space happens in groups —
+                seminars, bootcamps, online cohorts where the same framework
+                gets applied to 200 businesses at once. That model has its
+                place. But for an MSME with specific problems — a family
+                business navigating succession, a manufacturer trying to break
+                into a new channel, a founder whose team keeps missing targets
+                — generic frameworks rarely reach the root cause.
+              </p>
+            </div>
+            <div className="border-t-2 border-ink pt-5">
+              <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-bold text-ink mb-3">
+                One-to-one coaching
+              </p>
+              <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-3">
+                One business. Yours.
+              </h3>
+              <p className="text-[16px] leading-[1.7] text-mid">
+                A one-to-one MSME business coach works only on your business.
+                The diagnosis starts with your market, your numbers, your team,
+                and your specific constraints. The plan that comes out of that
+                process is yours — not a template adapted to fit. And the
+                execution support that follows is built around your pace and
+                capacity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. WHY DIFFERENT + PREMRAJ */}
+      <section id="why" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-10">
+            <Eyebrow>Why this, not that</Eyebrow>
+            <h2 className={`${H2} mb-5 min-[1100px]:whitespace-nowrap`}>
+              What makes a one-to-one MSME business coach{" "}
+              <span className="text-red">different</span>
+            </h2>
+            <p className={`${BODY} max-w-[860px]`}>
+              There are plenty of coaching options for Indian MSME founders.
+              Group programmes, online cohorts, weekend bootcamps — most built
+              around a system that works across many businesses
+              simultaneously. That model is efficient and affordable.
+              It&rsquo;s also, by design, generic. Simpleworks Consulting is
+              built differently.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
+            {WHY_CARDS.map((card, i) => (
+              <div key={card.title} className="border-t border-ink pt-5">
+                <div className="flex items-baseline gap-4 mb-2">
+                  <span
+                    aria-hidden="true"
+                    className="text-[15px] font-bold text-red"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-[20px] font-bold leading-[1.3] text-ink">
+                    {card.title}
+                  </h3>
+                </div>
+                <p className="text-[15px] text-mid leading-relaxed md:pl-[34px]">
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. CLOSING CTA */}
+      <section id="book" className="border-t border-rule py-14 md:py-24">
+        <div className={`${WRAP} text-center`}>
+          <div className="max-w-[820px] mx-auto">
+            <Eyebrow>Next step</Eyebrow>
+            <h2 className="text-[32px] leading-[1.15] md:text-[52px] font-bold tracking-tight-1 text-ink mb-6">
+              Ready to think clearly{" "}
+              <span className="text-red">about your business?</span>
+            </h2>
+            <p className={`${BODY} mb-8`}>
+              Start with a quick introductory conversation. No commitment, no
+              pitch — just a clear-eyed look at what your MSME is dealing with
+              and whether this helps.
+            </p>
+            <ol className="mb-10 grid grid-cols-1 gap-6 text-left md:grid-cols-3 md:gap-8">
+              {CTA_STEPS.map((step, i) => (
+                <li key={step} className="border-t border-ink pt-4">
+                  <span
+                    aria-hidden="true"
+                    className="mb-2 block text-[15px] font-bold text-light"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-[16px] leading-snug text-ink">{step}</p>
+                </li>
+              ))}
+            </ol>
+            <a
+              href={CONTACT_LINK}
+              data-cta="final-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={BTN}
+            >
+              Let&rsquo;s Talk
+            </a>
+            <p className="mt-6 text-[14px] text-light">
+              Or call{" "}
+              <a href="tel:+919036099000" className={TEXT_LINK}>
+                {FACTS.phone}
+              </a>{" "}
+              ·{" "}
+              <a href={`mailto:${FACTS.email}`} className={TEXT_LINK}>
+                {FACTS.email}
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 10. READ MORE */}
-      <section id="read" className={SECTION}>
+      <section id="read" className={`${SECTION} border-b`}>
         <div className={WRAP}>
           <div className="max-w-[720px] mb-8 md:mb-10">
-            <Eyebrow>Going deeper</Eyebrow>
+            <Eyebrow>Not ready to talk yet?</Eyebrow>
             <h2 className={`${H2} mb-5`}>
               <span className="text-red">Read more</span> on MSME business
               coaching
@@ -1081,43 +1077,6 @@ export default function MsmeBusinessCoachPage() {
                 </Link>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 11. CLOSING CTA */}
-      <section id="book" className="border-t border-rule border-b py-14 md:py-24">
-        <div className={`${WRAP} text-center`}>
-          <div className="max-w-[820px] mx-auto">
-            <Eyebrow>Next step</Eyebrow>
-            <h2 className="text-[32px] leading-[1.15] md:text-[52px] font-bold tracking-tight-1 text-ink mb-6">
-              Ready to think clearly{" "}
-              <span className="text-red">about your business?</span>
-            </h2>
-            <p className={`${BODY} mb-8`}>
-              Start with a quick introductory conversation. No commitment, no
-              pitch — just a clear-eyed look at what your MSME is dealing with
-              and whether this helps.
-            </p>
-            <a
-              href={CONTACT_LINK}
-              data-cta="final-cta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={BTN}
-            >
-              Let&rsquo;s Talk
-            </a>
-            <p className="mt-6 text-[14px] text-light">
-              Or call{" "}
-              <a href="tel:+919036099000" className={TEXT_LINK}>
-                {FACTS.phone}
-              </a>{" "}
-              ·{" "}
-              <a href={`mailto:${FACTS.email}`} className={TEXT_LINK}>
-                {FACTS.email}
-              </a>
-            </p>
           </div>
         </div>
       </section>
