@@ -416,7 +416,7 @@ export default function MsmeBusinessCoachPage() {
               <p className="text-[14px] text-light mb-6">
                 Premraj replies personally. No pitch, no commitment.
               </p>
-              <div className="flex items-center gap-4 border-t border-rule pt-5 mb-4">
+              <div className="flex items-center gap-4 mb-4">
                 <Image
                   src="/images/landing/prem-menon-portrait.png"
                   alt="Premraj Menon"
