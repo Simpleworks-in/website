@@ -468,7 +468,7 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* IN SHORT */}
-      <section className="border-t border-rule py-16 md:py-20">
+      <section className="border-t border-rule py-8 md:py-10">
         <div className={WRAP}>
           <div className="max-w-[720px]">
             <Eyebrow>In short</Eyebrow>
