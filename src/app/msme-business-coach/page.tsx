@@ -467,6 +467,21 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
+      {/* IN SHORT */}
+      <section className="border-t border-rule py-16 md:py-20">
+        <div className={WRAP}>
+          <div className="max-w-[720px]">
+            <Eyebrow>In short</Eyebrow>
+            <p className="text-[17px] md:text-[20px] text-ink leading-[1.7]">
+              One-to-one business coaching for founder-led MSMEs with ₹10–200
+              crore in revenue, led personally by Premraj Menon. You get a
+              diagnosed constraint, a costed plan and a weekly review rhythm
+              your team can run. Online across India, and on site in Bengaluru.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 2. RECOGNISE */}
       <section id="signs" className={SECTION}>
         <div className={WRAP}>
