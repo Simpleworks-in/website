@@ -60,7 +60,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Diagnostic",
       description:
-        "Half a day: a three-hour working session on the problem you name, a written diagnostic brief and a one-hour walkthrough.",
+        "Half a day: a three-hour working session on the one problem you name, a written diagnostic brief and a one-hour walkthrough.",
       price: "25000",
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
