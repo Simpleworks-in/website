@@ -37,9 +37,9 @@ export const faqs: Faq[] = [
   existing("How long does a consulting engagement typically last?"),
   {
     q: "Which programme should I start with?",
-    a: "Most founders start with The Simple Diagnostic. In half a day you get a clear, written view of what’s working, what isn’t, and the one thing to fix first. If the problem is already known and just hasn’t been solved, go straight to The Simple Reset. If you want a senior sounding board for ongoing decisions, choose The Simple Counsel.",
+    a: "Most founders start with The Simple Diagnostic. In half a day you get a clear, written view of what’s working, what isn’t, and the one thing to fix first on the problem that is costing you most. If the problem is already known and just hasn’t been solved, go straight to The Simple Reset. If you want a senior sounding board for ongoing decisions, choose The Simple Counsel.",
     aHtml:
-      "<p>Most founders start with <a href=\"#simple-diagnostic\">The Simple Diagnostic</a>. In half a day you get a clear, written view of what's working, what isn't, and the one thing to fix first. If the problem is already known and just hasn't been solved, go straight to <a href=\"#simple-reset\">The Simple Reset</a>. If you want a senior sounding board for ongoing decisions, choose <a href=\"#simple-counsel\">The Simple Counsel</a>.</p>",
+      "<p>Most founders start with <a href=\"#simple-diagnostic\">The Simple Diagnostic</a>. In half a day you get a clear, written view of what's working, what isn't, and the one thing to fix first on the problem that is costing you most. If the problem is already known and just hasn't been solved, go straight to <a href=\"#simple-reset\">The Simple Reset</a>. If you want a senior sounding board for ongoing decisions, choose <a href=\"#simple-counsel\">The Simple Counsel</a>.</p>",
   },
   {
     q: "How is payment structured?",

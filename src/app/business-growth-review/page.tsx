@@ -55,7 +55,7 @@ const STEPS = [
   {
     label: "Three hours",
     title: "The working session",
-    text: "A structured conversation across strategy, buying, selling, operations, execution and people. At your office in Bengaluru, or online in two or three shorter sessions.",
+    text: "A structured working session on the problem you name, looking at whichever of strategy, buying, selling, operations, execution and people it touches. At your office in Bengaluru, or online in two or three shorter sessions.",
   },
   {
     label: "In writing",
@@ -72,7 +72,7 @@ const STEPS = [
 const INCLUDED = [
   {
     label: "Working session",
-    text: "Three hours with you and, if useful, your senior team. Online, it runs as two or three shorter sessions.",
+    text: "Three hours on the problem you name, with you and, if useful, your senior team. Online, it runs as two or three shorter sessions.",
   },
   { label: "Written brief", text: "What's working, what isn't, and why." },
   {
@@ -194,7 +194,7 @@ const serviceJsonLd = {
   serviceType: "Business growth consulting",
   url: URL,
   description:
-    "A fixed-fee, half-day review for founder-led MSMEs whose revenue has stopped growing: an introductory call, a three-hour working session (two or three sessions online), a written brief and a one-hour walkthrough.",
+    "A fixed-fee, half-day review for founder-led MSMEs whose revenue has stopped growing: an introductory call, a three-hour working session on the problem you name (two or three shorter sessions online), a written brief and a one-hour walkthrough.",
   provider: {
     "@type": "ProfessionalService",
     name: "Simpleworks Consulting",
@@ -219,7 +219,7 @@ const serviceJsonLd = {
     price: "25000",
     priceCurrency: "INR",
     description:
-      "Three-hour working session, written growth brief and one-hour walkthrough.",
+      "Three-hour working session on the problem you name, written growth brief and one-hour walkthrough.",
     url: URL,
   },
 };
@@ -349,7 +349,7 @@ export default function BusinessGrowthReviewPage() {
                 ₹25,000
               </p>
               <p className="mt-4 text-[14px] text-light">
-                Paid post engagement. No hourly billing.
+                Paid after the engagement. No hourly billing.
               </p>
             </div>
             <div>
@@ -382,7 +382,7 @@ export default function BusinessGrowthReviewPage() {
           <p className={`${body} mb-10 max-w-[720px]`}>
             The block can sit in sales, distribution, operations or the P&amp;L
             itself. These are the areas Premraj has run for 39 years, so the
-            review looks at all of them, not only the sales line.
+            review looks wherever the problem leads, not only at the sales line.
           </p>
           <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-16 md:max-w-[880px]">
             <div>

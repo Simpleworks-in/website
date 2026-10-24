@@ -60,7 +60,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Diagnostic",
       description:
-        "Half a day, across 2-3 sessions: a three-hour structured conversation, a written diagnostic brief and a one-hour walkthrough.",
+        "Half a day: a three-hour working session on the problem you name, a written diagnostic brief and a one-hour walkthrough.",
       price: "25000",
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
@@ -285,9 +285,9 @@ export default function ProgrammesPage() {
         </div>
 
         <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For any owner who knows something is off — growth has stalled, a
-          channel isn&rsquo;t performing, or execution keeps slipping — but
-          doesn&rsquo;t yet know what to fix first.
+          For an owner who can name what feels wrong (growth has stalled, a
+          channel isn&rsquo;t performing, execution keeps slipping) but
+          doesn&rsquo;t yet know the cause or what to fix first.
         </p>
 
         <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-light">
@@ -295,8 +295,8 @@ export default function ProgrammesPage() {
         </p>
         <Deliverables
           items={[
-            "A three-hour structured conversation, broken into 2-3 sessions, across strategy, buying, selling, execution and people",
-            "A written diagnostic brief naming what’s working, what isn’t, and why",
+            "A three-hour working session on the one problem you name (two or three shorter sessions if online)",
+            "A written diagnostic brief on that problem, naming what’s working, what isn’t, and why",
             "A one-hour walkthrough of the brief with you",
             "One clear recommendation for what to do first",
           ]}
@@ -683,8 +683,7 @@ export default function ProgrammesPage() {
           <span className="text-red">half a day.</span>
         </h2>
         <p className="mb-8 max-w-[460px] text-[16px] leading-[1.7] text-mid">
-          Most clients begin with the Diagnostic. ₹25,000 fixed.
-          Credited in full against whatever comes next.
+          Most clients begin with the Diagnostic. ₹25,000 fixed, paid after the engagement.
           If you only need the Diagnostic, that is perfectly fine too.
         </p>
         <Link

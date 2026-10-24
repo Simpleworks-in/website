@@ -107,7 +107,7 @@ const STAGES = [
     suffixIsPrice: false,
     term: "Half a day",
     description:
-      "A three-hour working session (two or three shorter sessions if online), a written diagnostic brief, and a one-hour walkthrough. You come away knowing what's working, what isn't, and the one thing to do first.",
+      "A three-hour working session on the problem you name (two or three shorter sessions if online), a written diagnostic brief, and a one-hour walkthrough. You come away knowing what's working, what isn't, and the one thing to do first.",
     then: "act on the brief yourself, or move to the Reset.",
     linkLabel: "Start with the Simple Diagnostic →",
     linkHref: "/business-growth-review",
