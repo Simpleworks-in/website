@@ -861,6 +861,11 @@ export default function MsmeBusinessCoachPage() {
                 Ask Premraj on WhatsApp →
               </a>
             </p>
+            <p className={`${BODY} mt-3`}>
+              <Link href="/simpleworks-questions" className={TEXT_LINK}>
+                More questions about Simpleworks →
+              </Link>
+            </p>
           </div>
           <div className="border-b border-rule">
             {FAQS.map((item, i) => (
