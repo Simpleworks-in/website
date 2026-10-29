@@ -212,6 +212,14 @@ export default function Footer() {
           </li>
           <li>
             <Link
+              href="/simpleworks-questions"
+              className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
+            >
+              Questions
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/contact"
               className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
             >

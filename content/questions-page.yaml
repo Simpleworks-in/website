@@ -1,0 +1,197 @@
+{
+  "eyebrow": "About Simpleworks",
+  "heading": "Straight answers about",
+  "headingRed": "Simpleworks and Premraj Menon.",
+  "intro": "Who he is, what the work involves, what it costs, and where it is not the right fit.",
+  "groups": [
+    {
+      "id": "who",
+      "title": "Who is Premraj Menon?",
+      "note": "",
+      "questions": [
+        {
+          "id": "premraj",
+          "question": "Who is Premraj Menon?",
+          "answer": "Premraj Menon is the founder and Principal Consultant at Simpleworks Consulting in Bengaluru. He spent 39 years running businesses in India across sales and distribution, operations, turnarounds and full P&L responsibility, in consumer durables, tyres, telecom and SaaS. He started Simpleworks to bring that experience to founder-led businesses."
+        },
+        {
+          "id": "career",
+          "question": "What is Premraj Menon's career background?",
+          "answer": "Premraj Menon started in 1987 as a sales trainee at Usha International. He then worked in tyres at MRF and Apollo Tyres (dealer networks and government sales) and in telecom at BPL Mobile, Bharti Airtel and Tata Docomo, rising to COO of the Kerala circle with full P&L. At Viworks Ventures he helped businesses with sales strategy and operations, and at Neoffice, an enterprise SaaS company, he worked on strategy, product and growth."
+        },
+        {
+          "id": "education",
+          "question": "What is his education?",
+          "answer": "Premraj Menon studied at Christ University, Bengaluru. He later completed the Executive General Management Programme (EGMP) at IIM Bengaluru and the Programme in Global Management at the Ross School of Business, University of Michigan."
+        },
+        {
+          "id": "brings",
+          "question": "What does Premraj Menon bring that a business owner can use?",
+          "answer": "Premraj Menon has run the things a founder-led business struggles with: dealer and distributor networks, sales teams, operations and a full P&L. In an engagement he looks for the one or two constraints behind stalled growth, then works with the owner's team to fix them. His experience is operating experience, not theory."
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "title": "Why Simpleworks?",
+      "note": "",
+      "questions": [
+        {
+          "id": "purpose",
+          "question": "Why does Simpleworks exist?",
+          "answer": "Simpleworks exists for founder-led Indian businesses that have grown but now run on the owner's memory, calls and time. Premraj Menon started it in Bengaluru to give those founders a senior operator's view and to stay with them through execution, not hand over a plan and leave."
+        },
+        {
+          "id": "for-whom",
+          "question": "Who is Simpleworks for?",
+          "answer": "Simpleworks works with founder-led Indian businesses with ₹10–200 crore in revenue, mainly in manufacturing, consumer goods, retail and distribution, professional services and early-stage technology. Typical triggers are flat revenue, margin pressure, dealer pushback, or every decision still landing on the founder's desk."
+        },
+        {
+          "id": "solo",
+          "question": "Why is Simpleworks one advisor and not a team?",
+          "answer": "Simpleworks is one senior advisor by design. Premraj Menon does the work personally, so the founder is never handed to a junior consultant after the first meeting. The trade-off is limited capacity: Simpleworks takes on a small number of engagements at a time."
+        }
+      ]
+    },
+    {
+      "id": "what",
+      "title": "What does Simpleworks do?",
+      "note": "",
+      "questions": [
+        {
+          "id": "offer",
+          "question": "What does Simpleworks offer?",
+          "answer": "Simpleworks offers three fixed-fee programmes. The Simple Diagnostic (₹25,000) finds the real constraint in half a day. The Simple Reset (₹1,40,000 for 30 days or ₹2,80,000 for 60 days) works the plan. The Simple Counsel (₹75,000 a month, minimum three months) provides ongoing senior advice and accountability. Custom engagements are quoted in writing first."
+        },
+        {
+          "id": "diagnostic",
+          "question": "What do I get from the Simple Diagnostic?",
+          "answer": "The Simple Diagnostic is a three-hour working session (two or three shorter sessions if online) for a single business problem the founder is facing. You get a written diagnostic brief naming what is working, what is not and why, and a one-hour walkthrough. You leave with one clear thing to do first. It is a diagnosis, not an implementation."
+        },
+        {
+          "id": "gain",
+          "question": "What will I gain at each stage?",
+          "answer": "After the Diagnostic you know what is really holding the business back and what to do first. After the Reset the gaps are costed in rupees, the fix is designed, and (on the 60-day version) a weekly review rhythm is installed and handed over. With the Counsel you keep a senior thinking partner and accountability for as long as it is useful."
+        }
+      ]
+    },
+    {
+      "id": "how",
+      "title": "How does the work run?",
+      "note": "",
+      "questions": [
+        {
+          "id": "process",
+          "question": "What is Simpleworks' process?",
+          "answer": "Simpleworks works in five stages: Discover, Diagnose, Frame the recommendation, Execution cadence, and Set accountability. Each stage has a purpose, and the client decides after each whether to continue."
+        },
+        {
+          "id": "execution",
+          "question": "How does Simpleworks handle execution?",
+          "answer": "Execution happens in the Reset and the Counsel. In the Reset, Premraj Menon visits on site every week, and in the 60-day version works with the leadership team for four more weeks while the fix is put in place. The Counsel adds two sessions a month and a quarterly review. The Diagnostic stops at the brief and walkthrough."
+        },
+        {
+          "id": "client-role",
+          "question": "What do I and my team still have to do?",
+          "answer": "The founder and team supply numbers, access and decisions, and own the changes on the ground. Premraj Menon structures the work, challenges the thinking, sets the review rhythm and keeps the team accountable. The aim is that the rhythm keeps running after he steps back, so the business does not become dependent on Simpleworks."
+        },
+        {
+          "id": "online",
+          "question": "Can the work be done online?",
+          "answer": "Partly. The Simple Diagnostic and the Simple Counsel can run fully online anywhere in India. The Simple Reset needs weekly on-site visits, so it suits founders in Bengaluru or able to meet there regularly."
+        }
+      ]
+    },
+    {
+      "id": "strengths",
+      "title": "Strengths",
+      "note": "",
+      "questions": [
+        {
+          "id": "strengths-list",
+          "question": "What are Simpleworks' strengths?",
+          "answer": "Simpleworks' strengths are an operating record rather than theory, a focus on sales, distribution, operations and margins, direct work with the founder, published fixed fees, and an emphasis on execution and accountability, not just advice. Premraj Menon does the work personally."
+        },
+        {
+          "id": "fees",
+          "question": "Why does Simpleworks publish its fees?",
+          "answer": "Simpleworks publishes fees so founders can judge fit before a sales call. Every programme has a fixed fee agreed before work starts, with no hourly billing. The current fees are on the [Programmes page](/programmes)."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Limits",
+      "note": "Where Simpleworks is not the right fit, and what is still young.",
+      "questions": [
+        {
+          "id": "limits-list",
+          "question": "What are Simpleworks' limits or weaknesses?",
+          "answer": "Simpleworks is one advisor, so capacity is limited. It started in 2026 and has a small number of completed engagements, so its published case record is short. Reset work happens on site in and around Bengaluru. It does not provide a team of analysts or long slide reports."
+        },
+        {
+          "id": "not-fit",
+          "question": "Who is Simpleworks not right for?",
+          "answer": "Simpleworks is not right for businesses still finding their first customers, for problems rooted in plant capacity or quality systems, for founders wanting a team of analysts and a 60-page report, or for funding and valuation mandates. Businesses below ₹10 crore are usually better served by the [blog](/blog) and [resources](/resources)."
+        },
+        {
+          "id": "track-record",
+          "question": "Why is the track record short?",
+          "answer": "Simpleworks launched in 2026 after Premraj Menon's 39 years in corporate leadership. The Simpleworks engagement record is therefore small, and it is published openly. What can be checked in full is his operating career. Simpleworks adds published engagement stories as clients agree to them."
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "title": "How to check, and what if it's not a fit",
+      "note": "",
+      "questions": [
+        {
+          "id": "verify-background",
+          "question": "How can I verify Premraj Menon's background?",
+          "answer": "Premraj Menon's career and education are listed on the [About page](/about) and on his [LinkedIn profile](https://www.linkedin.com/in/premraj/). The [sample diagnostic report](/sample-diagnostic-report) shows what the Diagnostic produces before you pay anything. Founders are welcome to ask for references to the extent clients have agreed."
+        },
+        {
+          "id": "not-a-fit",
+          "question": "What happens if Simpleworks is not the right fit?",
+          "answer": "Premraj Menon says so plainly on the introductory call, before any fee. If the Diagnostic shows the problem is outside Simpleworks' scope, the brief still stands and you keep it. There is nothing to sign up for afterwards."
+        },
+        {
+          "id": "first-step",
+          "question": "What is the first step?",
+          "answer": "A short, free introductory call of about 15 minutes with Premraj Menon, with no pitch. You describe what is stuck, and you both decide whether to go further. Start via WhatsApp, a booked call or the [contact form](/contact)."
+        }
+      ]
+    }
+  ],
+  "programmeTable": [
+    {
+      "name": "Simple Diagnostic",
+      "fee": "₹25,000",
+      "who": "Premraj Menon and the founder; senior team if useful",
+      "often": "One three-hour session, plus a one-hour walkthrough",
+      "where": "Bengaluru, or online in two or three shorter sessions",
+      "receive": "Written diagnostic brief and one clear first move",
+      "teamDoes": "Shares rough numbers and joins the session"
+    },
+    {
+      "name": "Simple Reset",
+      "fee": "₹1,40,000 (30 days) / ₹2,80,000 (60 days)",
+      "who": "Premraj Menon, the founder and the leadership team",
+      "often": "Weekly on-site visits",
+      "where": "On site",
+      "receive": "Gaps costed in rupees, a designed one-page solution; at 60 days, a weekly review rhythm handed over",
+      "teamDoes": "Works the plan with Premraj Menon and runs the rhythm"
+    },
+    {
+      "name": "Simple Counsel",
+      "fee": "₹75,000 a month, minimum three months",
+      "who": "Premraj Menon and the founder",
+      "often": "Two sessions a month, plus a quarterly business review",
+      "where": "Online or in person",
+      "receive": "Senior advice, WhatsApp access for urgent decisions, quarterly review with the leadership team",
+      "teamDoes": "Brings agenda items and decisions"
+    }
+  ],
+  "stories": []
+}

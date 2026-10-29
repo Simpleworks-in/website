@@ -673,6 +673,11 @@ export default function ProgrammesPage() {
           Fees and <span className="text-red">duration.</span>
         </h2>
         <FAQAccordion faqs={ACCORDION_FAQS} />
+        <p className="mt-8 text-[15px] text-mid">
+          <Link href="/simpleworks-questions" className="text-red underline hover:no-underline">
+            More questions about Simpleworks →
+          </Link>
+        </p>
       </section>
 
       {/* 12. CTA band */}

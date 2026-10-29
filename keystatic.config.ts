@@ -1,4 +1,4 @@
-import { config, fields, collection } from "@keystatic/core";
+import { config, fields, collection, singleton } from "@keystatic/core";
 
 // Storage strategy:
 // - In production (Vercel), `KEYSTATIC_GITHUB_APP_SLUG` is set and we use
@@ -37,6 +37,63 @@ export default config({
   storage,
   ui: {
     brand: { name: "Simpleworks" },
+  },
+  singletons: {
+    questionsPage: singleton({
+      label: "Questions page",
+      path: "content/questions-page",
+      format: { data: "yaml" },
+      schema: {
+        eyebrow: fields.text({ label: "Eyebrow" }),
+        heading: fields.text({ label: "Heading (black part)" }),
+        headingRed: fields.text({ label: "Heading (red part)" }),
+        intro: fields.text({ label: "Subhead", multiline: true }),
+        groups: fields.array(
+          fields.object({
+            id: fields.text({ label: "Anchor ID" }),
+            title: fields.text({ label: "Group title" }),
+            note: fields.text({ label: "Note (optional)", multiline: true }),
+            questions: fields.array(
+              fields.object({
+                id: fields.text({ label: "Anchor ID" }),
+                question: fields.text({ label: "Question" }),
+                answer: fields.text({
+                  label: "Answer",
+                  description: "Plain text. Links as [text](url).",
+                  multiline: true,
+                }),
+              }),
+              { label: "Questions", itemLabel: (p) => p.fields.question.value },
+            ),
+          }),
+          { label: "Groups", itemLabel: (p) => p.fields.title.value },
+        ),
+        programmeTable: fields.array(
+          fields.object({
+            name: fields.text({ label: "Name" }),
+            fee: fields.text({ label: "Fee" }),
+            who: fields.text({ label: "Who is involved" }),
+            often: fields.text({ label: "How often" }),
+            where: fields.text({ label: "Where" }),
+            receive: fields.text({ label: "What you receive" }),
+            teamDoes: fields.text({ label: "What your team does" }),
+          }),
+          { label: "Programme table", itemLabel: (p) => p.fields.name.value },
+        ),
+        stories: fields.array(
+          fields.object({
+            label: fields.text({ label: "Label" }),
+            size: fields.text({ label: "Size" }),
+            programme: fields.text({ label: "Programme" }),
+            problem: fields.text({ label: "Problem", multiline: true }),
+            finding: fields.text({ label: "Finding", multiline: true }),
+            action: fields.text({ label: "Action", multiline: true }),
+            result: fields.text({ label: "Result", multiline: true }),
+          }),
+          { label: "Stories (not rendered yet)", itemLabel: (p) => p.fields.label.value },
+        ),
+      },
+    }),
   },
   collections: {
     posts: collection({

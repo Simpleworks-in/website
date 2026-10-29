@@ -169,6 +169,14 @@ export default function ContactPage() {
                 </p>
               </li>
             </ol>
+            <p className={`${body} mt-6`}>
+              <Link
+                href="/simpleworks-questions"
+                className="text-red underline hover:no-underline"
+              >
+                More questions about Simpleworks →
+              </Link>
+            </p>
           </div>
         </div>
       </section>
