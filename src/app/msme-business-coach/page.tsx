@@ -4,9 +4,9 @@ import Link from "next/link";
 import { FACTS } from "../../../content/facts";
 
 export const metadata: Metadata = {
-  title: { absolute: "MSME Business Coach in India | Simpleworks, Bengaluru" },
+  title: { absolute: "MSME Business Coach in Bangalore & India | Simpleworks" },
   description:
-    "One-to-one MSME business coaching in Bengaluru with Premraj Menon, 39 years' experience. Fixed, published fees from ₹25,000. Book an introductory call.",
+    "One-to-one MSME business coaching in Bangalore (Bengaluru) with Premraj Menon, 39 years' experience. Published fees from ₹25,000. Book an intro call.",
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -386,15 +386,15 @@ export default function MsmeBusinessCoachPage() {
         <div className={WRAP}>
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-start md:gap-12">
             <div className="md:basis-[55%]">
-              <Eyebrow>MSME Business Coach — India</Eyebrow>
+              <Eyebrow>MSME Business Coach — Bangalore &amp; India</Eyebrow>
               <h1 className="text-[40px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-6">
                 Is your{" "}
                 <span className="text-red">MSME business not growing</span>{" "}
                 the way it should?
               </h1>
               <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
-                One-to-one MSME business coaching for Indian founders in the
-                ₹10–200 crore range. Not a course. Someone senior who helps
+                One-to-one MSME business coaching in Bangalore, for founders
+                across India in the ₹10–200 crore range. Not a course. Someone senior who helps
                 you decide what to do, then helps you get it done.
               </p>
               <p className={`${BODY} mb-8`}>
@@ -434,8 +434,8 @@ export default function MsmeBusinessCoachPage() {
                 </p>
               </div>
               <p className="text-[14px] text-light">
-                In-person coaching for Bengaluru &nbsp;·&nbsp; Online advisory
-                calls across India
+                In-person coaching in Bangalore (Bengaluru) &nbsp;·&nbsp; Online
+                advisory calls across India
               </p>
             </div>
             <div className="md:basis-[45%] md:pt-8">
