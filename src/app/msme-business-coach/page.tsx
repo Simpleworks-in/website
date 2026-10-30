@@ -258,6 +258,12 @@ const BLOG_LINKS = [
       "Why founders need a coach at one stage and a mentor at another, and how to tell which stage you're in.",
     href: "/blog/the-difference-between-business-coach-and-mentor-isn-t-skill-it-s-stage",
   },
+  {
+    title: "How to Make Your Business Run Without the Owner",
+    excerpt:
+      "Why owners delegate tasks but keep decisions, and how moving decision rights is what finally lets the business run without you.",
+    href: "/blog/how-to-make-your-business-run-without-the-owner",
+  },
 ];
 
 const faqSchema = {
@@ -1066,11 +1072,13 @@ export default function MsmeBusinessCoachPage() {
               ask most.
             </p>
           </div>
-          <div className="grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
-            {BLOG_LINKS.map((post) => (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
+            {BLOG_LINKS.map((post, i) => (
               <article
                 key={post.href}
-                className="flex flex-col border-t border-ink pt-5"
+                className={`flex flex-col border-t border-ink pt-5 ${
+                  i < 3 ? "lg:col-span-2" : "lg:col-span-3"
+                } ${i === BLOG_LINKS.length - 1 ? "md:col-span-2 lg:col-span-3" : ""}`}
               >
                 <h3 className="text-[19px] font-bold leading-snug mb-3">
                   <Link href={post.href} className="text-ink hover:text-red">
