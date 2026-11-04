@@ -93,7 +93,7 @@ export default function HomePage() {
                 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
                 style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
               >
-                MSME Growth Consultant Bangalore &amp; India
+                MSME Growth Consultant in Bangalore &amp; India | Simpleworks
               </p>
               <h1
                 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
