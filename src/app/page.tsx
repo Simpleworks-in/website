@@ -89,19 +89,19 @@ export default function HomePage() {
           {/* Text */}
           <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 md:pr-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
             <div className="flex flex-col mb-5 md:mb-[26px]">
-              <p
+              <h1
                 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
                 style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
               >
                 MSME Growth Consultant in Bangalore &amp; India | Simpleworks
-              </p>
-              <h1
+              </h1>
+              <p
                 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.25s" }}
               >
-                MSME Growth Consultant in Bangalore,{" "}
-                <span className="text-red">for Founders Across India</span>
-              </h1>
+                Your business has more in it than your current{" "}
+                <span className="text-red">results</span> show.
+              </p>
               <p
                 className="text-[16px] md:text-[18px] text-mid leading-[1.65] mt-5 opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.32s" }}
