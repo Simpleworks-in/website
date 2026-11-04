@@ -7,21 +7,27 @@ import { FACTS } from "../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "MSME Consultant in Bengaluru | Simpleworks Consulting",
+    absolute: "MSME Growth Consultant, Bangalore & India | Simpleworks Consulting",
   },
   description:
-    "MSME strategy and growth consultant in Bengaluru. Fixed-fee programmes for founder-led businesses with ₹10–200 crore revenue, from a ₹25,000 growth review.",
+    "Business not growing? Premraj Menon of Simpleworks Consulting helps founder-led MSMEs in Bangalore and across India find what's holding growth back.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
-    title: "MSME Consultant in Bengaluru | Simpleworks Consulting",
+    title: "MSME Growth Consultant, Bangalore & India | Simpleworks Consulting",
     description:
-      "MSME strategy and growth consultant in Bengaluru. Fixed-fee programmes for founder-led businesses with ₹10–200 crore revenue, from a ₹25,000 growth review.",
+      "Business not growing? Premraj Menon of Simpleworks Consulting helps founder-led MSMEs in Bangalore and across India find what's holding growth back.",
     url: "https://www.simpleworks.in",
     siteName: "Simpleworks Consulting",
     locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MSME Growth Consultant, Bangalore & India | Simpleworks Consulting",
+    description:
+      "Business not growing? Premraj Menon of Simpleworks Consulting helps founder-led MSMEs in Bangalore and across India find what's holding growth back.",
   },
 };
 
@@ -83,25 +89,31 @@ export default function HomePage() {
           {/* Text */}
           <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 md:pr-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
             <div className="flex flex-col mb-5 md:mb-[26px]">
-              <h1
+              <p
                 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
                 style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
               >
                 MSME Strategy &amp; Growth Consultant in Bengaluru
-              </h1>
-              <p
+              </p>
+              <h1
                 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.25s" }}
               >
-                Your business has more in it than your current{" "}
-                <span className="text-red">results</span> show.
+                MSME Growth Consultant in Bangalore,{" "}
+                <span className="text-red">for Founders Across India</span>
+              </h1>
+              <p
+                className="text-[16px] md:text-[18px] text-mid leading-[1.65] mt-5 opacity-0 animate-fade-up"
+                style={{ animationDelay: "0.32s" }}
+              >
+                Online across India. In person in Bangalore.
               </p>
             </div>
             <p
               className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              We work with established Indian small and medium businesses that are stuck in growth, stretched in operations, short on clarity about the next move.
+              At Simpleworks Consulting, we work with established Indian small and medium businesses that are stuck in growth, stretched in operations, short on clarity about the next move.
             </p>
             <a
               href={`https://wa.me/${FACTS.whatsappNumber}`}
@@ -130,6 +142,30 @@ export default function HomePage() {
             />
           </div>
         </div>
+      </section>
+
+      {/* ── BUSINESS NOT GROWING ── */}
+      <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
+        <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
+          Where founders get stuck
+        </p>
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
+          Business not growing? <span className="text-red">Find out why.</span>
+        </h2>
+        <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
+          Revenue flat for two or three years. Dealers taking less stock. Targets hit but margins slipping. Every decision still landing on your desk. Premraj Menon has run these problems from the inside for 39 years.
+        </p>
+        <div className="mt-6 flex flex-col gap-3">
+          <Link href="/business-growth-review" className="text-red hover:underline w-fit">
+            See how a half-day growth review works &rarr;
+          </Link>
+          <Link href="/msme-business-coach" className="text-red hover:underline w-fit">
+            Read about one-to-one MSME coaching &rarr;
+          </Link>
+        </div>
+        <p className="text-[14px] leading-[1.7] text-light max-w-body-text mt-8">
+          Based in Bangalore (Bengaluru). The growth review and monthly advisory run online across India. The 30–60 day Reset happens on site, so it suits founders in or able to meet in Bangalore.
+        </p>
       </section>
 
       {/* ── TAGLINE STRIP ── */}
