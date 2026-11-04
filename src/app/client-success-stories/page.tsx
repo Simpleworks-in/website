@@ -119,7 +119,9 @@ export default async function ClientSuccessStoriesPage() {
                   </h2>
                   <p className="mt-3.5 text-[15px] leading-[1.7] text-mid">
                     <strong className="font-bold text-ink">The problem:</strong>{" "}
-                    {story.problem}{" "}
+                    {story.problem}
+                  </p>
+                  <p className="mt-3 text-[15px] leading-[1.7] text-mid">
                     <strong className="font-bold text-ink">What we did:</strong>{" "}
                     {story.solution}
                   </p>
