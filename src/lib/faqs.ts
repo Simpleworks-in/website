@@ -15,7 +15,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "What does a typical engagement look like?",
-    a: "It depends on the problem. Some clients need a focused strategy sprint — three to four weeks to diagnose, decide, and plan. Others need longer-term advisory support through a growth phase or business turnaround. We scope every engagement around the actual need, not a standard package.",
+    a: "It depends on the problem. Most founders start with the Simple Diagnostic: half a day, with a written brief. Those who continue move to the Simple Reset, which runs for 30 or 60 days. Others need longer-term advisory support through a growth phase or business turnaround. We scope every engagement around the actual need, not a standard package.",
   },
   {
     q: "How is Simpleworks Consulting different from larger consulting firms?",
@@ -23,7 +23,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "What industries do you specialise in?",
-    a: "Our deepest experience is in Consumer Durables, Manufacturing, Tyres, Retail and Distribution, Telecom, and IT/SaaS. That said, the strategic problems most MSMEs face — unclear positioning, stalled growth, weak execution — are industry-agnostic. If your business is at a turning point, the industry rarely limits what we can do together.",
+    a: "Most clients are in manufacturing, consumer goods, retail and distribution, professional services, or technology and SaaS. Premraj Menon's own operating experience is in consumer durables, tyres, telecom and SaaS. That said, the strategic problems most MSMEs face — unclear positioning, stalled growth, weak execution — are industry-agnostic. If your business is at a turning point, the industry rarely limits what we can do together.",
   },
   {
     q: "Can Simpleworks Consulting help with a business turnaround?",
@@ -35,7 +35,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: "What is your consulting fee?",
-    a: "<p>Every programme has a fixed fee, agreed before we start. The <a href=\"/business-growth-review\">Simple Diagnostic</a> is ₹25,000. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a minimum of three months. A Custom Engagement gets a fixed written quote before we begin. There's no hourly billing.</p><p><a href=\"https://www.simpleworks.in/programmes\">See full programme details →</a></p>",
+    a: "<p>Every programme has a fixed fee, agreed before we start. The <a href=\"/business-growth-review\">Simple Diagnostic</a>, also called the <a href=\"/business-growth-review\">growth review</a>, is ₹25,000. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a minimum of three months. A Custom Engagement gets a fixed written quote before we begin. There's no hourly billing.</p><p><a href=\"https://www.simpleworks.in/programmes\">See full programme details →</a></p>",
   },
   {
     q: "How long does a consulting engagement typically last?",
