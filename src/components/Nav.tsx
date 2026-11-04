@@ -1,5 +1,6 @@
 "use client";
 
+import { STORIES_PAGE_LIVE } from "@/lib/stories-live";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,7 +10,7 @@ import { FACTS } from "../../content/facts";
 
 const WHATSAPP_HREF = `https://wa.me/${FACTS.whatsappNumber}`;
 
-const links = [
+const baseLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/startup-mentor-bengaluru", label: "Startups" },
@@ -18,6 +19,14 @@ const links = [
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact" },
 ];
+
+const links = STORIES_PAGE_LIVE
+  ? [
+      ...baseLinks.slice(0, 4),
+      { href: "/client-success-stories", label: "Stories", lgOnly: true },
+      ...baseLinks.slice(4),
+    ]
+  : baseLinks;
 
 export default function Nav() {
   const pathname = usePathname();
@@ -47,11 +56,14 @@ export default function Nav() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden list-none items-center gap-8 md:flex">
+        <ul className="hidden list-none items-center gap-4 whitespace-nowrap md:flex lg:gap-6 xl:gap-8">
           {links.map((link) => {
             const active = isActive(link.href);
             return (
-              <li key={link.href}>
+              <li
+                key={link.href}
+                className={"lgOnly" in link && link.lgOnly ? "hidden lg:block" : undefined}
+              >
                 <Link
                   href={link.href}
                   className={`text-[13px] tracking-wide-2 transition-colors hover:text-red ${
@@ -68,7 +80,7 @@ export default function Nav() {
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-[1px] border border-red px-[22px] py-2 text-[13px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
+              className="rounded-[1px] border border-red px-4 py-2 text-[13px] lg:px-[22px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
             >
               Let&rsquo;s Talk
             </a>
