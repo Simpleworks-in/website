@@ -94,6 +94,31 @@ export default config({
         ),
       },
     }),
+    storiesPage: singleton({
+      label: "Client success stories page",
+      path: "content/stories-page",
+      format: { data: "yaml" },
+      schema: {
+        eyebrow: fields.text({ label: "Eyebrow" }),
+        heading: fields.text({ label: "Heading (black part)" }),
+        headingRed: fields.text({ label: "Heading (red part)" }),
+        intro: fields.text({ label: "Intro", multiline: true }),
+        closingFootnote: fields.text({
+          label: "Note below the list",
+          multiline: true,
+        }),
+        ctaEyebrow: fields.text({ label: "Closing eyebrow" }),
+        ctaHeading: fields.text({ label: "Closing heading (black part)" }),
+        ctaHeadingRed: fields.text({ label: "Closing heading (red part)" }),
+        ctaBody: fields.text({ label: "Closing paragraph", multiline: true }),
+        ctaButtonLabel: fields.text({ label: "Button label" }),
+        ctaButtonHref: fields.text({ label: "Button link" }),
+        ctaCaption: fields.text({
+          label: "Caption before phone and email",
+          description: 'Shown as "Or call <phone> · <email>". Phone and email come from the site facts.',
+        }),
+      },
+    }),
   },
   collections: {
     posts: collection({
@@ -178,6 +203,76 @@ export default config({
           publicPath: "/resources/",
           validation: { isRequired: true },
         }),
+      },
+    }),
+    clientStories: collection({
+      label: "Client success stories",
+      slugField: "title",
+      path: "content/client-stories/*",
+      format: { data: "yaml" },
+      columns: ["title", "programme", "permissionConfirmed"],
+      schema: {
+        title: fields.slug({
+          name: {
+            label: "Internal name",
+            description:
+              "For example story-1. Never use a real client name here: it becomes a file name in the repo.",
+          },
+        }),
+        date: fields.date({
+          label: "Date",
+          description: "Newest stories are shown first.",
+        }),
+        permissionConfirmed: fields.checkbox({
+          label: "Client permission confirmed",
+          description: "The story shows on the site only when this is ticked.",
+          defaultValue: false,
+        }),
+        anonymous: fields.checkbox({
+          label: "Anonymous",
+          description:
+            "On: only the public label and public location are used. The real client name is never sent to the browser.",
+          defaultValue: false,
+        }),
+        clientName: fields.text({
+          label: "Client name (used only when Anonymous is off)",
+        }),
+        publicLabel: fields.text({
+          label: "Public label (used when Anonymous is on)",
+          description: 'For example "A family-run manufacturer".',
+        }),
+        location: fields.text({
+          label: "Location (used when Anonymous is off)",
+        }),
+        publicLocation: fields.text({
+          label: "Public location (used when Anonymous is on)",
+          description:
+            'A broader area plus the words "Anonymous client", for example "South India · Anonymous client".',
+        }),
+        industryLabel: fields.text({ label: "Industry (optional)" }),
+        programme: fields.select({
+          label: "Programme",
+          options: [
+            { label: "Simple Diagnostic", value: "Simple Diagnostic" },
+            { label: "Simple Reset", value: "Simple Reset" },
+            { label: "Simple Counsel", value: "Simple Counsel" },
+            { label: "Custom Engagement", value: "Custom Engagement" },
+          ],
+          defaultValue: "Simple Diagnostic",
+        }),
+        image: fields.image({
+          label: "Image (WebP)",
+          description:
+            "Use a neutral file name. For anonymous clients the file name must not contain the client's name.",
+          directory: "public/images/stories",
+          publicPath: "/images/stories/",
+        }),
+        imageAlt: fields.text({
+          label: "Image description",
+          description: "Not shown for anonymous stories; a generic description is used instead.",
+        }),
+        problem: fields.text({ label: "The problem", multiline: true }),
+        solution: fields.text({ label: "What we did", multiline: true }),
       },
     }),
   },

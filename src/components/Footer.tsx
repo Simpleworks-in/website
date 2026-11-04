@@ -3,6 +3,7 @@ import Link from "next/link";
 import logo from "../../public/Simpleworks_image_only_S.png";
 import { FACTS } from "../../content/facts";
 import FooterOfficeAddress from "./FooterOfficeAddress";
+import { STORIES_PAGE_LIVE } from "@/lib/stories-live";
 
 export default function Footer() {
   return (
@@ -210,6 +211,16 @@ export default function Footer() {
               Resources
             </Link>
           </li>
+          {STORIES_PAGE_LIVE ? (
+            <li>
+              <Link
+                href="/client-success-stories"
+                className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
+              >
+                Client stories
+              </Link>
+            </li>
+          ) : null}
           <li>
             <Link
               href="/simpleworks-questions"

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../keystatic.config";
+import { STORIES_PAGE_LIVE } from "@/lib/stories-live";
 
 const SITE = "https://www.simpleworks.in";
 
@@ -57,6 +58,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/refund-and-cancellation-policy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/shipping-and-delivery-policy`, changeFrequency: "yearly", priority: 0.3 },
   ];
+
+  if (STORIES_PAGE_LIVE) {
+    staticRoutes.push({
+      url: `${SITE}/client-success-stories`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+  }
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${SITE}/blog/${p.slug}`,
