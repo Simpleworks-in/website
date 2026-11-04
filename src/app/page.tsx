@@ -163,9 +163,6 @@ export default function HomePage() {
             Read about one-to-one MSME coaching &rarr;
           </Link>
         </div>
-        <p className="text-[14px] leading-[1.7] text-light max-w-body-text mt-8">
-          Based in Bangalore (Bengaluru). The growth review and monthly advisory run online across India. The 30–60 day Reset happens on site, so it suits founders in or able to meet in Bangalore.
-        </p>
       </section>
 
       {/* ── TAGLINE STRIP ── */}
