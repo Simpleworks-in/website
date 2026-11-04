@@ -103,7 +103,7 @@ export default function HomePage() {
                 <span className="text-red">results</span> show.
               </p>
               <p
-                className="text-[16px] md:text-[18px] text-mid leading-[1.65] mt-5 opacity-0 animate-fade-up"
+                className="text-[13px] md:text-[14px] text-light leading-[1.65] mt-4 opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.32s" }}
               >
                 Online across India. In person in Bangalore.
