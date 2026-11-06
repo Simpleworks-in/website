@@ -4,7 +4,7 @@ import { FACTS } from "../../../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "Execution Consulting India | Simpleworks",
+    absolute: "Execution Consulting for MSMEs | Simpleworks Consulting",
   },
   description:
     "Simpleworks closes the gap between strategy and results for Indian MSMEs, with OKRs and the 5D execution method. Bengaluru.",
@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/services/execution-consulting",
   },
   openGraph: {
-    title: "Execution Consulting India | Simpleworks",
+    title: "Execution Consulting for MSMEs | Simpleworks Consulting",
     description:
       "Simpleworks closes the gap between strategy and results for Indian MSMEs, with OKRs and the 5D execution method. Bengaluru.",
     url: "https://www.simpleworks.in/services/execution-consulting",

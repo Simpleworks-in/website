@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: {
-    absolute: "About Premraj Menon, Founder | Simpleworks Consulting",
+    absolute: "About Premraj Menon, MSME Consultant | Simpleworks Consulting",
   },
   description:
     "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo’s Kerala Circle.",
@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/about",
   },
   openGraph: {
-    title: "About Premraj Menon, Founder | Simpleworks Consulting",
+    title: "About Premraj Menon, MSME Consultant | Simpleworks Consulting",
     description:
       "Premraj Menon, founder of Simpleworks Consulting, Bengaluru. 39 years running businesses — sales trainee in 1987 to COO of Tata Docomo’s Kerala Circle.",
     url: "https://www.simpleworks.in/about",
@@ -36,12 +36,12 @@ export default function AboutPage() {
               Founder · Simpleworks Consulting
             </p>
             <h1 className="mb-2 text-[36px] leading-[1.05] md:text-hero-h1 md:leading-[1] font-bold tracking-tight-2 opacity-0 animate-fade-up [animation-delay:0.2s]">
-              Premraj
+              Premraj{" "}
               <br />
               <span className="text-red">Menon</span>
             </h1>
             <p className="mb-8 text-[16px] tracking-wide-1 text-mid opacity-0 animate-fade-up [animation-delay:0.3s]">
-              Management Consultant · India &amp; Bengaluru
+              MSME growth consultant, Bengaluru
             </p>
             <p className="mb-8 max-w-[440px] text-[16px] leading-[1.7] text-mid opacity-0 animate-fade-up [animation-delay:0.35s]">
               Simpleworks Consulting is a management consulting practice in

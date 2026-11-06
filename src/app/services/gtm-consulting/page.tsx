@@ -4,7 +4,7 @@ import { FACTS } from "../../../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "GTM Consulting India | Simpleworks, Bengaluru",
+    absolute: "GTM Consulting for MSMEs in India | Simpleworks Consulting",
   },
   description:
     "Go-to-market strategy for Indian MSMEs and startups — built for your market, distribution and paying customers.",
@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/services/gtm-consulting",
   },
   openGraph: {
-    title: "GTM Consulting India | Simpleworks, Bengaluru",
+    title: "GTM Consulting for MSMEs in India | Simpleworks Consulting",
     description:
       "Go-to-market strategy for Indian MSMEs and startups — built for your market, distribution and paying customers.",
     url: "https://www.simpleworks.in/services/gtm-consulting",

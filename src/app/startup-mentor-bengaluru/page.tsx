@@ -4,14 +4,14 @@ import FAQAccordion from "@/components/FAQAccordion";
 import { FACTS } from "../../../content/facts";
 
 export const metadata = {
-  title: { absolute: "Startup Mentor in Bengaluru | Simpleworks" },
+  title: { absolute: "Startup Mentor in Bengaluru | Simpleworks Consulting" },
   description:
     "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
   alternates: {
     canonical: "https://www.simpleworks.in/startup-mentor-bengaluru",
   },
   openGraph: {
-    title: "Startup Mentor in Bengaluru | Simpleworks",
+    title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
     description:
       "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/startup-mentor-bengaluru",

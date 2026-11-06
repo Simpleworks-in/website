@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FACTS } from "../../../content/facts";
 
 const URL = "https://www.simpleworks.in/business-growth-review";
-const TITLE = "Revenue Not Growing? A Half-Day Growth Review | Simpleworks";
+const TITLE = "Business Not Growing? Half-Day Growth Review | Simpleworks Consulting";
 const DESCRIPTION =
   "Revenue stuck at the same level? A half-day growth review for MSME owners in Bengaluru and across India. Fixed fee of ₹25,000, written brief included.";
 

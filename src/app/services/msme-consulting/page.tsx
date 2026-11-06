@@ -4,7 +4,7 @@ import { FACTS } from "../../../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "MSME Consultant in Bengaluru | Simpleworks",
+    absolute: "MSME Consulting in Bengaluru | Simpleworks Consulting",
   },
   description:
     "Independent MSME consultant in Bengaluru: strategy, execution and growth advisory, led by Premraj Menon, 39 years of experience.",
@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
   openGraph: {
-    title: "MSME Consultant in Bengaluru | Simpleworks",
+    title: "MSME Consulting in Bengaluru | Simpleworks Consulting",
     description:
       "Independent MSME consultant in Bengaluru: strategy, execution and growth advisory, led by Premraj Menon, 39 years of experience.",
     url: "https://www.simpleworks.in/services/msme-consulting",

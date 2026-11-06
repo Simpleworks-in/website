@@ -5,7 +5,7 @@ import { FACTS } from "../../../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "OKR Consulting India | Simpleworks, Bengaluru",
+    absolute: "OKR Consulting for MSMEs in India | Simpleworks Consulting",
   },
   description:
     "OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business.",
@@ -13,7 +13,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/services/okr-consulting",
   },
   openGraph: {
-    title: "OKR Consulting India | Simpleworks, Bengaluru",
+    title: "OKR Consulting for MSMEs in India | Simpleworks Consulting",
     description:
       "OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business.",
     url: "https://www.simpleworks.in/services/okr-consulting",

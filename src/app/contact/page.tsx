@@ -8,14 +8,14 @@ const DESCRIPTION =
 
 export const metadata = {
   title: {
-    absolute: "Contact Simpleworks Consulting, Bengaluru",
+    absolute: "Talk to an MSME Growth Consultant | Simpleworks Consulting",
   },
   description: DESCRIPTION,
   alternates: {
     canonical: "https://www.simpleworks.in/contact",
   },
   openGraph: {
-    title: "Contact Simpleworks Consulting, Bengaluru",
+    title: "Talk to an MSME Growth Consultant | Simpleworks Consulting",
     description: DESCRIPTION,
     url: "https://www.simpleworks.in/contact",
     type: "website",

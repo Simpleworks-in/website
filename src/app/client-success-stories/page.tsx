@@ -5,7 +5,7 @@ import { FACTS } from "../../../content/facts";
 import { STORIES_PAGE_LIVE } from "@/lib/stories-live";
 import { getStoriesPageText, getVisibleStories } from "@/lib/client-stories";
 
-const TITLE = "Client Success Stories | MSME Growth Consulting | Simpleworks";
+const TITLE = "MSME Client Success Stories | Simpleworks Consulting";
 const DESCRIPTION =
   "Real engagements with founder-led MSMEs: the problem, what Simpleworks Consulting did, and the programme used. Bangalore and across India.";
 const URL = "https://www.simpleworks.in/client-success-stories";

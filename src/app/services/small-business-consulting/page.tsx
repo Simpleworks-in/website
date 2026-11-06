@@ -4,7 +4,7 @@ import { FACTS } from "../../../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "Small Business Consultant in India | Simpleworks",
+    absolute: "Small Business Consulting in Bengaluru | Simpleworks Consulting",
   },
   description:
     "Strategy, growth and execution consulting for Indian small business and startup founders. One senior advisor, not a team. Bengaluru and across India.",
@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
   openGraph: {
-    title: "Small Business Consultant in India | Simpleworks",
+    title: "Small Business Consulting in Bengaluru | Simpleworks Consulting",
     description:
       "Strategy, growth and execution consulting for Indian small business and startup founders. One senior advisor, not a team. Bengaluru and across India.",
     url: "https://www.simpleworks.in/services/small-business-consulting",

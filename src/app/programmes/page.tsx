@@ -5,7 +5,7 @@ import { faqs } from "./faqs";
 
 export const metadata = {
   title: {
-    absolute: "Business Consulting Fees & Programmes | Simpleworks",
+    absolute: "MSME Consulting Programmes & Fees | Simpleworks Consulting",
   },
   description:
     "Fixed-fee consulting for MSME founders: a ₹25,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
@@ -13,7 +13,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/programmes",
   },
   openGraph: {
-    title: "Business Consulting Fees & Programmes | Simpleworks",
+    title: "MSME Consulting Programmes & Fees | Simpleworks Consulting",
     description:
       "Fixed-fee consulting for MSME founders: a ₹25,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
     url: "https://www.simpleworks.in/programmes",

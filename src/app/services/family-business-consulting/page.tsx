@@ -4,7 +4,7 @@ import { FACTS } from "../../../../content/facts";
 
 export const metadata = {
   title: {
-    absolute: "Family Business Consultant India | Simpleworks",
+    absolute: "Family Business Consulting in India | Simpleworks Consulting",
   },
   description:
     "Professionalisation, succession planning and next-gen leadership for Indian family businesses. Led by Premraj Menon, Bengaluru.",
@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://www.simpleworks.in/services/family-business-consulting",
   },
   openGraph: {
-    title: "Family Business Consultant India | Simpleworks",
+    title: "Family Business Consulting in India | Simpleworks Consulting",
     description:
       "Professionalisation, succession planning and next-gen leadership for Indian family businesses. Led by Premraj Menon, Bengaluru.",
     url: "https://www.simpleworks.in/services/family-business-consulting",

@@ -5,7 +5,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
 
 export const metadata: Metadata = {
-  title: { absolute: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore" },
+  title: { absolute: "MSME Consultant in Tamil Nadu | Simpleworks Consulting" },
   description:
     "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Chennai, Hosur, Salem, Tiruppur and Coimbatore. Book a discovery call.",
   keywords:
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
   },
   openGraph: {
-    title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
+    title: "MSME Consultant in Tamil Nadu | Simpleworks Consulting",
     description:
       "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu’s manufacturing and export clusters.",
     url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MSME Consultant Tamil Nadu | Chennai, Hosur, Coimbatore",
+    title: "MSME Consultant in Tamil Nadu | Simpleworks Consulting",
     description:
       "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu’s manufacturing and export clusters.",
     images: ["https://www.simpleworks.in/images/landing/tamil-nadu-hero.png"],
