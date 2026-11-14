@@ -162,7 +162,7 @@ const WHY_CARDS = [
   },
   {
     title: "39 years of senior operating experience",
-    body: "Premraj has held senior leadership roles across five industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That’s not theory or certification. It’s tested judgment applied to your reality.",
+    body: "Premraj has held senior leadership roles across five industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That’s not theory or certification. It’s tested judgment applied to your reality. He has also co-founded a small business, been on the management team of another, and worked with around 3,000 MSME partners over 30 years.",
   },
   {
     title: "No reports left behind on a desk",
@@ -207,7 +207,7 @@ const CAREER = [
   { k: "1987", v: "Sales trainee, Usha International" },
   { k: "Tyres", v: "MRF and Apollo Tyres: dealer networks and government sales" },
   { k: "Telecom", v: "BPL Mobile, Bharti Airtel, then Tata Docomo, rising to COO of the Kerala circle with full P&L" },
-  { k: "SaaS", v: "Strategy, product and growth at Neoffice" },
+  { k: "SaaS", v: "Management team, running growth and strategy at Neoffice" },
   { k: "Study", v: "IIM Bengaluru; Ross School of Business, University of Michigan" },
 ];
 
@@ -720,7 +720,10 @@ export default function MsmeBusinessCoachPage() {
                 <Link href="/about" className={TEXT_LINK}>
                   About page
                 </Link>
-                .
+                . He co-founded Viworks Ventures, joined the management team at
+                Neoffice, which won the ET-SIDBI Best Exporter award (Micro
+                Enterprise category) in 2019, and worked with around 3,000 MSME
+                partners over 30 years.
               </p>
               <dl className="mb-8 border-t border-rule">
                 {CAREER.map((row) => (

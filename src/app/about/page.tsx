@@ -84,6 +84,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* MSME FROM THREE SIDES */}
+      <section className="border-b-[0.5px] border-rule px-6 py-12 md:py-[60px] md:pl-[132px] md:pr-[60px]">
+        <p className="max-w-[760px] text-[16px] md:text-[17px] leading-[1.75] md:leading-[1.82] text-mid">
+          Most consultants from large companies have only seen MSMEs from the
+          outside. Premraj Menon has seen them from three sides: as a
+          co-founder of Viworks Ventures and a member of the management team
+          at Neoffice, as the corporate head who depended on MSME partners to
+          make his numbers, and as the person those partners called when the
+          business was stuck. Over 30 years he worked with around 3,000 of
+          them. Neoffice, the software company where he was on the management
+          team, won the ET-SIDBI Best Exporter award in the Micro Enterprise
+          category in 2019.
+        </p>
+      </section>
+
       {/* COMPANIES */}
       <div className="reveal border-b-[0.5px] border-rule bg-warm px-6 py-12 md:py-[60px] md:pl-[132px] md:pr-[60px]">
         <p className="mb-9 text-eyebrow-lg font-medium uppercase tracking-wide-5 text-light">
@@ -204,8 +219,10 @@ export default function AboutPage() {
             </p>
             <p className="mb-[22px]">
               At 50, I pivoted deliberately to entrepreneurship—co-founding{" "}
-              <strong className="font-semibold text-ink">Viworks Ventures</strong> and heading
-              product and growth at <strong className="font-semibold text-ink">Neoffice.ai</strong>
+              <strong className="font-semibold text-ink">Viworks Ventures</strong> and then
+              joining the management team at{" "}
+              <strong className="font-semibold text-ink">Neoffice.ai</strong>, running growth and
+              strategy
               —learning what it takes to scale from near-zero. Having operated with both deep
               corporate resources and startup constraints, I know what actually moves the needle
               versus what merely looks like progress.

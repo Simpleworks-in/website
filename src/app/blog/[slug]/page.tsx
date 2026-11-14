@@ -158,7 +158,9 @@ export default async function PostPage({
           <p className="mt-1 text-[13px] leading-[1.65] text-mid">
             Founder, Simpleworks Consulting. 39 years across Telecom, Automotive
             and Consumer Durables — now helping Indian MSME and family-business
-            founders grow with clarity.
+            founders grow with clarity. He has co-founded a small business,
+            been on the management team of another, and worked with around
+            3,000 MSME partners over 30 years.
           </p>
           <div className="mt-3 flex gap-4 text-[12px] uppercase tracking-wide-4">
             <Link href="/about" className="text-red hover:text-ink transition-colors">

@@ -388,8 +388,8 @@ export default function StartupMentorBengaluruPage() {
                 reinvented itself twice.
               </p>
               <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Then, at 50, I went the other way. Co-founded Viworks Ventures, then led
-                strategy, product and growth at Neoffice.ai. Small teams, tight cash, nothing to
+                Then, at 50, I went the other way. Co-founded Viworks Ventures, then was
+                on the management team at Neoffice.ai, running growth and strategy. Small teams, tight cash, nothing to
                 delegate. I have been inside a startup, not beside one.
               </p>
             </div>
@@ -547,8 +547,9 @@ export default function StartupMentorBengaluruPage() {
             </p>
             <div className="mb-7 border-[0.5px] border-rule border-l-2 border-l-red px-7 py-6">
               <p className="text-[15px] leading-[1.7] text-mid">
-                At 50, I co-founded Viworks Ventures, then headed product and
-                growth at <strong className="font-bold text-ink">Neoffice AI</strong> — a
+                At 50, I co-founded Viworks Ventures, then joined the management
+                team at <strong className="font-bold text-ink">Neoffice AI</strong>, running
+                growth and strategy — a
                 SaaS startup where I learned firsthand what it takes to build
                 from near-zero with limited resources and unlimited
                 ambition. <strong className="font-bold text-ink">I&rsquo;ve been inside a

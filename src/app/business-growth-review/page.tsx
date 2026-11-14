@@ -120,13 +120,18 @@ const NOT_FIT = [
 ];
 
 const CAREER = [
+  ["Own business", "Co-founder, Viworks Ventures: sales strategy and operations for businesses"],
+  ["Software", "Neoffice, from September 2019: management team, running growth and strategy. Neoffice won the ET-SIDBI Best Exporter award, Micro Enterprise category, 2019"],
+  [
+    "Partners",
+    "About 30 years working with around 3,000 MSME partners: dealers, channel partners and others, and coaching them to improve results",
+  ],
   ["1987", "Sales trainee, Usha International"],
   ["Tyres", "MRF and Apollo Tyres: dealer networks and government sales"],
   [
     "Telecom",
     "BPL Mobile, Bharti Airtel, then Tata Docomo, rising to COO of the Kerala circle with full P&L",
   ],
-  ["SaaS", "Strategy, product and growth at Neoffice"],
   ["Study", "IIM Bengaluru; Ross School of Business, University of Michigan"],
 ];
 
@@ -418,10 +423,11 @@ export default function BusinessGrowthReviewPage() {
                 <span className="text-red">not a junior team.</span>
               </h2>
               <p className={`${body} mb-8 max-w-[640px]`}>
-                Simpleworks Consulting is one senior advisor. Premraj Menon spent 39 years
-                running businesses in India: sales and distribution, business
-                operations, turnarounds, and full P&amp;L responsibility. He
-                started Simpleworks Consulting in Bengaluru to bring that experience to
+                Simpleworks is one senior advisor. Premraj Menon has seen MSMEs
+                as a co-founder, as the corporate head who depended on MSME
+                partners, and as the person they called when the business was
+                stuck. He worked with around 3,000 of them over 30 years, and
+                he started Simpleworks in Bengaluru to bring that experience to
                 founder-led businesses.
               </p>
               <div className="max-w-[640px]">

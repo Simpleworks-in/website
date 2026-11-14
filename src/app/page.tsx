@@ -57,6 +57,24 @@ const SERVICES = [
   },
 ];
 
+// Proof strip under the hero.
+const PROOF_ITEMS = [
+  {
+    figure: "Nearly 10 years",
+    caption:
+      "inside MSMEs: co-founder of Viworks Ventures, then on the management team at Neoffice",
+  },
+  {
+    figure: "About 3,000",
+    caption: "MSME partners worked with and coached over 30 years",
+  },
+  {
+    figure: "2019",
+    caption:
+      "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -142,6 +160,27 @@ export default function HomePage() {
             />
           </div>
         </div>
+      </section>
+
+      {/* ── PROOF STRIP ── */}
+      <section className="border-t-[0.5px] border-b-[0.5px] border-rule px-6 py-10 md:pl-[132px] md:pr-[60px] md:py-12">
+        <div className="grid grid-cols-1 gap-8 min-[760px]:grid-cols-3 min-[760px]:gap-12">
+          {PROOF_ITEMS.map((item) => (
+            <div key={item.figure}>
+              <p className="mb-2 text-[30px] md:text-[36px] font-bold leading-[1.1] tracking-tight-1 text-ink">
+                {item.figure}
+              </p>
+              <p className="max-w-[380px] text-[15px] leading-[1.6] text-light">
+                {item.caption}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-[14px] text-light">
+          <Link href="/services/family-business-consulting" className="hover:text-ink hover:underline">
+            Running a family business? See how Simpleworks helps &rarr;
+          </Link>
+        </p>
       </section>
 
       {/* ── BUSINESS NOT GROWING ── */}
@@ -275,7 +314,7 @@ export default function HomePage() {
             <span className="text-red">Not advising on them.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&rsquo;s Kerala Circle (full P&L), with leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel, including helping build Tata Docomo Karnataka into the country&rsquo;s largest circle. He then ran two tech ventures, Viworks Ventures and Neoffice Ai (2016–2025), where small teams and tight cash meant nothing to delegate to.
+            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&rsquo;s Kerala Circle (full P&L), with leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel, including helping build Tata Docomo Karnataka into the country&rsquo;s largest circle. He then co-founded Viworks Ventures and joined the management team at Neoffice, two small tech ventures, between 2016 and 2025. Over his 30 years in large companies he had also worked with around 3,000 MSME partners.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Every engagement is led directly by Premraj—plain-spoken strategy over dense slide decks, staying embedded through execution until the plan is actually moving.
