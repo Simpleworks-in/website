@@ -57,6 +57,17 @@ const SERVICES = [
   },
 ];
 
+// "Why Simpleworks" figure row: the one place the proof figures appear on the
+// homepage.
+const AUTHORITY_FIGURES = [
+  { figure: "39", caption: "years in business, from sales trainee to COO" },
+  { figure: "About 3,000", caption: "MSME partners worked with over 30 years" },
+  {
+    figure: "2019",
+    caption: "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -156,7 +167,7 @@ export default function HomePage() {
           My revenue hasn&rsquo;t moved in three years, though we&rsquo;re all working harder. My dealers are ordering less, or only when there&rsquo;s a scheme. We hit our sales targets and the margin still shrinks. Every decision, big or small, still ends up on my desk. And my own days disappear into firefighting, so I never get time to work on the business.
         </p>
         <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-          Premraj Menon has been in this seat. He spent 39 years running sales, distribution and P&amp;Ls in Indian businesses, both Large Corporates and MSME, and he helps you find what&rsquo;s really holding yours back, and gives your own hours back to the work only you can do.
+          Premraj Menon has been in this seat. He spent 39 years running sales, distribution and P&amp;Ls in Indian businesses, in large companies and in MSMEs, and he helps you find what&rsquo;s really holding yours back, and gives your own hours back to the work only you can do.
         </p>
         <div className="mt-6 flex flex-col gap-3">
           <Link href="/business-growth-review" className="text-red hover:underline w-fit">
@@ -192,14 +203,10 @@ export default function HomePage() {
             Execution. <span className="text-red">Nothing more.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are an independent management consulting practice in Bengaluru, set up after 39 years in Work &amp; business, working with founders of established Indian small and medium businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
+            We are an independent management consulting practice in Bengaluru, set up after 39 years in business, working with founders of established Indian small and medium businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Led by Premraj Menon, who has seen MSMEs from both sides. Over 30 years in large
-            companies, including as COO of Tata Docomo&rsquo;s Kerala Circle, he worked with around
-            3,000 MSME partners and coached them to improve their business. He then spent nearly 10
-            years inside MSMEs, as co-founder of Viworks Ventures and on the management team at
-            Neoffice. More on the <Link href="/about" className="text-red hover:underline">About page</Link>. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
+            Every engagement is led by Premraj Menon himself. No junior consultants, no generic slide decks: senior operating experience, directly in your business.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2px]">
@@ -259,16 +266,20 @@ export default function HomePage() {
       </section>
 
       {/* ── AUTHORITY ── */}
-      <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule flex flex-col md:flex-row items-start gap-6 md:gap-[60px]">
-        <div className="flex-shrink-0 relative leading-none">
-          <span className="text-[80px] md:text-auth-big font-bold text-rule tracking-tight-3 leading-none block">
-            39
-          </span>
-          <span className="absolute bottom-[10px] md:bottom-[18px] left-1 text-[13px] md:text-[16px] tracking-[0.12em] uppercase text-red font-bold">
-            Years
-          </span>
+      <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
+        <div className="mb-10 grid grid-cols-1 gap-6 md:mb-12 md:grid-cols-3 md:gap-10">
+          {AUTHORITY_FIGURES.map((f) => (
+            <div key={f.caption}>
+              <p className="mb-2 text-[44px] md:text-[56px] font-bold leading-none tracking-tight-3 text-ink">
+                {f.figure}
+              </p>
+              <p className="max-w-[300px] text-[14px] leading-[1.6] text-light">
+                {f.caption}
+              </p>
+            </div>
+          ))}
         </div>
-        <div className="md:pt-[14px]">
+        <div>
           <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
             Why Simpleworks Consulting
           </p>
@@ -281,7 +292,7 @@ export default function HomePage() {
             Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&rsquo;s Kerala Circle (full P&L), with leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel, including helping build Tata Docomo Karnataka into the country&rsquo;s largest circle.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            He then co-founded Viworks Ventures and joined the management team at Neoffice, two MSME tech ventures, between 2016 and 2025. Over his 30 years in large companies he had also worked with around 3,000 MSME partners.
+            For most of those years, his customers were MSMEs: around 3,000 dealers, distributors and retailers, most of them family-owned, whom he worked with and coached to grow their business. From 2016 to 2025 he sat on the other side of the table, as co-founder of Viworks Ventures and then on the management team at Neoffice, a small software exporter.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Every engagement is led directly by Premraj—plain-spoken strategy over dense slide decks, staying embedded through execution until the plan is actually moving.
