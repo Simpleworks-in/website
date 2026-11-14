@@ -614,7 +614,15 @@ export default function MsmeBusinessCoachPage() {
               <strong className="font-bold text-ink">Where we work.</strong>{" "}
               Based in Bengaluru. The Diagnostic and the Simple Advisory run online
               anywhere in India. The Reset happens on site, so it suits
-              founders in or able to meet regularly in Bengaluru.
+              founders in or able to meet regularly in Bengaluru. Also working
+              with{" "}
+              <Link
+                href="/tamil-nadu-msme-consultant"
+                className="underline decoration-rule underline-offset-4 transition-colors hover:text-red"
+              >
+                MSME owners across Tamil Nadu
+              </Link>
+              .
             </p>
           </div>
         </div>

@@ -3,13 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
+import { whatsappHref } from "@/lib/whatsapp";
+import { FACTS } from "../../../content/facts";
+
+const TITLE = "MSME Consultant & Business Coach Tamil Nadu | Simpleworks Consulting";
+const DESCRIPTION =
+  "Advisory for owner-run MSMEs in Hosur, Chennai, Coimbatore, Tiruppur and Salem, from Premraj Menon, who has coached around 3,000 MSME partners.";
 
 export const metadata: Metadata = {
-  title: { absolute: "MSME Consultant in Tamil Nadu | Simpleworks Consulting" },
-  description:
-    "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Chennai, Hosur, Salem, Tiruppur and Coimbatore. Book a discovery call.",
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   keywords:
-    "MSME consultant Tamil Nadu, business consultant Chennai, auto component consultant Hosur, business consultant Sriperumbudur, Salem manufacturing consultant, Tiruppur export business consultant, Coimbatore engineering business consultant, family business consultant Tamil Nadu, execution consulting MSME",
+    "MSME consultant Tamil Nadu, MSME business coach Tamil Nadu, business coach for MSME owners, business consultant Chennai, auto component consultant Hosur, business consultant Sriperumbudur, Salem manufacturing consultant, Tiruppur export business consultant, Coimbatore engineering business consultant, family business consultant Tamil Nadu, execution consulting MSME",
   robots: {
     index: true,
     follow: true,
@@ -18,9 +23,8 @@ export const metadata: Metadata = {
     canonical: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
   },
   openGraph: {
-    title: "MSME Consultant in Tamil Nadu | Simpleworks Consulting",
-    description:
-      "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu’s manufacturing and export clusters.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
     siteName: "Simpleworks Consulting",
     type: "website",
@@ -32,209 +36,195 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MSME Consultant in Tamil Nadu | Simpleworks Consulting",
-    description:
-      "Business strategy, go-to-market and execution consulting for founder-led MSMEs across Tamil Nadu’s manufacturing and export clusters.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["https://www.simpleworks.in/images/landing/tamil-nadu-hero.png"],
   },
 };
 
-const CONTACT_LINK = "https://www.simpleworks.in/contact";
+// Same pre-filled message for the hero and the closing CTA.
+const WHATSAPP_LINK = whatsappHref(
+  "Hi Premraj, I run a business in Tamil Nadu and would like an introductory call.",
+);
+const PHONE_HREF = "tel:+919036099000";
 
-const CREDIBILITY = [
-  { num: "39 years", label: "Operating experience" },
-  { num: "Usha · MRF · Apollo", label: "BPL · Airtel · Tata" },
-  { num: "₹10–200 crore", label: "Founder-led businesses" },
-  { num: "Onsite + Remote", label: "Across Tamil Nadu" },
+const BUTTON =
+  "inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent transition-colors hover:bg-red hover:text-white";
+const EYEBROW = "text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2";
+const H2 =
+  "text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6";
+const SECTION = "px-7 py-12 md:py-16 border-t border-rule";
+
+// Proof strip. Same facts and wording as the /about strip.
+const PROOF_ITEMS = [
+  {
+    lead: "Nearly ",
+    red: "10 years",
+    caption:
+      "inside MSMEs: co-founder of Viworks Ventures, then on the management team at Neoffice",
+  },
+  {
+    lead: "About ",
+    red: "3,000",
+    caption: "MSME partners worked with and coached over 30 years",
+  },
+  {
+    lead: "",
+    red: "2019",
+    caption:
+      "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
+  },
 ];
 
 const PAIN_POINTS = [
-  "One or two customers account for most of your order book — and you know exactly how exposed that makes you.",
-  "Every decision still routes through you. Nothing moves when you’re travelling.",
-  "You’ve set targets for the year, but nobody could tell you what they’re accountable for this quarter.",
-  "Sales happens through your personal relationships. There’s no process behind it.",
-  "The next generation is in the business, but nobody has said out loud who decides what.",
-  "You’ve been meaning to fix all of this for two years. Something urgent always comes first.",
+  "One OEM, one anchor customer or one export buyer takes too big a share of your sales.",
+  "Every approval, payment and customer escalation still lands on your desk.",
+  "Sales run on your contacts, not on a process your team can follow without you.",
+  "Nobody can tell you quickly which buyer or which product actually makes money.",
+  "Your son or daughter has joined the business. Nobody is quite sure what they own.",
+  "The plan you made before Pongal is still a plan.",
+];
+
+const THREE_SIDES = [
+  {
+    num: "01",
+    title: "As a co-founder and operator",
+    body: "He co-founded Viworks Ventures, then joined the management team at Neoffice from September 2019, running growth and strategy. Neoffice won the ET-SIDBI Best Exporter award in the Micro Enterprise category in 2019.",
+  },
+  {
+    num: "02",
+    title: "As the corporate head who depended on MSMEs",
+    body: "At MRF, Apollo Tyres, Bharti Airtel and Tata Docomo, his numbers depended on MSME dealers and channel partners. Many of them were family-owned.",
+  },
+  {
+    num: "03",
+    title: "As the person they called when stuck",
+    body: "Over 30 years he worked with around 3,000 MSME partners, and coached their owners to improve results when the business stalled.",
+  },
+];
+
+const HOSUR_POST =
+  "when-one-oem-is-60-of-your-revenue-customer-concentration-risk-in-hosur-s-auto-component-belt";
+
+const IN_PERSON = "In person. A short drive from our Bangalore office.";
+const ONLINE = "Online sessions, with on-site visits agreed upfront.";
+
+const CLUSTERS = [
+  {
+    title: "Hosur–Krishnagiri",
+    industries: "Precision engineering, auto components",
+    problem: "One anchor customer, and every plan bends around it.",
+    problemHref: `/blog/${HOSUR_POST}`,
+    delivery: IN_PERSON,
+  },
+  {
+    title: "Chennai–Sriperumbudur–Oragadam",
+    industries: "Auto, electronics",
+    problem: "Little leverage with buyers and OEMs on price and terms.",
+    delivery: ONLINE,
+  },
+  {
+    title: "Coimbatore",
+    industries: "Engineering, machinery",
+    problem: "A product range that grew order by order, without focus.",
+    delivery: ONLINE,
+  },
+  {
+    title: "Tiruppur",
+    industries: "Knitwear, export apparel",
+    problem: "Busy every season, but margin per buyer is a guess.",
+    delivery: ONLINE,
+  },
+  {
+    title: "Salem",
+    industries: "Textiles, steel, foundries",
+    problem: "Succession and roles in the family that nobody has decided.",
+    delivery: ONLINE,
+  },
 ];
 
 const SERVICES = [
   {
-    num: "01",
     title: "Business strategy",
-    lead: "Where the business should be going, and what it has to stop doing to get there.",
-    items: [
-      "Clarifying which segments, products, and customers actually make money",
-      "Deciding between focus and diversification — with the numbers behind it",
-      "Building a three-year direction the business can actually resource",
-      "Making the hard calls on what to exit, not just what to add",
-    ],
+    body: "Which segments make money, focus versus diversification, and a three-year direction the family agrees on.",
   },
   {
-    num: "02",
     title: "Go-to-market",
-    lead: "Reducing your dependency on the customers you already have, and building a way to win the ones you don’t.",
-    items: [
-      "Quantifying customer concentration risk and what it’s costing you",
-      "Identifying the next realistic 2–3 accounts or verticals — not a wish list",
-      "Building a sales process the business can run without you chasing every lead",
-      "Pricing and margin discipline, especially in job-work and sub-contract models",
-    ],
+    body: "Less dependence on one buyer, new accounts, a sales process the team can run, pricing discipline.",
   },
   {
-    num: "03",
-    title: "Execution efficiency",
-    lead: "Turning “grow 20% this year” into something your team can act on next Monday — and be measured against next quarter.",
-    items: [
-      "OKRs tied to the priorities that actually move the business",
-      "Accountability distributed across the team, not held in the founder’s head",
-      "A review cadence that survives past the first quarter",
-      "Removing the operational friction that quietly eats capacity",
-    ],
+    title: "Execution",
+    body: "Quarterly goals with owners, a review rhythm, and fewer decisions waiting for you.",
   },
   {
-    num: "04",
-    title: "MSME coaching — founders & family business",
-    lead: "The problems that aren’t on any spreadsheet: who decides what, and what happens when you’re not in the room.",
-    items: [
-      "Delegation and decision-making — getting out of the operational weeds",
-      "Succession planning and role clarity across generations",
-      "Structuring conversations the family has been avoiding",
-      "A regular outside perspective, from someone with no stake in the internal politics",
-    ],
+    title: "Owner coaching",
+    href: "/msme-business-coach",
+    body: "Delegation, the next generation’s role, and an outside view for the decisions only you can make.",
   },
 ];
 
 const STEPS = [
   {
-    title: "Discovery call",
-    body: "One call. No deck, no pitch — we work out what’s actually going on and whether there’s a fit.",
+    label: "Step 1 · Free",
+    title: "Introductory call",
+    body: "WhatsApp Premraj with a line on what is stuck. He replies and sets up a short call, and tells you honestly whether Simpleworks can help.",
   },
   {
-    title: "Scoping",
-    body: "We define the specific problem to solve, the deliverables, and the remote/on-site mix — before any retainer starts.",
+    label: "Step 2 · Fixed fee, paid after",
+    title: "Diagnostic",
+    body: "One problem you name, worked through with you in focused sessions. In person or online, anywhere in Tamil Nadu.",
   },
   {
-    title: "Execution quarter",
-    body: "Working sessions through the quarter, building the process and the accountability into your team as we go.",
-  },
-  {
-    title: "Review quarter",
-    body: "We review what’s held, correct what hasn’t, and hand over — so the motion runs without us.",
-  },
-];
-
-const OUTCOMES = [
-  {
-    title: "You know your concentration risk — and you’re acting on it.",
-    body: "A named list of target accounts or segments, with someone owning each one, instead of a worry you’ve been carrying.",
-  },
-  {
-    title: "The quarter has owners, not just targets.",
-    body: "Written objectives, assigned to people, reviewed on a fixed date. You stop being the only person tracking progress.",
-  },
-  {
-    title: "The business runs without the consultant.",
-    body: "The point isn’t a dependency — it’s that the process, the cadence, and the accountability stay in place after we’ve stepped back.",
+    label: "Step 3 · If it makes sense",
+    title: "Ongoing work",
+    body: "In-person programmes where the business is within reach, or Simple Advisory: two online sessions a month, month to month.",
   },
 ];
 
-const CREDENTIALS = [
-  { role: "COO, Kerala Circle", org: "Tata Docomo" },
-  { role: "Direct Sales Leadership", org: "Usha International · Bharti Airtel" },
-  { role: "Sales & Distribution", org: "MRF · Apollo Tyres · BPL Mobile" },
-  { role: "Entrepreneur", org: "Viworks Ventures · Neoffice.ai" },
-  { role: "EGMP", org: "IIM Bengaluru" },
-  { role: "19th Tata Group Executive Leadership Seminar", org: "Ross School of Business, University of Michigan" },
-];
-
-const CLUSTERS = [
+// Plain-text answers feed the FAQPage JSON-LD. `link` is shown on the page
+// only and is deliberately left out of the JSON-LD.
+const FAQS: { q: string; a: string; link?: { href: string; label: string } }[] = [
   {
-    title: "Chennai · Sriperumbudur · Oragadam",
-    tag: "AUTO & ELECTRONICS",
-    body: "Tier-1 and Tier-2 auto component suppliers, EMS and electronics contract manufacturers, and ancillary units feeding Chennai’s OEM belt — many out of the SIPCOT estates at Sriperumbudur and Oragadam.",
-    problem:
-      "orders aren’t scarce, leverage is. Price pressure from procurement, stretched payment cycles, and no clear read on how the OEM actually ranks you against the next supplier.",
+    q: "Are you an MSME consultant or an MSME business coach?",
+    a: "Both. As a consultant, Premraj works on strategy, go-to-market and execution with your team. As a business coach, he works one to one with you, the owner. Most Tamil Nadu engagements need some of each.",
+    link: { href: "/msme-business-coach", label: "More on MSME business coaching →" },
   },
   {
-    title: "Hosur · Krishnagiri",
-    tag: "PRECISION ENGINEERING",
-    body: "Machining, forging, and precision component units serving Bengaluru and Chennai OEMs from the Hosur-Krishnagiri corridor, anchored by the SIPCOT Hosur estates.",
-    problem:
-      "one anchor customer carries most of the order book. Everyone knows it’s a risk; nobody has a worked-out plan for winning the second one.",
-  },
-  {
-    title: "Salem",
-    tag: "TEXTILES, STEEL & FOUNDRIES",
-    body: "Textile processing, steel re-rolling, and foundry units around Salem Steel and the local re-rolling mills — largely multi-generational family businesses.",
-    problem:
-      "The next generation is in the business but the decisions still aren’t. Roles are assumed rather than agreed, and the succession conversation keeps getting postponed.",
-  },
-  {
-    title: "Tiruppur",
-    tag: "KNITWEAR & EXPORT APPAREL",
-    body: "India’s knitwear and hosiery export hub, built around the TEA network — job-work heavy, buyer-driven, and highly seasonal.",
-    problem:
-      "turnover is known; per-buyer margin after a full season of price pressure and rejections isn’t. Commercial discipline lags behind the relationship.",
-  },
-  {
-    title: "Coimbatore",
-    tag: "ENGINEERING & MACHINERY",
-    body: "Pump and motor manufacturers, textile machinery, foundries, and machine tools — with CODISSIA as the sector’s collective voice.",
-    problem:
-      "The product range grew by accretion, not decision. Too many SKUs, unclear which ones earn their place, and no agreed basis for choosing.",
-  },
-];
-
-const DISCIPLINES = [
-  {
-    title: "Business strategy",
-    body: "Which customers, products, and segments actually make money — and what the business should stop doing.",
-  },
-  {
-    title: "Go-to-market",
-    body: "Reducing dependency on the customers you have, and building a repeatable way to win the ones you don’t.",
-  },
-  {
-    title: "Execution efficiency",
-    body: "Turning intent into quarterly objectives your team owns and gets reviewed against.",
-  },
-  {
-    title: "MSME coaching",
-    body: "The founder and family questions: delegation, decision rights, and succession.",
-  },
-];
-
-const BLOG_SLUGS = [
-  "when-one-oem-is-60-of-your-revenue-customer-concentration-risk-in-hosur-s-auto-component-belt",
-  "business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans",
-  "the-go-to-market-strategy-most-indian-msm-es-skip-and-why-it-s-costing-them",
-  "is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
-];
-
-const FAQS = [
-  {
-    q: "You’re based in Bengaluru. How does that work for a business in Salem or Tiruppur?",
-    a: "Most of the work is remote by design — structured calls, reviews, and planning done over video and shared documents. On-site visits are built into the engagement plan for kickoff, quarterly reviews, and anything better solved on the shop floor. The split is agreed before we start.",
+    q: "I run a family business, not a corporate. Will you understand how it works?",
+    a: "Yes. Premraj co-founded a small business, was on the management team of another, and worked with around 3,000 MSME partners over 30 years. Many were family-owned.",
   },
   {
     q: "What size of business do you work with?",
-    a: "Founder-led businesses roughly in the ₹10–200 crore revenue range. Below that, the problems are usually different; above it, you likely need a larger firm than this one.",
+    a: `Founder-led businesses of roughly ${FACTS.revenueRange} in revenue. Smaller businesses can start with a Diagnostic on one problem.`,
   },
   {
-    q: "What’s Premraj’s background with Tamil Nadu businesses specifically?",
-    a: "39 years in sales, distribution, and P&L leadership — including MRF and Apollo Tyres, both rooted in Tamil Nadu’s manufacturing economy — plus Bharti Airtel and a full circle P&L as COO at Tata Docomo. He has also built and run two of his own businesses.",
+    q: "Will you come to our factory?",
+    a: "In Hosur–Krishnagiri, yes, in person. Elsewhere in Tamil Nadu, sessions run online, with on-site visits at the points that need them, agreed upfront.",
   },
   {
-    q: "Do you work with family businesses?",
-    a: "Yes — they’re a core part of the practice, particularly around succession, role clarity, and formalising decisions that currently sit with one person.",
+    q: "Can my son or daughter join the sessions?",
+    a: "Yes, where it helps. Many engagements work with the founder and the next generation together.",
   },
   {
-    q: "What does an engagement cost?",
-    a: "It depends on the scope, which we define after the discovery call — not before. You’ll have a defined scope and a number before you commit to anything.",
+    q: "What does it cost?",
+    a: "The introductory call is free. Programme fees are fixed and published. Larger engagements are scoped and priced after the first conversation.",
   },
   {
-    q: "How long does an engagement run?",
-    a: "Typically a quarter of execution work, followed by a review quarter. Scope is defined after the discovery call, not before it. Execution work doesn’t show results in four weeks, and we’d rather set that expectation upfront.",
+    q: "Will you sign an NDA?",
+    a: "Yes. Your numbers and your family’s matters stay with you.",
+  },
+];
+
+// Hand-picked and fixed. Titles come from the CMS; labels are set here.
+const RELATED_POSTS = [
+  { slug: HOSUR_POST, label: "Hosur · Customer concentration" },
+  { slug: "how-to-make-your-business-run-without-the-owner", label: "Business coach" },
+  { slug: "founder-dependency-fix-the-decisions-before-the-org-chart", label: "Strategy" },
+  { slug: "business-not-growing-a-business-growth-consultant-s-audit", label: "Growth" },
+  { slug: "zero-to-one-for-msm-es-your-second-market-is-a-new-startup", label: "Growth" },
+  {
+    slug: "how-to-build-a-90-day-gtm-plan-a-complete-framework-for-small-business-owners-with-limited-marketing-budgets",
+    label: "Go-to-market",
   },
 ];
 
@@ -247,15 +237,21 @@ const jsonLd = {
   url: "https://www.simpleworks.in/tamil-nadu-msme-consultant",
   provider: { "@id": "https://www.simpleworks.in/#organization" },
   areaServed: [
+    "Tamil Nadu",
     "Chennai",
     "Sriperumbudur",
     "Oragadam",
     "Hosur",
     "Krishnagiri",
-    "Salem",
-    "Tiruppur",
     "Coimbatore",
-    "Tamil Nadu",
+    "Tiruppur",
+    "Salem",
+  ],
+  knowsAbout: [
+    "MSME consulting",
+    "MSME business coaching",
+    "Family business consulting",
+    "Go-to-market strategy",
   ],
 };
 
@@ -271,11 +267,11 @@ const faqSchema = {
 
 export default async function TamilNaduMsmeConsultantPage() {
   const reader = createReader(process.cwd(), keystaticConfig);
-  const blogPosts = (
+  const relatedPosts = (
     await Promise.all(
-      BLOG_SLUGS.map(async (slug) => {
+      RELATED_POSTS.map(async ({ slug, label }) => {
         const entry = await reader.collections.posts.read(slug);
-        return entry ? { slug, ...entry } : null;
+        return entry ? { slug, label, title: entry.title } : null;
       }),
     )
   ).filter((p): p is NonNullable<typeof p> => p !== null);
@@ -292,440 +288,348 @@ export default async function TamilNaduMsmeConsultantPage() {
       />
 
       {/* HERO */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-12 md:py-16 border-b border-rule items-center">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-7 py-12 md:py-16 items-center">
         <div>
-          <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-3">
-            Tamil Nadu · MSME Consulting
+          <p className={`${EYEBROW} mb-3`}>
+            MSME consultant &amp; business coach · Tamil Nadu
           </p>
           <h1 className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-6">
-            Tamil Nadu&rsquo;s best businesses are held back by{" "}
-            <span className="text-red">execution, not ambition.</span>
+            Tamil Nadu&rsquo;s MSMEs are built by their owners.{" "}
+            <span className="text-red">The next stage needs a system.</span>
           </h1>
           <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-7">
-            Simpleworks Consulting works with founder-led manufacturing and export
-            businesses across Chennai-Sriperumbudur, Hosur-Krishnagiri, Salem,
-            Tiruppur, and Coimbatore — on strategy, go-to-market, execution,
-            and the decisions only a founder can make.
+            For owner-run manufacturing, export and trading businesses in
+            Hosur, Chennai, Coimbatore, Tiruppur and Salem. You work directly
+            with Premraj Menon, who has co-founded a small business himself and
+            spent 30 years coaching MSME owners to grow.
           </p>
-          <div className="flex flex-wrap gap-3 items-center mb-3">
-            <a
-              href={CONTACT_LINK}
-              className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent transition-colors hover:bg-red hover:text-white"
-            >
-              Book a first conversation →
+          <div className="flex flex-wrap gap-x-6 gap-y-4 items-center">
+            <a href={WHATSAPP_LINK} data-cta="hero" className={BUTTON}>
+              WhatsApp Premraj for an introductory call →
             </a>
             <a
-              href="#how-we-start"
-              className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent transition-colors hover:bg-red hover:text-white"
+              href={PHONE_HREF}
+              data-cta="hero-phone"
+              className="text-[15px] text-light underline decoration-rule underline-offset-4 transition-colors hover:text-red"
             >
-              See how we work
+              or call 90360 99000
             </a>
           </div>
         </div>
-        <div className="relative h-[320px] md:h-[420px] w-full overflow-hidden rounded-sm">
-          <Image
-            src="/images/landing/tamil-nadu-hero.png"
-            alt="Premraj Menon, MSME consultant for Tamil Nadu founder-led manufacturing businesses"
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover object-center"
-            priority
-          />
-        </div>
+        <figure>
+          <div className="relative h-[320px] md:h-[420px] w-full overflow-hidden rounded-sm">
+            <Image
+              src="/images/landing/tamil-nadu-hero.png"
+              alt="Watercolour portrait of Premraj Menon, founder of Simpleworks Consulting"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+          <figcaption className="mt-3 text-[14px] text-light">
+            Premraj Menon · Founder, Simpleworks Consulting
+          </figcaption>
+        </figure>
       </section>
 
-      {/* CREDIBILITY STRIP */}
-      <div className="grid grid-cols-2 md:grid-cols-4 border-b border-rule">
-        {CREDIBILITY.map((c, i) => (
-          <div
-            key={c.num}
-            className={`py-5 px-4 text-center ${
-              i % 2 === 0 ? "border-r border-rule" : ""
-            } ${i < 2 ? "border-b md:border-b-0 border-rule" : ""} ${
-              i < 3 ? "md:border-r md:border-rule" : ""
-            }`}
-          >
-            <div className="text-[20px] md:text-[22px] font-bold text-red leading-tight mb-1">
-              {c.num}
-            </div>
-            <div className="text-[13px] text-mid leading-snug">{c.label}</div>
+      {/* PROOF STRIP */}
+      <div className="mx-7 grid grid-cols-1 gap-8 border-t border-b border-rule py-8 min-[760px]:grid-cols-3 min-[760px]:gap-12">
+        {PROOF_ITEMS.map((item) => (
+          <div key={item.caption}>
+            <p className="mb-2 text-[30px] md:text-[36px] font-bold leading-[1.1] tracking-tight-1 text-ink">
+              {item.lead}
+              <span className="text-red">{item.red}</span>
+            </p>
+            <p className="max-w-[320px] text-[15px] leading-[1.6] text-light">
+              {item.caption}
+            </p>
           </div>
         ))}
       </div>
 
       {/* THE PROBLEM */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule bg-bg">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          Sound familiar?
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          The business grew on relationships. Now it&rsquo;s{" "}
-          <span className="text-red">stuck on them.</span>
+      <section className={`${SECTION} mt-12 md:mt-16`}>
+        <p className={EYEBROW}>Sound familiar?</p>
+        <h2 className={H2}>
+          The business grew on your relationships.{" "}
+          <span className="text-red">Now it leans on them too hard.</span>
         </h2>
-        <p className="text-[19px] text-mid leading-[1.7] mb-8">
-          Most MSMEs in Tamil Nadu&rsquo;s clusters got to where they are on
-          the strength of one founder, a handful of relationships, and a lot
-          of hard work. The problems start when that&rsquo;s no longer
-          enough.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 mb-8">
           {PAIN_POINTS.map((point) => (
-            <div key={point} className="border border-rule border-l-[3px] border-l-red px-3.5 py-3 rounded-r-sm">
-              <p className="text-[15px] text-mid leading-relaxed">{point}</p>
-            </div>
+            <li
+              key={point}
+              className="border-t border-rule py-4 text-[16px] text-mid leading-relaxed"
+            >
+              {point}
+            </li>
           ))}
-        </div>
-        <p className="text-[19px] text-ink leading-[1.7] pt-8 border-t border-rule">
-          <span className="font-bold">
-            None of this is a strategy problem. It&rsquo;s an execution
-            problem
-          </span>{" "}
-          — and it doesn&rsquo;t get solved by a report. It gets solved by
-          someone working alongside you, quarter after quarter, until the
-          business runs differently.
+        </ul>
+        <p className="text-[17px] md:text-[19px] text-ink leading-[1.7] max-w-[760px]">
+          None of these is a strategy problem. They are what happens when a
+          business outgrows the way it is run, and they are fixable.
         </p>
       </section>
 
-      {/* WHAT WE DO */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          What we do
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          Four things. <span className="text-red">Done properly.</span>
+      {/* WHO YOU WORK WITH */}
+      <section className={SECTION}>
+        <p className={EYEBROW}>Who you work with</p>
+        <h2 className={H2}>
+          Not a corporate consultant.{" "}
+          <span className="text-red">Someone who has seen MSMEs from the inside.</span>
         </h2>
-        <p className="text-[19px] text-mid leading-[1.7] mb-10">
-          Simpleworks Consulting is not a broad-scope strategy firm. We do four things
-          for founder-led businesses in the ₹10–200 crore range — and we do
-          them as hands-on execution work, not advice you&rsquo;re left to
-          implement alone.
+        <p className="text-[17px] md:text-[19px] text-mid leading-[1.7] max-w-[760px] mb-10">
+          Most consultants from large companies have only seen MSMEs from the
+          outside. Premraj Menon has seen them from three sides.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {SERVICES.map((s) => (
-            <div key={s.num} className="p-5 border border-rule rounded-sm">
-              <div className="text-[13px] font-bold text-red mb-2">
-                {s.num}
-              </div>
-              <h3 className="text-[20px] font-bold text-ink mb-1.5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12">
+          {THREE_SIDES.map((s) => (
+            <div key={s.num} className="border-t border-ink pt-4">
+              <p className="text-[13px] text-light mb-2">{s.num}</p>
+              <h3 className="text-[18px] font-bold text-ink leading-snug mb-2">
                 {s.title}
               </h3>
-              <p className="text-[15px] text-mid leading-relaxed mb-3">
-                {s.lead}
-              </p>
-              <ul className="flex flex-col gap-1.5">
-                {s.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-[14px] text-mid leading-relaxed pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-light"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-[15px] text-mid leading-relaxed">{s.body}</p>
             </div>
           ))}
         </div>
+        <blockquote className="border-l-[3px] border-red pl-6 max-w-[760px]">
+          <p className="text-[17px] md:text-[18px] italic leading-[1.6] text-ink mb-3">
+            39 years, from a sales trainee at Usha International in 1987 to COO
+            of the Kerala circle at Tata Docomo with full P&amp;L.
+          </p>
+          <p className="text-[14px] text-light">
+            EGMP, IIM Bengaluru; 19th Tata Group Executive Leadership Seminar,
+            Ross School of Business, University of Michigan.
+          </p>
+        </blockquote>
       </section>
 
-      {/* HOW WE START */}
-      <section id="how-we-start" className="px-7 py-12 md:py-16 border-b border-rule">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          How we start
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          A discovery call first.{" "}
-          <span className="text-red">Then a defined scope.</span>
-        </h2>
-        <p className="text-[19px] text-mid leading-[1.7] mb-10">
-          We don&rsquo;t quote before we understand the problem. A discovery
-          call establishes what&rsquo;s actually going on; from there we
-          scope the work. An engagement typically runs across a quarter, with
-          a review quarter to follow — long enough to solve the problem and
-          set the motion that keeps delivering after we step back.
-        </p>
-        <div className="flex flex-col gap-3.5 mb-14">
-          {STEPS.map((step, i) => (
-            <div key={step.title} className="flex gap-3.5 items-start">
-              <div className="w-7 h-7 min-w-[28px] border border-rule text-red rounded-full flex items-center justify-center text-[13px] font-bold mt-0.5">
-                {i + 1}
-              </div>
-              <div>
-                <h3 className="text-[18px] font-bold text-ink mb-1">
-                  {step.title}
-                </h3>
-                <p className="text-[15px] text-mid leading-relaxed">
-                  {step.body}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          What changes
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          What you should expect{" "}
-          <span className="text-red">to be different</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {OUTCOMES.map((o) => (
-            <div key={o.title} className="p-5 border border-rule rounded-sm">
-              <h3 className="text-[16px] font-bold text-ink mb-1.5 leading-snug">
-                {o.title}
-              </h3>
-              <p className="text-[15px] text-mid leading-relaxed">{o.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* WHO YOU'D BE WORKING WITH */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          Who you&rsquo;d be working with
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          39 years on the <span className="text-red">operating side</span>,
-          not the slide-deck side
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8 md:gap-12">
-          <div className="relative h-[260px] md:h-auto md:aspect-[4/5] w-full overflow-hidden rounded-sm">
-            <Image
-              src="/prem-menon.png"
-              alt="Premraj Menon, founder of Simpleworks Consulting"
-              fill
-              sizes="(min-width: 768px) 240px, 100vw"
-              className="object-cover object-top"
-            />
+      {/* FAMILY-OWNED BUSINESSES */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-8 md:gap-16">
+          <div>
+            <p className={EYEBROW}>Family-owned businesses</p>
+            <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink">
+              When the next generation{" "}
+              <span className="text-red">joins the business.</span>
+            </h2>
           </div>
           <div>
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
-              Simpleworks Consulting is Premraj Menon. Not a team of analysts — the person
-              you speak to on the first call is the person who does the work.
+              Most of the businesses Premraj worked with were family-owned.
+              Over the years, many owners asked him for help with two things:
+              bringing the next generation into the business, and getting the
+              family clear and agreed on where the business is going.
             </p>
             <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
-              He spent 39 years in sales, distribution, and P&amp;L leadership
-              before starting this practice: <strong>MRF</strong> and{" "}
-              <strong>Apollo Tyres</strong>, both built on the same Tamil Nadu
-              manufacturing economy your business operates in; direct sales
-              leadership at <strong>Bharti Airtel</strong>; and{" "}
-              <strong>Chief Operating Officer of the Kerala Circle at Tata
-              Docomo</strong>, running a full circle P&amp;L. He then built
-              and ran two businesses of his own as an entrepreneur — with all
-              the operating risk that carries.
+              Simpleworks works with the founder, and where it helps, the next
+              generation, to settle those questions in the open, as part of the
+              business plan.
             </p>
-            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-8">
-              That matters for a specific reason. When a Hosur machine-shop
-              owner describes losing leverage with an OEM, or a Salem foundry
-              founder talks around a succession problem, it isn&rsquo;t a
-              case study — it&rsquo;s a conversation he&rsquo;s been on the
-              other side of.
+            <p className="text-[14px] text-light leading-relaxed">
+              Simpleworks does not give legal, tax or wealth-planning advice.
+              Where that is needed, you will be told and pointed to the right
+              professional.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 border-t border-rule pt-6">
-              {CREDENTIALS.map((c) => (
-                <div
-                  key={c.role}
-                  className="flex justify-between gap-4 text-[14px] py-1"
-                >
-                  <span className="text-mid">{c.role}</span>
-                  <span className="text-ink font-semibold text-right">
-                    {c.org}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
       {/* WHERE WE WORK */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          Where we work
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          Five clusters. <span className="text-red">Five different problems.</span>
+      <section className={SECTION}>
+        <p className={EYEBROW}>Where we work</p>
+        <h2 className={H2}>
+          Five clusters, different industries.{" "}
+          <span className="text-red">The owner&rsquo;s problems sound the same.</span>
         </h2>
-        <p className="text-[19px] text-mid leading-[1.7] mb-10">
-          We don&rsquo;t run one playbook across Tamil Nadu. The problem
-          holding back a Hosur component supplier looks nothing like the one
-          in a Salem foundry, or the one in Tiruppur.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          {CLUSTERS.map((c) => (
-            <div key={c.title} className="p-5 border border-rule rounded-sm">
-              <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-1.5">
-                {c.tag}
+        <div className="mb-6">
+          {CLUSTERS.map((c, i) => (
+            <div
+              key={c.title}
+              className={`grid grid-cols-1 md:grid-cols-[1.1fr_1.4fr_1fr] gap-3 md:gap-10 border-t border-rule py-5 ${
+                i === CLUSTERS.length - 1 ? "border-b" : ""
+              }`}
+            >
+              <div>
+                <h3 className="text-[18px] font-bold text-ink leading-snug">
+                  {c.title}
+                </h3>
+                <p className="text-[14px] text-light mt-1">{c.industries}</p>
+              </div>
+              <p className="text-[15px] text-mid leading-relaxed">
+                {c.problemHref ? (
+                  <Link
+                    href={c.problemHref}
+                    className="underline decoration-rule underline-offset-4 transition-colors hover:text-red"
+                  >
+                    {c.problem}
+                  </Link>
+                ) : (
+                  c.problem
+                )}
               </p>
-              <h3 className="text-[18px] font-bold text-ink mb-2 leading-snug">
-                {c.title}
-              </h3>
-              <p className="text-[15px] text-mid leading-relaxed mb-3">
-                {c.body}
-              </p>
-              <p className="text-[13px] text-mid leading-relaxed">
-                <strong className="font-bold text-ink">The problem:</strong>{" "}
-                {c.problem}
-              </p>
+              <p className="text-[15px] text-mid leading-relaxed">{c.delivery}</p>
             </div>
           ))}
         </div>
-        <p className="text-[14px] text-light mb-14">
-          Vellore-Ranipet-Ambur (leather) and Karur (home textiles) — get in
-          touch if that&rsquo;s you; we&rsquo;re actively looking at both.
+        <p className="text-[14px] text-light">
+          Also starting conversations in Vellore–Ranipet–Ambur (leather) and
+          Karur (home textiles).
         </p>
+      </section>
 
-        <div className="border-t border-rule pt-14">
-          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-            Different problems.{" "}
-            <span className="text-red">The same four disciplines.</span>
-          </h2>
-          <p className="text-[19px] text-mid leading-[1.7] mb-10">
-            We don&rsquo;t claim sector expertise in five industries. What
-            these businesses have in common is that the problem is rarely
-            technical — it&rsquo;s commercial and organisational. That&rsquo;s
-            what we work on.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-            {DISCIPLINES.map((d) => (
-              <div key={d.title} className="border-t border-rule pt-4">
-                <h3 className="text-[16px] font-bold text-ink mb-1.5">
-                  {d.title}
+      {/* SERVICES */}
+      <section className={SECTION}>
+        <p className={EYEBROW}>MSME consulting and coaching</p>
+        <h2 className={H2}>
+          Four things. <span className="text-red">Done properly.</span>
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {SERVICES.map((s) => (
+            <div key={s.title} className="border-t border-rule pt-4">
+              <h3 className="text-[18px] font-bold text-ink leading-snug mb-2">
+                {s.href ? (
+                  <Link href={s.href} className="transition-colors hover:text-red">
+                    {s.title}
+                  </Link>
+                ) : (
+                  s.title
+                )}
+              </h3>
+              <p className="text-[15px] text-mid leading-relaxed">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* HOW TO START */}
+      <section id="how-to-start" className={SECTION}>
+        <p className={EYEBROW}>How to start</p>
+        <h2 className={H2}>
+          Start small. <span className="text-red">Decide after you have seen the work.</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-10">
+          {STEPS.map((s) => (
+            <div key={s.title} className="border-t border-ink pt-4">
+              <p className="text-[13px] text-light mb-2">{s.label}</p>
+              <h3 className="text-[18px] font-bold text-ink leading-snug mb-2">
+                {s.title}
+              </h3>
+              <p className="text-[15px] text-mid leading-relaxed">{s.body}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-[16px] md:text-[17px] text-mid leading-[1.7]">
+          Every programme has a published fixed fee. The aim is a business that
+          runs well without us.{" "}
+          <Link
+            href="/programmes"
+            className="text-red underline decoration-rule underline-offset-4"
+          >
+            See programmes and fees →
+          </Link>
+        </p>
+      </section>
+
+      {/* FAQ */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-16">
+          <div>
+            <p className={EYEBROW}>Questions owners ask</p>
+            <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink">
+              Straight answers,{" "}
+              <span className="text-red">before the first call.</span>
+            </h2>
+          </div>
+          <div className="divide-y divide-rule border-y border-rule">
+            {FAQS.map((item) => (
+              <div key={item.q} className="py-5">
+                <h3 className="text-[18px] font-bold text-ink mb-1.5 leading-snug">
+                  {item.q}
                 </h3>
-                <p className="text-[14px] text-mid leading-relaxed">
-                  {d.body}
+                <p className="text-[15px] text-mid leading-relaxed">
+                  {item.a}
+                  {item.link && (
+                    <>
+                      {" "}
+                      <Link
+                        href={item.link.href}
+                        className="text-red underline decoration-rule underline-offset-4"
+                      >
+                        {item.link.label}
+                      </Link>
+                    </>
+                  )}
                 </p>
               </div>
             ))}
           </div>
-          <p className="text-[17px] text-mid leading-[1.7] pt-8 border-t border-rule">
-            Premraj spent 39 years on the operating side, including at{" "}
-            <strong className="font-bold text-ink">MRF</strong> and{" "}
-            <strong className="font-bold text-ink">Apollo Tyres</strong> —
-            the kind of large buyer many of these businesses sell into.
-            Knowing how the other side of that table evaluates a supplier is
-            often where the useful conversation starts.
-          </p>
         </div>
       </section>
 
-      {/* ENGAGEMENT MODEL */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          Engagement model
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          Mostly remote. <span className="text-red">On-site when it matters.</span>
-        </h2>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78] mb-4">
-          Tamil Nadu engagements run on a hybrid model — a structured remote
-          retainer for the ongoing work (reviews, go-to-market planning,
-          coaching sessions), with in-person visits to your facility at the
-          points that need it: kickoff, quarterly reviews, or a problem
-          that&rsquo;s easier to solve on the shop floor than over video.
-        </p>
-        <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-          The mix is agreed upfront as part of the engagement plan — so you
-          know exactly what you&rsquo;re getting before the first invoice,
-          not after it.
-        </p>
-      </section>
-
-      {/* FROM THE BLOG */}
-      {blogPosts.length > 0 && (
-        <section className="px-7 py-12 md:py-16 border-b border-rule">
-          <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-            From the blog
-          </p>
-          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-            Related <span className="text-red">reading</span>
+      {/* RELATED READING */}
+      {relatedPosts.length > 0 && (
+        <section className={SECTION}>
+          <p className={EYEBROW}>Related reading</p>
+          <h2 className={H2}>
+            Written for MSME owners,{" "}
+            <span className="text-red">not for consultants.</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {blogPosts.map((post) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 mb-8">
+            {relatedPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group p-5 border border-rule rounded-sm flex flex-col"
+                className="group flex flex-col border-t border-rule py-5"
               >
-                <h3 className="text-[18px] font-bold text-ink mb-2 leading-snug">
+                <span className="text-[13px] text-light mb-1.5">{post.label}</span>
+                <span className="text-[17px] font-bold text-ink leading-snug mb-2 group-hover:text-red">
                   {post.title}
-                </h3>
-                <p className="text-[15px] text-mid leading-relaxed mb-4">
-                  {post.excerpt}
-                </p>
-                <span className="text-[14px] font-semibold text-ink group-hover:text-red mt-auto">
-                  Read article →
                 </span>
+                <span className="text-[14px] text-red mt-auto">Read →</span>
               </Link>
             ))}
-            {Array.from({ length: Math.max(0, 6 - blogPosts.length) }).map(
-              (_, i) => (
-                <div
-                  key={`coming-soon-${i}`}
-                  className="p-5 border border-dashed border-rule rounded-sm flex flex-col items-start justify-center min-h-[160px]"
-                >
-                  <span className="text-[10px] font-bold tracking-wide-7 uppercase text-light mb-2">
-                    Coming soon
-                  </span>
-                  <p className="text-[15px] text-light leading-relaxed">
-                    A new piece for this cluster is on its way.
-                  </p>
-                </div>
-              ),
-            )}
           </div>
+          <Link
+            href="/blog"
+            className="text-[15px] text-red underline decoration-rule underline-offset-4"
+          >
+            All articles on the Simpleworks blog →
+          </Link>
         </section>
       )}
 
-      {/* FAQ */}
-      <section className="px-7 py-12 md:py-16 border-b border-rule">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          Before you get in touch
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-6">
-          Frequently <span className="text-red">asked</span>
+      {/* CLOSING CTA */}
+      <section className={`${SECTION} text-center`}>
+        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-4">
+          Tell us what is stuck.{" "}
+          <span className="text-red">We will tell you honestly if we can help.</span>
         </h2>
-        <div className="divide-y divide-rule">
-          {FAQS.map((item) => (
-            <div key={item.q} className="py-4">
-              <p className="text-[18px] font-bold text-ink mb-1.5">
-                {item.q}
-              </p>
-              <p className="text-[15px] text-mid leading-relaxed">
-                {item.a}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA BAND */}
-      <div className="px-7 py-14 md:py-16 text-center border-b border-rule bg-bg">
-        <p className="text-[10px] font-bold tracking-wide-7 uppercase text-red mb-2">
-          Next step
+        <p className="text-[16px] md:text-[18px] text-mid leading-[1.65] mb-7 max-w-[640px] mx-auto">
+          Send Premraj a WhatsApp message for an introductory call. No pitch
+          deck.
         </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 text-ink mb-2">
-          One conversation. Then you&rsquo;ll know whether{" "}
-          <span className="text-red">this is worth your time.</span>
-        </h2>
-        <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-6 max-w-[640px] mx-auto">
-          No deck, no proposal, no obligation. Tell us where the business is
-          stuck and we&rsquo;ll tell you honestly whether we&rsquo;re the
-          right people to help — and if we&rsquo;re not, who might be.
-        </p>
-        <div className="flex flex-wrap justify-center gap-3 mb-3">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 items-center">
+          <a href={WHATSAPP_LINK} data-cta="final-cta" className={BUTTON}>
+            WhatsApp Premraj →
+          </a>
           <a
-            href={CONTACT_LINK}
-            className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent transition-colors hover:bg-red hover:text-white"
+            href={PHONE_HREF}
+            data-cta="final-cta"
+            className="text-[15px] text-light underline decoration-rule underline-offset-4 transition-colors hover:text-red"
           >
-            Book a first conversation →
+            Call 90360 99000
+          </a>
+          <a
+            href={`mailto:${FACTS.email}`}
+            data-cta="final-cta"
+            className="text-[15px] text-light underline decoration-rule underline-offset-4 transition-colors hover:text-red"
+          >
+            {FACTS.email}
           </a>
         </div>
-        <p className="text-[13px] text-light">
-          Call on 90360 99000 or write at pm@simpleworks.in
-        </p>
-      </div>
+      </section>
     </main>
   );
 }

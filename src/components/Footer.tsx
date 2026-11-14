@@ -189,6 +189,14 @@ export default function Footer() {
           </li>
           <li>
             <Link
+              href="/tamil-nadu-msme-consultant"
+              className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
+            >
+              Tamil Nadu
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/programmes"
               className="text-xs tracking-wide-3 text-mid transition-colors hover:text-red"
             >
