@@ -156,7 +156,7 @@ export default function HomePage() {
           My revenue hasn&rsquo;t moved in three years, though we&rsquo;re all working harder. My dealers are ordering less, or only when there&rsquo;s a scheme. We hit our sales targets and the margin still shrinks. Every decision, big or small, still ends up on my desk. And my own days disappear into firefighting, so I never get time to work on the business.
         </p>
         <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-          Premraj Menon has been in this seat. He spent 39 years running sales, distribution and P&amp;Ls in Indian businesses, and he helps you find what&rsquo;s really holding yours back, and gives your own hours back to the work only you can do.
+          Premraj Menon has been in this seat. He spent 39 years running sales, distribution and P&amp;Ls in Indian businesses, both Large Corporates and MSME, and he helps you find what&rsquo;s really holding yours back, and gives your own hours back to the work only you can do.
         </p>
         <div className="mt-6 flex flex-col gap-3">
           <Link href="/business-growth-review" className="text-red hover:underline w-fit">
