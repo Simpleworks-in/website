@@ -58,6 +58,7 @@ export default function RefundPolicyPage() {
             <li>During the engagement: cancel with 15 days&rsquo; written notice. You pay for work done up to the end of the notice period. Fees paid for later phases or months that have not started are refunded.</li>
             <li>Monthly retainers (Counsel): cancel with 15 days&rsquo; written notice before the next billing cycle. The current month is not refunded.</li>
           </ul>
+          <p>The Simple Advisory is month to month, with no minimum term and no notice period. Each session is paid for after it is held. A session cancelled with less than 24 hours&rsquo; notice counts as delivered.</p>
         </Section>
 
         <Section n={4} title="Rescheduling" accent="sessions">

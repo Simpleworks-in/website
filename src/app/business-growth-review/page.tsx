@@ -99,7 +99,7 @@ const NEXT_STEPS = [
   {
     label: "Monthly",
     title: "The Simple Counsel",
-    price: "₹75,000 a month",
+    price: "₹75,000 a month in person",
     note: "Minimum three months",
     text: "Two sessions a month, WhatsApp access for decisions that won't wait, and a quarterly business review. A senior thinking partner, not a report.",
   },
@@ -150,7 +150,7 @@ const FAQS = [
   },
   {
     q: "What happens after the review?",
-    a: "That is your call. Some founders take the brief and act on it themselves. Others continue into the Simple Reset (₹1,40,000 for 30 days or ₹2,80,000 for 60 days) or the Simple Counsel (₹75,000 a month, minimum three months).",
+    a: "That is your call. Some founders take the brief and act on it themselves. Others continue into the Simple Reset (₹1,40,000 for 30 days or ₹2,80,000 for 60 days) or the Simple Counsel (₹75,000 a month in person, minimum three months).",
   },
   {
     q: "Will you sign an NDA?",

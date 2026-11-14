@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 import { faqs } from "./faqs";
+import { DELIVERY } from "@/lib/delivery";
 
 export const metadata = {
   title: {
@@ -87,10 +88,23 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Counsel",
       description:
-        "Two sessions a month, WhatsApp access for urgent decisions, and a quarterly business review. Minimum three months.",
+        "In person. Two sessions a month, WhatsApp access for urgent decisions, and a quarterly business review. Minimum three months.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "75000",
+        priceCurrency: "INR",
+        unitText: "MONTH",
+      },
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Advisory",
+      description:
+        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Month to month, online only.",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "35000",
         priceCurrency: "INR",
         unitText: "MONTH",
       },
@@ -249,6 +263,7 @@ export default function ProgrammesPage() {
             <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
               The Simple <span className="text-red">Diagnostic</span>
             </h2>
+            <p className="mb-4 text-[14px] text-light">{DELIVERY.diagnostic}</p>
             <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
               In half a day I will tell you what is working, what is not,
               and the one thing to do first.
@@ -264,14 +279,16 @@ export default function ProgrammesPage() {
             <span className="text-[10px] uppercase tracking-[0.2em] text-light">
               Duration
             </span>
-            <span className="text-[15px] font-bold text-ink">Half a day</span>
+            <span className="text-[15px] font-bold text-ink">
+              Half a day
+            </span>
           </div>
           <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
             <span className="text-[10px] uppercase tracking-[0.2em] text-light">
               Format
             </span>
             <span className="text-[15px] font-bold text-ink">
-              In person or online
+              In person and online
             </span>
           </div>
           <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
@@ -357,6 +374,7 @@ export default function ProgrammesPage() {
             <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
               The Simple <span className="text-red">Reset</span>
             </h2>
+            <p className="mb-4 text-[14px] text-light">{DELIVERY.reset}</p>
             <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
               Four weeks to work out what to do. Four more to make sure it
               happens.
@@ -484,6 +502,7 @@ export default function ProgrammesPage() {
             <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
               The Simple <span className="text-red">Counsel</span>
             </h2>
+            <p className="mb-4 text-[14px] text-light">{DELIVERY.counsel}</p>
             <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
               A business mentor in your corner — every month, for as long
               as it is useful.
@@ -531,7 +550,7 @@ export default function ProgrammesPage() {
 
         <Deliverables
           items={[
-            "Two sessions a month, agenda set by you — at your office in Bengaluru, online anywhere else in India",
+            "Two sessions a month, agenda set by you. In person, in Bengaluru. For online, see the Simple Advisory.",
             "WhatsApp access for the decisions that will not wait",
             "Quarterly business review, and one leadership meeting a quarter if useful",
             "No deliverables. This is thinking, not documents",
@@ -553,6 +572,58 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
+      {/* 6b. The Simple Advisory */}
+      <section id="simple-advisory" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
+        <div className="mb-12">
+          <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
+            Monthly Advisory
+          </p>
+          <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
+            The Simple <span className="text-red">Advisory</span>
+          </h2>
+          <p className="mb-4 text-[14px] text-light">{DELIVERY.advisory}</p>
+          <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
+            A senior sounding board, online, without a full engagement.
+          </p>
+        </div>
+
+        <div className="mb-10 flex flex-wrap border-t border-b border-rule">
+          <div className="flex flex-col gap-1 py-5 pr-8 min-w-[140px]">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
+              Duration
+            </span>
+            <span className="text-[15px] font-bold text-ink">
+              Month to month
+            </span>
+          </div>
+        </div>
+
+        <Deliverables
+          items={[
+            "Two 90-minute online sessions a month, on your agenda.",
+            "A short written summary after each session.",
+            "Month to month, with no minimum. Stop any month.",
+          ]}
+        />
+
+        <p className="mb-10 max-w-[640px] text-[14px] leading-[1.65] text-light">
+          For WhatsApp access, a quarterly business review and on-site work,
+          see the Simple Counsel.
+        </p>
+
+        <div className="flex flex-col gap-1 pt-2">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-light">
+            Investment
+          </span>
+          <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red [font-variant-numeric:tabular-nums]">
+            ₹35,000
+          </span>
+          <span className="text-[13px] italic text-light">
+            per month · Fixed fee, paid after each session.
+          </span>
+        </div>
+      </section>
+
       {/* 7. Custom Engagement */}
       <section id="custom-engagement" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
@@ -563,6 +634,7 @@ export default function ProgrammesPage() {
             <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
               <span className="text-red">Custom</span> Engagement
             </h2>
+            <p className="mb-4 text-[14px] text-light">{DELIVERY.custom}</p>
             <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
               If what you need doesn&rsquo;t fit the Diagnostic, Reset or
               Counsel, I will scope it with you directly.

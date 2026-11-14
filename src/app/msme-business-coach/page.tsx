@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FACTS } from "../../../content/facts";
+import { DELIVERY } from "@/lib/delivery";
 
 export const metadata: Metadata = {
   title: { absolute: "MSME Business Coach in Bangalore & India | Simpleworks" },
@@ -105,7 +106,7 @@ const STAGES = [
     price: "₹25,000",
     priceSuffix: "",
     suffixIsPrice: false,
-    term: "Half a day",
+    term: `Half a day · ${DELIVERY.diagnostic}`,
     description:
       "A three-hour working session on the one problem you name (two or three shorter sessions if online), a written diagnostic brief, and a one-hour walkthrough. You come away knowing what's working, what isn't, and the one thing to do first.",
     then: "act on the brief yourself, or move to the Reset.",
@@ -119,7 +120,7 @@ const STAGES = [
     price: "₹1,40,000",
     priceSuffix: "/ ₹2,80,000",
     suffixIsPrice: true,
-    term: "30 days, or 60 days",
+    term: `30 days, or 60 days · ${DELIVERY.reset}`,
     description:
       "Work the plan on the problem the Diagnostic named. In 30 days the gaps are costed in rupees and the fix is designed. Choose 60 days to have Premraj on site with your leadership team while it is put in place, with a weekly review rhythm handed over.",
     then: "run it with your own team, or keep Premraj in your corner.",
@@ -133,7 +134,7 @@ const STAGES = [
     price: "₹75,000",
     priceSuffix: "/ month",
     suffixIsPrice: false,
-    term: "Minimum three months",
+    term: `Minimum three months · ${DELIVERY.counsel}`,
     description:
       "Two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team.",
     then: "stop when the business no longer needs it.",
@@ -141,6 +142,18 @@ const STAGES = [
     linkHref: "",
   },
 ];
+
+// Side option beside the three-stage path. Not a fourth stage.
+const SIDE_OPTION = {
+  eyebrow: "Prefer to work online?",
+  name: "The Simple Advisory",
+  price: "₹35,000",
+  priceSuffix: "/ month",
+  termLine: `${DELIVERY.advisory} · Month to month`,
+  description:
+    "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Fixed fee, paid after each session. It doesn't include the WhatsApp access, quarterly review or on-site work that Counsel does.",
+  then: "stop any month, or move to Counsel when you want Premraj in person and in your corner.",
+};
 
 const WHY_CARDS = [
   {
@@ -157,7 +170,7 @@ const WHY_CARDS = [
   },
   {
     title: "Built for founders Premraj can sit across the table from",
-    body: "This engagement is based in Bengaluru. The Diagnostic and monthly Counsel work well online. But the execution work in the Reset happens in person, on site, so this is best suited to founders based in or able to meet regularly in Bengaluru.",
+    body: "This engagement is based in Bengaluru. The Diagnostic and the Simple Advisory work well online. But the execution work in the Reset happens in person, on site, so this is best suited to founders based in or able to meet regularly in Bengaluru.",
   },
 ];
 
@@ -205,7 +218,7 @@ const FAQS = [
   },
   {
     q: "Is MSME business coaching available online across India?",
-    a: "Partly. The Simple Diagnostic and the Simple Counsel can both run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, so it suits founders based in Bengaluru or able to meet here regularly.",
+    a: "Partly. The Simple Diagnostic can run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits and the Simple Counsel is in person, so both suit founders based in Bengaluru or able to meet here regularly. For ongoing support online, the Simple Advisory is built for exactly that.",
   },
   {
     q: "What size of business benefits most from MSME business coaching?",
@@ -213,11 +226,11 @@ const FAQS = [
   },
   {
     q: "How is a coaching engagement structured?",
-    a: "Most founders start with the Simple Diagnostic: a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, at a fixed ₹25,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page.",
+    a: "Most founders start with the Simple Diagnostic: a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, at a fixed ₹25,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page. If you'd rather work online, the Simple Advisory gives you two 90-minute sessions a month, month to month.",
   },
   {
     q: "How much does MSME business coaching cost?",
-    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000 for a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
+    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000 for a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month in person, with a three-month minimum. For a senior sounding board online, the Simple Advisory is ₹35,000 a month for two 90-minute sessions, with no minimum. There's no hourly billing. Full details are on the Programmes page.",
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
@@ -327,10 +340,23 @@ const serviceSchema = {
     {
       "@type": "Offer",
       name: "The Simple Counsel",
-      description: "Monthly business mentoring, minimum three months.",
+      description: "In person. Monthly business mentoring, minimum three months.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "75000",
+        priceCurrency: "INR",
+        unitText: "MONTH",
+      },
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Advisory",
+      description:
+        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Month to month, online only.",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "35000",
         priceCurrency: "INR",
         unitText: "MONTH",
       },
@@ -575,7 +601,7 @@ export default function MsmeBusinessCoachPage() {
           <div className="mt-12 border-t border-rule pt-6">
             <p className="text-[16px] leading-[1.7] text-mid max-w-[860px]">
               <strong className="font-bold text-ink">Where we work.</strong>{" "}
-              Based in Bengaluru. The Diagnostic and monthly Counsel run online
+              Based in Bengaluru. The Diagnostic and the Simple Advisory run online
               anywhere in India. The Reset happens on site, so it suits
               founders in or able to meet regularly in Bengaluru.
             </p>
@@ -834,6 +860,32 @@ export default function MsmeBusinessCoachPage() {
                 </p>
               </div>
             ))}
+          </div>
+          <div className="grid gap-4 border-t border-rule py-8 min-[860px]:grid-cols-3 min-[860px]:gap-8">
+            <div>
+              <p className="mb-3 text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
+                {SIDE_OPTION.eyebrow}
+              </p>
+              <h3 className="mb-1 text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]">
+                {SIDE_OPTION.name}
+              </h3>
+              <p className="text-[14px] text-light">{SIDE_OPTION.termLine}</p>
+            </div>
+            <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid">
+              {SIDE_OPTION.description}
+            </p>
+            <div>
+              <p className="mb-4 whitespace-nowrap text-[22px] font-bold leading-[1.15] text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[clamp(17px,2vw,26px)]">
+                <span>{SIDE_OPTION.price}</span>{" "}
+                <span className="text-[16px] font-normal text-mid">
+                  {SIDE_OPTION.priceSuffix}
+                </span>
+              </p>
+              <p className="text-[15px] leading-[1.65] text-mid">
+                <strong className="font-bold text-ink">Then:</strong>{" "}
+                {SIDE_OPTION.then}
+              </p>
+            </div>
           </div>
           <div className="flex flex-col gap-2 border-t border-rule pt-5 sm:flex-row sm:items-baseline sm:justify-between">
             <p className="text-[15px] leading-relaxed text-mid">
