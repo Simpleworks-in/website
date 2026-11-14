@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FACTS } from "../../../content/facts";
+import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
@@ -411,7 +411,7 @@ export default function ServicesPage() {
               Let&rsquo;s Talk &nbsp;→
             </Link>
             <a
-              href={`https://wa.me/${FACTS.whatsappNumber}`}
+              href={whatsappHref()}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-fit items-center gap-2.5 rounded-[1px] border-[1.5px] border-red px-8 py-3.5 text-[14px] tracking-wide-3 text-red transition-colors hover:bg-red hover:text-white"

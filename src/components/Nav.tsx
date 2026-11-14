@@ -6,9 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import logo from "../../public/Simpleworks_image_only_S.png";
-import { FACTS } from "../../content/facts";
+import { whatsappHref } from "@/lib/whatsapp";
 
-const WHATSAPP_HREF = `https://wa.me/${FACTS.whatsappNumber}`;
+const WHATSAPP_HREF = whatsappHref();
 
 const baseLinks = [
   { href: "/about", label: "About" },
@@ -82,7 +82,7 @@ export default function Nav() {
               rel="noopener noreferrer"
               className="rounded-[1px] border border-red px-4 py-2 text-[13px] lg:px-[22px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
             >
-              Let&rsquo;s Talk
+              WhatsApp Premraj
             </a>
           </li>
         </ul>
@@ -154,7 +154,7 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 className="inline-block rounded-[1px] border border-red px-6 py-2.5 text-[13px] tracking-wide-2 text-red transition-colors hover:bg-red hover:text-white"
               >
-                Let&rsquo;s Talk
+                WhatsApp Premraj
               </a>
             </li>
           </ul>

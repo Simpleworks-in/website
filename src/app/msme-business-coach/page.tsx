@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FACTS } from "../../../content/facts";
 import { DELIVERY } from "@/lib/delivery";
+import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: { absolute: "MSME Business Coach in Bangalore & India | Simpleworks" },
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CONTACT_LINK = `https://wa.me/${FACTS.whatsappNumber}`;
+const CONTACT_LINK = whatsappHref();
 
 const STATS = [
   { num: "39", label: "Years running\nbusinesses" },
@@ -449,7 +450,7 @@ export default function MsmeBusinessCoachPage() {
                   rel="noopener noreferrer"
                   className={BTN}
                 >
-                  Let&rsquo;s Talk
+                  WhatsApp Premraj
                 </a>
               </div>
               <p className="text-[14px] text-light mb-6">
@@ -744,7 +745,7 @@ export default function MsmeBusinessCoachPage() {
                   rel="noopener noreferrer"
                   className={BTN}
                 >
-                  Let&rsquo;s Talk
+                  WhatsApp Premraj
                 </a>
                 <span className="text-[14px] text-light">
                   No pitch, no commitment.
@@ -1106,7 +1107,7 @@ export default function MsmeBusinessCoachPage() {
               rel="noopener noreferrer"
               className={BTN}
             >
-              Let&rsquo;s Talk
+              WhatsApp Premraj
             </a>
             <p className="mt-6 text-[14px] text-light">
               Or call{" "}

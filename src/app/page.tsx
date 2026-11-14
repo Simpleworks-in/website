@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FAQAccordion from "@/components/FAQAccordion";
 import { FAQS } from "@/lib/faqs";
-import { FACTS } from "../../content/facts";
+import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
@@ -116,14 +116,14 @@ export default function HomePage() {
               At Simpleworks Consulting, we work with established Indian small and medium businesses that are stuck in growth, stretched in operations, short on clarity about the next move.
             </p>
             <a
-              href={`https://wa.me/${FACTS.whatsappNumber}`}
+              href={whatsappHref()}
               data-cta="hero"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit opacity-0 animate-fade-up"
               style={{ animationDelay: "0.55s" }}
             >
-              Let&rsquo;s Talk &nbsp;→
+              WhatsApp Premraj &nbsp;→
             </a>
           </div>
 
@@ -192,7 +192,7 @@ export default function HomePage() {
             Execution. <span className="text-red">Nothing more.</span>
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are an independent Business Management Consulting practice started in June 2026 at Bengaluru working with founders of Established Indian Small and Medium Businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
+            We are an independent management consulting practice in Bengaluru, set up after 39 years in Work &amp; business, working with founders of established Indian small and medium businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
             Led by Premraj Menon, who has seen MSMEs from both sides. Over 30 years in large

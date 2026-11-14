@@ -47,13 +47,7 @@ export const faqs: Faq[] = [
       "The Simple Counsel is ₹75,000 a month in person, with a minimum of three months. The Simple Advisory is ₹35,000 a month for two 90-minute sessions online, with a minimum of three months.",
     ),
   ),
-  withEdit("How long does a consulting engagement typically last?", (h) =>
-    swap(
-      h,
-      "minimum of three months.</li>",
-      "minimum of three months.</li><li><strong>The Simple Advisory:</strong> two 90-minute online sessions a month, with a minimum of three months.</li>",
-    ),
-  ),
+  withEdit("How long does a consulting engagement typically last?", (h) => h),
   {
     q: "Which programme should I start with?",
     a: "Most founders start with The Simple Diagnostic. In half a day you get a clear, written view of what’s working, what isn’t, and the one thing to fix first on the problem that is costing you most. If the problem is already known and just hasn’t been solved, go straight to The Simple Reset. If you want a senior sounding board for ongoing decisions, choose The Simple Counsel. If you want a senior sounding board rather than a programme, the Simple Advisory gives you two 90-minute online sessions a month.",
