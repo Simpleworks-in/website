@@ -105,6 +105,19 @@ const THREE_SIDES = [
   },
 ];
 
+const EDUCATION = [
+  {
+    year: "2006",
+    title: "EGMP, Executive General Management Programme",
+    institution: "IIM Bengaluru",
+  },
+  {
+    year: "2013",
+    title: "19th Tata Group Executive Leadership Seminar",
+    institution: "Ross School of Business, University of Michigan",
+  },
+];
+
 const HOSUR_POST =
   "when-one-oem-is-60-of-your-revenue-customer-concentration-risk-in-hosur-s-auto-component-belt";
 
@@ -407,16 +420,26 @@ export default async function TamilNaduMsmeConsultantPage() {
             </div>
           ))}
         </div>
-        <blockquote className="border-l-[3px] border-red pl-6 max-w-[760px]">
-          <p className="text-[17px] md:text-[18px] italic leading-[1.6] text-ink mb-3">
+        <blockquote className="border-l-[3px] border-red pl-6 max-w-[760px] mb-12">
+          <p className="text-[18px] md:text-[22px] italic leading-[1.55] text-ink">
             39 years, from a sales trainee at Usha International in 1987 to COO
             of the Kerala circle at Tata Docomo with full P&amp;L.
           </p>
-          <p className="text-[14px] text-light">
-            EGMP, IIM Bengaluru; 19th Tata Group Executive Leadership Seminar,
-            Ross School of Business, University of Michigan.
-          </p>
         </blockquote>
+        <p className="text-[13px] font-medium uppercase tracking-wide-5 text-light mb-4">
+          Education
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+          {EDUCATION.map((e) => (
+            <div key={e.title} className="border-t border-rule py-5">
+              <p className="text-[13px] text-light mb-1.5">{e.year}</p>
+              <h3 className="text-[18px] font-bold text-ink leading-snug mb-1">
+                {e.title}
+              </h3>
+              <p className="text-[15px] text-mid leading-relaxed">{e.institution}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* FAMILY-OWNED BUSINESSES */}
@@ -587,8 +610,8 @@ export default async function TamilNaduMsmeConsultantPage() {
         <section className={SECTION}>
           <p className={EYEBROW}>Related reading</p>
           <h2 className={H2}>
-            Written for MSME owners,{" "}
-            <span className="text-red">not for consultants.</span>
+            Problems you will recognise.{" "}
+            <span className="text-red">How owners can fix them.</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 mb-8">
             {relatedPosts.map((post) => (
