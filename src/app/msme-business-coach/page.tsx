@@ -376,6 +376,16 @@ const BTN =
   "inline-block bg-transparent border border-red text-red text-[14px] px-9 py-[14px] rounded-[1px] hover:bg-red hover:text-white transition-colors";
 const TEXT_LINK = "text-red hover:underline";
 
+// "The Simple Reset" -> "The Simple" in ink, the last word in red.
+function ProgrammeName({ name }: { name: string }) {
+  const i = name.lastIndexOf(" ");
+  return (
+    <>
+      {name.slice(0, i)} <span className="text-red">{name.slice(i + 1)}</span>
+    </>
+  );
+}
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className={EYEBROW}>{children}</p>;
 }
@@ -819,7 +829,7 @@ export default function MsmeBusinessCoachPage() {
                   {stage.stepLabel}
                 </p>
                 <h3 className="mb-1 text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]">
-                  {stage.name}
+                  <ProgrammeName name={stage.name} />
                 </h3>
                 <p className="mb-4 text-[14px] text-light">{stage.covers}</p>
                 <p className="mb-1 whitespace-nowrap text-[22px] font-bold leading-[1.15] text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[clamp(17px,2vw,26px)]">
@@ -867,7 +877,7 @@ export default function MsmeBusinessCoachPage() {
                 {SIDE_OPTION.eyebrow}
               </p>
               <h3 className="mb-1 text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]">
-                {SIDE_OPTION.name}
+                <ProgrammeName name={SIDE_OPTION.name} />
               </h3>
               <p className="text-[14px] text-light">{SIDE_OPTION.termLine}</p>
             </div>
