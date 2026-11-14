@@ -303,7 +303,7 @@ export default async function TamilNaduMsmeConsultantPage() {
             with Premraj Menon, who has co-founded a small business himself and
             spent 30 years coaching MSME owners to grow.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-4 items-center">
+          <div className="flex flex-col items-start gap-4">
             <a href={WHATSAPP_LINK} data-cta="hero" className={BUTTON}>
               WhatsApp Premraj for an introductory call →
             </a>
@@ -327,9 +327,6 @@ export default async function TamilNaduMsmeConsultantPage() {
               priority
             />
           </div>
-          <figcaption className="mt-3 text-[14px] text-light">
-            Premraj Menon · Founder, Simpleworks Consulting
-          </figcaption>
         </figure>
       </section>
 
