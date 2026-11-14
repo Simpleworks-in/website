@@ -199,6 +199,11 @@ export default function AboutPage() {
                   Neoffice.ai
                 </p>
               </div>
+              <div>
+                <p className="text-[15px] font-semibold leading-[1.3] text-ink">
+                  Simpleworks Consulting
+                </p>
+              </div>
             </div>
           </div>
         </div>
