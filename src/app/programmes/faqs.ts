@@ -44,14 +44,14 @@ export const faqs: Faq[] = [
     swap(
       h,
       "The Simple Counsel is ₹75,000 a month, with a minimum of three months. For online-only support, the Simple Advisory is ₹35,000 a month for two 90-minute sessions.",
-      "The Simple Counsel is ₹75,000 a month in person, with a minimum of three months. The Simple Advisory is ₹35,000 a month for two 90-minute sessions online, with no minimum.",
+      "The Simple Counsel is ₹75,000 a month in person, with a minimum of three months. The Simple Advisory is ₹35,000 a month for two 90-minute sessions online, with a minimum of three months.",
     ),
   ),
   withEdit("How long does a consulting engagement typically last?", (h) =>
     swap(
       h,
       "minimum of three months.</li>",
-      "minimum of three months.</li><li><strong>The Simple Advisory:</strong> two 90-minute online sessions a month, month to month.</li>",
+      "minimum of three months.</li><li><strong>The Simple Advisory:</strong> two 90-minute online sessions a month, with a minimum of three months.</li>",
     ),
   ),
   {
@@ -62,7 +62,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How is payment structured?",
-    a: "The Diagnostic is paid post engagement. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel is billed monthly. The Advisory is paid after each session. All fees are fixed and agreed before we begin. Travel outside Bengaluru is charged at actuals.",
+    a: "The Diagnostic is paid post engagement. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel is billed monthly. The Advisory is billed at the end of each month. All fees are fixed and agreed before we begin. Travel outside Bengaluru is charged at actuals.",
   },
   {
     q: "Can the engagement be done remotely?",

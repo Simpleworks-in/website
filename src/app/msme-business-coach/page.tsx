@@ -149,10 +149,10 @@ const SIDE_OPTION = {
   name: "The Simple Advisory",
   price: "₹35,000",
   priceSuffix: "/ month",
-  termLine: `${DELIVERY.advisory} · Month to month`,
+  termLine: `${DELIVERY.advisory} · Minimum three months`,
   description:
-    "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Fixed fee, paid after each session. It doesn't include the WhatsApp access, quarterly review or on-site work that Counsel does.",
-  then: "stop any month, or move to Counsel when you want Premraj in person and in your corner.",
+    "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Fixed fee, paid at the end of each month. It doesn't include the WhatsApp access, quarterly review or on-site work that Counsel does.",
+  then: "stop after the three months, or move to Counsel when you want Premraj in person and in your corner.",
 };
 
 const WHY_CARDS = [
@@ -226,11 +226,11 @@ const FAQS = [
   },
   {
     q: "How is a coaching engagement structured?",
-    a: "Most founders start with the Simple Diagnostic: a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, at a fixed ₹25,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page. If you'd rather work online, the Simple Advisory gives you two 90-minute sessions a month, month to month.",
+    a: "Most founders start with the Simple Diagnostic: a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, at a fixed ₹25,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page. If you'd rather work online, the Simple Advisory gives you two 90-minute sessions a month, with a three-month minimum.",
   },
   {
     q: "How much does MSME business coaching cost?",
-    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000 for a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month in person, with a three-month minimum. For a senior sounding board online, the Simple Advisory is ₹35,000 a month for two 90-minute sessions, with no minimum. There's no hourly billing. Full details are on the Programmes page.",
+    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000 for a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month in person, with a three-month minimum. For a senior sounding board online, the Simple Advisory is ₹35,000 a month for two 90-minute sessions, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
@@ -353,7 +353,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Advisory",
       description:
-        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Month to month, online only.",
+        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Minimum three months, online only.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "35000",

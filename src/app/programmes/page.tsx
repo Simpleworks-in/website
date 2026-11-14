@@ -101,7 +101,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Advisory",
       description:
-        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Month to month, online only.",
+        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Minimum three months, online only.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "35000",
@@ -593,7 +593,7 @@ export default function ProgrammesPage() {
               Duration
             </span>
             <span className="text-[15px] font-bold text-ink">
-              Month to month
+              Monthly, min. 3 months
             </span>
           </div>
         </div>
@@ -602,7 +602,7 @@ export default function ProgrammesPage() {
           items={[
             "Two 90-minute online sessions a month, on your agenda.",
             "A short written summary after each session.",
-            "Month to month, with no minimum. Stop any month.",
+            "Minimum three months. Paid at the end of each month.",
           ]}
         />
 
@@ -619,7 +619,7 @@ export default function ProgrammesPage() {
             ₹35,000
           </span>
           <span className="text-[13px] italic text-light">
-            per month · Fixed fee, paid after each session.
+            per month · minimum three months · Fixed fee, paid at the end of each month.
           </span>
         </div>
       </section>
