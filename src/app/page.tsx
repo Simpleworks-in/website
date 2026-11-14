@@ -57,17 +57,6 @@ const SERVICES = [
   },
 ];
 
-// "Why Simpleworks" figure row: the one place the proof figures appear on the
-// homepage.
-const AUTHORITY_FIGURES = [
-  { figure: "39", caption: "years in business, from sales trainee to COO" },
-  { figure: "About 3,000", caption: "MSME partners worked with over 30 years" },
-  {
-    figure: "2019",
-    caption: "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
-  },
-];
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -267,18 +256,6 @@ export default function HomePage() {
 
       {/* ── AUTHORITY ── */}
       <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
-        <div className="mb-10 grid grid-cols-1 gap-6 md:mb-12 md:grid-cols-3 md:gap-10">
-          {AUTHORITY_FIGURES.map((f) => (
-            <div key={f.caption}>
-              <p className="mb-2 text-[44px] md:text-[56px] font-bold leading-none tracking-tight-3 text-ink">
-                {f.figure}
-              </p>
-              <p className="max-w-[300px] text-[14px] leading-[1.6] text-light">
-                {f.caption}
-              </p>
-            </div>
-          ))}
-        </div>
         <div>
           <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
             Why Simpleworks Consulting
