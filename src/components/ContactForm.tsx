@@ -8,6 +8,7 @@ const INTEREST_OPTIONS = [
   "Growth review (Diagnostic)",
   "Simple Reset",
   "Simple Counsel",
+  "Simple Advisory",
   "Not sure yet",
 ] as const;
 
@@ -15,6 +16,7 @@ const INTEREST_FROM_PARAM: Record<string, (typeof INTEREST_OPTIONS)[number]> = {
   "growth-review": "Growth review (Diagnostic)",
   reset: "Simple Reset",
   counsel: "Simple Counsel",
+  advisory: "Simple Advisory",
 };
 
 const REVENUE_OPTIONS = [
