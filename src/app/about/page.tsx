@@ -20,6 +20,28 @@ export const metadata = {
   },
 };
 
+// Proof strip under the "three sides" paragraph. `lead` is ink, `red` is the
+// accented part of the figure.
+const PROOF_ITEMS = [
+  {
+    lead: "Nearly ",
+    red: "10 years",
+    caption:
+      "inside MSMEs: co-founder of Viworks Ventures, then on the management team at Neoffice",
+  },
+  {
+    lead: "About ",
+    red: "3,000",
+    caption: "MSME partners worked with and coached over 30 years",
+  },
+  {
+    lead: "",
+    red: "2019",
+    caption:
+      "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -97,6 +119,19 @@ export default function AboutPage() {
           team, won the ET-SIDBI Best Exporter award in the Micro Enterprise
           category in 2019.
         </p>
+        <div className="mt-10 grid max-w-[1000px] grid-cols-1 gap-8 border-t-[0.5px] border-b-[0.5px] border-rule py-8 min-[760px]:grid-cols-3 min-[760px]:gap-12">
+          {PROOF_ITEMS.map((item) => (
+            <div key={item.caption}>
+              <p className="mb-2 text-[30px] md:text-[36px] font-bold leading-[1.1] tracking-tight-1 text-ink">
+                {item.lead}
+                <span className="text-red">{item.red}</span>
+              </p>
+              <p className="max-w-[320px] text-[15px] leading-[1.6] text-light">
+                {item.caption}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* COMPANIES */}

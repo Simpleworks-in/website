@@ -57,24 +57,6 @@ const SERVICES = [
   },
 ];
 
-// Proof strip under the hero.
-const PROOF_ITEMS = [
-  {
-    figure: "Nearly 10 years",
-    caption:
-      "inside MSMEs: co-founder of Viworks Ventures, then on the management team at Neoffice",
-  },
-  {
-    figure: "About 3,000",
-    caption: "MSME partners worked with and coached over 30 years",
-  },
-  {
-    figure: "2019",
-    caption:
-      "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
-  },
-];
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -162,27 +144,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PROOF STRIP ── */}
-      <section className="border-t-[0.5px] border-b-[0.5px] border-rule px-6 py-10 md:pl-[132px] md:pr-[60px] md:py-12">
-        <div className="grid grid-cols-1 gap-8 min-[760px]:grid-cols-3 min-[760px]:gap-12">
-          {PROOF_ITEMS.map((item) => (
-            <div key={item.figure}>
-              <p className="mb-2 text-[30px] md:text-[36px] font-bold leading-[1.1] tracking-tight-1 text-ink">
-                {item.figure}
-              </p>
-              <p className="max-w-[380px] text-[15px] leading-[1.6] text-light">
-                {item.caption}
-              </p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-8 text-[14px] text-light">
-          <Link href="/services/family-business-consulting" className="hover:text-ink hover:underline">
-            Running a family business? See how Simpleworks helps &rarr;
-          </Link>
-        </p>
-      </section>
-
       {/* ── BUSINESS NOT GROWING ── */}
       <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
         <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
@@ -234,8 +195,11 @@ export default function HomePage() {
             We are an independent Business Management Consulting practice started in June 2026 at Bengaluru working with founders of Established Indian Small and Medium Businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
           </p>
           <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Led by Premraj Menon, 39 years in sales, distribution, business operations, and P&amp;L,
-            including as COO of Tata Docomo&rsquo;s Kerala Circle. More on the <Link href="/about" className="text-red hover:underline">About page</Link>. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
+            Led by Premraj Menon, who has seen MSMEs from both sides. Over 30 years in large
+            companies, including as COO of Tata Docomo&rsquo;s Kerala Circle, he worked with around
+            3,000 MSME partners and coached them to improve their business. He then spent nearly 10
+            years inside MSMEs, as co-founder of Viworks Ventures and on the management team at
+            Neoffice. More on the <Link href="/about" className="text-red hover:underline">About page</Link>. No junior consultants, no generic slide decks; you get battle-tested executive leadership directly in your business.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2px]">
