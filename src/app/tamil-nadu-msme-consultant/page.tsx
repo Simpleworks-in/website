@@ -88,13 +88,15 @@ const PAIN_POINTS = [
 const THREE_SIDES = [
   {
     num: "01",
+    duration: "Nearly 10 years",
     title: "As a co-founder and operator",
     body: "He co-founded Viworks Ventures, then joined the management team at Neoffice from September 2019, running growth and strategy. Neoffice won the ET-SIDBI Best Exporter award in the Micro Enterprise category in 2019.",
   },
   {
     num: "02",
+    duration: "29 years",
     title: "As the corporate head who depended on MSMEs",
-    body: "At MRF, Apollo Tyres, Bharti Airtel and Tata Docomo, his numbers depended on MSME dealers and channel partners. Many of them were family-owned.",
+    body: "At Usha International, MRF, Apollo Tyres, Bharti Airtel and Tata Docomo, his numbers depended on MSME dealers and channel partners. Many of them were family-owned.",
   },
   {
     num: "03",
@@ -394,7 +396,10 @@ export default async function TamilNaduMsmeConsultantPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12">
           {THREE_SIDES.map((s) => (
             <div key={s.num} className="border-t border-ink pt-4">
-              <p className="text-[13px] text-light mb-2">{s.num}</p>
+              <p className="text-[13px] text-light mb-2">
+                {s.num}
+                {s.duration ? ` · ${s.duration}` : ""}
+              </p>
               <h3 className="text-[18px] font-bold text-ink leading-snug mb-2">
                 {s.title}
               </h3>
