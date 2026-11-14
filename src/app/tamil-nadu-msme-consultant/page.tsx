@@ -370,15 +370,27 @@ export default async function TamilNaduMsmeConsultantPage() {
 
       {/* WHO YOU WORK WITH */}
       <section className={SECTION}>
-        <p className={EYEBROW}>Who you work with</p>
-        <h2 className={H2}>
-          Not a corporate consultant.{" "}
-          <span className="text-red">Someone who has seen MSMEs from the inside.</span>
-        </h2>
-        <p className="text-[17px] md:text-[19px] text-mid leading-[1.7] max-w-[760px] mb-10">
-          Most consultants from large companies have only seen MSMEs from the
-          outside. Premraj Menon has seen them from three sides.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-8 md:gap-12 items-center mb-10">
+          <div>
+            <p className={EYEBROW}>Who you work with</p>
+            <h2 className={H2}>
+              Not a corporate consultant.{" "}
+              <span className="text-red">Someone who has seen MSMEs from the inside.</span>
+            </h2>
+            <p className="text-[17px] md:text-[19px] text-mid leading-[1.7] max-w-[760px]">
+              Most consultants from large companies have only seen MSMEs from
+              the outside. Premraj Menon has seen them from three sides.
+            </p>
+          </div>
+          <Image
+            src="/prem-menon.png"
+            alt="Watercolour portrait of Premraj Menon, founder of Simpleworks Consulting"
+            width={520}
+            height={520}
+            sizes="(min-width: 768px) 260px, 60vw"
+            className="mix-blend-multiply w-[200px] md:w-full h-auto justify-self-start md:justify-self-end"
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12">
           {THREE_SIDES.map((s) => (
             <div key={s.num} className="border-t border-ink pt-4">
