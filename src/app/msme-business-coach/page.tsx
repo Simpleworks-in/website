@@ -615,9 +615,9 @@ export default function MsmeBusinessCoachPage() {
             companies. The problems differ, but the work usually lands in one
             of four places.
           </p>
-          <ul className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid grid-cols-1 gap-x-8 md:grid-cols-2 lg:grid-cols-4">
             {CHANGES.map((row, i) => (
-              <li key={row.area} className="flex flex-col border-t border-ink pt-5">
+              <li key={row.area} className="row-span-5 grid grid-rows-subgrid border-t border-ink pt-5">
                 <p className="mb-4 flex items-baseline gap-3">
                   <span aria-hidden="true" className="text-[13px] font-bold text-light">
                     {String(i + 1).padStart(2, "0")}
@@ -632,16 +632,16 @@ export default function MsmeBusinessCoachPage() {
                 <p className="text-[15px] text-light leading-[1.6] mb-4">
                   {row.before}
                 </p>
-                <p className="mt-auto border-t border-rule pt-4 text-[11px] uppercase tracking-widest font-bold text-ink mb-1">
+                <p className="border-t border-rule pt-4 text-[11px] uppercase tracking-widest font-bold text-ink mb-1">
                   After working together
                 </p>
-                <p className="text-[18px] md:text-[19px] font-bold text-ink leading-[1.35]">
+                <p className="pb-10 text-[18px] md:text-[19px] font-bold text-ink leading-[1.35]">
                   {row.after}
                 </p>
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-[14px] text-light">
+          <p className="-mt-2 text-[14px] text-light">
             From recent engagements with trading and manufacturing companies.
             Client names are kept confidential.
           </p>
