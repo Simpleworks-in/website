@@ -273,6 +273,14 @@ export default config({
         }),
         problem: fields.text({ label: "The problem", multiline: true }),
         solution: fields.text({ label: "What we did", multiline: true }),
+        revenue: fields.text({
+          label: "Revenue (optional)",
+          description: 'Shown as "Revenue: …". For example "about ₹3 crore a year, flat for two years".',
+        }),
+        outcome: fields.text({
+          label: "What's changed so far (optional)",
+          multiline: true,
+        }),
       },
     }),
   },

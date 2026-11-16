@@ -13,6 +13,8 @@ export type PublicStory = {
   imageAlt: string;
   problem: string;
   solution: string;
+  revenue: string;
+  outcome: string;
 };
 
 export type StoriesPageText = {
@@ -65,6 +67,8 @@ export async function getVisibleStories(opts?: {
         : entry.imageAlt || `Illustration for ${entry.clientName}`,
       problem: entry.problem,
       solution: entry.solution,
+      revenue: entry.revenue ?? "",
+      outcome: entry.outcome ?? "",
     };
   });
 

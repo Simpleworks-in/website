@@ -192,7 +192,7 @@ const STEPS = [
   {
     label: "Step 3 · If it makes sense",
     title: "Ongoing work",
-    body: "In-person programmes where the business is within reach, or Simple Advisory: two online sessions a month, month to month.",
+    body: "In-person programmes where the business is within reach, or Simple Advisory: two online sessions a month, three-month minimum.",
   },
 ];
 

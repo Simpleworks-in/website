@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FACTS } from "../../../content/facts";
-import { DELIVERY } from "@/lib/delivery";
 import { whatsappHref } from "@/lib/whatsapp";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: { absolute: "MSME Business Coach in Bangalore & India | Simpleworks" },
@@ -31,9 +31,10 @@ export const metadata: Metadata = {
 const CONTACT_LINK = whatsappHref();
 
 const STATS = [
-  { num: "39", label: "Years running\nbusinesses" },
-  { num: "1-to-1", label: "Just you and Premraj.\nNo junior team." },
-  { num: "Hands-on", label: "Stays through execution,\nnot just the plan." },
+  { num: "About 30", label: "years in large companies, rising to COO with full P&L" },
+  { num: "Nearly 10", label: "years inside MSMEs, as co-founder and on the management team" },
+  { num: "About 3,000", label: "MSME partners worked with and coached" },
+  { num: "1-to-1", label: "no junior team, no group batches" },
 ];
 
 const PAIN_QUOTES = [
@@ -41,120 +42,114 @@ const PAIN_QUOTES = [
   "“My team executes, but we keep missing targets somehow.”",
   "“Every decision still comes back to my desk.”",
   "“We’ve tried consultants before. Got a report. Nothing changed on the ground.”",
+  "“I’ve attended MSME coaching sessions. Good ideas in the room, but the real work back in my business is different.”",
   "“We have no real GTM plan — we just chase every lead that comes.”",
 ];
 
-const WHO_ITS_FOR = [
+// The fifth grid cell (where the startup card used to be) is a pointer to
+// /startup-mentor-bengaluru, not a fit card.
+type FitCell =
+  | { kind: "card"; title: string; body: string }
+  | { kind: "startup" };
+
+const WHO_ITS_FOR: FitCell[] = [
   {
+    kind: "card",
     title: "Manufacturing & industrial MSMEs",
-    body: "You run a factory, a component supplier, or a process business — and you’re trying to grow revenue without adding complexity you can’t manage.",
+    body: "You run a factory, a component supplier, or a process business — and you’re trying to grow revenue without adding complexity you can’t manage. As a business coach for manufacturing businesses, Premraj works on the commercial side: customers, channels and the cash cycle. Not plant capacity or quality systems.",
   },
   {
+    kind: "card",
     title: "Consumer goods & distribution businesses",
-    body: "You have a product in the market but the channel strategy isn’t working — you’re over-reliant on one customer, one geography, or one distributor.",
+    body: "You have a product in the market but the channel strategy isn’t working — you’re over-reliant on one customer, one geography, or one distributor. Building revenue through channels is Premraj's home ground.",
   },
   {
+    kind: "card",
     title: "Family business successors",
-    body: "You’ve taken over from a founder-parent and are navigating the balance between respecting what’s been built and leading where it needs to go.",
+    body: "You’ve taken over from a founder-parent and are navigating the balance between respecting what’s been built and leading where it needs to go. Many family businesses in India asked Premraj to help bring the next generation in and get the family clear on direction.",
   },
   {
+    kind: "card",
     title: "First-generation entrepreneurs",
     body: "You’ve crossed ₹10 crore in revenue but growth has plateaued — and you’re not sure whether the problem is strategy, sales, or execution.",
   },
+  { kind: "startup" },
   {
-    title: "Startups moving from early traction to scale",
-    body: "You have product-market fit and some revenue — but the business isn’t yet structured for the next phase of growth.",
-  },
-  {
+    kind: "card",
     title: "Founders preparing for a growth leap",
     body: "You have a clear ambition — a new market, a new product line, a new city — and need structured thinking before you commit resources.",
   },
 ];
 
+const STORY_BLOCKS = [
+  {
+    label: "The problem",
+    text: "A founder-run business with revenue flat for two years. Two anchor customers took most of the output, so every price talk and every late payment hit hard.",
+    strong: false,
+  },
+  {
+    label: "What we did",
+    text: "Rebuilt the go-to-market plan and mapped a far wider list of potential buyers. Opened the aftermarket through Bangalore distributors on cash-and-carry, to ease cash flow. Registered on Udyam, so B2B buyers come under the MSMED Act's 45-day payment rule.",
+    strong: false,
+  },
+  {
+    label: "What’s changed so far",
+    text: "New B2B customers are signing on beyond the two anchors, and the first aftermarket distributor is on board.",
+    strong: true,
+  },
+];
+
+const CSUITE_VIEW = [
+  { name: "Tata Docomo", line: "COO, Kerala circle, with full P&L responsibility" },
+  { name: "Bharti Airtel · BPL Mobile", line: "Telecom leadership: sales, distribution and operations" },
+  { name: "MRF · Apollo Tyres", line: "Dealer networks and government sales" },
+  { name: "Usha International", line: "Started as a sales trainee in 1987" },
+];
+
+const OWNER_VIEW = [
+  { name: "Viworks Ventures", line: "Co-founder: sales strategy and operations for businesses" },
+  {
+    name: "Neoffice, from September 2019",
+    line: "Management team, running growth and strategy. Neoffice won the ET-SIDBI Best Exporter award, Micro Enterprise category, in 2019",
+  },
+  {
+    name: "Around 3,000 MSME partners",
+    line: "Worked with and coached on business performance across the corporate years",
+  },
+];
+
+const NEXT_STEPS = [
+  "You send a short WhatsApp message.",
+  "Premraj replies himself.",
+  "You talk it through. No pitch, no commitment.",
+];
+
 const STEPS = [
-  {
-    title: "Discover",
-    subline: "Understand your business from the inside",
-    body: "Map your business model, market, team, and where you actually stand today — without assumptions.",
-  },
-  {
-    title: "Diagnose",
-    subline: "Find the real constraint",
-    body: "Most business problems have a root cause that isn’t obvious. We surface what’s actually holding growth back, not just the symptoms.",
-  },
-  {
-    title: "Frame the recommendation",
-    subline: "A clear path forward",
-    body: "A practical, prioritised plan — strategy, GTM, or execution — that fits your business and your capacity to act.",
-  },
-  {
-    title: "Execution cadence",
-    subline: "Run the plan together",
-    body: "We translate the recommendation into weekly actions. You’re not left with a deck — we work through implementation side by side.",
-  },
-  {
-    title: "Set accountability",
-    subline: "OKRs that keep you on track",
-    body: "We build an OKR structure so progress is visible, ownership is clear, and course correction happens before it’s too late.",
-  },
+  { label: "01 · Diagnostic", title: "Discover", subline: "Understand your business from the inside" },
+  { label: "02 · Diagnostic", title: "Diagnose", subline: "Find the real constraint" },
+  { label: "03 · Coaching", title: "Frame the recommendation", subline: "A clear path forward" },
+  { label: "04 · Coaching", title: "Execution cadence", subline: "Run the plan together" },
+  { label: "05 · Coaching", title: "Set accountability", subline: "OKRs that keep you on track" },
 ];
 
-const STAGES = [
+const ONGOING = [
   {
-    stepLabel: "Stage 1 · Find it",
-    name: "The Simple Diagnostic",
-    covers: "Discover, Diagnose, Frame the recommendation",
-    price: "₹25,000",
-    priceSuffix: "",
-    suffixIsPrice: false,
-    term: `Half a day · ${DELIVERY.diagnostic}`,
-    description:
-      "A three-hour working session on the one problem you name (two or three shorter sessions if online), a written diagnostic brief, and a one-hour walkthrough. You come away knowing what's working, what isn't, and the one thing to do first.",
-    then: "act on the brief yourself, or move to the Reset.",
-    linkLabel: "Start with the Simple Diagnostic →",
-    linkHref: "/business-growth-review",
-  },
-  {
-    stepLabel: "Stage 2 · Fix it",
-    name: "The Simple Reset",
-    covers: "Execution cadence",
-    price: "₹1,40,000",
-    priceSuffix: "/ ₹2,80,000",
-    suffixIsPrice: true,
-    term: `30 days, or 60 days · ${DELIVERY.reset}`,
-    description:
-      "Work the plan on the problem the Diagnostic named. In 30 days the gaps are costed in rupees and the fix is designed. Choose 60 days to have Premraj on site with your leadership team while it is put in place, with a weekly review rhythm handed over.",
-    then: "run it with your own team, or keep Premraj in your corner.",
-    linkLabel: "",
-    linkHref: "",
-  },
-  {
-    stepLabel: "Stage 3 · Keep it on track",
+    eyebrow: "In person · Bangalore",
     name: "The Simple Counsel",
-    covers: "Set accountability",
     price: "₹75,000",
-    priceSuffix: "/ month",
-    suffixIsPrice: false,
-    term: `Minimum three months · ${DELIVERY.counsel}`,
-    description:
-      "Two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team.",
-    then: "stop when the business no longer needs it.",
-    linkLabel: "",
-    linkHref: "",
+    suffix: "/ month",
+    caption: "Three-month minimum",
+    text: "Your senior business mentor, in person in Bangalore. Two sessions a month on your agenda, WhatsApp access for live decisions while the plan is being carried out, and a quarterly review with your leadership team.",
+  },
+  {
+    eyebrow: "Online · Across India",
+    name: "The Simple Advisory",
+    price: "₹35,000",
+    suffix: "/ month",
+    caption: "Three-month minimum",
+    text: "A senior sounding board, online. Two 90-minute sessions a month on your agenda and a short written summary after each. Paid after each session. You can start here without a Diagnostic.",
   },
 ];
-
-// Side option beside the three-stage path. Not a fourth stage.
-const SIDE_OPTION = {
-  eyebrow: "Prefer to work online?",
-  name: "The Simple Advisory",
-  price: "₹35,000",
-  priceSuffix: "/ month",
-  termLine: `${DELIVERY.advisory} · Minimum three months`,
-  description:
-    "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Fixed fee, paid at the end of each month. It doesn't include the WhatsApp access, quarterly review or on-site work that Counsel does.",
-  then: "stop after the three months, or move to Counsel when you want Premraj in person and in your corner.",
-};
 
 const WHY_CARDS = [
   {
@@ -163,7 +158,7 @@ const WHY_CARDS = [
   },
   {
     title: "39 years of senior operating experience",
-    body: "Premraj has held senior leadership roles across five industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That’s not theory or certification. It’s tested judgment applied to your reality. He has also co-founded a small business, been on the management team of another, and worked with around 3,000 MSME partners over 30 years.",
+    body: "Premraj has held senior leadership roles across five industries — Consumer Durables, Tyres, Automotive, Telecom, and SaaS. That’s not theory or certification. It’s tested judgment applied to your reality. About 30 years in large companies up to COO, then nearly 10 years inside MSMEs.",
   },
   {
     title: "No reports left behind on a desk",
@@ -171,7 +166,7 @@ const WHY_CARDS = [
   },
   {
     title: "Built for founders Premraj can sit across the table from",
-    body: "This engagement is based in Bengaluru. The Diagnostic and the Simple Advisory work well online. But the execution work in the Reset happens in person, on site, so this is best suited to founders based in or able to meet regularly in Bengaluru.",
+    body: "This engagement is based in Bengaluru. The Diagnostic and the Simple Advisory work well online. But the execution work in the Reset happens in person, on site, so this is best suited to founders based in or able to meet regularly in Bengaluru. Online, the Simple Advisory works across India.",
   },
 ];
 
@@ -198,20 +193,6 @@ const CHANGES = [
   },
 ];
 
-const CTA_STEPS = [
-  "You send a short WhatsApp message.",
-  "Premraj replies himself.",
-  "You talk it through. No pitch, no commitment.",
-];
-
-const CAREER = [
-  { k: "1987", v: "Sales trainee, Usha International" },
-  { k: "Tyres", v: "MRF and Apollo Tyres: dealer networks and government sales" },
-  { k: "Telecom", v: "BPL Mobile, Bharti Airtel, then Tata Docomo, rising to COO of the Kerala circle with full P&L" },
-  { k: "SaaS", v: "Management team, running growth and strategy at Neoffice" },
-  { k: "Study", v: "IIM Bengaluru; Ross School of Business, University of Michigan" },
-];
-
 const FAQS = [
   {
     q: "What does an MSME business coach do differently from a consultant?",
@@ -219,19 +200,23 @@ const FAQS = [
   },
   {
     q: "Is MSME business coaching available online across India?",
-    a: "Partly. The Simple Diagnostic can run fully online, wherever you are in India. The Simple Reset needs one on-site visit a week (four a month) and the Simple Counsel is in person, so both suit founders based in Bengaluru or able to meet here regularly. For ongoing support online, the Simple Advisory is built for exactly that.",
+    a: "Yes. The Simple Diagnostic and the Simple Advisory run fully online, wherever you are in India. The Simple Counsel is in person, so it suits founders in or able to meet in Bangalore.",
   },
   {
     q: "What size of business benefits most from MSME business coaching?",
     a: "The engagement works best for established businesses in the ₹10 crore to ₹200 crore revenue range. This includes MSMEs that have hit a growth ceiling and family businesses navigating a transition. The common thread is a founder or leadership team making real decisions about strategy, market, or execution — and needing a rigorous thinking partner.",
   },
   {
+    q: "Do you coach SMEs as well as MSMEs?",
+    a: "Yes. SME (small and medium enterprises) and MSME describe much the same businesses. MSME is the term Indian law uses, and it adds micro enterprises. Simpleworks works as a business coach for SMEs and MSMEs alike, usually founder-led businesses with ₹10–200 crore in revenue. SME business coaching runs in person in Bangalore or online across India.",
+  },
+  {
     q: "How is a coaching engagement structured?",
-    a: "Most founders start with the Simple Diagnostic: a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough, at a fixed ₹25,000. If you continue, the Simple Reset runs for 30 or 60 days, and the Simple Counsel carries on monthly for as long as it's useful. Every stage has a fixed fee, published on the Programmes page. If you'd rather work online, the Simple Advisory gives you two 90-minute sessions a month, with a three-month minimum.",
+    a: "Most founders start with the Simple Diagnostic: one problem you name, a three-hour working session, a written brief and a one-hour walkthrough. Ongoing coaching follows if it's useful: the Simple Counsel in person in Bangalore, or the Simple Advisory online. If you already know you want a monthly sounding board online, you can start with the Advisory.",
   },
   {
     q: "How much does MSME business coaching cost?",
-    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000 for a three-hour working session (which could be spread across 2-3 sessions), a written diagnostic brief and a one-hour walkthrough. The Simple Reset is ₹1,40,000 for 30 days or ₹2,80,000 for 60 days. The Simple Counsel is ₹75,000 a month in person, with a three-month minimum. For a senior sounding board online, the Simple Advisory is ₹35,000 a month for two 90-minute sessions, with a three-month minimum. There's no hourly billing. Full details are on the Programmes page.",
+    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000, paid after the engagement. The Simple Counsel is ₹75,000 a month in person, with a three-month minimum. The Simple Advisory is ₹35,000 a month for two 90-minute sessions online, also with a three-month minimum. For hands-on work on site there is also a 30 or 60-day Simple Reset; see Programmes. There's no hourly billing.",
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
@@ -319,29 +304,16 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Diagnostic",
       description:
-        "A three-hour working session, which could be spread across 2-3 sessions, a written diagnostic brief and a one-hour walkthrough of the findings.",
+        "One problem you name: a three-hour working session, a written brief and a one-hour walkthrough. In person or online. Paid after the engagement.",
       price: "25000",
       priceCurrency: "INR",
-      url: "https://www.simpleworks.in/programmes",
-    },
-    {
-      "@type": "Offer",
-      name: "The Simple Reset (30 days)",
-      price: "140000",
-      priceCurrency: "INR",
-      url: "https://www.simpleworks.in/programmes",
-    },
-    {
-      "@type": "Offer",
-      name: "The Simple Reset (60 days)",
-      price: "280000",
-      priceCurrency: "INR",
-      url: "https://www.simpleworks.in/programmes",
+      url: "https://www.simpleworks.in/business-growth-review",
     },
     {
       "@type": "Offer",
       name: "The Simple Counsel",
-      description: "In person. Monthly business mentoring, minimum three months.",
+      description:
+        "In person in Bangalore. Two sessions a month, WhatsApp access and a quarterly review with the leadership team. Three-month minimum.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "75000",
@@ -354,7 +326,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Advisory",
       description:
-        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Minimum three months, online only.",
+        "Online across India. Two 90-minute sessions a month with a written summary after each. Three-month minimum. Paid after each session.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "35000",
@@ -376,33 +348,53 @@ const BODY = "text-[16px] md:text-[17px] text-mid leading-[1.78]";
 const BTN =
   "inline-block bg-transparent border border-red text-red text-[14px] px-9 py-[14px] rounded-[1px] hover:bg-red hover:text-white transition-colors";
 const TEXT_LINK = "text-red hover:underline";
-
-// "The Simple Reset" -> "The Simple" in ink, the last word in red.
-function ProgrammeName({ name }: { name: string }) {
-  const i = name.lastIndexOf(" ");
-  return (
-    <>
-      {name.slice(0, i)} <span className="text-red">{name.slice(i + 1)}</span>
-    </>
-  );
-}
+const LABEL =
+  "text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className={EYEBROW}>{children}</p>;
 }
 
+// Links "Programmes page" (or "Programmes" after "see ") inside FAQ answers.
 function FaqAnswer({ text }: { text: string }) {
-  const marker = "Programmes page";
-  const idx = text.indexOf(marker);
-  if (idx === -1) return <>{text}</>;
+  const markers = ["Programmes page", "see Programmes"];
+  for (const marker of markers) {
+    const idx = text.indexOf(marker);
+    if (idx === -1) continue;
+    const linkText = marker === "see Programmes" ? "Programmes" : marker;
+    const linkStart = idx + marker.length - linkText.length;
+    return (
+      <>
+        {text.slice(0, linkStart)}
+        <Link href="/programmes" className={TEXT_LINK}>
+          {linkText}
+        </Link>
+        {text.slice(idx + marker.length)}
+      </>
+    );
+  }
+  return <>{text}</>;
+}
+
+function CareerColumn({
+  eyebrow,
+  rows,
+}: {
+  eyebrow: string;
+  rows: { name: string; line: string }[];
+}) {
   return (
-    <>
-      {text.slice(0, idx)}
-      <Link href="/programmes" className={TEXT_LINK}>
-        {marker}
-      </Link>
-      {text.slice(idx + marker.length)}
-    </>
+    <div className="border-t border-ink pt-4">
+      <p className={`${LABEL} mb-4`}>{eyebrow}</p>
+      <ul className="flex flex-col gap-4">
+        {rows.map((row) => (
+          <li key={row.name}>
+            <p className="text-[16px] font-bold text-ink leading-snug">{row.name}</p>
+            <p className="text-[15px] text-mid leading-relaxed">{row.line}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -418,8 +410,8 @@ export default function MsmeBusinessCoachPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* 1. HERO + STATS */}
-      <section className="py-10 md:py-14">
+      {/* 1. HERO + 2. STATS */}
+      <section id="hero" className="py-10 md:py-14">
         <div className={WRAP}>
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-start md:gap-12">
             <div className="md:basis-[55%]">
@@ -462,12 +454,12 @@ export default function MsmeBusinessCoachPage() {
                   alt="Premraj Menon"
                   width={56}
                   height={56}
-                  className="h-14 w-14 rounded-full object-cover object-top"
+                  className="h-14 w-14 shrink-0 rounded-full object-cover object-top"
                 />
                 <p className="text-[15px] leading-snug text-mid">
-                  <strong className="font-bold text-ink">Premraj Menon</strong>
-                  <br />
-                  Founder / Former COO, Tata Docomo Kerala Circle
+                  <strong className="font-bold text-ink">Premraj Menon</strong>{" "}
+                  · Former COO with full P&amp;L · Nearly 10 years inside MSMEs
+                  as co-founder and on the management team
                 </p>
               </div>
               <p className="text-[14px] text-light">
@@ -488,25 +480,21 @@ export default function MsmeBusinessCoachPage() {
             </div>
           </div>
 
-          <div className="mt-12 md:mt-14 grid grid-cols-1 min-[700px]:grid-cols-3 border-t border-rule">
-            {STATS.map((s, i) => (
-              <div
+          <ul className="mt-12 md:mt-14 grid grid-cols-1 gap-x-10 md:grid-cols-2 lg:grid-cols-4">
+            {STATS.map((s) => (
+              <li
                 key={s.num}
-                className={`py-6 min-[700px]:px-8 first:min-[700px]:pl-0 ${
-                  i > 0
-                    ? "border-t border-rule min-[700px]:border-t-0 min-[700px]:border-l"
-                    : ""
-                }`}
+                className="border-t border-rule py-6"
               >
-                <div className="whitespace-nowrap text-[56px] min-[700px]:text-[clamp(36px,4.6vw,66px)] italic font-normal text-red tracking-tight-1 leading-none mb-4">
+                <p className="whitespace-nowrap text-[40px] md:text-[44px] font-bold text-red tracking-tight-1 leading-none mb-3">
                   {s.num}
-                </div>
-                <div className="text-[12px] uppercase tracking-widest font-light text-light leading-relaxed whitespace-pre-line">
+                </p>
+                <p className="text-[14px] text-light leading-snug max-w-[260px]">
                   {s.label}
-                </div>
-              </div>
+                </p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -525,7 +513,7 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
-      {/* 2. RECOGNISE */}
+      {/* 3. RECOGNISE */}
       <section id="signs" className={SECTION}>
         <div className={WRAP}>
           <div className="max-w-[720px] mb-8 md:mb-10">
@@ -570,79 +558,73 @@ export default function MsmeBusinessCoachPage() {
             </ul>
           </div>
           <div className="mt-10 border-t border-rule pt-6">
-            <p className={`${BODY} mb-3`}>
-              Sound familiar? The first step is finding which one is really the
-              problem.
-            </p>
-            <Link href="/business-growth-review" className={`${TEXT_LINK} block text-[16px]`}>
-              Start with the Simple Diagnostic →
-            </Link>
+            <a
+              href={CONTACT_LINK}
+              data-cta="recognise"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${TEXT_LINK} block text-[16px]`}
+            >
+              Sound familiar? Tell Premraj which one →
+            </a>
           </div>
         </div>
       </section>
 
-      {/* 6. THE RIGHT FIT */}
-      <section id="fit" className={SECTION}>
-        <div className={WRAP}>
-          <div className="mb-10">
-            <Eyebrow>The right fit</Eyebrow>
-            <h2 className={`${H2} mb-5 min-[1200px]:whitespace-nowrap`}>
-              MSME business coaching{" "}
-              <span className="text-red">works best</span> for these situations
-            </h2>
-            <p className={`${BODY} max-w-[860px]`}>
-              This is for established businesses that have grown, but still run
-              the way they did when they were small: on the owner&rsquo;s
-              memory, the owner&rsquo;s calls and the owner&rsquo;s time. These
-              are the situations where this engagement helps most:
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-            {WHO_ITS_FOR.map((card) => (
-              <div key={card.title} className="border-t border-ink pt-5">
-                <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-[15px] text-mid leading-relaxed">
-                  {card.body}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 border-t border-rule pt-6">
-            <p className="text-[16px] leading-[1.7] text-mid max-w-[860px]">
-              <strong className="font-bold text-ink">Where we work.</strong>{" "}
-              Based in Bengaluru. The Diagnostic and the Simple Advisory run online
-              anywhere in India. The Reset happens on site, so it suits
-              founders in or able to meet regularly in Bengaluru. Also working
-              with{" "}
-              <Link
-                href="/tamil-nadu-msme-consultant"
-                className="underline decoration-rule underline-offset-4 transition-colors hover:text-red"
-              >
-                MSME owners across Tamil Nadu
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. WHAT CHANGES */}
+      {/* 4. WHAT CHANGES */}
       <section id="changes" className={SECTION}>
         <div className={WRAP}>
           <div className="mb-8 md:mb-10">
             <Eyebrow>What changes</Eyebrow>
-            <h2 className={`${H2} mb-5 lg:whitespace-nowrap`}>
+            <h2 className={`${H2} lg:whitespace-nowrap`}>
               What&rsquo;s different{" "}
               <span className="text-red">after we work together</span>
             </h2>
-            <p className={`${BODY} max-w-[720px]`}>
-              Recent engagements have been with trading and manufacturing
-              companies. The problems differ, but the work usually lands in one
-              of four places.
-            </p>
           </div>
+
+          <div className="mb-14 md:mb-16 grid gap-8 border-t border-ink pt-6 md:grid-cols-[5fr_7fr] md:gap-14">
+            <div>
+              <p className={`${LABEL} mb-3`}>
+                Business coaching for manufacturing: a recent engagement
+              </p>
+              <h3 className="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight-1 text-ink mb-3">
+                Flat for two years, two clients carrying the business.
+              </h3>
+              <p className="text-[14px] text-light">
+                Automobile components manufacturer · Bangalore · Simple
+                Diagnostic
+              </p>
+            </div>
+            <div className="flex flex-col gap-6">
+              {STORY_BLOCKS.map((block) => (
+                <div key={block.label}>
+                  <p
+                    className={`text-[11px] md:text-[13px] uppercase tracking-widest mb-2 ${
+                      block.strong ? "font-bold text-ink" : "font-light text-light"
+                    }`}
+                  >
+                    {block.label}
+                  </p>
+                  <p
+                    className={`text-[16px] md:text-[17px] leading-[1.7] ${
+                      block.strong ? "text-ink" : "text-mid"
+                    }`}
+                  >
+                    {block.text}
+                  </p>
+                </div>
+              ))}
+              <Link href="/client-success-stories" className={`${TEXT_LINK} text-[16px]`}>
+                Read more client stories →
+              </Link>
+            </div>
+          </div>
+
+          <p className={`${BODY} max-w-[720px] mb-8 md:mb-10`}>
+            Recent engagements have been with trading and manufacturing
+            companies. The problems differ, but the work usually lands in one
+            of four places.
+          </p>
           <div>
             <div
               aria-hidden="true"
@@ -699,7 +681,7 @@ export default function MsmeBusinessCoachPage() {
       {/* 5. WHO YOU'LL WORK WITH */}
       <section id="who" className={SECTION}>
         <div className={WRAP}>
-          <div className="grid gap-10 md:grid-cols-[340px_1fr] md:gap-14 md:items-center">
+          <div className="grid gap-10 md:grid-cols-[300px_1fr] lg:grid-cols-[340px_1fr] md:gap-14 md:items-start">
             <div>
               <Image
                 src="/images/landing/prem-menon-portrait.png"
@@ -720,31 +702,32 @@ export default function MsmeBusinessCoachPage() {
                 Premraj Menon · Founder, Simpleworks Consulting · MSME Business
                 Coach, Bengaluru
               </p>
-              <p className={`${BODY} mb-6`}>
-                Premraj Menon has coached founders and led businesses for 39
-                years, including as COO of Tata Docomo&rsquo;s Kerala Circle.
-                Simpleworks Consulting works only with Indian MSMEs, startups
-                and family businesses in the ₹10–200 crore range. Read his full
-                background on the{" "}
-                <Link href="/about" className={TEXT_LINK}>
-                  About page
-                </Link>
-                . He co-founded Viworks Ventures, joined the management team at
-                Neoffice, which won the ET-SIDBI Best Exporter award (Micro
-                Enterprise category) in 2019, and worked with around 3,000 MSME
-                partners over 30 years.
+              <p className="text-[18px] md:text-[20px] text-ink leading-[1.6] mb-8">
+                Most advisors bring one view of a business. Premraj Menon
+                brings two: the C-suite view from about 30 years in large
+                companies, rising to COO with full P&amp;L, and the
+                owner&rsquo;s view from nearly 10 years inside MSMEs. He now
+                works as a business coach in Bangalore for founder-led MSMEs
+                and SMEs.
               </p>
-              <dl className="mb-8 border-t border-rule">
-                {CAREER.map((row) => (
-                  <div
-                    key={row.k}
-                    className="grid grid-cols-[90px_1fr] gap-4 border-b border-rule py-3 text-[15px]"
-                  >
-                    <dt className="text-light">{row.k}</dt>
-                    <dd className="text-mid">{row.v}</dd>
-                  </div>
-                ))}
-              </dl>
+              <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 mb-8">
+                <CareerColumn
+                  eyebrow="The C-suite view · About 30 years"
+                  rows={CSUITE_VIEW}
+                />
+                <CareerColumn
+                  eyebrow="The owner’s view · Nearly 10 years"
+                  rows={OWNER_VIEW}
+                />
+              </div>
+              <p className="border-t border-rule pt-5 text-[16px] md:text-[17px] text-ink leading-[1.7] mb-3">
+                What that means for you: boardroom discipline on strategy,
+                P&amp;L and review, applied to a business where the owner signs
+                every cheque.
+              </p>
+              <p className="text-[14px] text-light mb-8">
+                IIM Bengaluru · Ross School of Business, University of Michigan
+              </p>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
                 <a
                   href={CONTACT_LINK}
@@ -764,41 +747,140 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
-      {/* 5. HOW IT WORKS */}
-      <section id="how" className={SECTION}>
+      {/* 6. THE RIGHT FIT */}
+      <section id="fit" className={SECTION}>
         <div className={WRAP}>
-          <div className="max-w-[720px] mb-10">
-            <Eyebrow>How it works</Eyebrow>
-            <h2 className={`${H2} mb-5`}>
-              A structured engagement —{" "}
-              <span className="text-red">built around your business</span>
+          <div className="mb-10">
+            <Eyebrow>The right fit</Eyebrow>
+            <h2 className={`${H2} mb-5 min-[1200px]:whitespace-nowrap`}>
+              MSME business coaching{" "}
+              <span className="text-red">works best</span> for these situations
             </h2>
-            <p className={BODY}>
-              This isn&rsquo;t a course, a seminar or a report left on your desk.
-              It&rsquo;s one-to-one work on your business, using a proven
-              five-stage process.
+            <p className={`${BODY} max-w-[860px]`}>
+              One-to-one coaching for MSME and SME owners whose business has
+              outgrown running on the owner&rsquo;s memory and time. A
+              business coach for MSMEs earns his fee in these five situations:
             </p>
           </div>
-          <ol className="grid grid-cols-1 gap-10 min-[900px]:grid-cols-5 min-[900px]:gap-7">
-            {STEPS.map((step, i) => (
-              <li key={step.title} className="border-t border-ink pt-5">
-                <p
+          <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            {WHO_ITS_FOR.map((cell) =>
+              cell.kind === "card" ? (
+                <div key={cell.title} className="border-t border-ink pt-5">
+                  <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
+                    {cell.title}
+                  </h3>
+                  <p className="text-[15px] text-mid leading-relaxed">
+                    {cell.body}
+                  </p>
+                </div>
+              ) : (
+                <div key="startup" className="border-t border-rule pt-5">
+                  <p className="text-[14px] text-light mb-2">Running a startup?</p>
+                  <Link
+                    href="/startup-mentor-bengaluru"
+                    className={`${TEXT_LINK} text-[16px]`}
+                  >
+                    See startup mentoring →
+                  </Link>
+                </div>
+              ),
+            )}
+          </div>
+          <div className="mt-12 border-t border-rule pt-6">
+            <p className="text-[16px] leading-[1.7] text-mid max-w-[860px]">
+              <strong className="font-bold text-ink">Where we work.</strong>{" "}
+              Based in Bangalore. In-person coaching happens on site in
+              Bangalore. The Simple Diagnostic and the Simple Advisory run
+              online across India. Also working with{" "}
+              <Link
+                href="/tamil-nadu-msme-consultant"
+                className="underline decoration-rule underline-offset-4 transition-colors hover:text-red"
+              >
+                MSME owners across Tamil Nadu
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. WHAT HAPPENS AFTER YOU MESSAGE */}
+      <section id="next-step" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-10">
+            <Eyebrow>Your first step</Eyebrow>
+            <h2 className={H2}>
+              What happens <span className="text-red">after you message.</span>
+            </h2>
+          </div>
+          <ol className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10 mb-12">
+            {NEXT_STEPS.map((step, i) => (
+              <li key={step} className="border-t border-ink pt-5">
+                <span
                   aria-hidden="true"
-                  className="text-[44px] font-bold leading-none text-ink mb-5"
+                  className="mb-3 block text-[22px] font-bold leading-none text-red"
                 >
                   {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="text-[19px] font-bold text-ink leading-snug mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-[15px] text-ink mb-3">{step.subline}</p>
-                <p className="text-[15px] text-mid leading-relaxed">
-                  {step.body}
+                </span>
+                <p className="text-[19px] md:text-[20px] leading-snug text-ink">
+                  {step}
                 </p>
               </li>
             ))}
           </ol>
-          <p className="mt-10 text-[15px] leading-[1.7] text-mid max-w-[860px]">
+          <div className="flex flex-col gap-6 border-t border-rule pt-6 md:flex-row md:items-center md:justify-between md:gap-12">
+            <p className={`${BODY} max-w-[760px]`}>
+              If it&rsquo;s a fit, most founders start with the Simple
+              Diagnostic: one problem you name, worked through in half a day.{" "}
+              <strong className="font-bold text-ink">
+                You pay after the engagement, not before.
+              </strong>{" "}
+              Premraj will sign an NDA before you share your numbers.
+            </p>
+            <div className="shrink-0">
+              <a
+                href={CONTACT_LINK}
+                data-cta="next-step"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={BTN}
+              >
+                WhatsApp Premraj
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. HOW IT WORKS + FEES */}
+      <section id="fees" className={SECTION}>
+        <div className={WRAP}>
+          <div className="max-w-[720px] mb-10">
+            <Eyebrow>How it works, and what it costs</Eyebrow>
+            <h2 className={`${H2} mb-5`}>
+              A structured engagement —{" "}
+              <span className="text-red">built around your business.</span>
+            </h2>
+            <p className={BODY}>
+              Premraj Menon&rsquo;s fees are fixed and published. No hourly
+              billing.
+            </p>
+          </div>
+
+          <ol className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 min-[960px]:grid-cols-5">
+            {STEPS.map((step) => (
+              <li key={step.title} className="border-t border-rule pt-4">
+                <p className="text-[11px] uppercase tracking-widest font-light text-light mb-2">
+                  {step.label}
+                </p>
+                <h3 className="text-[17px] font-bold text-ink leading-snug mb-1">
+                  {step.title}
+                </h3>
+                <p className="text-[15px] text-mid leading-snug">{step.subline}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-8 text-[15px] leading-[1.7] text-mid max-w-[860px]">
             Not sure how to tell a real fit from a generic one? Read{" "}
             <Link
               href="/blog/how-to-choose-the-right-msme-business-coach-in-india"
@@ -808,115 +890,73 @@ export default function MsmeBusinessCoachPage() {
             </Link>{" "}
             for the five questions worth asking before you commit.
           </p>
-        </div>
-      </section>
 
-      {/* 8. FEES */}
-      <section id="fees" className={SECTION}>
-        <div className={WRAP}>
-          <Eyebrow>Fees</Eyebrow>
-          <h2 className={`${H2} mb-6`}>
-            One path, three stages.{" "}
-            <span className="text-red">Stop at any of them.</span>
-          </h2>
-          <p className={`${BODY} mb-10 max-w-[720px]`}>
-            Most coaches tell you their fee only after a sales call. Here it is
-            upfront. You start small: the first stage is {STAGES[0].price} for
-            half a day. Each stage has its own fixed fee, and you move to the
-            next one only if the last one earned it.
-          </p>
-          <div className="mb-10 flex flex-col min-[860px]:grid min-[860px]:grid-cols-3 min-[860px]:grid-rows-[repeat(8,auto)]">
-            {STAGES.map((stage, i) => (
-              <div
-                key={stage.name}
-                className="relative flex flex-col border-l border-ink pb-10 pl-[34px] last:pb-0 min-[860px]:row-span-8 min-[860px]:grid min-[860px]:grid-rows-subgrid min-[860px]:border-l-0 min-[860px]:border-t min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-8 min-[860px]:pt-[34px]"
+          {/* 8b. Start here */}
+          <div className="mt-14 grid gap-6 border-t border-ink pt-6 md:grid-cols-[1fr_1fr_1.4fr] md:gap-10">
+            <div>
+              <p className={`${LABEL} mb-2`}>Start here</p>
+              <h3 className="text-[24px] font-bold leading-[1.25] text-red">
+                The Simple Diagnostic
+              </h3>
+            </div>
+            <div>
+              <p className="text-[32px] font-bold leading-none text-ink mb-2 [font-variant-numeric:tabular-nums]">
+                ₹25,000
+              </p>
+              <p className="text-[14px] text-light">
+                Half a day · In person or online
+              </p>
+            </div>
+            <div>
+              <p className={`${BODY} mb-4`}>
+                One problem you name. A three-hour working session (two or
+                three shorter sessions online), a written brief and a one-hour
+                walkthrough.{" "}
+                <strong className="font-bold text-ink">
+                  Paid after the engagement.
+                </strong>
+              </p>
+              <Link
+                href="/business-growth-review"
+                data-cta="fees"
+                className={`${TEXT_LINK} text-[15px]`}
               >
-                <span
-                  aria-hidden="true"
-                  className={`absolute -left-[7px] top-[2px] h-[13px] w-[13px] rounded-full border border-ink min-[860px]:-top-[7px] min-[860px]:left-0 ${
-                    i === 0 ? "bg-ink" : "bg-white"
-                  }`}
-                />
-                <p className="mb-3 text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
-                  {stage.stepLabel}
-                </p>
-                <h3 className="mb-1 text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]">
-                  <ProgrammeName name={stage.name} />
+                See what the Diagnostic covers →
+              </Link>
+            </div>
+          </div>
+
+          {/* 8c. Ongoing coaching */}
+          <p className="mt-14 mb-6 text-[19px] md:text-[20px] font-bold text-ink">
+            Then, ongoing coaching. Choose how you work.
+          </p>
+          <div className="grid gap-10 md:grid-cols-2 md:gap-12">
+            {ONGOING.map((p) => (
+              <div key={p.name} className="border-t border-ink pt-5">
+                <p className={`${LABEL} mb-2`}>{p.eyebrow}</p>
+                <h3 className="text-[24px] font-bold leading-[1.25] text-red mb-3">
+                  {p.name}
                 </h3>
-                <p className="mb-4 text-[14px] text-light">{stage.covers}</p>
-                <p className="mb-1 whitespace-nowrap text-[22px] font-bold leading-[1.15] text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[clamp(17px,2vw,26px)]">
-                  <span className="whitespace-nowrap">{stage.price}</span>
-                  {stage.priceSuffix && (
-                    <>
-                      {" "}
-                      <span
-                        className={
-                          stage.suffixIsPrice
-                            ? "whitespace-nowrap"
-                            : "text-[16px] font-normal text-mid"
-                        }
-                      >
-                        {stage.priceSuffix}
-                      </span>
-                    </>
-                  )}
+                <p className="mb-1 whitespace-nowrap [font-variant-numeric:tabular-nums]">
+                  <span className="text-[32px] font-bold leading-none text-ink">
+                    {p.price}
+                  </span>{" "}
+                  <span className="text-[16px] text-mid">{p.suffix}</span>
                 </p>
-                <p className="mb-4 text-[14px] text-light">{stage.term}</p>
-                <p className="mb-4 text-[16px] md:text-[17px] leading-[1.78] text-mid">
-                  {stage.description}
-                </p>
-                <p className="mb-4 min-[860px]:min-h-0">
-                  {stage.linkHref && (
-                    <Link
-                      href={stage.linkHref}
-                      data-cta="fees"
-                      className="text-[15px] text-red hover:underline"
-                    >
-                      {stage.linkLabel}
-                    </Link>
-                  )}
-                </p>
-                <p className="mt-auto border-t border-rule pt-4 min-[860px]:mt-0 min-[860px]:self-start min-[860px]:w-full text-[15px] leading-[1.65] text-mid">
-                  <strong className="font-bold text-ink">Then:</strong>{" "}
-                  {stage.then}
-                </p>
+                <p className="text-[14px] text-light mb-4">{p.caption}</p>
+                <p className={BODY}>{p.text}</p>
               </div>
             ))}
           </div>
-          <div className="grid gap-4 border-t border-rule py-8 min-[860px]:grid-cols-3 min-[860px]:gap-8">
-            <div>
-              <p className="mb-3 text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
-                {SIDE_OPTION.eyebrow}
-              </p>
-              <h3 className="mb-1 text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]">
-                <ProgrammeName name={SIDE_OPTION.name} />
-              </h3>
-              <p className="text-[14px] text-light">{SIDE_OPTION.termLine}</p>
-            </div>
-            <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid">
-              {SIDE_OPTION.description}
-            </p>
-            <div>
-              <p className="mb-4 whitespace-nowrap text-[22px] font-bold leading-[1.15] text-ink [font-variant-numeric:tabular-nums] min-[860px]:text-[clamp(17px,2vw,26px)]">
-                <span>{SIDE_OPTION.price}</span>{" "}
-                <span className="text-[16px] font-normal text-mid">
-                  {SIDE_OPTION.priceSuffix}
-                </span>
-              </p>
-              <p className="text-[15px] leading-[1.65] text-mid">
-                <strong className="font-bold text-ink">Then:</strong>{" "}
-                {SIDE_OPTION.then}
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col gap-2 border-t border-rule pt-5 sm:flex-row sm:items-baseline sm:justify-between">
-            <p className="text-[15px] leading-relaxed text-mid">
-              Fixed fees. No hourly billing. Each stage is agreed on its own.
-            </p>
-            <Link href="/programmes" className="text-[15px] text-red hover:underline">
-              See how the programmes work →
+
+          {/* 8d. Reset line */}
+          <p className="mt-12 border-t border-rule pt-5 text-[16px] md:text-[17px] leading-[1.7] text-mid">
+            Need hands-on fixing on site? The 30 or 60-day Simple Reset adds a
+            weekly on-site visit.{" "}
+            <Link href="/programmes" className={TEXT_LINK}>
+              See Programmes →
             </Link>
-          </div>
+          </p>
         </div>
       </section>
 
@@ -979,7 +1019,44 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
-      {/* 9. THE ROLE */}
+      {/* 10. CLOSING CTA */}
+      <section id="book" className="border-t border-rule py-14 md:py-24">
+        <div className={`${WRAP} text-center`}>
+          <div className="max-w-[820px] mx-auto">
+            <Eyebrow>Next step</Eyebrow>
+            <h2 className="text-[32px] leading-[1.15] md:text-[52px] font-bold tracking-tight-1 text-ink mb-6">
+              Ready to think clearly{" "}
+              <span className="text-red">about your business?</span>
+            </h2>
+            <p className={`${BODY} mb-10`}>
+              Start with a quick introductory conversation. No commitment, no
+              pitch — just a clear-eyed look at what your MSME is dealing with
+              and whether this helps.
+            </p>
+            <a
+              href={CONTACT_LINK}
+              data-cta="final-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={BTN}
+            >
+              WhatsApp Premraj
+            </a>
+            <p className="mt-6 text-[14px] text-light">
+              Or call{" "}
+              <a href="tel:+919036099000" className={TEXT_LINK}>
+                {FACTS.phone}
+              </a>{" "}
+              ·{" "}
+              <a href={`mailto:${FACTS.email}`} className={TEXT_LINK}>
+                {FACTS.email}
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. THE ROLE */}
       <section id="role" className={SECTION}>
         <div className={WRAP}>
           <div className="max-w-[860px]">
@@ -1039,7 +1116,7 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
-      {/* 7. WHY DIFFERENT + PREMRAJ */}
+      {/* 12. WHY DIFFERENT */}
       <section id="why" className={SECTION}>
         <div className={WRAP}>
           <div className="mb-10">
@@ -1081,57 +1158,7 @@ export default function MsmeBusinessCoachPage() {
         </div>
       </section>
 
-      {/* 11. CLOSING CTA */}
-      <section id="book" className="border-t border-rule py-14 md:py-24">
-        <div className={`${WRAP} text-center`}>
-          <div className="max-w-[820px] mx-auto">
-            <Eyebrow>Next step</Eyebrow>
-            <h2 className="text-[32px] leading-[1.15] md:text-[52px] font-bold tracking-tight-1 text-ink mb-6">
-              Ready to think clearly{" "}
-              <span className="text-red">about your business?</span>
-            </h2>
-            <p className={`${BODY} mb-8`}>
-              Start with a quick introductory conversation. No commitment, no
-              pitch — just a clear-eyed look at what your MSME is dealing with
-              and whether this helps.
-            </p>
-            <ol className="mb-10 grid grid-cols-1 gap-6 text-left md:grid-cols-3 md:gap-8">
-              {CTA_STEPS.map((step, i) => (
-                <li key={step} className="border-t border-ink pt-4">
-                  <span
-                    aria-hidden="true"
-                    className="mb-2 block text-[15px] font-bold text-light"
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-[16px] leading-snug text-ink">{step}</p>
-                </li>
-              ))}
-            </ol>
-            <a
-              href={CONTACT_LINK}
-              data-cta="final-cta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={BTN}
-            >
-              WhatsApp Premraj
-            </a>
-            <p className="mt-6 text-[14px] text-light">
-              Or call{" "}
-              <a href="tel:+919036099000" className={TEXT_LINK}>
-                {FACTS.phone}
-              </a>{" "}
-              ·{" "}
-              <a href={`mailto:${FACTS.email}`} className={TEXT_LINK}>
-                {FACTS.email}
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. READ MORE */}
+      {/* 13. READ MORE */}
       <section id="read" className={`${SECTION} border-b`}>
         <div className={WRAP}>
           <div className="max-w-[720px] mb-8 md:mb-10">
@@ -1171,8 +1198,20 @@ export default function MsmeBusinessCoachPage() {
               </article>
             ))}
           </div>
+          <p className="mt-10">
+            <Link href="/blog" className={`${TEXT_LINK} text-[16px]`}>
+              All articles on the blog →
+            </Link>
+          </p>
         </div>
       </section>
+
+      {/* 14. FLOATING WHATSAPP (phones only) */}
+      <FloatingWhatsApp
+        href={CONTACT_LINK}
+        heroId="hero"
+        hideWhileVisibleId="book"
+      />
     </main>
   );
 }

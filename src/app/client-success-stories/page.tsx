@@ -125,6 +125,18 @@ export default async function ClientSuccessStoriesPage() {
                     <strong className="font-bold text-ink">What we did:</strong>{" "}
                     {story.solution}
                   </p>
+                  {story.outcome ? (
+                    <p className="mt-3 text-[15px] leading-[1.7] text-mid">
+                      <strong className="font-bold text-ink">What&rsquo;s changed so far:</strong>{" "}
+                      {story.outcome}
+                    </p>
+                  ) : null}
+                  {story.revenue ? (
+                    <p className="mt-3 text-[15px] leading-[1.7] text-mid">
+                      <strong className="font-bold text-ink">Revenue:</strong>{" "}
+                      {story.revenue}
+                    </p>
+                  ) : null}
                   {story.meta ? (
                     <p className="mt-4 text-[12px] tracking-wide-3 text-light">
                       {story.meta}
