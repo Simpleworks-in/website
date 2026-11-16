@@ -30,15 +30,15 @@ const PROOF_ITEMS = [
       "inside MSMEs: co-founder of Viworks Ventures, then on the management team at Neoffice",
   },
   {
-    lead: "About ",
-    red: "3,000",
-    caption: "MSME partners worked with and coached over 30 years",
+    lead: "",
+    red: "3,000 MSME partners",
+    caption: "who I have worked with and coached in my 30 years of work experience",
   },
   {
     lead: "",
     red: "2019",
     caption:
-      "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
+      "ET-SIDBI MSME Awards: Best Exporter in the Micro Enterprise category, won by Neoffice.Ai",
   },
 ];
 

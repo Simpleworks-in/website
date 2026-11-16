@@ -39,6 +39,15 @@ const TAGLINE_ITEMS = [
   "Bengaluru",
 ];
 
+const STUCK_POINTS = [
+  "We’ve reached a certain size, and I’m no longer sure where to take the business next.",
+  "Revenue has been flat for years, though we’re all working harder.",
+  "The business has outgrown the way I run it, and managing it is getting harder.",
+  "My team waits for instructions instead of taking ownership.",
+  "Every decision, big or small, still ends up on my desk.",
+  "My days go on firefighting, so I never get time to work on the business.",
+];
+
 const SERVICES = [
   {
     num: "01",
@@ -152,9 +161,17 @@ export default function HomePage() {
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
           Business not growing? <span className="text-red">Find out why.</span>
         </h2>
-        <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-          My revenue hasn&rsquo;t moved in three years, though we&rsquo;re all working harder. My dealers are ordering less, or only when there&rsquo;s a scheme. We hit our sales targets and the margin still shrinks. Every decision, big or small, still ends up on my desk. And my own days disappear into firefighting, so I never get time to work on the business.
-        </p>
+        <ul className="max-w-body-text flex flex-col gap-3">
+          {STUCK_POINTS.map((point) => (
+            <li
+              key={point}
+              className="flex items-start gap-4 text-[16px] md:text-[17px] leading-[1.78] text-ink"
+            >
+              <span className="mt-[0.8em] w-[6px] h-[6px] rounded-full bg-red flex-shrink-0" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
         <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
           Premraj Menon has been in this seat. He spent 39 years running sales, distribution and P&amp;Ls in Indian businesses, in large companies and in MSMEs, and he helps you find what&rsquo;s really holding yours back, and gives your own hours back to the work only you can do.
         </p>
