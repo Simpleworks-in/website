@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { pushEvent } from "@/lib/tracking";
 
@@ -70,6 +70,17 @@ export default function ContactForm({
   const [interestParam, setInterestParam] = useState("");
   const [sourcePage, setSourcePage] = useState("");
   const [oneThingError, setOneThingError] = useState(false);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // The success message is much shorter than the form it replaces. Without
+  // this, the viewport is left where the submit button was, over blank space.
+  useEffect(() => {
+    if (status !== "success") return;
+    const el = successRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.focus({ preventScroll: true });
+  }, [status]);
 
   // Query string and referrer only exist in the browser, so they are read after mount.
   /* eslint-disable react-hooks/set-state-in-effect */
@@ -137,12 +148,30 @@ export default function ContactForm({
 
   if (status === "success") {
     return (
-      <div>
+      <div
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        className="border-l-2 border-red py-2 pl-6 outline-none"
+      >
         <h3 className="mb-3 text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]">
-          Thank you.
+          Thank you. Your note has reached Premraj.
         </h3>
         <p className="text-[16px] leading-[1.78] text-mid md:text-[17px]">
           Premraj will reply personally within one business day.
+        </p>
+        <p className="mt-4 text-[15px] leading-[1.7] text-light">
+          Need to talk sooner?{" "}
+          <a
+            href={whatsappHref}
+            data-cta="contact-form-success"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red underline hover:no-underline"
+          >
+            Message on WhatsApp
+          </a>
+          .
         </p>
       </div>
     );

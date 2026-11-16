@@ -305,38 +305,42 @@ export default function HomePage() {
       {/* ── 6. CLIENT STORY ── */}
       <section className={SECTION}>
         <SectionHeader eyebrow={STORY.eyebrow} heading={STORY.heading} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
-          <div className="border-l-2 border-red pl-6">
-            <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-4">
-              {STORY.caption}
-            </p>
-            <h3 className="text-[24px] md:text-[30px] font-bold leading-[1.25] text-ink mb-4">
-              {STORY.title}
-            </h3>
-            <p className="text-[14px] text-light">{STORY.note}</p>
-          </div>
-          <div>
-            <dl>
-              {STORY.rows.map((row) => (
-                <div key={row.label} className={HAIRLINE_ITEM}>
-                  <dt className="text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-2">
-                    {row.label}
-                  </dt>
-                  <dd
-                    className={`text-[16px] md:text-[17px] leading-[1.7] ${
-                      row.emphasis ? "text-ink" : "text-mid"
-                    }`}
-                  >
-                    {row.text}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <Link href={STORY.link.href} className={`${TEXT_LINK} inline-block mt-2`}>
-              {STORY.link.label} &rarr;
-            </Link>
-          </div>
+        {/* Pull-quote headline across the top, then the story in three
+            columns that read left to right: problem → action → result. */}
+        <div className="border-l-2 border-red pl-6 max-w-[760px] mb-10">
+          <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-4">
+            {STORY.caption}
+          </p>
+          <h3 className="text-[24px] md:text-[30px] font-bold leading-[1.25] text-ink mb-3">
+            {STORY.title}
+          </h3>
+          <p className="text-[14px] text-light">{STORY.note}</p>
         </div>
+        <dl className="grid grid-cols-1 md:grid-cols-3 gap-x-8">
+          {STORY.rows.map((row, i) => (
+            <div
+              key={row.label}
+              className={`${HAIRLINE_ITEM} ${row.emphasis ? "md:border-t-2 md:border-ink" : ""}`}
+            >
+              <dt className="flex items-baseline gap-3 text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-3">
+                <span className="text-[15px] font-bold text-red tracking-wide-2">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                {row.label}
+              </dt>
+              <dd
+                className={`text-[16px] md:text-[17px] leading-[1.7] ${
+                  row.emphasis ? "text-ink font-bold" : "text-mid"
+                }`}
+              >
+                {row.text}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <Link href={STORY.link.href} className={`${TEXT_LINK} inline-block mt-4`}>
+          {STORY.link.label} &rarr;
+        </Link>
       </section>
 
       {/* ── 7. HOW TO START ── */}
