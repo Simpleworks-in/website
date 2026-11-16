@@ -613,53 +613,33 @@ export default function MsmeBusinessCoachPage() {
             companies. The problems differ, but the work usually lands in one
             of four places.
           </p>
-          <div>
-            <div
-              aria-hidden="true"
-              className="hidden min-[700px]:grid grid-cols-[1fr_40px_1.25fr] gap-6 pb-3"
-            >
-              <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light">
-                Before
-              </p>
-              <span />
-              <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-bold text-ink">
-                After working together
-              </p>
-            </div>
-            <ul>
-              {CHANGES.map((row, i) => (
-                <li
-                  key={row.area}
-                  className={`grid grid-cols-1 gap-3 py-5 min-[700px]:grid-cols-[1fr_40px_1.25fr] min-[700px]:items-center min-[700px]:gap-6 border-t ${
-                    i === 0 ? "border-ink" : "border-rule"
-                  } ${i === CHANGES.length - 1 ? "border-b border-b-rule" : ""}`}
-                >
-                  <p className="text-[17px] text-light leading-[1.6]">
-                    {row.before}
-                  </p>
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 40 12"
-                    className="hidden min-[700px]:block w-10 h-3 text-ink"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  >
-                    <path d="M0 6h38M33 1l5 5-5 5" />
-                  </svg>
-                  <div>
-                    <p className="text-[11px] uppercase tracking-widest font-light text-light mb-1">
-                      {row.area}
-                    </p>
-                    <p className="text-[20px] md:text-[24px] font-bold text-ink leading-[1.3]">
-                      {row.after}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p className="mt-6 text-[14px] text-light">
+          <ul className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+            {CHANGES.map((row, i) => (
+              <li key={row.area} className="flex flex-col border-t border-ink pt-5">
+                <p className="mb-4 flex items-baseline gap-3">
+                  <span aria-hidden="true" className="text-[13px] font-bold text-light">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[18px] font-bold text-ink leading-snug">
+                    {row.area}
+                  </span>
+                </p>
+                <p className="text-[11px] uppercase tracking-widest font-light text-light mb-1">
+                  Before
+                </p>
+                <p className="text-[15px] text-light leading-[1.6] mb-4">
+                  {row.before}
+                </p>
+                <p className="mt-auto border-t border-rule pt-4 text-[11px] uppercase tracking-widest font-bold text-ink mb-1">
+                  After working together
+                </p>
+                <p className="text-[18px] md:text-[19px] font-bold text-ink leading-[1.35]">
+                  {row.after}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-[14px] text-light">
             From recent engagements with trading and manufacturing companies.
             Client names are kept confidential.
           </p>
