@@ -155,11 +155,9 @@ export default function HomePage() {
 
       {/* ── BUSINESS NOT GROWING ── */}
       <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
-        <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
-          Where founders get stuck
-        </p>
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-          Business not growing? <span className="text-red">Find out why.</span>
+          Turnover is stuck.{" "}
+          <span className="text-red">And everything still depends on you.</span>
         </h2>
         <ul className="max-w-body-text flex flex-col gap-3">
           {STUCK_POINTS.map((point) => (

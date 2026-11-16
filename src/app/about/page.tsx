@@ -24,7 +24,7 @@ export const metadata = {
 // accented part of the figure.
 const PROOF_ITEMS = [
   {
-    lead: "Nearly ",
+    lead: "",
     red: "10 years",
     caption:
       "inside MSMEs: co-founder of Viworks Ventures, then on the management team at Neoffice",
