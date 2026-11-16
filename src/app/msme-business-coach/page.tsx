@@ -418,8 +418,8 @@ export default function MsmeBusinessCoachPage() {
                 One-to-one MSME business coach in Bangalore &amp; India
               </h1>
               <p className="text-[38px] leading-[1.1] md:text-[56px] md:leading-[1.08] font-bold tracking-tight-1 text-ink mb-6">
-                Is your business busy every day, yet not growing{" "}
-                <span className="text-red">the way it should?</span>
+                Is your business busy every day,{" "}
+                <span className="text-red">yet not growing the way it should?</span>
               </p>
               <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-8">
                 Not a seminar, not a report. A former COO with about 30 years in
