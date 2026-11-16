@@ -339,7 +339,7 @@ const serviceSchema = {
 };
 
 const WRAP = "max-w-[1200px] mx-auto px-4 md:px-10";
-const SECTION = "border-t border-rule py-12 md:py-20";
+const SECTION = "border-t border-rule py-12 md:py-16";
 const EYEBROW =
   "text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light mb-3";
 const H2 =
@@ -541,23 +541,20 @@ export default function MsmeBusinessCoachPage() {
               {PAIN_QUOTES.map((quote) => (
                 <li
                   key={quote}
-                  className="flex gap-4 border-b border-rule py-5"
+                  className="flex items-start gap-4 border-b border-rule py-4"
                 >
                   <span
                     aria-hidden="true"
-                    className="text-[44px] leading-[0.9] text-red"
-                  >
-                    &ldquo;
-                  </span>
-                  <p className="italic text-[19px] md:text-[22px] leading-[1.4] text-ink">
-                    {quote.replace(/^[“"]|[”"]$/g, "")}
-                    <span aria-hidden="true" className="text-red">&rdquo;</span>
+                    className="mt-[0.6em] h-[7px] w-[7px] shrink-0 rounded-full bg-red"
+                  />
+                  <p className="text-[17px] md:text-[19px] leading-[1.5] text-ink">
+                    {quote}
                   </p>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="mt-10 border-t border-rule pt-6">
+          <div className="mt-8 border-t border-rule pt-5">
             <a
               href={CONTACT_LINK}
               data-cta="recognise"
@@ -582,7 +579,7 @@ export default function MsmeBusinessCoachPage() {
             </h2>
           </div>
 
-          <div className="mb-14 md:mb-16 grid gap-8 border-t border-ink pt-6 md:grid-cols-[5fr_7fr] md:gap-14">
+          <div className="mb-10 md:mb-12 grid gap-8 border-t border-ink pt-6 md:grid-cols-[5fr_7fr] md:gap-14">
             <div>
               <p className={`${LABEL} mb-3`}>
                 Business coaching for manufacturing: a recent engagement
@@ -599,9 +596,7 @@ export default function MsmeBusinessCoachPage() {
               {STORY_BLOCKS.map((block) => (
                 <div key={block.label}>
                   <p
-                    className={`text-[11px] md:text-[13px] uppercase tracking-widest mb-2 ${
-                      block.strong ? "font-bold text-ink" : "font-light text-light"
-                    }`}
+                    className="text-[11px] md:text-[13px] uppercase tracking-widest font-bold text-red mb-2"
                   >
                     {block.label}
                   </p>
@@ -786,7 +781,7 @@ export default function MsmeBusinessCoachPage() {
               ),
             )}
           </div>
-          <div className="mt-12 border-t border-rule pt-6">
+          <div className="mt-10 border-t border-rule pt-6">
             <p className="text-[16px] leading-[1.7] text-mid max-w-[860px]">
               <strong className="font-bold text-ink">Where we work.</strong>{" "}
               Based in Bangalore. In-person coaching happens on site in
@@ -813,7 +808,7 @@ export default function MsmeBusinessCoachPage() {
               What happens <span className="text-red">after you message.</span>
             </h2>
           </div>
-          <ol className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10 mb-12">
+          <ol className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10 mb-10">
             {NEXT_STEPS.map((step, i) => (
               <li key={step} className="border-t border-ink pt-5">
                 <span
@@ -892,7 +887,7 @@ export default function MsmeBusinessCoachPage() {
           </p>
 
           {/* 8b. Start here */}
-          <div className="mt-14 grid gap-6 border-t border-ink pt-6 md:grid-cols-[1fr_1fr_1.4fr] md:gap-10">
+          <div className="mt-12 grid gap-6 border-t border-ink pt-6 md:grid-cols-[1fr_1fr_1.4fr] md:gap-10">
             <div>
               <p className={`${LABEL} mb-2`}>Start here</p>
               <h3 className="text-[24px] font-bold leading-[1.25] text-red">
@@ -927,7 +922,7 @@ export default function MsmeBusinessCoachPage() {
           </div>
 
           {/* 8c. Ongoing coaching */}
-          <p className="mt-14 mb-6 text-[19px] md:text-[20px] font-bold text-ink">
+          <p className="mt-12 mb-6 text-[19px] md:text-[20px] font-bold text-ink">
             Then, ongoing coaching. Choose how you work.
           </p>
           <div className="grid gap-10 md:grid-cols-2 md:gap-12">
@@ -950,7 +945,7 @@ export default function MsmeBusinessCoachPage() {
           </div>
 
           {/* 8d. Reset line */}
-          <p className="mt-12 border-t border-rule pt-5 text-[16px] md:text-[17px] leading-[1.7] text-mid">
+          <p className="mt-10 border-t border-rule pt-5 text-[16px] md:text-[17px] leading-[1.7] text-mid">
             Need hands-on fixing on site? The 30 or 60-day Simple Reset adds a
             weekly on-site visit.{" "}
             <Link href="/programmes" className={TEXT_LINK}>
@@ -1020,7 +1015,7 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* 10. CLOSING CTA */}
-      <section id="book" className="border-t border-rule py-14 md:py-24">
+      <section id="book" className="border-t border-rule py-14 md:py-20">
         <div className={`${WRAP} text-center`}>
           <div className="max-w-[820px] mx-auto">
             <Eyebrow>Next step</Eyebrow>
@@ -1078,7 +1073,7 @@ export default function MsmeBusinessCoachPage() {
               founder&rsquo;s bandwidth.
             </p>
           </div>
-          <div className="mt-12 md:mt-[70px] grid gap-10 md:grid-cols-2 md:gap-14">
+          <div className="mt-10 md:mt-12 grid gap-10 md:grid-cols-2 md:gap-14">
             <div className="border-t border-rule pt-5">
               <p className="text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light mb-3">
                 Most MSME coaching in India
