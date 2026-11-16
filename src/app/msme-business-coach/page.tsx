@@ -45,7 +45,7 @@ const PAIN_QUOTES = [
   "“We have no real GTM plan — we just chase every lead that comes.”",
 ];
 
-// The fifth grid cell (where the startup card used to be) is a pointer to
+// The last grid cell is a pointer to
 // /startup-mentor-bengaluru, not a fit card.
 type FitCell =
   | { kind: "card"; title: string; body: string }
@@ -72,12 +72,12 @@ const WHO_ITS_FOR: FitCell[] = [
     title: "First-generation entrepreneurs",
     body: "You’ve crossed ₹10 crore in revenue but growth has plateaued — and you’re not sure whether the problem is strategy, sales, or execution.",
   },
-  { kind: "startup" },
   {
     kind: "card",
     title: "Founders preparing for a growth leap",
     body: "You have a clear ambition — a new market, a new product line, a new city — and need structured thinking before you commit resources.",
   },
+  { kind: "startup" },
 ];
 
 const STORY_BLOCKS = [
