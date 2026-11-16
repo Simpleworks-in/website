@@ -212,7 +212,7 @@ export default function HomePage() {
             </div>
           ))}
         </dl>
-        <p className={`${BODY} max-w-[720px] mt-6`}>
+        <p className={`${BODY} max-w-[720px] mt-2`}>
           {WHO.paraBefore}
           {WHO.hubLinks.map((link, i) => (
             <span key={link.href}>
@@ -233,9 +233,9 @@ export default function HomePage() {
           <Heading heading={SERVICES.heading} />
           <p className={`${BODY} max-w-body-text mt-4 md:mt-5`}>{SERVICES.intro}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
           {SERVICES.cards.map((card) => (
-            <div key={card.num} className={`${HAIRLINE_ITEM} flex flex-col`}>
+            <div key={card.num} className="border-t-[0.5px] border-rule pt-[22px] flex flex-col">
               <p className="text-[15px] font-bold text-red mb-3 tracking-wide-2">{card.num}</p>
               <h3 className="text-[20px] md:text-[22px] font-bold leading-[1.3] text-ink mb-3">
                 {card.title}
@@ -252,7 +252,9 @@ export default function HomePage() {
       {/* ── 5. WHY SIMPLEWORKS ── */}
       <section className={SECTION}>
         <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,300px)_1fr] xl:grid-cols-[minmax(0,420px)_1fr] gap-10 lg:gap-14 items-start">
+        {/* Desktop: portrait with the CTA under it on the left, text on the
+            right. Mobile: portrait, text, then the CTA last. */}
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,300px)_1fr] xl:grid-cols-[minmax(0,360px)_1fr] lg:grid-rows-[auto_1fr] gap-x-14 gap-y-8 items-start">
           <Image
             src="/premraj-menon-msme-growth-consultant.png"
             alt={WHY.portraitAlt}
@@ -261,11 +263,11 @@ export default function HomePage() {
             sizes="(min-width: 468px) 420px, 100vw"
             className="mix-blend-multiply w-full max-w-[420px] h-auto aspect-square"
           />
-          <div>
+          <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2">
             <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-4">
               {WHY.h3}
             </h3>
-            <p className={`${BODY} max-w-[680px] mb-6`}>{WHY.lead}</p>
+            <p className={`${BODY} max-w-[680px] mb-2`}>{WHY.lead}</p>
             <dl>
               {WHY.proof.map((row) => (
                 <div
@@ -282,23 +284,23 @@ export default function HomePage() {
             <p className="text-[15px] text-light leading-[1.6] border-t-[0.5px] border-rule pt-[22px]">
               {WHY.credentials}
             </p>
-            <div className="flex flex-col gap-2 mt-5">
+            <div className="flex flex-col gap-2 mt-4">
               {WHY.links.map((link) => (
                 <Link key={link.href} href={link.href} className={TEXT_LINK}>
                   {link.label} &rarr;
                 </Link>
               ))}
             </div>
-            <a
-              href={whatsappHref(WHY.cta.whatsappText)}
-              data-cta={WHY.cta.dataCta}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${BUTTON} mt-8`}
-            >
-              {WHY.cta.label} &nbsp;→
-            </a>
           </div>
+          <a
+            href={whatsappHref(WHY.cta.whatsappText)}
+            data-cta={WHY.cta.dataCta}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${BUTTON} lg:col-start-1 lg:row-start-2`}
+          >
+            {WHY.cta.label} &nbsp;→
+          </a>
         </div>
       </section>
 
@@ -307,7 +309,7 @@ export default function HomePage() {
         <SectionHeader eyebrow={STORY.eyebrow} heading={STORY.heading} />
         {/* Pull-quote headline across the top, then the story in three
             columns that read left to right: problem → action → result. */}
-        <div className="border-l-2 border-red pl-6 max-w-[760px] mb-10">
+        <div className="border-l-2 border-red pl-6 max-w-[760px] mb-6">
           <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-4">
             {STORY.caption}
           </p>
@@ -370,7 +372,7 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <div className={`${ACTION_ROW} border-t-[0.5px] border-rule mt-10 pt-8`}>
+        <div className={`${ACTION_ROW} border-t-[0.5px] border-rule mt-8 pt-6`}>
           <a href={PROGRAMMES.cta.href} data-cta={PROGRAMMES.cta.dataCta} className={BUTTON}>
             {PROGRAMMES.cta.label} &nbsp;→
           </a>

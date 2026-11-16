@@ -116,7 +116,7 @@ export const WHY = {
       text: "Neoffice won the ET-SIDBI MSME award for Best Exporter, Micro category",
     },
     {
-      figure: "Family",
+      figure: "Family-owned business",
       text: "Family-business owners have asked him to help settle the next generation in and get clarity on who runs what",
     },
   ],
