@@ -4,12 +4,21 @@ permissionConfirmed: true
 anonymous: true
 clientName: '[Client name or anonymous label]'
 publicLabel: Entreprenuer wanting to launch a product Design Startup
-location: '[Location]'
-publicLocation: '[Location]'
-industryLabel: '[Industry]'
+location: Bengaluru
+publicLocation: Bengaluru- India
+industryLabel: Design Startup
 programme: Simple Counsel
 image: >-
   /images/stories/entreprenuer-wanting-to-start-a-product-design-startup/image.webp
 imageAlt: Placeholder illustration
-problem: '[Placeholder]'
-solution: '[Placeholder]'
+problem: >-
+  The client post working in 10 years in software startups in Bengaluru was
+  looking for clarity on what business should he focus to launch as he had
+  multiple ideas on what to launch
+solution: >-
+  We did a detailed analysis of his core strength and interest , looked at the
+  top 5 business ideas he had brought to the table and mapped the oppotunity
+  sizing of each and related to his core strengths . We were able to zero down
+  on one idea of starting a design house focussed on deep tech business which he
+  could work on . Given his background as a product manager and UX specialist it
+  made a perfect fit .
