@@ -414,7 +414,7 @@ export default function MsmeBusinessCoachPage() {
         <div className={WRAP}>
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-start md:gap-12">
             <div className="md:basis-[55%]">
-              <h1 className="text-[20px] md:text-[26px] font-bold leading-[1.3] text-ink mb-4">
+              <h1 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8">
                 One-to-one MSME business coach in Bangalore &amp; India
               </h1>
               <p className="text-[38px] leading-[1.1] md:text-[56px] md:leading-[1.08] font-bold tracking-tight-1 text-ink mb-6">
