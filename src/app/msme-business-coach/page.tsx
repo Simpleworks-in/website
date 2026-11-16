@@ -147,7 +147,7 @@ const ONGOING = [
     price: "₹35,000",
     suffix: "/ month",
     caption: "Three-month minimum",
-    text: "A senior sounding board, online. Two 90-minute sessions a month on your agenda and a short written summary after each. Paid after each session. You can start here without a Diagnostic.",
+    text: "A senior sounding board, online. Two 90-minute sessions a month on your agenda and a short written summary after each. Paid at the end of each month. You can start here without a Diagnostic.",
   },
 ];
 
@@ -326,7 +326,7 @@ const serviceSchema = {
       "@type": "Offer",
       name: "The Simple Advisory",
       description:
-        "Online across India. Two 90-minute sessions a month with a written summary after each. Three-month minimum. Paid after each session.",
+        "Online across India. Two 90-minute sessions a month with a written summary after each. Three-month minimum. Paid at the end of each month.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "35000",
