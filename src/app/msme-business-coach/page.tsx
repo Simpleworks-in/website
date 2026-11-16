@@ -38,7 +38,6 @@ const STATS = [
 ];
 
 const PAIN_QUOTES = [
-  "“We’re busy every day but I don’t see the growth I expected.”",
   "“My team executes, but we keep missing targets somehow.”",
   "“Every decision still comes back to my desk.”",
   "“We’ve tried consultants before. Got a report. Nothing changed on the ground.”",
@@ -415,24 +414,19 @@ export default function MsmeBusinessCoachPage() {
         <div className={WRAP}>
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-start md:gap-12">
             <div className="md:basis-[55%]">
-              <Eyebrow>MSME Business Coach — Bangalore &amp; India</Eyebrow>
-              <h1 className="text-[40px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink mb-6">
-                Is your{" "}
-                <span className="text-red">MSME business not growing</span>{" "}
-                the way it should?
+              <h1 className="text-[20px] md:text-[26px] font-bold leading-[1.3] text-ink mb-4">
+                One-to-one MSME business coach in Bangalore &amp; India
               </h1>
-              <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-4">
-                One-to-one MSME business coaching in Bangalore, for founders
-                across India in the ₹10–200 crore range. Not a course. Someone senior who helps
-                you decide what to do, then helps you get it done.
+              <p className="text-[38px] leading-[1.1] md:text-[56px] md:leading-[1.08] font-bold tracking-tight-1 text-ink mb-6">
+                Is your business busy every day, yet not growing{" "}
+                <span className="text-red">the way it should?</span>
               </p>
-              <p className={`${BODY} mb-8`}>
-                If you&rsquo;re running an MSME in India and feel stuck — on
-                growth strategy, on where to sell, on why execution keeps
-                falling short — you don&rsquo;t need another seminar. You need
-                a thinking partner with deep industry experience who will work
-                through your specific situation with you. That&rsquo;s what
-                this engagement is.
+              <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-8">
+                Not a seminar, not a report. A former COO with about 30 years in
+                large companies, and nearly 10 more inside MSMEs, helps you
+                pinpoint the real bottleneck, build a practical growth plan and
+                carry it out with your team. For founders in the ₹10–200 crore
+                range, in person in Bangalore or online across India.
               </p>
               <div className="mb-3">
                 <a
@@ -458,8 +452,7 @@ export default function MsmeBusinessCoachPage() {
                 />
                 <p className="text-[15px] leading-snug text-mid">
                   <strong className="font-bold text-ink">Premraj Menon</strong>{" "}
-                  · Former COO with full P&amp;L · Nearly 10 years inside MSMEs
-                  as co-founder and on the management team
+                  · Founder, Simpleworks Consulting
                 </p>
               </div>
               <p className="text-[14px] text-light">
