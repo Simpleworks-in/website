@@ -155,6 +155,8 @@ export default function HomePage() {
 
       {/* ── BUSINESS NOT GROWING ── */}
       <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
+        <div className="lg:basis-[55%]">
         <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
           Turnover is stuck.{" "}
           <span className="text-red">And everything still depends on you.</span>
@@ -180,6 +182,18 @@ export default function HomePage() {
           <Link href="/msme-business-coach" className="text-red hover:underline w-fit">
             Read about one-to-one MSME coaching &rarr;
           </Link>
+        </div>
+        </div>
+        <div className="lg:basis-[45%]">
+          <Image
+            src="/images/msme-business-coach/owner-thinking.webp"
+            alt="Illustration of an MSME owner at his desk in the evening, thinking over a ledger and a laptop"
+            width={1408}
+            height={768}
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="w-full max-w-[640px] h-auto"
+          />
+        </div>
         </div>
       </section>
 
