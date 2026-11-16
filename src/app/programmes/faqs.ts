@@ -34,7 +34,7 @@ const withEdit = (q: string, edit: (html: string) => string): Faq => {
 };
 
 const REMOTE_HTML =
-  "<p>Yes, for two of the programmes. The Simple Diagnostic is in person in Bengaluru and online outside Bengaluru. The Simple Advisory runs fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, and the Simple Counsel is in person, so both suit founders in or able to meet in Bengaluru.</p>";
+  "<p>Yes, for two of the programmes. The Simple Diagnostic is in person in Bengaluru and online outside Bengaluru. The Simple Advisory runs fully online, wherever you are in India. The Simple Reset needs one on-site visit a week (four a month), and the Simple Counsel is in person, so both suit founders in or able to meet in Bengaluru.</p>";
 
 const NDA_HTML =
   "<p>Yes. We’re happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>";

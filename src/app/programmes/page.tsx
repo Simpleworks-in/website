@@ -399,7 +399,7 @@ export default function ProgrammesPage() {
               Format
             </span>
             <span className="text-[15px] font-bold text-ink">
-              Weekly on-site visits
+              One on-site visit a week (four a month)
             </span>
           </div>
           <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
@@ -427,7 +427,7 @@ export default function ProgrammesPage() {
             </p>
             <p className="mb-1 text-[22px] font-bold text-ink">30 days</p>
             <p className="mb-5 text-[13px] italic text-light">
-              Four weekly visits · you execute
+              One on-site visit a week (four a month) · you execute
             </p>
             <ul className="mb-6">
               {[
@@ -458,7 +458,7 @@ export default function ProgrammesPage() {
             </p>
             <p className="mb-1 text-[22px] font-bold text-ink">60 days</p>
             <p className="mb-5 text-[13px] italic text-light">
-              Eight weekly visits · Premraj stays for execution
+              One on-site visit a week (four a month), eight in all · Premraj stays for execution
             </p>
             <ul className="mb-6">
               {[

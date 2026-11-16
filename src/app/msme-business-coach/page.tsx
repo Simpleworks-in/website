@@ -219,7 +219,7 @@ const FAQS = [
   },
   {
     q: "Is MSME business coaching available online across India?",
-    a: "Partly. The Simple Diagnostic can run fully online, wherever you are in India. The Simple Reset needs weekly on-site visits and the Simple Counsel is in person, so both suit founders based in Bengaluru or able to meet here regularly. For ongoing support online, the Simple Advisory is built for exactly that.",
+    a: "Partly. The Simple Diagnostic can run fully online, wherever you are in India. The Simple Reset needs one on-site visit a week (four a month) and the Simple Counsel is in person, so both suit founders based in Bengaluru or able to meet here regularly. For ongoing support online, the Simple Advisory is built for exactly that.",
   },
   {
     q: "What size of business benefits most from MSME business coaching?",

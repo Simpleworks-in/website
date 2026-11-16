@@ -88,7 +88,7 @@
         {
           "id": "execution",
           "question": "How does Simpleworks handle execution?",
-          "answer": "Execution happens in the Reset and the Counsel. In the Reset, Premraj Menon visits on site every week, and in the 60-day version works with the leadership team for four more weeks while the fix is put in place. The Counsel adds two sessions a month and a quarterly review. The Diagnostic stops at the brief and walkthrough."
+          "answer": "Execution happens in the Reset and the Counsel. In the Reset, Premraj Menon visits on site once a week (four times a month), and in the 60-day version works with the leadership team for four more weeks while the fix is put in place. The Counsel adds two sessions a month and a quarterly review. The Diagnostic stops at the brief and walkthrough."
         },
         {
           "id": "client-role",
@@ -98,7 +98,7 @@
         {
           "id": "online",
           "question": "Can the work be done online?",
-          "answer": "Yes, for two of the programmes. The Simple Diagnostic is in person in Bengaluru and online outside Bengaluru. The Simple Advisory runs fully online, wherever you are in India. The Simple Reset needs weekly on-site visits, and the Simple Counsel is in person, so both suit founders in or able to meet in Bengaluru."
+          "answer": "Yes, for two of the programmes. The Simple Diagnostic is in person in Bengaluru and online outside Bengaluru. The Simple Advisory runs fully online, wherever you are in India. The Simple Reset needs one on-site visit a week (four a month), and the Simple Counsel is in person, so both suit founders in or able to meet in Bengaluru."
         }
       ]
     },
@@ -178,7 +178,7 @@
       "name": "Simple Reset",
       "fee": "₹1,40,000 (30 days) / ₹2,80,000 (60 days)",
       "who": "Premraj Menon, the founder and the leadership team",
-      "often": "Weekly on-site visits",
+      "often": "One on-site visit a week (four a month)",
       "where": "On site",
       "receive": "Gaps costed in rupees, a designed one-page solution; at 60 days, a weekly review rhythm handed over",
       "teamDoes": "Works the plan with Premraj Menon and runs the rhythm"

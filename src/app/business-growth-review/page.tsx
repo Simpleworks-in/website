@@ -87,7 +87,7 @@ const NEXT_STEPS = [
     title: "The Simple Reset",
     price: "₹1,40,000",
     note: "Fixed · billed at month end",
-    text: "Four weekly visits. We find the root cause of the problem area you name, cost the gaps in rupees, and design a one-page solution. You execute.",
+    text: "One on-site visit a week (four a month). We find the root cause of the problem area you name, cost the gaps in rupees, and design a one-page solution. You execute.",
   },
   {
     label: "60 days",
