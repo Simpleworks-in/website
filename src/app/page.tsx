@@ -1,9 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import FAQAccordion from "@/components/FAQAccordion";
-import { FAQS } from "@/lib/faqs";
+import ContactForm from "@/components/ContactForm";
+import { faqPageSchema, getFaqs, homeFaqIds } from "@/lib/faqs";
 import { whatsappHref } from "@/lib/whatsapp";
+import { FACTS } from "../../content/facts";
+import {
+  CONTACT,
+  FAQ_SECTION,
+  HERO,
+  PROBLEM,
+  PROGRAMMES,
+  SERVICES,
+  STORY,
+  WHO,
+  WHY,
+  type RedHeading,
+} from "@/content/home";
 
 export const metadata = {
   title: {
@@ -31,119 +44,108 @@ export const metadata = {
   },
 };
 
-const TAGLINE_ITEMS = [
-  "Business Strategy",
-  "Sales & Distribution",
-  "Execution & Accountability",
-  "39 Years Operating Experience",
-  "Bengaluru",
-];
+// The visible FAQ and the FAQPage JSON-LD come from the same call.
+const HOME_FAQS = getFaqs(homeFaqIds);
+const faqSchema = faqPageSchema(HOME_FAQS);
 
-const STUCK_POINTS = [
-  "We’ve reached a certain size, and I’m no longer sure where to take the business next.",
-  "Revenue has been flat for years, though we’re all working harder.",
-  "The business has outgrown the way I run it, and managing it is getting harder.",
-  "My team waits for instructions instead of taking ownership.",
-  "Every decision, big or small, still ends up on my desk.",
-  "My days go on firefighting, so I never get time to work on the business.",
-];
+// ── Shared styles ──
+const SECTION =
+  "reveal py-14 md:py-[72px] px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule";
+const EYEBROW = "text-eyebrow md:text-eyebrow-lg tracking-wide-9 uppercase text-light mb-4 md:mb-5";
+const H2 = "text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1";
+const HEADER = "mb-10"; // eyebrow + H2 block to section content: 40px
+const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
+const HAIRLINE_ITEM = "border-t-[0.5px] border-rule pt-[22px] pb-[26px]";
+const BUTTON =
+  "inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
+const TEXT_LINK = "text-red hover:underline w-fit";
+const ACTION_ROW = "flex flex-wrap items-center gap-x-8 gap-y-4";
 
-const SERVICES = [
-  {
-    num: "01",
-    title: "Business Strategy Consulting",
-    desc: "Clarity on where your business should go — and why. We work with leadership teams to diagnose the real problem and build a plan the organisation can follow.",
-  },
-  {
-    num: "02",
-    title: "Go-to-Market Strategy",
-    desc: "The right customers. The right message. The right time. Our go-to-market strategy India engagements help MSMEs define their segment, sharpen their message, and choose channels that work.",
-  },
-  {
-    num: "03",
-    title: "Execution & Operations Consulting",
-    desc: "Turning decisions into progress. As a business operations consultant, we provide the execution oversight, accountability and review rhythms that turn plans into outcomes. OKRs are part of the toolkit, kept simple enough to use.",
-  },
-];
+function Heading({ heading, id }: { heading: RedHeading; id?: string }) {
+  return (
+    <h2 id={id} className={H2}>
+      {heading.text} <span className="text-red">{heading.red}</span>
+    </h2>
+  );
+}
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQS.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+function SectionHeader({ eyebrow, heading }: { eyebrow: string; heading: RedHeading }) {
+  return (
+    <div className={HEADER}>
+      <p className={EYEBROW}>{eyebrow}</p>
+      <Heading heading={heading} />
+    </div>
+  );
+}
+
+function escapeHtml(text: string) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
 
 export default function HomePage() {
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "YOUR_FORM_ID";
+  const formActionUrl = `https://formspree.io/f/${formspreeId}`;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      {/* ── HERO ── */}
+
+      {/* ── 1. HERO ── */}
       <section className="flex flex-col lg:flex-row lg:min-h-[88vh] relative overflow-hidden">
         {/* Narrow brand column (desktop only) */}
         <div className="hidden lg:flex w-[72px] flex-shrink-0 relative items-start pt-[72px] pl-6">
           <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
         </div>
 
-        {/* Right zone */}
         <div className="flex-1 flex flex-col lg:flex-row items-stretch overflow-hidden">
-          {/* Text */}
-          <div className="w-full lg:flex-none lg:w-[470px] pt-12 pb-10 px-6 md:pr-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
-            <div className="flex flex-col mb-5 md:mb-[26px]">
-              <h1
-                className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8 opacity-0 animate-fade-up"
+          <div className="w-full lg:flex-none lg:w-[500px] pt-12 pb-10 px-6 md:pr-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
+            <h1 className="mb-5 md:mb-[26px]">
+              <span
+                className="block text-[12px] md:text-[14px] font-normal uppercase tracking-widest text-light leading-[1.6] mb-6 md:mb-8 opacity-0 animate-fade-up"
                 style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
               >
-                MSME Growth Consultant in Bangalore &amp; India | Simpleworks
-              </h1>
-              <p
-                className="text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 max-w-[520px] opacity-0 animate-fade-up"
+                {HERO.eyebrow}
+              </span>
+              <span
+                className="block text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink max-w-[520px] opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.25s" }}
               >
-                Your business has more in it than your current{" "}
-                <span className="text-red">results</span> show.
-              </p>
-              <p
-                className="text-[13px] md:text-[14px] text-light leading-[1.65] mt-4 opacity-0 animate-fade-up"
-                style={{ animationDelay: "0.32s" }}
-              >
-                Online across India. In person in Bangalore.
-              </p>
-            </div>
+                {HERO.heading.text} <span className="text-red">{HERO.heading.red}</span>
+              </span>
+            </h1>
             <p
-              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[440px] mb-8 md:mb-11 opacity-0 animate-fade-up"
+              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[460px] mb-8 md:mb-11 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              At Simpleworks Consulting, we work with established Indian small and medium businesses that are stuck in growth, stretched in operations, short on clarity about the next move.
+              {HERO.subhead}
             </p>
-            <a
-              href={whatsappHref()}
-              data-cta="hero"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit opacity-0 animate-fade-up"
+            <div
+              className={`${ACTION_ROW} opacity-0 animate-fade-up`}
               style={{ animationDelay: "0.55s" }}
             >
-              WhatsApp Premraj &nbsp;→
-            </a>
+              <a
+                href={whatsappHref()}
+                data-cta={HERO.cta.dataCta}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={BUTTON}
+              >
+                {HERO.cta.label} &nbsp;→
+              </a>
+              <span className="text-[14px] text-light">{HERO.ctaCaption}</span>
+            </div>
           </div>
 
-          {/* Illustration */}
           <div
             className="flex-1 flex items-center justify-center px-6 pb-10 lg:pt-5 lg:pr-8 lg:pl-5 lg:pb-0 min-w-0 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.65s" }}
           >
             <Image
               src="/hero-illustration.png"
-              alt="Independent MSME business consultant Bengaluru — Simpleworks Consulting"
+              alt={HERO.imageAlt}
               width={605}
               height={529}
               priority
@@ -153,330 +155,321 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── BUSINESS NOT GROWING ── */}
-      <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
-        <div className="lg:basis-[55%]">
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-          Turnover is stuck.{" "}
-          <span className="text-red">And everything still depends on you.</span>
-        </h2>
-        <ul className="max-w-body-text flex flex-col gap-3">
-          {STUCK_POINTS.map((point) => (
-            <li
-              key={point}
-              className="flex items-start gap-4 text-[16px] md:text-[17px] leading-[1.78] text-ink"
-            >
-              <span className="mt-[0.8em] w-[6px] h-[6px] rounded-full bg-red flex-shrink-0" />
-              <span>{point}</span>
+      {/* ── 2. SOUND FAMILIAR? ── */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{PROBLEM.eyebrow}</p>
+          <Heading heading={PROBLEM.heading} />
+          <p className={`${BODY} max-w-[620px] mt-4 md:mt-5`}>{PROBLEM.lead}</p>
+        </div>
+        <ol
+          className="grid gap-x-8"
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))" }}
+        >
+          {PROBLEM.statements.map((statement, i) => (
+            <li key={statement} className={HAIRLINE_ITEM}>
+              <span className="block text-[15px] font-bold text-red mb-2 tracking-wide-2">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="block text-[18px] md:text-[20px] leading-[1.45] text-ink">
+                &ldquo;{statement}&rdquo;
+              </span>
             </li>
           ))}
-        </ul>
-        <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-          Premraj Menon has been in this seat. He spent 39 years running sales, distribution and P&amp;Ls in Indian businesses, in large companies and in MSMEs, and he helps you find what&rsquo;s really holding yours back, and gives your own hours back to the work only you can do.
+        </ol>
+        <p className={`${BODY} ${HAIRLINE_ITEM} max-w-[760px] mt-6`}>
+          <strong className="font-bold text-ink">{PROBLEM.founderLead}</strong>{" "}
+          {PROBLEM.founderBody}
         </p>
-        <div className="mt-6 flex flex-col gap-3">
-          <Link href="/business-growth-review" className="text-red hover:underline w-fit">
-            See how a half-day growth review works &rarr;
+        <div className={`${ACTION_ROW} mt-2`}>
+          <a
+            href={whatsappHref(PROBLEM.cta.whatsappText)}
+            data-cta={PROBLEM.cta.dataCta}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={BUTTON}
+          >
+            {PROBLEM.cta.label} &nbsp;→
+          </a>
+          <Link href={PROBLEM.link.href} className={TEXT_LINK}>
+            {PROBLEM.link.label} &rarr;
           </Link>
-          <Link href="/msme-business-coach" className="text-red hover:underline w-fit">
-            Read about one-to-one MSME coaching &rarr;
-          </Link>
-        </div>
-        </div>
-        <div className="lg:basis-[45%]">
-          <Image
-            src="/images/msme-business-coach/owner-thinking.webp"
-            alt="Illustration of an MSME owner at his desk in the evening, thinking over a ledger and a laptop"
-            width={1408}
-            height={768}
-            sizes="(min-width: 1024px) 45vw, 100vw"
-            className="w-full max-w-[640px] h-auto"
-          />
-        </div>
         </div>
       </section>
 
-      {/* ── TAGLINE STRIP ── */}
-      <div className="reveal border-t-[0.5px] border-rule py-4 md:py-[18px] px-6 md:px-[132px] flex flex-wrap items-center gap-x-6 gap-y-3 md:gap-12 md:flex-nowrap md:overflow-hidden">
-        {TAGLINE_ITEMS.map((text) => (
-          <div key={text} className="flex items-center gap-[14px] flex-shrink-0">
-            <span className="w-[5px] h-[5px] rounded-full bg-red flex-shrink-0" />
-            <span className="text-xs tracking-wide-4 uppercase text-light whitespace-nowrap">
-              {text}
+      {/* ── 3. WHO WE WORK WITH ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={WHO.eyebrow} heading={WHO.heading} />
+        <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8">
+          {WHO.qualifiers.map((q) => (
+            <div key={q.label} className={HAIRLINE_ITEM}>
+              <dt className="text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-2">
+                {q.label}
+              </dt>
+              <dd className="text-[17px] md:text-[18px] font-bold leading-[1.4] text-ink">
+                {q.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <p className={`${BODY} max-w-[720px] mt-6`}>
+          {WHO.paraBefore}
+          {WHO.hubLinks.map((link, i) => (
+            <span key={link.href}>
+              {i === WHO.hubLinks.length - 1 ? " or " : i > 0 ? ", " : ""}
+              <Link href={link.href} className="text-red underline hover:no-underline">
+                {link.label}
+              </Link>
             </span>
-          </div>
-        ))}
-      </div>
+          ))}
+          {WHO.paraAfter}
+        </p>
+      </section>
 
-      {/* ── SERVICES ── */}
-      <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
-        <div className="mb-10 md:mb-14">
-          <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
-            What We Do
-          </p>
-          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-            Strategy. Growth.
-            <br />
-            Execution. <span className="text-red">Nothing more.</span>
-          </h2>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            We are an independent management consulting practice in Bengaluru, set up after 39 years in business, working with founders of established Indian small and medium businesses. We don&rsquo;t hand over a report and walk away — we stay until the plan is moving.
-          </p>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Every engagement is led by Premraj Menon himself. No junior consultants, no generic slide decks: senior operating experience, directly in your business.
-          </p>
+      {/* ── 4. WHAT WE DO ── */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{SERVICES.eyebrow}</p>
+          <Heading heading={SERVICES.heading} />
+          <p className={`${BODY} max-w-body-text mt-4 md:mt-5`}>{SERVICES.intro}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2px]">
-          {SERVICES.map((s) => (
-            <div
-              key={s.num}
-              className="pt-6 md:pt-8 pr-0 md:pr-7 pb-6 md:pb-8 pl-5 md:pl-6 border-l-2 border-rule transition-colors duration-[250ms] hover:border-l-red"
-            >
-              <p className="text-[22px] font-bold text-red mb-[14px] tracking-wide-2">
-                {s.num}
-              </p>
-              <h3 className="text-[18px] font-bold leading-[1.3] mb-3">
-                {s.title}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8">
+          {SERVICES.cards.map((card) => (
+            <div key={card.num} className={`${HAIRLINE_ITEM} flex flex-col`}>
+              <p className="text-[15px] font-bold text-red mb-3 tracking-wide-2">{card.num}</p>
+              <h3 className="text-[20px] md:text-[22px] font-bold leading-[1.3] text-ink mb-3">
+                {card.title}
               </h3>
-              <p className="text-sm text-mid leading-[1.7]">{s.desc}</p>
+              <p className="text-[15px] md:text-[16px] text-mid leading-[1.7] mb-5">{card.body}</p>
+              <Link href={card.link.href} className={`${TEXT_LINK} mt-auto`}>
+                {card.link.label} &rarr;
+              </Link>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── WHO WE WORK WITH ── */}
-      <section className="reveal py-14 md:py-20 px-6 md:px-[60px] border-t-[0.5px] border-rule md:grid md:grid-cols-[72px_1fr] md:items-start">
-        <div className="hidden md:block relative pt-[6px]">
-          <span className="absolute right-0 top-0 w-px h-full bg-rule" />
-        </div>
-        <div className="md:pl-14">
-          <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
-            Who We Work With
-          </p>
-          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-            We work with businesses
-            <br />
-            at <span className="text-red">turning points.</span>
-          </h2>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Our clients are established founder-led, family-run, and professionally managed businesses in manufacturing, consumer goods, retail, distribution, and technology — typically between ₹10 crore and ₹200 crore in revenue, and at the point where what got them here will not get them further.
-          </p>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Some are navigating a business turnaround. Some are entering a new market. Some are profitable but stuck — growing in revenue, shrinking in margin. All of them need simple answers, not complex frameworks.
-          </p>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            Depending on where you sit, that might mean{" "}
-            <Link href="/services/msme-consulting" className="text-red underline hover:no-underline">
-              MSME consulting
-            </Link>
-            ,{" "}
-            <Link href="/services/small-business-consulting" className="text-red underline hover:no-underline">
-              small business consulting
-            </Link>
-            , or{" "}
-            <Link href="/services/family-business-consulting" className="text-red underline hover:no-underline">
-              family business consulting
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
-      {/* ── AUTHORITY ── */}
-      <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
-        <div>
-          <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
-            Why Simpleworks Consulting
-          </p>
-          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-            39 years running businesses.
-            <br />
-            <span className="text-red">Not advising on them.</span>
-          </h2>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            Simpleworks Consulting was founded by Premraj Menon after 39 years on the frontlines of business—from Sales Trainee in 1987 to Chief Operating Officer of Tata Docomo&rsquo;s Kerala Circle (full P&L), with leadership roles at Usha International, MRF Limited, Apollo Tyres, BPL Mobile, and Bharti Airtel, including helping build Tata Docomo Karnataka into the country&rsquo;s largest circle.
-          </p>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mb-5">
-            For most of those years, his customers were MSMEs: around 3,000 dealers, distributors and retailers, most of them family-owned, whom he worked with and coached to grow their business. From 2016 to 2025 he sat on the other side of the table, as co-founder of Viworks Ventures and then on the management team at Neoffice, a small software exporter.
-          </p>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Every engagement is led directly by Premraj—plain-spoken strategy over dense slide decks, staying embedded through execution until the plan is actually moving.
-          </p>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text mt-4">
-            Thinking about bringing in outside help? See{" "}
-            <Link
-              href="/msme-business-coach"
-              className="text-red underline hover:no-underline"
+      {/* ── 5. WHY SIMPLEWORKS ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,300px)_1fr] xl:grid-cols-[minmax(0,420px)_1fr] gap-10 lg:gap-14 items-start">
+          <Image
+            src="/premraj-menon-msme-growth-consultant.png"
+            alt={WHY.portraitAlt}
+            width={1024}
+            height={1024}
+            sizes="(min-width: 468px) 420px, 100vw"
+            className="mix-blend-multiply w-full max-w-[420px] h-auto aspect-square"
+          />
+          <div>
+            <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-4">
+              {WHY.h3}
+            </h3>
+            <p className={`${BODY} max-w-[680px] mb-6`}>{WHY.lead}</p>
+            <dl>
+              {WHY.proof.map((row) => (
+                <div
+                  key={row.figure}
+                  className={`${HAIRLINE_ITEM} grid grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 md:gap-6 items-baseline`}
+                >
+                  <dt className="text-[20px] md:text-[24px] font-bold leading-[1.15] text-ink">
+                    {row.figure}
+                  </dt>
+                  <dd className="text-[15px] md:text-[16px] leading-[1.65] text-mid">{row.text}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="text-[15px] text-light leading-[1.6] border-t-[0.5px] border-rule pt-[22px]">
+              {WHY.credentials}
+            </p>
+            <div className="flex flex-col gap-2 mt-5">
+              {WHY.links.map((link) => (
+                <Link key={link.href} href={link.href} className={TEXT_LINK}>
+                  {link.label} &rarr;
+                </Link>
+              ))}
+            </div>
+            <a
+              href={whatsappHref(WHY.cta.whatsappText)}
+              data-cta={WHY.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${BUTTON} mt-8`}
             >
-              how MSME business coaching works at Simpleworks
+              {WHY.cta.label} &nbsp;→
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. CLIENT STORY ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={STORY.eyebrow} heading={STORY.heading} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
+          <div className="border-l-2 border-red pl-6">
+            <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-4">
+              {STORY.caption}
+            </p>
+            <h3 className="text-[24px] md:text-[30px] font-bold leading-[1.25] text-ink mb-4">
+              {STORY.title}
+            </h3>
+            <p className="text-[14px] text-light">{STORY.note}</p>
+          </div>
+          <div>
+            <dl>
+              {STORY.rows.map((row) => (
+                <div key={row.label} className={HAIRLINE_ITEM}>
+                  <dt className="text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-2">
+                    {row.label}
+                  </dt>
+                  <dd
+                    className={`text-[16px] md:text-[17px] leading-[1.7] ${
+                      row.emphasis ? "text-ink" : "text-mid"
+                    }`}
+                  >
+                    {row.text}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <Link href={STORY.link.href} className={`${TEXT_LINK} inline-block mt-2`}>
+              {STORY.link.label} &rarr;
             </Link>
-            , or read{" "}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. HOW TO START ── */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{PROGRAMMES.eyebrow}</p>
+          <Heading heading={PROGRAMMES.heading} />
+          <p className={`${BODY} max-w-[620px] mt-4 md:mt-5`}>{PROGRAMMES.intro}</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-10">
+          {PROGRAMMES.cards.map((card) => (
+            <div key={card.name} className="border-t-2 border-ink pt-6 flex flex-col">
+              <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-3">
+                {card.mode}
+              </p>
+              <h3 className="text-[22px] md:text-[24px] font-bold leading-[1.2] text-ink mb-4">
+                Simple <span className="text-red">{card.name}</span>
+              </h3>
+              <p className="text-[28px] font-bold leading-none text-ink [font-variant-numeric:tabular-nums]">
+                {card.price}
+              </p>
+              <p className="text-[14px] text-light mt-2 mb-4">{card.note}</p>
+              <p className="text-[15px] md:text-[16px] text-mid leading-[1.7] mb-5">{card.desc}</p>
+              <Link href={card.link.href} className={`${TEXT_LINK} mt-auto`}>
+                {card.link.label} &rarr;
+              </Link>
+            </div>
+          ))}
+        </div>
+        <div className={`${ACTION_ROW} border-t-[0.5px] border-rule mt-10 pt-8`}>
+          <a href={PROGRAMMES.cta.href} data-cta={PROGRAMMES.cta.dataCta} className={BUTTON}>
+            {PROGRAMMES.cta.label} &nbsp;→
+          </a>
+          <p className="text-[15px] text-light leading-[1.6]">
+            {PROGRAMMES.customText}{" "}
             <Link
-              href="/blog/how-to-choose-the-right-msme-business-coach-in-india"
-              className="text-red underline hover:no-underline"
+              href={PROGRAMMES.compareLink.href}
+              className="font-bold text-ink hover:text-red transition-colors"
             >
-              how to choose the right MSME business coach
-            </Link>{" "}
-            before you commit.
+              {PROGRAMMES.compareLink.label}
+            </Link>
           </p>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className="reveal py-14 md:pt-20 md:pb-20 px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule">
-        <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
-          Common Questions
-        </p>
-        <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-          Frequently Asked <span className="text-red">Questions</span>
-        </h2>
-        <FAQAccordion />
+      {/* ── 8. QUESTIONS ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={FAQ_SECTION.eyebrow} heading={FAQ_SECTION.heading} />
+        <div className="max-w-[900px] border-b-[0.5px] border-rule">
+          {HOME_FAQS.map((item, i) => (
+            <details
+              key={item.id}
+              open={i === 0}
+              className="faq-item border-t-[0.5px] border-rule"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
+                <h3 className="text-[17px] md:text-[19px] font-bold leading-[1.4] text-ink">
+                  {item.q}
+                </h3>
+                <span
+                  aria-hidden="true"
+                  className="faq-pm flex-shrink-0 text-[26px] leading-none text-red transition-transform duration-200"
+                >
+                  +
+                </span>
+              </summary>
+              <div
+                className={`${BODY} pb-[26px] max-w-[760px] [&_p]:mb-3 [&_p:last-child]:mb-0 [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline`}
+                dangerouslySetInnerHTML={{
+                  __html: item.aHtml ?? `<p>${escapeHtml(item.a)}</p>`,
+                }}
+              />
+            </details>
+          ))}
+        </div>
+        <Link href={FAQ_SECTION.allLink.href} className={`${TEXT_LINK} inline-block mt-8`}>
+          {FAQ_SECTION.allLink.label} &rarr;
+        </Link>
       </section>
 
-      {/* ── CONTACT ── */}
+      {/* ── 9. CONTACT US ── */}
       <section
         id="contact"
-        className="reveal py-14 md:pt-[88px] md:pb-[88px] px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start"
+        className={`${SECTION} grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start`}
       >
         <div>
-          <p className="text-eyebrow tracking-wide-9 uppercase text-light mb-4 md:mb-5">
-            Contact Us
-          </p>
-          <h2 className="text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1 mb-4 md:mb-5">
-            Let&rsquo;s have an <span className="text-red">honest conversation</span> about your business.
-          </h2>
-          <p className="text-[16px] md:text-[17px] leading-[1.78] text-mid max-w-body-text">
-            Let&rsquo;s have a quick introductory call. Tell us what you&rsquo;re working on — we&rsquo;ll tell you honestly whether we can help and what that would look like.
-          </p>
-          <div className="mt-9 flex flex-col gap-[14px]">
-            <div className="flex gap-4 items-start">
-              <span className="text-[10px] tracking-[0.12em] uppercase text-light min-w-[68px] pt-0.5 flex-shrink-0">
-                Email
-              </span>
-              <span className="text-[15px] text-mid leading-[1.5]">
-                <a
-                  href="mailto:pm@simpleworks.in"
-                  data-cta="contact-email"
-                  className="text-mid transition-colors hover:text-red"
-                >
-                  pm@simpleworks.in
-                </a>
-              </span>
-            </div>
-            <div className="flex gap-4 items-start">
-              <span className="text-[10px] tracking-[0.12em] uppercase text-light min-w-[68px] pt-0.5 flex-shrink-0">
-                Location
-              </span>
-              <span className="text-[15px] text-mid leading-[1.5]">
-                Bengaluru, Karnataka, India
-              </span>
-            </div>
-            <div className="flex gap-4 items-start">
-              <span className="text-[10px] tracking-[0.12em] uppercase text-light min-w-[68px] pt-0.5 flex-shrink-0">
-                Response
-              </span>
-              <span className="text-[15px] text-mid leading-[1.5]">
-                Within one business day
-              </span>
-            </div>
-            <div className="flex gap-4 items-start">
-              <span className="text-[10px] tracking-[0.12em] uppercase text-light min-w-[68px] pt-0.5 flex-shrink-0">
-                Book
-              </span>
-              <span className="text-[15px] text-mid leading-[1.5]">
-                <a
-                  href="https://calendar.app.google/rVCgwR2PUwPorN658"
-                  data-cta="contact-calendar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-mid transition-colors hover:text-red"
-                >
-                  Book an appointment
-                </a>
-              </span>
-            </div>
+          <p className={EYEBROW}>{CONTACT.eyebrow}</p>
+          <Heading heading={CONTACT.heading} />
+          <p className={`${BODY} max-w-body-text mt-4 md:mt-5`}>{CONTACT.body}</p>
+          <address className="not-italic mt-8 flex flex-col gap-2 text-[15px] leading-[1.6] text-mid">
+            <a
+              href={`mailto:${FACTS.email}`}
+              data-cta="contact-email"
+              className="w-fit text-mid transition-colors hover:text-red"
+            >
+              {FACTS.email}
+            </a>
+            <a
+              href={`tel:${FACTS.phone.replace(/\s/g, "")}`}
+              className="w-fit text-mid transition-colors hover:text-red"
+            >
+              {FACTS.phone}
+            </a>
+            <span>{CONTACT.address}</span>
+          </address>
+          <div className={`${ACTION_ROW} mt-8`}>
+            <a
+              href={CONTACT.calendar.href}
+              data-cta={CONTACT.calendar.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={BUTTON}
+            >
+              {CONTACT.calendar.label} &nbsp;→
+            </a>
+            <a
+              href={whatsappHref()}
+              data-cta={CONTACT.whatsapp.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={TEXT_LINK}
+            >
+              {CONTACT.whatsapp.label}
+            </a>
           </div>
         </div>
 
-        <form action="/contact" method="get" className="flex flex-col gap-[18px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-[7px]">
-              <label
-                htmlFor="fname"
-                className="text-[10px] tracking-wide-7 uppercase text-light"
-              >
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="fname"
-                name="name"
-                placeholder="Rajan Mehta"
-                className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full"
-              />
-            </div>
-            <div className="flex flex-col gap-[7px]">
-              <label
-                htmlFor="femail"
-                className="text-[10px] tracking-wide-7 uppercase text-light"
-              >
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="femail"
-                name="email"
-                placeholder="rajan@company.in"
-                className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-[7px]">
-            <label
-              htmlFor="fcompany"
-              className="text-[10px] tracking-wide-7 uppercase text-light"
-            >
-              Company / Business Name
-            </label>
-            <input
-              type="text"
-              id="fcompany"
-              name="company"
-              placeholder="Mehta Industries Pvt. Ltd."
-              className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full"
-            />
-          </div>
-          <div className="flex flex-col gap-[7px]">
-            <label
-              htmlFor="frevenue"
-              className="text-[10px] tracking-wide-7 uppercase text-light"
-            >
-              Annual Revenue
-            </label>
-            <select
-              id="frevenue"
-              name="revenue"
-              required
-              defaultValue=""
-              className="font-serif text-[15px] text-ink bg-bg border-[0.5px] border-rule rounded-[1px] px-[14px] py-3 outline-none transition-colors focus:border-ink w-full"
-            >
-              <option value="" disabled>
-                Select revenue band
-              </option>
-              <option value="Below ₹10 crore">Below ₹10 crore</option>
-              <option value="₹10 – 200 crore">₹10 – 200 crore</option>
-              <option value="₹200 – 500 crore">₹200 – 500 crore</option>
-              <option value="Above ₹500 crore">Above ₹500 crore</option>
-            </select>
-          </div>
-          <button
-            type="submit"
-            className="inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit mt-1"
-          >
-            Send Message &nbsp;→
-          </button>
-        </form>
+        <ContactForm
+          formActionUrl={formActionUrl}
+          whatsappHref={whatsappHref()}
+          source="home"
+          linkLocation="home-contact"
+        />
       </section>
 
       <Reveal />

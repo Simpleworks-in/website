@@ -1,37 +1,24 @@
-import { FAQS } from "@/lib/faqs";
+import { getFaqs, programmesFaqIds, stripHtml } from "@/lib/faqs";
+import { price } from "@/lib/programmes";
+
+export { stripHtml };
 
 // Single source of truth for the visible FAQ list AND the FAQPage JSON-LD on
 // /programmes. `a` is plain text and is what the schema carries. `aHtml` is an
 // optional rich version for the visible page only — it must contain exactly the
 // same words as `a`, with markup (links, <strong>) as the only difference.
+//
+// The fee and duration answers come from the shared library (lib/faqs.ts),
+// with prices from lib/programmes.ts. The other seven are /programmes' own.
 export type Faq = {
   q: string;
   a: string;
   aHtml?: string;
 };
 
-export function stripHtml(html: string) {
-  return html
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .replace(/\s+([.,:;?!])/g, "$1")
-    .trim();
-}
-
-// The shared lib answers also feed the homepage, which only gains the Advisory
-// fee sentence. /programmes carries a fuller edit, so it rewrites the shared
-// text here. A mismatch throws at build time rather than shipping silently.
-const swap = (html: string, from: string, to: string) => {
-  if (!html.includes(from)) throw new Error(`FAQ text not found: ${from}`);
-  return html.replace(from, to);
-};
-
-const withEdit = (q: string, edit: (html: string) => string): Faq => {
-  const item = FAQS.find((f) => f.q === q);
-  if (!item) throw new Error(`FAQ not found: ${q}`);
-  const html = edit(item.a);
-  return { q: item.q, a: stripHtml(html), aHtml: html };
-};
+const [FEES, DURATION] = getFaqs(programmesFaqIds).map(
+  ({ q, a, aHtml }): Faq => ({ q, a, aHtml }),
+);
 
 const REMOTE_HTML =
   "<p>Yes, for two of the programmes. The Simple Diagnostic is in person in Bengaluru and online outside Bengaluru. The Simple Advisory runs fully online, wherever you are in India. The Simple Reset needs one on-site visit a week (four a month), and the Simple Counsel is in person, so both suit founders in or able to meet in Bengaluru.</p>";
@@ -40,14 +27,8 @@ const NDA_HTML =
   "<p>Yes. We’re happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>";
 
 export const faqs: Faq[] = [
-  withEdit("What is your consulting fee?", (h) =>
-    swap(
-      h,
-      "The Simple Counsel is ₹75,000 a month, with a minimum of three months. For online-only support, the Simple Advisory is ₹35,000 a month for two 90-minute sessions.",
-      "The Simple Counsel is ₹75,000 a month in person, with a minimum of three months. The Simple Advisory is ₹35,000 a month for two 90-minute sessions online, with a minimum of three months.",
-    ),
-  ),
-  withEdit("How long does a consulting engagement typically last?", (h) => h),
+  FEES,
+  DURATION,
   {
     q: "Which programme should I start with?",
     a: "Most founders start with The Simple Diagnostic. In half a day you get a clear, written view of what’s working, what isn’t, and the one thing to fix first on the problem that is costing you most. If the problem is already known and just hasn’t been solved, go straight to The Simple Reset. If you want a senior sounding board for ongoing decisions, choose The Simple Counsel. If you want a senior sounding board rather than a programme, the Simple Advisory gives you two 90-minute online sessions a month.",
@@ -78,8 +59,8 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you offer business mentoring?",
-    a: "Yes. The Simple Counsel is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ₹75,000 per month, with a minimum of three months. If you'd rather work online, the Simple Advisory is ₹35,000 a month for two 90-minute sessions, without the WhatsApp access or quarterly review.",
+    a: `Yes. The Simple Counsel is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ${price("counsel")} per month, with a minimum of three months. If you'd rather work online, the Simple Advisory is ${price("advisory")} a month for two 90-minute sessions, without the WhatsApp access or quarterly review.`,
     aHtml:
-      "<p>Yes. <a href=\"#simple-counsel\">The Simple Counsel</a> is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ₹75,000 per month, with a minimum of three months. If you'd rather work online, the Simple Advisory is ₹35,000 a month for two 90-minute sessions, without the WhatsApp access or quarterly review.</p>",
+      `<p>Yes. <a href="#simple-counsel">The Simple Counsel</a> is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ${price("counsel")} per month, with a minimum of three months. If you'd rather work online, the Simple Advisory is ${price("advisory")} a month for two 90-minute sessions, without the WhatsApp access or quarterly review.</p>`,
   },
 ];

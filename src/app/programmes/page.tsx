@@ -3,20 +3,21 @@ import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 import { faqs } from "./faqs";
 import { DELIVERY } from "@/lib/delivery";
+import { PRICES, price } from "@/lib/programmes";
 
 export const metadata = {
   title: {
     absolute: "MSME Consulting Programmes & Fees | Simpleworks Consulting",
   },
   description:
-    "Fixed-fee consulting for MSME founders: a ₹25,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
+    `Fixed-fee consulting for MSME founders: a ${price("diagnostic")} half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.`,
   alternates: {
     canonical: "https://www.simpleworks.in/programmes",
   },
   openGraph: {
     title: "MSME Consulting Programmes & Fees | Simpleworks Consulting",
     description:
-      "Fixed-fee consulting for MSME founders: a ₹25,000 half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.",
+      `Fixed-fee consulting for MSME founders: a ${price("diagnostic")} half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.`,
     url: "https://www.simpleworks.in/programmes",
     type: "website",
   },
@@ -62,7 +63,7 @@ const serviceSchema = {
       name: "The Simple Diagnostic",
       description:
         "Half a day: a three-hour working session on the one problem you name, a written diagnostic brief and a one-hour walkthrough.",
-      price: "25000",
+      price: String(PRICES.diagnostic),
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
     },
@@ -71,7 +72,7 @@ const serviceSchema = {
       name: "The Simple Reset (30 days)",
       description:
         "Structured discovery of the named problem area, the gaps costed in rupees and ranked by impact, and a designed one-page solution.",
-      price: "140000",
+      price: String(PRICES.reset30),
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
     },
@@ -80,7 +81,7 @@ const serviceSchema = {
       name: "The Simple Reset (60 days)",
       description:
         "The 30-day Reset plus four more weeks in person with your leadership team, and a weekly review rhythm installed and handed over.",
-      price: "280000",
+      price: String(PRICES.reset60),
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/programmes",
     },
@@ -91,7 +92,7 @@ const serviceSchema = {
         "In person. Two sessions a month, WhatsApp access for urgent decisions, and a quarterly business review. Minimum three months.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
-        price: "75000",
+        price: String(PRICES.counsel),
         priceCurrency: "INR",
         unitText: "MONTH",
       },
@@ -104,7 +105,7 @@ const serviceSchema = {
         "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Minimum three months, online only.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
-        price: "35000",
+        price: String(PRICES.advisory),
         priceCurrency: "INR",
         unitText: "MONTH",
       },
@@ -370,7 +371,7 @@ export default function ProgrammesPage() {
               Investment
             </span>
             <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red">
-              ₹25,000
+              {price("diagnostic")}
             </span>
             <span className="text-[13px] italic text-light">
               fixed
@@ -485,7 +486,7 @@ export default function ProgrammesPage() {
               ))}
             </ul>
             <p className="text-[36px] font-bold leading-none tracking-[-0.02em] text-red">
-              ₹1,40,000
+              {price("reset30")}
             </p>
             <p className="mt-1 text-[12px] italic text-light">
               Fixed · billed at month end
@@ -516,7 +517,7 @@ export default function ProgrammesPage() {
               ))}
             </ul>
             <p className="text-[36px] font-bold leading-none tracking-[-0.02em] text-red">
-              ₹2,80,000
+              {price("reset60")}
             </p>
             <p className="mt-1 text-[12px] italic text-light">
               Fixed · billed monthly, two parts
@@ -602,7 +603,7 @@ export default function ProgrammesPage() {
               Investment
             </span>
             <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red">
-              ₹75,000
+              {price("counsel")}
             </span>
             <span className="text-[13px] italic text-light">
               per month · minimum three months
@@ -655,7 +656,7 @@ export default function ProgrammesPage() {
             Investment
           </span>
           <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red [font-variant-numeric:tabular-nums]">
-            ₹35,000
+            {price("advisory")}
           </span>
           <span className="text-[13px] italic text-light">
             per month · minimum three months · Fixed fee, paid at the end of each month.
@@ -799,7 +800,7 @@ export default function ProgrammesPage() {
           <span className="text-red">half a day.</span>
         </h2>
         <p className="mb-8 max-w-[460px] text-[16px] leading-[1.7] text-mid">
-          Most clients begin with the Diagnostic. ₹25,000 fixed, paid after the engagement.
+          Most clients begin with the Diagnostic. {price("diagnostic")} fixed, paid after the engagement.
           If you only need the Diagnostic, that is perfectly fine too.
         </p>
         <Link

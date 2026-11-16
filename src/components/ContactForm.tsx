@@ -53,9 +53,15 @@ function Label({
 export default function ContactForm({
   formActionUrl,
   whatsappHref,
+  source = "contact",
+  linkLocation = "contact",
 }: {
   formActionUrl: string;
   whatsappHref: string;
+  /** Which page the form sits on; sent to Formspree as a hidden field. */
+  source?: string;
+  /** Sent as link_location on the generate_lead event. */
+  linkLocation?: string;
 }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
@@ -115,6 +121,7 @@ export default function ContactForm({
         pushEvent({
           event: "generate_lead",
           page_path: window.location.pathname,
+          link_location: linkLocation,
           source_page: sourcePage,
           interest: String(data.get("interest") ?? ""),
           revenue_band: String(data.get("revenue") ?? ""),
@@ -272,6 +279,7 @@ export default function ContactForm({
         </div>
       </div>
 
+      <input type="hidden" name="source" value={source} />
       <input type="hidden" name="source_page" value={sourcePage} />
       <input type="hidden" name="interest_param" value={interestParam} />
 

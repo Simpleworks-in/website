@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FACTS } from "../../../content/facts";
+import { PRICES, price } from "@/lib/programmes";
 
 const URL = "https://www.simpleworks.in/business-growth-review";
 const TITLE = "Business Not Growing? Half-Day Growth Review | Simpleworks Consulting";
 const DESCRIPTION =
-  "Revenue stuck at the same level? A half-day growth review for MSME owners in Bengaluru and across India. Fixed fee of ₹25,000, written brief included.";
+  `Revenue stuck at the same level? A half-day growth review for MSME owners in Bengaluru and across India. Fixed fee of ${price("diagnostic")}, written brief included.`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -85,21 +86,21 @@ const NEXT_STEPS = [
   {
     label: "30 days",
     title: "The Simple Reset",
-    price: "₹1,40,000",
+    price: price("reset30"),
     note: "Fixed · billed at month end",
     text: "One on-site visit a week (four a month). We find the root cause of the problem area you name, cost the gaps in rupees, and design a one-page solution. You execute.",
   },
   {
     label: "60 days",
     title: "The Simple Reset",
-    price: "₹2,80,000",
+    price: price("reset60"),
     note: "Fixed · billed monthly, two parts",
     text: "The 30-day Reset plus four more weeks in person with your leadership team, and a weekly review rhythm installed and handed over.",
   },
   {
     label: "Monthly",
     title: "The Simple Counsel",
-    price: "₹75,000 a month in person",
+    price: `${price("counsel")} a month in person`,
     note: "Minimum three months",
     text: "Two sessions a month, WhatsApp access for decisions that won't wait, and a quarterly business review. A senior thinking partner, not a report.",
   },
@@ -121,7 +122,7 @@ const NOT_FIT = [
 
 const CAREER = [
   ["Own business", "Co-founder, Viworks Ventures: sales strategy and operations for businesses"],
-  ["Software", "Neoffice, from September 2019: management team, running growth and strategy. Neoffice won the ET-SIDBI Best Exporter award, Micro Enterprise category, 2019"],
+  ["Software", "Neoffice, from September 2019: management team, running growth and strategy. Neoffice won the ET-SIDBI MSME award for Best Exporter, Micro category, 2019"],
   [
     "Partners",
     "About 30 years working with around 3,000 MSME partners: dealers, channel partners and others, and coaching them to improve results",
@@ -155,7 +156,7 @@ const FAQS = [
   },
   {
     q: "What happens after the review?",
-    a: "That is your call. Some founders take the brief and act on it themselves. Others continue into the Simple Reset (₹1,40,000 for 30 days or ₹2,80,000 for 60 days) or the Simple Counsel (₹75,000 a month in person, minimum three months).",
+    a: `That is your call. Some founders take the brief and act on it themselves. Others continue into the Simple Reset (${price("reset30")} for 30 days or ${price("reset60")} for 60 days) or the Simple Counsel (${price("counsel")} a month in person, minimum three months).`,
   },
   {
     q: "Will you sign an NDA?",
@@ -221,7 +222,7 @@ const serviceJsonLd = {
   offers: {
     "@type": "Offer",
     name: "Business growth review",
-    price: "25000",
+    price: String(PRICES.diagnostic),
     priceCurrency: "INR",
     description:
       "Three-hour working session on the one problem you name, written growth brief and one-hour walkthrough.",
@@ -293,7 +294,7 @@ export default function BusinessGrowthReviewPage() {
               Book a growth review
             </a>
             <p className="mt-4 text-[14px] text-light">
-              <strong className="font-bold text-ink">₹25,000</strong> fixed fee ·
+              <strong className="font-bold text-ink">{price("diagnostic")}</strong> fixed fee ·
               written brief included
             </p>
           </div>
@@ -351,7 +352,7 @@ export default function BusinessGrowthReviewPage() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
             <div>
               <p className="text-[56px] font-bold leading-none tracking-tight text-ink [font-variant-numeric:tabular-nums] md:text-[88px]">
-                ₹25,000
+                {price("diagnostic")}
               </p>
               <p className="mt-4 text-[14px] text-light">
                 Paid after the engagement. No hourly billing.

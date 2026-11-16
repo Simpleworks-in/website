@@ -38,7 +38,7 @@ const PROOF_ITEMS = [
     lead: "",
     red: "2019",
     caption:
-      "ET-SIDBI MSME Awards: Best Exporter in the Micro Enterprise category, won by Neoffice.Ai",
+      "ET-SIDBI MSME award for Best Exporter, Micro category, won by Neoffice.Ai",
   },
 ];
 
@@ -116,8 +116,8 @@ export default function AboutPage() {
           make his numbers, and as the person those partners called when the
           business was stuck. Over 30 years he worked with around 3,000 of
           them. Neoffice, the software company where he was on the management
-          team, won the ET-SIDBI Best Exporter award in the Micro Enterprise
-          category in 2019.
+          team, won the ET-SIDBI MSME award for Best Exporter, Micro category,
+          in 2019.
         </p>
         <div className="mt-10 grid max-w-[1000px] grid-cols-1 gap-8 border-t-[0.5px] border-b-[0.5px] border-rule py-8 min-[760px]:grid-cols-3 min-[760px]:gap-12">
           {PROOF_ITEMS.map((item) => (

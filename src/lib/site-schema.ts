@@ -1,4 +1,5 @@
 import { FACTS } from "../../content/facts";
+import { offerCatalog } from "@/lib/programmes";
 
 // Single sitewide entity graph: the practice (ProfessionalService) and its
 // founder (Person). Rendered once in app/layout.tsx. Other pages reference these
@@ -30,6 +31,8 @@ export const siteSchema = {
       },
       founder: { "@id": PERSON_ID },
       areaServed: { "@type": "Country", name: "India" },
+      // Prices come from lib/programmes.ts, the same constant the pages render.
+      hasOfferCatalog: offerCatalog,
       knowsAbout: [
         "Management consulting",
         "MSME business strategy",

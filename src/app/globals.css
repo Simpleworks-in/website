@@ -70,6 +70,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Homepage FAQ: red + turns into × when a <details> item is open. */
+  details[open] .faq-pm {
+    transform: rotate(45deg);
+  }
 }
 
 /* ─── Blog post prose ────────────────────────────────────────────────────────

@@ -4,11 +4,12 @@ import Link from "next/link";
 import { FACTS } from "../../../content/facts";
 import { whatsappHref } from "@/lib/whatsapp";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { PRICES, price } from "@/lib/programmes";
 
 export const metadata: Metadata = {
   title: { absolute: "MSME Business Coach in Bangalore & India | Simpleworks" },
   description:
-    "One-to-one MSME business coaching in Bangalore (Bengaluru) with Premraj Menon, 39 years' experience. Published fees from ₹25,000. Book an intro call.",
+    `One-to-one MSME business coaching in Bangalore (Bengaluru) with Premraj Menon, 39 years' experience. Published fees from ${price("diagnostic")}. Book an intro call.`,
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -109,7 +110,7 @@ const OWNER_VIEW = [
   { name: "Viworks Ventures", line: "Co-founder: sales strategy and operations for businesses" },
   {
     name: "Neoffice, from September 2019",
-    line: "Management team, running growth and strategy. Neoffice won the ET-SIDBI Best Exporter award, Micro Enterprise category, in 2019",
+    line: "Management team, running growth and strategy. Neoffice won the ET-SIDBI MSME award for Best Exporter, Micro category, in 2019",
   },
   {
     name: "Around 3,000 MSME partners",
@@ -135,7 +136,7 @@ const ONGOING = [
   {
     eyebrow: "In person · Bangalore",
     name: "The Simple Counsel",
-    price: "₹75,000",
+    price: price("counsel"),
     suffix: "/ month",
     caption: "Three-month minimum",
     text: "Your senior business mentor, in person in Bangalore. Two sessions a month on your agenda, WhatsApp access for live decisions while the plan is being carried out, and a quarterly review with your leadership team.",
@@ -143,7 +144,7 @@ const ONGOING = [
   {
     eyebrow: "Online · Across India",
     name: "The Simple Advisory",
-    price: "₹35,000",
+    price: price("advisory"),
     suffix: "/ month",
     caption: "Three-month minimum",
     text: "A senior sounding board, online. Two 90-minute sessions a month on your agenda and a short written summary after each. Paid at the end of each month. You can start here without a Diagnostic.",
@@ -215,7 +216,7 @@ const FAQS = [
   },
   {
     q: "How much does MSME business coaching cost?",
-    a: "Fees are fixed and published. The Simple Diagnostic is ₹25,000, paid after the engagement. The Simple Counsel is ₹75,000 a month in person, with a three-month minimum. The Simple Advisory is ₹35,000 a month for two 90-minute sessions online, also with a three-month minimum. For hands-on work on site there is also a 30 or 60-day Simple Reset; see Programmes. There's no hourly billing.",
+    a: `Fees are fixed and published. The Simple Diagnostic is ${price("diagnostic")}, paid after the engagement. The Simple Counsel is ${price("counsel")} a month in person, with a three-month minimum. The Simple Advisory is ${price("advisory")} a month for two 90-minute sessions online, also with a three-month minimum. For hands-on work on site there is also a 30 or 60-day Simple Reset; see Programmes. There's no hourly billing.`,
   },
   {
     q: "How is this different from group MSME coaching programmes or bootcamps?",
@@ -304,7 +305,7 @@ const serviceSchema = {
       name: "The Simple Diagnostic",
       description:
         "One problem you name: a three-hour working session, a written brief and a one-hour walkthrough. In person or online. Paid after the engagement.",
-      price: "25000",
+      price: String(PRICES.diagnostic),
       priceCurrency: "INR",
       url: "https://www.simpleworks.in/business-growth-review",
     },
@@ -315,7 +316,7 @@ const serviceSchema = {
         "In person in Bangalore. Two sessions a month, WhatsApp access and a quarterly review with the leadership team. Three-month minimum.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
-        price: "75000",
+        price: String(PRICES.counsel),
         priceCurrency: "INR",
         unitText: "MONTH",
       },
@@ -328,7 +329,7 @@ const serviceSchema = {
         "Online across India. Two 90-minute sessions a month with a written summary after each. Three-month minimum. Paid at the end of each month.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
-        price: "35000",
+        price: String(PRICES.advisory),
         priceCurrency: "INR",
         unitText: "MONTH",
       },
@@ -871,7 +872,7 @@ export default function MsmeBusinessCoachPage() {
             </div>
             <div>
               <p className="text-[32px] font-bold leading-none text-ink mb-2 [font-variant-numeric:tabular-nums]">
-                ₹25,000
+                {price("diagnostic")}
               </p>
               <p className="text-[14px] text-light">
                 Half a day · In person or online

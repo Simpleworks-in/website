@@ -72,7 +72,7 @@ const PROOF_ITEMS = [
     lead: "",
     red: "2019",
     caption:
-      "ET-SIDBI Best Exporter award, Micro Enterprise category, won by Neoffice",
+      "ET-SIDBI MSME award for Best Exporter, Micro category, won by Neoffice",
   },
 ];
 
@@ -90,7 +90,7 @@ const THREE_SIDES = [
     num: "01",
     duration: "Nearly 10 years",
     title: "As a co-founder and operator",
-    body: "He co-founded Viworks Ventures, then joined the management team at Neoffice from September 2019, running growth and strategy. Neoffice won the ET-SIDBI Best Exporter award in the Micro Enterprise category in 2019.",
+    body: "He co-founded Viworks Ventures, then joined the management team at Neoffice from September 2019, running growth and strategy. Neoffice won the ET-SIDBI MSME award for Best Exporter, Micro category, in 2019.",
   },
   {
     num: "02",
