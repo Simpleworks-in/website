@@ -473,11 +473,13 @@ export default function MsmeBusinessCoachPage() {
             </div>
           </div>
 
-          <ul className="mt-12 md:mt-14 grid grid-cols-1 gap-x-10 md:grid-cols-2 lg:grid-cols-4">
-            {STATS.map((s) => (
+          <ul className="mt-12 md:mt-14 grid grid-cols-1 border-y border-rule md:grid-cols-2 lg:grid-cols-4">
+            {STATS.map((s, i) => (
               <li
                 key={s.num}
-                className="border-t border-rule py-6"
+                className={`py-6 md:pr-8 border-rule ${i > 0 ? "border-t" : ""} ${
+                  i === 1 ? "md:border-t-0" : ""
+                } ${i >= 2 ? "lg:border-t-0" : ""}`}
               >
                 <p className="whitespace-nowrap text-[40px] md:text-[44px] font-bold text-red tracking-tight-1 leading-none mb-3">
                   {s.num}
