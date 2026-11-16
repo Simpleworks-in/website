@@ -128,11 +128,19 @@ const ACCORDION_FAQS = faqs.map(({ q, a, aHtml }) => ({
 }));
 
 const journey = [
-  { n: "01", label: "Diagnose", href: "#simple-diagnostic", sub: "Half a day. What\u2019s actually holding the business." },
-  { n: "02", label: "Plan", href: "#simple-reset", sub: "Reset, 30 days. Root cause found, solution designed." },
-  { n: "03", label: "Execute", href: "#simple-reset", sub: "Reset, 60 days. The same work, plus four weeks putting it in place." },
-  { n: "04", label: "Counsel", href: "#simple-counsel", sub: "Monthly. A senior thinking partner once it\u2019s running." },
+  { n: "01", label: "Diagnose", href: "#simple-diagnostic", meta: `Half a day \u00b7 ${DELIVERY.diagnostic}`, sub: "What\u2019s actually holding the business." },
+  { n: "02", label: "Plan", href: "#simple-reset", meta: `Reset, 30 days \u00b7 ${DELIVERY.reset}`, sub: "Root cause found, solution designed." },
+  { n: "03", label: "Execute", href: "#simple-reset", meta: `Reset, 60 days \u00b7 ${DELIVERY.reset}`, sub: "Plus four weeks putting it in place." },
+  { n: "04", label: "Counsel", href: "#simple-counsel", meta: `Monthly \u00b7 ${DELIVERY.counsel}`, sub: "A senior thinking partner once it\u2019s running." },
 ];
+
+const sideOption = {
+  eyebrow: "Or, online",
+  label: "Advisory",
+  href: "#simple-advisory",
+  meta: `Monthly \u00b7 ${DELIVERY.advisory}`,
+  sub: "A senior sounding board, without a full engagement.",
+};
 
 function Deliverables({ items }: { items: string[] }) {
   return (
@@ -188,36 +196,67 @@ export default function ProgrammesPage() {
 
       {/* 2. Engagement sequence */}
       <section className="border-t border-rule px-6 pb-14 pt-10 md:px-14 md:pb-20 md:pt-12">
-        <div className="max-w-[720px]">
+        <div>
           <h2 className="sr-only">How the programmes fit together</h2>
-          <ol className="list-none p-0">
-            {journey.map(({ n, label, href, sub }) => (
-              <li
-                key={n}
-                className="border-t border-rule py-5 first:border-t-0 first:pt-0 md:flex md:gap-8 md:py-6 md:first:pt-0"
-              >
-                <span className="mb-2 block text-[11px] font-light uppercase tracking-widest text-red md:mb-0 md:w-12 md:shrink-0 md:pt-2 md:text-[13px]">
-                  {n}
-                </span>
-                <div>
+          <div className="min-[860px]:grid min-[860px]:grid-cols-[minmax(0,4fr)_minmax(190px,1fr)]">
+            <ol className="list-none p-0 min-[860px]:grid min-[860px]:grid-cols-4">
+              {journey.map(({ n, label, href, meta, sub }, i) => (
+                <li
+                  key={n}
+                  className="relative pb-7 pl-8 last:pb-0 min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-6 min-[860px]:pt-7"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-[5px] top-0 w-[0.5px] bg-rule min-[860px]:hidden"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-0 right-0 top-[5px] hidden h-[0.5px] bg-rule min-[860px]:block"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className={`absolute left-0 top-[6px] z-10 h-[10px] w-[10px] rounded-full border border-red min-[860px]:top-0 ${i === 0 ? "bg-red" : "bg-white"}`}
+                  />
+                  <span className="mb-1 block text-[12px] tracking-[0.08em] text-red">
+                    {n}
+                  </span>
                   <h3 className="mb-1 text-[20px] font-bold text-ink md:text-[24px]">
                     <Link href={href} className="transition-colors hover:text-red">
                       {label}
                     </Link>
                   </h3>
-                  <p className="mb-0 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+                  <p className="mb-2 text-[13px] text-light md:text-[14px]">{meta}</p>
+                  <p className="mb-0 text-[16px] leading-[1.6] text-mid md:text-[17px]">
                     {sub}
                   </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+                </li>
+              ))}
+            </ol>
 
-          <p className="mt-6 text-[16px] leading-[1.78] text-mid md:mt-8 md:text-[17px]">
-            Most clients move through in that order. You can stop at any point.
+            <div className="mt-7 border-t-[0.5px] border-rule pt-7 min-[860px]:mt-0 min-[860px]:border-l-[0.5px] min-[860px]:border-t-0 min-[860px]:pl-8">
+              <p className="mb-1 text-[12px] uppercase tracking-wide-9 text-light">
+                {sideOption.eyebrow}
+              </p>
+              <h3 className="mb-1 text-[20px] font-bold text-ink md:text-[24px]">
+                <Link href={sideOption.href} className="transition-colors hover:text-red">
+                  {sideOption.label}
+                </Link>
+              </h3>
+              <p className="mb-2 text-[13px] text-light md:text-[14px]">{sideOption.meta}</p>
+              <p className="mb-0 text-[16px] leading-[1.6] text-mid md:text-[17px]">
+                {sideOption.sub}
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-8 border-t-[0.5px] border-rule pt-5 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+            Most clients move through in that order. You can stop at any point.{" "}
+            <Link href="#simple-advisory" className="text-red hover:underline">
+              Prefer to work online? Start with Advisory.
+            </Link>
           </p>
 
-          <p className="mt-6 border-t border-rule pt-5 text-[16px] leading-[1.78] text-mid md:text-[17px]">
+          <p className="mt-6 max-w-[720px] border-t border-rule pt-5 text-[16px] leading-[1.78] text-mid md:text-[17px]">
             <Link href="#custom-engagement" className="transition-colors hover:text-red">
               <strong className="font-bold text-ink">Or a custom engagement.</strong>
             </Link>{" "}
