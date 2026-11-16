@@ -1130,7 +1130,7 @@ export default function MsmeBusinessCoachPage() {
       <section id="read" className={`${SECTION} border-b`}>
         <div className={WRAP}>
           <div className="max-w-[720px] mb-8 md:mb-10">
-            <Eyebrow>Not ready to talk yet?</Eyebrow>
+            <Eyebrow>From our blog</Eyebrow>
             <h2 className={`${H2} mb-5`}>
               <span className="text-red">Read more</span> on MSME business
               coaching
