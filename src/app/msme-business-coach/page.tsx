@@ -263,6 +263,12 @@ const BLOG_LINKS = [
       "Why owners delegate tasks but keep decisions, and how moving decision rights is what finally lets the business run without you.",
     href: "/blog/how-to-make-your-business-run-without-the-owner",
   },
+  {
+    title: "Business Coach for MSME and Small Business Owners - 4 Fixes",
+    excerpt:
+      "Pricing, revenue, systems and team — the four fixes a stalled small business needs, and why they only work in that order.",
+    href: "/blog/business-coach-for-msme-and-small-business-owners-4-fixes",
+  },
 ];
 
 const faqSchema = {
@@ -1148,9 +1154,11 @@ export default function MsmeBusinessCoachPage() {
             {BLOG_LINKS.map((post, i) => (
               <article
                 key={post.href}
-                className={`flex flex-col border-t border-ink pt-5 ${
-                  i < 3 ? "lg:col-span-2" : "lg:col-span-3"
-                } ${i === BLOG_LINKS.length - 1 ? "md:col-span-2 lg:col-span-3" : ""}`}
+                className={`flex flex-col border-t border-ink pt-5 lg:col-span-2 ${
+                  BLOG_LINKS.length % 2 === 1 && i === BLOG_LINKS.length - 1
+                    ? "md:col-span-2"
+                    : ""
+                }`}
               >
                 <h3 className="text-[19px] font-bold leading-snug mb-3">
                   <Link href={post.href} className="text-ink hover:text-red">
