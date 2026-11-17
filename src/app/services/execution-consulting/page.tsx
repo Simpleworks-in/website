@@ -262,10 +262,10 @@ export default function ExecutionConsultingPage() {
               <span className="block h-px w-6 bg-red" />
               Simpleworks Consulting · Bengaluru
             </p>
-            <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+            <h1 className="mb-4 text-[24px] leading-[1.25] font-bold text-ink md:text-[28px]">
               Strategy implementation for MSMEs
             </h1>
-            <p className="mb-5 text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
+            <p className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
               Strategy means nothing
               <br />
               <span className="italic text-red">without execution.</span>

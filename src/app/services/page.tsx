@@ -289,10 +289,10 @@ export default function ServicesPage() {
         <p className="mb-5 text-eyebrow tracking-wide-9 uppercase text-light">
           Consulting Services · Bengaluru
         </p>
-        <h1 className="mb-4 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+        <h1 className="mb-4 max-w-[640px] text-[24px] leading-[1.25] font-bold text-ink md:text-[28px]">
           Business consulting for MSMEs in Bangalore &amp; India
         </h1>
-        <p className="mb-6 max-w-[640px] text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
+        <p className="mb-6 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
           Consulting built for businesses
           <br />
           that are <span className="text-red">ready to move</span>.
