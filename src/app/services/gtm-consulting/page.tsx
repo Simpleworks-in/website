@@ -279,7 +279,7 @@ export default function GtmConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              Sales & Distribution Strategy · Simpleworks Consulting
+              Simpleworks Consulting · Bengaluru
             </p>
             <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
               Sales and distribution strategy for MSMEs
