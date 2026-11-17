@@ -4,17 +4,17 @@ import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
-    absolute: "Family Business Consulting in India | Simpleworks Consulting",
+    absolute: "Family Business Consultant in Bangalore | Simpleworks Consulting",
   },
   description:
-    "Professionalisation, succession planning and next-gen leadership for Indian family businesses. Led by Premraj Menon, Bengaluru.",
+    "Family business consultant in Bangalore: leadership succession, professionalisation and preparing the next generation of Indian family businesses.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/family-business-consulting",
   },
   openGraph: {
-    title: "Family Business Consulting in India | Simpleworks Consulting",
+    title: "Family Business Consultant in Bangalore | Simpleworks Consulting",
     description:
-      "Professionalisation, succession planning and next-gen leadership for Indian family businesses. Led by Premraj Menon, Bengaluru.",
+      "Family business consultant in Bangalore: leadership succession, professionalisation and preparing the next generation of Indian family businesses.",
     url: "https://www.simpleworks.in/services/family-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -47,7 +47,7 @@ const WHAT_WE_DO = [
   },
   {
     num: "02 — Succession Planning",
-    title: "Designing the handover before it becomes urgent",
+    title: "Succession planning: designing the handover before it becomes urgent",
     body: "Succession is not a document — it is a multi-year process of transferring authority, building capability, and aligning the family on what the next chapter looks like. Simpleworks Consulting helps families design that process while there is still time to do it well, not when the situation forces it.",
   },
   {
@@ -295,11 +295,14 @@ export default function FamilyBusinessConsultingPage() {
               <span className="block h-px w-6 bg-red" />
               Family Business Consulting · Simpleworks Consulting
             </p>
-            <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+            <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+              Family business consultant for succession and the next generation
+            </h1>
+            <p className="mb-5 text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
               The business built by one generation
               <br />
               <span className="italic text-red">must be led by the next.</span>
-            </h1>
+            </p>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               Simpleworks Consulting works with Indian family businesses navigating
               professionalisation, succession, and the complexity of

@@ -8,14 +8,14 @@ export const metadata = {
     absolute: "OKR Consulting for MSMEs in India | Simpleworks Consulting",
   },
   description:
-    "OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business.",
+    "OKR consulting and implementation for Indian MSMEs: simple enough for a 20-person team, specific enough to move the business.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/okr-consulting",
   },
   openGraph: {
     title: "OKR Consulting for MSMEs in India | Simpleworks Consulting",
     description:
-      "OKR frameworks for Indian MSMEs and startups — simple enough for a 20-person team, specific enough to move the business.",
+      "OKR consulting and implementation for Indian MSMEs: simple enough for a 20-person team, specific enough to move the business.",
     url: "https://www.simpleworks.in/services/okr-consulting",
     locale: "en_IN",
     type: "website",
@@ -287,11 +287,14 @@ export default function OkrConsultingPage() {
               <span className="block h-px w-6 bg-red" />
               OKR Consulting · Simpleworks Consulting
             </p>
-            <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+            <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+              OKR consulting for Indian MSMEs
+            </h1>
+            <p className="mb-5 text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
               Goals that cascade.
               <br />
               <span className="italic text-red">Accountability that sticks.</span>
-            </h1>
+            </p>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               Simpleworks Consulting designs OKR frameworks for Indian MSMEs and startups
               — simple enough for a 20-person team to use without a

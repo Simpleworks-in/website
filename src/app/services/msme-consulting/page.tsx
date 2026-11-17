@@ -4,17 +4,17 @@ import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
-    absolute: "MSME Consulting in Bengaluru | Simpleworks Consulting",
+    absolute: "MSME Business Consultant in Bangalore | Simpleworks Consulting",
   },
   description:
-    "Independent MSME consultant in Bengaluru: strategy, execution and growth advisory, led by Premraj Menon, 39 years of experience.",
+    "Independent MSME business consultant in Bangalore (Bengaluru): strategy, growth and execution advisory from Premraj Menon, 39 years of experience.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/msme-consulting",
   },
   openGraph: {
-    title: "MSME Consulting in Bengaluru | Simpleworks Consulting",
+    title: "MSME Business Consultant in Bangalore | Simpleworks Consulting",
     description:
-      "Independent MSME consultant in Bengaluru: strategy, execution and growth advisory, led by Premraj Menon, 39 years of experience.",
+      "Independent MSME business consultant in Bangalore (Bengaluru): strategy, growth and execution advisory from Premraj Menon, 39 years of experience.",
     url: "https://www.simpleworks.in/services/msme-consulting",
     type: "website",
   },
@@ -252,9 +252,9 @@ export default function MsmeConsultingPage() {
               MSME Consulting · Bengaluru, India
             </p>
             <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              MSME Consultant
+              MSME Business Consultant
               <br />
-              <span className="italic text-red">in Bengaluru</span>
+              <span className="italic text-red">in Bangalore</span>
             </h1>
             <p className="mb-7 max-w-[460px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               Business strategy, growth, and execution advisory — built for

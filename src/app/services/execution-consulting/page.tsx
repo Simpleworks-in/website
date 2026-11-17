@@ -4,17 +4,17 @@ import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
-    absolute: "Execution Consulting for MSMEs | Simpleworks Consulting",
+    absolute: "Strategy Implementation Consultant for MSMEs | Simpleworks Consulting",
   },
   description:
-    "Simpleworks closes the gap between strategy and results for Indian MSMEs, with OKRs and the 5D execution method. Bengaluru.",
+    "Strategy implementation for Indian MSMEs: review rhythms and clear ownership, so the plan moves without the founder doing everyone's job.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/execution-consulting",
   },
   openGraph: {
-    title: "Execution Consulting for MSMEs | Simpleworks Consulting",
+    title: "Strategy Implementation Consultant for MSMEs | Simpleworks Consulting",
     description:
-      "Simpleworks closes the gap between strategy and results for Indian MSMEs, with OKRs and the 5D execution method. Bengaluru.",
+      "Strategy implementation for Indian MSMEs: review rhythms and clear ownership, so the plan moves without the founder doing everyone's job.",
     url: "https://www.simpleworks.in/services/execution-consulting",
     locale: "en_IN",
     type: "website",
@@ -174,12 +174,8 @@ const FAQ_COLUMN_1 = [
     a: "Strategy consulting answers the question: what should we do? Execution consulting answers: how do we make sure it actually happens? Simpleworks Consulting does both — but most clients come to us because the strategy is already clear and the organisation is failing to execute it. The gap between decision and delivery is where we do our best work.",
   },
   {
-    q: "Do we need OKR software to make this work?",
-    a: "No. We start every engagement with a spreadsheet and a standing meeting cadence. If a software tool would genuinely help your team — and sometimes it does — we’ll help you evaluate and choose one. But the system works without it, and for most MSMEs between ₹10 crore and ₹200 crore, a lightweight manual system is more sustainable than a platform the team doesn’t have time to maintain.",
-  },
-  {
-    q: "What is the 5D method?",
-    a: "The 5D method is Simpleworks Consulting’s execution framework: Diagnose, Define, Design, Deploy, Drive. It is the structured process we follow in every engagement — understanding the real constraint first, building the right goals second, launching the system with the team third, and staying until the organisation can run it independently. The 5D method ensures every engagement ends with a system that works, not just a plan that was agreed.",
+    q: "What is the 4P framework?",
+    a: "The 4P framework is how Simpleworks Consulting structures its work, around four pillars: business strategy, go-to-market, execution enablement and OKRs. This page covers the third pillar, execution enablement: the review rhythm and ownership that turn a plan into results.",
   },
 ];
 
@@ -187,10 +183,6 @@ const FAQ_COLUMN_2 = [
   {
     q: "How long does an execution consulting engagement typically last?",
     a: "A full execution engagement — from diagnosis through two OKR cycles — typically runs four to six months. The first month covers diagnosis and design. The second and third months cover the first OKR cycle launch and review. The fourth through sixth months cover the second cycle with progressively less Simpleworks Consulting involvement.",
-  },
-  {
-    q: "We already have KPIs. Why would we also need OKRs?",
-    a: "KPIs measure the health of the business — revenue, margins, customer satisfaction. They tell you how the business is performing. OKRs define where the business is going and what specific work will get it there. Most MSMEs track KPIs but don’t have OKRs — which means they know the score but don’t have a game plan. The two work together, not instead of each other.",
   },
   {
     q: "What does the first conversation look like?",
@@ -212,7 +204,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Execution Consulting",
+      name: "Strategy Implementation",
       item: "https://www.simpleworks.in/services/execution-consulting",
     },
   ],
@@ -259,7 +251,7 @@ export default function ExecutionConsultingPage() {
           Services
         </Link>
         <span className="text-rule">›</span>
-        <span className="text-mid">Execution Consulting</span>
+        <span className="text-mid">Strategy Implementation</span>
       </div>
 
       {/* HERO */}
@@ -268,13 +260,16 @@ export default function ExecutionConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              Execution Consulting · Simpleworks Consulting
+              Strategy Implementation · Simpleworks Consulting
             </p>
-            <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+            <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+              Strategy implementation for MSMEs
+            </h1>
+            <p className="mb-5 text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
               Strategy means nothing
               <br />
               <span className="italic text-red">without execution.</span>
-            </h1>
+            </p>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               Simpleworks Consulting closes the gap between what leadership decides and
               what the team actually delivers — with clear goals, accountable
@@ -373,7 +368,7 @@ export default function ExecutionConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>What We Do</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          What does execution consulting{" "}
+          What does strategy implementation{" "}
           <span className="text-red">actually involve?</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
@@ -442,12 +437,22 @@ export default function ExecutionConsultingPage() {
         </div>
       </section>
 
-      {/* SECTION — HOW WE WORK: 5D METHOD */}
+      {/* SECTION — HOW WE WORK: HOW WE MAKE THE PLAN STICK */}
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>How We Work</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          The Simpleworks Consulting <span className="text-red">5D Method</span>
+          How we make <span className="text-red">the plan stick</span>
         </h2>
+        <p className="mb-4 max-w-body-text text-[16px] leading-[1.75] text-mid md:text-[17px]">
+          Execution enablement is the third pillar of the{" "}
+          <Link
+            href="/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans"
+            className="text-ink underline decoration-rule underline-offset-4 transition-colors hover:text-red"
+          >
+            Simpleworks Consulting 4P framework
+          </Link>
+          .
+        </p>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Every execution engagement at Simpleworks Consulting follows the same
           five-step process — adapted to your business, not applied from a
@@ -480,8 +485,8 @@ export default function ExecutionConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Why execution consulting works{" "}
-          <span className="text-red">differently here</span>
+          Why our implementation work{" "}
+          <span className="text-red">is different</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Most execution frameworks are designed for enterprises with
@@ -620,6 +625,16 @@ export default function ExecutionConsultingPage() {
             </div>
           ))}
         </div>
+        <p className="mt-8 text-[16px] leading-[1.75] text-mid md:text-[17px]">
+          Questions about OKRs? See{" "}
+          <Link
+            href="/services/okr-consulting"
+            className="text-ink underline decoration-rule underline-offset-4 transition-colors hover:text-red"
+          >
+            OKR consulting
+          </Link>
+          .
+        </p>
       </section>
 
       {/* CTA BAND */}

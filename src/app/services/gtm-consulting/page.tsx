@@ -4,17 +4,17 @@ import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
-    absolute: "GTM Consulting for MSMEs in India | Simpleworks Consulting",
+    absolute: "Sales & Distribution Strategy for MSMEs | Simpleworks Consulting",
   },
   description:
-    "Go-to-market strategy for Indian MSMEs and startups — built for your market, distribution and paying customers.",
+    "Go-to-market, sales and distribution strategy for Indian MSMEs: the right customers, dealer and distributor channels, and a 90-day plan to execute.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/gtm-consulting",
   },
   openGraph: {
-    title: "GTM Consulting for MSMEs in India | Simpleworks Consulting",
+    title: "Sales & Distribution Strategy for MSMEs | Simpleworks Consulting",
     description:
-      "Go-to-market strategy for Indian MSMEs and startups — built for your market, distribution and paying customers.",
+      "Go-to-market, sales and distribution strategy for Indian MSMEs: the right customers, dealer and distributor channels, and a 90-day plan to execute.",
     url: "https://www.simpleworks.in/services/gtm-consulting",
     locale: "en_IN",
     type: "website",
@@ -181,6 +181,10 @@ const COMING_SOON_SPOKES = [
 
 const FAQ_COLUMN_1 = [
   {
+    q: "We sell through distributors and dealers. Can Simpleworks Consulting help with that kind of GTM?",
+    a: "Yes — and this is where Simpleworks Consulting’s experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
+  },
+  {
     q: "What is a GTM strategy — and how is it different from a marketing plan?",
     a: "A marketing plan describes the activities you will run — campaigns, content, events, advertising. A GTM strategy defines who you are selling to, why they should buy from you, and how you will reach them. The GTM strategy is the foundation; the marketing plan is built on top of it. Most businesses that struggle with marketing are actually struggling with an unclear GTM — the activities cannot work if the fundamentals haven’t been defined.",
   },
@@ -188,16 +192,12 @@ const FAQ_COLUMN_1 = [
     q: "Does GTM consulting apply to B2B businesses or B2C businesses?",
     a: "Both — but the approach is different. Most of Simpleworks Consulting’s GTM work is with B2B businesses: manufacturing companies, industrial suppliers, SaaS businesses, and professional services firms. In B2B, the GTM strategy focuses on segment definition, sales motion, and channel strategy. In B2C, the emphasis shifts toward positioning and distribution. The three core questions — who is the customer, why you, how do you reach them — apply in both cases.",
   },
-  {
-    q: "How is GTM consulting different from hiring a marketing agency?",
-    a: "A marketing agency executes a GTM strategy — they run campaigns, produce content, manage digital channels. Simpleworks Consulting builds the GTM strategy that the agency then executes. If you hire a marketing agency before you have a clear GTM, you are paying an agency to run campaigns that haven’t been aimed correctly. The GTM strategy comes first; the agency comes second. Many of our clients engage Simpleworks Consulting specifically because they have a marketing agency relationship that isn’t producing results — and the root cause is always a GTM problem, not an execution problem.",
-  },
 ];
 
 const FAQ_COLUMN_2 = [
   {
-    q: "We sell through distributors and dealers. Can Simpleworks Consulting help with that kind of GTM?",
-    a: "Yes — and this is where Simpleworks Consulting’s experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
+    q: "How is GTM consulting different from hiring a marketing agency?",
+    a: "A marketing agency executes a GTM strategy — they run campaigns, produce content, manage digital channels. Simpleworks Consulting builds the GTM strategy that the agency then executes. If you hire a marketing agency before you have a clear GTM, you are paying an agency to run campaigns that haven’t been aimed correctly. The GTM strategy comes first; the agency comes second. Many of our clients engage Simpleworks Consulting specifically because they have a marketing agency relationship that isn’t producing results — and the root cause is always a GTM problem, not an execution problem.",
   },
   {
     q: "How long does a GTM consulting engagement last?",
@@ -223,7 +223,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "GTM Consulting",
+      name: "Sales & Distribution Strategy",
       item: "https://www.simpleworks.in/services/gtm-consulting",
     },
   ],
@@ -270,7 +270,7 @@ export default function GtmConsultingPage() {
           Services
         </Link>
         <span className="text-rule">›</span>
-        <span className="text-mid">GTM Consulting</span>
+        <span className="text-mid">Sales & Distribution Strategy</span>
       </div>
 
       {/* HERO */}
@@ -279,15 +279,18 @@ export default function GtmConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              GTM Consulting · Simpleworks Consulting
+              Sales & Distribution Strategy · Simpleworks Consulting
             </p>
-            <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+            <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+              Sales and distribution strategy for MSMEs
+            </h1>
+            <p className="mb-5 text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
               The right customers.
               <br />
               <span className="italic text-red">The right way to reach them.</span>
-            </h1>
+            </p>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Simpleworks Consulting builds go-to-market strategies for Indian MSMEs and
+              Simpleworks Consulting builds go-to-market (GTM) strategies for Indian MSMEs and
               startups — specific to your market, your distribution reality,
               and the customers who will actually pay for what you sell.
             </p>
@@ -350,7 +353,7 @@ export default function GtmConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>Understanding GTM</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          A GTM strategy answers <span className="text-red">three questions precisely</span>
+          A go-to-market strategy answers <span className="text-red">three questions precisely</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           Go-to-market strategy is not a marketing plan. It is not a sales
@@ -376,7 +379,7 @@ export default function GtmConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>What We Do</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          What GTM consulting <span className="text-red">looks like in practice</span>
+          What sales and distribution strategy work <span className="text-red">looks like in practice</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           GTM consulting at Simpleworks Consulting is not brand strategy or a digital
@@ -584,7 +587,7 @@ export default function GtmConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>From the Blog</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Going deeper — <span className="text-red">articles on GTM strategy</span>
+          Going deeper — <span className="text-red">articles on go-to-market strategy</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
           These articles explore the go-to-market questions most Indian

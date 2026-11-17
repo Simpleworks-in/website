@@ -58,7 +58,7 @@ export default function TermsOfUsePage() {
         <section>
           <h2 className="text-[20px] leading-[1.3] md:text-[24px] font-bold">Ownership</h2>
           <p className="mt-3 text-[16px] md:text-[17px] text-mid leading-[1.78]">
-            The content, frameworks, methodology, design and marks on this site — including the 4D
+            The content, frameworks, methodology, design and marks on this site — including the 4P
             framework and the Simpleworks name and logo — belong to Simpleworks Consulting. You may
             read, quote briefly with attribution, and share links freely. You may not reproduce,
             republish or adapt substantial portions of this content, or use it commercially, without

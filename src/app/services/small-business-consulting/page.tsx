@@ -4,17 +4,17 @@ import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
-    absolute: "Small Business Consulting in Bengaluru | Simpleworks Consulting",
+    absolute: "Small Business Growth & Coaching in India | Simpleworks Consulting",
   },
   description:
-    "Strategy, growth and execution consulting for Indian small business and startup founders. One senior advisor, not a team. Bengaluru and across India.",
+    "Business growth and coaching for small business owners in India: one-to-one work with Premraj Menon on strategy, customers and execution. Bangalore-based.",
   alternates: {
     canonical: "https://www.simpleworks.in/services/small-business-consulting",
   },
   openGraph: {
-    title: "Small Business Consulting in Bengaluru | Simpleworks Consulting",
+    title: "Small Business Growth & Coaching in India | Simpleworks Consulting",
     description:
-      "Strategy, growth and execution consulting for Indian small business and startup founders. One senior advisor, not a team. Bengaluru and across India.",
+      "Business growth and coaching for small business owners in India: one-to-one work with Premraj Menon on strategy, customers and execution. Bangalore-based.",
     url: "https://www.simpleworks.in/services/small-business-consulting",
     locale: "en_IN",
     type: "website",
@@ -223,7 +223,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Small Business Consulting",
+      name: "Small Business Growth & Coaching",
       item: "https://www.simpleworks.in/services/small-business-consulting",
     },
   ],
@@ -270,7 +270,7 @@ export default function SmallBusinessConsultingPage() {
           Services
         </Link>
         <span className="text-rule">›</span>
-        <span className="text-mid">Small Business Consulting</span>
+        <span className="text-mid">Small Business Growth & Coaching</span>
       </div>
 
       {/* HERO */}
@@ -279,13 +279,16 @@ export default function SmallBusinessConsultingPage() {
           <div>
             <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
               <span className="block h-px w-6 bg-red" />
-              Small Business Consulting · Simpleworks Consulting
+              Small Business Growth & Coaching · Simpleworks Consulting
             </p>
-            <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+            <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+              Business growth and coaching for small businesses in India
+            </h1>
+            <p className="mb-5 text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
               A thinking partner
               <br />
               <span className="italic text-red">who works, not advises.</span>
-            </h1>
+            </p>
             <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
               For startup founders and small business owners who need more
               than a coach — a consultant who understands your business,
@@ -384,7 +387,7 @@ export default function SmallBusinessConsultingPage() {
       <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <SectionEyebrow>What We Do</SectionEyebrow>
         <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          What small business consulting{" "}
+          What small business growth coaching{" "}
           <span className="text-red">looks like in practice</span>
         </h2>
         <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">

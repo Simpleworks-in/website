@@ -81,13 +81,13 @@ export const SERVICES = {
       num: "02",
       title: "Win the right customers through the right channels",
       body: "Define the segment worth winning, sharpen what you say to it, and choose the channels that move volume: dealers, distributors or direct.",
-      link: { label: "Go-to-market strategy", href: "/services/gtm-consulting" },
+      link: { label: "Sales & distribution strategy", href: "/services/gtm-consulting" },
     },
     {
       num: "03",
       title: "Get the team delivering without you chasing",
       body: "Oversight, accountability and review routines that turn decisions into progress. OKRs are part of the toolkit, kept simple enough to use.",
-      link: { label: "Execution & OKR consulting", href: "/services/execution-consulting" },
+      link: { label: "Strategy implementation & OKRs", href: "/services/execution-consulting" },
     },
   ],
 };

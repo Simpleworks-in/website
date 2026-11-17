@@ -3,17 +3,17 @@ import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = {
   title: {
-    absolute: "Consulting Services | Simpleworks, Bengaluru",
+    absolute: "Business Consulting Services in Bangalore | Simpleworks Consulting",
   },
   description:
-    "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let’s have a quick introductory call.",
+    "Business consulting for Indian MSMEs: strategy, sales and distribution, and execution, with Premraj Menon in Bangalore. Book a quick introductory call.",
   alternates: {
     canonical: "https://www.simpleworks.in/services",
   },
   openGraph: {
-    title: "Consulting Services | Simpleworks, Bengaluru",
+    title: "Business Consulting Services in Bangalore | Simpleworks Consulting",
     description:
-      "Strategy, growth and execution consulting for Indian MSMEs, startups and family businesses. Let’s have a quick introductory call.",
+      "Business consulting for Indian MSMEs: strategy, sales and distribution, and execution, with Premraj Menon in Bangalore. Book a quick introductory call.",
     url: "https://www.simpleworks.in/services",
     type: "website",
   },
@@ -59,8 +59,8 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
     cta: "Explore MSME Consulting",
   },
   {
-    tag: "Business Mentor · Startups & Small Business",
-    title: "Small Business Consulting",
+    tag: "Small Business Growth & Coaching · India",
+    title: "Small Business Growth & Coaching",
     href: "/services/small-business-consulting",
     description:
       "For early-stage founders and growing businesses that need a thinking partner — not a coach, not a board member, but a working consultant with skin in the outcome.",
@@ -83,7 +83,7 @@ const WHO_WE_WORK_WITH: ServiceCard[] = [
         live: true,
       },
     ],
-    cta: "Explore Small Business Consulting",
+    cta: "Explore Small Business Growth & Coaching",
   },
   {
     tag: "Family Business Consultant · India",
@@ -140,8 +140,8 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
     cta: "Explore OKR Consulting",
   },
   {
-    tag: "Go-to-Market Strategy · India",
-    title: "GTM Consulting",
+    tag: "Sales & Distribution Strategy · India",
+    title: "Sales & Distribution Strategy",
     href: "/services/gtm-consulting",
     description:
       "Right customers. Right message. Right channels. Go-to-market strategy for Indian businesses entering new segments, geographies, or product lines — with real timelines and limited budgets.",
@@ -163,11 +163,11 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         live: true,
       },
     ],
-    cta: "Explore GTM Consulting",
+    cta: "Explore Sales & Distribution Strategy",
   },
   {
-    tag: "Execution Consultant · Strategy to Action",
-    title: "Execution Consulting",
+    tag: "Strategy Implementation · Strategy to Action",
+    title: "Strategy Implementation",
     href: "/services/execution-consulting",
     description:
       "Strategy is rarely the problem. Execution is. Simpleworks Consulting closes the gap between what leadership decides and what the team actually delivers — with OKRs, accountability structures, and review rhythms.",
@@ -190,7 +190,7 @@ const WHAT_WE_SOLVE: ServiceCard[] = [
         live: true,
       },
     ],
-    cta: "Explore Execution Consulting",
+    cta: "Explore Strategy Implementation",
   },
 ];
 
@@ -289,11 +289,14 @@ export default function ServicesPage() {
         <p className="mb-5 text-eyebrow tracking-wide-9 uppercase text-light">
           Consulting Services · Bengaluru
         </p>
-        <h1 className="mb-6 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+        <h1 className="mb-4 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+          Business consulting for MSMEs in Bangalore &amp; India
+        </h1>
+        <p className="mb-6 max-w-[640px] text-[22px] leading-[1.3] font-bold text-ink md:text-[28px]">
           Consulting built for businesses
           <br />
           that are <span className="text-red">ready to move</span>.
-        </h1>
+        </p>
         <p className="mb-9 max-w-[560px] text-[18px] italic leading-[1.6] text-mid md:text-[20px]">
           Simpleworks Consulting works with Indian MSME founders, startup leaders, and
           family business owners — on strategy, growth, and execution. One
