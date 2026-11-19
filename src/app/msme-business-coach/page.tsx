@@ -5,6 +5,7 @@ import { FACTS } from "../../../content/facts";
 import { whatsappHref } from "@/lib/whatsapp";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { PRICES, price } from "@/lib/programmes";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata: Metadata = {
   title: { absolute: "Business Coach for MSME Owners in India | Simpleworks, Bangalore" },
@@ -450,6 +451,7 @@ export default function MsmeBusinessCoachPage() {
                   rel="noopener noreferrer"
                   className={BTN}
                 >
+                  <WhatsAppIcon />
                   WhatsApp Premraj
                 </a>
               </div>
@@ -720,6 +722,7 @@ export default function MsmeBusinessCoachPage() {
                   rel="noopener noreferrer"
                   className={BTN}
                 >
+                  <WhatsAppIcon />
                   WhatsApp Premraj
                 </a>
                 <span className="text-[14px] text-light">
@@ -829,6 +832,7 @@ export default function MsmeBusinessCoachPage() {
                 rel="noopener noreferrer"
                 className={BTN}
               >
+                <WhatsAppIcon />
                 WhatsApp Premraj
               </a>
             </div>
@@ -1024,6 +1028,7 @@ export default function MsmeBusinessCoachPage() {
               rel="noopener noreferrer"
               className={BTN}
             >
+              <WhatsAppIcon />
               WhatsApp Premraj
             </a>
             <p className="mt-6 text-[14px] text-light">

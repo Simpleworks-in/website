@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { whatsappHref } from "@/lib/whatsapp";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata = {
   title: {
@@ -419,6 +420,7 @@ export default function ServicesPage() {
               rel="noopener noreferrer"
               className="inline-flex w-fit items-center gap-2.5 rounded-[1px] border-[1.5px] border-red px-8 py-3.5 text-[14px] tracking-wide-3 text-red transition-colors hover:bg-red hover:text-white"
             >
+              <WhatsAppIcon className="!mr-0" />
               WhatsApp Premraj Menon &nbsp;→
             </a>
           </div>

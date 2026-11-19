@@ -5,6 +5,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
 import { whatsappHref } from "@/lib/whatsapp";
 import { FACTS } from "../../../content/facts";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const TITLE = "MSME Consultant & Business Coach Tamil Nadu | Simpleworks Consulting";
 const DESCRIPTION =
@@ -320,6 +321,7 @@ export default async function TamilNaduMsmeConsultantPage() {
           </p>
           <div className="flex flex-col items-start gap-4">
             <a href={WHATSAPP_LINK} data-cta="hero" className={BUTTON}>
+              <WhatsAppIcon />
               WhatsApp Premraj for an introductory call →
             </a>
             <a
@@ -649,6 +651,7 @@ export default async function TamilNaduMsmeConsultantPage() {
         </p>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 items-center">
           <a href={WHATSAPP_LINK} data-cta="final-cta" className={BUTTON}>
+            <WhatsAppIcon />
             WhatsApp Premraj →
           </a>
           <a

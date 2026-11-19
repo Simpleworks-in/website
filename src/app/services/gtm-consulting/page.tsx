@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { whatsappHref } from "@/lib/whatsapp";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata = {
   title: {
@@ -688,6 +689,7 @@ export default function GtmConsultingPage() {
             rel="noopener noreferrer"
             className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
           >
+            <WhatsAppIcon />
             WhatsApp Premraj Menon
           </a>
           <p className="text-center text-[12px] text-light">

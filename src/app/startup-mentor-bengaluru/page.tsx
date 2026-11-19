@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 import { FACTS } from "../../../content/facts";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata = {
   title: { absolute: "Startup Mentor in Bengaluru | Simpleworks Consulting" },
@@ -726,6 +727,7 @@ export default function StartupMentorBengaluruPage() {
               rel="noopener noreferrer"
               className="rounded-[1px] border-[1.5px] border-red px-9 py-3.5 text-[15px] font-bold text-red transition-colors hover:bg-red hover:text-white"
             >
+              <WhatsAppIcon />
               WhatsApp Premraj
             </a>
             <a

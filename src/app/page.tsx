@@ -17,6 +17,7 @@ import {
   WHY,
   type RedHeading,
 } from "@/content/home";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata = {
   title: {
@@ -133,6 +134,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className={BUTTON}
               >
+                <WhatsAppIcon />
                 {HERO.cta.label} &nbsp;→
               </a>
               <span className="text-[14px] text-light">{HERO.ctaCaption}</span>

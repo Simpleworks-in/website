@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 // Phone-only floating WhatsApp pill (hidden at 760px and up, where the sticky
 // nav already carries "WhatsApp Premraj"). Shows once the hero has scrolled
@@ -51,19 +52,7 @@ export default function FloatingWhatsApp({
         show ? "opacity-100 translate-y-0" : "pointer-events-none invisible opacity-0 translate-y-2"
       }`}
     >
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 24 24"
-        className="h-5 w-5 shrink-0"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      >
-        <path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2Z" />
-        <path d="M9 7.9c-.4 0-.9.4-.9 1.2 0 2.9 3 6 5.9 6 .8 0 1.2-.5 1.2-.9l-.1-.9-1.6-.8-.9.9a5 5 0 0 1-2.4-2.4l.9-.9-.8-1.6-.9-.1Z" />
-      </svg>
+      <WhatsAppIcon className="!mr-0 !h-5 !w-5" />
       WhatsApp Premraj
     </a>
   );
