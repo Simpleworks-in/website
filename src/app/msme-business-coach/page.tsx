@@ -7,9 +7,9 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { PRICES, price } from "@/lib/programmes";
 
 export const metadata: Metadata = {
-  title: { absolute: "MSME Business Coach in Bangalore & India | Simpleworks" },
+  title: { absolute: "Business Coach for MSME Owners in India | Simpleworks, Bangalore" },
   description:
-    `One-to-one MSME business coaching in Bangalore (Bengaluru) with Premraj Menon, 39 years' experience. Published fees from ${price("diagnostic")}. Book an intro call.`,
+    `One-to-one business coaching for MSME owners across India, in person in Bangalore. Premraj Menon, 39 years' experience. Published fees from ${price("diagnostic")}.`,
   keywords:
     "MSME business coach, MSME business coach India, business coach for MSME, MSME mentor India, business mentor for small business India, MSME coaching Bengaluru",
   robots: {
@@ -20,12 +20,18 @@ export const metadata: Metadata = {
     canonical: "https://www.simpleworks.in/msme-business-coach",
   },
   openGraph: {
-    title: "MSME Business Coach in India | Simpleworks, Bengaluru",
+    title: "Business Coach for MSME Owners in India | Simpleworks, Bangalore",
     description:
-      "One-to-one coaching for MSME founders who want to grow with clarity — not noise.",
+      `One-to-one business coaching for MSME owners across India, in person in Bangalore. Premraj Menon, 39 years' experience. Published fees from ${price("diagnostic")}.`,
     url: "https://www.simpleworks.in/msme-business-coach",
     siteName: "Simpleworks Consulting",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Business Coach for MSME Owners in India | Simpleworks, Bangalore",
+    description:
+      `One-to-one business coaching for MSME owners across India, in person in Bangalore. Premraj Menon, 39 years' experience. Published fees from ${price("diagnostic")}.`,
   },
 };
 
@@ -199,7 +205,7 @@ const FAQS = [
     a: "A management consultant typically arrives with a framework, applies it, produces a plan, and hands it over. A business coach stays in the conversation longer — asking the right questions, challenging assumptions, and working alongside you as you implement. In practice, Premraj’s engagements combine both — structured consulting thinking with the continuity of a coaching relationship. You don’t just get a plan; you get someone who stays until it’s moving.",
   },
   {
-    q: "Is MSME business coaching available online across India?",
+    q: "Is business coaching in India available online?",
     a: "Yes. The Simple Diagnostic and the Simple Advisory run fully online, wherever you are in India. The Simple Counsel is in person, so it suits founders in or able to meet in Bangalore.",
   },
   {
@@ -422,7 +428,7 @@ export default function MsmeBusinessCoachPage() {
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-start md:gap-12">
             <div className="md:basis-[55%]">
               <h1 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8">
-                One-to-one MSME business coach in Bangalore &amp; India
+                One-to-one business coach for MSME owners in India
               </h1>
               <p className="text-[38px] leading-[1.1] md:text-[56px] md:leading-[1.08] font-bold tracking-tight-1 text-ink mb-6">
                 Is your business busy every day,{" "}
@@ -432,8 +438,9 @@ export default function MsmeBusinessCoachPage() {
                 Not a seminar, not a report. A former COO with about 30 years in
                 large companies, and nearly 10 more inside MSMEs, helps you
                 pinpoint the real bottleneck, build a practical growth plan and
-                carry it out with your team. For founders in the ₹10–200 crore
-                range, in person in Bangalore or online across India.
+                carry it out with your team. Business coaching in India for
+                founders in the ₹10–200 crore range: in person in Bangalore, or
+                online across India.
               </p>
               <div className="mb-3">
                 <a

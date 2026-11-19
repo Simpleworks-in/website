@@ -28,12 +28,12 @@ const LIBRARY = [
   // ── Homepage-only items ──
   {
     id: "what-growth-consultant-does",
-    q: "What does an MSME growth consultant do?",
+    q: "What does a business growth consultant do?",
     a: "An MSME growth consultant works with the owner to find what is holding the business back, decide what to change, and see it through. At Simpleworks Consulting that means business strategy, go-to-market and execution, delivered personally by Premraj Menon in Bangalore and online across India.",
   },
   {
     id: "coaching-or-consulting",
-    q: "Is this business coaching or consulting?",
+    q: "What is the difference between a business consultant and a business coach?",
     a: "Both, depending on what you need. Simple Advisory and Simple Counsel work as one-to-one business coaching for the owner. The Diagnostic and Reset are hands-on consulting on a specific problem.",
   },
   rich(

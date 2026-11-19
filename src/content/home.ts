@@ -12,7 +12,7 @@ export type RedHeading = { text: string; red: string };
 export type TextLink = { label: string; href: string };
 
 export const HERO = {
-  eyebrow: "MSME Growth Consultant · Bangalore & India",
+  eyebrow: "Business Growth Consultant · Bangalore & India",
   heading: { text: "Your business has more in it than your", red: "current results show." },
   subhead:
     "At Simpleworks Consulting, we help established Indian small and medium businesses that are stuck in growth, stretched in operations, or unclear on the next move. Online across India, in person in Bangalore.",

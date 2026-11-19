@@ -20,17 +20,17 @@ import {
 
 export const metadata = {
   title: {
-    absolute: "MSME Growth Consultant, Bangalore & India | Simpleworks Consulting",
+    absolute: "Business Consultant in Bangalore & India | Simpleworks Consulting",
   },
   description:
-    "Business not growing? Premraj Menon of Simpleworks Consulting helps founder-led MSMEs in Bangalore and across India find what's holding growth back.",
+    "Business not growing? Premraj Menon of Simpleworks Consulting is a business growth consultant for founder-led MSMEs in Bangalore and across India.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
-    title: "MSME Growth Consultant, Bangalore & India | Simpleworks Consulting",
+    title: "Business Consultant in Bangalore & India | Simpleworks Consulting",
     description:
-      "Business not growing? Premraj Menon of Simpleworks Consulting helps founder-led MSMEs in Bangalore and across India find what's holding growth back.",
+      "Business not growing? Premraj Menon of Simpleworks Consulting is a business growth consultant for founder-led MSMEs in Bangalore and across India.",
     url: "https://www.simpleworks.in",
     siteName: "Simpleworks Consulting",
     locale: "en_IN",
@@ -38,9 +38,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MSME Growth Consultant, Bangalore & India | Simpleworks Consulting",
+    title: "Business Consultant in Bangalore & India | Simpleworks Consulting",
     description:
-      "Business not growing? Premraj Menon of Simpleworks Consulting helps founder-led MSMEs in Bangalore and across India find what's holding growth back.",
+      "Business not growing? Premraj Menon of Simpleworks Consulting is a business growth consultant for founder-led MSMEs in Bangalore and across India.",
   },
 };
 
