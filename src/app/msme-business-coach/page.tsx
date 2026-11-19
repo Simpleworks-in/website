@@ -646,7 +646,7 @@ export default function MsmeBusinessCoachPage() {
                 <p className="text-[15px] text-light leading-[1.6] mb-4">
                   {row.before}
                 </p>
-                <p className="border-t border-rule pt-4 text-[11px] uppercase tracking-widest font-bold text-ink mb-1">
+                <p className="border-t border-rule pt-4 text-[11px] uppercase tracking-widest font-bold text-red mb-1">
                   After working together
                 </p>
                 <p className="pb-10 text-[18px] md:text-[19px] font-bold text-ink leading-[1.35]">
