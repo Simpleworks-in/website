@@ -96,7 +96,7 @@ export const WHY = {
   eyebrow: "Why Simpleworks",
   heading: { text: "39 years running businesses.", red: "Not advising on them." },
   portraitAlt: "Premraj Menon, MSME growth consultant, Bangalore",
-  h3: "Premraj Menon, MSME Growth Consultant and MSME Business Coach",
+  h3: "Premraj Menon, Business Growth Consultant and MSME Business Coach",
   lead: "Two vantage points few consultants have. Thirty years in corporate India, rising to the C-suite as COO, with MSME dealers and distributors as his partners. Then ten years managing MSMEs from the inside. Owners get the discipline of a large company, in a form a founder-led business can actually run.",
   proof: [
     {
