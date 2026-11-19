@@ -428,7 +428,7 @@ export default function MsmeBusinessCoachPage() {
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-start md:gap-12">
             <div className="md:basis-[55%]">
               <h1 className="text-eyebrow-lg tracking-wide-8 uppercase text-light mb-6 md:mb-8">
-                One-to-one business coach for MSME owners in India
+                Business Coach for MSME Owners in India
               </h1>
               <p className="text-[38px] leading-[1.1] md:text-[56px] md:leading-[1.08] font-bold tracking-tight-1 text-ink mb-6">
                 Is your business busy every day,{" "}
