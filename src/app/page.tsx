@@ -51,8 +51,12 @@ const faqSchema = faqPageSchema(HOME_FAQS);
 // ── Shared styles ──
 const SECTION =
   "reveal py-14 md:py-[72px] px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule";
-const EYEBROW = "text-eyebrow md:text-eyebrow-lg tracking-wide-9 uppercase text-light mb-4 md:mb-5";
-const H2 = "text-[32px] leading-[1.18] md:text-sec-h2 font-bold tracking-tight-1";
+// Eyebrows, column labels, delivery-mode labels, captions: 11px / 13px.
+const LABEL = "text-[11px] md:text-[13px] uppercase tracking-widest text-light leading-[1.6]";
+const EYEBROW = `${LABEL} mb-4 md:mb-5`;
+// Every H2 is 28px / 36px; every H3 20px / 24px (FAQ questions excepted).
+const H2 = "text-[28px] md:text-[36px] leading-[1.18] font-bold tracking-tight-1";
+const H3 = "text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink";
 const HEADER = "mb-10"; // eyebrow + H2 block to section content: 40px
 const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
 const HAIRLINE_ITEM = "border-t-[0.5px] border-rule pt-[22px] pb-[26px]";
@@ -96,37 +100,45 @@ export default function HomePage() {
       />
 
       {/* ── 1. HERO ── */}
-      <section className="flex flex-col lg:flex-row lg:min-h-[88vh] relative overflow-hidden">
+      {/* Text left, image right from 900px; the image top lines up with the
+          first line of the H1 and fills its column. One column below 900px. */}
+      <section className="flex relative overflow-hidden">
         {/* Narrow brand column (desktop only) */}
-        <div className="hidden lg:flex w-[72px] flex-shrink-0 relative items-start pt-[72px] pl-6">
+        <div className="hidden lg:flex w-[72px] flex-shrink-0 relative">
           <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
         </div>
 
-        <div className="flex-1 flex flex-col lg:flex-row items-stretch overflow-hidden">
-          <div className="w-full lg:flex-none lg:w-[500px] pt-12 pb-10 px-6 md:pr-12 lg:pt-[72px] lg:pr-10 lg:pb-[72px] lg:pl-14 flex flex-col justify-center">
+        <div className="flex-1 min-w-0 grid grid-cols-1 min-[900px]:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] gap-x-14 gap-y-10 items-start px-6 pt-12 pb-10 md:px-12 lg:pt-[72px] lg:pb-[72px] lg:pl-14 lg:pr-[60px]">
+          <div>
             <h1 className="mb-5 md:mb-[26px]">
               <span
-                className="block text-[12px] md:text-[14px] font-normal uppercase tracking-widest text-light leading-[1.6] mb-6 md:mb-8 opacity-0 animate-fade-up"
+                className="block text-[14px] font-bold uppercase tracking-widest text-light leading-[1.6] mb-6 md:mb-8 opacity-0 animate-fade-up"
                 style={{ animationDuration: "0.6s", animationDelay: "0.1s" }}
               >
                 {HERO.eyebrow}
               </span>
               <span
-                className="block text-[36px] leading-[1.1] md:text-hero-h1 font-bold tracking-tight-1 text-ink max-w-[520px] opacity-0 animate-fade-up"
+                className="block text-[40px] md:text-[56px] leading-[1.1] font-bold tracking-tight-1 text-ink opacity-0 animate-fade-up"
                 style={{ animationDelay: "0.25s" }}
               >
                 {HERO.heading.text} <span className="text-red">{HERO.heading.red}</span>
               </span>
             </h1>
             <p
-              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[460px] mb-4 opacity-0 animate-fade-up"
+              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[560px] mb-4 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
               {HERO.subhead}
             </p>
             <p
-              className={`${BODY} max-w-[460px] mb-8 md:mb-11 opacity-0 animate-fade-up`}
+              className={`${BODY} max-w-[560px] mb-4 opacity-0 animate-fade-up`}
               style={{ animationDelay: "0.45s" }}
+            >
+              {HERO.body}
+            </p>
+            <p
+              className={`${BODY} max-w-[560px] mb-8 md:mb-11 opacity-0 animate-fade-up`}
+              style={{ animationDelay: "0.5s" }}
             >
               {HERO.line}
             </p>
@@ -144,14 +156,12 @@ export default function HomePage() {
                 <WhatsAppIcon size={20} />
                 {HERO.cta.label}
               </a>
-              <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.7] mt-5">
-                {HERO.tags}
-              </p>
+              <p className={`${LABEL} mt-5`}>{HERO.tags}</p>
             </div>
           </div>
 
           <div
-            className="flex-1 flex items-center justify-center px-6 pb-10 lg:pt-5 lg:pr-8 lg:pl-5 lg:pb-0 min-w-0 opacity-0 animate-fade-in"
+            className="min-w-0 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.65s" }}
           >
             <Image
@@ -160,7 +170,8 @@ export default function HomePage() {
               width={605}
               height={529}
               priority
-              className="mix-blend-multiply max-w-[420px] lg:max-w-[605px] max-h-[400px] lg:max-h-[529px] w-auto h-auto block"
+              sizes="(min-width: 900px) 45vw, 100vw"
+              className="mix-blend-multiply w-full h-auto block"
             />
           </div>
         </div>
@@ -176,7 +187,7 @@ export default function HomePage() {
         {/* Column labels: desktop only; on mobile each row stacks. */}
         <div
           aria-hidden="true"
-          className={`hidden ${HELP_GRID} pb-4 text-[11px] md:text-[12px] uppercase tracking-widest text-light`}
+          className={`hidden ${HELP_GRID} pb-4 ${LABEL}`}
         >
           <span />
           <span>{HELP.columns.problem}</span>
@@ -188,22 +199,20 @@ export default function HomePage() {
               key={row.label}
               className={`${HELP_GRID} grid grid-cols-1 gap-y-3 border-t-[0.5px] border-rule py-7 md:py-8`}
             >
-              <span className="text-[28px] font-bold leading-none text-red [font-variant-numeric:tabular-nums]">
+              <span className="text-[15px] font-bold leading-[1.6] text-red tracking-wide-2 [font-variant-numeric:tabular-nums]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-2">
-                  {row.label}
-                </p>
-                <h3 className="text-[19px] md:text-[22px] font-bold leading-[1.4] text-ink">
+                <p className={`${LABEL} mb-2`}>{row.label}</p>
+                <h3 className={H3}>
                   &ldquo;{row.problem}&rdquo;
                 </h3>
               </div>
               <div>
-                <p className="lg:hidden text-[11px] uppercase tracking-widest text-light leading-[1.6] mb-2">
+                <p className={`lg:hidden ${LABEL} mb-2`}>
                   {HELP.columns.help}
                 </p>
-                <p className="text-[18px] md:text-[20px] leading-[1.5] text-ink mb-3">
+                <p className="text-[18px] leading-[1.55] text-ink mb-3">
                   {row.promise}
                 </p>
                 <Link href={row.link.href} className={TEXT_LINK}>
@@ -264,6 +273,15 @@ export default function HomePage() {
       {/* ── 4. WHY SIMPLEWORKS ── */}
       <section className={SECTION}>
         <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
+        {/* Four points, item 1 first: four across, two on tablet, one on mobile. */}
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-x-8 gap-y-10 mb-14">
+          {WHY.points.map((point) => (
+            <div key={point.title} className="border-l-2 border-red pl-5">
+              <p className="text-[18px] font-bold leading-[1.35] text-ink mb-2">{point.title}</p>
+              <p className={BODY}>{point.text}</p>
+            </div>
+          ))}
+        </div>
         {/* Desktop: portrait with the CTA under it on the left, text on the
             right. Mobile: portrait, text, then the CTA last. */}
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,300px)_1fr] xl:grid-cols-[minmax(0,360px)_1fr] lg:grid-rows-[auto_1fr] gap-x-14 gap-y-8 items-start">
@@ -276,10 +294,7 @@ export default function HomePage() {
             className="mix-blend-multiply w-full max-w-[420px] h-auto aspect-square"
           />
           <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2">
-            <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-4">
-              {WHY.h3}
-            </h3>
-            <p className={`${BODY} max-w-[680px] mb-2`}>{WHY.lead}</p>
+            <h3 className={`${H3} mb-4`}>{WHY.h3}</h3>
             <dl>
               {WHY.proof.map((row) => (
                 <div
@@ -330,10 +345,8 @@ export default function HomePage() {
             }`}
           >
             <div className="border-l-2 border-red pl-6">
-              <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-4">
-                {story.caption}
-              </p>
-              <h3 className="text-[24px] md:text-[30px] font-bold leading-[1.25] text-ink mb-3">
+              <p className={`${LABEL} mb-4`}>{story.caption}</p>
+              <h3 className={`${H3} mb-3`}>
                 {story.title}
               </h3>
               <p className="text-[14px] text-light">{story.note}</p>
@@ -349,12 +362,9 @@ export default function HomePage() {
             </div>
             <div>
               <dl>
-                {story.rows.map((row, i) => (
+                {story.rows.map((row) => (
                   <div key={row.label} className={HAIRLINE_ITEM}>
-                    <dt className="flex items-baseline gap-3 text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-3">
-                      <span className="text-[15px] font-bold text-red tracking-wide-2">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                    <dt className="text-[13px] font-bold uppercase tracking-widest text-ink mb-3">
                       {row.label}
                     </dt>
                     <dd
@@ -391,12 +401,11 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-10">
           {PROGRAMMES.cards.map((card) => (
             <div key={card.name} className="border-t-2 border-ink pt-6 flex flex-col">
-              <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-3">
-                {card.mode}
-              </p>
-              <h3 className="text-[22px] md:text-[24px] font-bold leading-[1.2] text-ink mb-4">
+              <p className={`${LABEL} mb-3`}>{card.mode}</p>
+              <h3 className={`${H3} mb-3`}>
                 Simple <span className="text-red">{card.name}</span>
               </h3>
+              <p className="text-[17px] leading-[1.6] text-ink mb-5">{card.forWho}</p>
               <p className="text-[28px] font-bold leading-none text-ink [font-variant-numeric:tabular-nums]">
                 {card.price}
               </p>
@@ -442,7 +451,7 @@ export default function HomePage() {
               className="faq-item border-t-[0.5px] border-rule"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
-                <h3 className="text-[17px] md:text-[19px] font-bold leading-[1.4] text-ink">
+                <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.4] text-ink">
                   {item.q}
                 </h3>
                 <span

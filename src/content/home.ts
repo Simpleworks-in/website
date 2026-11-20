@@ -18,8 +18,9 @@ export const HERO = {
     red: "But it shouldn’t depend on you for everything.",
   },
   subhead:
-    "Simpleworks Consulting helps MSME owners break through growth barriers, build stronger teams and run their businesses with greater clarity and control.",
-  line: "39 years of business leadership experience. Practical advice. Personal involvement. In person in Bangalore, online across India.",
+    "At Simpleworks Consulting, we work with MSME owners and family businesses in Bangalore and across India to get growth moving again, build teams that take ownership, and run a business that doesn’t depend on the owner for everything.",
+  body: "We work alongside you, from the first conversation to the weekly review, so you move from firefighting to focused growth.",
+  line: "39 years of business leadership and entrepreneurial experience · Business Growth & Strategy Advisor",
   cta: { label: "Let’s discuss your business", dataCta: "hero" },
   tags: "Business Growth · Founder Effectiveness · Team Accountability · Execution",
   imageAlt: "MSME owner reviewing business growth with Simpleworks Consulting, Bangalore",
@@ -73,7 +74,7 @@ export const HELP = {
     link: TextLink;
   }[],
   quoteLead:
-    "I have seen my business partners face these challenges in 39 years of running sales and distribution across India, in large companies and in MSMEs.",
+    "I have seen my business partners face these challenges across India, in large companies and in MSMEs.",
   quoteBody: "Today I help owners find what is holding their growth back, and fix it with their team.",
   quoteBy: "Premraj Menon",
   cta: {
@@ -107,8 +108,26 @@ export const WHY = {
   eyebrow: "Why Simpleworks",
   heading: { text: "30 years in large companies.", red: "Nearly 10 years inside MSMEs like yours." },
   portraitAlt: "Premraj Menon, business growth consultant, Bangalore",
+  // Directly under the H2. Order matters: item 1 is the main point.
+  points: [
+    {
+      title: "Advice that gets done",
+      text: "Recommendations are only the start. Every priority gets an owner, a date and a weekly check, and Premraj stays with you until your team runs it without him.",
+    },
+    {
+      title: "Has run businesses, not just advised them",
+      text: "He has managed sales, customers, teams and a full P&L. He knows what a decision costs when it goes wrong.",
+    },
+    {
+      title: "Big companies, MSMEs and his own ventures",
+      text: "He knows how structured organisations work, and how a business runs when money, time and people are short.",
+    },
+    {
+      title: "Simple, not complicated",
+      text: "No frameworks or jargon. Big problems broken into small steps your team can actually finish.",
+    },
+  ],
   h3: "Premraj Menon, Business Growth Consultant and MSME Business Coach",
-  lead: "Two vantage points few consultants have. Thirty years in corporate India, rising to the C-suite as COO, with MSME dealers and distributors as his partners. Then nearly ten years managing MSMEs from the inside. Owners get the discipline of a large company, in a form a founder-led business can actually run.",
   proof: [
     {
       figure: "30 yrs",
@@ -121,14 +140,6 @@ export const WHY = {
     {
       figure: "Nearly 10 yrs",
       text: "Managing MSMEs: co-founded Viworks Ventures, then ran growth and strategy on the management team at Neoffice (2016–2025)",
-    },
-    {
-      figure: "2019",
-      text: "Neoffice won the ET-SIDBI MSME award for Best Exporter, Micro category",
-    },
-    {
-      figure: "Family-owned business",
-      text: "Family-business owners have asked him to help settle the next generation in and get clarity on who runs what",
     },
   ],
   credentials:
@@ -191,7 +202,7 @@ export const STORIES = {
           emphasis: true,
         },
       ],
-      link: { label: "Read client success stories", href: "/client-success-stories" },
+      link: { label: "Read more client stories", href: "/client-success-stories" },
     },
     {
       caption: "Bulk chemical manufacturer · Salem · Simple Reset, 60 days",
@@ -214,9 +225,10 @@ export const STORIES = {
           text: "Mapped the work task by task across a team of 14, using the owner’s own minutes. Wrote down who decides what, with limits for each person. Recommended six moves of work to people who had time, and one owner for the customer after the order.",
         },
         {
-          // Keep "Planned" until Premraj supplies the outcome.
+          // 20% a quarter is the owner's goal, not a result: keep "focused on…
+          // growing" until Premraj supplies actual figures.
           label: "What’s changed so far",
-          text: "Planned: the six moves bring the owner’s day from over 120% to about 100%, before hiring anyone, and the decisions he takes himself from 12 to 7. The team now works this way, and results are reviewed every Monday.",
+          text: "The six moves are bringing the owner’s day from over 120% to about 100%, and the decisions he takes himself from 12 to 7, without hiring anyone. With time back for the business, he is now focused on what comes next: growing revenue by 20% every quarter.",
           emphasis: true,
         },
       ],
@@ -235,6 +247,7 @@ export const PROGRAMMES = {
   cards: [
     {
       name: "Diagnostic",
+      forWho: "For an owner who wants clarity on one pressing business problem.",
       mode: "In person or online",
       price: price("diagnostic"),
       note: "One time · paid after the session",
@@ -243,6 +256,7 @@ export const PROGRAMMES = {
     },
     {
       name: "Reset",
+      forWho: "For a business that needs someone on site, fixing one part of it with your team.",
       mode: "In person · Bangalore",
       price: price("reset30"),
       note: `30 days · ${price("reset60")} for 60 days`,
@@ -251,6 +265,7 @@ export const PROGRAMMES = {
     },
     {
       name: "Counsel",
+      forWho: "For owners seeking regular strategic guidance and leadership support.",
       mode: "In person · Bangalore",
       price: price("counsel"),
       note: "Per month · three-month minimum",
@@ -259,6 +274,7 @@ export const PROGRAMMES = {
     },
     {
       name: "Advisory",
+      forWho: "For owners who want a senior advisor to think with, and someone to check it gets done.",
       mode: "Online · anywhere in India",
       price: price("advisory"),
       note: "Per month · three-month minimum",
