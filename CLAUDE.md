@@ -36,7 +36,7 @@ Blog posts don't need this — `/blog/[slug]` routes are added to the sitemap au
 
 These come from the design handoff. Future agents must obey:
 
-1. **Color palette is locked**: `#FFFFFF` bg, `#0F0F0F` text, `#464646` mid, `#878787` light, `#ED1C24` red, `#E1E1E1` rule, `#F9F8F6` warm. Defined as CSS vars in `globals.css` and as Tailwind tokens in `tailwind.config.ts`. **Never introduce new colors** without a brand decision.
+1. **Color palette is locked**: `#FFFFFF` bg, `#0F0F0F` text, `#464646` mid, `#878787` light, `#ED1C24` red, `#E1E1E1` rule, `#F9F8F6` warm. Defined as CSS vars in `globals.css` and as Tailwind tokens in `tailwind.config.ts`. **Never introduce new colors** without a brand decision. **One approved exception (Premraj, 20 Nov 2026):** WhatsApp green `#25D366`, used only as the fill of `WhatsAppIcon` on links that open WhatsApp (it turns white on red-filled hover via `globals.css`). Don't remove it as off-brand, and don't use the green anywhere else.
 2. **Red is used sparingly** — one accent per section. Hover states, accents, the vertical rule. Never as a section background or for body text.
 3. **Lora serif only**. No sans-serif. Set via `next/font/google` in layout.tsx, available as `--font-lora` and the `font-serif` Tailwind class.
 4. **Vertical 2px red rule** on the left side of certain hero / page-header sections. See `simpleworks-landing-mock.html` for the pattern.
@@ -133,3 +133,13 @@ If you ever add a new secret, **never** prefix it `NEXT_PUBLIC_`. Read it inside
 ## Package management
 
 **pnpm only** — never `npm install` or `yarn`. `pnpm-lock.yaml` is the only lockfile.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

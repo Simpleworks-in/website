@@ -13,35 +13,74 @@ export type TextLink = { label: string; href: string };
 
 export const HERO = {
   eyebrow: "Business Growth Consultant · Bangalore & India",
-  heading: { text: "Your business has more in it than your", red: "current results show." },
+  heading: {
+    text: "Your business should grow.",
+    red: "But it shouldn’t depend on you for everything.",
+  },
   subhead:
-    "At Simpleworks Consulting, we help established Indian small and medium businesses that are stuck in growth, stretched in operations, or unclear on the next move. Online across India, in person in Bangalore.",
-  cta: { label: "WhatsApp Premraj", dataCta: "hero" },
-  ctaCaption: "Reply within one business day",
+    "Simpleworks Consulting helps MSME owners break through growth barriers, build stronger teams and run their businesses with greater clarity and control.",
+  line: "39 years of business leadership experience. Practical advice. Personal involvement. In person in Bangalore, online across India.",
+  cta: { label: "Let’s discuss your business", dataCta: "hero" },
+  tags: "Business Growth · Founder Effectiveness · Team Accountability · Execution",
   imageAlt: "MSME owner reviewing business growth with Simpleworks Consulting, Bangalore",
 };
 
-export const PROBLEM = {
-  eyebrow: "Sound familiar?",
-  heading: { text: "Turnover is stuck. And everything still", red: "depends on you." },
+// "Is this you?" replaced "Sound familiar?" and "What we do" (v3, Nov 2026).
+// The owner's problem in his own words, then what changes, then the service.
+export const HELP = {
+  id: "help", // the header's "How we help" link target
+  eyebrow: "Is this you?",
+  heading: { text: "Is your business facing any of these", red: "business problems?" },
   lead: "If two or more of these describe your week, the problem is rarely effort. It is usually the way the business is set up to grow.",
-  statements: [
-    "We’ve reached a certain size, and I’m no longer sure where to take the business next.",
-    "Revenue has been flat for years, though we’re all working harder.",
-    "The business has outgrown the way I run it, and managing it is getting harder.",
-    "My team waits for instructions instead of taking ownership.",
-    "Every decision, big or small, still ends up on my desk.",
-    "My days go on firefighting, so I never get time to work on the business.",
-  ],
-  founderLead: "Premraj Menon has been in this seat.",
-  founderBody:
-    "39 years running sales, distribution and P&Ls in Indian businesses, in large companies and in MSMEs. He helps owners find what is holding growth back, and gets their time back for the work only they can do.",
+  columns: { problem: "Your problem", help: "How Simpleworks can help you" },
+  rows: [
+    {
+      label: "The business has stopped growing",
+      problem: "Revenue has stopped growing despite everyone’s efforts.",
+      promise: "Find where your next growth will come from, and the first steps to get there.",
+      link: { label: "Sales & Distribution Growth", href: "/services/gtm-consulting" },
+    },
+    {
+      label: "The founder has become the bottleneck",
+      problem: "I am involved in almost every important decision.",
+      promise: "Decisions that don’t need you stop landing on your desk.",
+      link: { label: "Founder Effectiveness & Strategic Advisory", href: "/msme-business-coach" },
+    },
+    {
+      label: "The team is not taking ownership",
+      problem: "My managers don’t take enough ownership.",
+      promise: "Each manager knows what they own, and someone checks every week that it got done.",
+      link: { label: "Team Accountability & Execution", href: "/services/execution-consulting" },
+    },
+    {
+      label: "The business lacks direction",
+      problem: "I have ideas for growth but struggle to turn them into action.",
+      promise: "Three or four priorities everyone knows, and a plan to finish them, month by month.",
+      // No business-strategy hub page exists yet; /services is the overview.
+      link: { label: "Business Direction & Growth", href: "/services" },
+    },
+    {
+      label: "The business runs on people, not systems",
+      problem: "Everything runs from people’s heads. Nothing is written down.",
+      promise: "Simple processes your team follows every day, with each task in the right hands.",
+      // Until a "Business Processes & Systems" page exists.
+      link: { label: "Business Processes & Systems", href: "/services/execution-consulting" },
+    },
+  ] satisfies {
+    label: string;
+    problem: string;
+    promise: string;
+    link: TextLink;
+  }[],
+  quoteLead:
+    "I have seen my business partners face these challenges in 39 years of running sales and distribution across India, in large companies and in MSMEs.",
+  quoteBody: "Today I help owners find what is holding their growth back, and fix it with their team.",
+  quoteBy: "Premraj Menon",
   cta: {
     label: "Sound familiar? Tell Premraj which one",
     dataCta: "recognise",
     whatsappText: "Hi Premraj, I saw the list on your website. The one that sounds like my business is: ",
   },
-  link: { label: "How a half-day business growth review works", href: "/business-growth-review" },
 };
 
 export const WHO = {
@@ -64,40 +103,12 @@ export const WHO = {
   paraAfter: ". All of them need simple answers, not complex frameworks.",
 };
 
-export const SERVICES = {
-  eyebrow: "What we do",
-  heading: { text: "Strategy. Growth. Execution.", red: "Nothing more." },
-  intro:
-    "An independent consulting practice in Bangalore, led personally by Premraj, that stays with you through execution.",
-  cards: [
-    {
-      num: "01",
-      title: "Know where the business should go next",
-      body: "Clarity on where the business should go, and why. We work with your leadership team to find the core problem and build a plan the organisation can actually follow.",
-      // No business-strategy hub page exists yet; /services is the overview.
-      link: { label: "Business strategy consulting", href: "/services" },
-    },
-    {
-      num: "02",
-      title: "Win the right customers through the right channels",
-      body: "Define the segment worth winning, sharpen what you say to it, and choose the channels that move volume: dealers, distributors or direct.",
-      link: { label: "Sales & distribution strategy", href: "/services/gtm-consulting" },
-    },
-    {
-      num: "03",
-      title: "Get the team delivering without you chasing",
-      body: "Oversight, accountability and review routines that turn decisions into progress. OKRs are part of the toolkit, kept simple enough to use.",
-      link: { label: "Strategy implementation & OKRs", href: "/services/execution-consulting" },
-    },
-  ],
-};
-
 export const WHY = {
   eyebrow: "Why Simpleworks",
-  heading: { text: "39 years running businesses.", red: "Not advising on them." },
+  heading: { text: "30 years in large companies.", red: "Nearly 10 years inside MSMEs like yours." },
   portraitAlt: "Premraj Menon, business growth consultant, Bangalore",
   h3: "Premraj Menon, Business Growth Consultant and MSME Business Coach",
-  lead: "Two vantage points few consultants have. Thirty years in corporate India, rising to the C-suite as COO, with MSME dealers and distributors as his partners. Then ten years managing MSMEs from the inside. Owners get the discipline of a large company, in a form a founder-led business can actually run.",
+  lead: "Two vantage points few consultants have. Thirty years in corporate India, rising to the C-suite as COO, with MSME dealers and distributors as his partners. Then nearly ten years managing MSMEs from the inside. Owners get the discipline of a large company, in a form a founder-led business can actually run.",
   proof: [
     {
       figure: "30 yrs",
@@ -108,7 +119,7 @@ export const WHY = {
       text: "MSME dealers and distributors coached on business performance across three decades",
     },
     {
-      figure: "10 yrs",
+      figure: "Nearly 10 yrs",
       text: "Managing MSMEs: co-founded Viworks Ventures, then ran growth and strategy on the management team at Neoffice (2016–2025)",
     },
     {
@@ -137,28 +148,83 @@ export const WHY = {
   },
 };
 
-export const STORY = {
+export type StoryRow = { label: string; text: string; emphasis?: boolean };
+export type HomeStory = {
+  caption: string;
+  title: string;
+  note: string;
+  image: { src: string; alt: string; width: number; height: number };
+  rows: StoryRow[];
+  link?: TextLink;
+};
+
+// Anonymous clients: no client, founder, product or customer name anywhere
+// here (copy, image file names or alt text). Add a third story by appending
+// to `items`; the layout needs no change.
+export const STORIES = {
   eyebrow: "Client story",
-  heading: { text: "What changed for", red: "one manufacturer." },
-  caption: "Automobile components manufacturer · Bangalore · Simple Diagnostic",
-  title: "Flat for two years, two clients carrying the business.",
-  note: "Client details are confidential.",
-  rows: [
+  heading: { text: "What changed for", red: "two manufacturers." },
+  items: [
     {
-      label: "The problem",
-      text: "A founder-run business with revenue flat for two years. Two anchor customers took most of the output, so every price talk and every late payment hit hard.",
+      caption: "Automobile components manufacturer · Bangalore · Simple Diagnostic",
+      title: "Flat for two years, two clients carrying the business.",
+      note: "Client details are confidential.",
+      // Same file as this case on /client-success-stories.
+      image: {
+        src: "/images/stories/automobile-components-manufacturer/image.webp",
+        alt: "Watercolour illustration of a red car",
+        width: 475,
+        height: 360,
+      },
+      rows: [
+        {
+          label: "The problem",
+          text: "A founder-run business with revenue flat for two years. Two anchor customers took most of the output, so every price talk and every late payment hit hard.",
+        },
+        {
+          label: "What we did",
+          text: "Rebuilt the go-to-market plan and mapped a far wider list of potential buyers. Opened the aftermarket through Bangalore distributors on cash-and-carry, to ease cash flow. Registered on Udyam, so B2B buyers come under the MSMED Act’s 45-day payment rule.",
+        },
+        {
+          label: "What’s changed so far",
+          text: "New B2B customers are signing on beyond the two anchors, and the first aftermarket distributor is on board.",
+          emphasis: true,
+        },
+      ],
+      link: { label: "Read client success stories", href: "/client-success-stories" },
     },
     {
-      label: "What we did",
-      text: "Rebuilt the go-to-market plan and mapped a far wider list of potential buyers. Opened the aftermarket through Bangalore distributors on cash-and-carry, to ease cash flow. Registered on Udyam, so B2B buyers come under the MSMED Act’s 45-day payment rule.",
+      caption: "Bulk chemical manufacturer · Salem · Simple Reset, 60 days",
+      title: "The owner’s day was over 120% full. Most decisions ran through him.",
+      // Must ship with this story.
+      note: "Industry and location changed to protect the client’s confidentiality.",
+      image: {
+        src: "/images/stories/bulk-chemical-manufacturer.webp",
+        alt: "Watercolour illustration of chemical storage tanks and drums",
+        width: 1200,
+        height: 670,
+      },
+      rows: [
+        {
+          label: "The problem",
+          text: "A family-run business with one owner and three managers, where almost everything still ran through the owner. By the owner’s own count of the minutes, his day was over 120% full, and he took 12 of the 21 regular decisions. Nothing about who owns what was written down.",
+        },
+        {
+          label: "What we did",
+          text: "Mapped the work task by task across a team of 14, using the owner’s own minutes. Wrote down who decides what, with limits for each person. Recommended six moves of work to people who had time, and one owner for the customer after the order.",
+        },
+        {
+          // Keep "Planned" until Premraj supplies the outcome.
+          label: "What’s changed so far",
+          text: "Planned: the six moves bring the owner’s day from over 120% to about 100%, before hiring anyone, and the decisions he takes himself from 12 to 7. The team now works this way, and results are reviewed every Monday.",
+          emphasis: true,
+        },
+      ],
     },
-    {
-      label: "What’s changed so far",
-      text: "New B2B customers are signing on beyond the two anchors, and the first aftermarket distributor is on board.",
-      emphasis: true,
-    },
-  ],
-  link: { label: "Read client success stories", href: "/client-success-stories" },
+  ] satisfies HomeStory[],
+  trust:
+    "In Bangalore I come to your business in person; across India we work online. Your numbers stay private: I will sign an NDA before you share them.",
+  trustBy: "Premraj Menon",
 };
 
 export const PROGRAMMES = {
@@ -200,7 +266,11 @@ export const PROGRAMMES = {
       link: { label: "Simple Advisory details", href: "/programmes#simple-advisory" },
     },
   ],
-  cta: { label: "Let’s have a quick introductory call", href: "#contact", dataCta: "programmes" },
+  cta: {
+    label: "Let’s have a quick introductory call",
+    dataCta: "programmes",
+    whatsappText: "Hi Premraj, I’d like a quick introductory call about my business.",
+  },
   customText: "Need something different? Custom engagements get a fixed written quote.",
   compareLink: { label: "Compare all programmes", href: "/programmes" },
 };

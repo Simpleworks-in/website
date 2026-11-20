@@ -77,6 +77,14 @@
   }
 }
 
+/* WhatsApp icon (green, see WhatsAppIcon.tsx) turns white when its button
+   fills red on hover or keyboard focus, so it stays visible. Text links and
+   buttons that don't fill red keep the green. */
+.hover\:bg-red:hover .wa-icon,
+.hover\:bg-red:focus-visible .wa-icon {
+  fill: #ffffff;
+}
+
 /* ─── Blog post prose ────────────────────────────────────────────────────────
    Applied to the rendered Markdoc / markdown content inside <article>.
    Mirrors what @tailwindcss/typography would give, tuned to Simpleworks brand.

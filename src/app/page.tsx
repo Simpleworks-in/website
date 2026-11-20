@@ -8,11 +8,10 @@ import { FACTS } from "../../content/facts";
 import {
   CONTACT,
   FAQ_SECTION,
+  HELP,
   HERO,
-  PROBLEM,
   PROGRAMMES,
-  SERVICES,
-  STORY,
+  STORIES,
   WHO,
   WHY,
   type RedHeading,
@@ -24,14 +23,14 @@ export const metadata = {
     absolute: "Business Consultant in Bangalore & India | Simpleworks Consulting",
   },
   description:
-    "Business not growing? Premraj Menon of Simpleworks Consulting is a business growth consultant for founder-led MSMEs in Bangalore and across India.",
+    "Growth stalled and every decision still lands on your desk? Premraj Menon is a business growth consultant for MSME owners in Bangalore and across India.",
   alternates: {
     canonical: "https://www.simpleworks.in",
   },
   openGraph: {
     title: "Business Consultant in Bangalore & India | Simpleworks Consulting",
     description:
-      "Business not growing? Premraj Menon of Simpleworks Consulting is a business growth consultant for founder-led MSMEs in Bangalore and across India.",
+      "Growth stalled and every decision still lands on your desk? Premraj Menon is a business growth consultant for MSME owners in Bangalore and across India.",
     url: "https://www.simpleworks.in",
     siteName: "Simpleworks Consulting",
     locale: "en_IN",
@@ -41,7 +40,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Business Consultant in Bangalore & India | Simpleworks Consulting",
     description:
-      "Business not growing? Premraj Menon of Simpleworks Consulting is a business growth consultant for founder-led MSMEs in Bangalore and across India.",
+      "Growth stalled and every decision still lands on your desk? Premraj Menon is a business growth consultant for MSME owners in Bangalore and across India.",
   },
 };
 
@@ -58,9 +57,11 @@ const HEADER = "mb-10"; // eyebrow + H2 block to section content: 40px
 const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
 const HAIRLINE_ITEM = "border-t-[0.5px] border-rule pt-[22px] pb-[26px]";
 const BUTTON =
-  "inline-block font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
+  "inline-flex items-center font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
 const TEXT_LINK = "text-red hover:underline w-fit";
 const ACTION_ROW = "flex flex-wrap items-center gap-x-8 gap-y-4";
+// "Is this you?" rows: number | the owner's problem | how we help.
+const HELP_GRID = "lg:grid lg:grid-cols-[80px_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-12";
 
 function Heading({ heading, id }: { heading: RedHeading; id?: string }) {
   return (
@@ -118,13 +119,19 @@ export default function HomePage() {
               </span>
             </h1>
             <p
-              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[460px] mb-8 md:mb-11 opacity-0 animate-fade-up"
+              className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] max-w-[460px] mb-4 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.4s" }}
             >
               {HERO.subhead}
             </p>
+            <p
+              className={`${BODY} max-w-[460px] mb-8 md:mb-11 opacity-0 animate-fade-up`}
+              style={{ animationDelay: "0.45s" }}
+            >
+              {HERO.line}
+            </p>
             <div
-              className={`${ACTION_ROW} opacity-0 animate-fade-up`}
+              className="opacity-0 animate-fade-up"
               style={{ animationDelay: "0.55s" }}
             >
               <a
@@ -134,10 +141,12 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className={BUTTON}
               >
-                <WhatsAppIcon />
-                {HERO.cta.label} &nbsp;→
+                <WhatsAppIcon size={20} />
+                {HERO.cta.label}
               </a>
-              <span className="text-[14px] text-light">{HERO.ctaCaption}</span>
+              <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.7] mt-5">
+                {HERO.tags}
+              </p>
             </div>
           </div>
 
@@ -157,45 +166,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 2. SOUND FAMILIAR? ── */}
-      <section className={SECTION}>
+      {/* ── 2. IS THIS YOU? ── */}
+      <section id={HELP.id} className={SECTION}>
         <div className={HEADER}>
-          <p className={EYEBROW}>{PROBLEM.eyebrow}</p>
-          <Heading heading={PROBLEM.heading} />
-          <p className={`${BODY} max-w-[620px] mt-4 md:mt-5`}>{PROBLEM.lead}</p>
+          <p className={EYEBROW}>{HELP.eyebrow}</p>
+          <Heading heading={HELP.heading} />
+          <p className={`${BODY} max-w-[620px] mt-4 md:mt-5`}>{HELP.lead}</p>
         </div>
-        <ol
-          className="grid gap-x-8"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))" }}
+        {/* Column labels: desktop only; on mobile each row stacks. */}
+        <div
+          aria-hidden="true"
+          className={`hidden ${HELP_GRID} pb-4 text-[11px] md:text-[12px] uppercase tracking-widest text-light`}
         >
-          {PROBLEM.statements.map((statement, i) => (
-            <li key={statement} className={HAIRLINE_ITEM}>
-              <span className="block text-[15px] font-bold text-red mb-2 tracking-wide-2">
+          <span />
+          <span>{HELP.columns.problem}</span>
+          <span>{HELP.columns.help}</span>
+        </div>
+        <ol>
+          {HELP.rows.map((row, i) => (
+            <li
+              key={row.label}
+              className={`${HELP_GRID} grid grid-cols-1 gap-y-3 border-t-[0.5px] border-rule py-7 md:py-8`}
+            >
+              <span className="text-[28px] font-bold leading-none text-red [font-variant-numeric:tabular-nums]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="block text-[18px] md:text-[20px] leading-[1.45] text-ink">
-                &ldquo;{statement}&rdquo;
-              </span>
+              <div>
+                <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-2">
+                  {row.label}
+                </p>
+                <h3 className="text-[19px] md:text-[22px] font-bold leading-[1.4] text-ink">
+                  &ldquo;{row.problem}&rdquo;
+                </h3>
+              </div>
+              <div>
+                <p className="lg:hidden text-[11px] uppercase tracking-widest text-light leading-[1.6] mb-2">
+                  {HELP.columns.help}
+                </p>
+                <p className="text-[18px] md:text-[20px] leading-[1.5] text-ink mb-3">
+                  {row.promise}
+                </p>
+                <Link href={row.link.href} className={TEXT_LINK}>
+                  {row.link.label} &rarr;
+                </Link>
+              </div>
             </li>
           ))}
         </ol>
-        <p className={`${BODY} ${HAIRLINE_ITEM} max-w-[760px] mt-6`}>
-          <strong className="font-bold text-ink">{PROBLEM.founderLead}</strong>{" "}
-          {PROBLEM.founderBody}
-        </p>
-        <div className={`${ACTION_ROW} mt-2`}>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-x-12 gap-y-6 border-t-[0.5px] border-rule pt-8">
+          <p className={`${BODY} max-w-[680px]`}>
+            <strong className="font-bold text-ink">&ldquo;{HELP.quoteLead}</strong>{" "}
+            {HELP.quoteBody}&rdquo;{" "}
+            <span className="text-light whitespace-nowrap">&mdash; {HELP.quoteBy}</span>
+          </p>
           <a
-            href={whatsappHref(PROBLEM.cta.whatsappText)}
-            data-cta={PROBLEM.cta.dataCta}
+            href={whatsappHref(HELP.cta.whatsappText)}
+            data-cta={HELP.cta.dataCta}
             target="_blank"
             rel="noopener noreferrer"
-            className={BUTTON}
+            className={`${BUTTON} shrink-0`}
           >
-            {PROBLEM.cta.label} &nbsp;→
+            <WhatsAppIcon size={20} />
+            {HELP.cta.label} &nbsp;→
           </a>
-          <Link href={PROBLEM.link.href} className={TEXT_LINK}>
-            {PROBLEM.link.label} &rarr;
-          </Link>
         </div>
       </section>
 
@@ -228,30 +261,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* ── 4. WHAT WE DO ── */}
-      <section className={SECTION}>
-        <div className={HEADER}>
-          <p className={EYEBROW}>{SERVICES.eyebrow}</p>
-          <Heading heading={SERVICES.heading} />
-          <p className={`${BODY} max-w-body-text mt-4 md:mt-5`}>{SERVICES.intro}</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
-          {SERVICES.cards.map((card) => (
-            <div key={card.num} className="border-t-[0.5px] border-rule pt-[22px] flex flex-col">
-              <p className="text-[15px] font-bold text-red mb-3 tracking-wide-2">{card.num}</p>
-              <h3 className="text-[20px] md:text-[22px] font-bold leading-[1.3] text-ink mb-3">
-                {card.title}
-              </h3>
-              <p className="text-[15px] md:text-[16px] text-mid leading-[1.7] mb-5">{card.body}</p>
-              <Link href={card.link.href} className={`${TEXT_LINK} mt-auto`}>
-                {card.link.label} &rarr;
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── 5. WHY SIMPLEWORKS ── */}
+      {/* ── 4. WHY SIMPLEWORKS ── */}
       <section className={SECTION}>
         <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
         {/* Desktop: portrait with the CTA under it on the left, text on the
@@ -301,53 +311,77 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className={`${BUTTON} lg:col-start-1 lg:row-start-2`}
           >
+            <WhatsAppIcon size={20} />
             {WHY.cta.label} &nbsp;→
           </a>
         </div>
       </section>
 
-      {/* ── 6. CLIENT STORY ── */}
+      {/* ── 5. CLIENT STORIES ── */}
       <section className={SECTION}>
-        <SectionHeader eyebrow={STORY.eyebrow} heading={STORY.heading} />
-        {/* Pull-quote headline across the top, then the story in three
-            columns that read left to right: problem → action → result. */}
-        <div className="border-l-2 border-red pl-6 max-w-[760px] mb-6">
-          <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-4">
-            {STORY.caption}
-          </p>
-          <h3 className="text-[24px] md:text-[30px] font-bold leading-[1.25] text-ink mb-3">
-            {STORY.title}
-          </h3>
-          <p className="text-[14px] text-light">{STORY.note}</p>
-        </div>
-        <dl className="grid grid-cols-1 md:grid-cols-3 gap-x-8">
-          {STORY.rows.map((row, i) => (
-            <div
-              key={row.label}
-              className={`${HAIRLINE_ITEM} ${row.emphasis ? "md:border-t-2 md:border-ink" : ""}`}
-            >
-              <dt className="flex items-baseline gap-3 text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-3">
-                <span className="text-[15px] font-bold text-red tracking-wide-2">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {row.label}
-              </dt>
-              <dd
-                className={`text-[16px] md:text-[17px] leading-[1.7] ${
-                  row.emphasis ? "text-ink font-bold" : "text-mid"
-                }`}
-              >
-                {row.text}
-              </dd>
+        <SectionHeader eyebrow={STORIES.eyebrow} heading={STORIES.heading} />
+        {/* Each story: headline block with the red rule and its image on the
+            left, the problem → action → result list on the right. */}
+        {STORIES.items.map((story, s) => (
+          <article
+            key={story.title}
+            className={`grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-14 gap-y-6 items-start ${
+              s > 0 ? "border-t-[0.5px] border-rule mt-12 pt-12" : ""
+            }`}
+          >
+            <div className="border-l-2 border-red pl-6">
+              <p className="text-[11px] md:text-[12px] uppercase tracking-widest text-light leading-[1.6] mb-4">
+                {story.caption}
+              </p>
+              <h3 className="text-[24px] md:text-[30px] font-bold leading-[1.25] text-ink mb-3">
+                {story.title}
+              </h3>
+              <p className="text-[14px] text-light">{story.note}</p>
+              <Image
+                src={story.image.src}
+                alt={story.image.alt}
+                width={story.image.width}
+                height={story.image.height}
+                loading="lazy"
+                sizes="360px"
+                className="mix-blend-multiply mt-6 w-full max-w-[360px] h-auto"
+              />
             </div>
-          ))}
-        </dl>
-        <Link href={STORY.link.href} className={`${TEXT_LINK} inline-block mt-4`}>
-          {STORY.link.label} &rarr;
-        </Link>
+            <div>
+              <dl>
+                {story.rows.map((row, i) => (
+                  <div key={row.label} className={HAIRLINE_ITEM}>
+                    <dt className="flex items-baseline gap-3 text-[11px] md:text-[12px] uppercase tracking-widest text-light mb-3">
+                      <span className="text-[15px] font-bold text-red tracking-wide-2">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      {row.label}
+                    </dt>
+                    <dd
+                      className={`text-[16px] md:text-[17px] leading-[1.7] ${
+                        row.emphasis ? "text-ink font-bold" : "text-mid"
+                      }`}
+                    >
+                      {row.text}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              {story.link && (
+                <Link href={story.link.href} className={`${TEXT_LINK} inline-block mt-2`}>
+                  {story.link.label} &rarr;
+                </Link>
+              )}
+            </div>
+          </article>
+        ))}
+        <p className="border-t-[0.5px] border-rule mt-12 pt-8 text-[17px] leading-[1.7] text-ink max-w-[760px]">
+          &ldquo;{STORIES.trust}&rdquo;{" "}
+          <span className="text-light whitespace-nowrap">&mdash; {STORIES.trustBy}</span>
+        </p>
       </section>
 
-      {/* ── 7. HOW TO START ── */}
+      {/* ── 6. HOW TO START ── */}
       <section className={SECTION}>
         <div className={HEADER}>
           <p className={EYEBROW}>{PROGRAMMES.eyebrow}</p>
@@ -375,7 +409,14 @@ export default function HomePage() {
           ))}
         </div>
         <div className={`${ACTION_ROW} border-t-[0.5px] border-rule mt-8 pt-6`}>
-          <a href={PROGRAMMES.cta.href} data-cta={PROGRAMMES.cta.dataCta} className={BUTTON}>
+          <a
+            href={whatsappHref(PROGRAMMES.cta.whatsappText)}
+            data-cta={PROGRAMMES.cta.dataCta}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={BUTTON}
+          >
+            <WhatsAppIcon size={20} />
             {PROGRAMMES.cta.label} &nbsp;→
           </a>
           <p className="text-[15px] text-light leading-[1.6]">
@@ -390,7 +431,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 8. QUESTIONS ── */}
+      {/* ── 7. QUESTIONS ── */}
       <section className={SECTION}>
         <SectionHeader eyebrow={FAQ_SECTION.eyebrow} heading={FAQ_SECTION.heading} />
         <div className="max-w-[900px] border-b-[0.5px] border-rule">
@@ -425,7 +466,7 @@ export default function HomePage() {
         </Link>
       </section>
 
-      {/* ── 9. CONTACT US ── */}
+      {/* ── 8. CONTACT US ── */}
       <section
         id="contact"
         className={`${SECTION} grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start`}
@@ -465,8 +506,9 @@ export default function HomePage() {
               data-cta={CONTACT.whatsapp.dataCta}
               target="_blank"
               rel="noopener noreferrer"
-              className={TEXT_LINK}
+              className={`${TEXT_LINK} inline-flex items-center`}
             >
+              <WhatsAppIcon size={18} />
               {CONTACT.whatsapp.label}
             </a>
           </div>
