@@ -159,7 +159,7 @@ const WHY = {
   heading: { text: "A consultant who has worked", red: "inside MSMEs." },
   points: [
     "Nearly 10 years inside MSMEs, with around 3,000 MSME partners.",
-    "Co-founded Viworks.",
+    "Co-founded Viworks Ventures, working with startups on their sales and go-to-market.",
     "Part of the Neoffice management team that ran growth and strategy.",
     "ET-SIDBI Best Exporter award, Micro Enterprise category, 2019, won by Neoffice.",
     "Before that, Premraj worked on the business side at Apollo Tyres and MRF.",
