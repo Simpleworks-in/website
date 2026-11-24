@@ -113,7 +113,7 @@ type Programme = {
   get?: string[];
   options?: { name: string; sub: string; get: string[]; fee: string; feeNote: string }[];
   fee?: { amount: string; note: string };
-  extra?: React.ReactNode;
+  links?: { label: string; href: string }[];
   aside?: string;
 };
 
@@ -138,18 +138,11 @@ const PROGRAMMES: Programme[] = [
       "A one-hour walkthrough of the brief with you",
       "One clear recommendation for what to do first",
     ],
-    fee: { amount: price("diagnostic"), note: "Fixed, paid after the session" },
-    extra: (
-      <p className="text-[15px] leading-[1.7] text-mid">
-        <Link href="/business-growth-review" className="text-red hover:underline">
-          What the Diagnostic covers &rarr;
-        </Link>
-        <span className="mx-2 text-light">·</span>
-        <Link href="/sample-diagnostic-report" className="text-red hover:underline">
-          See a sample report &rarr;
-        </Link>
-      </p>
-    ),
+    fee: { amount: price("diagnostic"), note: "Fixed · paid after the session" },
+    links: [
+      { label: "What the Diagnostic covers", href: "/business-growth-review" },
+      { label: "See a sample report", href: "/sample-diagnostic-report" },
+    ],
   },
   {
     id: "simple-reset",
@@ -384,13 +377,80 @@ function GetList({ items }: { items: string[] }) {
   );
 }
 
-function Fee({ amount, note }: { amount: string; note: string }) {
+// Programme deliverables, numbered in red (design direction A, 24 Nov).
+function NumberedList({ items }: { items: string[] }) {
   return (
-    <div>
-      <p className={`${LABEL} mb-1`}>Fee</p>
-      <p className="text-[28px] md:text-[32px] font-bold leading-[1.2] text-ink">{amount}</p>
-      <p className="text-[14px] text-light mt-1">{note}</p>
-    </div>
+    <ol className="max-w-[680px] border-b-[0.5px] border-rule">
+      {items.map((item, i) => (
+        <li
+          key={item}
+          className="grid grid-cols-[40px_minmax(0,1fr)] border-t-[0.5px] border-rule py-3.5 text-[16px] md:text-[17px] leading-[1.6] text-mid"
+        >
+          <span className="font-bold text-red">{i + 1}</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+// The fee panel: the fee in large dark-grey Lora, then the facts and links.
+function FeePanel({ p }: { p: Programme }) {
+  const fees = p.options
+    ? p.options.map((o) => ({ label: o.name, amount: o.fee, note: o.feeNote }))
+    : p.fee
+      ? [{ label: "", amount: p.fee.amount, note: p.fee.note }]
+      : [];
+  const several = fees.length > 1;
+
+  return (
+    <aside className="self-start border-[0.5px] border-rule p-7 md:p-8 lg:mt-[46px]">
+      <p className={`${LABEL} mb-2`}>Fee</p>
+      <div className="flex flex-col gap-6 mb-7">
+        {fees.map((f) => {
+          const isFigure = f.amount.startsWith("₹");
+          return (
+            <div key={f.amount}>
+              {f.label && <p className="text-[15px] font-bold text-ink mb-1">{f.label}</p>}
+              <p
+                className={`font-normal leading-none text-mid tracking-tight-2 [font-variant-numeric:lining-nums_tabular-nums] ${
+                  !isFigure
+                    ? "text-[26px] leading-[1.25] tracking-normal"
+                    : several
+                      ? "text-[44px] md:text-[50px]"
+                      : "text-[48px] md:text-[60px]"
+                }`}
+              >
+                {f.amount}
+              </p>
+              <p className="text-[15px] text-light mt-2.5">{f.note}</p>
+            </div>
+          );
+        })}
+      </div>
+      <dl>
+        {p.facts.map((f, i) => (
+          <div
+            key={f.label}
+            className={`flex justify-between gap-4 border-t-[0.5px] border-rule py-3 ${
+              i === p.facts.length - 1 ? "border-b-[0.5px]" : ""
+            }`}
+          >
+            <dt className="text-[14px] text-light">{f.label}</dt>
+            <dd className="text-[15px] text-ink text-right">{f.value}</dd>
+          </div>
+        ))}
+      </dl>
+      {p.links && (
+        <div className="mt-6 flex flex-col gap-2.5 text-[15px]">
+          {p.links.map((l) => (
+            <Link key={l.href} href={l.href} className={TEXT_LINK}>
+              {l.label} &rarr;
+            </Link>
+          ))}
+        </div>
+      )}
+    </aside>
   );
 }
 
@@ -495,55 +555,50 @@ export default function ProgrammesPage() {
       {/* ── 4–8. THE FIVE ── one section each; ids are linked from other pages. */}
       {PROGRAMMES.map((p) => (
         <section key={p.id} id={p.id} className={`${SECTION} scroll-mt-20`}>
-          <div className="grid grid-cols-1 lg:grid-cols-[80px_minmax(0,1fr)] lg:gap-x-12 gap-y-3">
-            <span className="text-[15px] font-bold leading-[1.6] text-red tracking-wide-2 [font-variant-numeric:tabular-nums]">
-              {p.num}
-            </span>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-x-[72px] gap-y-10">
             <div className="min-w-0">
-              <p className={`${LABEL} mb-2`}>{p.label}</p>
-              <h2 className={`${H2} mb-3`}>{p.name}</h2>
-              <p className="text-[18px] md:text-[20px] leading-[1.5] text-ink max-w-[760px] mb-6">
+              <div className="flex items-center gap-3.5 mb-[18px]">
+                <span className="text-[15px] font-bold text-red tracking-wide-2 [font-variant-numeric:tabular-nums]">
+                  {p.num}
+                </span>
+                <span aria-hidden="true" className="block h-px w-7 bg-red" />
+                <span className="text-[12px] md:text-[13px] uppercase tracking-widest text-red">
+                  {p.label}
+                </span>
+              </div>
+              <h2 className="mb-4 text-[32px] md:text-[44px] leading-[1.12] font-bold tracking-tight-1 text-ink">
+                {p.name}
+              </h2>
+              <p className="mb-7 max-w-[640px] text-[19px] md:text-[21px] leading-[1.5] text-ink">
                 {p.tagline}
               </p>
-              <p className={`${BODY} max-w-[760px] mb-8`}>
-                <strong className="font-bold text-ink">For:</strong> {p.forWho}
-              </p>
-
-              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-4 border-t-[0.5px] border-rule pt-6 mb-8 max-w-[860px]">
-                {p.facts.map((f) => (
-                  <div key={f.label}>
-                    <dt className={`${LABEL} mb-1`}>{f.label}</dt>
-                    <dd className="text-[16px] text-ink">{f.value}</dd>
-                  </div>
-                ))}
-              </dl>
+              <div className="mb-8 max-w-[680px] border-t border-ink pt-[22px]">
+                <p className={`${LABEL} mb-3`}>Who it’s for</p>
+                <p className={BODY}>{p.forWho}</p>
+              </div>
 
               {p.options ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 max-w-[1000px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10">
                   {p.options.map((o) => (
-                    <div key={o.name}>
+                    <div key={o.name} className="min-w-0">
                       <h3 className={`${H3} mb-1`}>{o.name}</h3>
-                      <p className="text-[14px] text-light mb-4">{o.sub}</p>
-                      <GetList items={o.get} />
-                      <div className="mt-6">
-                        <Fee amount={o.fee} note={o.feeNote} />
-                      </div>
+                      <p className="text-[14px] text-light mb-3">{o.sub}</p>
+                      <NumberedList items={o.get} />
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_240px] gap-x-12 gap-y-8 max-w-[1000px] items-start">
-                  <div>
-                    <p className={`${LABEL} mb-3`}>What you get</p>
-                    {p.get && <GetList items={p.get} />}
-                    {p.aside && <p className="text-[15px] leading-[1.7] text-mid mt-4">{p.aside}</p>}
-                  </div>
-                  {p.fee && <Fee amount={p.fee.amount} note={p.fee.note} />}
-                </div>
+                <>
+                  <p className={`${LABEL} mb-1.5`}>What you get</p>
+                  {p.get && <NumberedList items={p.get} />}
+                  {p.aside && (
+                    <p className="text-[15px] leading-[1.7] text-mid mt-4 max-w-[640px]">{p.aside}</p>
+                  )}
+                </>
               )}
-
-              {p.extra && <div className="mt-8">{p.extra}</div>}
             </div>
+
+            <FeePanel p={p} />
           </div>
         </section>
       ))}
