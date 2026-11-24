@@ -307,10 +307,10 @@ export default function ServicesPage() {
         <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-start gap-x-14 gap-y-10">
           <div className="min-[900px]:flex-[1_1_400px] min-w-0">
             <p className={EYEBROW}>{HERO.eyebrow}</p>
-            <h1 className="mb-4 max-w-[640px] text-[24px] leading-[1.25] font-bold text-ink md:text-[28px]">
+            <h1 className="mb-4 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
               {HERO.h1}
             </h1>
-            <p className="mb-6 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
+            <p className="mb-6 max-w-[640px] text-[24px] leading-[1.25] font-bold text-ink md:text-[28px]">
               {HERO.subhead.text} <span className="text-red">{HERO.subhead.red}</span>
             </p>
             <p className="mb-6 max-w-[560px] text-[16px] md:text-[18px] italic leading-[1.65] text-mid">
