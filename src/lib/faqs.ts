@@ -180,6 +180,11 @@ const LIBRARY = [
     q: "How is this different from hiring a marketing agency?",
     a: "An agency runs campaigns. We work out who you should sell to, why they should buy and through which channels, which is what an agency needs to be told. If you already have an agency, the plan gives them a clear brief.",
   },
+  {
+    id: "gtm-location",
+    q: "We are not in Bangalore. Can you still help?",
+    a: "Yes. We are based in Bangalore and work with owners across India. The Simple Diagnostic can run in person or online, and the Simple Advisory is fully online, wherever you are. The Simple Reset needs one visit a week, so it suits owners in Bangalore or able to meet there regularly; travel outside Bangalore is charged at actuals.",
+  },
   rich(
     "gtm-duration-cost",
     "How long does it take, and what does it cost?",
@@ -296,11 +301,13 @@ export const msmeFaqIds = [
 
 /** /services/gtm-consulting's six, in display order. */
 export const gtmFaqIds = [
+  // Cost and out-of-city first (structure review, 24 Nov).
+  "gtm-duration-cost",
+  "gtm-location",
   "gtm-find-distributors",
   "gtm-general-modern-trade",
   "gtm-vs-marketing-plan",
   "gtm-vs-agency",
-  "gtm-duration-cost",
   "gtm-startups",
 ] as const satisfies readonly FaqId[];
 
