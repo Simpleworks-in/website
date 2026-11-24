@@ -1,13 +1,18 @@
 import Image from "next/image";
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { FACTS } from "../../../content/facts";
 import { STORIES_PAGE_LIVE } from "@/lib/stories-live";
 import { getStoriesPageText, getVisibleStories } from "@/lib/client-stories";
+import { whatsappHref } from "@/lib/whatsapp";
 
-const TITLE = "MSME Client Success Stories | Simpleworks Consulting";
+// Client Stories (renamed from "Client Success Stories", 24 Nov 2026). The URL
+// stays /client-success-stories so Google indexing is not reset. Copy lives in
+// content/stories-page.yaml and content/client-stories/*.yaml (Keystatic).
+
+const TITLE = "Client Stories: What Changed for MSME Owners | Simpleworks Consulting";
 const DESCRIPTION =
-  "Real engagements with founder-led MSMEs: the problem, what Simpleworks Consulting did, and the programme used. Bangalore and across India.";
+  "Real work with founder-led MSMEs and startups: what was stuck, what Simpleworks Consulting did, and what has changed so far. Bangalore and across India.";
 const URL = "https://www.simpleworks.in/client-success-stories";
 
 export const metadata = {
@@ -26,6 +31,11 @@ export const metadata = {
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 const collectionSchema = {
@@ -41,7 +51,15 @@ const collectionSchema = {
   },
 };
 
-export default async function ClientSuccessStoriesPage() {
+// ── Shared styles (same scale as the /services pages) ──
+const PAD = "px-6 md:pr-[60px] md:pl-[132px]";
+const LABEL = "text-[11px] md:text-[13px] uppercase tracking-widest text-light leading-[1.6]";
+const H2 = "text-[28px] md:text-[36px] leading-[1.18] font-bold tracking-tight-1";
+const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
+const BUTTON =
+  "inline-flex items-center font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
+
+export default async function ClientStoriesPage() {
   const [text, { stories }] = await Promise.all([
     getStoriesPageText(),
     getVisibleStories(),
@@ -54,126 +72,100 @@ export default async function ClientSuccessStoriesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
 
-      {/* PAGE HEADER */}
-      <div className="flex">
-        <div className="relative hidden md:flex w-[72px] flex-shrink-0 items-start pt-14 pl-6">
-          <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-red" />
-        </div>
-        <div className="flex-1 px-6 py-10 md:px-[60px] md:py-14 md:pl-14">
-          <div className="max-w-[640px]">
-            <p
-              className="text-eyebrow uppercase tracking-wide-10 text-light"
-              style={{ opacity: 0, animation: "fadeUp 0.6s ease 0.1s both" }}
-            >
-              {text.eyebrow}
-            </p>
-            <h1
-              className="mt-[18px] text-[36px] font-bold leading-[1.1] tracking-tight-2 md:text-[52px]"
-              style={{ opacity: 0, animation: "fadeUp 0.7s ease 0.2s both" }}
-            >
-              {text.heading} <span className="text-red">{text.headingRed}</span>
-            </h1>
-            <p
-              className="mt-5 max-w-[520px] text-[17px] leading-[1.65] text-mid"
-              style={{ opacity: 0, animation: "fadeUp 0.7s ease 0.3s both" }}
-            >
-              {text.intro}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* STORIES */}
-      <section
-        id="stories"
-        className="reveal border-t border-rule px-6 py-14 md:px-[60px] md:py-20 md:pl-[132px]"
-      >
-        {stories.length === 0 ? (
-          <p className="text-[15px] leading-[1.7] text-mid">
-            New stories will appear here soon.
-          </p>
-        ) : (
-          <div className="max-w-[860px]">
-            {stories.map((story, i) => (
-              <article
-                key={story.id}
-                className={`flex flex-col gap-6 py-10 min-[760px]:flex-row min-[760px]:gap-8 ${
-                  i === 0 ? "pt-0" : "border-t border-rule"
-                }`}
-              >
-                {story.image ? (
-                  <Image
-                    src={story.image}
-                    alt={story.imageAlt}
-                    width={140}
-                    height={140}
-                    className="h-[110px] w-[110px] flex-shrink-0 object-cover min-[760px]:h-[140px] min-[760px]:w-[140px]"
-                  />
-                ) : null}
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wide-4 text-red">
-                    {story.programme}
-                  </p>
-                  <h2 className="mt-3 text-[22px] font-bold leading-[1.3] tracking-tight-1">
-                    {story.title}
-                  </h2>
-                  <p className="mt-3.5 text-[15px] leading-[1.7] text-mid">
-                    <strong className="font-bold text-ink">The problem:</strong>{" "}
-                    {story.problem}
-                  </p>
-                  <p className="mt-3 text-[15px] leading-[1.7] text-mid">
-                    <strong className="font-bold text-ink">What we did:</strong>{" "}
-                    {story.solution}
-                  </p>
-                  {story.outcome ? (
-                    <p className="mt-3 text-[15px] leading-[1.7] text-mid">
-                      <strong className="font-bold text-ink">What&rsquo;s changed so far:</strong>{" "}
-                      {story.outcome}
-                    </p>
-                  ) : null}
-                  {story.revenue ? (
-                    <p className="mt-3 text-[15px] leading-[1.7] text-mid">
-                      <strong className="font-bold text-ink">Revenue:</strong>{" "}
-                      {story.revenue}
-                    </p>
-                  ) : null}
-                  {story.meta ? (
-                    <p className="mt-4 text-[12px] tracking-wide-3 text-light">
-                      {story.meta}
-                    </p>
-                  ) : null}
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
-
-        <p className="mt-10 max-w-[860px] border-l-2 border-red pl-4 text-[14px] leading-[1.7] text-light">
-          {text.closingFootnote}
-        </p>
+      {/* ── HEADER ── */}
+      <section className={`${PAD} py-14 md:py-20`}>
+        <p className={`${LABEL} mb-4 md:mb-5`}>{text.eyebrow}</p>
+        <h1 className="mb-5 max-w-[760px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
+          {text.heading} <span className="text-red">{text.headingRed}</span>
+        </h1>
+        <p className={`${BODY} max-w-[600px]`}>{text.intro}</p>
       </section>
 
-      {/* CLOSING CTA */}
-      <section
-        id="book"
-        className="reveal border-t border-rule px-6 py-14 md:px-[60px] md:py-20 md:pl-[132px]"
-      >
-        <p className="text-eyebrow uppercase tracking-wide-9 text-light">
-          {text.ctaEyebrow}
-        </p>
-        <h2 className="mt-4 text-[32px] font-bold leading-[1.18] tracking-tight-1 md:text-sec-h2">
+      {/* ── STORIES ── one per section, newest first. */}
+      {stories.length === 0 ? (
+        <section className={`reveal border-t-[0.5px] border-rule ${PAD} py-14`}>
+          <p className={BODY}>New stories will appear here soon.</p>
+        </section>
+      ) : (
+        stories.map((story) => {
+          const rows = [
+            { label: "The problem", text: story.problem },
+            story.revenue ? { label: "Revenue", text: story.revenue } : null,
+            { label: "What we did", text: story.solution },
+            story.outcome
+              ? { label: "What’s changed so far", text: story.outcome, emphasis: true }
+              : null,
+          ].filter((row): row is { label: string; text: string; emphasis?: boolean } => !!row);
+          const caption = [story.title, story.location, story.programme]
+            .filter(Boolean)
+            .join(" · ");
+
+          return (
+            <section
+              key={story.id}
+              className={`reveal border-t-[0.5px] border-rule ${PAD} py-14 md:py-[72px]`}
+            >
+              <article className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-14 gap-y-6 items-start">
+                <div className="border-l-2 border-red pl-6">
+                  <p className={`${LABEL} mb-4`}>{caption}</p>
+                  <h2 className={`${H2} mb-3`}>{story.headline || story.title}</h2>
+                  {story.note && <p className="text-[14px] text-light">{story.note}</p>}
+                  {story.image && (
+                    <Image
+                      src={story.image}
+                      alt={story.imageAlt}
+                      width={720}
+                      height={480}
+                      loading="lazy"
+                      sizes="360px"
+                      className="mix-blend-multiply mt-6 w-full max-w-[360px] h-auto"
+                    />
+                  )}
+                </div>
+                <dl>
+                  {rows.map((row) => (
+                    <div key={row.label} className="border-t-[0.5px] border-rule pt-[22px] pb-[26px]">
+                      <dt className="text-[13px] font-bold uppercase tracking-widest text-ink mb-3">
+                        {row.label}
+                      </dt>
+                      <dd
+                        className={`text-[16px] md:text-[17px] leading-[1.7] ${
+                          row.emphasis ? "text-ink font-bold" : "text-mid"
+                        }`}
+                      >
+                        {row.text}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            </section>
+          );
+        })
+      )}
+
+      {/* ── FOOTNOTE ── */}
+      <section className={`border-t-[0.5px] border-rule ${PAD} py-8`}>
+        <p className="max-w-[760px] text-[14px] leading-[1.7] text-light">{text.closingFootnote}</p>
+      </section>
+
+      {/* ── CLOSING CALL TO ACTION ── */}
+      <section className={`reveal border-t-[0.5px] border-rule ${PAD} py-14 md:py-[72px]`}>
+        <p className={`${LABEL} mb-4 md:mb-5`}>{text.ctaEyebrow}</p>
+        <h2 className={H2}>
           {text.ctaHeading} <span className="text-red">{text.ctaHeadingRed}</span>
         </h2>
-        <p className="mt-4 max-w-body-text text-[16px] leading-[1.78] text-mid md:text-[17px]">
-          {text.ctaBody}
-        </p>
-        <Link
-          href={text.ctaButtonHref}
+        <p className={`${BODY} mt-4 mb-8 max-w-[560px]`}>{text.ctaBody}</p>
+        <a
+          href={whatsappHref()}
           data-cta="stories-cta"
-          className="mt-8 inline-block w-fit rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] font-serif text-sm tracking-wide-3 text-red transition-colors hover:bg-red hover:text-white"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={BUTTON}
         >
+          <WhatsAppIcon size={20} />
           {text.ctaButtonLabel} &nbsp;→
-        </Link>
+        </a>
         <p className="mt-5 text-[14px] leading-[1.7] text-light">
           {text.ctaCaption}{" "}
           <a

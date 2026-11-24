@@ -206,7 +206,7 @@ export default config({
       },
     }),
     clientStories: collection({
-      label: "Client success stories",
+      label: "Client stories",
       slugField: "title",
       path: "content/client-stories/*",
       format: { data: "yaml" },
@@ -270,6 +270,14 @@ export default config({
         imageAlt: fields.text({
           label: "Image description",
           description: "Not shown for anonymous stories; a generic description is used instead.",
+        }),
+        headline: fields.text({
+          label: "Headline (optional)",
+          description: 'One line shown as the story title, for example "Flat for two years, two clients carrying the business."',
+        }),
+        note: fields.text({
+          label: "Note (optional)",
+          description: 'Small print under the headline, for example "Industry and location changed to protect the client\u2019s confidentiality."',
         }),
         problem: fields.text({ label: "The problem", multiline: true }),
         solution: fields.text({ label: "What we did", multiline: true }),

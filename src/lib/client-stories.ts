@@ -8,6 +8,10 @@ export type PublicStory = {
   id: string;
   programme: string;
   title: string;
+  headline: string;
+  note: string;
+  location: string;
+  industry: string;
   meta: string;
   image: string | null;
   imageAlt: string;
@@ -59,6 +63,10 @@ export async function getVisibleStories(opts?: {
       id: slug,
       programme: entry.programme,
       title: anon ? entry.publicLabel : entry.clientName,
+      headline: entry.headline ?? "",
+      note: entry.note ?? "",
+      location: location ?? "",
+      industry: entry.industryLabel ?? "",
       meta: [location, entry.industryLabel].filter(Boolean).join(" · "),
       image: entry.image,
       // Anonymous: ignore the free-text alt, which could contain a name.
