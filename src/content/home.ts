@@ -57,8 +57,9 @@ export const HELP = {
       label: "The business lacks direction",
       problem: "I have ideas for growth but struggle to turn them into action.",
       promise: "Three or four priorities everyone knows, and a plan to finish them, month by month.",
-      // No business-strategy hub page exists yet; /services is the overview.
-      link: { label: "Business Direction & Growth", href: "/services" },
+      // Was /services; the hub now shows these rows itself, so a link there
+      // would be circular (24 Nov 2026).
+      link: { label: "Business Direction & Growth", href: "/services/msme-consulting" },
     },
     {
       label: "The business runs on people, not systems",

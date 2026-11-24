@@ -64,6 +64,25 @@ const LIBRARY = [
     a: "A fair question. The honest answer: a ₹25 crore business isn’t a scaled-down version of the corporates I ran — you don’t have a planning department or six layers to absorb a bad call. But the career looks different from the inside. Through those corporate years, my customers were businesses like yours — distributor owners, dealers, and retailers turning over ₹12 to ₹150 crore, mostly family-owned, often carrying several brands at once. At Airtel, I led a team in direct sales to MSMEs and corporates, covering 2,500 accounts. At Tata Docomo, I managed a multi-crore business across a network of small and large distribution partners. So a large part of my working life has gone into understanding how smaller businesses actually buy, operate, and decide — I spent those years in their offices, not mine. From 2016 to 2025, I co-founded Viworks Ventures and then joined the management team at Neoffice — small teams, tight cash. The judgement comes from large companies. The context is one I’ve worked in for most of 39 years, stripped down to what a business your size can actually carry, run by the people you already have.",
   },
 
+  // ── /services hub items (24 Nov 2026) ──
+  {
+    id: "which-service",
+    q: "Which service should I start with?",
+    a: "Start with the problem, not the service name. If growth has stopped, begin with Sales & Distribution Strategy. If your team is not taking ownership, begin with Strategy Implementation. If you are not sure, a quick introductory call is enough to decide, and a Simple Diagnostic can settle it.",
+  },
+  {
+    id: "tax-compliance",
+    q: "Do you offer tax, compliance or registration services?",
+    a: "No. We advise on strategy, sales and distribution, and execution. For tax, GST or company registration, speak to a chartered accountant or company secretary.",
+  },
+  // The hub has no form below its FAQ, so it links to /contact instead of
+  // saying "the form below". Same question as "getting-started".
+  rich(
+    "getting-started-hub",
+    "How do we get started?",
+    `<p>Send a WhatsApp message, use the <a href="/contact">contact form</a> or email pm@simpleworks.in. Premraj replies within one business day to set up a quick introductory call.</p>`,
+  ),
+
   // ── /programmes items ──
   // The fee answer exactly as /programmes has shown it since the Advisory
   // edit. Prices come from lib/programmes.ts.
@@ -130,6 +149,15 @@ export const homeFaqIds = [
   "corporate-background",
   "coaching-or-consulting",
   "getting-started",
+] as const satisfies readonly FaqId[];
+
+/** The /services hub's four, in display order. None repeats a homepage answer
+ *  word for word except "coaching-or-consulting". */
+export const hubFaqIds = [
+  "which-service",
+  "coaching-or-consulting",
+  "tax-compliance",
+  "getting-started-hub",
 ] as const satisfies readonly FaqId[];
 
 /** Library items /programmes uses. Its other seven live in app/programmes/faqs.ts. */

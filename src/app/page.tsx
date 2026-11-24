@@ -17,6 +17,7 @@ import {
   type RedHeading,
 } from "@/content/home";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import StoryArticle from "@/components/StoryArticle";
 
 export const metadata = {
   title: {
@@ -335,55 +336,12 @@ export default function HomePage() {
       {/* ── 5. CLIENT STORIES ── */}
       <section className={SECTION}>
         <SectionHeader eyebrow={STORIES.eyebrow} heading={STORIES.heading} />
-        {/* Each story: headline block with the red rule and its image on the
-            left, the problem → action → result list on the right. */}
         {STORIES.items.map((story, s) => (
-          <article
+          <StoryArticle
             key={story.title}
-            className={`grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-14 gap-y-6 items-start ${
-              s > 0 ? "border-t-[0.5px] border-rule mt-12 pt-12" : ""
-            }`}
-          >
-            <div className="border-l-2 border-red pl-6">
-              <p className={`${LABEL} mb-4`}>{story.caption}</p>
-              <h3 className={`${H3} mb-3`}>
-                {story.title}
-              </h3>
-              <p className="text-[14px] text-light">{story.note}</p>
-              <Image
-                src={story.image.src}
-                alt={story.image.alt}
-                width={story.image.width}
-                height={story.image.height}
-                loading="lazy"
-                sizes="360px"
-                className="mix-blend-multiply mt-6 w-full max-w-[360px] h-auto"
-              />
-            </div>
-            <div>
-              <dl>
-                {story.rows.map((row) => (
-                  <div key={row.label} className={HAIRLINE_ITEM}>
-                    <dt className="text-[13px] font-bold uppercase tracking-widest text-ink mb-3">
-                      {row.label}
-                    </dt>
-                    <dd
-                      className={`text-[16px] md:text-[17px] leading-[1.7] ${
-                        row.emphasis ? "text-ink font-bold" : "text-mid"
-                      }`}
-                    >
-                      {row.text}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-              {story.link && (
-                <Link href={story.link.href} className={`${TEXT_LINK} inline-block mt-2`}>
-                  {story.link.label} &rarr;
-                </Link>
-              )}
-            </div>
-          </article>
+            story={story}
+            className={s > 0 ? "border-t-[0.5px] border-rule mt-12 pt-12" : ""}
+          />
         ))}
         <p className="border-t-[0.5px] border-rule mt-12 pt-8 text-[17px] leading-[1.7] text-ink max-w-[760px]">
           &ldquo;{STORIES.trust}&rdquo;{" "}
