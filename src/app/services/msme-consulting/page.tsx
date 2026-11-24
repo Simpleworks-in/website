@@ -1,598 +1,521 @@
 import Image from "next/image";
 import Link from "next/link";
-import { whatsappHref } from "@/lib/whatsapp";
+import Reveal from "@/components/Reveal";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { PROGRAMMES, type RedHeading, type TextLink } from "@/content/home";
+import { faqPageSchema, getFaqs, msmeFaqIds } from "@/lib/faqs";
+import { whatsappHref } from "@/lib/whatsapp";
+
+// /services/msme-consulting, redesigned 24 Nov 2026
+// (msme-consulting-page-redesign-handover.md). Business side only, no
+// headcount, the 4P framework as the only method name. The earlier-work case
+// (section 8) is left out until Premraj supplies a real one.
+
+const TITLE = "MSME Strategy Consultant in India | Simpleworks Consulting";
+const DESCRIPTION =
+  "MSME strategy consultant for founder-led businesses across India, based in Bangalore. Strategy, sales and distribution, and execution on fixed-fee programmes.";
+const URL = "https://www.simpleworks.in/services/msme-consulting";
+const FOUR_P_POST =
+  "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans";
 
 export const metadata = {
-  title: {
-    absolute: "MSME Business Consultant in Bangalore | Simpleworks Consulting",
-  },
-  description:
-    "Independent MSME business consultant in Bangalore (Bengaluru): strategy, growth and execution advisory from Premraj Menon, 39 years of experience.",
-  alternates: {
-    canonical: "https://www.simpleworks.in/services/msme-consulting",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
   openGraph: {
-    title: "MSME Business Consultant in Bangalore | Simpleworks Consulting",
-    description:
-      "Independent MSME business consultant in Bangalore (Bengaluru): strategy, growth and execution advisory from Premraj Menon, 39 years of experience.",
-    url: "https://www.simpleworks.in/services/msme-consulting",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Simpleworks Consulting",
+    locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
-const WHAT_WE_DO = [
-  {
-    num: "01 — Strategy",
-    title: "Where the business should go — and why",
-    body: "We work with founders and leadership teams to diagnose the real constraint and build a direction the whole organisation can follow. Not a framework applied from a textbook. A decision, made clearly.",
-  },
-  {
-    num: "02 — Growth",
-    title: "The right customers, message, and channel",
-    body: "Go-to-market planning for MSMEs entering new segments, geographies, or product lines — with real timelines, limited budgets, and the distribution networks that Indian businesses actually use.",
-  },
-  {
-    num: "03 — Execution",
-    title: "Plans that actually move",
-    body: "OKR frameworks, accountability structures, and review rhythms that turn decisions into progress. Simple enough to use without a consultant in the room once we’ve set it up.",
-  },
-  {
-    num: "04 — The difference",
-    title: "We stay until the plan is moving",
-    body: "Simpleworks Consulting doesn’t hand over a report and walk away. Every engagement ends when the plan is in motion on the ground — not when the invoice is settled.",
-  },
-];
+// ── Copy ──
 
-const SITUATIONS = [
-  {
-    num: "01",
-    title: "Revenue has plateaued",
-    body: "The business grew steadily for years, then stopped. The founder is working harder than ever but the numbers aren’t moving. The cause is rarely obvious — usually a combination of unclear positioning, weak execution, and a team that isn’t aligned.",
+const HERO = {
+  eyebrow: "MSME Consulting · Bangalore, India",
+  h1: { text: "MSME Strategy Consultant", red: "in Bangalore & India" },
+  subhead:
+    "Business advice for owners who are ready to move: strategy, sales and distribution, and execution.",
+  body: "As an MSME consultant, Premraj Menon works with founder-led businesses across India. You know your business better than any adviser could. What is hard from the inside is seeing why growth has slowed, and getting your team to act on a plan.",
+  cta: { label: "Start with a WhatsApp message", dataCta: "msme-hero" },
+  image: {
+    src: "/images/msme-hero-owner-adviser.webp",
+    alt: "An MSME owner and an adviser at a table, reviewing a short list of three priorities, with a street of shops and a delivery van behind them",
+    width: 1200,
+    height: 896,
   },
-  {
-    num: "02",
-    title: "Growth is up but margins are shrinking",
-    body: "Revenue is increasing but profitability isn’t following. Every new customer feels like a win that costs more than it earns. This usually signals a pricing, channel, or cost structure problem — sometimes all three.",
-  },
-  {
-    num: "03",
-    title: "The founder is the bottleneck",
-    body: "Every important decision flows through one person. The business cannot grow beyond what that person can personally manage. Building the next layer of leadership — and trusting it — is the real work.",
-  },
-  {
-    num: "04",
-    title: "A market shift has made the old approach obsolete",
-    body: "A large customer has left, a competitor has arrived, or technology has changed the economics. The business needs a new direction — and needs it quickly, before the old momentum runs out.",
-  },
-];
+};
 
-const DIFFERENTIATORS = [
-  {
-    title: "One point of contact — always Premraj Menon",
-    body: "No junior team. No account manager. When you engage Simpleworks Consulting, you work directly with Premraj — in your office, with your team, on your problem.",
-  },
-  {
-    title: "Scoped for MSMEs — not enterprise minimums",
-    body: "Engagement fees are set around what the work actually needs. Every scope is defined upfront with clear milestones and an exit point.",
-  },
-  {
-    title: "Plain-spoken advice you can act on",
-    body: "No thick presentations. No frameworks delivered and forgotten. The output is a decision made, a plan agreed, and an execution rhythm running.",
-  },
-  {
-    title: "39 years across six industries",
-    body: "Consumer Durables, Automotive & Tyres, Telecom, SaaS, Retail and Distribution. The range matters — the problems MSMEs face are rarely unique to one sector.",
-  },
-];
-
-const AREAS = [
-  {
-    num: "01",
-    title: "Business Strategy for MSMEs",
-    body: "Clarity on where your business should go and why — arrived at through honest diagnosis. Most MSMEs don’t lack ideas. They lack clarity on which one to pursue — and the discipline to say no to the rest.",
-  },
-  {
-    num: "02",
-    title: "Go-to-Market Planning",
-    body: "Right segment, right message, right channel — in the right sequence. GTM for Indian manufacturing businesses looks very different from a SaaS playbook. Distribution networks, dealer relationships, and regional pricing require market-specific thinking.",
-  },
-  {
-    num: "03",
-    title: "Execution & OKR Consulting",
-    body: "OKR frameworks that work for a 30-person business. We build the goals, define the key results, establish the review cadence, and run the first two cycles with you — so the team understands how to use it without us.",
-  },
-];
-
-const LIVE_SPOKES = [
-  {
-    tag: "Strategy",
-    title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
-    excerpt:
-      "Most MSME founders have a plan, not a strategy. Here’s the difference — and how to fix it without offsites or 40-page documents.",
-    href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
-  },
-  {
-    tag: "MSME Consulting",
-    title:
-      "MSME Consulting: Why a Focused Firm Delivers More Than a Full-Service One",
-    excerpt:
-      "Most MSME consulting firms promise everything and deliver little. Here’s why focus wins every time.",
-    href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
-  },
-  {
-    tag: "Growth",
-    title: "Who Is Your Customer, Really?",
-    excerpt:
-      "A first-principles guide to finding, sharpening, and going to market with your Ideal Customer Profile.",
-    href: "/blog/who-is-your-customer-really",
-  },
-];
-
-const COMING_SOON_SPOKES = [
-  "5 Signs Your Manufacturing Business Needs an Outside Consultant",
-  "MSME Consultant vs. CA vs. MBA Hire — What’s Right for You?",
-  "Why MSME Owners Hit a Growth Ceiling at ₹5 Crore",
-];
-
-const FAQ_COLUMN_1 = [
-  {
-    q: "What is an MSME consultant — and how is it different from a CA or business coach?",
-    a: "A CA manages compliance, tax, and financial reporting. A business coach works on mindset and leadership behaviour. An MSME consultant works on business decisions — strategy, market positioning, growth planning, and execution. We are not a replacement for your CA. We work on what sits between the numbers and the person making them.",
-  },
-  {
-    q: "What size of MSME does Simpleworks Consulting typically work with?",
-    a: "We work primarily with Indian MSMEs between ₹10 crore and ₹200 crore in annual revenue — founder-led or family-run, with 10 to 300 employees. The right fit is less about revenue and more about the nature of the problem and the readiness to act on clear direction.",
-  },
-  {
-    q: "Do you work with manufacturing businesses specifically?",
-    a: "Yes. Manufacturing, consumer goods, and distribution businesses make up a significant part of our client base. Premraj Menon’s experience includes Consumer Durables at Usha International and Automotive & Tyres at MRF and Apollo Tyres — businesses where distribution, dealer networks, and operational efficiency are central.",
-  },
-];
-
-const FAQ_COLUMN_2 = [
-  {
-    q: "How long does a typical MSME consulting engagement last?",
-    a: "Strategy sprints typically run three to six weeks. Longer engagements — execution support, OKR coaching, ongoing advisory — run three to twelve months. We define scope, milestones, and an exit point at the start so there are no open-ended commitments on either side.",
-  },
-  {
-    q: "Do you work only in Bengaluru?",
-    a: "Simpleworks Consulting is based in Bengaluru and works in person across South India. For founders in other parts of India, we work through a combination of in-person visits and structured online sessions. The preference is always in-person — especially for diagnosis and early planning.",
-  },
-  {
-    q: "What does the first step look like?",
-    a: "Let’s have a quick introductory call — 30 minutes, with no agenda except understanding your situation. No pitch. No proposal before we’ve spoken. You describe what you’re dealing with — we tell you honestly whether we can help and what that would look like in practice.",
-  },
-];
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
+const SITUATIONS = {
+  eyebrow: "Does this sound like your business?",
+  heading: { text: "Owners usually call us when", red: "one of these is true." },
+  items: [
     {
-      "@type": "ListItem",
-      position: 2,
-      name: "Services",
-      item: "https://www.simpleworks.in/services",
+      quote: "Sales have stopped growing.",
+      text: "The team is busy, but last year’s numbers are this year’s numbers.",
     },
     {
-      "@type": "ListItem",
-      position: 3,
-      name: "MSME Consulting",
-      item: "https://www.simpleworks.in/services/msme-consulting",
+      quote: "We sell more but earn less.",
+      text: "Costs and discounts are rising faster than the money coming in.",
+    },
+    {
+      quote: "The market has changed on us.",
+      text: "Customers, competitors or channels have shifted, and the old way isn’t working.",
+    },
+    {
+      quote: "Every decision comes to me.",
+      text: "You are the bottleneck, and you can’t step away for a week.",
+    },
+    {
+      quote: "The business depends on me.",
+      text: "If you stepped back, it would slow down or stop.",
+    },
+    {
+      quote: "I have plans, but things don’t get done.",
+      text: "Good ideas stall somewhere between your head and your team.",
     },
   ],
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [...FAQ_COLUMN_1, ...FAQ_COLUMN_2].map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
+const CAUSES = {
+  eyebrow: "What needs to change",
+  heading: { text: "Usually it isn’t effort.", red: "It is direction and follow-through." },
+  items: [
+    {
+      title: "Too many priorities",
+      text: "Everyone is busy, but on too many things at once. Nobody can say which three matter most this quarter.",
+    },
+    {
+      title: "Decisions wait for the owner",
+      text: "When every decision comes to you, the team waits, and you never get time to think about the business.",
+    },
+    {
+      title: "No weekly follow-through",
+      text: "A good plan is agreed, then fades by the third week because nobody checks that it got done.",
+    },
+  ],
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "MSME Consulting",
-  provider: { "@id": "https://www.simpleworks.in/#organization" },
-  areaServed: { "@type": "Country", name: "India" },
-  description:
-    "Independent management consulting for Indian MSMEs — strategy, growth, and execution advisory led by Premraj Menon, Bengaluru.",
-  url: "https://www.simpleworks.in/services/msme-consulting",
+// The four pillars of the 4P framework. Link labels match the /services hub.
+const COVERS = {
+  eyebrow: "What we work on",
+  heading: { text: "What MSME business consulting", red: "covers." },
+  pillars: [
+    {
+      title: "Business Strategy",
+      text: "Three or four priorities everyone knows, and a plan to finish them, month by month.",
+      youGet: null,
+      link: null,
+    },
+    {
+      title: "Go-to-Market: sales and distribution",
+      text: "Find where your next growth will come from, and the first steps to get there.",
+      youGet: "a short list of where growth will come from, and the first steps.",
+      link: { label: "Sales & Distribution Strategy", href: "/services/gtm-consulting" },
+    },
+    {
+      title: "Execution Enablement",
+      text: "Each manager knows what they own, and someone checks every week that it got done.",
+      youGet: "a named owner for each priority, and a weekly review.",
+      link: { label: "Strategy Implementation", href: "/services/execution-consulting" },
+    },
+    {
+      title: "OKRs: goals and weekly accountability",
+      text: "Clear goals for the quarter, reviewed every week, so the team stays on track.",
+      youGet: "quarterly goals, simple measures and a regular check-in.",
+      link: { label: "Objectives and Key Results (OKRs)", href: "/services/okr-consulting" },
+    },
+  ] satisfies { title: string; text: string; youGet: string | null; link: TextLink | null }[],
+  smallBusiness: {
+    lead: "Running a smaller business? See",
+    link: { label: "consulting for small business owners", href: "/services/small-business-consulting" },
+  },
 };
 
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+const FIT = {
+  who: {
+    eyebrow: "Who we work with",
+    heading: { text: "Founder-led businesses", red: "ready to move." },
+    text: "Owners of founder-led MSMEs, in manufacturing, trading, distribution and services, who want a senior adviser to work on the business with them.",
+  },
+  not: {
+    eyebrow: "What we don’t do",
+    heading: { text: "We would rather tell you", red: "than pretend." },
+    text: "We work on the business side. We don’t manage shop floors or production lines, run plant engineering projects, or handle tax, compliance, registrations, loans or project reports. If that is what you need, we will say so on the first call.",
+  },
+};
+
+// Confirmed MSME-side credentials only (msme-credibility-handover.md).
+const WHY = {
+  eyebrow: "Why Premraj",
+  heading: { text: "A consultant who has worked", red: "inside MSMEs." },
+  points: [
+    "Nearly 10 years inside MSMEs, with around 3,000 MSME partners.",
+    "Co-founded Viworks.",
+    "Part of the Neoffice management team that ran growth and strategy.",
+    "ET-SIDBI Best Exporter award, Micro Enterprise category, 2019, won by Neoffice.",
+    "Before that, Premraj ran the business side at Apollo Tyres and MRF.",
+  ],
+  closing: "You work with Premraj himself, not a junior team.",
+};
+
+// Programme lines come from the homepage cards, as on the /services hub.
+const HOW = {
+  eyebrow: "How we work",
+  heading: { text: "Four programmes,", red: "each at a fixed fee." },
+  lead: "You know the cost before you start. We agree which programme fits after a short introductory call, and most owners begin with a Simple Diagnostic. Across all of them you can expect clear decisions, a few agreed priorities, named owners, simple measures and a regular review.",
+  link: { label: "See all programmes and fees", href: "/programmes" },
+};
+
+const READING = {
+  eyebrow: "From the blog",
+  heading: { text: "Read more on", red: "MSME strategy." },
+  posts: [
+    {
+      title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
+      href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
+    },
+    {
+      title: "MSME Consulting: Why a Focused Firm Delivers More Than a Full-Service One",
+      href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
+    },
+    {
+      title: "Who Is Your Customer, Really?",
+      href: "/blog/who-is-your-customer-really",
+    },
+  ],
+};
+
+const QUESTIONS = {
+  eyebrow: "Questions",
+  heading: { text: "Questions owners ask", red: "before they call." },
+};
+
+const CLOSING = {
+  heading: { text: "Start with", red: "an introductory call." },
+  text: "Tell us what is holding the business back. If we can help, we will say how. If we can’t, we will say that too.",
+  cta: { label: "Message us on WhatsApp", dataCta: "msme-closing" },
+  trust: "Based in Bangalore",
+};
+
+// The visible FAQ and the FAQPage JSON-LD come from the same call.
+const FAQS = getFaqs(msmeFaqIds);
+
+const schemaMarkup = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.simpleworks.in/services",
+      },
+      { "@type": "ListItem", position: 3, name: "MSME Consulting", item: URL },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "MSME Strategy Consulting",
+    provider: { "@id": "https://www.simpleworks.in/#organization" },
+    areaServed: { "@type": "Country", name: "India" },
+    description: DESCRIPTION,
+    url: URL,
+  },
+  faqPageSchema(FAQS),
+];
+
+// ── Shared styles (same scale as the /services hub) ──
+const SECTION =
+  "reveal py-14 md:py-[72px] px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule";
+const LABEL = "text-[11px] md:text-[13px] uppercase tracking-widest text-light leading-[1.6]";
+const EYEBROW = `${LABEL} mb-4 md:mb-5`;
+const H2 = "text-[28px] md:text-[36px] leading-[1.18] font-bold tracking-tight-1";
+const H3 = "text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink";
+const HEADER = "mb-10";
+const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
+const BUTTON =
+  "inline-flex items-center font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
+const TEXT_LINK = "text-red hover:underline w-fit";
+
+function Heading({ heading }: { heading: RedHeading }) {
   return (
-    <p className="mb-4 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-light">
-      {children}
-      <span className="block h-px w-8 bg-rule" />
-    </p>
+    <h2 className={H2}>
+      {heading.text} <span className="text-red">{heading.red}</span>
+    </h2>
   );
 }
+
+function SectionHeader({ eyebrow, heading }: { eyebrow: string; heading: RedHeading }) {
+  return (
+    <div className={HEADER}>
+      <p className={EYEBROW}>{eyebrow}</p>
+      <Heading heading={heading} />
+    </div>
+  );
+}
+
+function escapeHtml(text: string) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+const num = (i: number) => String(i + 1).padStart(2, "0");
 
 export default function MsmeConsultingPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      {/* BREADCRUMB */}
-      <div className="flex items-center gap-2 border-b-[0.5px] border-rule px-6 py-3.5 text-[13px] md:px-[60px]">
-        <Link href="/" className="text-light transition-colors hover:text-red">
-          Home
-        </Link>
-        <span className="text-rule">›</span>
-        <Link href="/services" className="text-light transition-colors hover:text-red">
-          Services
-        </Link>
-        <span className="text-rule">›</span>
-        <span className="text-mid">MSME Consulting</span>
-      </div>
-
-      {/* HERO */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-20">
-          <div>
-            <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
-              <span className="block h-px w-6 bg-red" />
-              MSME Consulting · Bengaluru, India
-            </p>
-            <h1 className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              MSME Business Consultant
-              <br />
-              <span className="italic text-red">in Bangalore</span>
+      {/* ── 1. HERO ── text left, image right; stacks below 900px. */}
+      <section className="px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
+        <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-start gap-x-14 gap-y-10">
+          <div className="min-[900px]:flex-[1_1_400px] min-w-0">
+            <p className={EYEBROW}>{HERO.eyebrow}</p>
+            <h1 className="mb-5 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
+              {HERO.h1.text} <span className="text-red">{HERO.h1.red}</span>
             </h1>
-            <p className="mb-7 max-w-[460px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Business strategy, growth, and execution advisory — built for
-              Indian MSMEs that are ready to move.
+            <p className="mb-6 max-w-[560px] text-[16px] md:text-[18px] italic leading-[1.65] text-mid">
+              {HERO.subhead}
             </p>
-
-            <div className="mb-8 flex gap-8 border-y-[0.5px] border-rule py-6">
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  39<sup className="text-[16px] text-red md:text-[18px]">+</sup>
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Years of
-                  <br />
-                  experience
-                </p>
-              </div>
-              <div className="w-px self-stretch bg-rule" />
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  6
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Industries
-                  <br />
-                  served
-                </p>
-              </div>
-              <div className="w-px self-stretch bg-rule" />
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  ₹10–200<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Revenue range
-                  <br />
-                  we work in
-                </p>
-              </div>
-            </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
+            <p className={`${BODY} max-w-[560px]`}>{HERO.body}</p>
+            <a
+              href={whatsappHref()}
+              data-cta={HERO.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${BUTTON} mt-8 md:mt-10`}
             >
-              Let&rsquo;s Talk &nbsp;→
-            </Link>
+              <WhatsAppIcon size={20} />
+              {HERO.cta.label} &nbsp;→
+            </a>
           </div>
-
-          <Image
-            src="/msme-consulting-illustration.png"
-            alt="MSME consultant in Bengaluru in conversation with Indian business founder — Simpleworks Consulting"
-            width={800}
-            height={537}
-            className="w-full rounded-sm"
-            priority
-          />
+          {/* Top margin = eyebrow height, so the image lines up with the H1. */}
+          <div className="min-[900px]:flex-[1.4_1_480px] min-w-0 min-[900px]:mt-[41px]">
+            <Image
+              src={HERO.image.src}
+              alt={HERO.image.alt}
+              width={HERO.image.width}
+              height={HERO.image.height}
+              priority
+              sizes="(min-width: 900px) 55vw, 100vw"
+              className="block w-full h-auto"
+            />
+          </div>
         </div>
       </section>
 
-      {/* SECTION 1 — WHAT WE DO */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>What We Do</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          What does an MSME consultant <span className="text-red">actually do?</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Most Indian MSME founders have worked with accountants and bankers.
-          A management consultant is different — we work on the decisions
-          that determine whether your business grows, plateaus, or turns
-          around.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-2">
-          {WHAT_WE_DO.map((cell) => (
-            <div key={cell.num} className="bg-bg px-7 py-9">
-              <p className="mb-3.5 text-[11px] font-bold tracking-wide-6 uppercase text-red">
-                {cell.num}
-              </p>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.3] text-ink">
-                {cell.title}
-              </h3>
-              <p className="text-[16px] leading-[1.75] text-mid">{cell.body}</p>
+      {/* ── 2. DOES THIS SOUND LIKE YOUR BUSINESS? ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={SITUATIONS.eyebrow} heading={SITUATIONS.heading} />
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12">
+          {SITUATIONS.items.map((item) => (
+            <li key={item.quote} className="border-t-[0.5px] border-rule py-7">
+              <h3 className={`${H3} mb-2`}>&ldquo;{item.quote}&rdquo;</h3>
+              <p className={BODY}>{item.text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── 3. WHAT NEEDS TO CHANGE ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={CAUSES.eyebrow} heading={CAUSES.heading} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">
+          {CAUSES.items.map((item) => (
+            <div key={item.title} className="border-t-2 border-ink pt-6">
+              <h3 className={`${H3} mb-3`}>{item.title}</h3>
+              <p className={BODY}>{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SECTION 2 — WHO WE WORK WITH */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Who We Work With</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          The MSME founders <span className="text-red">we work with</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Simpleworks Consulting works with Indian MSMEs typically between ₹10 crore and
-          ₹200 crore in revenue — founder-led or family-run, with 10 to 300
-          employees, across manufacturing, consumer goods, retail, and
-          distribution.
-        </p>
-
-        <div className="flex max-w-[800px] flex-col">
-          {SITUATIONS.map((s) => (
-            <div
-              key={s.num}
-              className="grid grid-cols-[40px_1fr] gap-0 border-t-[0.5px] border-rule py-7 last:border-b-[0.5px] md:grid-cols-[48px_1fr]"
+      {/* ── 4. WHAT MSME BUSINESS CONSULTING COVERS ── the 4P framework. */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{COVERS.eyebrow}</p>
+          <Heading heading={COVERS.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>
+            Our work follows the Simpleworks Consulting{" "}
+            <Link href={FOUR_P_POST} className="text-red hover:underline">
+              4P framework
+            </Link>
+            : four pillars that fit together, starting with strategy. Each pillar has its own page
+            if you want to go deeper.
+          </p>
+        </div>
+        <ol>
+          {COVERS.pillars.map((pillar, i) => (
+            <li
+              key={pillar.title}
+              className="grid grid-cols-1 gap-y-3 border-t-[0.5px] border-rule py-7 md:py-8 lg:grid-cols-[80px_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-12"
             >
-              <span className="pt-[3px] text-[13px] font-bold italic text-red">
-                {s.num}
+              <span className="text-[15px] font-bold leading-[1.6] text-red tracking-wide-2 [font-variant-numeric:tabular-nums]">
+                {num(i)}
               </span>
+              <h3 className={H3}>{pillar.title}</h3>
               <div>
-                <h3 className="mb-2 text-[18px] font-bold leading-[1.3] text-ink">
-                  {s.title}
+                <p className="text-[18px] leading-[1.55] text-ink mb-2">{pillar.text}</p>
+                {pillar.youGet && (
+                  <p className={`${BODY} mb-3`}>
+                    <strong className="font-bold text-ink">You get:</strong> {pillar.youGet}
+                  </p>
+                )}
+                {pillar.link && (
+                  <Link href={pillar.link.href} className={TEXT_LINK}>
+                    {pillar.link.label} &rarr;
+                  </Link>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p className={`${BODY} border-t-[0.5px] border-rule pt-6`}>
+          {COVERS.smallBusiness.lead}{" "}
+          <Link href={COVERS.smallBusiness.link.href} className={TEXT_LINK}>
+            {COVERS.smallBusiness.link.label} &rarr;
+          </Link>
+        </p>
+      </section>
+
+      {/* ── 5. WHO WE WORK WITH / WHAT WE DON'T DO ── */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+          {[FIT.who, FIT.not].map((col) => (
+            <div key={col.eyebrow}>
+              <SectionHeader eyebrow={col.eyebrow} heading={col.heading} />
+              <p className={`${BODY} max-w-[520px] -mt-4`}>{col.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 6. WHY PREMRAJ ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
+        <ul className="max-w-[760px]">
+          {WHY.points.map((point) => (
+            <li
+              key={point}
+              className="border-t-[0.5px] border-rule py-4 text-[17px] md:text-[18px] leading-[1.6] text-mid"
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+        <p className="max-w-[760px] border-t-[0.5px] border-rule pt-6 text-[18px] md:text-[20px] font-bold leading-[1.5] text-ink">
+          {WHY.closing}
+        </p>
+      </section>
+
+      {/* ── 7. HOW WE WORK ── the four programmes. */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{HOW.eyebrow}</p>
+          <Heading heading={HOW.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>{HOW.lead}</p>
+        </div>
+        <ul className="max-w-[860px]">
+          {PROGRAMMES.cards.map((card) => (
+            <li
+              key={card.name}
+              className="border-t-[0.5px] border-rule py-5 text-[17px] md:text-[18px] leading-[1.6] text-mid"
+            >
+              <strong className="font-bold text-ink">Simple {card.name}</strong>: {card.forWho}
+            </li>
+          ))}
+        </ul>
+        <Link
+          href={HOW.link.href}
+          className={`${TEXT_LINK} inline-block border-t-[0.5px] border-rule pt-6`}
+        >
+          {HOW.link.label} &rarr;
+        </Link>
+      </section>
+
+      {/* ── 8. FROM THE BLOG ── the three live articles. */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={READING.eyebrow} heading={READING.heading} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
+          {READING.posts.map((post) => (
+            <Link
+              key={post.href}
+              href={post.href}
+              className="group block border-l-2 border-red pl-6 py-2"
+            >
+              <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-ink transition-colors group-hover:text-red">
+                {post.title}
+              </h3>
+              <span className="text-[14px] text-red">Read article &rarr;</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 9. QUESTIONS ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={QUESTIONS.eyebrow} heading={QUESTIONS.heading} />
+        <div className="max-w-[900px] border-b-[0.5px] border-rule">
+          {FAQS.map((item, i) => (
+            <details key={item.id} open={i === 0} className="faq-item border-t-[0.5px] border-rule">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
+                <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.4] text-ink">
+                  {item.q}
                 </h3>
-                <p className="text-[16px] leading-[1.75] text-mid">{s.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap items-center gap-5">
-          <p className="text-[16px] italic text-mid">
-            If any of these sound familiar, the right next step is a
-            conversation — not a proposal.
-          </p>
-          <Link
-            href="/contact"
-            className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
-          >
-            Let&rsquo;s have a quick introductory call →
-          </Link>
-        </div>
-      </section>
-
-      {/* SECTION 3 — WHY SIMPLEWORKS */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Why an independent consultant —{" "}
-          <span className="text-red">not a large firm</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Large consulting firms are built for large organisations.
-          Simpleworks Consulting is built for businesses where the founder is in the
-          room and the plan must be executable by the existing team.
-        </p>
-
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-[72px]">
-          <div>
-            <p className="mb-5 text-[17px] leading-[1.8] text-mid">
-              Large management consulting firms in India — the Big 4, the
-              strategy boutiques — are built for large organisations. Their
-              minimum engagement fees start where most MSMEs&rsquo; annual
-              consulting budgets end. Their deliverables are structured for
-              board rooms, not founder offices.
-            </p>
-            <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Simpleworks Consulting is built differently — by deliberate choice.
-            </p>
-
-            <div className="mb-8 border-l-2 border-red pl-[22px]">
-              <blockquote className="mb-2.5 text-[17px] italic leading-[1.75] text-ink">
-                &ldquo;What I bring is not a framework from a textbook.
-                It&rsquo;s 39 years of real decisions, real teams, and real
-                markets — distilled into advice that is simple enough to act
-                on by Monday morning.&rdquo;
-              </blockquote>
-              <cite className="text-[12px] not-italic text-light">
-                — Premraj Menon, Founder, Simpleworks Consulting
-              </cite>
-            </div>
-
-            <p className="text-[17px] leading-[1.8] text-mid">
-              Every engagement is led personally by Premraj Menon, with 39 years
-              in operating roles from corporate P&amp;L to startups with no
-              budget. His full background is on the <Link href="/about" className="text-red hover:underline">About page</Link>.
-</p>
-          </div>
-
-          <div className="flex flex-col">
-            {DIFFERENTIATORS.map((d) => (
-              <div
-                key={d.title}
-                className="grid grid-cols-[10px_1fr] gap-4 border-t-[0.5px] border-rule py-[22px] last:border-b-[0.5px]"
-              >
-                <span className="mt-[9px] block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red" />
-                <div>
-                  <h3 className="mb-1.5 text-[16px] font-bold leading-[1.3] text-ink">
-                    {d.title}
-                  </h3>
-                  <p className="text-[15px] leading-[1.7] text-mid">{d.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4 — THREE AREAS */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Our Work</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          MSME consulting across <span className="text-red">three areas</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Strategy, growth, and execution are interconnected. A plan without
-          execution is a wish. Execution without direction is just activity.
-          Simpleworks Consulting works across all three — because that&rsquo;s what
-          actually moves a business forward.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
-          {AREAS.map((area) => (
-            <div key={area.num} className="bg-bg px-7 py-9">
-              <p className="mb-5 text-[44px] font-bold leading-none tracking-tight-2 text-rule md:text-[48px]">
-                {area.num}
-              </p>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.3] text-ink">
-                {area.title}
-              </h3>
-              <p className="text-[15px] leading-[1.75] text-mid">{area.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 5 — SPOKE ARTICLES */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>From the Blog</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Going deeper — <span className="text-red">articles on MSME consulting</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          These articles explore the problems most MSME founders face — and
-          the thinking behind how Simpleworks Consulting approaches them.
-        </p>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {LIVE_SPOKES.map((spoke) => (
-            <Link
-              key={spoke.href}
-              href={spoke.href}
-              className="block rounded-sm border-[0.5px] border-rule p-7 transition-all duration-200 hover:-translate-y-[3px] hover:border-red hover:shadow-[0_6px_24px_rgba(0,0,0,0.07)]"
-            >
-              <span className="mb-3.5 inline-block rounded-[1px] border border-red px-2 py-[3px] text-[9px] font-bold uppercase tracking-wide-6 text-red">
-                {spoke.tag}
-              </span>
-              <p className="mb-2.5 text-[16px] font-bold leading-[1.4] text-ink">
-                {spoke.title}
-              </p>
-              <p className="mb-4 text-[14px] italic leading-[1.65] text-light">
-                {spoke.excerpt}
-              </p>
-              <span className="text-[13px] font-semibold text-red">
-                Read article →
-              </span>
-            </Link>
-          ))}
-          {COMING_SOON_SPOKES.map((title) => (
-            <div
-              key={title}
-              className="rounded-sm border border-dashed border-rule p-7 opacity-50"
-            >
-              <p className="mb-2.5 text-[9px] font-bold uppercase tracking-wide-6 text-light">
-                Coming soon
-              </p>
-              <p className="text-[16px] font-bold leading-[1.4] text-mid">
-                {title}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 6 — FAQ */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Common Questions</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Frequently asked <span className="text-red">questions</span>
-        </h2>
-        <p className="mb-10 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:text-[18px]">
-          Everything you need to know before starting a conversation.
-        </p>
-
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-x-16">
-          {[FAQ_COLUMN_1, FAQ_COLUMN_2].map((column, colIndex) => (
-            <div key={colIndex} className="flex flex-col">
-              {column.map((item) => (
-                <div
-                  key={item.q}
-                  className="border-t-[0.5px] border-rule py-[26px] md:[&:last-child]:border-b-[0.5px]"
+                <span
+                  aria-hidden="true"
+                  className="faq-pm flex-shrink-0 text-[26px] leading-none text-red transition-transform duration-200"
                 >
-                  <h3 className="mb-3 text-[17px] font-bold leading-[1.4] text-ink">
-                    {item.q}
-                  </h3>
-                  <p className="text-[16px] leading-[1.8] text-mid md:text-[17px]">{item.a}</p>
-                </div>
-              ))}
-            </div>
+                  +
+                </span>
+              </summary>
+              <div
+                className={`${BODY} pb-[26px] max-w-[760px] [&_p]:mb-3 [&_p:last-child]:mb-0 [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline`}
+                dangerouslySetInnerHTML={{
+                  __html: item.aHtml ?? `<p>${escapeHtml(item.a)}</p>`,
+                }}
+              />
+            </details>
           ))}
         </div>
       </section>
 
-      {/* CTA BAND */}
-      <section
-        id="contact"
-        className="flex flex-col items-start gap-10 border-b-[0.5px] border-rule px-6 py-14 md:flex-row md:items-center md:justify-between md:py-20 md:pr-[60px] md:pl-[132px]"
-      >
-        <div>
-          <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            Start with <span className="text-red">an introductory call.</span>
-          </h2>
-          <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
-            Tell us what your business is dealing with. We&rsquo;ll tell you
-            honestly whether we can help — and what that would look like in
-            practice.
-          </p>
-        </div>
-        <div className="flex flex-shrink-0 flex-col gap-3">
-          <Link
-            href="/contact"
-            className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
-          >
-            Let&rsquo;s Talk
-          </Link>
-          <a
-            href={whatsappHref()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
-          >
-            <WhatsAppIcon />
-            WhatsApp Premraj Menon
-          </a>
-          <p className="text-center text-[12px] text-light">
-            Response within one business day · Based in Bengaluru · Working
-            across India
-          </p>
+      {/* ── 10. CLOSING CALL TO ACTION ── */}
+      <section className={SECTION}>
+        <div className="max-w-[760px]">
+          <Heading heading={CLOSING.heading} />
+          <p className={`${BODY} mt-4 mb-8 max-w-[560px]`}>{CLOSING.text}</p>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a
+              href={whatsappHref()}
+              data-cta={CLOSING.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={BUTTON}
+            >
+              <WhatsAppIcon size={20} />
+              {CLOSING.cta.label} &nbsp;→
+            </a>
+            <p className="text-[14px] text-light">{CLOSING.trust}</p>
+          </div>
         </div>
       </section>
+
+      <Reveal />
     </>
   );
 }

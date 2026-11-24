@@ -128,6 +128,37 @@ const LIBRARY = [
     "Do you offer business mentoring?",
     `<p>Yes. The Simple Counsel is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you've set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. The programme runs for a minimum of three months.</p><p>If you need more time together, we can increase the number of visits.</p><p><a href="https://www.simpleworks.in/programmes">See The Simple Counsel →</a></p>`,
   ),
+  // ── /services/msme-consulting ──
+  {
+    id: "msme-what-strategy-consultant-does",
+    q: "What does an MSME strategy consultant actually do?",
+    a: "We work out where your next growth will come from, agree the few priorities that matter, and help your team carry them out. You keep running the business; we help you decide and follow through.",
+  },
+  {
+    id: "msme-manufacturing",
+    q: "Do you work with manufacturing businesses?",
+    a: "Yes. Many MSMEs are manufacturers, and we work on the business side: strategy, pricing, sales and distribution, and execution. We don’t run or redesign your shop floor or production line. If that is what you need, we will tell you on the first call.",
+  },
+  {
+    id: "msme-location",
+    q: "Do you work only in Bangalore?",
+    a: "We are based in Bangalore and work with owners across India. The Simple Diagnostic can run in person or online, and the Simple Advisory is fully online, so both suit owners anywhere in India. The Simple Reset and the Simple Counsel are in person, so they suit owners in Bangalore or able to meet there regularly.",
+  },
+  rich(
+    "msme-duration-cost",
+    "How long does an engagement take, and what does it cost?",
+    `<p>That depends on the programme. Each one has a fixed fee, so you know the cost before you start. Most owners begin with a Simple Diagnostic.</p><p><a href="https://www.simpleworks.in/programmes">See all programmes and fees →</a></p>`,
+  ),
+  {
+    id: "msme-vs-large-firm",
+    q: "How is this different from a large consulting firm?",
+    a: "You work with Premraj himself, not a team of juniors. There are no long reports for the shelf: we agree a short plan and check that it gets done.",
+  },
+  rich(
+    "msme-right-fit",
+    "Is my business right for this?",
+    `<p>We work with founder-led businesses that are ready to move. If you run a very small business, see our <a href="https://www.simpleworks.in/services/small-business-consulting">page for small business owners</a>.</p>`,
+  ),
 ] as const satisfies readonly FaqItem[];
 
 export type FaqId = (typeof LIBRARY)[number]["id"];
@@ -158,6 +189,16 @@ export const hubFaqIds = [
   "coaching-or-consulting",
   "tax-compliance",
   "getting-started-hub",
+] as const satisfies readonly FaqId[];
+
+/** /services/msme-consulting's six, in display order. */
+export const msmeFaqIds = [
+  "msme-what-strategy-consultant-does",
+  "msme-manufacturing",
+  "msme-location",
+  "msme-duration-cost",
+  "msme-vs-large-firm",
+  "msme-right-fit",
 ] as const satisfies readonly FaqId[];
 
 /** Library items /programmes uses. Its other seven live in app/programmes/faqs.ts. */
