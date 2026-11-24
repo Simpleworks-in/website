@@ -223,7 +223,8 @@ export default function HomePage() {
             </li>
           ))}
         </ol>
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-x-12 gap-y-6 border-t-[0.5px] border-rule pt-8">
+        {/* Button below the quote at every width, as on the /services hub. */}
+        <div className="flex flex-col gap-y-6 border-t-[0.5px] border-rule pt-8">
           <p className={`${BODY} max-w-[680px]`}>
             <strong className="font-bold text-ink">&ldquo;{HELP.quoteLead}</strong>{" "}
             {HELP.quoteBody}&rdquo;{" "}
