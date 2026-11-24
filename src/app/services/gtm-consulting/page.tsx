@@ -422,7 +422,8 @@ export default function GtmConsultingPage() {
               <div>
                 <p className="text-[18px] leading-[1.55] text-ink mb-2">{row.text}</p>
                 <p className={`${BODY} ${row.link ? "mb-3" : ""}`}>
-                  <strong className="font-bold text-ink">You get:</strong> {row.youGet}
+                  <strong className="font-bold text-ink">You get:</strong>{" "}
+                  <span className="text-red">{row.youGet}</span>
                 </p>
                 {row.link && (
                   <Link href={row.link.href} className={TEXT_LINK}>
