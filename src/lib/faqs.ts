@@ -190,6 +190,37 @@ const LIBRARY = [
     "Do you work with startups and SaaS businesses?",
     `<p>Yes. The questions are the same: who exactly the customer is, why they should choose you, and how to reach them. For a startup, the answer is often a narrower first market than the founders expect. Early-stage founders looking for a mentor can also see our <a href="https://www.simpleworks.in/startup-mentor-bengaluru">page for startup founders</a>.</p>`,
   ),
+  // ── /services/execution-consulting ──
+  {
+    id: "exec-why-fails",
+    q: "Why does strategy execution fail in small businesses?",
+    a: "Most stalled plans fail for three reasons: too many priorities, no single owner for each one, and progress checked once a quarter instead of every week. Fix those and the same plan usually starts to move. A new plan on its own rarely helps.",
+  },
+  {
+    id: "exec-weekly-review",
+    q: "How do I run a weekly business review?",
+    a: "Keep it short, and hold it at the same time every week. Each owner reports on their priority in a minute or two: what got done, what didn’t, and what is in the way. Anything that needs a decision is decided in the room, with a name and a date against it. Numbers that need a longer discussion go to the monthly review.",
+  },
+  {
+    id: "exec-annual-operating-plan",
+    q: "What is an annual operating plan, and how do we follow it through the year?",
+    a: "An annual operating plan sets the year’s targets, budgets and priorities. To be used, it has to be broken into quarterly goals and weekly actions, each with an owner, and checked in the weekly and quarterly reviews. Otherwise it sits in a folder until next year’s planning meeting.",
+  },
+  {
+    id: "exec-accountability",
+    q: "How do I build accountability without adding bureaucracy?",
+    a: "Give each priority one owner and one measure, and review it in the same short meeting every week. That routine does more than any appraisal form. Keep the measures few and the meeting short: once it starts to feel like paperwork, managers stop updating it.",
+  },
+  {
+    id: "exec-software",
+    q: "Do we need software to run this?",
+    a: "No. A shared spreadsheet and a standing weekly meeting are enough for most MSMEs. If your team later needs a tool, we will help you choose one, but the routine has to work first.",
+  },
+  rich(
+    "exec-duration-cost",
+    "How long does it take, and what does it cost?",
+    `<p>Execution work usually starts with a Simple Reset, over 30 or 60 days. The 60-day version puts the weekly review in place with your team. After that, the Simple Counsel (in person) or the Simple Advisory (online) continues month by month, with a three-month minimum. Each has a fixed fee, so you know the cost before we begin.</p><p><a href="https://www.simpleworks.in/programmes">See all programmes and fees →</a></p>`,
+  ),
 ] as const satisfies readonly FaqItem[];
 
 export type FaqId = (typeof LIBRARY)[number]["id"];
@@ -240,6 +271,16 @@ export const gtmFaqIds = [
   "gtm-vs-agency",
   "gtm-duration-cost",
   "gtm-startups",
+] as const satisfies readonly FaqId[];
+
+/** /services/execution-consulting's six, in display order. */
+export const executionFaqIds = [
+  "exec-why-fails",
+  "exec-weekly-review",
+  "exec-annual-operating-plan",
+  "exec-accountability",
+  "exec-software",
+  "exec-duration-cost",
 ] as const satisfies readonly FaqId[];
 
 /** Library items /programmes uses. Its other seven live in app/programmes/faqs.ts. */
