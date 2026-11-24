@@ -38,7 +38,7 @@ export const metadata = {
 // ── Copy ──
 
 const HERO = {
-  eyebrow: "Consulting Services · Bangalore",
+  eyebrow: "Business Advisory Services · India",
   h1: "Business consulting for MSMEs in Bangalore & India",
   subhead: { text: "Consulting built for businesses that are", red: "ready to move." },
   intro:
