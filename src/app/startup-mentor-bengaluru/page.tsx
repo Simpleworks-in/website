@@ -354,7 +354,7 @@ export default function StartupMentorPage() {
       {/* ── 1. HERO ── */}
       <section className="px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
         <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-start gap-x-14 gap-y-10">
-          <div className="min-[900px]:flex-[1_1_400px] min-w-0">
+          <div className="min-[900px]:flex-[1_1_380px] min-w-0">
             <p className={EYEBROW}>{HERO.eyebrow}</p>
             <h1 className="mb-5 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
               {HERO.h1.text} <span className="text-red">{HERO.h1.red}</span>
@@ -365,8 +365,9 @@ export default function StartupMentorPage() {
             <p className={`${BODY} max-w-[560px]`}>{HERO.body}</p>
             <WhatsAppButton label={HERO.cta.label} dataCta={HERO.cta.dataCta} className="mt-8 md:mt-10" />
           </div>
-          {/* Top margin = eyebrow height, so the image lines up with the H1. */}
-          <div className="min-[900px]:flex-[1.4_1_480px] min-w-0 min-[900px]:mt-[41px]">
+          {/* Wider column and no top offset on this page (Premraj, 24 Nov): the
+              image starts level with the eyebrow and stands taller. */}
+          <div className="min-[900px]:flex-[1.8_1_540px] min-w-0">
             <Image
               src={HERO.image.src}
               alt={HERO.image.alt}
@@ -558,7 +559,7 @@ export default function StartupMentorPage() {
       <section className={SECTION}>
         <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-x-16 gap-y-8">
-          <figure className="lg:sticky lg:top-24 self-start">
+          <figure className="self-start">
             <Image
               src="/prem-menon.png"
               alt="Watercolour portrait of Premraj Menon"

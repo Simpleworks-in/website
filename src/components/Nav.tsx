@@ -24,7 +24,13 @@ const baseLinks = [
 const links = STORIES_PAGE_LIVE
   ? [
       ...baseLinks.slice(0, 4),
-      { href: "/client-success-stories", label: "Stories", lgOnly: true },
+      // Full label from 1280px; "Stories" between 1024 and 1280, where the menu is tight.
+      {
+        href: "/client-success-stories",
+        label: "Customer Stories",
+        shortLabel: "Stories",
+        lgOnly: true,
+      },
       ...baseLinks.slice(4),
     ]
   : baseLinks;
@@ -57,7 +63,8 @@ export default function Nav() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden list-none items-center gap-4 whitespace-nowrap md:flex lg:gap-6 xl:gap-8">
+        {/* lg:gap-5 (not 6) so "Customer Stories" fits at 1024px without crowding the logo. */}
+        <ul className="hidden list-none items-center gap-4 whitespace-nowrap md:flex lg:gap-5 xl:gap-8">
           {links.map((link) => {
             const active = isActive(link.href);
             return (
@@ -71,7 +78,14 @@ export default function Nav() {
                     active ? "text-red" : "text-mid"
                   }`}
                 >
-                  {link.label}
+                  {"shortLabel" in link && link.shortLabel ? (
+                    <>
+                      <span className="xl:hidden">{link.shortLabel}</span>
+                      <span className="hidden xl:inline">{link.label}</span>
+                    </>
+                  ) : (
+                    link.label
+                  )}
                 </Link>
               </li>
             );
