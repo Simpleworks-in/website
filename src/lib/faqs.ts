@@ -221,6 +221,37 @@ const LIBRARY = [
     "How long does it take, and what does it cost?",
     `<p>Execution work usually starts with a Simple Reset, over 30 or 60 days. The 60-day version puts the weekly review in place with your team. After that, the Simple Counsel (in person) or the Simple Advisory (online) continues month by month, with a three-month minimum. Each has a fixed fee, so you know the cost before we begin.</p><p><a href="https://www.simpleworks.in/programmes">See all programmes and fees →</a></p>`,
   ),
+  // ── /startup-mentor-bengaluru ──
+  {
+    id: "startup-saas-experience",
+    q: "My company is SaaS. Why would your experience help?",
+    a: "Premraj spent five years managing growth and product at an enterprise SaaS business, and before that built sales systems through dealers, distributors and telecom channels. The problem at your stage is the same one: making revenue predictable when it can no longer depend on one person. What he doesn’t bring is fundraising, product or engineering help, and he will say so on the first call.",
+  },
+  {
+    id: "startup-mentorship-programme",
+    q: "Do you run a startup mentorship programme?",
+    a: "Not a cohort programme. Accelerators work with ten or twenty startups at once on a fixed curriculum. Premraj works with a few founders at a time, one to one, on your business and the one constraint holding it back, through the Simple Counsel or the Simple Advisory.",
+  },
+  {
+    id: "startup-stage",
+    q: "What stage of startup do you work with?",
+    a: "Past product-market fit: you have paying customers and repeat revenue, and the question has moved from whether anyone will buy to whether anyone but you can sell it. In practice that is usually ₹2 crore ARR and above. Earlier than that, an accelerator will serve you better.",
+  },
+  {
+    id: "startup-equity",
+    q: "Do you take equity?",
+    a: "No. The work is on a fixed fee with no equity, so the only incentive is the quality of the advice.",
+  },
+  {
+    id: "startup-location",
+    q: "In person or online?",
+    a: "Both. The Simple Counsel is in person in Bangalore. The Simple Advisory is fully online, wherever you are in India, and the Simple Diagnostic can run in person or online.",
+  },
+  rich(
+    "startup-duration-cost",
+    "How long does it take, and what does it cost?",
+    `<p>Most founders start with the Simple Diagnostic, a half-day session at ${price("diagnostic")}. After that, the Simple Counsel (${price("counsel")} a month, in person) or the Simple Advisory (${price("advisory")} a month, online) continues month by month, with a three-month minimum. Each has a fixed fee, agreed before we begin.</p><p><a href="https://www.simpleworks.in/programmes">See all programmes and fees →</a></p>`,
+  ),
 ] as const satisfies readonly FaqItem[];
 
 export type FaqId = (typeof LIBRARY)[number]["id"];
@@ -281,6 +312,16 @@ export const executionFaqIds = [
   "exec-accountability",
   "exec-software",
   "exec-duration-cost",
+] as const satisfies readonly FaqId[];
+
+/** /startup-mentor-bengaluru's six, in display order. */
+export const startupFaqIds = [
+  "startup-saas-experience",
+  "startup-mentorship-programme",
+  "startup-stage",
+  "startup-equity",
+  "startup-location",
+  "startup-duration-cost",
 ] as const satisfies readonly FaqId[];
 
 /** Library items /programmes uses. Its other seven live in app/programmes/faqs.ts. */

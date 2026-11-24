@@ -1,746 +1,675 @@
 import Image from "next/image";
 import Link from "next/link";
-import FAQAccordion from "@/components/FAQAccordion";
-import { FACTS } from "../../../content/facts";
+import Reveal from "@/components/Reveal";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import type { RedHeading } from "@/content/home";
+import { faqPageSchema, getFaqs, startupFaqIds } from "@/lib/faqs";
+import { price } from "@/lib/programmes";
+import { whatsappHref } from "@/lib/whatsapp";
+
+// /startup-mentor-bengaluru, redesigned 24 Nov 2026 from the Claude Design
+// canvas "Startup mentor page redesign". URL unchanged; visible copy says
+// Bangalore. The pivot story is Premraj's own experience: never name the
+// company there, and never present it as a client case.
+
+const TITLE = "Startup Mentor & Advisor in India | Simpleworks Consulting";
+const DESCRIPTION =
+  "Startup mentor and advisor for founders across India, based in Bangalore: go-to-market, first sales hires and execution, one to one. No equity, no cohorts.";
+const URL = "https://www.simpleworks.in/startup-mentor-bengaluru";
+const FOUR_P_POST =
+  "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans";
 
 export const metadata = {
-  title: { absolute: "Startup Mentor in Bengaluru | Simpleworks Consulting" },
-  description:
-    "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
-  alternates: {
-    canonical: "https://www.simpleworks.in/startup-mentor-bengaluru",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
   openGraph: {
-    title: "Startup Mentor in Bengaluru | Simpleworks Consulting",
-    description:
-      "One-to-one startup mentorship for founders navigating post-Series A growth. No cohorts. 39 years of operating experience. Premraj Menon, Bengaluru.",
-    url: "https://www.simpleworks.in/startup-mentor-bengaluru",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Simpleworks Consulting",
+    locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+// ── Copy ──
+
+const HERO = {
+  eyebrow: "Startup Mentor · Bangalore, India",
+  h1: { text: "Startup Mentor & Advisor", red: "for Founders" },
+  subhead: "Your first ₹2 crore came from you. The next ₹20 crore can’t.",
+  body: "Premraj Menon works one to one with founders across India who have paying customers and a sales engine that still runs through them. Go-to-market, the first sales leader hire, and the operating rhythm that lets the business grow without you in every deal.",
+  cta: { label: "Start with a WhatsApp message", dataCta: "startup-hero" },
+  image: {
+    src: "/images/startup-hero-founder-mentor.webp",
+    alt: "A young startup founder and a senior mentor at a whiteboard showing a sales funnel leading to a team, in a small startup office",
+    width: 1200,
+    height: 896,
+  },
+};
+
+const SITUATIONS = {
+  eyebrow: "Does this sound like you?",
+  heading: { text: "Founders usually call us when", red: "growth runs through them." },
+  items: [
+    { quote: "Every big deal still closes through me.", text: "Revenue is real, but the pipeline only moves when you are in the room." },
+    { quote: "We hired salespeople. They didn’t deliver.", text: "Good people, no system to sell into, and the numbers didn’t come." },
+    { quote: "Our pipeline lives in my head.", text: "Or in a CRM nobody updates." },
+    { quote: "I’m about to hire my first sales leader.", text: "And you know what getting it wrong costs." },
+    { quote: "Growth is capped by my calendar.", text: "Demand is there. Your hours aren’t." },
+    { quote: "We raised. Now investors want reviews.", text: "Quarterly accountability you haven’t built yet." },
+  ],
+  lead: "Tell Premraj which one sounds like your startup. You will get a straight answer on whether he can help.",
+  cta: {
+    label: "Sound familiar? Tell Premraj which one",
+    dataCta: "startup-recognise",
+    whatsappText: "Hi Premraj, I run a startup. The one that sounds like my business is: ",
+  },
+};
+
+const CAUSES = {
+  eyebrow: "What needs to change",
+  heading: { text: "Founder-led sales", red: "doesn’t scale on its own." },
+  lead: "Past early traction, the question changes from whether people will buy to whether anyone but you can sell it.",
+  items: [
+    { title: "Sales depends on you", text: "The motion that won the first customers was built around your relationships and your judgement." },
+    { title: "No system behind the team", text: "New hires arrive without a defined customer, a process or targets that mean anything." },
+    { title: "Big decisions, alone", text: "The stakes are higher than anything you have decided before, and there is nobody senior to test them with." },
+  ],
+};
+
+const COVERS = {
+  eyebrow: "What we work on",
+  heading: { text: "What startup mentoring", red: "covers." },
+  rows: [
     {
-      "@type": "Service",
-      name: "Startup Mentor Bengaluru",
-      description:
-        "One-to-one startup mentorship for post-Series A founders. GTM architecture, OKR systems, execution discipline, and strategic thinking partnership.",
-      provider: { "@id": "https://www.simpleworks.in/#organization" },
-      areaServed: {
-        "@type": "City",
-        name: "Bengaluru",
-      },
-      url: "https://www.simpleworks.in/startup-mentor-bengaluru",
+      title: "A go-to-market that doesn’t need you to close",
+      text: "Who to sell to, through which channel, and a sales motion a team can run.",
+      youGet: "a go-to-market plan your team can execute.",
+      link: { label: "Sales & Distribution Strategy", href: "/services/gtm-consulting" },
     },
     {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Your experience is Airtel and MRF. Why would that help a Series A SaaS company?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Because the problem is not the product — it is the selling system, and I have been building those for 39 years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person’s relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How is this different from an accelerator or incubator?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Accelerators run programmes for cohorts of 10–20 startups simultaneously. I work with a small number of founders at a time, one-to-one, with no fixed curriculum. The engagement is built entirely around your specific business and challenge — not a generalised programme.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What stage of startup do you typically work with?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Post-product-market fit — you have paying customers and repeat revenue, and the constraint has shifted from whether anyone will buy to whether anyone but you can sell it. In practice that is usually ₹2 crore ARR and above. Earlier than that, an accelerator will serve you better than I will.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you take equity or only fees?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "I work on a pure advisory fee basis. I do not take equity. This keeps the relationship clean — my only incentive is the quality of my advice, not your cap table.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is this in-person or virtual?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "I prefer in-person for the primary relationship — I’m based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How long does a typical engagement run?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Most engagements run for 6–12 months. Meaningful change in business systems takes time — and a strong mentor relationship compounds over quarters, not weeks.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How many founders do you work with at once?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Deliberately few. The depth I can offer is proportional to the attention I can give each engagement. When I’m at capacity, the wait is worth knowing about early.",
-          },
-        },
-      ],
+      title: "Your first sales leader hire",
+      text: "The right profile, a structured interview, and what they own from day one.",
+      youGet: "a hire that doesn’t fail in six months.",
+      link: null,
+    },
+    {
+      title: "Execution and OKRs",
+      text: "Quarterly goals, named owners and a weekly review your team runs.",
+      youGet: "an operating rhythm that holds between board meetings.",
+      link: { label: "Objectives and Key Results (OKRs)", href: "/services/okr-consulting" },
+    },
+    {
+      title: "A senior thinking partner",
+      text: "Someone with no equity and no agenda, to test your biggest decisions before you make them.",
+      youGet: "a second view before the decisions that matter.",
+      link: null,
     },
   ],
 };
 
-const WA_LINK = `https://wa.me/${FACTS.whatsappNumber}?text=Hi%20Premraj%2C%20I%20am%20looking%20for%20a%20startup%20mentor%20in%20Bengaluru.%20Can%20we%20talk%3F`;
-const CALENDAR_LINK = "https://calendar.app.google/ME9vQ9MnqLowqNUW8";
+// Premraj's own experience. Company deliberately not named (Premraj, 24 Nov).
+const PIVOT = {
+  eyebrow: "From my own startup years",
+  heading: { text: "A pivot that opened", red: "two new markets." },
+  meta: "Enterprise SaaS MSME · I managed growth and product for five years · My own experience, not a client engagement",
+  steps: [
+    {
+      label: "01 · What happened",
+      title: "Offices closed. Nobody needed to commute.",
+      text: "Employee commute was our core product. With offices shut, demand stopped, and we still had a team to keep engaged.",
+    },
+    {
+      label: "02 · What we did",
+      title: "A second product for the same buyer.",
+      text: "We built workspace management. The decision maker was the same, so we took both solutions to them instead of starting a new sales motion.",
+    },
+    {
+      label: "03 · What changed",
+      title: "Beyond commute, into the global market.",
+      text: "Workspace management opened a market outside commute, and a global one.",
+    },
+  ],
+  outcome: "We became the global workspace management provider for two large US-based companies.",
+};
 
-const GAP_BULLETS = [
-  "Your GTM was founder-led. Now you need a team and a system to replace you.",
-  "You’ve raised a round. Now investors expect quarterly accountability you haven’t built.",
-  "The product works. Execution — across teams, processes, and priorities — is breaking down.",
-  "You’re making decisions with consequences larger than anything you’ve decided before, and no one senior enough in the room to pressure-test them.",
-  "Advisors give frameworks. You need someone who has held the P&L when it mattered.",
+// Same client as content/client-stories/entreprenuer-wanting-to-start-a-product-design-startup.yaml.
+const CASE = {
+  eyebrow: "Client story",
+  heading: { text: "What changed for", red: "one founder." },
+  meta: "Product design studio · Bangalore",
+  programme: "Simple Counsel",
+  headline: "Five business ideas on the table. One worth building.",
+  signed: "2",
+  close: "4",
+  how: "From a go-to-market he built on our guidance: an email campaign to deep-tech companies, asking for meetings.",
+  problem: "After ten years in software startups in Bangalore, the founder had several business ideas and needed to decide which one to build.",
+  did: "We looked at what he is strongest at and most interested in, then sized the opportunity for each of the five ideas. One fitted best: a design studio for deep-tech companies, which suits his background in product and UX.",
+};
+
+const FIT = {
+  who: {
+    eyebrow: "Who we work with",
+    heading: { text: "Founders past", red: "product-market fit." },
+    text: "Paying customers and repeat revenue, usually ₹2 crore ARR and above, where the constraint has moved from whether anyone will buy to whether anyone but you can sell it. SaaS, product and service startups across India.",
+  },
+  not: {
+    eyebrow: "Worth being direct",
+    heading: { text: "Not for", red: "every founder." },
+    text: "Pre-revenue and idea-stage founders: an accelerator serves you better. Fundraising, product or engineering help: not what we do. Founders who want their thinking validated rather than challenged. We will say so on the first call.",
+  },
+};
+
+const WHY = {
+  eyebrow: "Why Premraj",
+  heading: { text: "A mentor who has been", red: "inside a startup." },
+  experience: [
+    "39 years in business, across corporate roles, MSMEs and startups.",
+    "Five years managing growth and product at an enterprise SaaS business.",
+    "Co-founded Viworks Ventures, working with startups on their sales and go-to-market.",
+    "Worked on the business side at Usha International, Apollo Tyres and MRF.",
+    "In telecom at BPL Mobile, Airtel and Tata Docomo: sales and distribution, business operations, customer lifecycle management and customer interactions (call centres and relationship centres), ending as Chief Operating Officer of the Kerala circle at Tata Docomo.",
+  ],
+  education: [
+    "Executive General Management Programme (EGMP), IIM Bangalore.",
+    "Advanced Global Management Programme for Tata Group senior leadership, Ross School of Business, University of Michigan.",
+    "Programme for middle management, XLRI Jamshedpur, 1993, conducted for Apollo Tyres.",
+  ],
+  closing: "No equity, very few founders at a time, and you work with Premraj himself.",
+  cta: {
+    label: "Talk to Premraj directly",
+    dataCta: "startup-why",
+    whatsappText: "Hi Premraj, I read about your background and would like to talk about my startup.",
+  },
+};
+
+const HOW = {
+  eyebrow: "How we work",
+  heading: { text: "Start with a Diagnostic.", red: "Then Counsel or Advisory." },
+  lead: "Each programme has one fixed fee, agreed before we begin. No equity, no hourly billing.",
+  programmes: [
+    { name: "Simple Diagnostic", text: "find what is really holding growth back, in half a day.", fee: price("diagnostic") },
+    { name: "Simple Counsel", text: "two sessions a month in person in Bangalore, with WhatsApp access.", fee: `${price("counsel")} a month` },
+    { name: "Simple Advisory", text: "two 90-minute online sessions a month, from anywhere in India.", fee: `${price("advisory")} a month` },
+  ],
+  link: { label: "See all programmes and fees", href: "/programmes" },
+};
+
+const READING = {
+  eyebrow: "From the blog",
+  heading: { text: "Read more on", red: "scaling past the founder." },
+  posts: [
+    {
+      tag: "Go-to-market",
+      title: "Why Founder-Led Sales Breaks After Series A, and What Replaces It",
+      href: "/blog/why-founder-led-sales-breaks-after-series-a-and-what-replaces-it",
+    },
+    {
+      tag: "Execution",
+      title: "OKRs for Startups: Why Most Founders Get Them Wrong After Series A",
+      href: "/blog/ok-rs-for-startups-why-most-founders-get-them-wrong-after-series-a",
+    },
+    {
+      tag: "Mentorship",
+      title: "Startup Mentor vs Accelerator in India: Two Jobs Founders Keep Confusing",
+      href: "/blog/startup-mentor-vs-accelerator-in-india-two-jobs-founders-keep-confusing",
+    },
+    {
+      tag: "Cofounders · A fiction series",
+      title: "How to Choose a Cofounder: Friend or Skill-Fit?",
+      href: "/blog/how-to-choose-a-cofounder-for-your-startup",
+    },
+  ],
+  all: { label: "All articles", href: "/blog" },
+};
+
+const QUESTIONS = {
+  eyebrow: "Questions",
+  heading: { text: "What founders", red: "ask first." },
+};
+
+const CLOSING = {
+  heading: { text: "Start with", red: "an introductory call." },
+  text: "Tell us where growth is stuck. If we can help, we will say how. If we can’t, we will say that too.",
+  cta: { label: "Message us on WhatsApp", dataCta: "startup-closing" },
+  trust: "Based in Bangalore",
+};
+
+const FAQS = getFaqs(startupFaqIds);
+
+const schemaMarkup = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
+      { "@type": "ListItem", position: 2, name: "Startup Mentor", item: URL },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Startup Mentoring and Advisory",
+    provider: { "@id": "https://www.simpleworks.in/#organization" },
+    areaServed: { "@type": "Country", name: "India" },
+    description: DESCRIPTION,
+    url: URL,
+  },
+  faqPageSchema(FAQS),
 ];
 
-const WHO_SIGNALS = [
-  "Revenue is real, but every significant deal still closes through you.",
-  "You have hired salespeople and they have not produced what you expected.",
-  "Your pipeline lives in your head, or in a CRM nobody updates.",
-  "You are about to make your first senior sales hire and you know what getting it wrong costs.",
-  "Growth is capped by your calendar, not by demand.",
-];
+// ── Shared styles (same scale as the /services pages) ──
+const SECTION =
+  "reveal py-14 md:py-[72px] px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule";
+const LABEL = "text-[11px] md:text-[13px] uppercase tracking-widest text-light leading-[1.6]";
+const EYEBROW = `${LABEL} mb-4 md:mb-5`;
+const H2 = "text-[28px] md:text-[36px] leading-[1.18] font-bold tracking-tight-1";
+const H3 = "text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink";
+const HEADER = "mb-10";
+const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
+const BUTTON =
+  "inline-flex items-center font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
+const TEXT_LINK = "text-red hover:underline w-fit";
+const SMALL_CAPS = "text-[12px] md:text-[13px] uppercase tracking-widest";
 
-const NOT_FOR_YOU = [
-  "Pre-revenue or idea-stage founders. Accelerators and incubators serve this stage far better than I can.",
-  "Founders who want someone to validate their existing thinking rather than challenge it.",
-  "Those looking for a one-session advisory sprint. Meaningful change takes quarters, not hours.",
-  "Founders unwilling to do the hard implementation work between sessions. I don’t do the work for you.",
-];
-
-const WHAT_I_BRING = [
-  {
-    title: "First Sales Leader Hire",
-    body: "Helping founders define the right profile, structure the interview, and set up accountability architecture — so the hire doesn’t fail in six months.",
-  },
-  {
-    title: "GTM Architecture",
-    body: "Designing go-to-market engines that don’t depend on the founder to close every deal. Channel strategy, sales team structure, pricing, and revenue accountability — built for scale.",
-  },
-  {
-    title: "Execution & OKR Systems",
-    body: "Most startups have vision. Few have the operating rhythm to execute it. I build OKR frameworks and review cadences that create accountability without bureaucracy.",
-  },
-  {
-    title: "Strategic Thinking Partner",
-    body: "A thinking partner with no equity, no agenda, and no reason to tell you what you want to hear. Board-level strategic clarity, without the board dynamics.",
-  },
-  {
-    title: "Operational Scaling",
-    body: "Consumer Durables. Automotive. Telecom. SaaS. 39 years of building operating systems inside Indian businesses — applied to your specific growth bottleneck.",
-  },
-  {
-    title: "Investor-Grade Discipline",
-    body: "Numbers you can defend, reviews that actually happen on schedule, and an operating rhythm that holds between rounds instead of being assembled the week before a board meeting.",
-  },
-];
-
-const CREDENTIALS = [
-  "EGMP, IIM Bengaluru",
-  "Advanced Management Programme, Ross School of Business (via TMTC Pune)",
-  "Senior Management Experience across 6 industries",
-  "Bengaluru-based. In-person preferred.",
-];
-
-const STEPS = [
-  {
-    n: "Step 01",
-    title: "Discovery Call",
-    body: "A 30-minute call where I understand your stage, your challenge, and whether I’m the right fit. No sales pitch. Honest assessment on both sides.",
-  },
-  {
-    n: "Step 02",
-    title: "Diagnostic Session",
-    body: "A structured 2-hour working session to map your business — strategy, GTM, execution, team. I identify the actual constraint, not the presenting problem.",
-  },
-  {
-    n: "Step 03",
-    title: "Mentorship Engagement",
-    body: "Regular one-to-one sessions — fortnightly or monthly. In-person in Bengaluru wherever possible. Deep engagement on your specific priorities.",
-  },
-  {
-    n: "Step 04",
-    title: "Accountability & Review",
-    body: "We track outcomes, not outputs. OKRs, decisions, and actions are reviewed every session. The work must move the business — not just the conversation.",
-  },
-];
-
-const DIAGNOSTIC_COVERS = [
-  "Your current growth rate vs. capacity — where the ceiling actually is",
-  "GTM audit: how customers are acquired and what breaks at scale",
-  "Team structure: who owns what, where accountability is missing",
-  "One priority that, if addressed, unlocks everything downstream",
-];
-
-const ENGAGEMENT_MODEL = [
-  {
-    label: "Engagement length",
-    value: "6–12 months",
-    note: "Most meaningful change in business systems takes time. Shorter engagements are available for focused diagnostic work only.",
-  },
-  {
-    label: "Session cadence",
-    value: "Fortnightly or monthly",
-    note: "Regular enough to maintain momentum. Spaced to give you time to do the work between sessions.",
-  },
-  {
-    label: "Fee structure",
-    value: "Monthly engagement fee",
-    note: "Not per-session. Not hourly. A monthly retainer that reflects an ongoing relationship, not a transactional advisory.",
-  },
-  {
-    label: "Equity",
-    value: "Zero",
-    note: "Pure advisory fee basis. No equity. The relationship stays clean — my only incentive is the quality of my advice, not your cap table.",
-  },
-  {
-    label: "Location",
-    value: "Bengaluru-first",
-    note: "In-person preferred for the primary relationship. Virtual works well for ongoing sessions and founders outside Bengaluru.",
-  },
-  {
-    label: "Capacity",
-    value: "Very few founders",
-    note: "I work with a small number at a time. This is deliberate — depth requires focus. When I’m at capacity, I’ll tell you.",
-  },
-];
-
-const OUTCOMES = [
-  {
-    title: "Clarity on the Real Bottleneck",
-    body: "Most founders are solving the wrong problem. After a diagnostic session, you know exactly where the constraint is — and what to do about it first.",
-  },
-  {
-    title: "A GTM System You Can Delegate",
-    body: "A go-to-market motion that doesn’t require you to close every deal — with team structure, accountability, and metrics built in.",
-  },
-  {
-    title: "OKR-Based Execution Rhythm",
-    body: "A quarterly review cadence and OKR structure that your team actually runs — not a spreadsheet that gets updated once and forgotten.",
-  },
-  {
-    title: "Operating Discipline That Holds",
-    body: "A management operating rhythm your team runs without you chasing it — numbers that are current, reviews that happen, and decisions that are recorded.",
-  },
-  {
-    title: "Decisions with Senior Perspective",
-    body: "A thinking partner who has held the P&L, managed the team, and faced the board — so your biggest decisions get tested before they’re made.",
-  },
-  {
-    title: "A Relationship, Not a Transaction",
-    body: "I work with very few founders at a time. The engagement is ongoing, not one-off. You get someone who knows your business as well as you do.",
-  },
-];
-
-const FAQS = [
-  {
-    q: "Your experience is Airtel and MRF. Why would that help a Series A SaaS company?",
-    a: "Because the problem is not the product — it is the selling system, and I have been building those for 39 years. At MRF and Apollo Tyres I ran dealer networks. At Tata Docomo I carried a circle P&amp;L across hundreds of distribution partners. In every case the job was the one you have now: making revenue predictable when it can no longer depend on one person’s relationships. What I do not bring is product strategy, fundraising, or engineering. If that is what you need, I will say so on the first call.",
-  },
-  {
-    q: "How is this different from an accelerator or incubator?",
-    a: "Accelerators run programmes for cohorts of 10–20 startups simultaneously. I work with a small number of founders at a time, one-to-one, with no fixed curriculum. The engagement is built entirely around your specific business and challenge — not a generalised programme.",
-  },
-  {
-    q: "What stage of startup do you typically work with?",
-    a: "Post-product-market fit — you have paying customers and repeat revenue, and the constraint has shifted from whether anyone will buy to whether anyone but you can sell it. In practice that is usually ₹2 crore ARR and above. Earlier than that, an accelerator will serve you better than I will.",
-  },
-  {
-    q: "Do you take equity or only fees?",
-    a: "I work on a pure advisory fee basis. I do not take equity. This keeps the relationship clean — my only incentive is the quality of my advice, not your cap table.",
-  },
-  {
-    q: "Is this in-person or virtual?",
-    a: "I prefer in-person for the primary relationship — I’m based in Bengaluru. For founders outside Bengaluru, or for ongoing sessions, virtual works well. The first diagnostic session is always in-person where possible.",
-  },
-  {
-    q: "How long does a typical engagement run?",
-    a: "Most engagements run for 6–12 months. Meaningful change in business systems takes time — and a strong mentor relationship compounds over quarters, not weeks. I don’t offer one-session advisory sprints.",
-  },
-  {
-    q: "How many founders do you work with at once?",
-    a: "Deliberately few. The depth I can offer is proportional to the attention I can give each engagement. When I’m at capacity, the wait is worth knowing about early — reach out and I’ll be direct about timelines.",
-  },
-];
-
-const BLOG_CARDS = [
-  {
-    tag: "GTM",
-    title: "Why Founder-Led Sales Breaks After Series A — And What Replaces It",
-    body: "The GTM motion that closed your first ₹2 crore ARR was built around you. Here’s why that motion breaks after Series A, and the system that replaces it.",
-    href: "/blog/why-founder-led-sales-breaks-after-series-a-and-what-replaces-it",
-  },
-  {
-    tag: "Execution",
-    title: "OKRs for Startups: Why Most Founders Get Them Wrong After Series A",
-    body: "Most Indian startups adopt OKRs after Series A, then quietly drop them within two quarters. Here’s why the startup OKR framework fails — and how to fix it.",
-    href: "/blog/ok-rs-for-startups-why-most-founders-get-them-wrong-after-series-a",
-  },
-  {
-    tag: "Mentorship",
-    title: "Startup Mentor vs Accelerator in India: Two Jobs Founders Keep Confusing",
-    body: "One fixes judgment, the other buys distribution — and confusing them costs founders equity or months they didn’t need to spend.",
-    href: "/blog/startup-mentor-vs-accelerator-in-india-two-jobs-founders-keep-confusing",
-  },
-  {
-    tag: "Cofounders",
-    title: "How Aarav Chose a Cofounder, Friend or Skill-Fit?",
-    body: "Aarav had built the product but had no one who could sell it. Part 1 of the Loopwise AI story follows his choice between a skilled stranger and his college roommate.",
-    href: "/blog/how-to-choose-a-cofounder-for-your-startup",
-  },
-];
-
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+function Heading({ heading }: { heading: RedHeading }) {
   return (
-    <p className="mb-4 flex items-center gap-2.5 text-[11px] tracking-[0.16em] uppercase text-light">
-      {children}
-      <span className="block h-px w-8 bg-rule" />
-    </p>
+    <h2 className={H2}>
+      {heading.text} <span className="text-red">{heading.red}</span>
+    </h2>
   );
 }
 
-export default function StartupMentorBengaluruPage() {
+function SectionHeader({ eyebrow, heading }: { eyebrow: string; heading: RedHeading }) {
+  return (
+    <div className={HEADER}>
+      <p className={EYEBROW}>{eyebrow}</p>
+      <Heading heading={heading} />
+    </div>
+  );
+}
+
+function RedBullets({ items }: { items: string[] }) {
+  return (
+    <ul className="max-w-[760px]">
+      {items.map((item) => (
+        <li
+          key={item}
+          className="flex items-baseline gap-[18px] border-t-[0.5px] border-rule py-4 text-[17px] md:text-[18px] leading-[1.6] text-mid"
+        >
+          <span aria-hidden="true" className="h-2 w-2 flex-shrink-0 -translate-y-1 rounded-full bg-red" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function WhatsAppButton({
+  label,
+  dataCta,
+  text,
+  className = "",
+}: {
+  label: string;
+  dataCta: string;
+  text?: string;
+  className?: string;
+}) {
+  return (
+    <a
+      href={whatsappHref(text)}
+      data-cta={dataCta}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${BUTTON} ${className}`}
+    >
+      <WhatsAppIcon size={20} />
+      {label} &nbsp;→
+    </a>
+  );
+}
+
+function escapeHtml(text: string) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+const num = (i: number) => String(i + 1).padStart(2, "0");
+
+export default function StartupMentorPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      {/* HERO */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.15fr_1fr] md:gap-12">
-          <div>
-            <p className="relative mb-5 flex items-center gap-3 pl-4 text-[11px] tracking-[0.16em] uppercase text-light before:absolute before:left-0 before:h-5 before:w-[2px] before:bg-red">
-              Startup Mentor · Bengaluru
-            </p>
-            <h1 className="mb-6 text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-[52px]">
-              Your first ₹2 crore came from you.{" "}
-              <span className="text-red">The next ₹20 crore can&rsquo;t.</span>
+      {/* ── 1. HERO ── */}
+      <section className="px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
+        <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-start gap-x-14 gap-y-10">
+          <div className="min-[900px]:flex-[1_1_400px] min-w-0">
+            <p className={EYEBROW}>{HERO.eyebrow}</p>
+            <h1 className="mb-5 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
+              {HERO.h1.text} <span className="text-red">{HERO.h1.red}</span>
             </h1>
-            <p className="mb-8 max-w-[520px] text-[18px] italic leading-[1.65] text-mid">
-              One-to-one work with founders building a sales organisation that
-              runs without them. Post-product-fit, pre-scale. No cohorts, no
-              templates — 39 years of building distribution, most of it on
-              the ground rather than in a boardroom.
+            <p className="mb-6 max-w-[560px] text-[16px] md:text-[18px] italic leading-[1.65] text-mid">
+              {HERO.subhead}
             </p>
-            <div className="mb-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-block w-fit cursor-pointer rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
-              >
-                Let&rsquo;s Talk
-              </Link>
-              <a
-                href="#what-i-bring"
-                className="inline-block w-fit cursor-pointer rounded-[1px] border-[1.5px] border-red bg-transparent px-9 py-[14px] text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
-              >
-                How I work
-              </a>
-            </div>
-            <div className="flex flex-wrap gap-8 border-t-[0.5px] border-rule pt-8">
-              <div>
-                <div className="text-[32px] font-bold leading-none text-ink">
-                  39<span className="text-red">+</span>
-                </div>
-                <div className="mt-1.5 text-[11px] tracking-[0.12em] uppercase text-light">
-                  Years operating
-                </div>
-              </div>
-              <div className="border-l-[0.5px] border-rule pl-8">
-                <div className="text-[32px] font-bold leading-none text-ink">6</div>
-                <div className="mt-1.5 text-[11px] tracking-[0.12em] uppercase text-light">
-                  Industries
-                </div>
-              </div>
-              <div className="border-l-[0.5px] border-rule pl-8">
-                <div className="text-[32px] font-bold leading-none text-ink">COO</div>
-                <div className="mt-1.5 text-[11px] tracking-[0.12em] uppercase text-light">
-                  Circle P&amp;L, Tata Docomo
-                </div>
-              </div>
-            </div>
-            <div className="mt-10 max-w-[680px] space-y-5">
-              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Started as a sales trainee with Usha International in 1987. Moved through MRF
-                and Apollo Tyres, running dealer networks and government sales across different
-                geographies, then shifted to telecom with BPL Mobile in the early days of mobile
-                telephony. At Airtel, I moved from managing large direct sales teams to customer
-                success, across four southern states. Then to Tata Docomo — joining in the launch
-                phase to run sales and distribution end-to-end, and rising to Chief Operating
-                Officer of the Kerala Circle, carrying full P&amp;L, by the time the industry had
-                reinvented itself twice.
-              </p>
-              <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-                Then, at 50, I went the other way. Co-founded Viworks Ventures, then was
-                on the management team at Neoffice.ai, running growth and strategy. Small teams, tight cash, nothing to
-                delegate. I have been inside a startup, not beside one.
-              </p>
-            </div>
+            <p className={`${BODY} max-w-[560px]`}>{HERO.body}</p>
+            <WhatsAppButton label={HERO.cta.label} dataCta={HERO.cta.dataCta} className="mt-8 md:mt-10" />
           </div>
-          <Image
-            src="/images/startup-mentor-hero.png"
-            alt="Startup mentor Premraj Menon, Bengaluru"
-            width={1376}
-            height={768}
-            priority
-            className="mix-blend-multiply h-auto w-full self-start mt-9 md:mt-10"
+          {/* Top margin = eyebrow height, so the image lines up with the H1. */}
+          <div className="min-[900px]:flex-[1.4_1_480px] min-w-0 min-[900px]:mt-[41px]">
+            <Image
+              src={HERO.image.src}
+              alt={HERO.image.alt}
+              width={HERO.image.width}
+              height={HERO.image.height}
+              priority
+              sizes="(min-width: 900px) 55vw, 100vw"
+              className="block w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 2. DOES THIS SOUND LIKE YOU? ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={SITUATIONS.eyebrow} heading={SITUATIONS.heading} />
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12">
+          {SITUATIONS.items.map((item) => (
+            <li key={item.quote} className="border-t-[0.5px] border-rule py-7">
+              <h3 className={`${H3} mb-2`}>&ldquo;{item.quote}&rdquo;</h3>
+              <p className={BODY}>{item.text}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-col gap-y-5 border-t-[0.5px] border-rule pt-8">
+          <p className={`${BODY} max-w-[680px]`}>{SITUATIONS.lead}</p>
+          <WhatsAppButton
+            label={SITUATIONS.cta.label}
+            dataCta={SITUATIONS.cta.dataCta}
+            text={SITUATIONS.cta.whatsappText}
           />
         </div>
       </section>
 
-      {/* THE PROBLEM */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>The Problem</SectionEyebrow>
-        <h2 className="mb-8 max-w-[720px] text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          Most advisors teach. You need{" "}
-          <span className="text-red">someone who has done.</span>
-        </h2>
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:items-start">
-          <div className="space-y-5 max-w-[720px]">
-            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-              Bengaluru&rsquo;s startup ecosystem is exceptional at early-stage support.
-              Accelerators, angel networks, cohort programmes, demo days — there is more help
-              available for getting from zero to first revenue than almost anywhere else in
-              the country.
-            </p>
-            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-              Then it thins out. Past roughly ₹2 crore ARR the questions change shape. They
-              stop being about whether the idea works and start being about whether the
-              business can run without you in every conversation. That is a harder problem,
-              and the people qualified to help with it are mostly employed running someone
-              else&rsquo;s company.
-            </p>
-            <p className="text-[16px] md:text-[17px] text-mid leading-[1.78]">
-              What is left is advice from people who have studied the stage rather than lived
-              in it — frameworks, benchmarks, and the confident opinions of someone who has
-              never had to make payroll while a sales plan was failing.
-            </p>
-          </div>
-          <ul className="flex list-none flex-col gap-0">
-            {GAP_BULLETS.map((b) => (
-              <li
-                key={b}
-                className="relative border-t-[0.5px] border-rule py-4 pl-6 text-[16px] leading-[1.65] text-mid before:absolute before:left-0 before:top-[26px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-red"
-              >
-                {b}
-              </li>
-            ))}
-          </ul>
+      {/* ── 3. WHAT NEEDS TO CHANGE ── */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{CAUSES.eyebrow}</p>
+          <Heading heading={CAUSES.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>{CAUSES.lead}</p>
         </div>
-        <blockquote className="mt-10 max-w-[720px] border-[0.5px] border-rule border-l-2 border-l-red px-9 py-8">
-          <p className="text-[18px] italic leading-[1.65] text-ink">
-            &ldquo;The hardest stage isn&rsquo;t the idea or the first crore.
-            It&rsquo;s the stretch between early traction and real scale —
-            where gut instinct stops being enough and systems haven&rsquo;t
-            been built yet.&rdquo;
-          </p>
-          <cite className="mt-4 block text-[11px] tracking-[0.12em] uppercase text-light not-italic">
-            — Premraj Menon, Operating Advisor · Bengaluru
-          </cite>
-        </blockquote>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">
+          {CAUSES.items.map((item) => (
+            <div key={item.title} className="border-t-2 border-ink pt-6">
+              <h3 className={`${H3} mb-3`}>{item.title}</h3>
+              <p className={BODY}>{item.text}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* WHO I WORK WITH */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Who I Work With</SectionEyebrow>
-        <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          You are in the right place if{" "}
-          <span className="text-red">this sounds familiar.</span>
-        </h2>
-        <ul className="mt-8 space-y-5 max-w-[50%]">
-          {WHO_SIGNALS.map((s) => (
+      {/* ── 4. WHAT STARTUP MENTORING COVERS ── */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{COVERS.eyebrow}</p>
+          <Heading heading={COVERS.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>
+            Part mentor, part startup consultant: we work on the business with you, built on the
+            Simpleworks Consulting{" "}
+            <Link href={FOUR_P_POST} className="text-red hover:underline">
+              4P framework
+            </Link>
+            .
+          </p>
+        </div>
+        <ol className="border-b-[0.5px] border-rule">
+          {COVERS.rows.map((row, i) => (
             <li
-              key={s}
-              className="text-[16px] md:text-[17px] text-mid leading-[1.78]"
+              key={row.title}
+              className="grid grid-cols-1 gap-y-3 border-t-[0.5px] border-rule py-7 md:py-8 lg:grid-cols-[80px_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-12"
             >
-              {s}
+              <span className="text-[15px] font-bold leading-[1.6] text-red tracking-wide-2 [font-variant-numeric:tabular-nums]">
+                {num(i)}
+              </span>
+              <h3 className={H3}>{row.title}</h3>
+              <div>
+                <p className="text-[18px] leading-[1.55] text-ink mb-2">{row.text}</p>
+                <p className={`${BODY} ${row.link ? "mb-3" : ""}`}>
+                  <strong className="font-bold text-ink">You get:</strong>{" "}
+                  <span className="text-red">{row.youGet}</span>
+                </p>
+                {row.link && (
+                  <Link href={row.link.href} className={TEXT_LINK}>
+                    {row.link.label} &rarr;
+                  </Link>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* ── 5. FROM MY OWN STARTUP YEARS ── a timeline, then the outcome. */}
+      <section className={SECTION}>
+        <p className={EYEBROW}>{PIVOT.eyebrow}</p>
+        <div className="mb-11">
+          <Heading heading={PIVOT.heading} />
+          <p className="mt-3.5 text-[14px] md:text-[15px] text-light">{PIVOT.meta}</p>
+        </div>
+        <ol className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
+          {PIVOT.steps.map((step, i) => {
+            const last = i === PIVOT.steps.length - 1;
+            return (
+              <li
+                key={step.label}
+                className={`relative pt-[22px] border-t ${last ? "border-red" : "border-ink"}`}
+              >
+                <span
+                  aria-hidden="true"
+                  className={`absolute -top-[6px] left-0 h-[11px] w-[11px] rounded-full ${
+                    last ? "bg-red" : "border border-ink bg-white"
+                  }`}
+                />
+                <p className={`${SMALL_CAPS} mb-2.5 ${last ? "text-red" : "text-light"}`}>{step.label}</p>
+                <h3 className={`mb-2.5 text-[20px] md:text-[22px] font-bold leading-[1.3] ${last ? "text-red" : "text-ink"}`}>
+                  {step.title}
+                </h3>
+                <p className={BODY}>{step.text}</p>
+              </li>
+            );
+          })}
+        </ol>
+        <div className="mt-12 flex flex-wrap items-center gap-x-9 gap-y-4 border-y-[0.5px] border-rule py-7">
+          <p className="text-[72px] md:text-[96px] leading-[0.9] text-red tracking-tight-2">2</p>
+          <p className="max-w-[640px] text-[19px] md:text-[22px] font-bold leading-[1.45] text-ink">
+            {PIVOT.outcome}
+          </p>
+        </div>
+      </section>
+
+      {/* ── 6. CLIENT STORY ── a case card led by the result. */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={CASE.eyebrow} heading={CASE.heading} />
+        <article className="border border-red p-6 md:px-12 md:py-11">
+          <div className="mb-9 flex flex-wrap items-start justify-between gap-6">
+            <div className="max-w-[640px]">
+              <p className={`${LABEL} mb-3.5`}>{CASE.meta}</p>
+              <h3 className="text-[26px] md:text-[32px] font-bold leading-[1.22] text-ink">{CASE.headline}</h3>
+            </div>
+            <span className={`${SMALL_CAPS} flex-shrink-0 border border-red px-3.5 py-1.5 text-red`}>
+              {CASE.programme}
+            </span>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-[auto_auto_minmax(0,1fr)] items-center gap-x-12 gap-y-5 border-t border-ink border-b-[0.5px] border-b-rule py-7">
+            <div>
+              <p className="text-[64px] md:text-[88px] leading-[0.9] text-red tracking-tight-2">{CASE.signed}</p>
+              <p className="mt-2.5 text-[15px] font-bold text-ink">clients signed</p>
+            </div>
+            <div className="border-l-[0.5px] border-rule pl-8 md:pl-12">
+              <p className="text-[64px] md:text-[88px] leading-[0.9] text-mid tracking-tight-2">{CASE.close}</p>
+              <p className="mt-2.5 text-[15px] font-bold text-ink">close to signing</p>
+            </div>
+            <p className={`${BODY} col-span-2 lg:col-span-1 lg:border-l-[0.5px] lg:border-rule lg:pl-12`}>
+              {CASE.how}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 pt-7">
+            <div>
+              <p className={`${LABEL} mb-2.5`}>The problem</p>
+              <p className={BODY}>{CASE.problem}</p>
+            </div>
+            <div>
+              <p className={`${LABEL} mb-2.5`}>What we did</p>
+              <p className={BODY}>{CASE.did}</p>
+            </div>
+          </div>
+        </article>
+        <div className="mt-5 flex flex-wrap justify-between gap-3">
+          <p className="text-[14px] text-light">Client details are confidential.</p>
+          <Link href="/client-success-stories" className={TEXT_LINK}>
+            Read more client stories &rarr;
+          </Link>
+        </div>
+      </section>
+
+      {/* ── 7. WHO / NOT ── */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+          {[FIT.who, FIT.not].map((col) => (
+            <div key={col.eyebrow}>
+              <SectionHeader eyebrow={col.eyebrow} heading={col.heading} />
+              <p className={`${BODY} max-w-[520px] -mt-4`}>{col.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 8. WHY PREMRAJ ── portrait left, credentials right. */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-x-16 gap-y-8">
+          <figure className="lg:sticky lg:top-24 self-start">
+            <Image
+              src="/prem-menon.png"
+              alt="Watercolour portrait of Premraj Menon"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 420px, 80vw"
+              className="block w-full max-w-[420px] h-auto mix-blend-multiply"
+            />
+            <figcaption className="mt-3.5">
+              <p className="text-[18px] font-bold text-ink">Premraj Menon</p>
+              <p className={`${LABEL} mt-1`}>Founder, Simpleworks Consulting</p>
+            </figcaption>
+          </figure>
+          <div>
+            <RedBullets items={WHY.experience} />
+            <p className={`${SMALL_CAPS} mt-8 mb-1.5 text-red`}>Education</p>
+            <RedBullets items={WHY.education} />
+            <p className="mt-7 max-w-[760px] border-t-[0.5px] border-rule pt-6 text-[18px] md:text-[20px] font-bold leading-[1.5] text-ink">
+              {WHY.closing}
+            </p>
+            <WhatsAppButton
+              label={WHY.cta.label}
+              dataCta={WHY.cta.dataCta}
+              text={WHY.cta.whatsappText}
+              className="mt-7"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. HOW WE WORK ── */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{HOW.eyebrow}</p>
+          <Heading heading={HOW.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>{HOW.lead}</p>
+        </div>
+        <ul className="max-w-[860px] border-b-[0.5px] border-rule">
+          {HOW.programmes.map((p) => (
+            <li
+              key={p.name}
+              className="flex flex-col gap-1 border-t-[0.5px] border-rule py-5 text-[17px] md:text-[18px] leading-[1.6] text-mid sm:flex-row sm:justify-between sm:gap-6"
+            >
+              <span>
+                <strong className="font-bold text-ink">{p.name}</strong>: {p.text}
+              </span>
+              <span className="whitespace-nowrap text-mid">{p.fee}</span>
             </li>
           ))}
         </ul>
+        <Link href={HOW.link.href} className={`${TEXT_LINK} inline-block mt-6`}>
+          {HOW.link.label} &rarr;
+        </Link>
       </section>
 
-      {/* THIS ENGAGEMENT ISN'T FOR EVERYONE */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Worth Being Direct</SectionEyebrow>
-        <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          This engagement <span className="text-red">isn&rsquo;t for everyone.</span>
-        </h2>
-        <p className="mb-12 max-w-[50%] text-[17px] leading-[1.78] text-mid md:mb-14">
-          I work with very few founders at a time. If any of these describe
-          you, we&rsquo;re probably not the right fit — and I&rsquo;ll tell
-          you so in the first call.
-        </p>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {NOT_FOR_YOU.map((item) => (
-            <div
-              key={item}
-              className="flex items-start gap-3.5 border-[0.5px] border-rule px-6 py-5"
-            >
-              <div className="w-0.5 min-h-[48px] shrink-0 self-stretch bg-red" />
-              <p className="text-[15px] leading-[1.65] text-mid">{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* WHAT I BRING */}
-      <section id="what-i-bring" className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>What I Bring</SectionEyebrow>
-        <h2 className="mb-12 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:mb-14 md:text-[36px]">
-          39 years of operating. Not <span className="text-red">advising — operating.</span>
-        </h2>
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] md:grid-cols-2">
-          {WHAT_I_BRING.map((item) => (
-            <div key={item.title} className="bg-bg px-7 py-9">
-              <h3 className="mb-2.5 text-[20px] font-bold leading-[1.3] text-ink">
-                {item.title}
+      {/* ── 10. FROM THE BLOG ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={READING.eyebrow} heading={READING.heading} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7 max-w-[1000px]">
+          {READING.posts.map((post) => (
+            <Link key={post.href} href={post.href} className="group block border-l-2 border-red pl-6 py-1.5">
+              <p className={`${LABEL} mb-2`}>{post.tag}</p>
+              <h3 className="mb-3 text-[18px] md:text-[19px] font-bold leading-[1.4] text-ink transition-colors group-hover:text-red">
+                {post.title}
               </h3>
-              <p className="text-[15px] leading-[1.7] text-mid">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* THE OPERATOR */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>The Operator</SectionEyebrow>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[240px_1fr] md:gap-16">
-          <div className="aspect-square w-full overflow-hidden bg-[#F7F5F2]">
-            <Image
-              src="/prem-menon.png"
-              alt="Premraj Menon, Startup Mentor Bengaluru"
-              width={480}
-              height={480}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div>
-            <h3 className="mb-1.5 text-[24px] font-bold leading-[1.3] text-ink">
-              Premraj Menon
-            </h3>
-            <p className="mb-6 text-[13px] tracking-[0.1em] uppercase text-red">
-              Operating Advisor · Bengaluru
-            </p>
-            <p className="mb-7 text-[17px] leading-[1.78] text-mid">
-              39 years of management experience rising to COO-level roles
-              across Consumer Durables, Automotive, Telecom, and SaaS.
-              Independent management consultant since founding Simpleworks Consulting
-              Consulting — working exclusively one-to-one with founders who
-              need a senior operator in their corner.
-            </p>
-            <div className="mb-7 border-[0.5px] border-rule border-l-2 border-l-red px-7 py-6">
-              <p className="text-[15px] leading-[1.7] text-mid">
-                At 50, I co-founded Viworks Ventures, then joined the management
-                team at <strong className="font-bold text-ink">Neoffice AI</strong>, running
-                growth and strategy — a
-                SaaS startup where I learned firsthand what it takes to build
-                from near-zero with limited resources and unlimited
-                ambition. <strong className="font-bold text-ink">I&rsquo;ve been inside a
-                startup, not just beside one.</strong> That changes what I
-                look for, what I challenge, and how I think about your
-                constraints.
-              </p>
-            </div>
-            <ul className="flex list-none flex-col gap-0">
-              {CREDENTIALS.map((c) => (
-                <li
-                  key={c}
-                  className="flex items-start gap-2.5 border-t-[0.5px] border-rule py-2.5 text-[14px] text-mid last:border-b-[0.5px]"
-                >
-                  <span className="text-red">→</span>
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* THE PROCESS */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>The Process</SectionEyebrow>
-        <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          Simple. One-to-one. <span className="text-red">No cohorts.</span>
-        </h2>
-        <p className="mb-12 max-w-[600px] text-[17px] italic leading-[1.65] text-mid md:mb-14">
-          Most mentorship programmes put you in a room with eleven other
-          founders. This isn&rsquo;t that.
-        </p>
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] sm:grid-cols-2 md:grid-cols-4">
-          {STEPS.map((s) => (
-            <div key={s.n} className="bg-bg px-6 py-8">
-              <span className="mb-4 block text-[11px] font-bold tracking-[0.14em] uppercase text-red">
-                {s.n}
-              </span>
-              <h3 className="mb-2.5 text-[17px] font-bold leading-[1.3] text-ink">
-                {s.title}
-              </h3>
-              <p className="text-[14px] leading-[1.65] text-mid">{s.body}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-9 max-w-[700px] border-[0.5px] border-rule border-l-2 border-l-red px-8 py-7">
-          <h3 className="mb-3.5 text-[17px] font-bold leading-[1.3] text-ink">
-            What a Diagnostic Session actually covers
-          </h3>
-          <ul className="flex list-none flex-col gap-3">
-            {DIAGNOSTIC_COVERS.map((d) => (
-              <li
-                key={d}
-                className="relative pl-5 text-[14px] leading-[1.65] text-mid before:absolute before:left-0 before:content-['—'] before:text-red"
-              >
-                {d}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* HOW ENGAGEMENTS WORK */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>How Engagements Work</SectionEyebrow>
-        <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          Structured for <span className="text-red">real outcomes.</span>
-        </h2>
-        <p className="mb-12 max-w-[50%] text-[17px] leading-[1.78] text-mid md:mb-14">
-          Not per-session billing. Not a retainer that drifts. A defined
-          engagement with clear accountability — structured so the business
-          moves, not just the conversation.
-        </p>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-0 md:grid-cols-2">
-          {ENGAGEMENT_MODEL.map((item) => (
-            <div key={item.label} className="border-t-[0.5px] border-rule py-6">
-              <span className="mb-2 block text-[11px] tracking-[0.14em] uppercase text-light">
-                {item.label}
-              </span>
-              <div className="mb-1.5 text-[17px] font-bold text-ink">{item.value}</div>
-              <p className="text-[13px] leading-[1.6] text-mid">{item.note}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* OUTCOMES */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Outcomes</SectionEyebrow>
-        <h2 className="mb-3.5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          What founders leave with <span className="text-red">differently.</span>
-        </h2>
-        <p className="mb-12 max-w-[600px] text-[17px] italic leading-[1.65] text-mid md:mb-14">
-          Not frameworks in a slide deck. Working systems inside the
-          business.
-        </p>
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-[#D8D8D8] bg-[#D8D8D8] md:grid-cols-3">
-          {OUTCOMES.map((o) => (
-            <div key={o.title} className="bg-bg px-7 py-9">
-              <h3 className="mb-2.5 text-[17px] font-bold leading-[1.3] text-ink">
-                {o.title}
-              </h3>
-              <p className="text-[14px] leading-[1.65] text-mid">{o.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Common Questions</SectionEyebrow>
-        <h2 className="mb-10 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-          What founders <span className="text-red">ask first.</span>
-        </h2>
-        <FAQAccordion faqs={FAQS} />
-      </section>
-
-      {/* FROM THE BLOG */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>From the Blog</SectionEyebrow>
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-4 md:mb-14">
-          <h2 className="text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-            On the hard problems <span className="text-red">founders face at scale.</span>
-          </h2>
-          <Link
-            href="/blog"
-            className="whitespace-nowrap text-[13px] font-semibold text-ink underline underline-offset-4 transition-colors hover:text-red"
-          >
-            All articles →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {BLOG_CARDS.map((card) => (
-            <Link
-              key={card.href}
-              href={card.href}
-              className="flex flex-col border-[0.5px] border-rule p-7 transition-colors hover:border-ink"
-            >
-              <span className="mb-3 text-[10px] font-bold tracking-[0.14em] uppercase text-red">
-                {card.tag}
-              </span>
-              <h3 className="mb-2.5 text-[16px] font-bold leading-[1.4] text-ink">
-                {card.title}
-              </h3>
-              <p className="mb-5 flex-1 text-[13px] leading-[1.65] text-mid">
-                {card.body}
-              </p>
-              <span className="text-[12px] tracking-[0.1em] uppercase text-ink">
-                Read article →
-              </span>
+              <span className="text-[14px] text-red">Read article &rarr;</span>
             </Link>
           ))}
         </div>
+        <Link href={READING.all.href} className={`${TEXT_LINK} inline-block mt-7`}>
+          {READING.all.label} &rarr;
+        </Link>
       </section>
 
-      {/* CTA BAND */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 text-center md:py-20">
-        <div className="mx-auto max-w-[680px]">
-          <p className="mb-4 text-[11px] tracking-[0.16em] uppercase text-light">
-            Ready to talk?
-          </p>
-          <h2 className="mb-5 text-[28px] font-bold leading-[1.18] tracking-[-0.015em] text-ink md:text-[36px]">
-            An operator who has <span className="text-red">been there.</span>
-          </h2>
-          <p className="mb-10 text-[17px] italic leading-[1.65] text-mid">
-            Start with a 30-minute call. No pitch. No cohort. Just a direct
-            conversation about your business and whether I can help.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-[1px] border-[1.5px] border-red px-9 py-3.5 text-[15px] font-bold text-red transition-colors hover:bg-red hover:text-white"
-            >
-              <WhatsAppIcon />
-              WhatsApp Premraj
-            </a>
-            <a
-              href={CALENDAR_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-[1px] border-[1.5px] border-red px-9 py-3.5 text-[15px] font-semibold text-red transition-colors hover:bg-red hover:text-white"
-            >
-              Book a 30-min Call
-            </a>
+      {/* ── 11. QUESTIONS ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={QUESTIONS.eyebrow} heading={QUESTIONS.heading} />
+        <div className="max-w-[900px] border-b-[0.5px] border-rule">
+          {FAQS.map((item, i) => (
+            <details key={item.id} open={i === 0} className="faq-item border-t-[0.5px] border-rule">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
+                <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.4] text-ink">{item.q}</h3>
+                <span
+                  aria-hidden="true"
+                  className="faq-pm flex-shrink-0 text-[26px] leading-none text-red transition-transform duration-200"
+                >
+                  +
+                </span>
+              </summary>
+              <div
+                className={`${BODY} pb-[26px] max-w-[760px] [&_p]:mb-3 [&_p:last-child]:mb-0 [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline`}
+                dangerouslySetInnerHTML={{ __html: item.aHtml ?? `<p>${escapeHtml(item.a)}</p>` }}
+              />
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 12. CLOSING ── */}
+      <section className={SECTION}>
+        <div className="max-w-[760px]">
+          <Heading heading={CLOSING.heading} />
+          <p className={`${BODY} mt-4 mb-8 max-w-[560px]`}>{CLOSING.text}</p>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <WhatsAppButton label={CLOSING.cta.label} dataCta={CLOSING.cta.dataCta} />
+            <p className="text-[14px] text-light">{CLOSING.trust}</p>
           </div>
         </div>
       </section>
+
+      <Reveal />
     </>
   );
 }
