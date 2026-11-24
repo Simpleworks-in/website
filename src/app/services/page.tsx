@@ -39,7 +39,8 @@ export const metadata = {
 
 const HERO = {
   eyebrow: "Business Advisory Services · India",
-  h1: "Business consulting for MSMEs in Bangalore & India",
+  // Red on the keyword, black on the place (Premraj, 24 Nov).
+  h1: { red: "Business consulting for MSMEs", text: "in Bangalore & India" },
   subhead: { text: "Consulting built for businesses that are", red: "ready to move." },
   intro:
     "Simpleworks Consulting is a boutique business consulting firm in Bangalore. Premraj Menon gives founder-led MSMEs senior business advisory, from strategy through to execution.",
@@ -113,7 +114,7 @@ const AUDIENCES = {
 
 const HOW = {
   eyebrow: "How we work",
-  heading: { text: "Start small. Know the fee", red: "before you begin." },
+  heading: { text: "Start small.", red: "Know the fee before you begin." },
   lead: "Every engagement starts with a quick introductory call. Then you choose a format, with the fee and the end date agreed before work begins.",
 };
 
@@ -310,7 +311,7 @@ export default function ServicesPage() {
           <div className="min-[900px]:flex-[1_1_400px] min-w-0">
             <p className={EYEBROW}>{HERO.eyebrow}</p>
             <h1 className="mb-4 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
-              {HERO.h1}
+              <span className="text-red">{HERO.h1.red}</span> {HERO.h1.text}
             </h1>
             <p className="mb-6 max-w-[640px] text-[24px] leading-[1.25] font-bold text-ink md:text-[28px]">
               {HERO.subhead.text} <span className="text-red">{HERO.subhead.red}</span>
@@ -483,7 +484,9 @@ export default function ServicesPage() {
 
         <div className="mt-14 border-t-[0.5px] border-rule pt-10">
           <p className={EYEBROW}>{DEEPER.foundational.label}</p>
-          <p className={`${BODY} max-w-body-text mb-8`}>{DEEPER.foundational.lead}</p>
+          <p className="mb-8 max-w-body-text text-[16px] md:text-[17px] leading-[1.78] text-red">
+            {DEEPER.foundational.lead}
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
             {DEEPER.foundational.posts.map((post) => (
               <Link
