@@ -191,8 +191,7 @@ const HOW = {
   link: { label: "See all programmes and fees", href: "/programmes" },
 };
 
-// Anonymous client: no name, brand or product anywhere. No image until an
-// illustration in the site's style is approved.
+// Anonymous client: no name, brand or product anywhere, including the image.
 const STORY_SECTION = {
   eyebrow: "Client story",
   heading: { text: "What changed for", red: "one founder." },
@@ -201,6 +200,12 @@ const STORY: HomeStory = {
   caption: "Indian handicraft e-commerce · USA · Simple Diagnostic",
   title: "A family’s handicraft, taken to buyers in the USA.",
   note: "Client details are confidential.",
+  image: {
+    src: "/images/stories/indian-handicraft-startup-in-usa/image.webp",
+    alt: "Watercolour illustration of Indian handicrafts being packed into a shipping box beside a laptop",
+    width: 1200,
+    height: 896,
+  },
   rows: [
     {
       label: "The problem",
