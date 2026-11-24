@@ -23,16 +23,18 @@ export default function StoryArticle({
         <h3 className="text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink mb-3">
           {story.title}
         </h3>
-        <p className="text-[14px] text-light">{story.note}</p>
-        <Image
-          src={story.image.src}
-          alt={story.image.alt}
-          width={story.image.width}
-          height={story.image.height}
-          loading="lazy"
-          sizes="360px"
-          className="mix-blend-multiply mt-6 w-full max-w-[360px] h-auto"
-        />
+        {story.note && <p className="text-[14px] text-light">{story.note}</p>}
+        {story.image && (
+          <Image
+            src={story.image.src}
+            alt={story.image.alt}
+            width={story.image.width}
+            height={story.image.height}
+            loading="lazy"
+            sizes="360px"
+            className="mix-blend-multiply mt-6 w-full max-w-[360px] h-auto"
+          />
+        )}
       </div>
       <div>
         <dl>

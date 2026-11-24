@@ -1,703 +1,589 @@
 import Image from "next/image";
 import Link from "next/link";
-import { whatsappHref } from "@/lib/whatsapp";
+import Reveal from "@/components/Reveal";
+import StoryArticle from "@/components/StoryArticle";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import {
+  PROGRAMMES,
+  type HomeStory,
+  type RedHeading,
+  type TextLink,
+} from "@/content/home";
+import { faqPageSchema, getFaqs, gtmFaqIds } from "@/lib/faqs";
+import { whatsappHref } from "@/lib/whatsapp";
+
+// /services/gtm-consulting, redesigned 24 Nov 2026 (gtm-consulting-page-audit.md
+// plus Premraj's decisions). Same blueprint as /services/msme-consulting.
+// "GTM" is never used alone in a heading: it also means Google Tag Manager.
+
+const TITLE = "Go-to-Market Strategy Consultant in India | Simpleworks Consulting";
+const DESCRIPTION =
+  "Go-to-market strategy consultant in Bangalore for MSMEs and startups across India: the right customers, dealer and distributor channels, fixed-fee programmes.";
+const URL = "https://www.simpleworks.in/services/gtm-consulting";
+const FOUR_P_POST =
+  "/blog/business-strategy-consulting-for-indian-msm-es-how-the-simpleworks-4-p-framework-turns-problems-into-plans";
 
 export const metadata = {
-  title: {
-    absolute: "Sales & Distribution Strategy for MSMEs | Simpleworks Consulting",
-  },
-  description:
-    "Go-to-market, sales and distribution strategy for Indian MSMEs: the right customers, dealer and distributor channels, and a 90-day plan to execute.",
-  alternates: {
-    canonical: "https://www.simpleworks.in/services/gtm-consulting",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
   openGraph: {
-    title: "Sales & Distribution Strategy for MSMEs | Simpleworks Consulting",
-    description:
-      "Go-to-market, sales and distribution strategy for Indian MSMEs: the right customers, dealer and distributor channels, and a 90-day plan to execute.",
-    url: "https://www.simpleworks.in/services/gtm-consulting",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Simpleworks Consulting",
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
-const GTM_QUESTIONS = [
-  {
-    num: "01",
-    question: "Who exactly is the customer?",
-    body: "Not “SMEs in India.” Not “mid-market companies.” A specific segment — defined by industry, geography, company size, buying behaviour, and the problem they are paying to solve. The more precisely you can describe the customer, the more efficiently you can reach them.",
-  },
-  {
-    num: "02",
-    question: "Why would they choose you over the alternative?",
-    body: "Not a list of features. A clear, honest answer to why a rational buyer in your target segment would pay for your product or service instead of the next-best option available to them. This is your positioning — and most businesses cannot state it clearly in one sentence.",
-  },
-  {
-    num: "03",
-    question: "How do you reach them efficiently?",
-    body: "The channel and motion: direct sales, dealer networks, digital channels, partnerships, referrals. The sequence: which channel to prove first, at what investment, before expanding. And the message: what you say to the customer and in which context. All three together — not any one alone.",
-  },
-];
+// ── Copy ──
 
-const WHAT_WE_DO = [
-  {
-    num: "01 — Segmentation",
-    title: "Defining the customer with precision",
-    body: "Most businesses define their target customer too broadly — which means their sales effort is spread thin and their messaging resonates with no one in particular. Simpleworks Consulting works with founders to identify the two or three customer segments most likely to convert, most likely to pay, and most likely to generate referrals — and builds the GTM strategy around those segments first.",
+const HERO = {
+  eyebrow: "Go-to-Market Strategy · Bangalore, India",
+  h1: { text: "Go-to-Market Strategy Consultant", red: "for MSMEs" },
+  subhead:
+    "The right customers, and the right way to reach them: sales and distribution through dealers, distributors and your own team.",
+  body: "Premraj Menon works with founder-led MSMEs and startups across India on how they sell: which customers to go after, which channels to use, and what to do first. You know your product. What is hard from the inside is seeing why sales have stalled in one market, or how to open the next one.",
+  cta: { label: "Start with a WhatsApp message", dataCta: "gtm-hero" },
+  image: {
+    src: "/images/gtm-hero-owner-sales-team.webp",
+    alt: "An MSME owner and his sales team in a meeting room inside their plant, while a consultant at the whiteboard maps sales routes across India and the chain from factory to distributor, dealer and shop",
+    width: 1200,
+    height: 896,
   },
-  {
-    num: "02 — Positioning",
-    title: "Finding the angle that makes you the obvious choice",
-    body: "Positioning is not a tagline. It is a clear statement of who you serve, what problem you solve, and why you solve it better than the alternative. Simpleworks Consulting develops positioning that is specific enough to be meaningful and honest enough to be defensible — starting from a rigorous analysis of what buyers actually care about, not what the founders want to say about themselves.",
-  },
-  {
-    num: "03 — Channel Strategy",
-    title: "Choosing where and how to sell",
-    body: "The right channel for an industrial components manufacturer in Pune is not the right channel for a SaaS startup in Bengaluru. Simpleworks Consulting builds channel strategy from the ground up — understanding which channels your target segment actually uses to find and evaluate suppliers, and which you can win in given your current resources and relationships.",
-  },
-  {
-    num: "04 — GTM Execution Plan",
-    title: "Turning strategy into a sequenced action plan",
-    body: "A GTM strategy that lives in a presentation is not a GTM strategy — it is a hypothesis. Simpleworks Consulting converts the strategy into a phased execution plan: which segment to pursue first, which channel to prove in the first 90 days, what the sales motion looks like, and what the milestones are that will tell you whether the strategy is working or needs to change.",
-  },
-];
+};
 
-const SITUATIONS = [
-  {
-    num: "01",
-    title: "The product is good but sales are inconsistent",
-    body: "Customers who try the product are happy with it. Referrals come in occasionally. But new customer acquisition is unpredictable — some months are strong, others are not, and the team cannot explain why. The problem is almost always in the GTM: the wrong segment, the wrong channel, or a positioning that doesn’t connect with the people most likely to buy.",
-  },
-  {
-    num: "02",
-    title: "Entering a new market, geography, or product category",
-    body: "A new segment, a new city, a new product line. The approach that worked in the existing market may not work in the new one — different buyers, different buying behaviour, different distribution. Getting the GTM right before committing full sales headcount and marketing budget is the difference between a successful expansion and an expensive lesson.",
-  },
-  {
-    num: "03",
-    title: "The market has shifted and the old approach isn’t working",
-    body: "A new competitor, a change in buyer behaviour, a technology that has disrupted the channel. The business that worked reliably for ten years is now under pressure it has never experienced before. The GTM strategy that built the business needs to be rebuilt — or the business will continue to defend a position that no longer exists.",
-  },
-  {
-    num: "04",
-    title: "Revenue is growing but through the wrong customers",
-    body: "The business is growing, but the growth is coming from customers who are hard to service, slow to pay, and unlikely to refer others. The best customers — the ones who buy repeatedly, pay promptly, and send referrals — are a small fraction of the revenue. A GTM reset reorients the entire sales effort toward the customers who create the most value at the lowest cost to serve.",
-  },
-];
-
-const STEPS = [
-  {
-    num: "01",
-    label: "Diagnose",
-    title: "Understand the current state before building anything new",
-    body: "Before recommending a new GTM, Simpleworks Consulting analyses the existing one. Who are the current customers — and which ones are actually profitable? Which channels produced them? What is the win rate in each segment and why? What does the sales process look like and where does it lose? The current state, diagnosed honestly, is the foundation for everything that follows.",
-  },
-  {
-    num: "02",
-    label: "Define",
-    title: "Identify the segments and build the ICP",
-    body: "The Ideal Customer Profile (ICP) is the most important output of a GTM strategy — and most businesses don’t have one they can state precisely. Simpleworks Consulting builds the ICP from the data: which existing customers deliver the most revenue at the lowest cost to acquire and serve, what they have in common, and how to find more of them. The ICP becomes the filter for every GTM decision that follows.",
-  },
-  {
-    num: "03",
-    label: "Design",
-    title: "Build the positioning, messaging, and channel strategy",
-    body: "With the ICP defined, Simpleworks Consulting builds the positioning (why you, for them, vs. the alternative), the messaging (what you say and how), and the channel strategy (how you reach them at scale). For Indian MSMEs, this almost always involves a combination of direct sales, dealer or distributor networks, and digital channels — sequenced in the order that the business can actually execute with its current team and budget.",
-  },
-  {
-    num: "04",
-    label: "Deploy",
-    title: "Launch the first 90-day GTM sprint and measure what works",
-    body: "The GTM strategy launches as a 90-day sprint — a focused effort on one segment, one channel, and one message, with clear milestones that define what success looks like at the end of 90 days. Simpleworks Consulting stays involved through this sprint, reviewing results weekly and adjusting the strategy based on what the market is telling you. At the end of the sprint, you have either a proven model to scale or a clear understanding of what to change — not a guess.",
-  },
-];
-
-const DIFFERENTIATORS = [
-  {
-    title: "Built for Indian distribution reality",
-    body: "Dealer networks, distributor relationships, B2B sales cycles, and regional market dynamics — not a digital marketing funnel copied from a SaaS playbook.",
-  },
-  {
-    title: "Starts with your actual customers — not a persona template",
-    body: "The ICP is built from your real customer data, not from a workshop exercise. Which customers have the highest LTV, the fastest sales cycle, and the best referral rate. Start there.",
-  },
-  {
-    title: "Strategy that fits your current team and budget",
-    body: "A GTM plan that requires headcount you don’t have and a marketing budget you can’t afford is not a plan — it’s a wish. Simpleworks Consulting builds GTM strategies around what the business can actually execute in the next 90 days.",
-  },
-  {
-    title: "Premraj Menon leads every engagement personally",
-    body: "39 years across Consumer Durables, Automotive, Telecom, and SaaS. No junior consultants. No generic frameworks. GTM advice grounded in how Indian markets actually work.",
-  },
-];
-
-const AREAS = [
-  {
-    num: "01",
-    title: "Ideal Customer Profile",
-    body: "A precise definition of your best customer — the segment that converts fastest, pays best, and refers most. Built from your actual data, not a workshop assumption. The ICP becomes the filter for every sales and marketing decision going forward.",
-  },
-  {
-    num: "02",
-    title: "Positioning & Messaging",
-    body: "A clear, honest answer to why your target customer should choose you over the alternative — stated in language that reflects how buyers actually think about the problem, not how the product team describes the solution.",
-  },
-  {
-    num: "03",
-    title: "90-Day Execution Sprint",
-    body: "A sequenced plan for the first 90 days — one segment, one channel, one message, clear milestones. Simpleworks Consulting stays involved through the sprint, reviewing results and adjusting in real time. At the end you have a validated model, not a hypothesis.",
-  },
-];
-
-const LIVE_SPOKES = [
-  {
-    tag: "GTM",
-    title: "Who Is Your Customer, Really?",
-    excerpt:
-      "A first-principles guide to defining your Ideal Customer Profile — the most important GTM question and the one most businesses answer too vaguely to be useful.",
-    href: "/blog/who-is-your-customer-really",
-  },
-  {
-    tag: "Strategy",
-    title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
-    excerpt:
-      "GTM strategy cannot exist without business strategy. This article explains the strategic foundation that every go-to-market effort needs to be built on.",
-    href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
-  },
-  {
-    tag: "Consulting",
-    title: "MSME Consulting: Why a Focused Firm Delivers More Than a Full-Service One",
-    excerpt:
-      "Why a consultant who specialises in GTM for Indian markets will always outperform a generalist agency promising the same result as one of thirty services.",
-    href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
-  },
-];
-
-const COMING_SOON_SPOKES = [
-  "GTM vs. Growth Strategy — What’s the Difference and Which Does Your Business Need?",
-  "Channel Strategy for Indian MSME Manufacturers — How to Choose and Win",
-  "How to Enter a New Market with a Lean Sales Team",
-];
-
-const FAQ_COLUMN_1 = [
-  {
-    q: "We sell through distributors and dealers. Can Simpleworks Consulting help with that kind of GTM?",
-    a: "Yes — and this is where Simpleworks Consulting’s experience is most distinctive. Premraj Menon spent years working in businesses where dealer networks, distribution channels, and trade relationships were the primary GTM motion — Consumer Durables at Usha International, Automotive at MRF and Apollo Tyres. The GTM strategy for a manufacturing or consumer goods business that sells through intermediaries is fundamentally different from a direct sales or digital model, and it requires a consultant who understands how those channels actually work in Indian markets.",
-  },
-  {
-    q: "What is a GTM strategy — and how is it different from a marketing plan?",
-    a: "A marketing plan describes the activities you will run — campaigns, content, events, advertising. A GTM strategy defines who you are selling to, why they should buy from you, and how you will reach them. The GTM strategy is the foundation; the marketing plan is built on top of it. Most businesses that struggle with marketing are actually struggling with an unclear GTM — the activities cannot work if the fundamentals haven’t been defined.",
-  },
-  {
-    q: "Does GTM consulting apply to B2B businesses or B2C businesses?",
-    a: "Both — but the approach is different. Most of Simpleworks Consulting’s GTM work is with B2B businesses: manufacturing companies, industrial suppliers, SaaS businesses, and professional services firms. In B2B, the GTM strategy focuses on segment definition, sales motion, and channel strategy. In B2C, the emphasis shifts toward positioning and distribution. The three core questions — who is the customer, why you, how do you reach them — apply in both cases.",
-  },
-];
-
-const FAQ_COLUMN_2 = [
-  {
-    q: "How is GTM consulting different from hiring a marketing agency?",
-    a: "A marketing agency executes a GTM strategy — they run campaigns, produce content, manage digital channels. Simpleworks Consulting builds the GTM strategy that the agency then executes. If you hire a marketing agency before you have a clear GTM, you are paying an agency to run campaigns that haven’t been aimed correctly. The GTM strategy comes first; the agency comes second. Many of our clients engage Simpleworks Consulting specifically because they have a marketing agency relationship that isn’t producing results — and the root cause is always a GTM problem, not an execution problem.",
-  },
-  {
-    q: "How long does a GTM consulting engagement last?",
-    a: "A full GTM engagement — covering diagnosis, ICP definition, positioning, channel strategy, and the first 90-day sprint — typically runs three to five months. The first four to six weeks cover diagnosis and strategy design. The following ten to twelve weeks cover the 90-day sprint with Simpleworks Consulting’s active involvement in weekly reviews and adjustments. Shorter engagements focused on a specific GTM question — ICP definition only, or channel strategy for a new market — can run four to six weeks.",
-  },
-  {
-    q: "What does the first step look like?",
-    a: "A quick introductory conversation with Premraj Menon. No pitch, no proposal. You describe where your current GTM is breaking down — inconsistent sales, unclear positioning, a new market you’re trying to enter. Premraj asks a few direct questions and tells you honestly whether a GTM engagement would help, what it would involve, and what it would cost in approximate terms. If it is not the right fit, he will say so.",
-  },
-];
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
+const SITUATIONS = {
+  eyebrow: "Does this sound like your business?",
+  heading: { text: "Owners usually call us when", red: "sales stop moving." },
+  items: [
     {
-      "@type": "ListItem",
-      position: 2,
-      name: "Services",
-      item: "https://www.simpleworks.in/services",
+      quote: "Sales are flat while the market grows.",
+      text: "Competitors are adding customers. Your numbers look like last year’s.",
     },
     {
-      "@type": "ListItem",
-      position: 3,
-      name: "Sales & Distribution Strategy",
-      item: "https://www.simpleworks.in/services/gtm-consulting",
+      quote: "We’re strong in one region and missing everywhere else.",
+      text: "The home market is covered. The next state never quite works.",
+    },
+    {
+      quote: "Distributors take the stock but don’t push it.",
+      text: "Your product sits in their godown while they sell someone else’s.",
+    },
+    {
+      quote: "We’re not in the big retail chains.",
+      text: "Modern trade doesn’t carry you, and you don’t know how to get in on terms you can afford.",
+    },
+    {
+      quote: "Our new product isn’t moving.",
+      text: "It is a good product, but customers and the trade haven’t picked it up.",
+    },
+    {
+      quote: "We spend on marketing, but sales don’t follow.",
+      text: "Campaigns run and enquiries come in. Orders don’t.",
     },
   ],
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [...FAQ_COLUMN_1, ...FAQ_COLUMN_2].map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
+const CAUSES = {
+  eyebrow: "What needs to change",
+  heading: { text: "Most sales problems are", red: "go-to-market problems." },
+  lead: "Before more effort or more spend, three questions need a precise answer. Most businesses have answered at least one of them vaguely.",
+  items: [
+    {
+      title: "Who exactly is the customer?",
+      text: "Not “everyone who might buy”. The two or three segments most likely to buy, pay on time and come back.",
+    },
+    {
+      title: "Why would they choose you?",
+      text: "One honest reason a buyer should pick you over the next option, in words your sales team can use.",
+    },
+    {
+      title: "How do you reach them?",
+      text: "Direct sales, dealers and distributors, retail chains or online: which channel, in what order, with the team you have.",
+    },
+  ],
 };
 
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+const COVERS = {
+  eyebrow: "What we work on",
+  heading: { text: "What go-to-market strategy", red: "covers." },
+  rows: [
+    {
+      title: "The right customers",
+      text: "Which segments to go after first, built from who buys, pays and comes back today.",
+      youGet: "a short written description of your best customers, and who to stop chasing.",
+      link: null,
+    },
+    {
+      title: "Positioning and message",
+      text: "Why a buyer should choose you over the alternative, said the way buyers think about it.",
+      youGet: "one clear reason to buy, and the message for each channel.",
+      link: null,
+    },
+    {
+      title: "Channel sales strategy",
+      text: "Direct sales, dealers and distributors, modern trade and online: which to use, and in what order.",
+      youGet: "a channel plan that fits your team and your budget.",
+      link: null,
+    },
+    {
+      title: "The first market, and the first steps",
+      text: "Which market or state to open first, what the team does each week, and how you will know it is working.",
+      youGet: "a first-market plan with named owners and a weekly review.",
+      link: { label: "Strategy Implementation", href: "/services/execution-consulting" },
+    },
+  ] satisfies { title: string; text: string; youGet: string; link: TextLink | null }[],
+};
+
+const CHANNELS = {
+  eyebrow: "Dealers and distributors",
+  heading: { text: "Sales and distribution", red: "the way India buys." },
+  lead: "Most Indian MSMEs sell through someone else: dealers, distributors, retailers and, more and more, marketplaces. Getting that right decides growth more than any campaign.",
+  items: [
+    "Finding and appointing distributors in a new state",
+    "Getting dealers and distributors to push your product, not just stock it",
+    "General trade and modern trade: when to enter the large retail chains, and on what terms",
+    "Expanding into new markets and states, one at a time",
+    "Pricing and margins along the channel",
+    "Online and marketplaces alongside the trade",
+  ],
+};
+
+const FIT = {
+  who: {
+    eyebrow: "Who we work with",
+    heading: { text: "Founder-led businesses", red: "with something worth selling." },
+    text: "Manufacturers, brands, distributors, and SaaS and service businesses across India, MSMEs and startups, whose product works but whose sales don’t yet match it.",
+  },
+  not: {
+    eyebrow: "What we don’t do",
+    heading: { text: "We set the direction.", red: "Others run the ads." },
+    text: "We work on the go-to-market strategy and the sales and distribution plan. We don’t run digital marketing, ad campaigns or social media, and we don’t sell software. If you need an agency, we will tell you what to brief them on.",
+  },
+};
+
+const WHY = {
+  eyebrow: "Why Premraj",
+  heading: { text: "A consultant who has", red: "sold through the channel." },
+  points: [
+    "39 years in business, across corporate roles, MSMEs and startups.",
+    "Nearly 10 years inside MSMEs, with around 3,000 MSME partners.",
+    "Co-founded Viworks.",
+    "Part of the Neoffice management team that ran growth and strategy.",
+    "ET-SIDBI Best Exporter award, Micro Enterprise category, 2019, won by Neoffice.",
+    "Before that, Premraj worked on the business side at Usha International, Apollo Tyres and MRF.",
+  ],
+  closing: "You work with Premraj himself, not a junior team.",
+};
+
+// Go-to-market work runs through these three programmes (Premraj, 24 Nov).
+const HOW = {
+  eyebrow: "How we work",
+  heading: { text: "Start with a Reset.", red: "Stay with Counsel or Advisory." },
+  lead: "Go-to-market work usually starts with a Simple Reset: we find what is holding sales back and design the plan, and the 60-day version puts the first steps in place with your team. After that, the Simple Counsel or the Simple Advisory keeps a senior adviser beside you as you open each market. Each has a fixed fee, agreed before we begin.",
+  programmes: ["Reset", "Counsel", "Advisory"],
+  link: { label: "See all programmes and fees", href: "/programmes" },
+};
+
+// Anonymous client: no name, brand or product anywhere. No image until an
+// illustration in the site's style is approved.
+const STORY_SECTION = {
+  eyebrow: "Client story",
+  heading: { text: "What changed for", red: "one founder." },
+};
+const STORY: HomeStory = {
+  caption: "Indian handicraft e-commerce · USA · Simple Diagnostic",
+  title: "A family’s handicraft, taken to buyers in the USA.",
+  note: "Client details are confidential.",
+  rows: [
+    {
+      label: "The problem",
+      text: "A founder from an Indian handicraft manufacturing family, now living in the USA, wanted to sell the family factory’s products online there, and didn’t know where to start.",
+    },
+    {
+      label: "What we did",
+      text: "Built a full picture of the market and a go-to-market plan for the first six months.",
+    },
+    {
+      label: "What’s changed so far",
+      text: "The business has rolled out in one target state, using Meta channels, and the response is encouraging.",
+      emphasis: true,
+    },
+  ],
+  link: { label: "Read more client stories", href: "/client-success-stories" },
+};
+
+const READING = {
+  eyebrow: "From the blog",
+  heading: { text: "Read more on", red: "go-to-market strategy." },
+  posts: [
+    {
+      title: "The Go-to-Market Strategy Most Indian MSMEs Skip — And Why It’s Costing Them",
+      href: "/blog/the-go-to-market-strategy-most-indian-msm-es-skip-and-why-it-s-costing-them",
+    },
+    {
+      title: "GTM Strategy vs Growth Strategy: Why Confusing the Two Stalls Your Revenue",
+      href: "/blog/gtm-strategy-vs-growth-strategy-why-confusing-the-two-stalls-your-revenue",
+    },
+    {
+      title:
+        "Online Sales Strategy for Manufacturers in India: Why the Marketplace Listing Is Only the Start",
+      href: "/blog/online-sales-strategy-for-manufacturers-in-india-why-the-marketplace-listing-is-only-the-start",
+    },
+    { title: "Who Is Your Customer, Really?", href: "/blog/who-is-your-customer-really" },
+  ],
+};
+
+const QUESTIONS = {
+  eyebrow: "Questions",
+  heading: { text: "Questions owners ask", red: "before they call." },
+};
+
+const CLOSING = {
+  heading: { text: "Start with", red: "an introductory call." },
+  text: "Tell us where sales are stuck, or which market you want to open next. If we can help, we will say how. If we can’t, we will say that too.",
+  cta: { label: "Message us on WhatsApp", dataCta: "gtm-closing" },
+  trust: "Based in Bangalore",
+};
+
+// The visible FAQ and the FAQPage JSON-LD come from the same call.
+const FAQS = getFaqs(gtmFaqIds);
+
+const schemaMarkup = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.simpleworks.in/services",
+      },
+      { "@type": "ListItem", position: 3, name: "Sales & Distribution Strategy", item: URL },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Go-to-Market Strategy Consulting",
+    provider: { "@id": "https://www.simpleworks.in/#organization" },
+    areaServed: { "@type": "Country", name: "India" },
+    description: DESCRIPTION,
+    url: URL,
+  },
+  faqPageSchema(FAQS),
+];
+
+// ── Shared styles (same scale as the /services hub) ──
+const SECTION =
+  "reveal py-14 md:py-[72px] px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule";
+const LABEL = "text-[11px] md:text-[13px] uppercase tracking-widest text-light leading-[1.6]";
+const EYEBROW = `${LABEL} mb-4 md:mb-5`;
+const H2 = "text-[28px] md:text-[36px] leading-[1.18] font-bold tracking-tight-1";
+const H3 = "text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink";
+const HEADER = "mb-10";
+const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
+const BUTTON =
+  "inline-flex items-center font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
+const TEXT_LINK = "text-red hover:underline w-fit";
+
+function Heading({ heading }: { heading: RedHeading }) {
   return (
-    <p className="mb-4 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-light">
-      {children}
-      <span className="block h-px w-8 bg-rule" />
-    </p>
+    <h2 className={H2}>
+      {heading.text} <span className="text-red">{heading.red}</span>
+    </h2>
   );
 }
 
+function SectionHeader({ eyebrow, heading }: { eyebrow: string; heading: RedHeading }) {
+  return (
+    <div className={HEADER}>
+      <p className={EYEBROW}>{eyebrow}</p>
+      <Heading heading={heading} />
+    </div>
+  );
+}
+
+function escapeHtml(text: string) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+const num = (i: number) => String(i + 1).padStart(2, "0");
+
 export default function GtmConsultingPage() {
+  const programmes = PROGRAMMES.cards.filter((card) => HOW.programmes.includes(card.name));
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      {/* BREADCRUMB */}
-      <div className="flex items-center gap-2 border-b-[0.5px] border-rule px-6 py-3.5 text-[13px] md:px-[60px]">
-        <Link href="/" className="text-light transition-colors hover:text-red">
-          Home
-        </Link>
-        <span className="text-rule">›</span>
-        <Link href="/services" className="text-light transition-colors hover:text-red">
-          Services
-        </Link>
-        <span className="text-rule">›</span>
-        <span className="text-mid">Sales & Distribution Strategy</span>
-      </div>
-
-      {/* HERO */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-20">
-          <div>
-            <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
-              <span className="block h-px w-6 bg-red" />
-              Simpleworks Consulting · Bengaluru
-            </p>
-            <h1 className="mb-4 text-[24px] leading-[1.25] font-bold text-ink md:text-[28px]">
-              Sales and distribution strategy for MSMEs
+      {/* ── 1. HERO ── text left, image right; stacks below 900px. */}
+      <section className="px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
+        <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-start gap-x-14 gap-y-10">
+          <div className="min-[900px]:flex-[1_1_400px] min-w-0">
+            <p className={EYEBROW}>{HERO.eyebrow}</p>
+            <h1 className="mb-5 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
+              {HERO.h1.text} <span className="text-red">{HERO.h1.red}</span>
             </h1>
-            <p className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              The right customers.
-              <br />
-              <span className="italic text-red">The right way to reach them.</span>
+            <p className="mb-6 max-w-[560px] text-[16px] md:text-[18px] italic leading-[1.65] text-mid">
+              {HERO.subhead}
             </p>
-            <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Simpleworks Consulting builds go-to-market (GTM) strategies for Indian MSMEs and
-              startups — specific to your market, your distribution reality,
-              and the customers who will actually pay for what you sell.
-            </p>
-
-            <div className="mb-8 flex gap-8 border-y-[0.5px] border-rule py-6">
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  39<sup className="text-[16px] text-red md:text-[18px]">+</sup>
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Years of
-                  <br />
-                  experience
-                </p>
-              </div>
-              <div className="w-px self-stretch bg-rule" />
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  6
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Industries
-                  <br />
-                  served
-                </p>
-              </div>
-              <div className="w-px self-stretch bg-rule" />
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  ₹10–200<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Revenue range
-                  <br />
-                  we work in
-                </p>
-              </div>
-            </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
+            <p className={`${BODY} max-w-[560px]`}>{HERO.body}</p>
+            <a
+              href={whatsappHref()}
+              data-cta={HERO.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${BUTTON} mt-8 md:mt-10`}
             >
-              Let&rsquo;s Talk &nbsp;→
-            </Link>
+              <WhatsAppIcon size={20} />
+              {HERO.cta.label} &nbsp;→
+            </a>
           </div>
-
-          <Image
-            src="/gtm-consulting-illustration.png"
-            alt="GTM strategy consulting workshop for Indian MSME team — Simpleworks Consulting Bengaluru"
-            width={800}
-            height={533}
-            className="w-full rounded-sm"
-            priority
-          />
+          {/* Top margin = eyebrow height, so the image lines up with the H1. */}
+          <div className="min-[900px]:flex-[1.4_1_480px] min-w-0 min-[900px]:mt-[41px]">
+            <Image
+              src={HERO.image.src}
+              alt={HERO.image.alt}
+              width={HERO.image.width}
+              height={HERO.image.height}
+              priority
+              sizes="(min-width: 900px) 55vw, 100vw"
+              className="block w-full h-auto"
+            />
+          </div>
         </div>
       </section>
 
-      {/* SECTION 1 — WHAT IS A GTM STRATEGY */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Understanding GTM</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          A go-to-market strategy answers <span className="text-red">three questions precisely</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Go-to-market strategy is not a marketing plan. It is not a sales
-          target. It is the answer to three specific questions — and most
-          businesses have answered at least one of them vaguely.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
-          {GTM_QUESTIONS.map((q) => (
-            <div key={q.num} className="bg-bg px-7 py-9">
-              <p className="mb-4 text-[44px] font-bold leading-none tracking-tight-2 text-rule md:text-[48px]">
-                {q.num}
-              </p>
-              <h3 className="mb-2.5 text-[18px] font-bold italic leading-[1.3] text-red">
-                {q.question}
-              </h3>
-              <p className="text-[15px] leading-[1.75] text-mid">{q.body}</p>
+      {/* ── 2. DOES THIS SOUND LIKE YOUR BUSINESS? ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={SITUATIONS.eyebrow} heading={SITUATIONS.heading} />
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12">
+          {SITUATIONS.items.map((item) => (
+            <li key={item.quote} className="border-t-[0.5px] border-rule py-7">
+              <h3 className={`${H3} mb-2`}>&ldquo;{item.quote}&rdquo;</h3>
+              <p className={BODY}>{item.text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── 3. WHAT NEEDS TO CHANGE ── the three go-to-market questions. */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{CAUSES.eyebrow}</p>
+          <Heading heading={CAUSES.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>{CAUSES.lead}</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">
+          {CAUSES.items.map((item) => (
+            <div key={item.title} className="border-t-2 border-ink pt-6">
+              <h3 className={`${H3} mb-3`}>{item.title}</h3>
+              <p className={BODY}>{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SECTION 2 — WHAT WE DO */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>What We Do</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          What sales and distribution strategy work <span className="text-red">looks like in practice</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          GTM consulting at Simpleworks Consulting is not brand strategy or a digital
-          marketing brief. It is the structured work of answering the three
-          GTM questions with enough precision to actually direct a sales and
-          marketing effort.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-2">
-          {WHAT_WE_DO.map((cell) => (
-            <div key={cell.num} className="bg-bg px-7 py-9">
-              <p className="mb-3.5 text-[11px] font-bold tracking-wide-6 uppercase text-red">
-                {cell.num}
-              </p>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.3] text-ink">
-                {cell.title}
-              </h3>
-              <p className="text-[16px] leading-[1.75] text-mid">{cell.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 3 — WHO IT'S FOR */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Who We Work With</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          The situations that bring{" "}
-          <span className="text-red">founders to GTM consulting</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          GTM consulting is for businesses at a specific kind of turning
-          point — when the current approach to market has stopped working,
-          or when entering a market for the first time and the stakes of
-          getting it wrong are high.
-        </p>
-
-        <div className="flex max-w-[800px] flex-col">
-          {SITUATIONS.map((s) => (
-            <div
-              key={s.num}
-              className="grid grid-cols-[40px_1fr] gap-0 border-t-[0.5px] border-rule py-7 last:border-b-[0.5px] md:grid-cols-[48px_1fr]"
-            >
-              <span className="pt-[3px] text-[13px] font-bold italic text-red">
-                {s.num}
-              </span>
-              <div>
-                <h3 className="mb-2 text-[18px] font-bold leading-[1.3] text-ink">
-                  {s.title}
-                </h3>
-                <p className="text-[16px] leading-[1.75] text-mid">{s.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap items-center gap-5">
-          <p className="text-[16px] italic text-mid">
-            If any of these describe your business, the right next step is a
-            conversation.
+      {/* ── 4. WHAT GO-TO-MARKET STRATEGY COVERS ── second pillar of the 4P framework. */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{COVERS.eyebrow}</p>
+          <Heading heading={COVERS.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>
+            Go-to-market is the second pillar of the Simpleworks Consulting{" "}
+            <Link href={FOUR_P_POST} className="text-red hover:underline">
+              4P framework
+            </Link>
+            : business strategy first, then go-to-market, then execution and OKRs.
           </p>
-          <Link
-            href="/contact"
-            className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
-          >
-            Let&rsquo;s have a quick introductory call →
-          </Link>
         </div>
-      </section>
-
-      {/* SECTION 4 — HOW WE BUILD A GTM */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>How We Work</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          How Simpleworks Consulting builds <span className="text-red">a GTM strategy that works</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every GTM engagement at Simpleworks Consulting follows four steps — in order.
-          Skipping any one of them produces a strategy that looks complete
-          on paper but fails in the field.
-        </p>
-
-        <div className="flex flex-col">
-          {STEPS.map((step) => (
-            <div
-              key={step.num}
-              className="grid grid-cols-[60px_1fr] gap-0 border-t-[0.5px] border-rule py-7 last:border-b-[0.5px] md:grid-cols-[80px_1fr]"
+        <ol>
+          {COVERS.rows.map((row, i) => (
+            <li
+              key={row.title}
+              className="grid grid-cols-1 gap-y-3 border-t-[0.5px] border-rule py-7 md:py-8 lg:grid-cols-[80px_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-12"
             >
-              <span className="text-[44px] font-bold leading-none tracking-tight-2 text-rule md:text-[48px]">
-                {step.num}
+              <span className="text-[15px] font-bold leading-[1.6] text-red tracking-wide-2 [font-variant-numeric:tabular-nums]">
+                {num(i)}
               </span>
+              <h3 className={H3}>{row.title}</h3>
               <div>
-                <p className="mb-1.5 text-[11px] font-bold tracking-wide-6 uppercase text-red">
-                  {step.label}
+                <p className="text-[18px] leading-[1.55] text-ink mb-2">{row.text}</p>
+                <p className={`${BODY} ${row.link ? "mb-3" : ""}`}>
+                  <strong className="font-bold text-ink">You get:</strong> {row.youGet}
                 </p>
-                <h3 className="mb-2 text-[18px] font-bold leading-[1.3] text-ink">
-                  {step.title}
-                </h3>
-                <p className="text-[16px] leading-[1.75] text-mid">{step.body}</p>
+                {row.link && (
+                  <Link href={row.link.href} className={TEXT_LINK}>
+                    {row.link.label} &rarr;
+                  </Link>
+                )}
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
-      {/* SECTION 5 — WHY SIMPLEWORKS */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          GTM strategy built for <span className="text-red">Indian market reality</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Most GTM frameworks are built for technology companies with large
-          marketing budgets, inside sales teams, and digital-first
-          distribution. Simpleworks Consulting builds GTM strategies for businesses
-          where distribution is physical, budgets are real, and the sales
-          team is two people.
-        </p>
-
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-[72px]">
-          <div>
-            <p className="mb-5 text-[17px] leading-[1.8] text-mid">
-              The standard GTM playbook assumes your market is digital-first,
-              your buyers respond to content marketing, and you have a sales
-              team that can follow up on inbound leads. For a consumer goods
-              company selling through distributors in tier-2 cities, or a
-              manufacturing business whose customers still make buying
-              decisions based on personal relationships and site visits,
-              this playbook is worse than useless — it directs effort toward
-              channels your buyers don&rsquo;t use.
-            </p>
-            <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Premraj Menon has spent 39 years in businesses where dealer
-              networks and regional sales decide the GTM. Read his background
-              on the <Link href="/about" className="text-red hover:underline">About page</Link>.
-</p>
-
-            <div className="mb-8 border-l-2 border-red pl-[22px]">
-              <blockquote className="mb-2.5 text-[17px] italic leading-[1.75] text-ink">
-                &ldquo;A GTM strategy for an Indian MSME has to start with how
-                buyers in your segment actually behave — not how
-                they&rsquo;re supposed to behave according to a Silicon
-                Valley growth playbook. Most of the time, the answer
-                involves a sales person, a relationship, and a site
-                visit.&rdquo;
-              </blockquote>
-              <cite className="text-[12px] not-italic text-light">
-                — Premraj Menon, Founder, Simpleworks Consulting
-              </cite>
-            </div>
-
-            <p className="text-[17px] leading-[1.8] text-mid">
-              The 90-day GTM sprint model is built specifically for MSMEs
-              that cannot afford to run a six-month strategy experiment. It
-              produces a validated model — or a clear indication of what
-              isn&rsquo;t working — within a timeframe that leaves room to
-              adjust before the year is over.
-            </p>
-          </div>
-
-          <div className="flex flex-col">
-            {DIFFERENTIATORS.map((d) => (
-              <div
-                key={d.title}
-                className="grid grid-cols-[10px_1fr] gap-4 border-t-[0.5px] border-rule py-[22px] last:border-b-[0.5px]"
-              >
-                <span className="mt-[9px] block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red" />
-                <div>
-                  <h3 className="mb-1.5 text-[16px] font-bold leading-[1.3] text-ink">
-                    {d.title}
-                  </h3>
-                  <p className="text-[15px] leading-[1.7] text-mid">{d.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* ── 5. DEALERS AND DISTRIBUTORS ── */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{CHANNELS.eyebrow}</p>
+          <Heading heading={CHANNELS.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>{CHANNELS.lead}</p>
         </div>
-      </section>
-
-      {/* SECTION 6 — THREE AREAS */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Our Work</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Three components of every <span className="text-red">GTM engagement</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every GTM engagement at Simpleworks Consulting produces three things. Each
-          one is necessary. None of them alone is sufficient.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
-          {AREAS.map((area) => (
-            <div key={area.num} className="bg-bg px-7 py-9">
-              <p className="mb-5 text-[44px] font-bold leading-none tracking-tight-2 text-rule md:text-[48px]">
-                {area.num}
-              </p>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.3] text-ink">
-                {area.title}
-              </h3>
-              <p className="text-[15px] leading-[1.75] text-mid">{area.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 7 — SPOKE ARTICLES */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>From the Blog</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Going deeper — <span className="text-red">articles on go-to-market strategy</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          These articles explore the go-to-market questions most Indian
-          MSME founders are working through — and how Simpleworks Consulting approaches
-          them.
-        </p>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {LIVE_SPOKES.map((spoke) => (
-            <Link
-              key={spoke.href}
-              href={spoke.href}
-              className="block rounded-sm border-[0.5px] border-rule p-7 transition-all duration-200 hover:-translate-y-[3px] hover:border-red hover:shadow-[0_6px_24px_rgba(0,0,0,0.07)]"
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 max-w-[1000px]">
+          {CHANNELS.items.map((item) => (
+            <li
+              key={item}
+              className="border-t-[0.5px] border-rule py-4 text-[17px] md:text-[18px] leading-[1.6] text-ink"
             >
-              <span className="mb-3.5 inline-block rounded-[1px] border border-red px-2 py-[3px] text-[9px] font-bold uppercase tracking-wide-6 text-red">
-                {spoke.tag}
-              </span>
-              <p className="mb-2.5 text-[16px] font-bold leading-[1.4] text-ink">
-                {spoke.title}
-              </p>
-              <p className="mb-4 text-[14px] italic leading-[1.65] text-light">
-                {spoke.excerpt}
-              </p>
-              <span className="text-[13px] font-semibold text-red">
-                Read article →
-              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── 6. WHO WE WORK WITH / WHAT WE DON'T DO ── */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+          {[FIT.who, FIT.not].map((col) => (
+            <div key={col.eyebrow}>
+              <SectionHeader eyebrow={col.eyebrow} heading={col.heading} />
+              <p className={`${BODY} max-w-[520px] -mt-4`}>{col.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 7. WHY PREMRAJ ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={WHY.eyebrow} heading={WHY.heading} />
+        <ul className="max-w-[760px]">
+          {WHY.points.map((point) => (
+            <li
+              key={point}
+              className="border-t-[0.5px] border-rule py-4 text-[17px] md:text-[18px] leading-[1.6] text-mid"
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+        <p className="max-w-[760px] border-t-[0.5px] border-rule pt-6 text-[18px] md:text-[20px] font-bold leading-[1.5] text-ink">
+          {WHY.closing}
+        </p>
+      </section>
+
+      {/* ── 8. HOW WE WORK ── Reset, then Counsel or Advisory. */}
+      <section className={SECTION}>
+        <div className={HEADER}>
+          <p className={EYEBROW}>{HOW.eyebrow}</p>
+          <Heading heading={HOW.heading} />
+          <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>{HOW.lead}</p>
+        </div>
+        <ul className="max-w-[860px]">
+          {programmes.map((card) => (
+            <li
+              key={card.name}
+              className="border-t-[0.5px] border-rule py-5 text-[17px] md:text-[18px] leading-[1.6] text-mid"
+            >
+              <strong className="font-bold text-ink">Simple {card.name}</strong>: {card.forWho}
+            </li>
+          ))}
+        </ul>
+        <Link
+          href={HOW.link.href}
+          className={`${TEXT_LINK} inline-block border-t-[0.5px] border-rule pt-6`}
+        >
+          {HOW.link.label} &rarr;
+        </Link>
+      </section>
+
+      {/* ── 9. CLIENT STORY ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={STORY_SECTION.eyebrow} heading={STORY_SECTION.heading} />
+        <StoryArticle story={STORY} />
+      </section>
+
+      {/* ── 10. FROM THE BLOG ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={READING.eyebrow} heading={READING.heading} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-w-[1000px]">
+          {READING.posts.map((post) => (
+            <Link
+              key={post.href}
+              href={post.href}
+              className="group block border-l-2 border-red pl-6 py-2"
+            >
+              <h3 className="mb-3 text-[18px] font-bold leading-[1.4] text-ink transition-colors group-hover:text-red">
+                {post.title}
+              </h3>
+              <span className="text-[14px] text-red">Read article &rarr;</span>
             </Link>
           ))}
-          {COMING_SOON_SPOKES.map((title) => (
-            <div
-              key={title}
-              className="rounded-sm border border-dashed border-rule p-7 opacity-50"
-            >
-              <p className="mb-2.5 text-[9px] font-bold uppercase tracking-wide-6 text-light">
-                Coming soon
-              </p>
-              <p className="text-[16px] font-bold leading-[1.4] text-mid">
-                {title}
-              </p>
-            </div>
-          ))}
         </div>
       </section>
 
-      {/* SECTION 8 — FAQ */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Common Questions</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Frequently asked <span className="text-red">questions</span>
-        </h2>
-        <p className="mb-10 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:text-[18px]">
-          Everything you need to know before we speak.
-        </p>
-
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-x-16">
-          {[FAQ_COLUMN_1, FAQ_COLUMN_2].map((column, colIndex) => (
-            <div key={colIndex} className="flex flex-col">
-              {column.map((item) => (
-                <div
-                  key={item.q}
-                  className="border-t-[0.5px] border-rule py-[26px] md:[&:last-child]:border-b-[0.5px]"
+      {/* ── 11. QUESTIONS ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={QUESTIONS.eyebrow} heading={QUESTIONS.heading} />
+        <div className="max-w-[900px] border-b-[0.5px] border-rule">
+          {FAQS.map((item, i) => (
+            <details key={item.id} open={i === 0} className="faq-item border-t-[0.5px] border-rule">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
+                <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.4] text-ink">
+                  {item.q}
+                </h3>
+                <span
+                  aria-hidden="true"
+                  className="faq-pm flex-shrink-0 text-[26px] leading-none text-red transition-transform duration-200"
                 >
-                  <h3 className="mb-3 text-[17px] font-bold leading-[1.4] text-ink">
-                    {item.q}
-                  </h3>
-                  <p className="text-[16px] leading-[1.8] text-mid md:text-[17px]">{item.a}</p>
-                </div>
-              ))}
-            </div>
+                  +
+                </span>
+              </summary>
+              <div
+                className={`${BODY} pb-[26px] max-w-[760px] [&_p]:mb-3 [&_p:last-child]:mb-0 [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline`}
+                dangerouslySetInnerHTML={{
+                  __html: item.aHtml ?? `<p>${escapeHtml(item.a)}</p>`,
+                }}
+              />
+            </details>
           ))}
         </div>
       </section>
 
-      {/* CTA BAND */}
-      <section
-        id="contact"
-        className="flex flex-col items-start gap-10 border-b-[0.5px] border-rule px-6 py-14 md:flex-row md:items-center md:justify-between md:py-20 md:pr-[60px] md:pl-[132px]"
-      >
-        <div>
-          <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            Start with <span className="text-red">an introductory call.</span>
-          </h2>
-          <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
-            Tell us where your current GTM is breaking down — or what market
-            you&rsquo;re trying to enter. We&rsquo;ll tell you honestly
-            whether and how Simpleworks Consulting can help.
-          </p>
-        </div>
-        <div className="flex flex-shrink-0 flex-col gap-3">
-          <Link
-            href="/contact"
-            className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
-          >
-            Let&rsquo;s Talk
-          </Link>
-          <a
-            href={whatsappHref()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
-          >
-            <WhatsAppIcon />
-            WhatsApp Premraj Menon
-          </a>
-          <p className="text-center text-[12px] text-light">
-            Response within one business day · Based in Bengaluru · Working
-            across India
-          </p>
+      {/* ── 12. CLOSING CALL TO ACTION ── */}
+      <section className={SECTION}>
+        <div className="max-w-[760px]">
+          <Heading heading={CLOSING.heading} />
+          <p className={`${BODY} mt-4 mb-8 max-w-[560px]`}>{CLOSING.text}</p>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a
+              href={whatsappHref()}
+              data-cta={CLOSING.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={BUTTON}
+            >
+              <WhatsAppIcon size={20} />
+              {CLOSING.cta.label} &nbsp;→
+            </a>
+            <p className="text-[14px] text-light">{CLOSING.trust}</p>
+          </div>
         </div>
       </section>
+
+      <Reveal />
     </>
   );
 }

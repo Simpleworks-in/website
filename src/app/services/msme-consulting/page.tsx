@@ -162,7 +162,7 @@ const WHY = {
     "Co-founded Viworks.",
     "Part of the Neoffice management team that ran growth and strategy.",
     "ET-SIDBI Best Exporter award, Micro Enterprise category, 2019, won by Neoffice.",
-    "Before that, Premraj ran the business side at Apollo Tyres and MRF.",
+    "Before that, Premraj worked on the business side at Apollo Tyres and MRF.",
   ],
   closing: "You work with Premraj himself, not a junior team.",
 };

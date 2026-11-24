@@ -159,6 +159,37 @@ const LIBRARY = [
     "Is my business right for this?",
     `<p>We work with founder-led businesses that are ready to move. If you run a very small business, see our <a href="https://www.simpleworks.in/services/small-business-consulting">page for small business owners</a>.</p>`,
   ),
+  // ── /services/gtm-consulting ──
+  {
+    id: "gtm-find-distributors",
+    q: "How do I find and appoint distributors for my product in India?",
+    a: "Start with the market you want to open, not the distributor. Decide which customers and outlets you need to reach there, then look for distributors who already serve them and have the reach, credit capacity and sales team to do it. Agree territory, margins, credit and targets in writing before the first order, and review sales with them every month. We help you choose the market, define the distributor you need, and set the terms and the review.",
+  },
+  {
+    id: "gtm-general-modern-trade",
+    q: "Should we sell through general trade or modern trade?",
+    a: "Usually both, one after the other. General trade, the small outlets most customers buy from, builds reach. Modern trade, the large retail chains and organised stores, builds visibility, but asks for listing fees, higher margins and longer credit. We help you decide which comes first for your product, and which terms you can afford.",
+  },
+  {
+    id: "gtm-vs-marketing-plan",
+    q: "What is a go-to-market strategy, and how is it different from a marketing plan?",
+    a: "A marketing plan lists the activities you will run: campaigns, content, events and advertising. A go-to-market strategy decides who you are selling to, why they should buy from you, and how you will reach them. The strategy comes first. Marketing that is not built on it rarely works, however well it is run.",
+  },
+  {
+    id: "gtm-vs-agency",
+    q: "How is this different from hiring a marketing agency?",
+    a: "An agency runs campaigns. We work out who you should sell to, why they should buy and through which channels, which is what an agency needs to be told. If you already have an agency, the plan gives them a clear brief.",
+  },
+  rich(
+    "gtm-duration-cost",
+    "How long does it take, and what does it cost?",
+    `<p>Go-to-market work usually starts with a Simple Reset, over 30 or 60 days. After that, the Simple Counsel (in person) or the Simple Advisory (online) continues month by month, with a three-month minimum. Each has a fixed fee, so you know the cost before we begin.</p><p><a href="https://www.simpleworks.in/programmes">See all programmes and fees →</a></p>`,
+  ),
+  rich(
+    "gtm-startups",
+    "Do you work with startups and SaaS businesses?",
+    `<p>Yes. The questions are the same: who exactly the customer is, why they should choose you, and how to reach them. For a startup, the answer is often a narrower first market than the founders expect. Early-stage founders looking for a mentor can also see our <a href="https://www.simpleworks.in/startup-mentor-bengaluru">page for startup founders</a>.</p>`,
+  ),
 ] as const satisfies readonly FaqItem[];
 
 export type FaqId = (typeof LIBRARY)[number]["id"];
@@ -199,6 +230,16 @@ export const msmeFaqIds = [
   "msme-duration-cost",
   "msme-vs-large-firm",
   "msme-right-fit",
+] as const satisfies readonly FaqId[];
+
+/** /services/gtm-consulting's six, in display order. */
+export const gtmFaqIds = [
+  "gtm-find-distributors",
+  "gtm-general-modern-trade",
+  "gtm-vs-marketing-plan",
+  "gtm-vs-agency",
+  "gtm-duration-cost",
+  "gtm-startups",
 ] as const satisfies readonly FaqId[];
 
 /** Library items /programmes uses. Its other seven live in app/programmes/faqs.ts. */

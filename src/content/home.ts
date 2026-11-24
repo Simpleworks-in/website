@@ -165,7 +165,8 @@ export type HomeStory = {
   caption: string;
   title: string;
   note: string;
-  image: { src: string; alt: string; width: number; height: number };
+  // Optional: a story without an approved illustration renders text only.
+  image?: { src: string; alt: string; width: number; height: number };
   rows: StoryRow[];
   link?: TextLink;
 };
