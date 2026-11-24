@@ -39,8 +39,8 @@ export const faqs: Faq[] = [
     `<p>The length is fixed before we start:</p><ul><li><strong>The Simple Diagnostic:</strong> half a day.</li><li><strong>The Simple Reset:</strong> 30 or 60 days, with one visit a week.</li><li><strong>The Simple Counsel and the Simple Advisory:</strong> month by month, with a three-month minimum.</li><li><strong>Custom Engagement:</strong> agreed in writing before we begin.</li></ul><p>Every engagement has a defined scope and a clear end point.</p>`,
   ),
   {
-    q: "How is payment structured?",
-    a: "The Diagnostic is paid after the session. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel and the Advisory are billed at the end of each month. Travel outside Bangalore is charged at actuals.",
+    q: "How do we pay, and when?",
+    a: "We raise an invoice for each payment, with a Zoho payment link in it, so you can pay by UPI, net banking or another mode that suits you. The Diagnostic is invoiced after the session. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel and the Advisory are billed at the end of each month. Travel outside Bangalore is charged at actuals.",
   },
   {
     q: "Can the engagement be done online?",

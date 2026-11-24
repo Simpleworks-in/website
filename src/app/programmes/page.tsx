@@ -43,7 +43,8 @@ export const metadata = {
 
 const HERO = {
   eyebrow: "Programmes & Fees · Bangalore, India",
-  h1: { text: "Business Consultant Fees & Programmes", red: "for MSMEs" },
+  // Red on the keyword, black on "for MSMEs" (Premraj, 25 Nov).
+  h1: { red: "Business Consultant Fees & Programmes", text: "for MSMEs" },
   subhead:
     "Four fixed-fee programmes, or an engagement scoped to what you need. You know the fee before we begin.",
   body: "Every programme has one price, agreed before we start. There is no hourly billing and no surprise invoice at the end. You work with Premraj Menon himself, in person in Bangalore or online across India.",
@@ -474,7 +475,7 @@ export default function ProgrammesPage() {
           <div className="min-[900px]:flex-[1_1_400px] min-w-0">
             <p className={EYEBROW}>{HERO.eyebrow}</p>
             <h1 className="mb-5 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
-              {HERO.h1.text} <span className="text-red">{HERO.h1.red}</span>
+              <span className="text-red">{HERO.h1.red}</span> {HERO.h1.text}
             </h1>
             <p className="mb-6 max-w-[560px] text-[16px] md:text-[18px] italic leading-[1.65] text-mid">
               {HERO.subhead}
@@ -567,7 +568,13 @@ export default function ProgrammesPage() {
                 </span>
               </div>
               <h2 className="mb-4 text-[32px] md:text-[44px] leading-[1.12] font-bold tracking-tight-1 text-ink">
-                {p.name}
+                {p.name.startsWith("The Simple ") ? (
+                  <>
+                    The Simple <span className="text-red">{p.name.slice("The Simple ".length)}</span>
+                  </>
+                ) : (
+                  p.name
+                )}
               </h2>
               <p className="mb-7 max-w-[640px] text-[19px] md:text-[21px] leading-[1.5] text-ink">
                 {p.tagline}
@@ -589,7 +596,9 @@ export default function ProgrammesPage() {
                 </div>
               ) : (
                 <>
-                  <p className={`${LABEL} mb-1.5`}>What you get</p>
+                  <p className="mb-1.5 text-[11px] md:text-[13px] uppercase tracking-widest leading-[1.6] text-red">
+                    What you get
+                  </p>
                   {p.get && <NumberedList items={p.get} />}
                   {p.aside && (
                     <p className="text-[15px] leading-[1.7] text-mid mt-4 max-w-[640px]">{p.aside}</p>
