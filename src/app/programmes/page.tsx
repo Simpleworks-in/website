@@ -404,7 +404,7 @@ function FeePanel({ p }: { p: Programme }) {
   const several = fees.length > 1;
 
   return (
-    <aside className="self-start border-[0.5px] border-rule p-7 md:p-8 lg:mt-[46px]">
+    <aside className="self-start border border-red p-7 md:p-8 lg:mt-[46px]">
       <p className={`${LABEL} mb-2`}>Fee</p>
       <div className="flex flex-col gap-6 mb-7">
         {fees.map((f) => {
