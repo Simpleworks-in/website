@@ -130,7 +130,7 @@ export default async function ClientStoriesPage() {
                       </dt>
                       <dd
                         className={`text-[16px] md:text-[17px] leading-[1.7] ${
-                          row.emphasis ? "text-ink font-bold" : "text-mid"
+                          row.emphasis ? "text-red font-bold" : "text-mid"
                         }`}
                       >
                         {row.text}

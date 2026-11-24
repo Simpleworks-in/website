@@ -1,157 +1,382 @@
 import Image from "next/image";
 import Link from "next/link";
-import FAQAccordion from "@/components/FAQAccordion";
-import { faqs } from "./faqs";
+import Reveal from "@/components/Reveal";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { STORIES, type RedHeading } from "@/content/home";
 import { DELIVERY } from "@/lib/delivery";
-import { PRICES, price } from "@/lib/programmes";
+import { price } from "@/lib/programmes";
+import { whatsappHref } from "@/lib/whatsapp";
+import { faqs } from "./faqs";
+
+// /programmes, redesigned 24 Nov 2026. Four fixed-fee programmes plus the
+// Custom Engagement, in the same style as the redesigned service pages.
+// Prices: lib/programmes.ts. Delivery labels: lib/delivery.ts. No rupee
+// figures in the title or meta (Premraj's November rule). Keep the section ids
+// (#simple-diagnostic, #simple-reset, #simple-counsel, #simple-advisory,
+// #custom-engagement): other pages link to them.
+
+const TITLE = "Business Consultant Fees & Programmes in India | Simpleworks Consulting";
+const DESCRIPTION =
+  "Business consultant fees for MSMEs in India: four fixed-fee programmes or a scoped engagement, with Premraj Menon in Bangalore. No hourly billing.";
+const URL = "https://www.simpleworks.in/programmes";
 
 export const metadata = {
-  title: {
-    absolute: "MSME Consulting Programmes & Fees | Simpleworks Consulting",
-  },
-  description:
-    `Fixed-fee consulting for MSME founders: a ${price("diagnostic")} half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.`,
-  alternates: {
-    canonical: "https://www.simpleworks.in/programmes",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
   openGraph: {
-    title: "MSME Consulting Programmes & Fees | Simpleworks Consulting",
-    description:
-      `Fixed-fee consulting for MSME founders: a ${price("diagnostic")} half-day diagnostic, 30–60 day business reset, or monthly mentor retainer. No hourly billing.`,
-    url: "https://www.simpleworks.in/programmes",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Simpleworks Consulting",
+    locale: "en_IN",
     type: "website",
   },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map(({ q, a }) => ({
-    "@type": "Question",
-    name: q,
-    acceptedAnswer: { "@type": "Answer", text: a },
-  })),
-};
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Fixed-fee business consulting programmes for MSMEs",
-  serviceType: "Management consulting",
-  url: "https://www.simpleworks.in/programmes",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "Simpleworks Consulting",
-    url: "https://www.simpleworks.in",
-    telephone: "+91 90360 99000",
-    email: "pm@simpleworks.in",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Marathahalli, Bengaluru",
-      postalCode: "560037",
-      addressRegion: "Karnataka",
-      addressCountry: "IN",
-    },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
-  areaServed: [
-    { "@type": "City", name: "Bengaluru" },
-    { "@type": "Country", name: "India" },
-  ],
-  offers: [
-    {
-      "@type": "Offer",
-      name: "The Simple Diagnostic",
-      description:
-        "Half a day: a three-hour working session on the one problem you name, a written diagnostic brief and a one-hour walkthrough.",
-      price: String(PRICES.diagnostic),
-      priceCurrency: "INR",
-      url: "https://www.simpleworks.in/programmes",
-    },
-    {
-      "@type": "Offer",
-      name: "The Simple Reset (30 days)",
-      description:
-        "Structured discovery of the named problem area, the gaps costed in rupees and ranked by impact, and a designed one-page solution.",
-      price: String(PRICES.reset30),
-      priceCurrency: "INR",
-      url: "https://www.simpleworks.in/programmes",
-    },
-    {
-      "@type": "Offer",
-      name: "The Simple Reset (60 days)",
-      description:
-        "The 30-day Reset plus four more weeks in person with your leadership team, and a weekly review rhythm installed and handed over.",
-      price: String(PRICES.reset60),
-      priceCurrency: "INR",
-      url: "https://www.simpleworks.in/programmes",
-    },
-    {
-      "@type": "Offer",
-      name: "The Simple Counsel",
-      description:
-        "In person. Two sessions a month, WhatsApp access for urgent decisions, and a quarterly business review. Minimum three months.",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: String(PRICES.counsel),
-        priceCurrency: "INR",
-        unitText: "MONTH",
-      },
-      url: "https://www.simpleworks.in/programmes",
-    },
-    {
-      "@type": "Offer",
-      name: "The Simple Advisory",
-      description:
-        "Two 90-minute online sessions a month on your agenda, with a short written summary after each. Minimum three months, online only.",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: String(PRICES.advisory),
-        priceCurrency: "INR",
-        unitText: "MONTH",
-      },
-      url: "https://www.simpleworks.in/programmes",
-    },
-  ],
 };
 
-function escapeHtml(text: string) {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
+// ── Copy ──
 
-// The accordion renders HTML strings; rich answers use aHtml, the rest are
-// wrapped plain text — same words as the schema either way.
-const ACCORDION_FAQS = faqs.map(({ q, a, aHtml }) => ({
-  q,
-  a: aHtml ?? `<p>${escapeHtml(a)}</p>`,
-}));
+const HERO = {
+  eyebrow: "Programmes & Fees · Bangalore, India",
+  h1: { text: "Business Consultant Fees & Programmes", red: "for MSMEs" },
+  subhead:
+    "Four fixed-fee programmes, or an engagement scoped to what you need. You know the fee before we begin.",
+  body: "Every programme has one price, agreed before we start. There is no hourly billing and no surprise invoice at the end. You work with Premraj Menon himself, in person in Bangalore or online across India.",
+  cta: { label: "Start with a WhatsApp message", dataCta: "programmes-hero" },
+  image: {
+    src: "/images/programmes-hero-choosing.webp",
+    alt: "An MSME owner and a consultant at a table, the owner choosing one of five cards laid out between them",
+    width: 1200,
+    height: 896,
+  },
+};
 
-const journey = [
-  { n: "01", label: "Diagnose", href: "#simple-diagnostic", meta: `Half a day \u00b7 ${DELIVERY.diagnostic}`, sub: "What\u2019s actually holding the business." },
-  { n: "02", label: "Plan", href: "#simple-reset", meta: `Reset, 30 days \u00b7 ${DELIVERY.reset}`, sub: "Root cause found, solution designed." },
-  { n: "03", label: "Execute", href: "#simple-reset", meta: `Reset, 60 days \u00b7 ${DELIVERY.reset}`, sub: "Plus four weeks putting it in place." },
-  { n: "04", label: "Counsel", href: "#simple-counsel", meta: `Monthly \u00b7 ${DELIVERY.counsel}`, sub: "A senior thinking partner once it\u2019s running." },
+const CHOOSER = {
+  eyebrow: "Which one fits you?",
+  heading: { text: "Start from", red: "where you are today." },
+  rows: [
+    {
+      quote: "I can tell something is wrong, but not what.",
+      name: "The Simple Diagnostic",
+      href: "#simple-diagnostic",
+      fee: price("diagnostic"),
+      meta: "Half a day",
+    },
+    {
+      quote: "I know the problem. We haven’t been able to fix it.",
+      name: "The Simple Reset",
+      href: "#simple-reset",
+      fee: `From ${price("reset30")}`,
+      meta: "30 or 60 days",
+    },
+    {
+      quote: "I want a senior thinking partner, every month.",
+      name: "The Simple Counsel",
+      href: "#simple-counsel",
+      fee: `${price("counsel")} a month`,
+      meta: "In person, Bangalore",
+    },
+    {
+      quote: "I want the same, online, from anywhere in India.",
+      name: "The Simple Advisory",
+      href: "#simple-advisory",
+      fee: `${price("advisory")} a month`,
+      meta: "Online",
+    },
+    {
+      quote: "My need doesn’t fit any of these.",
+      name: "Custom Engagement",
+      href: "#custom-engagement",
+      fee: "Quoted before we begin",
+      meta: "Scoped to you",
+    },
+  ],
+  note: "Most owners start with the Diagnostic. You can stop after any programme.",
+};
+
+const FOUNDER =
+  "You work with Premraj himself, not a team. 39 years in business, nearly 10 of them inside MSMEs, and before that the business side at Usha International, Apollo Tyres and MRF.";
+
+type Programme = {
+  id: string;
+  num: string;
+  label: string;
+  name: string;
+  tagline: string;
+  forWho: string;
+  facts: { label: string; value: string }[];
+  get?: string[];
+  options?: { name: string; sub: string; get: string[]; fee: string; feeNote: string }[];
+  fee?: { amount: string; note: string };
+  extra?: React.ReactNode;
+  aside?: string;
+};
+
+const PROGRAMMES: Programme[] = [
+  {
+    id: "simple-diagnostic",
+    num: "01",
+    label: "Start here",
+    name: "The Simple Diagnostic",
+    tagline:
+      "A business health check on the one problem you name: what is working, what isn’t, and the one thing to do first.",
+    forWho:
+      "An owner who can name what feels wrong (growth has stalled, a channel isn’t performing, execution keeps slipping) but doesn’t yet know the cause or what to fix first.",
+    facts: [
+      { label: "Duration", value: "Half a day" },
+      { label: "Format", value: DELIVERY.diagnostic },
+      { label: "Output", value: "One written brief" },
+    ],
+    get: [
+      "A three-hour working session on the problem you name (two or three shorter sessions if online)",
+      "A written diagnostic brief: what’s working, what isn’t, and why",
+      "A one-hour walkthrough of the brief with you",
+      "One clear recommendation for what to do first",
+    ],
+    fee: { amount: price("diagnostic"), note: "Fixed, paid after the session" },
+    extra: (
+      <p className="text-[15px] leading-[1.7] text-mid">
+        <Link href="/business-growth-review" className="text-red hover:underline">
+          What the Diagnostic covers &rarr;
+        </Link>
+        <span className="mx-2 text-light">·</span>
+        <Link href="/sample-diagnostic-report" className="text-red hover:underline">
+          See a sample report &rarr;
+        </Link>
+      </p>
+    ),
+  },
+  {
+    id: "simple-reset",
+    num: "02",
+    label: "Fixed engagement",
+    name: "The Simple Reset",
+    tagline: "Four weeks to work out what to do. Four more to make sure it happens.",
+    forWho:
+      "Owners with a problem area they can name but haven’t been able to crack. You bring the problem; we find the root cause and design the fix. The 60-day version stays to put it in place.",
+    facts: [
+      { label: "Duration", value: "30 or 60 days" },
+      { label: "Format", value: `${DELIVERY.reset}, one visit a week` },
+      { label: "Output", value: "Fixes in place, not just findings" },
+    ],
+    options: [
+      {
+        name: "30 days",
+        sub: "Four visits · you execute",
+        get: [
+          "Structured discovery of the problem area: the root cause, not the symptoms",
+          "The gaps costed in rupees and ranked by impact",
+          "A designed solution: what to do, who owns it, by when",
+          "One page, in plain language. No deck.",
+        ],
+        fee: price("reset30"),
+        feeNote: "Fixed, billed at month end",
+      },
+      {
+        name: "60 days",
+        sub: "Eight visits · we stay for execution",
+        get: [
+          "Everything in the 30 days, delivered in the first four weeks",
+          "Four more weeks in person with your leadership team",
+          "Obstacles cleared while they are still small",
+          "A weekly review rhythm installed and handed over to your team",
+        ],
+        fee: price("reset60"),
+        feeNote: "Fixed, billed in two monthly parts",
+      },
+    ],
+  },
+  {
+    id: "simple-counsel",
+    num: "03",
+    label: "Monthly, in person",
+    name: "The Simple Counsel",
+    tagline: "A business mentor in your corner, every month, for as long as it is useful.",
+    forWho:
+      "Owners who want a senior thinking partner before a hire, a price change, a new market or a difficult family conversation. It often follows the Reset, and also works on its own.",
+    facts: [
+      { label: "Duration", value: "Monthly, three-month minimum" },
+      { label: "Format", value: `${DELIVERY.counsel}, Bangalore` },
+      { label: "Output", value: "A decision partner, not a report" },
+    ],
+    get: [
+      "Two sessions a month, on your agenda",
+      "WhatsApp access for decisions that won’t wait",
+      "A quarterly business review, and one leadership meeting a quarter if useful",
+      "No reports to file: this is thinking, not documents",
+    ],
+    fee: { amount: price("counsel"), note: "A month · three-month minimum" },
+  },
+  {
+    id: "simple-advisory",
+    num: "04",
+    label: "Monthly, online",
+    name: "The Simple Advisory",
+    tagline: "A senior sounding board, online, without a full engagement.",
+    forWho:
+      "Owners anywhere in India who want regular time with a senior adviser online. You can start here directly, without a Diagnostic first.",
+    facts: [
+      { label: "Duration", value: "Monthly, three-month minimum" },
+      { label: "Format", value: DELIVERY.advisory },
+      { label: "Output", value: "A written summary after each session" },
+    ],
+    get: [
+      "Two 90-minute online sessions a month, on your agenda",
+      "A short written summary after each session",
+    ],
+    fee: { amount: price("advisory"), note: "A month · paid at the end of each month" },
+    aside: "For WhatsApp access, a quarterly review and visits in person, see the Simple Counsel.",
+  },
+  {
+    id: "custom-engagement",
+    num: "05",
+    label: "Scoped to you",
+    name: "Custom Engagement",
+    tagline: "When what you need doesn’t fit the four, we scope it with you.",
+    forWho: "A specific project, a one-time review, or something in between.",
+    facts: [
+      { label: "Duration", value: "Scoped to fit" },
+      { label: "Format", value: DELIVERY.custom },
+      { label: "Output", value: "Agreed with you upfront" },
+    ],
+    get: [
+      "Scope, duration and fee agreed in writing before we begin",
+      "One fixed quote, never open-ended billing",
+    ],
+    fee: { amount: "Quoted before we begin", note: "Always fixed, always agreed first" },
+  },
 ];
 
-const sideOption = {
-  eyebrow: "Or, online",
-  label: "Advisory",
-  href: "#simple-advisory",
-  meta: `Monthly \u00b7 ${DELIVERY.advisory}`,
-  sub: "A senior sounding board, without a full engagement.",
+const COMPARE = {
+  eyebrow: "Side by side",
+  heading: { text: "The programmes", red: "at a glance." },
+  cols: ["Programme", "Fee", "Duration", "Format", "You get"],
+  rows: [
+    ["The Simple Diagnostic", price("diagnostic"), "Half a day", DELIVERY.diagnostic, "A written brief and one clear first step"],
+    ["The Simple Reset", `${price("reset30")} / ${price("reset60")}`, "30 or 60 days", DELIVERY.reset, "Root cause, a designed fix, and (60 days) the fix in place"],
+    ["The Simple Counsel", `${price("counsel")} a month`, "Three-month minimum", DELIVERY.counsel, "A senior thinking partner, WhatsApp access, a quarterly review"],
+    ["The Simple Advisory", `${price("advisory")} a month`, "Three-month minimum", DELIVERY.advisory, "Two 90-minute sessions a month, with summaries"],
+    ["Custom Engagement", "Fixed quote", "Agreed upfront", DELIVERY.custom, "Whatever we scope together, in writing"],
+  ],
 };
 
-function Deliverables({ items }: { items: string[] }) {
+// The homepage's two stories: one Diagnostic, one Reset.
+const PROOF = {
+  eyebrow: "Client stories",
+  heading: { text: "What changed for", red: "two owners." },
+  link: { label: "Read the full stories", href: "/client-success-stories" },
+};
+
+const TERMS = {
+  money: {
+    eyebrow: "How the money works",
+    heading: { text: "One price,", red: "agreed first." },
+    points: [
+      "Every programme has one fixed price, agreed before we start. No hourly billing, no scope creep, no surprise invoice.",
+      "If you stop after the Diagnostic, that is the whole engagement. There is no upsell conversation.",
+      "Travel outside Bangalore is charged at actuals.",
+    ],
+  },
+  not: {
+    eyebrow: "What we don’t do",
+    heading: { text: "Clear limits,", red: "stated upfront." },
+    points: [
+      "Run your sales function or sit in your customer meetings. We build the system and train the people who run it.",
+      "Produce decks. You get short written documents your team can use.",
+      "Send an associate to do the work after the first meeting. You get Premraj, every visit.",
+      "Take on work outside our expertise. If we can’t serve a problem well, we will say so upfront and suggest someone who can.",
+    ],
+  },
+};
+
+const QUESTIONS = {
+  eyebrow: "Questions",
+  heading: { text: "Fees, duration", red: "and how it works." },
+  more: { label: "More questions about Simpleworks", href: "/simpleworks-questions" },
+};
+
+const CLOSING = {
+  heading: { text: "Start with", red: "an introductory call." },
+  text: "A first conversation, not the Diagnostic. Tell us the situation, and we will tell you honestly whether we can help and which programme fits.",
+  cta: { label: "Message us on WhatsApp", dataCta: "programmes-closing" },
+  trust: "Based in Bangalore",
+};
+
+const schemaMarkup = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
+      { "@type": "ListItem", position: 2, name: "Programmes", item: URL },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Fixed-fee business consulting programmes for MSMEs",
+    serviceType: "Management consulting",
+    url: URL,
+    provider: { "@id": "https://www.simpleworks.in/#organization" },
+    areaServed: { "@type": "Country", name: "India" },
+  },
+];
+
+// ── Shared styles (same scale as the /services pages) ──
+const SECTION =
+  "reveal py-14 md:py-[72px] px-6 md:pr-[60px] md:pl-[132px] border-t-[0.5px] border-rule";
+const LABEL = "text-[11px] md:text-[13px] uppercase tracking-widest text-light leading-[1.6]";
+const EYEBROW = `${LABEL} mb-4 md:mb-5`;
+const H2 = "text-[28px] md:text-[36px] leading-[1.18] font-bold tracking-tight-1";
+const H3 = "text-[20px] md:text-[24px] font-bold leading-[1.3] text-ink";
+const HEADER = "mb-10";
+const BODY = "text-[16px] md:text-[17px] leading-[1.78] text-mid";
+const BUTTON =
+  "inline-flex items-center font-serif text-sm tracking-wide-3 text-red border-[1.5px] border-red px-9 py-[14px] rounded-[1px] bg-transparent cursor-pointer transition-colors hover:bg-red hover:text-white w-fit";
+const TEXT_LINK = "text-red hover:underline w-fit";
+
+function Heading({ heading }: { heading: RedHeading }) {
   return (
-    <ul className="mb-10">
+    <h2 className={H2}>
+      {heading.text} <span className="text-red">{heading.red}</span>
+    </h2>
+  );
+}
+
+function SectionHeader({ eyebrow, heading }: { eyebrow: string; heading: RedHeading }) {
+  return (
+    <div className={HEADER}>
+      <p className={EYEBROW}>{eyebrow}</p>
+      <Heading heading={heading} />
+    </div>
+  );
+}
+
+function GetList({ items }: { items: string[] }) {
+  return (
+    <ul>
       {items.map((item) => (
         <li
           key={item}
-          className="flex items-baseline gap-4 border-b border-rule py-[14px] text-[15px] leading-[1.65] text-mid"
+          className="flex items-baseline gap-4 border-t-[0.5px] border-rule py-3 text-[16px] leading-[1.65] text-mid"
         >
-          <span className="flex-shrink-0 font-bold text-red">—</span>
+          <span aria-hidden="true" className="flex-shrink-0 font-bold text-red">
+            —
+          </span>
           {item}
         </li>
       ))}
@@ -159,661 +384,296 @@ function Deliverables({ items }: { items: string[] }) {
   );
 }
 
+function Fee({ amount, note }: { amount: string; note: string }) {
+  return (
+    <div>
+      <p className={`${LABEL} mb-1`}>Fee</p>
+      <p className="text-[28px] md:text-[32px] font-bold leading-[1.2] text-ink">{amount}</p>
+      <p className="text-[14px] text-light mt-1">{note}</p>
+    </div>
+  );
+}
+
+function escapeHtml(text: string) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 export default function ProgrammesPage() {
+  const stories = STORIES.items.slice(0, 2);
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <main>
-      {/* 1. Hero */}
-      <section className="grid grid-cols-[2px_1fr] gap-x-10 px-6 pb-10 pt-14 md:px-14 md:pb-12 md:pt-24">
-        <div className="w-[2px] bg-red" />
-        <div>
-          <p className="mb-6 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-            Our Programmes
-          </p>
-          <h1 className="mb-4 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1 text-ink text-balance">
-            Three <span className="text-red">business consulting</span>{" "}
-            <br className="hidden md:block" />
-            programmes for MSMEs.
-          </h1>
-          <p className="mb-6 text-[20px] font-semibold leading-[1.4] text-ink">
-            Fixed-fee consulting and business mentoring programmes for Indian
-            MSMEs.
-          </p>
-          <p className="max-w-[540px] text-[18px] italic leading-[1.65] text-mid">
-            One senior advisor — you get me, not a team. For founder-led
-            businesses between ₹10 Cr and ₹200 Cr, in Bengaluru and across
-            India.
-          </p>
-        </div>
-      </section>
 
-      {/* 2. Engagement sequence */}
-      <section className="border-t border-rule px-6 pb-14 pt-10 md:px-14 md:pb-20 md:pt-12">
-        <div>
-          <h2 className="sr-only">How the programmes fit together</h2>
-          <div className="min-[860px]:grid min-[860px]:grid-cols-[minmax(0,4fr)_minmax(190px,1fr)]">
-            <ol className="list-none p-0 min-[860px]:grid min-[860px]:grid-cols-4">
-              {journey.map(({ n, label, href, meta, sub }, i) => (
-                <li
-                  key={n}
-                  className="relative pb-7 pl-8 last:pb-0 min-[860px]:pb-0 min-[860px]:pl-0 min-[860px]:pr-6 min-[860px]:pt-7"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="absolute bottom-0 left-[5px] top-0 w-[0.5px] bg-rule min-[860px]:hidden"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute left-0 right-0 top-[5px] hidden h-[0.5px] bg-rule min-[860px]:block"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className={`absolute left-0 top-[6px] z-10 h-[10px] w-[10px] rounded-full border border-red min-[860px]:top-0 ${i === 0 ? "bg-red" : "bg-white"}`}
-                  />
-                  <span className="mb-1 block text-[12px] tracking-[0.08em] text-red">
-                    {n}
-                  </span>
-                  <h3 className="mb-1 text-[20px] font-bold text-ink md:text-[24px]">
-                    <Link href={href} className="transition-colors hover:text-red">
-                      {label}
-                    </Link>
-                  </h3>
-                  <p className="mb-2 text-[13px] text-light md:text-[14px]">{meta}</p>
-                  <p className="mb-0 text-[16px] leading-[1.6] text-mid md:text-[17px]">
-                    {sub}
-                  </p>
-                </li>
-              ))}
-            </ol>
-
-            <div className="mt-7 border-t-[0.5px] border-rule pt-7 min-[860px]:mt-0 min-[860px]:border-l-[0.5px] min-[860px]:border-t-0 min-[860px]:pl-8">
-              <p className="mb-1 text-[12px] uppercase tracking-wide-9 text-light">
-                {sideOption.eyebrow}
-              </p>
-              <h3 className="mb-1 text-[20px] font-bold text-ink md:text-[24px]">
-                <Link href={sideOption.href} className="transition-colors hover:text-red">
-                  {sideOption.label}
-                </Link>
-              </h3>
-              <p className="mb-2 text-[13px] text-light md:text-[14px]">{sideOption.meta}</p>
-              <p className="mb-0 text-[16px] leading-[1.6] text-mid md:text-[17px]">
-                {sideOption.sub}
-              </p>
-            </div>
+      {/* ── 1. HERO ── text left, image right; stacks below 900px. */}
+      <section className="px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
+        <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-start gap-x-14 gap-y-10">
+          <div className="min-[900px]:flex-[1_1_400px] min-w-0">
+            <p className={EYEBROW}>{HERO.eyebrow}</p>
+            <h1 className="mb-5 max-w-[640px] text-[36px] leading-[1.1] font-bold tracking-tight-1 text-ink md:text-hero-h1">
+              {HERO.h1.text} <span className="text-red">{HERO.h1.red}</span>
+            </h1>
+            <p className="mb-6 max-w-[560px] text-[16px] md:text-[18px] italic leading-[1.65] text-mid">
+              {HERO.subhead}
+            </p>
+            <p className={`${BODY} max-w-[560px]`}>{HERO.body}</p>
+            <a
+              href={whatsappHref()}
+              data-cta={HERO.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${BUTTON} mt-8 md:mt-10`}
+            >
+              <WhatsAppIcon size={20} />
+              {HERO.cta.label} &nbsp;→
+            </a>
           </div>
-
-          <p className="mt-8 border-t-[0.5px] border-rule pt-5 text-[16px] leading-[1.78] text-mid md:text-[17px]">
-            Most clients move through in that order. You can stop at any point.{" "}
-            <Link href="#simple-advisory" className="text-red hover:underline">
-              Prefer to work online? Start with Advisory.
-            </Link>
-          </p>
-
-          <p className="mt-6 max-w-[720px] border-t border-rule pt-5 text-[16px] leading-[1.78] text-mid md:text-[17px]">
-            <Link href="#custom-engagement" className="transition-colors hover:text-red">
-              <strong className="font-bold text-ink">Or a custom engagement.</strong>
-            </Link>{" "}
-            If what you need doesn&rsquo;t fit this sequence, we scope it and quote it
-            before we begin.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. Trust / reassurance */}
-      <section className="border-t border-rule">
-        <div className="grid grid-cols-1 items-center gap-8 px-6 py-14 md:grid-cols-[auto_1fr] md:px-14 md:py-16">
-          <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full">
+          {/* Top margin = eyebrow height, so the image lines up with the H1. */}
+          <div className="min-[900px]:flex-[1.4_1_480px] min-w-0 min-[900px]:mt-[41px]">
             <Image
-              src="/prem-menon.png"
-              alt="Premraj Menon"
-              width={96}
-              height={96}
-              className="h-full w-full object-cover"
+              src={HERO.image.src}
+              alt={HERO.image.alt}
+              width={HERO.image.width}
+              height={HERO.image.height}
+              priority
+              sizes="(min-width: 900px) 55vw, 100vw"
+              className="block w-full h-auto"
             />
           </div>
-          <div>
-            <p className="mb-1 text-[15px] font-bold text-ink">Premraj Menon</p>
-            <p className="mb-3 text-[12px] uppercase tracking-[0.15em] text-light">
-              Founder, Simpleworks Consulting
-            </p>
-            <p className="max-w-[600px] text-[15px] leading-[1.7] text-mid">
-              You work with me, not a team. 39 years across consumer durables,
-              automotive, telecom and SaaS, ending as COO of Tata Docomo&rsquo;s
-              Kerala Circle. Full background on the <Link href="/about" className="text-red hover:underline">About page</Link>.
-</p>
-          </div>
         </div>
       </section>
 
-      {/* 4. The Simple Diagnostic */}
-      <section id="simple-diagnostic" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
-          <div>
-            <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-              Start Here
-            </p>
-            <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
-              The Simple <span className="text-red">Diagnostic</span>
-            </h2>
-            <p className="mb-4 text-[14px] text-light">{DELIVERY.diagnostic}</p>
-            <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-              In half a day I will tell you what is working, what is not,
-              and the one thing to do first.
-            </p>
-          </div>
-          <span className="-mt-4 hidden select-none text-[120px] font-bold leading-none tracking-[-0.04em] text-rule md:block">
-            01
-          </span>
-        </div>
-
-        <div className="mb-10 flex flex-wrap border-t border-b border-rule">
-          <div className="flex flex-col gap-1 py-5 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Duration
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              Half a day
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Format
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              In person and online
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Output
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              One written brief
-            </span>
-          </div>
-        </div>
-
-        <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For an owner who can name what feels wrong (growth has stalled, a
-          channel isn&rsquo;t performing, execution keeps slipping) but
-          doesn&rsquo;t yet know the cause or what to fix first.
-        </p>
-
-        <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-light">
-          What you get
-        </p>
-        <Deliverables
-          items={[
-            "A three-hour working session on the one problem you name (two or three shorter sessions if online)",
-            "A written diagnostic brief on that problem, naming what’s working, what isn’t, and why",
-            "A one-hour walkthrough of the brief with you",
-            "One clear recommendation for what to do first",
-          ]}
-        />
-
-        <p className="mb-8 -mt-4 text-[16px] leading-[1.78] text-mid md:text-[17px]">
-          <Link href="/business-growth-review" className="text-red hover:underline">
-            What the review covers →
-          </Link>
-        </p>
-
-        <div className="flex flex-wrap items-end gap-12 pt-2">
-          <div className="flex flex-col gap-1">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Investment
-            </span>
-            <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red">
-              {price("diagnostic")}
-            </span>
-            <span className="text-[13px] italic text-light">
-              fixed
-            </span>
-          </div>
-        </div>
-
-        <p className="mt-4 text-[16px] leading-[1.78] text-mid md:text-[17px]">
-          Not sure what you get?{" "}
-          <Link href="/sample-diagnostic-report" className="text-red hover:underline">
-            See a sample Diagnostic report →
-          </Link>
-        </p>
-
-        <div className="mt-7 max-w-[560px] border-l-2 border-red pl-4 text-[14px] italic leading-[1.65] text-mid">
-          If you are satisfied with just the Diagnostic, that is the whole
-          engagement — no further obligation.
-        </div>
-
-        <div className="mt-8">
-          <Link
-            href="/contact?interest=growth-review"
-            className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-3.5 font-serif text-[14px] text-red transition-colors hover:bg-red hover:text-white"
-          >
-            Schedule an Introductory Call
-          </Link>
-          <p className="mt-3 max-w-[460px] text-[14px] leading-[1.65] text-light">
-            A first conversation, not the Diagnostic. I&rsquo;ll hear the situation and tell you honestly whether I can help.
-          </p>
-        </div>
-      </section>
-
-      {/* 5. The Simple Reset */}
-      <section id="simple-reset" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
-          <div>
-            <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-              Fixed Engagement
-            </p>
-            <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
-              The Simple <span className="text-red">Reset</span>
-            </h2>
-            <p className="mb-4 text-[14px] text-light">{DELIVERY.reset}</p>
-            <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-              Four weeks to work out what to do. Four more to make sure it
-              happens.
-            </p>
-          </div>
-          <span className="-mt-4 hidden select-none text-[120px] font-bold leading-none tracking-[-0.04em] text-rule md:block">
-            02
-          </span>
-        </div>
-
-        <div className="mb-10 flex flex-wrap border-t border-b border-rule">
-          <div className="flex flex-col gap-1 py-5 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Duration
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              30 or 60 days
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Format
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              One on-site visit a week (four a month)
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Output
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              Fixes in place, not just findings
-            </span>
-          </div>
-        </div>
-
-        <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For owners who have a problem area they can name but have not
-          been able to crack. You bring the problem. Option 1 gives you the
-          diagnosis and a designed solution — you execute. Option 2 adds 30
-          days of Premraj alongside your team to make sure execution actually
-          starts.
-        </p>
-
-        <div className="mb-10 grid grid-cols-1 md:grid-cols-2">
-          <div className="pr-0 md:pr-10">
-            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-light">
-              Option 1
-            </p>
-            <p className="mb-1 text-[22px] font-bold text-ink">30 days</p>
-            <p className="mb-5 text-[13px] italic text-light">
-              One on-site visit a week (four a month) · you execute
-            </p>
-            <ul className="mb-6">
-              {[
-                "Structured discovery of the named problem area — root cause, not symptoms",
-                "The gaps costed in rupees, ranked by impact",
-                "A designed solution: what to do, who owns it, by when",
-                "One page. Plain language. No deck.",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-baseline gap-4 border-b border-rule py-[14px] text-[15px] leading-[1.65] text-mid"
-                >
-                  <span className="flex-shrink-0 font-bold text-red">—</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-[36px] font-bold leading-none tracking-[-0.02em] text-red">
-              {price("reset30")}
-            </p>
-            <p className="mt-1 text-[12px] italic text-light">
-              Fixed · billed at month end
-            </p>
-          </div>
-          <div className="border-t border-rule pl-0 pt-8 md:border-l md:border-t-0 md:pl-10 md:pt-0">
-            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-light">
-              Option 2
-            </p>
-            <p className="mb-1 text-[22px] font-bold text-ink">60 days</p>
-            <p className="mb-5 text-[13px] italic text-light">
-              One on-site visit a week (four a month), eight in all · Premraj stays for execution
-            </p>
-            <ul className="mb-6">
-              {[
-                "Everything in Option 1, delivered in the first four weeks",
-                "Four more weeks in person with your leadership team",
-                "Obstacles cleared while they are still small",
-                "A weekly review rhythm installed and handed over — your team runs it, not Premraj",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-baseline gap-4 border-b border-rule py-[14px] text-[15px] leading-[1.65] text-mid"
-                >
-                  <span className="flex-shrink-0 font-bold text-red">—</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-[36px] font-bold leading-none tracking-[-0.02em] text-red">
-              {price("reset60")}
-            </p>
-            <p className="mt-1 text-[12px] italic text-light">
-              Fixed · billed monthly, two parts
-            </p>
-          </div>
-        </div>
-
-        <p className="max-w-[600px] border-t border-rule pt-5 text-[14px] italic leading-[1.65] text-light">
-          Most clients know what they need to do. The question is whether
-          they want help doing it. Option 1 gives you the answer. Option 2
-          makes sure the answer gets implemented.
-        </p>
-      </section>
-
-      {/* 6. The Simple Counsel */}
-      <section id="simple-counsel" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
-          <div>
-            <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-              Monthly Retainer
-            </p>
-            <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
-              The Simple <span className="text-red">Counsel</span>
-            </h2>
-            <p className="mb-4 text-[14px] text-light">{DELIVERY.counsel}</p>
-            <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-              A business mentor in your corner — every month, for as long
-              as it is useful.
-            </p>
-          </div>
-          <span className="-mt-4 hidden select-none text-[120px] font-bold leading-none tracking-[-0.04em] text-rule md:block">
-            03
-          </span>
-        </div>
-
-        <div className="mb-10 flex flex-wrap border-t border-b border-rule">
-          <div className="flex flex-col gap-1 py-5 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Duration
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              Monthly, min. 3 months
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Format
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              Regular check-ins + on-call
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Output
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              A decision partner, not a report
-            </span>
-          </div>
-        </div>
-
-        <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For founders who want a senior thinking partner on call — before
-          a hire, a price change, a new market, or a difficult family
-          conversation. Often how the relationship continues after the
-          Reset. Also works as a standalone engagement for founders who do
-          not need a project, just clear-headed counsel.
-        </p>
-
-        <Deliverables
-          items={[
-            "Two sessions a month, agenda set by you. In person, in Bengaluru. For online, see the Simple Advisory.",
-            "WhatsApp access for the decisions that will not wait",
-            "Quarterly business review, and one leadership meeting a quarter if useful",
-            "No deliverables. This is thinking, not documents",
-          ]}
-        />
-
-        <div className="flex flex-wrap items-end gap-12 pt-2">
-          <div className="flex flex-col gap-1">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Investment
-            </span>
-            <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red">
-              {price("counsel")}
-            </span>
-            <span className="text-[13px] italic text-light">
-              per month · minimum three months
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* 6b. The Simple Advisory */}
-      <section id="simple-advisory" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <div className="mb-12">
-          <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-            Monthly Advisory
-          </p>
-          <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
-            The Simple <span className="text-red">Advisory</span>
-          </h2>
-          <p className="mb-4 text-[14px] text-light">{DELIVERY.advisory}</p>
-          <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-            A senior sounding board, online, without a full engagement.
-          </p>
-        </div>
-
-        <div className="mb-10 flex flex-wrap border-t border-b border-rule">
-          <div className="flex flex-col gap-1 py-5 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Duration
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              Monthly, min. 3 months
-            </span>
-          </div>
-        </div>
-
-        <Deliverables
-          items={[
-            "Two 90-minute online sessions a month, on your agenda.",
-            "A short written summary after each session.",
-            "Minimum three months. Paid at the end of each month.",
-          ]}
-        />
-
-        <p className="mb-10 max-w-[640px] text-[14px] leading-[1.65] text-light">
-          For WhatsApp access, a quarterly business review and on-site work,
-          see the Simple Counsel.
-        </p>
-
-        <div className="flex flex-col gap-1 pt-2">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-            Investment
-          </span>
-          <span className="text-[44px] font-bold leading-none tracking-[-0.02em] text-red [font-variant-numeric:tabular-nums]">
-            {price("advisory")}
-          </span>
-          <span className="text-[13px] italic text-light">
-            per month · minimum three months · Fixed fee, paid at the end of each month.
-          </span>
-        </div>
-      </section>
-
-      {/* 7. Custom Engagement */}
-      <section id="custom-engagement" className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_auto]">
-          <div>
-            <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-              Outside The Three
-            </p>
-            <h2 className="mb-4 text-[40px] font-bold leading-[1.08] tracking-tight text-ink">
-              <span className="text-red">Custom</span> Engagement
-            </h2>
-            <p className="mb-4 text-[14px] text-light">{DELIVERY.custom}</p>
-            <p className="max-w-[580px] text-[17px] italic leading-[1.65] text-mid">
-              If what you need doesn&rsquo;t fit the Diagnostic, Reset or
-              Counsel, I will scope it with you directly.
-            </p>
-          </div>
-          <span className="-mt-4 hidden select-none text-[120px] font-bold leading-none tracking-[-0.04em] text-rule md:block">
-            04
-          </span>
-        </div>
-
-        <div className="mb-10 flex flex-wrap border-t border-b border-rule">
-          <div className="flex flex-col gap-1 py-5 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Duration
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              Scoped to fit
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Format
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              Agreed with you upfront
-            </span>
-          </div>
-          <div className="flex flex-col gap-1 border-l border-rule py-5 pl-8 pr-8 min-w-[140px]">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-              Output
-            </span>
-            <span className="text-[15px] font-bold text-ink">
-              A fixed quote before we begin
-            </span>
-          </div>
-        </div>
-
-        <p className="mb-9 max-w-[640px] border-l-2 border-rule pl-5 text-[16px] leading-[1.78] text-mid">
-          For situations that don&rsquo;t map cleanly to a half-day
-          diagnostic, a four-to-eight week reset, or an ongoing monthly
-          counsel — a specific project, a one-time review, or something in
-          between.
-        </p>
-
-        <div className="flex flex-col gap-1 pt-2">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-light">
-            Investment
-          </span>
-          <span className="text-[32px] font-bold leading-none tracking-[-0.02em] text-ink">
-            Quoted before we <span className="text-red">begin</span>
-          </span>
-          <span className="text-[13px] italic text-light">
-            Always fixed, always agreed first — no open-ended billing
-          </span>
-        </div>
-      </section>
-
-      {/* 9. How the money works */}
-      <section className="grid grid-cols-1 gap-6 border-t border-rule px-6 py-14 md:grid-cols-2 md:gap-20 md:px-14 md:py-20">
-        <h2 className="text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
-          How the
-          <br />
-          <span className="text-red">money works.</span>
-        </h2>
-        <div>
-          <p className="mb-5 text-[16px] leading-[1.78] text-mid">
-            Every programme has one price, agreed before we start. No
-            hourly billing, no scope creep, no surprise invoice at the end.
-          </p>
-          <p className="text-[16px] leading-[1.78] text-mid">
-            If you stop after the Diagnostic, that&rsquo;s the whole engagement —
-            no further obligation, no upsell conversation.
-          </p>
-        </div>
-      </section>
-
-      {/* 10. What I don't do */}
-      <section className="grid grid-cols-1 gap-6 border-t border-rule px-6 py-14 md:grid-cols-2 md:gap-20 md:px-14 md:py-20">
-        <h2 className="text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
-          What I
-          <br />
-          <span className="text-red">don&rsquo;t</span> do.
-        </h2>
-        <ul>
-          {[
-            "Run your sales function or sit in your customer meetings. I build the system and train the people who run it",
-            "Produce decks. You get short written documents your team can actually use",
-            "Bring an associate who does the work while I attend the first meeting. You get me, every visit",
-            "Take on work outside my expertise. If the problem area is not one I can serve well, I will tell you upfront — and share someone who can do a better job than me",
-          ].map((item) => (
+      {/* ── 2. WHICH ONE FITS YOU? ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={CHOOSER.eyebrow} heading={CHOOSER.heading} />
+        <ol>
+          {CHOOSER.rows.map((row) => (
             <li
-              key={item}
-              className="flex items-baseline gap-4 border-b border-rule py-[14px] text-[15px] leading-[1.65] text-mid"
+              key={row.name}
+              className="grid grid-cols-1 gap-y-2 border-t-[0.5px] border-rule py-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_200px] lg:gap-x-10 lg:items-baseline"
             >
-              <span className="flex-shrink-0 font-bold text-light">—</span>
-              {item}
+              <h3 className={H3}>&ldquo;{row.quote}&rdquo;</h3>
+              <Link href={row.href} className="text-[18px] font-bold text-red hover:underline w-fit">
+                {row.name} &rarr;
+              </Link>
+              <p className="text-[16px] leading-[1.5] text-ink">
+                {row.fee}
+                <span className="block text-[14px] text-light">{row.meta}</span>
+              </p>
             </li>
           ))}
-        </ul>
+        </ol>
+        <p className={`${BODY} border-t-[0.5px] border-rule pt-6`}>{CHOOSER.note}</p>
       </section>
 
-      {/* 11. FAQ */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <p className="mb-3 text-[11px] font-light uppercase tracking-[0.2em] text-light">
-          Common Questions
-        </p>
-        <h2 className="mb-4 text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
-          Fees and <span className="text-red">duration.</span>
-        </h2>
-        <FAQAccordion faqs={ACCORDION_FAQS} />
-        <p className="mt-8 text-[15px] text-mid">
-          <Link href="/simpleworks-questions" className="text-red underline hover:no-underline">
-            More questions about Simpleworks →
+      {/* ── 3. WHO YOU WORK WITH ── */}
+      <section className={SECTION}>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8 max-w-[860px]">
+          <Image
+            src="/prem-menon.png"
+            alt="Premraj Menon"
+            width={96}
+            height={96}
+            className="h-24 w-24 flex-shrink-0 rounded-full object-cover"
+          />
+          <div>
+            <p className="text-[17px] font-bold text-ink">Premraj Menon</p>
+            <p className={`${LABEL} mb-3`}>Founder, Simpleworks Consulting</p>
+            <p className={BODY}>
+              {FOUNDER}{" "}
+              <Link href="/about" className={TEXT_LINK}>
+                Full background &rarr;
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4–8. THE FIVE ── one section each; ids are linked from other pages. */}
+      {PROGRAMMES.map((p) => (
+        <section key={p.id} id={p.id} className={`${SECTION} scroll-mt-20`}>
+          <div className="grid grid-cols-1 lg:grid-cols-[80px_minmax(0,1fr)] lg:gap-x-12 gap-y-3">
+            <span className="text-[15px] font-bold leading-[1.6] text-red tracking-wide-2 [font-variant-numeric:tabular-nums]">
+              {p.num}
+            </span>
+            <div className="min-w-0">
+              <p className={`${LABEL} mb-2`}>{p.label}</p>
+              <h2 className={`${H2} mb-3`}>{p.name}</h2>
+              <p className="text-[18px] md:text-[20px] leading-[1.5] text-ink max-w-[760px] mb-6">
+                {p.tagline}
+              </p>
+              <p className={`${BODY} max-w-[760px] mb-8`}>
+                <strong className="font-bold text-ink">For:</strong> {p.forWho}
+              </p>
+
+              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-4 border-t-[0.5px] border-rule pt-6 mb-8 max-w-[860px]">
+                {p.facts.map((f) => (
+                  <div key={f.label}>
+                    <dt className={`${LABEL} mb-1`}>{f.label}</dt>
+                    <dd className="text-[16px] text-ink">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              {p.options ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 max-w-[1000px]">
+                  {p.options.map((o) => (
+                    <div key={o.name}>
+                      <h3 className={`${H3} mb-1`}>{o.name}</h3>
+                      <p className="text-[14px] text-light mb-4">{o.sub}</p>
+                      <GetList items={o.get} />
+                      <div className="mt-6">
+                        <Fee amount={o.fee} note={o.feeNote} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_240px] gap-x-12 gap-y-8 max-w-[1000px] items-start">
+                  <div>
+                    <p className={`${LABEL} mb-3`}>What you get</p>
+                    {p.get && <GetList items={p.get} />}
+                    {p.aside && <p className="text-[15px] leading-[1.7] text-mid mt-4">{p.aside}</p>}
+                  </div>
+                  {p.fee && <Fee amount={p.fee.amount} note={p.fee.note} />}
+                </div>
+              )}
+
+              {p.extra && <div className="mt-8">{p.extra}</div>}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* ── 9. AT A GLANCE ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={COMPARE.eyebrow} heading={COMPARE.heading} />
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[760px] border-collapse text-left">
+            <thead>
+              <tr>
+                {COMPARE.cols.map((c) => (
+                  <th key={c} scope="col" className={`${LABEL} pb-3 pr-6 font-normal`}>
+                    {c}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARE.rows.map((row) => (
+                <tr key={row[0]} className="border-t-[0.5px] border-rule align-top">
+                  {row.map((cell, i) => (
+                    <td
+                      key={i}
+                      className={`py-4 pr-6 text-[15px] leading-[1.55] ${i === 0 ? "font-bold text-ink" : "text-mid"}`}
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* ── 10. CLIENT STORIES ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={PROOF.eyebrow} heading={PROOF.heading} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 max-w-[1100px]">
+          {stories.map((s) => {
+            const changed = s.rows.find((r) => r.emphasis);
+            return (
+              <div key={s.title} className="border-l-2 border-red pl-6">
+                <p className={`${LABEL} mb-3`}>{s.caption}</p>
+                <h3 className={`${H3} mb-3`}>{s.title}</h3>
+                {changed && (
+                  <p className="text-[16px] md:text-[17px] leading-[1.7] font-bold text-red">
+                    {changed.text}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        <Link
+          href={PROOF.link.href}
+          className={`${TEXT_LINK} inline-block border-t-[0.5px] border-rule pt-6 mt-10`}
+        >
+          {PROOF.link.label} &rarr;
+        </Link>
+      </section>
+
+      {/* ── 11. HOW THE MONEY WORKS / WHAT WE DON'T DO ── */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+          {[TERMS.money, TERMS.not].map((col) => (
+            <div key={col.eyebrow}>
+              <SectionHeader eyebrow={col.eyebrow} heading={col.heading} />
+              <GetList items={col.points} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 12. QUESTIONS ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={QUESTIONS.eyebrow} heading={QUESTIONS.heading} />
+        <div className="max-w-[900px] border-b-[0.5px] border-rule">
+          {faqs.map((item, i) => (
+            <details key={item.q} open={i === 0} className="faq-item border-t-[0.5px] border-rule">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
+                <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.4] text-ink">
+                  {item.q}
+                </h3>
+                <span
+                  aria-hidden="true"
+                  className="faq-pm flex-shrink-0 text-[26px] leading-none text-red transition-transform duration-200"
+                >
+                  +
+                </span>
+              </summary>
+              <div
+                className={`${BODY} pb-[26px] max-w-[760px] [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:mb-3 [&_li]:mb-1 [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline`}
+                dangerouslySetInnerHTML={{
+                  __html: item.aHtml ?? `<p>${escapeHtml(item.a)}</p>`,
+                }}
+              />
+            </details>
+          ))}
+        </div>
+        <p className={`${BODY} mt-8`}>
+          <Link href={QUESTIONS.more.href} className={TEXT_LINK}>
+            {QUESTIONS.more.label} &rarr;
           </Link>
         </p>
       </section>
 
-      {/* 12. CTA band */}
-      <section className="border-t border-rule px-6 py-14 md:px-14 md:py-20">
-        <h2 className="mb-4 text-[40px] font-bold leading-[1.1] tracking-tight text-ink">
-          Start with
-          <br />
-          <span className="text-red">half a day.</span>
-        </h2>
-        <p className="mb-8 max-w-[460px] text-[16px] leading-[1.7] text-mid">
-          Most clients begin with the Diagnostic. {price("diagnostic")} fixed, paid after the engagement.
-          If you only need the Diagnostic, that is perfectly fine too.
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block whitespace-nowrap rounded-[1px] border border-red px-9 py-4 font-serif text-[15px] text-red transition-colors hover:bg-red hover:text-white"
-        >
-          Schedule an Introductory Call
-        </Link>
-        <p className="mt-3 max-w-[460px] text-[14px] leading-[1.65] text-light">
-          A first conversation, not the Diagnostic. I&rsquo;ll hear the situation and tell you honestly whether I can help.
-        </p>
+      {/* ── 13. CLOSING CALL TO ACTION ── */}
+      <section className={SECTION}>
+        <div className="max-w-[760px]">
+          <Heading heading={CLOSING.heading} />
+          <p className={`${BODY} mt-4 mb-8 max-w-[560px]`}>{CLOSING.text}</p>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a
+              href={whatsappHref()}
+              data-cta={CLOSING.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={BUTTON}
+            >
+              <WhatsAppIcon size={20} />
+              {CLOSING.cta.label} &nbsp;→
+            </a>
+            <p className="text-[14px] text-light">{CLOSING.trust}</p>
+          </div>
+        </div>
       </section>
-      </main>
+
+      <Reveal />
     </>
   );
 }

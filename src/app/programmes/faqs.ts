@@ -1,66 +1,61 @@
-import { getFaqs, programmesFaqIds, stripHtml } from "@/lib/faqs";
+import { stripHtml } from "@/lib/faqs";
+import { DELIVERY } from "@/lib/delivery";
 import { price } from "@/lib/programmes";
 
 export { stripHtml };
 
 // Single source of truth for the visible FAQ list AND the FAQPage JSON-LD on
 // /programmes. `a` is plain text and is what the schema carries. `aHtml` is an
-// optional rich version for the visible page only — it must contain exactly the
-// same words as `a`, with markup (links, <strong>) as the only difference.
-//
-// The fee and duration answers come from the shared library (lib/faqs.ts),
-// with prices from lib/programmes.ts. The other seven are /programmes' own.
+// optional rich version for the visible page only: the same words, with markup
+// (links, lists) as the only difference. Prices come from lib/programmes.ts and
+// delivery labels from lib/delivery.ts, so they never differ between pages.
 export type Faq = {
   q: string;
   a: string;
   aHtml?: string;
 };
 
-const [FEES, DURATION] = getFaqs(programmesFaqIds).map(
-  ({ q, a, aHtml }): Faq => ({ q, a, aHtml }),
-);
-
-const REMOTE_HTML =
-  "<p>Yes, for two of the programmes. The Simple Diagnostic is in person in Bengaluru and online outside Bengaluru. The Simple Advisory runs fully online, wherever you are in India. The Simple Reset needs one on-site visit a week (four a month), and the Simple Counsel is in person, so both suit founders in or able to meet in Bengaluru.</p>";
-
-const NDA_HTML =
-  "<p>Yes. We’re happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.</p>";
+const rich = (q: string, aHtml: string): Faq => ({ q, a: stripHtml(aHtml), aHtml });
 
 export const faqs: Faq[] = [
-  FEES,
-  DURATION,
+  rich(
+    "How much does a business consultant cost in India?",
+    `<p>Many consultants bill by the hour or the day. We don’t. Each programme has one fixed fee, agreed before we start:</p><ul><li><strong>The Simple Diagnostic:</strong> ${price("diagnostic")}, paid after the session.</li><li><strong>The Simple Reset:</strong> ${price("reset30")} for 30 days, or ${price("reset60")} for 60 days.</li><li><strong>The Simple Counsel:</strong> ${price("counsel")} a month, in person, three-month minimum.</li><li><strong>The Simple Advisory:</strong> ${price("advisory")} a month, online, three-month minimum.</li><li><strong>Custom Engagement:</strong> a fixed written quote before we begin.</li></ul>`,
+  ),
+  rich(
+    "Which programme should I start with?",
+    `<p>Most owners start with <a href="#simple-diagnostic">the Simple Diagnostic</a>: in half a day you learn what is holding back the problem you name, and what to do first. If you already know the problem and haven’t been able to fix it, go straight to <a href="#simple-reset">the Simple Reset</a>. If you want a senior thinking partner every month, choose <a href="#simple-counsel">the Simple Counsel</a> in person, or <a href="#simple-advisory">the Simple Advisory</a> online.</p>`,
+  ),
   {
-    q: "Which programme should I start with?",
-    a: "Most founders start with The Simple Diagnostic. In half a day you get a clear, written view of what’s working, what isn’t, and the one thing to fix first on the problem that is costing you most. If the problem is already known and just hasn’t been solved, go straight to The Simple Reset. If you want a senior sounding board for ongoing decisions, choose The Simple Counsel. If you want a senior sounding board rather than a programme, the Simple Advisory gives you two 90-minute online sessions a month.",
-    aHtml:
-      "<p>Most founders start with <a href=\"#simple-diagnostic\">The Simple Diagnostic</a>. In half a day you get a clear, written view of what's working, what isn't, and the one thing to fix first on the problem that is costing you most. If the problem is already known and just hasn't been solved, go straight to <a href=\"#simple-reset\">The Simple Reset</a>. If you want a senior sounding board for ongoing decisions, choose <a href=\"#simple-counsel\">The Simple Counsel</a>. If you want a senior sounding board rather than a programme, the Simple Advisory gives you two 90-minute online sessions a month.</p>",
+    q: "When should I hire a business consultant?",
+    a: "When a problem has stayed unsolved for two or three quarters despite real effort, when growth has stalled and you can’t see why, or when every decision still runs through you. If you can name the problem but not its cause, the Diagnostic is the cheapest way to find out.",
   },
+  {
+    q: "What is the difference between a business consultant and a business coach?",
+    a: "Both, depending on what you need. Simple Advisory and Simple Counsel work as one-to-one business coaching for the owner. The Diagnostic and Reset are hands-on consulting on a specific problem.",
+  },
+  rich(
+    "How long does a consulting engagement last?",
+    `<p>The length is fixed before we start:</p><ul><li><strong>The Simple Diagnostic:</strong> half a day.</li><li><strong>The Simple Reset:</strong> 30 or 60 days, with one visit a week.</li><li><strong>The Simple Counsel and the Simple Advisory:</strong> month by month, with a three-month minimum.</li><li><strong>Custom Engagement:</strong> agreed in writing before we begin.</li></ul><p>Every engagement has a defined scope and a clear end point.</p>`,
+  ),
   {
     q: "How is payment structured?",
-    a: "The Diagnostic is paid after the engagement. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel is billed monthly. The Advisory is billed at the end of each month. All fees are fixed and agreed before we begin. Travel outside Bengaluru is charged at actuals.",
+    a: "The Diagnostic is paid after the session. The 30-day Reset is billed at month end, and the 60-day Reset in two monthly parts. The Counsel and the Advisory are billed at the end of each month. Travel outside Bangalore is charged at actuals.",
   },
   {
-    q: "Can the engagement be done remotely?",
-    a: stripHtml(REMOTE_HTML),
-    aHtml: REMOTE_HTML,
+    q: "Can the engagement be done online?",
+    a: `Partly. The Simple Diagnostic runs ${DELIVERY.diagnostic.toLowerCase()}, and the Simple Advisory is fully online, wherever you are in India. The Simple Reset needs one visit a week and the Simple Counsel is in person, so both suit owners in Bangalore or able to meet there regularly.`,
   },
+  rich(
+    "Do you offer business mentoring?",
+    `<p>Yes. <a href="#simple-counsel">The Simple Counsel</a> is built for it: two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team, at ${price("counsel")} a month. If you would rather work online, the Simple Advisory is ${price("advisory")} a month for two 90-minute sessions, without the WhatsApp access or the quarterly review.</p>`,
+  ),
   {
     q: "Who will actually do the work?",
-    a: "Premraj does, personally. Simpleworks is one senior advisor, not a team. You won’t be handed to a junior consultant after the first meeting.",
-  },
-  {
-    q: "What size of business do you work with?",
-    a: "Founder-led Indian businesses with ₹10–200 crore in revenue, usually MSMEs and growing companies that have hit a ceiling on growth, clarity or execution.",
+    a: "Premraj does, personally. Simpleworks is one senior adviser, not a team, so you won’t be handed to a junior consultant after the first meeting.",
   },
   {
     q: "Will you sign an NDA?",
-    a: stripHtml(NDA_HTML),
-    aHtml: NDA_HTML,
-  },
-  {
-    q: "Do you offer business mentoring?",
-    a: `Yes. The Simple Counsel is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ${price("counsel")} per month, with a minimum of three months. If you'd rather work online, the Simple Advisory is ${price("advisory")} a month for two 90-minute sessions, without the WhatsApp access or quarterly review.`,
-    aHtml:
-      `<p>Yes. <a href="#simple-counsel">The Simple Counsel</a> is built for this. Premraj works alongside you as a senior thinking partner over a longer period and helps you reach the goals you’ve set for the business. You get two sessions a month on your agenda, WhatsApp access for urgent decisions, and a quarterly business review with your leadership team. It costs ${price("counsel")} per month, with a minimum of three months. If you'd rather work online, the Simple Advisory is ${price("advisory")} a month for two 90-minute sessions, without the WhatsApp access or quarterly review.</p>`,
+    a: "Yes. We are happy to sign an NDA before you share financials or other sensitive information, usually before the Diagnostic begins.",
   },
 ];
