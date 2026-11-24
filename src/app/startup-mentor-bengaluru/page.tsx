@@ -444,7 +444,7 @@ export default function StartupMentorPage() {
               <h3 className={H3}>{row.title}</h3>
               <div>
                 <p className="text-[18px] leading-[1.55] text-ink mb-2">{row.text}</p>
-                <p className={`${BODY} ${row.link ? "mb-3" : ""}`}>
+                <p className={BODY}>
                   <strong className="font-bold text-ink">You get:</strong>{" "}
                   <span className="text-red">{row.youGet}</span>
                 </p>

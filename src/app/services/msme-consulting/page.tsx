@@ -371,7 +371,7 @@ export default function MsmeConsultingPage() {
               <div>
                 <p className="text-[18px] leading-[1.55] text-ink mb-2">{pillar.text}</p>
                 {pillar.youGet && (
-                  <p className={`${BODY} mb-3`}>
+                  <p className={BODY}>
                     <strong className="font-bold text-ink">You get:</strong>{" "}
                     <span className="text-red">{pillar.youGet}</span>
                   </p>
