@@ -468,7 +468,8 @@ export default function ServicesPage() {
               </p>
               <ul className="flex flex-col gap-2">
                 {group.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href} className="flex items-baseline gap-3">
+                    <span aria-hidden="true" className="h-1.5 w-1.5 flex-shrink-0 -translate-y-0.5 rounded-full bg-red" />
                     <Link
                       href={link.href}
                       className="text-[15px] leading-[1.55] text-mid transition-colors hover:text-red"

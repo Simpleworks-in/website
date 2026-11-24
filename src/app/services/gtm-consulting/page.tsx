@@ -181,6 +181,7 @@ const WHY = {
     "Part of the Neoffice management team that ran growth and strategy.",
     "ET-SIDBI Best Exporter award, Micro Enterprise category, 2019, won by Neoffice.",
     "Before that, Premraj worked on the business side at Usha International, Apollo Tyres and MRF.",
+    "In telecom at BPL Mobile, Airtel and Tata Docomo: sales and distribution, business operations, customer lifecycle management and customer interactions (call centres and relationship centres), ending as Chief Operating Officer of the Kerala circle at Tata Docomo.",
   ],
   closing: "You work with Premraj himself, not a junior team.",
 };
@@ -522,9 +523,10 @@ export default function GtmConsultingPage() {
           {WHY.points.map((point) => (
             <li
               key={point}
-              className="border-t-[0.5px] border-rule py-4 text-[17px] md:text-[18px] leading-[1.6] text-mid"
+              className="flex items-baseline gap-[18px] border-t-[0.5px] border-rule py-4 text-[17px] md:text-[18px] leading-[1.6] text-mid"
             >
-              {point}
+              <span aria-hidden="true" className="h-2 w-2 flex-shrink-0 -translate-y-1 rounded-full bg-red" />
+              <span>{point}</span>
             </li>
           ))}
         </ul>
