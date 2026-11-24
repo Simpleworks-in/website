@@ -61,7 +61,7 @@ const HERO = {
 
 const SITUATIONS = {
   eyebrow: "Does this sound like your business?",
-  heading: { text: "Owners usually call us when", red: "sales stop moving." },
+  heading: { text: "Owners usually", red: "call us when sales stop moving." },
   items: [
     {
       quote: "Sales are flat while the market grows.",
@@ -96,15 +96,15 @@ const CAUSES = {
   lead: "Before more effort or more spend, three questions need a precise answer. Most businesses have answered at least one of them vaguely.",
   items: [
     {
-      title: "Who exactly is the customer?",
+      title: { before: "", red: "Who", after: " exactly is the customer?" },
       text: "Not “everyone who might buy”. The two or three segments most likely to buy, pay on time and come back.",
     },
     {
-      title: "Why would they choose you?",
+      title: { before: "Why would they ", red: "choose", after: " you?" },
       text: "One honest reason a buyer should pick you over the next option, in words your sales team can use.",
     },
     {
-      title: "How do you reach them?",
+      title: { before: "How do you ", red: "reach", after: " them?" },
       text: "Direct sales, dealers and distributors, retail chains or online: which channel, in what order, with the team you have.",
     },
   ],
@@ -112,7 +112,7 @@ const CAUSES = {
 
 const COVERS = {
   eyebrow: "What we work on",
-  heading: { text: "What go-to-market strategy", red: "covers." },
+  heading: { text: "What", red: "go-to-market strategy covers." },
   rows: [
     {
       title: "The right customers",
@@ -145,13 +145,16 @@ const CHANNELS = {
   eyebrow: "Dealers and distributors",
   heading: { text: "Sales and distribution", red: "the way India buys." },
   lead: "Most Indian MSMEs sell through someone else: dealers, distributors, retailers and, more and more, marketplaces. Getting that right decides growth more than any campaign.",
+  // The chain the section is about, drawn as a strip (redesign, 24 Nov).
+  chain: ["Your business", "Distributor", "Dealer and retailer", "Customer"],
+  online: "Online and marketplaces: straight to the customer",
   items: [
-    "Finding and appointing distributors in a new state",
-    "Getting dealers and distributors to push your product, not just stock it",
-    "General trade and modern trade: when to enter the large retail chains, and on what terms",
-    "Expanding into new markets and states, one at a time",
-    "Pricing and margins along the channel",
-    "Online and marketplaces alongside the trade",
+    { title: "Appoint the right distributors", text: "Finding and appointing distributors in a new state." },
+    { title: "Get them to push, not just stock", text: "Getting dealers and distributors to push your product, not just hold it." },
+    { title: "General trade and modern trade", text: "When to enter the large retail chains, and on what terms." },
+    { title: "New states, one at a time", text: "Expanding into new markets and states in the right order." },
+    { title: "Pricing and margins along the channel", text: "What each link earns, and what the customer pays." },
+    { title: "Online alongside the trade", text: "Marketplaces and online sales, run alongside your distributors." },
   ],
 };
 
@@ -393,8 +396,12 @@ export default function GtmConsultingPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">
           {CAUSES.items.map((item) => (
-            <div key={item.title} className="border-t-2 border-ink pt-6">
-              <h3 className={`${H3} mb-3`}>{item.title}</h3>
+            <div key={item.title.red} className="border-t-2 border-ink pt-6">
+              <h3 className={`${H3} mb-3`}>
+                {item.title.before}
+                <span className="text-red">{item.title.red}</span>
+                {item.title.after}
+              </h3>
               <p className={BODY}>{item.text}</p>
             </div>
           ))}
@@ -448,16 +455,52 @@ export default function GtmConsultingPage() {
           <Heading heading={CHANNELS.heading} />
           <p className={`${BODY} max-w-[680px] mt-4 md:mt-5`}>{CHANNELS.lead}</p>
         </div>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 max-w-[1000px]">
-          {CHANNELS.items.map((item) => (
-            <li
-              key={item}
-              className="border-t-[0.5px] border-rule py-4 text-[17px] md:text-[18px] leading-[1.6] text-ink"
-            >
-              {item}
+        {/* The channel, as a strip: business → distributor → dealer → customer. */}
+        <div className="mb-14 max-w-[1000px]">
+          <ol className="flex flex-col md:flex-row md:items-stretch gap-2 md:gap-0">
+            {CHANNELS.chain.map((step, i) => (
+              <li key={step} className="flex flex-col md:flex-row md:items-stretch md:flex-1">
+                <div
+                  className={`flex flex-1 flex-col justify-center border px-5 py-4 ${
+                    i === CHANNELS.chain.length - 1 ? "border-red" : "border-ink"
+                  }`}
+                >
+                  <p className="text-[12px] md:text-[13px] uppercase tracking-widest text-light mb-1">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <p className={`text-[17px] md:text-[18px] font-bold leading-[1.3] ${
+                    i === CHANNELS.chain.length - 1 ? "text-red" : "text-ink"
+                  }`}>
+                    {step}
+                  </p>
+                </div>
+                {i < CHANNELS.chain.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="self-center px-3 py-1 text-[22px] leading-none text-red rotate-90 md:rotate-0"
+                  >
+                    →
+                  </span>
+                )}
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4 border-t border-dashed border-red pt-3 text-[14px] md:text-[15px] text-mid">
+            {CHANNELS.online}
+          </p>
+        </div>
+
+        <ol className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12">
+          {CHANNELS.items.map((item, i) => (
+            <li key={item.title} className="border-t-[0.5px] border-rule py-6">
+              <span className="mb-2 block text-[15px] font-bold text-red [font-variant-numeric:tabular-nums]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mb-2 text-[19px] md:text-[21px] font-bold leading-[1.3] text-ink">{item.title}</h3>
+              <p className={BODY}>{item.text}</p>
             </li>
           ))}
-        </ul>
+        </ol>
       </section>
 
       {/* ── 6. WHO WE WORK WITH / WHAT WE DON'T DO ── */}
