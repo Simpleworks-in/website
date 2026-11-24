@@ -45,6 +45,8 @@ const HERO = {
     "Simpleworks Consulting is a boutique business consulting firm in Bangalore. Premraj Menon gives founder-led MSMEs senior business advisory, from strategy through to execution.",
   body: "You know your business better than any consultant could. But growth has slowed, or every decision still lands on your desk, and that is hard to fix from the inside. You don’t have to pick a service. Find the problem below that sounds like your week, and see what we would do about it.",
   scope: "We don’t offer tax, compliance or registration services.",
+  // Same label as the homepage hero button.
+  cta: { label: "Let’s discuss your business", dataCta: "hub-hero" },
   image: {
     src: "/images/hub-hero-owner-chart.webp",
     alt: "Watercolour illustration of a business owner studying a sales chart that has flattened and started to fall, with his factory floor visible through the office window",
@@ -318,6 +320,16 @@ export default function ServicesPage() {
             </p>
             <p className={`${BODY} max-w-[560px] mb-4`}>{HERO.body}</p>
             <p className={`${BODY} max-w-[560px]`}>{HERO.scope}</p>
+            <a
+              href={whatsappHref()}
+              data-cta={HERO.cta.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${BUTTON} mt-8 md:mt-10`}
+            >
+              <WhatsAppIcon size={20} />
+              {HERO.cta.label} &nbsp;→
+            </a>
           </div>
           {/* Top margin = eyebrow height, so the image lines up with the H1. */}
           <div className="min-[900px]:flex-[1.4_1_480px] min-w-0 min-[900px]:mt-[41px]">
@@ -369,7 +381,7 @@ export default function ServicesPage() {
             </li>
           ))}
         </ol>
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-x-12 gap-y-6 border-t-[0.5px] border-rule pt-8">
+        <div className="flex flex-col gap-y-6 border-t-[0.5px] border-rule pt-8">
           <p className={`${BODY} max-w-[680px]`}>
             <strong className="font-bold text-ink">&ldquo;{HELP.quoteLead}</strong>{" "}
             {HELP.quoteBody}&rdquo;{" "}
