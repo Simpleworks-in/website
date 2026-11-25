@@ -347,7 +347,7 @@ export default function OkrConsultingPage() {
           </div>
 
           <Image
-            src="/okr-consulting-illustration.png"
+            src="/okr-consulting-illustration.webp"
             alt="OKR consulting workshop for Indian MSME team — Simpleworks Consulting Bengaluru"
             width={800}
             height={533}

@@ -340,7 +340,7 @@ export default function SmallBusinessConsultingPage() {
           </div>
 
           <Image
-            src="/small-business-consulting-illustration.png"
+            src="/small-business-consulting-illustration.webp"
             alt="Small business consultant in conversation with startup founder — Simpleworks Consulting"
             width={800}
             height={600}

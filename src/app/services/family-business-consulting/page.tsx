@@ -355,7 +355,7 @@ export default function FamilyBusinessConsultingPage() {
           </div>
 
           <Image
-            src="/family-business-consulting-illustration.png"
+            src="/family-business-consulting-illustration.webp"
             alt="Family business consultant presenting professionalisation pathway to Indian family business team — Simpleworks Consulting"
             width={800}
             height={533}

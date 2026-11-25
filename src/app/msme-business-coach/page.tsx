@@ -460,7 +460,7 @@ export default function MsmeBusinessCoachPage() {
               </p>
               <div className="flex items-center gap-4 mb-4">
                 <Image
-                  src="/images/landing/prem-menon-portrait.png"
+                  src="/images/landing/prem-menon-portrait.webp"
                   alt="Premraj Menon"
                   width={56}
                   height={56}
@@ -670,7 +670,7 @@ export default function MsmeBusinessCoachPage() {
           <div className="grid gap-10 md:grid-cols-[300px_1fr] lg:grid-cols-[340px_1fr] md:gap-14 md:items-start">
             <div>
               <Image
-                src="/images/landing/prem-menon-portrait.png"
+                src="/images/landing/prem-menon-portrait.webp"
                 alt="Premraj Menon, MSME Business Coach"
                 width={1024}
                 height={1024}

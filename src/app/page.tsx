@@ -288,7 +288,7 @@ export default function HomePage() {
             right. Mobile: portrait, text, then the CTA last. */}
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,300px)_1fr] xl:grid-cols-[minmax(0,360px)_1fr] lg:grid-rows-[auto_1fr] gap-x-14 gap-y-8 items-start">
           <Image
-            src="/premraj-menon-msme-growth-consultant.png"
+            src="/premraj-menon-msme-growth-consultant.webp"
             alt={WHY.portraitAlt}
             width={1024}
             height={1024}
