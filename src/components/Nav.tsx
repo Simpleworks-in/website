@@ -63,8 +63,9 @@ export default function Nav() {
         </Link>
 
         {/* Desktop links */}
-        {/* lg:gap-5 (not 6) so "Customer Stories" fits at 1024px without crowding the logo. */}
-        <ul className="hidden list-none items-center gap-4 whitespace-nowrap md:flex lg:gap-5 xl:gap-8">
+        {/* Desktop menu from 1024px; tablets use the hamburger menu (the full menu
+            overflowed by about 49px at 768px). lg:gap-5 keeps 1024px tidy. */}
+        <ul className="hidden list-none items-center whitespace-nowrap lg:flex lg:gap-5 xl:gap-8">
           {links.map((link) => {
             const active = isActive(link.href);
             return (
@@ -109,7 +110,7 @@ export default function Nav() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="flex h-10 w-10 items-center justify-center text-ink md:hidden"
+          className="flex h-10 w-10 items-center justify-center text-ink lg:hidden"
         >
           {open ? (
             <svg
@@ -144,7 +145,7 @@ export default function Nav() {
 
       {/* Mobile panel */}
       {open && (
-        <div className="border-t border-rule bg-bg px-6 py-5 md:hidden">
+        <div className="border-t border-rule bg-bg px-6 py-5 lg:hidden">
           <ul className="flex list-none flex-col gap-4">
             {links.map((link) => {
               const active = isActive(link.href);
