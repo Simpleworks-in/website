@@ -85,7 +85,7 @@ const AUDIENCES = {
   cards: [
     {
       title: "MSME Consulting",
-      text: "Founder-led businesses with ₹10–200 crore in revenue and 20 or more people, in manufacturing, consumer goods, retail and distribution, usually at a turning point.",
+      text: "Founder-led businesses, typically with ₹10–200 crore in revenue, in manufacturing, consumer goods, retail and distribution, usually at a turning point.",
       link: { label: "Explore MSME Consulting", href: "/services/msme-consulting" },
     },
     {
@@ -98,7 +98,7 @@ const AUDIENCES = {
     },
     {
       title: "Family Business Consulting",
-      text: "Second-generation owners and family-run firms working through handover, professional management, and keeping family and business apart.",
+      text: "Second-generation owners and family-run firms working through handover, professional management, and keeping family and business apart. Family-run? If the family question is the bigger one, start here.",
       link: {
         label: "Explore Family Business Consulting",
         href: "/services/family-business-consulting",
@@ -433,9 +433,16 @@ export default function ServicesPage() {
           {PROGRAMMES.cards.map((card) => (
             <li
               key={card.name}
-              className="border-t-[0.5px] border-rule py-5 text-[17px] md:text-[18px] leading-[1.6] text-mid"
+              className="flex flex-col gap-1 border-t-[0.5px] border-rule py-5 text-[17px] md:text-[18px] leading-[1.6] text-mid sm:flex-row sm:justify-between sm:gap-8"
             >
-              <strong className="font-bold text-ink">Simple {card.name}</strong>: {card.forWho}
+              <span>
+                <strong className="font-bold text-ink">Simple {card.name}</strong>: {card.forWho}
+              </span>
+              {/* Fee from lib/programmes.ts via the homepage cards (cost signal, review 24 Nov). */}
+              <span className="whitespace-nowrap text-ink">
+                {card.name === "Reset" ? `From ${card.price}` : card.price}
+                {card.name === "Counsel" || card.name === "Advisory" ? " a month" : ""}
+              </span>
             </li>
           ))}
         </ul>
@@ -457,7 +464,63 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      {/* ── 6. GO DEEPER ── every blog link from the old cards. */}
+      {/* ── 6. QUESTIONS ── */}
+      <section className={SECTION}>
+        <SectionHeader eyebrow={QUESTIONS.eyebrow} heading={QUESTIONS.heading} />
+        <div className="max-w-[900px] border-b-[0.5px] border-rule">
+          {HUB_FAQS.map((item, i) => (
+            <details key={item.id} open={i === 0} className="faq-item border-t-[0.5px] border-rule">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
+                <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.4] text-ink">
+                  {item.q}
+                </h3>
+                <span
+                  aria-hidden="true"
+                  className="faq-pm flex-shrink-0 text-[26px] leading-none text-red transition-transform duration-200"
+                >
+                  +
+                </span>
+              </summary>
+              <div
+                className={`${BODY} pb-[26px] max-w-[760px] [&_p]:mb-3 [&_p:last-child]:mb-0 [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline`}
+                dangerouslySetInnerHTML={{
+                  __html: item.aHtml ?? `<p>${escapeHtml(item.a)}</p>`,
+                }}
+              />
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 7. CLOSING CALL TO ACTION ── */}
+      <section className={SECTION}>
+        <div className="max-w-[760px]">
+          <div className="mb-8">
+            <Heading heading={CLOSING.heading} />
+          </div>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a
+              href={whatsappHref()}
+              data-cta={CLOSING.primary.dataCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={BUTTON}
+            >
+              <WhatsAppIcon size={20} />
+              {CLOSING.primary.label} &nbsp;→
+            </a>
+            <Link
+              href={CLOSING.secondary.href}
+              data-cta={CLOSING.secondary.dataCta}
+              className={TEXT_LINK}
+            >
+              {CLOSING.secondary.label} &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. GO DEEPER ── after the closing call to action, so the blog isn't an exit before it (review, 24 Nov). */}
       <section className={SECTION}>
         <SectionHeader eyebrow={DEEPER.eyebrow} heading={DEEPER.heading} />
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-10">
@@ -501,62 +564,6 @@ export default function ServicesPage() {
                 <span className="text-[14px] text-red">Read article &rarr;</span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 7. QUESTIONS ── */}
-      <section className={SECTION}>
-        <SectionHeader eyebrow={QUESTIONS.eyebrow} heading={QUESTIONS.heading} />
-        <div className="max-w-[900px] border-b-[0.5px] border-rule">
-          {HUB_FAQS.map((item, i) => (
-            <details key={item.id} open={i === 0} className="faq-item border-t-[0.5px] border-rule">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-[22px] [&::-webkit-details-marker]:hidden">
-                <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.4] text-ink">
-                  {item.q}
-                </h3>
-                <span
-                  aria-hidden="true"
-                  className="faq-pm flex-shrink-0 text-[26px] leading-none text-red transition-transform duration-200"
-                >
-                  +
-                </span>
-              </summary>
-              <div
-                className={`${BODY} pb-[26px] max-w-[760px] [&_p]:mb-3 [&_p:last-child]:mb-0 [&_a]:text-red [&_a]:underline hover:[&_a]:no-underline`}
-                dangerouslySetInnerHTML={{
-                  __html: item.aHtml ?? `<p>${escapeHtml(item.a)}</p>`,
-                }}
-              />
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* ── 8. CLOSING CALL TO ACTION ── */}
-      <section className={SECTION}>
-        <div className="max-w-[760px]">
-          <div className="mb-8">
-            <Heading heading={CLOSING.heading} />
-          </div>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            <a
-              href={whatsappHref()}
-              data-cta={CLOSING.primary.dataCta}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={BUTTON}
-            >
-              <WhatsAppIcon size={20} />
-              {CLOSING.primary.label} &nbsp;→
-            </a>
-            <Link
-              href={CLOSING.secondary.href}
-              data-cta={CLOSING.secondary.dataCta}
-              className={TEXT_LINK}
-            >
-              {CLOSING.secondary.label} &rarr;
-            </Link>
           </div>
         </div>
       </section>
