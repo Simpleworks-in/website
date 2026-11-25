@@ -303,6 +303,32 @@ const LIBRARY = [
     q: "What does the first step look like?",
     a: "An introductory call. You describe what is not moving, and we decide together whether OKRs are the right tool, before any fee is agreed.",
   },
+  // ── /tamil-nadu-msme-consultant ──
+  {
+    id: "tn-remote",
+    q: "Can a consultant in Bangalore really help a business in Coimbatore or Tiruppur?",
+    a: "Yes. Most of the work is a weekly or monthly call, shared documents and WhatsApp, which is how most owners already run their week. Premraj visits when the work needs it.",
+  },
+  {
+    id: "tn-visits",
+    q: "Do you visit our unit?",
+    a: "In Hosur and Krishnagiri, as often as the work needs. Elsewhere in Tamil Nadu, visits are planned into the programme, with travel charged at actuals.",
+  },
+  {
+    id: "tn-tamil",
+    q: "Can we talk in Tamil?",
+    a: "Premraj understands Tamil and speaks a little. Sessions are in English, and your team can speak in Tamil where that is easier.",
+  },
+  {
+    id: "tn-nda",
+    q: "Will you sign an NDA?",
+    a: "Yes. Your numbers and your family’s matters stay with you.",
+  },
+  rich(
+    "tn-cost",
+    "How much does it cost?",
+    '<p>Every programme has a fixed fee, listed on the <a href="/programmes">programmes page</a>. After a first conversation, Premraj suggests the one that fits and confirms the fee, plus travel at actuals, in writing.</p>',
+  ),
 ] as const satisfies readonly FaqItem[];
 
 export type FaqId = (typeof LIBRARY)[number]["id"];
@@ -389,6 +415,9 @@ export const okrFaqIds = [
   "okr-how-many",
   "okr-first-step",
 ] as const satisfies readonly FaqId[];
+
+/** /tamil-nadu-msme-consultant's five, in display order. */
+export const tnFaqIds = ["tn-remote", "tn-visits", "tn-tamil", "tn-nda", "tn-cost"] as const satisfies readonly FaqId[];
 
 /** Library items /programmes uses. Its other seven live in app/programmes/faqs.ts. */
 export const programmesFaqIds = ["fees-programmes", "duration"] as const satisfies readonly FaqId[];
