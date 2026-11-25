@@ -257,6 +257,52 @@ const LIBRARY = [
     "How long does it take, and what does it cost?",
     `<p>Most founders start with the Simple Diagnostic, a half-day session at ${price("diagnostic")}. After that, the Simple Counsel (${price("counsel")} a month, in person) or the Simple Advisory (${price("advisory")} a month, online) continues month by month, with a three-month minimum. Each has a fixed fee, agreed before we begin.</p><p><a href="https://www.simpleworks.in/programmes">See all programmes and fees →</a></p>`,
   ),
+  // ── /services/okr-consulting (handover 25 Nov; order fixed) ──
+  {
+    id: "okr-annual-targets",
+    q: "We already set annual targets. Is that the same as OKRs?",
+    a: "No. An annual target is the destination for the year. An OKR is the step for the current quarter, with a number and a named owner on every part. Most MSMEs have the target and no path with owners.",
+  },
+  {
+    id: "okr-duration",
+    q: "How long does an OKR consulting engagement typically last?",
+    a: "After set-up, two quarters of live OKRs run alongside your team, then handover. Set-up comes first, through the Simple Reset or as an add-on to the Simple Diagnostic. The two quarters then run within Simple Counsel.",
+  },
+  {
+    id: "okr-cost",
+    q: "What does the OKR work cost?",
+    a: `OKR work is part of the Simple Counsel (${price("counsel")} a month, minimum three months). It is set up as the end result of a Simple Reset (${price("reset60")} for 60 days) or as an add-on to the Simple Diagnostic (${price("diagnostic")}). As an add-on to the Diagnostic, OKR implementation is ${price("okrAddOn")} for three in-person sessions. Fees are fixed and agreed before work begins.`,
+  },
+  {
+    id: "okr-only",
+    q: "Do you run OKR-only projects?",
+    a: "No. OKRs are part of how Simpleworks runs strategy implementation. OKR-only work, such as software rollouts, HR performance systems or certification, is a specialist field, and we will say so on the first call.",
+  },
+  {
+    id: "okr-target-review",
+    q: "Is an OKR just a target review?",
+    a: "Close. The Objective is the target and the Key Results are the key indicators. What makes it an OKR is the rhythm: one quarter, a named owner on every indicator, a weekly check-in and an honest score at the end.",
+  },
+  {
+    id: "okr-vs-workshop",
+    q: "What is OKR consulting, and is it different from a workshop?",
+    a: "A workshop gives your team the vocabulary. OKR consulting builds the OKRs for your business, runs the first two quarters with you and leaves a system your team can run. The difference shows in the third month, when the weekly check-ins are still happening.",
+  },
+  {
+    id: "okr-software",
+    q: "Do we need OKR software?",
+    a: "No. A shared sheet and a fixed weekly meeting are enough for a team of this size. Software helps later, once the habit exists.",
+  },
+  {
+    id: "okr-how-many",
+    q: "How many OKRs should a small business have?",
+    a: "Start with one company objective and two Key Results. Each team adds one objective with two Key Results. More than that and the weekly check-in stops being a conversation.",
+  },
+  {
+    id: "okr-first-step",
+    q: "What does the first step look like?",
+    a: "An introductory call. You describe what is not moving, and we decide together whether OKRs are the right tool, before any fee is agreed.",
+  },
 ] as const satisfies readonly FaqItem[];
 
 export type FaqId = (typeof LIBRARY)[number]["id"];
@@ -329,6 +375,19 @@ export const startupFaqIds = [
   "startup-equity",
   "startup-location",
   "startup-duration-cost",
+] as const satisfies readonly FaqId[];
+
+/** /services/okr-consulting's nine, in the handover's order. */
+export const okrFaqIds = [
+  "okr-annual-targets",
+  "okr-duration",
+  "okr-cost",
+  "okr-only",
+  "okr-target-review",
+  "okr-vs-workshop",
+  "okr-software",
+  "okr-how-many",
+  "okr-first-step",
 ] as const satisfies readonly FaqId[];
 
 /** Library items /programmes uses. Its other seven live in app/programmes/faqs.ts. */

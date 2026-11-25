@@ -64,7 +64,7 @@ const ROW_LINKS: TextLink[][] = [
   [
     { label: "Strategy Implementation", href: "/services/execution-consulting" },
     {
-      label: "Goals and weekly accountability: Objectives and Key Results (OKRs)",
+      label: "OKRs inside strategy implementation",
       href: "/services/okr-consulting",
     },
   ],

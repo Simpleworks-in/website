@@ -8,6 +8,7 @@ export const PRICES = {
   reset60: 280000,
   counsel: 75000, // per month
   advisory: 35000, // per month
+  okrAddOn: 100000, // OKR implementation, three in-person sessions, on top of the Diagnostic
 } as const;
 
 export type PriceKey = keyof typeof PRICES;
