@@ -6,6 +6,7 @@ import { whatsappHref } from "@/lib/whatsapp";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { PRICES, price } from "@/lib/programmes";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import PremrajBio from "@/components/PremrajBio";
 
 export const metadata: Metadata = {
   title: { absolute: "Business Coach for MSME Owners in India | Simpleworks, Bangalore" },
@@ -103,25 +104,6 @@ const STORY_BLOCKS = [
     label: "What’s changed so far",
     text: "New B2B customers are signing on beyond the two anchors, and the first aftermarket distributor is on board.",
     strong: true,
-  },
-];
-
-const CSUITE_VIEW = [
-  { name: "Tata Docomo", line: "COO, Kerala circle, with full P&L responsibility" },
-  { name: "Bharti Airtel · BPL Mobile", line: "Telecom leadership: sales, distribution and operations" },
-  { name: "MRF · Apollo Tyres", line: "Dealer networks and government sales" },
-  { name: "Usha International", line: "Started as a sales trainee in 1987" },
-];
-
-const OWNER_VIEW = [
-  { name: "Viworks Ventures", line: "Co-founder: sales strategy and operations for businesses" },
-  {
-    name: "Neoffice, from September 2019",
-    line: "Management team, running growth and strategy. Neoffice won the ET-SIDBI MSME award for Best Exporter, Micro category, in 2019",
-  },
-  {
-    name: "Around 3,000 MSME partners",
-    line: "Worked with and coached on business performance across the corporate years",
   },
 ];
 
@@ -389,28 +371,6 @@ function FaqAnswer({ text }: { text: string }) {
   return <>{text}</>;
 }
 
-function CareerColumn({
-  eyebrow,
-  rows,
-}: {
-  eyebrow: string;
-  rows: { name: string; line: string }[];
-}) {
-  return (
-    <div className="border-t border-ink pt-4">
-      <p className={`${LABEL} mb-4`}>{eyebrow}</p>
-      <ul className="flex flex-col gap-4">
-        {rows.map((row) => (
-          <li key={row.name}>
-            <p className="text-[16px] font-bold text-ink leading-snug">{row.name}</p>
-            <p className="text-[15px] text-mid leading-relaxed">{row.line}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 export default function MsmeBusinessCoachPage() {
   return (
     <main>
@@ -665,74 +625,33 @@ export default function MsmeBusinessCoachPage() {
       </section>
 
       {/* 5. WHO YOU'LL WORK WITH */}
-      <section id="who" className={SECTION}>
-        <div className={WRAP}>
-          <div className="grid gap-10 md:grid-cols-[300px_1fr] lg:grid-cols-[340px_1fr] md:gap-14 md:items-start">
-            <div>
-              <Image
-                src="/images/landing/prem-menon-portrait.webp"
-                alt="Premraj Menon, MSME Business Coach"
-                width={1024}
-                height={1024}
-                sizes="(min-width: 768px) 340px, 80vw"
-                className="w-full max-w-[340px] h-auto mx-auto md:mx-0"
-              />
-            </div>
-            <div>
-              <Eyebrow>Who you&rsquo;ll work with</Eyebrow>
-              <h2 className={`${H2} mb-3`}>
-                You work with Premraj,{" "}
-                <span className="text-red">not a junior team.</span>
-              </h2>
-              <p className="text-[15px] text-light mb-5">
-                Premraj Menon · Founder, Simpleworks Consulting · MSME Business
-                Coach, Bengaluru
-              </p>
-              <p className="text-[18px] md:text-[20px] text-ink leading-[1.6] mb-8">
-                Most advisors bring one view of a business. Premraj Menon
-                brings two: the C-suite view from about 30 years in large
-                companies, rising to COO with full P&amp;L, and the
-                owner&rsquo;s view from nearly 10 years inside MSMEs. He now
-                works as a business coach in Bangalore for founder-led MSMEs
-                and SMEs.
-              </p>
-              <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 mb-8">
-                <CareerColumn
-                  eyebrow="The C-suite view · About 30 years"
-                  rows={CSUITE_VIEW}
-                />
-                <CareerColumn
-                  eyebrow="The owner’s view · Nearly 10 years"
-                  rows={OWNER_VIEW}
-                />
-              </div>
-              <p className="border-t border-rule pt-5 text-[16px] md:text-[17px] text-ink leading-[1.7] mb-3">
-                What that means for you: boardroom discipline on strategy,
-                P&amp;L and review, applied to a business where the owner signs
-                every cheque.
-              </p>
-              <p className="text-[14px] text-light mb-8">
-                IIM Bengaluru · Ross School of Business, University of Michigan
-              </p>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-                <a
-                  href={CONTACT_LINK}
-                  data-cta="bio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={BTN}
-                >
-                  <WhatsAppIcon />
-                  WhatsApp Premraj
-                </a>
-                <span className="text-[14px] text-light">
-                  No pitch, no commitment.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PremrajBio
+        ctaHref={CONTACT_LINK}
+        portraitAlt="Premraj Menon, MSME Business Coach"
+        subLine={
+          <>
+            Premraj Menon · Founder, Simpleworks Consulting · MSME Business
+            Coach, Bengaluru
+          </>
+        }
+        lead={
+          <>
+            Most advisors bring one view of a business. Premraj Menon
+            brings two: the C-suite view from about 30 years in large
+            companies, rising to COO with full P&amp;L, and the
+            owner&rsquo;s view from nearly 10 years inside MSMEs. He now
+            works as a business coach in Bangalore for founder-led MSMEs
+            and SMEs.
+          </>
+        }
+        meaning={
+          <>
+            What that means for you: boardroom discipline on strategy,
+            P&amp;L and review, applied to a business where the owner signs
+            every cheque.
+          </>
+        }
+      />
 
       {/* 6. THE RIGHT FIT */}
       <section id="fit" className={SECTION}>
