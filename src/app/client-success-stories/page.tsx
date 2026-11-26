@@ -144,6 +144,60 @@ export default async function ClientStoriesPage() {
         })
       )}
 
+      {/* ── GOOGLE REVIEWS (hand-picked, word for word; hidden until one is added in Keystatic) ── */}
+      {text.googleReviews && text.googleReviews.length > 0 ? (
+        <section id="google-reviews" className={`reveal border-t-[0.5px] border-rule ${PAD} py-14`}>
+          <p className={`${LABEL} mb-4`}>Google reviews</p>
+          <h2 className={`${H2} ${text.googleRating ? "mb-3" : "mb-8 md:mb-10"}`}>
+            What clients say <span className="text-red">on Google.</span>
+          </h2>
+          {text.googleRating ? (
+            <p className="mb-8 md:mb-10 text-[15px] text-light">
+              Rated <span className="font-bold text-ink">{text.googleRating}</span> on Google
+              {text.googleReviewCount ? ` from ${text.googleReviewCount} reviews` : ""}
+            </p>
+          ) : null}
+          <ul className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            {text.googleReviews.map((review) => {
+              // Stars only when the rating was entered; never assume one.
+              const stars =
+                review.rating == null ? null : Math.min(5, Math.max(1, review.rating));
+              return (
+                <li key={`${review.name}-${review.date}`} className="flex flex-col border-t border-ink pt-5">
+                  {stars !== null ? (
+                    <p
+                      className="mb-3 text-[16px] tracking-[0.15em] text-ink"
+                      role="img"
+                      aria-label={`${stars} out of 5 stars`}
+                    >
+                      {"★".repeat(stars)}
+                      <span className="text-rule">{"★".repeat(5 - stars)}</span>
+                    </p>
+                  ) : null}
+                  <blockquote className={`${BODY} mb-4 whitespace-pre-line`}>{review.text}</blockquote>
+                  <p className="mt-auto text-[14px] leading-snug text-light">
+                    <span className="font-bold text-ink">{review.name}</span>
+                    {review.date ? ` · ${review.date}` : ""} · Google review
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
+          {text.googleProfileUrl ? (
+            <p className="mt-10">
+              <a
+                href={text.googleProfileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[16px] text-red hover:underline"
+              >
+                Read all reviews on Google →
+              </a>
+            </p>
+          ) : null}
+        </section>
+      ) : null}
+
       {/* ── FOOTNOTE ── */}
       <section className={`border-t-[0.5px] border-rule ${PAD} py-8`}>
         <p className="max-w-[760px] text-[14px] leading-[1.7] text-light">{text.closingFootnote}</p>

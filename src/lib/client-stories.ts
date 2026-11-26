@@ -34,6 +34,17 @@ export type StoriesPageText = {
   ctaButtonLabel: string;
   ctaButtonHref: string;
   ctaCaption: string;
+  googleProfileUrl?: string;
+  googleRating?: string;
+  googleReviewCount?: number | null;
+  googleReviews?: readonly GoogleReview[];
+};
+
+export type GoogleReview = {
+  name: string;
+  rating: number | null;
+  date: string;
+  text: string;
 };
 
 const reader = () => createReader(process.cwd(), keystaticConfig);

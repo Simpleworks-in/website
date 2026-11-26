@@ -117,6 +117,33 @@ export default config({
           label: "Caption before phone and email",
           description: 'Shown as "Or call <phone> · <email>". Phone and email come from the site facts.',
         }),
+        googleProfileUrl: fields.text({
+          label: "Google reviews link",
+          description:
+            'Link to the Simpleworks Google Business Profile reviews. Used for "Read all reviews on Google".',
+        }),
+        googleRating: fields.text({
+          label: "Google rating shown above the reviews, e.g. 5.0",
+          description: "Copy from the Google Business Profile. Leave empty to hide the rating line.",
+        }),
+        googleReviewCount: fields.integer({
+          label: "Number of Google reviews",
+          description: "Copy from the Google Business Profile.",
+        }),
+        googleReviews: fields.array(
+          fields.object({
+            name: fields.text({ label: "Reviewer name, exactly as on Google" }),
+            rating: fields.integer({ label: "Stars (1 to 5)", defaultValue: 5, validation: { min: 1, max: 5 } }),
+            date: fields.text({ label: "Date, e.g. October 2026" }),
+            text: fields.text({ label: "Review text, word for word", multiline: true }),
+          }),
+          {
+            label: "Google reviews (hand-picked)",
+            description:
+              "Copy reviews word for word from Google. The section stays hidden until at least one review is added.",
+            itemLabel: (props) => props.fields.name.value || "Review",
+          },
+        ),
       },
     }),
   },

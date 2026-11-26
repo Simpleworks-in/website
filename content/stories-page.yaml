@@ -16,3 +16,34 @@ ctaBody: >-
 ctaButtonLabel: Message us on WhatsApp
 ctaButtonHref: /contact
 ctaCaption: Or call
+googleProfileUrl: https://www.google.com/maps/search/?api=1&query=Simpleworks+Consulting+Bengaluru
+googleRating: '5.0'
+googleReviewCount: 9
+googleReviews:
+  - name: Sree kumar
+    rating: 5
+    date: ''
+    text: >-
+      I have known Prem Menon for over 20 years and have always been impressed by his rare combination of operational excellence, deep field experience, and strong strategic thinking. His advice is practical, insightful, and grounded in real business realities. What sets him apart is his ability to translate strategy into execution and measurable results. Any business looking for growth, clarity, and disciplined execution would benefit greatly from working with Prem and the Simpleworks team.
+  - name: Vaishak .A
+    rating: 5
+    date: May 2026
+    text: >-
+      Simpleworks Business consulting support was clear and easy to work throughout, where they were more professional, responsive and brought deeper insights that truly helped me to take a clear decision for the business betterment.
+  - name: Suresh Kumar Pillai
+    rating: 5
+    date: May 2026
+    text: >-
+      Excellent inputs on business , current scenario, course correction, suggestions on improvement and taking business forward. Ideal people for seeking business consulting services
+  - name: Manoj Manicketh
+    rating: 5
+    date: May 2026
+    text: |-
+      Premraj is a powerhouse of knowledge.
+      His ability to simplify complex situations is amazing.
+      He’s is focused, diligent & very trustworthy… always a pleasure working with him👍😊
+  - name: R R
+    rating: 5
+    date: August 2026
+    text: >-
+      Very insightful discussion. Sometimes you have everything but need a fresh eye to help you. I think Prem does that job well.
