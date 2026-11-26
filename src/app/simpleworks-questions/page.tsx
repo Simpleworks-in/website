@@ -101,7 +101,7 @@ export default async function SimpleworksQuestionsPage() {
           <div key={g.id}>
             <section id={g.id} className="scroll-mt-16 border-t border-rule px-6 py-14 md:px-14 md:py-20">
               <h2 className="mb-4 text-[32px] font-bold leading-[1.15] tracking-tight text-ink">
-                {g.title}
+                {g.title} <span className="text-red">{g.titleRed}</span>
               </h2>
               {g.note && <p className="mb-6 max-w-[640px] text-[16px] leading-[1.7] text-mid">{g.note}</p>}
               <div className="max-w-[760px] border-b border-rule">

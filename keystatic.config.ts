@@ -51,7 +51,8 @@ export default config({
         groups: fields.array(
           fields.object({
             id: fields.text({ label: "Anchor ID" }),
-            title: fields.text({ label: "Group title" }),
+            title: fields.text({ label: "Group title (black part)" }),
+            titleRed: fields.text({ label: "Group title (red part)" }),
             note: fields.text({ label: "Note (optional)", multiline: true }),
             questions: fields.array(
               fields.object({

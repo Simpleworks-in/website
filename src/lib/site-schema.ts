@@ -64,6 +64,10 @@ export const siteSchema = {
       alumniOf: [
         {
           "@type": "EducationalOrganization",
+          name: "Christ University, Bengaluru",
+        },
+        {
+          "@type": "EducationalOrganization",
           name: "Indian Institute of Management Bengaluru",
         },
         {
