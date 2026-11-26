@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { pushEvent } from "@/lib/tracking";
 
 const INTEREST_OPTIONS = [
@@ -190,15 +189,7 @@ export default function ContactForm({
 
       <p className="border-l-2 border-red pl-5 text-[16px] leading-[1.78] text-mid md:text-[17px]">
         Simpleworks works with founder-led businesses with ₹10–200 crore in
-        revenue. If your business is pre-revenue or below ₹2 crore, the{" "}
-        <Link href="/blog" className="text-red underline hover:no-underline">
-          blog
-        </Link>{" "}
-        and{" "}
-        <Link href="/resources" className="text-red underline hover:no-underline">
-          resources
-        </Link>{" "}
-        are a better place to start.
+        revenue.
       </p>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">

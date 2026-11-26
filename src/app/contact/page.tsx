@@ -36,7 +36,7 @@ const h3 = "text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]";
 const body = "text-[16px] leading-[1.78] text-mid md:text-[17px]";
 const section = "border-t border-rule px-6 py-10 md:px-14 md:py-12";
 const btn =
-  "inline-block whitespace-nowrap rounded-[1px] border border-red bg-transparent px-9 py-[14px] font-serif text-[14px] text-red transition-colors hover:bg-red hover:text-white";
+  "inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-[1px] border border-red bg-transparent px-9 font-serif text-[14px] leading-none text-red transition-colors hover:bg-red hover:text-white [&_.wa-icon]:!m-0 [&_.wa-icon]:!h-[18px] [&_.wa-icon]:!w-[18px]";
 
 const WAYS = [
   {
@@ -199,13 +199,16 @@ export default function ContactPage() {
         <h2 className="sr-only">Three ways to get in touch</h2>
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
           {WAYS.map((w) => (
-            <div key={w.title} className="flex flex-col border-t border-ink pt-5">
-              <p className="mb-3 text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
+            <div
+              key={w.title}
+              className="flex flex-col border-t border-ink pt-5 md:row-span-4 md:grid md:grid-rows-subgrid md:gap-y-0"
+            >
+              <p className="mb-3 text-[11px] font-light uppercase tracking-widest text-red md:text-[13px]">
                 {w.label}
               </p>
               <h3 className={`${h3} mb-3`}>{w.title}</h3>
               <p className="mb-8 text-[16px] leading-[1.7] text-mid">{w.text}</p>
-              <div className="mt-auto">
+              <div className="mt-auto md:mt-0">
                 <a
                   href={w.href}
                   data-cta={w.cta}
