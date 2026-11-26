@@ -332,7 +332,7 @@ export default function AboutPage() {
               2013
             </p>
             <h3 className="mb-2.5 text-[17px] font-bold leading-[1.3] text-ink">
-              19th Tata Group Executive Leadership Seminar
+              Tata Group’s Advanced Global Management Programme
             </h3>
             <p className="text-[14px] leading-[1.5] text-mid">
               Ross School of Business
