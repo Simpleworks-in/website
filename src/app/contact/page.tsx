@@ -5,7 +5,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { FACTS } from "../../../content/facts";
 
 const DESCRIPTION =
-  "Talk to Premraj Menon about what's holding your business back. WhatsApp, book a 15-minute call, or send a note. Replies within one business day.";
+  "Talk to Premraj Menon about what's holding your business back. WhatsApp, book a 30-minute Google Meet, or send a note. Replies within one business day.";
 
 export const metadata = {
   title: {
@@ -34,7 +34,7 @@ const h2 =
   "mb-8 text-[28px] font-bold leading-[1.18] tracking-tight text-ink md:text-[36px]";
 const h3 = "text-[20px] font-bold leading-[1.3] text-ink md:text-[24px]";
 const body = "text-[16px] leading-[1.78] text-mid md:text-[17px]";
-const section = "border-t border-rule px-6 py-14 md:px-14 md:py-20";
+const section = "border-t border-rule px-6 py-10 md:px-14 md:py-12";
 const btn =
   "inline-block whitespace-nowrap rounded-[1px] border border-red bg-transparent px-9 py-[14px] font-serif text-[14px] text-red transition-colors hover:bg-red hover:text-white";
 
@@ -43,16 +43,16 @@ const WAYS = [
     label: "Fastest · usually same day",
     title: "Message on WhatsApp",
     text: "Tell Premraj what you run and what's stuck. A message is pre-filled to get you started.",
-    button: "Open WhatsApp",
+    button: "WhatsApp Premraj",
     href: WHATSAPP_HREF,
     cta: "contact-whatsapp",
     external: true,
     note: "",
   },
   {
-    label: "Pick a time · 15 minutes",
-    title: "Book a call",
-    text: "Choose a slot for a Google Meet call. Bring one question about your business.",
+    label: "Pick a time · 30 minutes",
+    title: "Book a Google Meet",
+    text: "Choose a slot for a 30-minute Google Meet. Bring one question about your business.",
     button: "Choose a time",
     href: CALENDAR_HREF,
     cta: "contact-calendar",
@@ -99,7 +99,7 @@ const HERO_OPTIONS = [
     ),
   },
   {
-    label: "Book a 15-minute call",
+    label: "Book a 30-minute Google Meet",
     value: "Choose a time on Google Calendar",
     href: CALENDAR_HREF,
     cta: "contact-hero-calendar",
@@ -126,17 +126,18 @@ export default function ContactPage() {
     <main>
       {/* 1. Hero: the H1 and the image start level; WhatsApp is the main
           button, and call, email and a booked call sit in a row below both. */}
-      <section className="px-6 pb-12 pt-10 md:px-14 md:pb-16 md:pt-14">
+      <section className="px-6 pb-4 pt-8 md:px-14 md:pb-4 md:pt-10">
         <p className={eyebrow}>Contact</p>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[48fr_52fr] md:items-start md:gap-12">
           <div className="order-2 md:order-none">
             <h1 className="mb-6 text-[40px] font-bold leading-[1.1] tracking-tight text-ink text-balance md:text-[56px]">
-              Something feels stuck.{" "}
-              <span className="text-red">Let&rsquo;s find out what.</span>
+              You&rsquo;ve seen how we work.{" "}
+              <span className="text-red">Now let&rsquo;s look at your business.</span>
             </h1>
             <p className="mb-8 max-w-[560px] text-[16px] italic leading-[1.65] text-mid md:text-[18px]">
-              Tell Premraj what is stuck in your business, in whichever way
-              suits you. He reads every message himself. No pitch, no pressure.
+              Message, call, email or book a 30-minute Google Meet, whichever
+              suits you. Premraj reads every message himself. No pitch, no
+              pressure.
             </p>
             <a
               href={WHATSAPP_HREF}
@@ -165,7 +166,7 @@ export default function ContactPage() {
             />
           </div>
         </div>
-        <ul className="mt-10 grid grid-cols-1 gap-x-8 md:mt-12 md:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-1 gap-x-8 md:mt-10 md:grid-cols-3">
           {HERO_OPTIONS.map((o) => (
             <li key={o.label} className="border-t border-ink">
               <a
@@ -213,6 +214,7 @@ export default function ContactPage() {
                     : {})}
                   className={btn}
                 >
+                  {w.cta === "contact-whatsapp" ? <WhatsAppIcon /> : null}
                   {w.button}
                 </a>
                 {w.note && (
@@ -247,7 +249,7 @@ export default function ContactPage() {
               <li className="grid grid-cols-[28px_1fr] gap-3 border-t border-rule py-4">
                 <span className="text-[16px] font-bold text-ink">2</span>
                 <p className={body}>
-                  <strong className="font-bold text-ink">A 15-minute call</strong>{" "}
+                  <strong className="font-bold text-ink">A 30-minute Google Meet</strong>{" "}
                   to understand the issue and whether Simpleworks can help. If
                   it&rsquo;s not a fit, you&rsquo;ll hear that plainly.
                 </p>
