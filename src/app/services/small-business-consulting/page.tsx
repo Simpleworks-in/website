@@ -364,7 +364,7 @@ export default function SmallBusinessConsultingPage() {
         <div className={WRAP}>
           <div className="flex flex-col-reverse gap-8 md:flex-row md:items-start md:gap-10">
             <div className="md:basis-[48%]">
-              <h1 className="text-[18px] leading-[1.3] md:text-[22px] font-bold text-ink mb-4">
+              <h1 className="text-[16px] leading-[1.35] md:text-[18px] font-bold text-ink mb-3">
                 Small business coach and consultant{" "}
                 <span className="text-red">for owners across India</span>
               </h1>
@@ -418,7 +418,7 @@ export default function SmallBusinessConsultingPage() {
             </div>
           </div>
 
-          <ul className="mt-10 md:mt-12 grid grid-cols-1 border-y border-rule md:grid-cols-3">
+          <ul className="mt-6 md:mt-7 grid grid-cols-1 border-y border-rule md:grid-cols-3">
             {STATS.map((s, i) => (
               <li
                 key={s.num}
