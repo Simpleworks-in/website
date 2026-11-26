@@ -291,7 +291,7 @@ const serviceSchema = {
 };
 
 const WRAP = "max-w-[1200px] mx-auto px-4 md:px-10";
-const SECTION = "border-t border-rule py-12 md:py-16";
+const SECTION = "border-t border-rule py-9 md:py-12";
 const EYEBROW =
   "text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light mb-3";
 const H2 =
@@ -360,11 +360,11 @@ export default function SmallBusinessConsultingPage() {
       </nav>
 
       {/* 1. HERO + 2. STATS */}
-      <section id="hero" className="pt-8 pb-10 md:pt-10 md:pb-14">
+      <section id="hero" className="pt-6 pb-8 md:pt-8 md:pb-10">
         <div className={WRAP}>
-          <div className="flex flex-col-reverse gap-10 md:flex-row md:items-center md:gap-12">
-            <div className="md:basis-[55%]">
-              <h1 className="text-[20px] leading-[1.3] md:text-[26px] font-bold text-ink mb-5">
+          <div className="flex flex-col-reverse gap-8 md:flex-row md:items-start md:gap-10">
+            <div className="md:basis-[48%]">
+              <h1 className="text-[18px] leading-[1.3] md:text-[22px] font-bold text-ink mb-4">
                 Small business coach and consultant{" "}
                 <span className="text-red">for owners across India</span>
               </h1>
@@ -404,13 +404,13 @@ export default function SmallBusinessConsultingPage() {
                 can act on the advice.
               </p>
             </div>
-            <div className="md:basis-[45%]">
+            <div className="md:basis-[52%]">
               <Image
                 src="/images/small-business/small-business-owner-online-coaching.webp"
                 alt="Illustration of a small business owner on a video call from his shop"
                 width={1152}
                 height={860}
-                sizes="(min-width: 1200px) 520px, (min-width: 768px) 45vw, 100vw"
+                sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
                 className="w-full h-auto"
                 priority
                 fetchPriority="high"
@@ -418,7 +418,7 @@ export default function SmallBusinessConsultingPage() {
             </div>
           </div>
 
-          <ul className="mt-12 md:mt-14 grid grid-cols-1 border-y border-rule md:grid-cols-3">
+          <ul className="mt-10 md:mt-12 grid grid-cols-1 border-y border-rule md:grid-cols-3">
             {STATS.map((s, i) => (
               <li
                 key={s.num}
@@ -439,7 +439,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 3. IS THIS FOR YOU? */}
       <section id="recognise" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-8 md:mb-10">
+          <div className="mb-6 md:mb-8">
             <Eyebrow>Is this for you?</Eyebrow>
             <h2 className={H2}>
               Recognise <span className="text-red">any of these?</span>
@@ -471,7 +471,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 4. WHY IT KEEPS HAPPENING */}
       <section id="why-it-happens" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-8 md:mb-10 max-w-[860px]">
+          <div className="mb-6 md:mb-8 max-w-[860px]">
             <Eyebrow>Why it keeps happening</Eyebrow>
             <h2 className={H2}>
               It is rarely a lack of effort.{" "}
@@ -498,7 +498,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 5. WHAT COACHING LOOKS LIKE IN PRACTICE */}
       <section id="practice" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-8 md:mb-10">
+          <div className="mb-6 md:mb-8">
             <Eyebrow>In practice</Eyebrow>
             <h2 className={H2}>
               What small business growth coaching{" "}
@@ -516,7 +516,7 @@ export default function SmallBusinessConsultingPage() {
             ))}
           </div>
 
-          <div className="mt-12 md:mt-14">
+          <div className="mt-10 md:mt-12">
             <h2 className="text-[24px] md:text-[28px] font-bold leading-[1.25] tracking-tight-1 text-ink mb-3">
               Three areas we work in{" "}
               <span className="text-red">for small businesses</span>
@@ -543,7 +543,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 6. MENTOR, COACH OR CONSULTANT */}
       <section id="choosing" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-8 md:mb-10 max-w-[860px]">
+          <div className="mb-6 md:mb-8 max-w-[860px]">
             <Eyebrow>Choosing help</Eyebrow>
             <h2 className={`${H2} mb-5`}>
               Business mentor, coach, or consultant:{" "}
@@ -577,7 +577,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 7. WHAT CHANGES */}
       <section id="changes" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-8 md:mb-10">
+          <div className="mb-6 md:mb-8">
             <Eyebrow>What changes</Eyebrow>
             <h2 className={H2}>
               What&rsquo;s different{" "}
@@ -620,6 +620,7 @@ export default function SmallBusinessConsultingPage() {
 
       {/* 8. PREMRAJ (shared bio) */}
       <PremrajBio
+        sectionClassName={SECTION}
         ctaHref={CONTACT_LINK}
         portraitAlt="Premraj Menon"
         subLine="Premraj Menon · Founder, Simpleworks Consulting · Online across India · Based in Bangalore"
@@ -643,13 +644,13 @@ export default function SmallBusinessConsultingPage() {
       {/* 9. WHAT HAPPENS AFTER YOU MESSAGE */}
       <section id="next-step" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-10">
+          <div className="mb-6 md:mb-8">
             <Eyebrow>Your first step</Eyebrow>
             <h2 className={H2}>
               What happens <span className="text-red">after you message.</span>
             </h2>
           </div>
-          <ol className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10 mb-10">
+          <ol className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10 mb-8">
             {NEXT_STEPS.map((step, i) => (
               <li key={step} className="border-t border-ink pt-5">
                 <span
@@ -683,7 +684,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 10. FEES */}
       <section id="fees" className={SECTION}>
         <div className={WRAP}>
-          <div className="max-w-[720px] mb-10">
+          <div className="max-w-[720px] mb-6 md:mb-8">
             <Eyebrow>Fees</Eyebrow>
             <h2 className={`${H2} mb-5`}>
               What small business coaching <span className="text-red">costs.</span>
@@ -757,7 +758,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 11. FIT */}
       <section id="fit" className={SECTION}>
         <div className={WRAP}>
-          <h2 className={`${H2} mb-8 md:mb-10`}>
+          <h2 className={`${H2} mb-6 md:mb-8`}>
             Is this <span className="text-red">right for your business?</span>
           </h2>
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
@@ -806,7 +807,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 12. FAQ */}
       <section id="faq" className={SECTION}>
         <div className={WRAP}>
-          <div className="mb-8 md:mb-10 max-w-[860px]">
+          <div className="mb-6 md:mb-8 max-w-[860px]">
             <Eyebrow>Frequently asked questions</Eyebrow>
             <h2 className={H2}>
               Questions small business owners ask{" "}
@@ -846,7 +847,7 @@ export default function SmallBusinessConsultingPage() {
       </section>
 
       {/* 13. CLOSING */}
-      <section id="close" className="border-t border-rule py-14 md:py-20">
+      <section id="close" className="border-t border-rule py-10 md:py-14">
         <div className={WRAP}>
           <div className="max-w-[760px]">
             <Eyebrow>Next step</Eyebrow>
@@ -877,7 +878,7 @@ export default function SmallBusinessConsultingPage() {
       {/* 14. READ MORE */}
       <section id="read" className={`${SECTION} border-b`}>
         <div className={WRAP}>
-          <div className="mb-8 md:mb-10">
+          <div className="mb-6 md:mb-8">
             <Eyebrow>Not ready to talk yet?</Eyebrow>
             <h2 className={H2}>
               Read first, <span className="text-red">talk when you are ready.</span>

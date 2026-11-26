@@ -60,12 +60,15 @@ function CareerColumn({
 }
 
 export default function PremrajBio({
+  sectionClassName = SECTION,
   ctaHref,
   portraitAlt,
   subLine,
   lead,
   meaning,
 }: {
+  /** Section padding; defaults to the /msme-business-coach spacing. */
+  sectionClassName?: string;
   ctaHref: string;
   portraitAlt: string;
   subLine: React.ReactNode;
@@ -73,7 +76,7 @@ export default function PremrajBio({
   meaning: React.ReactNode;
 }) {
   return (
-    <section id="who" className={SECTION}>
+    <section id="who" className={sectionClassName}>
       <div className={WRAP}>
         <div className="grid gap-10 md:grid-cols-[300px_1fr] lg:grid-cols-[340px_1fr] md:gap-14 md:items-start">
           <div>
