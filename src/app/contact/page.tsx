@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { FACTS } from "../../../content/facts";
 
 const DESCRIPTION =
@@ -70,6 +71,48 @@ const WAYS = [
   },
 ];
 
+const ICON = "h-5 w-5 shrink-0";
+const HERO_OPTIONS = [
+  {
+    label: "Call",
+    value: FACTS.phone,
+    href: "tel:+919036099000",
+    cta: "contact-hero-phone",
+    external: false,
+    icon: (
+      <svg viewBox="0 0 24 24" className={ICON} fill="none" stroke="currentColor" strokeWidth="1.4">
+        <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
+      </svg>
+    ),
+  },
+  {
+    label: "Email",
+    value: FACTS.email,
+    href: `mailto:${FACTS.email}`,
+    cta: "contact-hero-email",
+    external: false,
+    icon: (
+      <svg viewBox="0 0 24 24" className={ICON} fill="none" stroke="currentColor" strokeWidth="1.4">
+        <rect x="3" y="5" width="18" height="14" rx="1" />
+        <path d="m3 6 9 7 9-7" />
+      </svg>
+    ),
+  },
+  {
+    label: "Book a 15-minute call",
+    value: "Choose a time on Google Calendar",
+    href: CALENDAR_HREF,
+    cta: "contact-hero-calendar",
+    external: true,
+    icon: (
+      <svg viewBox="0 0 24 24" className={ICON} fill="none" stroke="currentColor" strokeWidth="1.4">
+        <rect x="3" y="5" width="18" height="16" rx="1" />
+        <path d="M3 10h18M8 3v4M16 3v4" />
+      </svg>
+    ),
+  },
+];
+
 const DETAILS = [
   { label: "Email", value: FACTS.email, href: `mailto:${FACTS.email}` },
   { label: "Phone", value: FACTS.phone, href: "tel:+919036099000" },
@@ -81,17 +124,72 @@ export default function ContactPage() {
 
   return (
     <main>
-      {/* 1. Hero */}
-      <section className="px-6 pb-12 pt-14 md:px-14 md:pb-16 md:pt-24">
+      {/* 1. Hero: the H1 and the image start level; WhatsApp is the main
+          button, and call, email and a booked call sit in a row below both. */}
+      <section className="px-6 pb-12 pt-10 md:px-14 md:pb-16 md:pt-14">
         <p className={eyebrow}>Contact</p>
-        <h1 className="mb-6 text-[40px] font-bold leading-[1.1] tracking-tight text-ink text-balance md:text-[56px]">
-          Something feels stuck.{" "}
-          <span className="text-red">Let&rsquo;s find out what.</span>
-        </h1>
-        <p className="max-w-[560px] text-[16px] italic leading-[1.65] text-mid md:text-[18px]">
-          A free 15-minute call to see whether this is a fit. No pitch, no
-          pressure. Just a straight look at your business.
-        </p>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[48fr_52fr] md:items-start md:gap-12">
+          <div className="order-2 md:order-none">
+            <h1 className="mb-6 text-[40px] font-bold leading-[1.1] tracking-tight text-ink text-balance md:text-[56px]">
+              Something feels stuck.{" "}
+              <span className="text-red">Let&rsquo;s find out what.</span>
+            </h1>
+            <p className="mb-8 max-w-[560px] text-[16px] italic leading-[1.65] text-mid md:text-[18px]">
+              Tell Premraj what is stuck in your business, in whichever way
+              suits you. He reads every message himself. No pitch, no pressure.
+            </p>
+            <a
+              href={WHATSAPP_HREF}
+              data-cta="contact-hero-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={btn}
+            >
+              <WhatsAppIcon />
+              WhatsApp Premraj
+            </a>
+            <p className="mt-3 text-[14px] text-light">
+              Fastest. Premraj usually replies the same day.
+            </p>
+          </div>
+          <div className="order-1 md:order-none">
+            <Image
+              src="/images/contact/contact-owner-reaching-out.webp"
+              alt="Illustration of a business owner at his desk choosing how to get in touch: WhatsApp, email, phone or a booked call"
+              width={1152}
+              height={860}
+              sizes="(min-width: 768px) 52vw, 100vw"
+              className="h-auto w-full"
+              priority
+              fetchPriority="high"
+            />
+          </div>
+        </div>
+        <ul className="mt-10 grid grid-cols-1 gap-x-8 md:mt-12 md:grid-cols-3">
+          {HERO_OPTIONS.map((o) => (
+            <li key={o.label} className="border-t border-ink">
+              <a
+                href={o.href}
+                data-cta={o.cta}
+                {...(o.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="group flex items-center gap-4 py-5"
+              >
+                <span aria-hidden="true" className="text-ink">{o.icon}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[11px] font-light uppercase tracking-widest text-light md:text-[13px]">
+                    {o.label}
+                  </span>
+                  <span className="block break-words text-[16px] text-ink transition-colors group-hover:text-red md:text-[17px]">
+                    {o.value}
+                  </span>
+                </span>
+                <span aria-hidden="true" className="text-red">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* 2. Three ways to start */}
