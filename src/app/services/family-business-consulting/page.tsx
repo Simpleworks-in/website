@@ -119,17 +119,17 @@ const RUNGS = [
 const STORY_BLOCKS = [
   {
     label: "The problem",
-    text: "Almost every decision ran through the owner. By his own count of the minutes, his day was over 120% full, and he took 12 of the 21 regular decisions. His son had just joined the business, with no defined role.",
+    text: "Most decisions still went through the owner, and his son had just joined the business without a defined role. By the owner’s own count, his day was over 120% full and he took 12 of the 21 regular decisions himself.",
     strong: false,
   },
   {
     label: "What we did",
-    text: "Wrote down who decides what, with limits for each person, and moved six pieces of work to people who had time. For the son, the first rungs of the twin ladder: a rotation through every department, learning from each department head, before taking one department of his own.",
+    text: "We wrote down who decides what, with limits for each person, and moved six pieces of work to people who had time. The son started on the first rungs of the twin ladder: a rotation through every department, learning from each department head.",
     strong: false,
   },
   {
     label: "What’s changed so far",
-    text: "The owner’s day is coming down from over 120% to about 100%, and the decisions he takes himself from 12 to 7. His son has worked through every department and is now taking charge of one, responsible for its results.",
+    text: "The owner’s day is coming down towards about 100%, and the decisions he takes himself are down from 12 to 7. His son now leads one department and is responsible for its results.",
     strong: true,
   },
 ];
@@ -479,8 +479,10 @@ export default function FamilyBusinessConsultingPage() {
       {/* 1. HERO + 2. STATS */}
       <section id="hero" className="pt-6 pb-8 md:pt-8 md:pb-10">
         <div className={WRAP}>
-          <div className="flex flex-col-reverse gap-8 md:flex-row md:items-start md:gap-10">
-            <div className="md:basis-[48%]">
+          {/* Desktop: copy on the left; image, then the Premraj row, on the right,
+              so both columns end level. Phones: image, copy, then the Premraj row. */}
+          <div className="grid grid-cols-1 gap-y-8 md:grid-cols-[48fr_52fr] md:grid-rows-[auto_1fr] md:gap-x-10 md:gap-y-6">
+            <div className="order-2 md:order-none md:col-start-1 md:row-span-2 md:row-start-1">
               <h1 className="text-[16px] leading-[1.35] md:text-[18px] font-bold text-ink mb-3">
                 Family business consultant{" "}
                 <span className="text-red">for succession and the next generation</span>
@@ -499,9 +501,23 @@ export default function FamilyBusinessConsultingPage() {
               <div className="mb-3">
                 <WhatsAppButton cta="hero" />
               </div>
-              <p className="text-[14px] text-light mb-7">
+              <p className="text-[14px] text-light">
                 Premraj replies personally. No pitch, no commitment.
               </p>
+            </div>
+            <div className="order-1 md:order-none md:col-start-2 md:row-start-1">
+              <Image
+                src="/images/family-business/family-business-father-son-factory-floor.webp"
+                alt="Illustration of a family business owner showing his son around the factory floor"
+                width={1152}
+                height={860}
+                sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
+                className="w-full h-auto"
+                priority
+                fetchPriority="high"
+              />
+            </div>
+            <div className="order-3 md:order-none md:col-start-2 md:row-start-2 md:self-start">
               <div className="flex items-center gap-4 border-t border-rule pt-5 mb-4">
                 <Image
                   src="/images/landing/prem-menon-portrait.webp"
@@ -520,18 +536,6 @@ export default function FamilyBusinessConsultingPage() {
                 For family businesses where the next generation has joined, or
                 is about to.
               </p>
-            </div>
-            <div className="md:basis-[52%]">
-              <Image
-                src="/images/family-business/family-business-father-son-factory-floor.webp"
-                alt="Illustration of a family business owner showing his son around the factory floor"
-                width={1152}
-                height={860}
-                sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
-                className="w-full h-auto"
-                priority
-                fetchPriority="high"
-              />
             </div>
           </div>
 
