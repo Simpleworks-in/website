@@ -1,226 +1,213 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FACTS } from "../../../../content/facts";
 import { whatsappHref } from "@/lib/whatsapp";
+import { PRICES, price } from "@/lib/programmes";
+import { ORG_ID } from "@/lib/site-schema";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import PremrajBio from "@/components/PremrajBio";
 
-export const metadata = {
-  title: {
-    absolute: "Family Business Consultant in Bangalore | Simpleworks Consulting",
-  },
-  description:
-    "Family business consultant in Bangalore: leadership succession, professionalisation and preparing the next generation of Indian family businesses.",
-  alternates: {
-    canonical: "https://www.simpleworks.in/services/family-business-consulting",
-  },
+// Conversion page, rebuilt 26 Nov 2026 from family-business-consulting-page-audit.md
+// (mock: "Family Business Page Mock" v5). Scope (Prem): leadership succession
+// only. Shares, wills, settlements and tax are for the family's CA and lawyer.
+// One objective: the visitor clicks WhatsApp Premraj.
+
+const PAGE_URL = "https://www.simpleworks.in/services/family-business-consulting";
+const TITLE = "Family Business Succession Planning in India | Simpleworks Consulting";
+const DESCRIPTION =
+  "Family business consultant for owners across India. Plan the succession, prepare the next generation and separate family from management, with Premraj Menon.";
+
+export const metadata: Metadata = {
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Family Business Consultant in Bangalore | Simpleworks Consulting",
-    description:
-      "Family business consultant in Bangalore: leadership succession, professionalisation and preparing the next generation of Indian family businesses.",
-    url: "https://www.simpleworks.in/services/family-business-consulting",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_URL,
+    siteName: "Simpleworks Consulting",
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
-const REALITIES = [
+const CONTACT_LINK = whatsappHref();
+
+const STATS = [
+  { num: "About 30", label: "years in large companies, rising to COO with full P&L" },
+  { num: "Nearly 10", label: "years inside MSMEs, as co-founder and on the management team" },
+  { num: "1-to-1", label: "in person in Bangalore or online, no junior team" },
+];
+
+const QUOTES: { text: string; successor?: boolean }[] = [
+  { text: "My son joined three years ago. The staff still come to me for everything." },
+  { text: "I don’t know what job to give my daughter in the business." },
+  { text: "Two of my children work here, and nobody knows who decides what." },
+  { text: "I want to step back. Every time I try, something goes wrong." },
+  { text: "We talk about the business at the dinner table, and nothing gets decided." },
+  { text: "I joined my father’s business. I have a title, but no real say.", successor: true },
+];
+
+const CAUSES = [
   {
-    num: "01",
-    title: "Ownership and management are tangled",
-    body: "In most Indian family businesses, the same people own the company, manage it day to day, and inherit it across generations. When ownership, management, and family are the same group, every business decision carries a family dimension — and every family conflict has a business consequence.",
+    title: "Family and business share one room",
+    body: "The same people own the business, run it and sit at the family table. So business decisions get mixed up with family feelings, and a disagreement at home shows up at work the next morning.",
   },
   {
-    num: "02",
-    title: "Succession is treated as an event, not a process",
-    body: "Most Indian family businesses treat succession as something that happens when the founder retires or passes away — not as a transition that needs to be designed years in advance. The result is a handover with no preparation, no authority transfer, and a second generation that inherits a business they were never trained to lead.",
+    title: "The handover is treated as an event",
+    body: "Succession is something that will happen “when the time comes”. So the next generation gets a title long before it gets a real role, and the handover arrives with no preparation.",
   },
   {
-    num: "03",
-    title: "Professionalisation feels like a betrayal",
-    body: "Bringing in professional management, formalising roles, or separating ownership from operations can feel to the founding generation like an admission that the old way didn’t work — or a signal that the family is losing control. This emotional resistance is real. It is also the single biggest reason Indian family businesses fail to professionalise before it becomes a crisis.",
+    title: "Letting go feels like losing control",
+    body: "Writing down roles, or giving the next generation real decisions, can feel like admitting the old way stopped working. So it waits until it becomes urgent.",
   },
 ];
 
-const WHAT_WE_DO = [
+const PRACTICE = [
   {
-    num: "01 — Professionalisation",
-    title: "Building a business that runs beyond the founder",
-    body: "Formalising roles, defining decision rights, and creating accountability structures that don’t depend on the founder’s constant involvement. The goal is a business that operates predictably whether the founder is in the room or not — without losing the speed and trust that made it successful.",
-  },
-  {
-    num: "02 — Succession Planning",
-    title: "Succession planning: designing the handover before it becomes urgent",
-    body: "Succession is not a document — it is a multi-year process of transferring authority, building capability, and aligning the family on what the next chapter looks like. Simpleworks Consulting helps families design that process while there is still time to do it well, not when the situation forces it.",
-  },
-  {
-    num: "03 — Next-Generation Leadership",
     title: "Preparing the second generation to actually lead",
-    body: "Most second-generation leaders in Indian family businesses inherit a title and a business simultaneously — with no structured preparation for either. Simpleworks Consulting works with the next generation on the specific skills, decisions, and relationships that the transition will demand of them before it arrives.",
+    body: "Most successors inherit a title and a business at the same time, with no real preparation for either. The work starts with the skills, decisions and relationships the role will need, before the role arrives.",
   },
   {
-    num: "04 — Business Strategy",
+    title: "Succession planning: designing the handover before it becomes urgent",
+    body: "Plan the handover years before it is due, while there is still time to do it well, and with the family agreed on what the next chapter looks like.",
+  },
+  {
+    title: "Building a business that runs beyond the founder",
+    body: "Written roles, clear decision limits and a weekly review, so the business runs the same whether the founder is in the room or not.",
+  },
+  {
     title: "Setting the direction for the next chapter",
-    body: "Many family businesses reach a transition point where the strategy that built the business is no longer the strategy that will grow it. New markets, new competition, new generations with different ambitions. Simpleworks Consulting works with family leadership to define where the business goes next — and how to get family alignment on that direction.",
+    body: "The strategy that built the business may not be the one that grows it. The next generation helps set the direction, and presents it.",
   },
 ];
 
-const SITUATIONS = [
+const RUNGS = [
   {
-    num: "01",
-    title: "The founder is ready to step back but hasn’t built a successor",
-    body: "The business is profitable and growing. The founder wants to reduce daily involvement. But the second generation is either not ready, not willing, or not aligned on who takes what role. The transition has been deferred until the need becomes urgent — and urgency is the worst condition under which to make succession decisions.",
+    takes: "One clear role: a written job, a reporting line and targets, like any manager",
+    letsGo: "Treating them as “the owner’s son or daughter” in front of the team",
   },
   {
-    num: "02",
-    title: "Multiple siblings in the business without clear ownership",
-    body: "Two or three children of the founder are all working in the business. No one has defined what each person owns, what authority they hold, or how decisions get made when they disagree. The business runs on informal consensus that works in good times and breaks in bad ones — usually just as a major decision is required.",
+    takes: "Day-to-day decisions in one department, within agreed limits",
+    letsGo: "Overruling those decisions in front of the team",
   },
   {
-    num: "03",
-    title: "The business has outgrown its informal management style",
-    body: "What worked at ₹2 crore does not work at ₹15 crore. The business needs formal systems, professional roles, and a management structure that doesn’t depend on the founder knowing everything. The family knows this. But every attempt to formalise has been resisted, delayed, or quietly abandoned.",
+    takes: "A set of key customers and suppliers, introduced by you in person",
+    letsGo: "Being the only one those customers call",
   },
   {
-    num: "04",
-    title: "Family conflict is spilling into business decisions",
-    body: "A disagreement between family members — about direction, about roles, about money — is starting to affect how the business operates. Decisions that should be made on commercial grounds are being made on family grounds, or not being made at all. The business needs a structure that separates these two domains before they become entangled beyond repair.",
-  },
-];
-
-const PATHWAY = [
-  {
-    num: "01",
-    label: "Assess",
-    title: "Understand the business and family structure as it actually is",
-    body: "We start by understanding the current state — not as it appears on an org chart, but as it actually operates. Who makes which decisions, formally and informally. Where authority sits and where it is assumed. What the family agrees on and where the fault lines are. Diagnosis before prescription — always.",
+    takes: "The team in that area: hiring, reviews and who does what",
+    letsGo: "The final word on people in that area",
   },
   {
-    num: "02",
-    label: "Align",
-    title: "Get the family to agree on what the next chapter looks like",
-    body: "Before redesigning anything, the family needs to agree on the direction. Does the next generation want to grow the business, maintain it, or eventually exit? Does the founding generation want to stay involved or step back fully? What does success look like in five years — for the business and for the family? These conversations are often avoided. We facilitate them directly.",
+    takes: "Money: the monthly numbers, the bank, pricing within limits",
+    letsGo: "Signing every cheque",
   },
   {
-    num: "03",
-    label: "Structure",
-    title: "Separate ownership from management from operations",
-    body: "The structural work: defining roles and decision rights for each family member, separating the family council from the management team, establishing a governance framework that works for the size and complexity of this business. Not a template — a structure that fits the specific family and the specific business.",
-  },
-  {
-    num: "04",
-    label: "Build",
-    title: "Develop the next generation’s capability to lead",
-    body: "Succession without capability development is just a title change. Simpleworks Consulting works with the next generation on the specific leadership, commercial, and relational skills that the transition will demand — before the transition happens. This includes structured exposure to the decisions the business depends on, not just the ones they currently handle.",
-  },
-  {
-    num: "05",
-    label: "Transfer",
-    title: "Execute the succession with a plan, not an event",
-    body: "The handover itself — authority, relationships, institutional knowledge, and accountability — is designed as a phased process, not a single moment. The founding generation reduces involvement gradually, with clear milestones at each stage. The next generation assumes authority progressively, with support structures in place until they are no longer needed.",
+    takes: "Direction: next year’s plan, written and presented by them",
+    letsGo:
+      "Day-to-day control. You become chairman, advisor and mentor, focused on review, governance and capital allocation",
   },
 ];
 
-const DIFFERENTIATORS = [
+const STORY_BLOCKS = [
   {
-    title: "Commercial and human — not one or the other",
-    body: "We hold both dimensions simultaneously. The business needs to work commercially. The family needs to stay intact. Simpleworks Consulting keeps both outcomes in view — not just the one that’s easier to measure.",
+    label: "The problem",
+    text: "Almost every decision ran through the owner. By his own count of the minutes, his day was over 120% full, and he took 12 of the 21 regular decisions. His son had just joined the business, with no defined role.",
+    strong: false,
   },
   {
-    title: "Premraj Menon leads every engagement personally",
-    body: "No junior consultants. No hand-offs. Family business work depends on trust — and trust takes time to build. Premraj is in every conversation, from the first call to the final handover.",
+    label: "What we did",
+    text: "Wrote down who decides what, with limits for each person, and moved six pieces of work to people who had time. For the son, the first rungs of the twin ladder: a rotation through every department, learning from each department head, before taking one department of his own.",
+    strong: false,
   },
   {
-    title: "Direct when directness is required",
-    body: "Family businesses often have conversations they need to have but haven’t. Simpleworks Consulting does not soften difficult realities. We name what we observe, clearly and respectfully — because the alternative is more expensive.",
-  },
-  {
-    title: "Structured for the Indian family business context",
-    body: "Western succession frameworks don’t map directly to Indian family business structures — joint family dynamics, multi-generation involvement, and the social dimension of the business all require a different approach. Simpleworks Consulting works in this context, not against it.",
-  },
-];
-
-const AREAS = [
-  {
-    num: "01",
-    title: "Professionalisation",
-    body: "Formal roles, clear decision rights, and management systems that work independently of any one family member. The business becomes an institution — not a function of whoever happens to be in the building that day.",
-  },
-  {
-    num: "02",
-    title: "Succession & Governance",
-    body: "A designed handover — not an improvised one. Authority transfers in stages, with milestones, support structures, and a governance framework that keeps ownership and management appropriately separated as the business evolves.",
-  },
-  {
-    num: "03",
-    title: "Business Strategy",
-    body: "The next generation often inherits a business that was designed for a different market. Simpleworks Consulting works with family leadership to define the commercial strategy for the next chapter — growth, diversification, or disciplined consolidation.",
+    label: "What’s changed so far",
+    text: "The owner’s day is coming down from over 120% to about 100%, and the decisions he takes himself from 12 to 7. His son has worked through every department and is now taking charge of one, responsible for its results.",
+    strong: true,
   },
 ];
 
-const LIVE_SPOKES = [
-  {
-    tag: "Strategy",
-    title: "Why 90% of Indian MSMEs Have No Real Strategy — And the 3-Step Fix",
-    excerpt:
-      "Applies directly to family businesses where strategy exists in the founder’s head but nowhere else. The 3-step fix works whether you are the first or second generation.",
-    href: "/blog/why-90-of-indian-msm-es-have-no-real-strategy-and-the-3-step-fix",
-  },
-  {
-    tag: "Consulting",
-    title: "MSME Consulting: Why a Focused Firm Delivers More Than a Full-Service One",
-    excerpt:
-      "Why a consultant who specialises in family business professionalisation will always outperform a generalist who offers the same service as one of twenty.",
-    href: "/blog/msme-consulting-why-a-focused-firm-delivers-more-than-a-full-service-one",
-  },
-  {
-    tag: "Growth",
-    title: "Who Is Your Customer, Really?",
-    excerpt:
-      "Family businesses often inherit a customer base rather than choose one. This article asks the harder question: is the customer you have the customer you should be serving?",
-    href: "/blog/who-is-your-customer-really",
-  },
-  {
-    tag: "Succession",
-    title:
-      "Is Your Family Business Ready for the Next Generation? 5 Hard Questions Every Owner Must Answer",
-    excerpt:
-      "Five direct questions every family business owner needs to answer before handing over the reins — on readiness, roles, and what succession actually requires.",
-    href: "/blog/is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
-  },
+const NEXT_STEPS = [
+  "You send a short WhatsApp message.",
+  "Premraj replies himself.",
+  "You talk it through. No pitch, no commitment.",
 ];
 
-const COMING_SOON_SPOKES = [
-  "Why Indian Family Businesses Fail at Succession — and What to Do Before It’s Urgent",
-  "Separating Ownership from Management in an Indian Family Business",
-  "Second-Generation Founder: How to Take Charge Without Losing the Business",
+const GOOD_FIT = [
+  "Your son or daughter has joined the business, or is about to",
+  "You want each family member in the business to have a clear role",
+  "You want to step back without the business slipping",
+  "The family is ready to talk about roles openly",
 ];
 
-const FAQ_COLUMN_1 = [
+const FAQS = [
   {
-    q: "What exactly is family business consulting — and how is it different from management consulting?",
-    a: "Management consulting addresses commercial problems: strategy, growth, execution, operations. Family business consulting addresses problems that exist at the intersection of family and business — succession, professionalisation, governance, next-generation leadership. The commercial and the personal are inseparable in a family business, and a consultant who addresses only one will make the other worse. Simpleworks Consulting works at that intersection.",
+    q: "What does a family business consultant do?",
+    a: "A family business consultant works with the owner and the next generation on how the business is run and handed over: who does what, who decides what, and how decisions move from one generation to the next. At Simpleworks Consulting, Premraj Menon does this in person in Bangalore and online across India.",
+  },
+  {
+    q: "What is family business succession planning?",
+    a: "It is planning how the running of the business passes to the next generation: their role, their decisions and their place with the team and customers, step by step. We work on that side of succession. The ownership side (shares, wills, settlements) is for your CA and lawyer.",
+  },
+  {
+    q: "Do you advise on shares, wills or how to divide the business?",
+    a: "No. That is work for your CA and lawyer, and we are happy to work alongside them. We work on the business side of the handover: bringing the next generation in, giving them clear roles, and moving decisions across one step at a time.",
+  },
+  {
+    q: "How do you bring the second generation into the business?",
+    a: "Usually in two moves. First, time across the departments, learning from each department head, so they understand how the business actually works. Then one area of their own, with a written role, clear limits and targets, and responsibility for its results. From there, decisions move across one rung at a time.",
+  },
+  {
+    q: "What is the twin ladder?",
+    a: "A simple way to run the handover. You step down your ladder one rung at a time, and your successor steps up theirs one rung at a time. At each rung one area of the business moves across, such as a department, key customers, the team or the money. The next rung starts only when the last one holds. At the last rung you become chairman, advisor and mentor, focused on review, governance and capital allocation.",
+  },
+  {
+    q: "Is this in person or online?",
+    a: "Both. In Bangalore, Premraj works in person, on site with your family and team. Elsewhere in India, the Simple Diagnostic and the Simple Advisory run online by video call.",
+  },
+  {
+    q: "How much does it cost?",
+    a: `Fees are fixed and published. The Simple Diagnostic is ${price("diagnostic")}, paid after the engagement. In Bangalore, the Simple Reset is ${price("reset30")} for 30 days or ${price("reset60")} for 60 days, and the Simple Counsel is ${price("counsel")} a month in person. Online, the Simple Advisory is ${price("advisory")} a month, paid at the end of each month. Both monthly programmes have a three-month minimum. There is no hourly billing.`,
   },
   {
     q: "Is Simpleworks Consulting a mediator or a therapist for family conflict?",
-    a: "Neither. Simpleworks Consulting is a management consultant who understands the family dimension of business problems — and knows when to bring in a mediator or therapist if the situation calls for it. We do not do conflict resolution or family therapy. We do help families have the business conversations they have been avoiding, in a structured environment where decisions can actually be made and acted on.",
+    a: "Neither. Simpleworks Consulting is a management consultant who understands the family dimension of business problems, and knows when to bring in a mediator or therapist if the situation calls for it. We do help families have the business conversations they have been avoiding, in a structured setting where decisions can be made and acted on.",
   },
   {
     q: "At what stage should a family business engage a consultant?",
-    a: "Earlier than most families do. The ideal time to plan succession is five to ten years before it becomes necessary. The ideal time to professionalise is when the business is growing well — not when it is in crisis. Simpleworks Consulting works with families who are thinking ahead as well as families who are managing an immediate situation. The work is different in each case, but the earlier it starts, the more options remain available.",
+    a: "Earlier than most families do. The best time to plan the handover is years before it becomes necessary, while the business is doing well rather than in a crisis. We work with families who are planning ahead and with families facing an immediate situation. The earlier it starts, the more options remain.",
+  },
+  {
+    q: "What if not all family members agree to engage a consultant?",
+    a: "It is common. The founding generation may see the need and the next generation may resist, or the other way round. We start with whoever in the family is ready for the conversation. You can begin before everyone agrees; getting the family to agree is part of the work.",
+  },
+  {
+    q: "What happens after I send a WhatsApp message?",
+    a: "Premraj replies himself. You talk it through, with no pitch and no commitment. He will sign an NDA before you share your numbers.",
   },
 ];
 
-const FAQ_COLUMN_2 = [
+const READING = [
   {
-    q: "What if not all family members agree to engage a consultant?",
-    a: "It is common. The founding generation may see the need; the second generation may resist. Or vice versa. Simpleworks Consulting starts with whoever in the family is ready for the conversation and works from there. We do not require full family alignment as a precondition for starting — but we are transparent that alignment is a goal of the process, not a starting assumption.",
+    title:
+      "How Do You Prepare a Second-Generation Leader to Take Over a Family Business? A Practical Succession Plan",
+    href: "/blog/how-do-you-prepare-a-second-generation-leader-to-take-over-a-family-business-a-practical-succession-plan",
   },
   {
-    q: "How long does a family business consulting engagement last?",
-    a: "It depends on the scope. A strategic clarity engagement for a family business — defining direction and aligning the family on priorities — typically runs four to eight weeks. A full professionalisation and succession engagement — covering structure, governance, capability development, and phased handover — runs six to eighteen months, with Simpleworks Consulting’s involvement tapering as the family develops the capability to manage independently.",
+    title:
+      "Is Your Family Business Ready for the Next Generation? 5 Hard Questions Every Owner Must Answer",
+    href: "/blog/is-your-family-business-ready-for-the-next-generation-5-hard-questions-every-owner-must-answer",
   },
   {
-    q: "What does the first step look like?",
-    a: "A 30-minute conversation with no agenda except understanding where your family business is and what is making it difficult right now. Premraj Menon will ask a few direct questions and tell you honestly what kind of engagement would be useful, what it would look like, and approximately how long it would take. If Simpleworks Consulting is not the right fit, he will say so directly.",
+    title: "Why Family MSMEs Must Separate Ownership from Management to Scale",
+    href: "/blog/why-family-msm-es-must-separate-ownership-from-management-to-scale",
   },
 ];
 
@@ -229,46 +216,239 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.simpleworks.in" },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Services",
-      item: "https://www.simpleworks.in/services",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Family Business Consulting",
-      item: "https://www.simpleworks.in/services/family-business-consulting",
-    },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://www.simpleworks.in/services" },
+    { "@type": "ListItem", position: 3, name: "Family Business Succession Planning", item: PAGE_URL },
   ],
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [...FAQ_COLUMN_1, ...FAQ_COLUMN_2].map((item) => ({
+  mainEntity: FAQS.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: { "@type": "Answer", text: item.a },
   })),
 };
 
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+const monthly = (amount: number) => ({
+  "@type": "UnitPriceSpecification",
+  price: String(amount),
+  priceCurrency: "INR",
+  unitText: "MONTH",
+});
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Family business succession planning",
+  serviceType: "Family business consulting",
+  url: PAGE_URL,
+  provider: {
+    "@type": "ProfessionalService",
+    "@id": ORG_ID,
+    name: "Simpleworks Consulting",
+    url: "https://www.simpleworks.in",
+  },
+  areaServed: [
+    { "@type": "City", name: "Bengaluru" },
+    { "@type": "Country", name: "India" },
+  ],
+  offers: [
+    {
+      "@type": "Offer",
+      name: "The Simple Diagnostic",
+      description:
+        "One problem you name: a three-hour working session, a written brief and a one-hour walkthrough. In person in Bangalore or online. Paid after the engagement.",
+      price: String(PRICES.diagnostic),
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/business-growth-review",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Reset (30 days)",
+      description: "On site in Bangalore, one visit a week.",
+      price: String(PRICES.reset30),
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Reset (60 days)",
+      description: "On site in Bangalore, one visit a week.",
+      price: String(PRICES.reset60),
+      priceCurrency: "INR",
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Counsel",
+      description:
+        "In person in Bangalore. Two sessions a month, WhatsApp access and a quarterly review. Three-month minimum.",
+      priceCurrency: "INR",
+      priceSpecification: monthly(PRICES.counsel),
+      url: "https://www.simpleworks.in/programmes",
+    },
+    {
+      "@type": "Offer",
+      name: "The Simple Advisory",
+      description:
+        "Online across India. Two 90-minute sessions a month with a short written summary after each. Three-month minimum.",
+      priceCurrency: "INR",
+      priceSpecification: monthly(PRICES.advisory),
+      url: "https://www.simpleworks.in/programmes",
+    },
+  ],
+};
+
+const WRAP = "max-w-[1200px] mx-auto px-4 md:px-10";
+const SECTION = "border-t border-rule py-9 md:py-12";
+const EYEBROW =
+  "text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light mb-3";
+const H2 =
+  "text-[30px] leading-[1.18] md:text-[36px] font-bold tracking-tight-1 text-ink";
+const BODY = "text-[16px] md:text-[17px] text-mid leading-[1.78]";
+const BTN =
+  "inline-block bg-transparent border border-red text-red text-[14px] px-9 py-[14px] rounded-[1px] hover:bg-red hover:text-white transition-colors";
+const TEXT_LINK = "text-red hover:underline";
+const LABEL =
+  "text-[11px] md:text-[13px] uppercase tracking-widest font-light text-light";
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <p className={EYEBROW}>{children}</p>;
+}
+
+function WhatsAppButton({ cta }: { cta: string }) {
   return (
-    <p className="mb-4 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-light">
-      {children}
-      <span className="block h-px w-8 bg-rule" />
-    </p>
+    <a
+      href={CONTACT_LINK}
+      data-cta={cta}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${BTN} whitespace-nowrap`}
+    >
+      <WhatsAppIcon />
+      WhatsApp Premraj
+    </a>
+  );
+}
+
+function FeeRow({
+  label,
+  name,
+  amount,
+  suffix,
+  caption,
+  children,
+}: {
+  label: string;
+  name: string;
+  amount: string;
+  suffix?: string;
+  caption: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="grid gap-6 border-t border-ink py-6 md:grid-cols-[1fr_1fr_1.4fr] md:gap-10">
+      <div>
+        <p className={`${LABEL} mb-2`}>{label}</p>
+        <h3 className="text-[24px] font-bold leading-[1.25] text-red">{name}</h3>
+      </div>
+      <div>
+        <p className="mb-2 whitespace-nowrap [font-variant-numeric:tabular-nums]">
+          <span className="text-[32px] font-bold leading-none text-ink">{amount}</span>
+          {suffix ? <span className="text-[16px] text-mid"> {suffix}</span> : null}
+        </p>
+        <p className="text-[14px] text-light">{caption}</p>
+      </div>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+// Two ladders: the owner steps down one rung at a time, the successor steps up.
+// Owner's rungs count down from the top, the successor's count up from the bottom.
+function TwinLadder() {
+  const rungYs = [65, 107, 149, 191, 233, 275];
+  return (
+    <svg
+      viewBox="0 0 520 330"
+      role="img"
+      aria-labelledby="twin-ladder-title"
+      className="mx-auto block h-auto w-full max-w-[520px]"
+    >
+      <title id="twin-ladder-title">
+        Two ladders: the owner steps down one rung at a time while the successor
+        steps up one rung at a time
+      </title>
+      <g stroke="#0F0F0F" strokeWidth="2" fill="none">
+        <line x1="110" y1="40" x2="110" y2="300" />
+        <line x1="190" y1="40" x2="190" y2="300" />
+        <line x1="330" y1="40" x2="330" y2="300" />
+        <line x1="410" y1="40" x2="410" y2="300" />
+      </g>
+      <g stroke="#0F0F0F" strokeWidth="1.5">
+        {rungYs.map((y) => (
+          <g key={y}>
+            <line x1="110" y1={y} x2="190" y2={y} />
+            <line x1="330" y1={y} x2="410" y2={y} />
+          </g>
+        ))}
+      </g>
+      <g fontSize="13" fill="#878787" textAnchor="end">
+        {rungYs.map((y, i) => (
+          <text key={y} x="98" y={y + 4}>
+            {i + 1}
+          </text>
+        ))}
+      </g>
+      <g fontSize="13" fill="#878787">
+        {rungYs.map((y, i) => (
+          <text key={y} x="422" y={y + 4}>
+            {6 - i}
+          </text>
+        ))}
+      </g>
+      <g stroke="#464646" strokeWidth="1.5" fill="none">
+        <line x1="60" y1="60" x2="60" y2="270" />
+        <polyline points="53,260 60,272 67,260" />
+      </g>
+      <g stroke="#ED1C24" strokeWidth="1.5" fill="none">
+        <line x1="460" y1="280" x2="460" y2="70" />
+        <polyline points="453,80 460,68 467,80" />
+      </g>
+      <circle cx="150" cy="65" r="7" fill="#464646" />
+      <circle cx="370" cy="275" r="7" fill="#ED1C24" />
+      <g fontSize="15" fontWeight="700" textAnchor="middle" fill="#0F0F0F">
+        <text x="150" y="24">You</text>
+        <text x="370" y="24">Your successor</text>
+      </g>
+      <g fontSize="13" textAnchor="middle">
+        <text x="150" y="322" fill="#464646">One rung down at a time</text>
+        <text x="370" y="322" fill="#ED1C24">One rung up at a time</text>
+      </g>
+      <g fontSize="12" textAnchor="middle" fill="#878787">
+        <text x="260" y="165">one area</text>
+        <text x="260" y="181">moves across</text>
+      </g>
+      <g stroke="#CDCDCD" strokeWidth="1" strokeDasharray="3 4">
+        <line x1="200" y1="172" x2="225" y2="172" />
+        <line x1="295" y1="172" x2="320" y2="172" />
+      </g>
+    </svg>
   );
 }
 
 export default function FamilyBusinessConsultingPage() {
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"
@@ -276,444 +456,589 @@ export default function FamilyBusinessConsultingPage() {
       />
 
       {/* BREADCRUMB */}
-      <div className="flex items-center gap-2 border-b-[0.5px] border-rule px-6 py-3.5 text-[13px] md:px-[60px]">
-        <Link href="/" className="text-light transition-colors hover:text-red">
-          Home
-        </Link>
-        <span className="text-rule">›</span>
-        <Link href="/services" className="text-light transition-colors hover:text-red">
-          Services
-        </Link>
-        <span className="text-rule">›</span>
-        <span className="text-mid">Family Business Consulting</span>
-      </div>
-
-      {/* HERO */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-20">
-          <div>
-            <p className="mb-5 flex items-center gap-2.5 text-eyebrow tracking-wide-9 uppercase text-red">
-              <span className="block h-px w-6 bg-red" />
-              Simpleworks Consulting · Bengaluru
-            </p>
-            <h1 className="mb-4 text-[24px] leading-[1.25] font-bold text-ink md:text-[28px]">
-              Family business consultant for succession and the next generation
-            </h1>
-            <p className="mb-5 text-[36px] leading-[1.1] font-bold tracking-tight-1 md:text-hero-h1">
-              The business built by one generation
-              <br />
-              <span className="italic text-red">must be led by the next.</span>
-            </p>
-            <p className="mb-7 max-w-[480px] text-[18px] italic leading-[1.6] text-mid md:text-[19px]">
-              Simpleworks Consulting works with Indian family businesses navigating
-              professionalisation, succession, and the complexity of
-              separating family from the company — without losing what made
-              the business work in the first place.
-            </p>
-
-            <div className="mb-8 flex gap-8 border-y-[0.5px] border-rule py-6">
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  39<sup className="text-[16px] text-red md:text-[18px]">+</sup>
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Years of
-                  <br />
-                  experience
-                </p>
-              </div>
-              <div className="w-px self-stretch bg-rule" />
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  6
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Industries
-                  <br />
-                  served
-                </p>
-              </div>
-              <div className="w-px self-stretch bg-rule" />
-              <div>
-                <p className="text-[34px] font-bold leading-none tracking-tight-2 text-ink md:text-[42px]">
-                  ₹10–200<sup className="text-[16px] text-red md:text-[18px]">Cr</sup>
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.4] text-light">
-                  Revenue range
-                  <br />
-                  we work in
-                </p>
-              </div>
-            </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center gap-2 rounded-[1px] bg-red px-8 py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
-            >
-              Let&rsquo;s Talk &nbsp;→
+      <nav aria-label="Breadcrumb" className={`${WRAP} pt-5 text-[13px]`}>
+        <ol className="flex flex-wrap items-center gap-2">
+          <li>
+            <Link href="/" className="text-light transition-colors hover:text-red">
+              Home
             </Link>
-          </div>
+          </li>
+          <li aria-hidden="true" className="text-rule">›</li>
+          <li>
+            <Link href="/services" className="text-light transition-colors hover:text-red">
+              Services
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-rule">›</li>
+          <li className="text-mid" aria-current="page">
+            Family Business Succession Planning
+          </li>
+        </ol>
+      </nav>
 
-          <Image
-            src="/family-business-consulting-illustration.webp"
-            alt="Family business consultant presenting professionalisation pathway to Indian family business team — Simpleworks Consulting"
-            width={800}
-            height={533}
-            className="w-full rounded-sm"
-            priority
-          />
-        </div>
-      </section>
-
-      {/* THE REALITY */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>The Reality</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          What makes family businesses{" "}
-          <span className="text-red">uniquely difficult to run</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Family businesses across India share three structural challenges
-          that no amount of hard work or goodwill resolves on its own.
-          Recognising them is the first step.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
-          {REALITIES.map((r) => (
-            <div key={r.num} className="bg-bg px-7 py-9">
-              <p className="mb-3 text-[44px] font-bold leading-none tracking-tight-2 text-rule md:text-[48px]">
-                {r.num}
+      {/* 1. HERO + 2. STATS */}
+      <section id="hero" className="pt-6 pb-8 md:pt-8 md:pb-10">
+        <div className={WRAP}>
+          <div className="flex flex-col-reverse gap-8 md:flex-row md:items-start md:gap-10">
+            <div className="md:basis-[48%]">
+              <h1 className="text-[16px] leading-[1.35] md:text-[18px] font-bold text-ink mb-3">
+                Family business consultant{" "}
+                <span className="text-red">for succession and the next generation</span>
+              </h1>
+              <p className="text-[38px] leading-[1.1] md:text-[56px] md:leading-[1.08] font-bold tracking-tight-1 text-ink mb-6">
+                The business built by one generation{" "}
+                <span className="text-red">must be led by the next.</span>
               </p>
-              <h3 className="mb-2.5 text-[18px] font-bold leading-[1.3] text-ink">
-                {r.title}
-              </h3>
-              <p className="text-[15px] leading-[1.75] text-mid">{r.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 1 — WHAT WE DO */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>What We Do</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          What family business consulting{" "}
-          <span className="text-red">looks like in practice</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Family business consulting at Simpleworks Consulting is not conflict mediation
-          or legal restructuring — those have their own specialists. We work
-          on the business decisions that sit at the intersection of family
-          and commercial reality.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-2">
-          {WHAT_WE_DO.map((cell) => (
-            <div key={cell.num} className="bg-bg px-7 py-9">
-              <p className="mb-3.5 text-[11px] font-bold tracking-wide-6 uppercase text-red">
-                {cell.num}
+              <p className="text-[16px] md:text-[18px] italic text-mid leading-[1.65] mb-8">
+                Family business succession planning on the business side:
+                bringing your son or daughter into the business, giving them a
+                clear role, and handing over decisions one step at a time. With
+                Premraj Menon, in person in Bangalore and online across India.
+                Shares, wills and tax stay with your CA and lawyer.
               </p>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.3] text-ink">
-                {cell.title}
-              </h3>
-              <p className="text-[16px] leading-[1.75] text-mid">{cell.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 2 — WHO WE WORK WITH */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Who We Work With</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          The situations that bring{" "}
-          <span className="text-red">family businesses to us</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Simpleworks Consulting works with Indian family businesses typically between
-          ₹10 crore and ₹200 crore in revenue — at the point where informal
-          structures and founder instinct are no longer enough to manage what
-          the business has become.
-        </p>
-
-        <div className="flex max-w-[800px] flex-col">
-          {SITUATIONS.map((s) => (
-            <div
-              key={s.num}
-              className="grid grid-cols-[40px_1fr] gap-0 border-t-[0.5px] border-rule py-7 last:border-b-[0.5px] md:grid-cols-[48px_1fr]"
-            >
-              <span className="pt-[3px] text-[13px] font-bold italic text-red">
-                {s.num}
-              </span>
-              <div>
-                <h3 className="mb-2 text-[18px] font-bold leading-[1.3] text-ink">
-                  {s.title}
-                </h3>
-                <p className="text-[16px] leading-[1.75] text-mid">{s.body}</p>
+              <div className="mb-3">
+                <WhatsAppButton cta="hero" />
               </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap items-center gap-5">
-          <p className="text-[16px] italic text-mid">
-            If your family business is at any of these points, a conversation
-            is a better starting place than a proposal.
-          </p>
-          <Link
-            href="/contact"
-            className="whitespace-nowrap text-[16px] font-semibold text-red transition-colors hover:text-ink"
-          >
-            Let&rsquo;s have a quick introductory call →
-          </Link>
-        </div>
-      </section>
-
-      {/* SECTION 3 — PROFESSIONALISATION PATHWAY */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>How We Work</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          The Simpleworks Consulting{" "}
-          <span className="text-red">Professionalisation Pathway</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Every family business engagement at Simpleworks Consulting follows a
-          structured sequence. The steps are consistent — the pace and depth
-          depend on where the family is starting from.
-        </p>
-
-        <div className="flex flex-col">
-          {PATHWAY.map((step) => (
-            <div
-              key={step.num}
-              className="grid grid-cols-[60px_1fr] gap-0 border-t-[0.5px] border-rule py-7 last:border-b-[0.5px] md:grid-cols-[80px_1fr]"
-            >
-              <span className="text-[44px] font-bold leading-none tracking-tight-2 text-rule md:text-[48px]">
-                {step.num}
-              </span>
-              <div>
-                <p className="mb-1.5 text-[11px] font-bold tracking-wide-6 uppercase text-red">
-                  {step.label}
-                </p>
-                <h3 className="mb-2 text-[18px] font-bold leading-[1.3] text-ink">
-                  {step.title}
-                </h3>
-                <p className="text-[16px] leading-[1.75] text-mid">{step.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 4 — WHY SIMPLEWORKS */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Why Simpleworks Consulting</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Why family businesses work <span className="text-red">with Simpleworks Consulting</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Family business consulting requires a consultant who can hold both
-          the commercial and the human dimension simultaneously — and who has
-          earned the trust to say difficult things directly.
-        </p>
-
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-[72px]">
-          <div>
-            <p className="mb-5 text-[17px] leading-[1.8] text-mid">
-              Family business problems are rarely purely commercial or purely
-              personal — they are usually both at once. The succession
-              question is also a question about who the founder is without
-              the business. The professionalisation question is also a
-              question about whether the family trusts professional managers
-              as much as they trust each other.
-            </p>
-            <p className="mb-8 text-[17px] leading-[1.8] text-mid">
-              Consultants who approach family business as a pure management
-              problem miss the emotional reality. Therapists and mediators
-              who approach it as a pure family problem miss the commercial
-              urgency. Simpleworks Consulting works at the intersection — understanding
-              the family dynamics well enough to navigate them, while keeping
-              the business outcomes clearly in view.
-            </p>
-
-            <div className="mb-8 border-l-2 border-red pl-[22px]">
-              <blockquote className="mb-2.5 text-[17px] italic leading-[1.75] text-ink">
-                &ldquo;The most difficult conversation in a family business is
-                usually the one nobody has had yet. My job is to create the
-                conditions in which that conversation can happen — and then
-                make sure something changes because of it.&rdquo;
-              </blockquote>
-              <cite className="text-[12px] not-italic text-light">
-                — Premraj Menon, Founder, Simpleworks Consulting
-              </cite>
-            </div>
-
-            <p className="text-[17px] leading-[1.8] text-mid">
-              Premraj Menon has spent 39 years alongside owner-managed
-              businesses, including founders handing over to the next
-              generation. His full background is on the <Link href="/about" className="text-red hover:underline">About page</Link>.
-</p>
-          </div>
-
-          <div className="flex flex-col">
-            {DIFFERENTIATORS.map((d) => (
-              <div
-                key={d.title}
-                className="grid grid-cols-[10px_1fr] gap-4 border-t-[0.5px] border-rule py-[22px] last:border-b-[0.5px]"
-              >
-                <span className="mt-[9px] block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red" />
-                <div>
-                  <h3 className="mb-1.5 text-[16px] font-bold leading-[1.3] text-ink">
-                    {d.title}
-                  </h3>
-                  <p className="text-[15px] leading-[1.7] text-mid">{d.body}</p>
+              <p className="text-[14px] text-light mb-7">
+                Premraj replies personally. No pitch, no commitment.
+              </p>
+              <div className="flex items-center gap-4 border-t border-rule pt-5 mb-4">
+                <Image
+                  src="/images/landing/prem-menon-portrait.webp"
+                  alt="Premraj Menon"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 shrink-0 rounded-full object-cover object-top"
+                />
+                <div className="text-[14px] leading-snug text-light">
+                  <p className="text-[16px] font-bold text-ink">Premraj Menon</p>
+                  <p>Founder, Simpleworks Consulting</p>
+                  <p>In person in Bangalore · Online across India</p>
                 </div>
               </div>
+              <p className="text-[14px] text-light">
+                For family businesses where the next generation has joined, or
+                is about to.
+              </p>
+            </div>
+            <div className="md:basis-[52%]">
+              <Image
+                src="/images/family-business/family-business-father-son-factory-floor.webp"
+                alt="Illustration of a family business owner showing his son around the factory floor"
+                width={1152}
+                height={860}
+                sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
+                className="w-full h-auto"
+                priority
+                fetchPriority="high"
+              />
+            </div>
+          </div>
+
+          <ul className="mt-6 md:mt-7 grid grid-cols-1 border-y border-rule md:grid-cols-3">
+            {STATS.map((s, i) => (
+              <li
+                key={s.num}
+                className={`py-6 md:pr-8 border-rule ${i > 0 ? "border-t md:border-t-0" : ""}`}
+              >
+                <p className="whitespace-nowrap text-[40px] md:text-[44px] font-bold text-red tracking-tight-1 leading-none mb-3">
+                  {s.num}
+                </p>
+                <p className="text-[14px] text-light leading-snug max-w-[280px]">
+                  {s.label}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 3. IS THIS FOR YOU? */}
+      <section id="recognise" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-6 md:mb-8">
+            <Eyebrow>Is this for you?</Eyebrow>
+            <h2 className={H2}>
+              Recognise <span className="text-red">any of these?</span>
+            </h2>
+          </div>
+          <ul className="max-w-[860px] border-t border-rule mb-8">
+            {QUOTES.map((quote) => (
+              <li
+                key={quote.text}
+                className="flex items-start gap-4 border-b border-rule py-5"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mt-[0.65em] h-[9px] w-[9px] shrink-0 rounded-full bg-red"
+                />
+                <div>
+                  <p className="text-[18px] md:text-[20px] italic leading-[1.45] text-ink">
+                    {quote.text}
+                  </p>
+                  {quote.successor ? (
+                    <p className="mt-1 text-[13px] text-light">The successor&rsquo;s side</p>
+                  ) : null}
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+            <p className={BODY}>Sound familiar? Tell Premraj which one.</p>
+            <WhatsAppButton cta="recognise" />
+          </div>
+        </div>
+      </section>
+
+      {/* 4. WHY IT KEEPS HAPPENING */}
+      <section id="why-it-happens" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-6 md:mb-8 max-w-[860px]">
+            <Eyebrow>Why it keeps happening</Eyebrow>
+            <h2 className={H2}>
+              It is rarely about the people.{" "}
+              <span className="text-red">It is usually one of three things.</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
+            {CAUSES.map((c) => (
+              <div key={c.title} className="border-t border-ink pt-5">
+                <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
+                  {c.title}
+                </h3>
+                <p className="text-[16px] text-mid leading-[1.7]">{c.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className={`${BODY} mt-8 max-w-[720px]`}>
+            None of this is a failure of the family. It is what happens when a
+            business grows faster than the way it is run.
+          </p>
+        </div>
+      </section>
+
+      {/* 5. IN PRACTICE + TWIN LADDER */}
+      <section id="practice" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-6 md:mb-8 max-w-[860px]">
+            <Eyebrow>In practice</Eyebrow>
+            <h2 className={`${H2} mb-5`}>
+              What family business{" "}
+              <span className="text-red">succession planning looks like in practice</span>
+            </h2>
+            <p className={BODY}>
+              We work on the business side of the handover: people, roles and
+              decisions. Who gets which shares, wills and family settlements are
+              for your CA and lawyer.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-x-10 border-t border-rule md:grid-cols-2">
+            {PRACTICE.map((p) => (
+              <div key={p.title} className="border-b border-rule py-6">
+                <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-2">
+                  {p.title}
+                </h3>
+                <p className="text-[16px] text-mid leading-[1.7]">{p.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div id="twin-ladder" className="mt-10 md:mt-12 border-t border-ink pt-6">
+            <div className="grid items-center gap-8 md:grid-cols-[1fr_1.1fr] md:gap-10">
+              <div>
+                <Eyebrow>How the handover works</Eyebrow>
+                <h3 className="text-[24px] md:text-[28px] font-bold leading-[1.25] text-ink mb-3">
+                  The twin ladder
+                </h3>
+                <p className={BODY}>
+                  Picture two ladders side by side. You step down yours one
+                  rung at a time. Your son or daughter steps up theirs, one
+                  rung at a time. At every rung, one area of the business moves
+                  across, so nothing is held by both of you and nothing is held
+                  by neither.
+                </p>
+              </div>
+              <TwinLadder />
+            </div>
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full min-w-[560px] border-collapse text-left">
+                <thead>
+                  <tr>
+                    <th className={`${LABEL} pb-3 pr-5 font-light`}>Rung</th>
+                    <th className={`${LABEL} pb-3 pr-5 font-light`}>Your successor takes</th>
+                    <th className={`${LABEL} pb-3 font-light`}>You let go of</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {RUNGS.map((r, i) => (
+                    <tr key={r.takes} className="border-t border-rule align-top last:border-b">
+                      <td className="w-16 py-4 pr-5 text-[18px] font-bold text-red [font-variant-numeric:tabular-nums]">
+                        {i + 1}
+                      </td>
+                      <td className="py-4 pr-5 text-[15px] leading-[1.55] text-ink">{r.takes}</td>
+                      <td className="py-4 text-[15px] leading-[1.55] text-mid">{r.letsGo}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className={`${BODY} mt-5 max-w-[760px]`}>
+              How a rung moves: you both agree what &ldquo;done&rdquo; looks like
+              for that rung, you review it together with Premraj, and the next
+              rung starts only when the last one holds. The pace is set by your
+              successor&rsquo;s readiness, not by a calendar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. WHAT CHANGES */}
+      <section id="changes" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-6 md:mb-8">
+            <Eyebrow>What changes</Eyebrow>
+            <h2 className={H2}>
+              What&rsquo;s different{" "}
+              <span className="text-red">after we work together.</span>
+            </h2>
+          </div>
+          <div className="grid gap-8 border-t border-ink pt-6 md:grid-cols-[5fr_7fr] md:gap-14">
+            <div>
+              <h3 className="text-[26px] md:text-[30px] font-bold leading-[1.2] tracking-tight-1 text-ink mb-3">
+                Everything ran through the owner. His son had just joined.
+              </h3>
+              <p className="text-[14px] text-light">
+                Family-run bulk chemical manufacturer · Salem
+              </p>
+            </div>
+            <div className="flex flex-col gap-6">
+              {STORY_BLOCKS.map((block) => (
+                <div key={block.label}>
+                  <p className={`${LABEL} mb-2 ${block.strong ? "!text-red" : ""}`}>
+                    {block.label}
+                  </p>
+                  <p
+                    className={`text-[16px] md:text-[17px] leading-[1.7] ${
+                      block.strong ? "text-ink" : "text-mid"
+                    }`}
+                  >
+                    {block.text}
+                  </p>
+                </div>
+              ))}
+              <Link href="/client-success-stories" className={`${TEXT_LINK} text-[16px]`}>
+                Read more client stories →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. PREMRAJ (shared bio) */}
+      <PremrajBio
+        sectionClassName={SECTION}
+        ctaHref={CONTACT_LINK}
+        portraitAlt="Premraj Menon"
+        subLine="Premraj Menon · Founder, Simpleworks Consulting · In person in Bangalore · Online across India"
+        lead={
+          <>
+            Premraj Menon spent about 30 years in large companies, rising to COO
+            with full P&amp;L, and nearly 10 years inside MSMEs, as co-founder
+            and on the management team. He now works with family business owners
+            and the next generation, in person in Bangalore and online across
+            India.
+          </>
+        }
+        meaning={
+          <>
+            What that means for you: someone outside the family who has run
+            large teams and worked inside owner-run businesses, and who can talk
+            to both generations at the same table.
+          </>
+        }
+      />
+
+      {/* 8. WHAT HAPPENS AFTER YOU MESSAGE */}
+      <section id="next-step" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-6 md:mb-8">
+            <Eyebrow>Your first step</Eyebrow>
+            <h2 className={H2}>
+              What happens <span className="text-red">after you message.</span>
+            </h2>
+          </div>
+          <ol className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10 mb-8">
+            {NEXT_STEPS.map((step, i) => (
+              <li key={step} className="border-t border-ink pt-5">
+                <span
+                  aria-hidden="true"
+                  className="mb-3 block text-[22px] font-bold leading-none text-red"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-[19px] md:text-[20px] leading-snug text-ink">
+                  {step}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <div className="flex flex-col gap-6 border-t border-rule pt-6 md:flex-row md:items-center md:justify-between md:gap-12">
+            <p className={`${BODY} max-w-[760px]`}>
+              If it&rsquo;s a fit, most families start with the Simple
+              Diagnostic: one problem you name, worked through in half a day.{" "}
+              <strong className="font-bold text-ink">
+                You pay after the engagement, not before.
+              </strong>{" "}
+              Premraj will sign an NDA before you share your numbers.
+            </p>
+            <div className="shrink-0">
+              <WhatsAppButton cta="next-step" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. FEES */}
+      <section id="fees" className={SECTION}>
+        <div className={WRAP}>
+          <div className="max-w-[720px] mb-6 md:mb-8">
+            <Eyebrow>Fees</Eyebrow>
+            <h2 className={`${H2} mb-5`}>
+              What it <span className="text-red">costs.</span>
+            </h2>
+            <p className={BODY}>
+              Premraj Menon&rsquo;s fees are fixed and published. No hourly
+              billing.
+            </p>
+          </div>
+
+          <FeeRow
+            label="Start here"
+            name="The Simple Diagnostic"
+            amount={price("diagnostic")}
+            caption="Half a day · In person in Bangalore or online"
+          >
+            <p className={`${BODY} mb-4`}>
+              One problem you name, such as what role to give your son or
+              daughter first. A three-hour working session (two or three shorter
+              sessions online), a written brief and a one-hour walkthrough.{" "}
+              <strong className="font-bold text-ink">Paid after the engagement.</strong>
+            </p>
+            <Link href="/business-growth-review" className={`${TEXT_LINK} text-[15px]`}>
+              See what the Diagnostic covers →
+            </Link>
+          </FeeRow>
+
+          <p className="mt-10 mb-1 text-[19px] font-bold text-ink">
+            In person, Bangalore{" "}
+            <span className="ml-2 text-[14px] font-normal text-light">
+              On site with your family and team
+            </span>
+          </p>
+          <FeeRow
+            label="Hands-on"
+            name="The Simple Reset"
+            amount={price("reset30")}
+            caption={`30 days · ${price("reset60")} for 60 days · One visit a week`}
+          >
+            <p className={BODY}>
+              Four weeks to work out what to do, and four more to make sure it
+              happens. For the handover: written roles and decision limits, and
+              the first rungs of the twin ladder in place.
+            </p>
+          </FeeRow>
+          <FeeRow
+            label="Ongoing"
+            name="The Simple Counsel"
+            amount={price("counsel")}
+            suffix="/ month"
+            caption="In person · Three-month minimum"
+          >
+            <p className={BODY}>
+              A senior mentor in person in Bangalore. Two sessions a month on your
+              agenda, WhatsApp access for live decisions, and a quarterly review
+              with the family members in the business.
+            </p>
+          </FeeRow>
+
+          <p className="mt-10 mb-1 text-[19px] font-bold text-ink">
+            Online, across India{" "}
+            <span className="ml-2 text-[14px] font-normal text-light">By video call</span>
+          </p>
+          <FeeRow
+            label="Ongoing"
+            name="The Simple Advisory"
+            amount={price("advisory")}
+            suffix="/ month"
+            caption="Online · Three-month minimum"
+          >
+            <p className={BODY}>
+              A senior sounding board, online. Two 90-minute sessions a month on
+              your agenda and a short written summary after each. Paid at the end
+              of each month. You can start here without a Diagnostic.
+            </p>
+          </FeeRow>
+          <p className="border-t border-rule pt-5 text-[15px] text-mid">
+            Fixed fees. No hourly billing. Each stage is agreed on its own.{" "}
+            <Link href="/programmes" className={TEXT_LINK}>
+              See Programmes →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* 10. FIT */}
+      <section id="fit" className={SECTION}>
+        <div className={WRAP}>
+          <h2 className={`${H2} mb-6 md:mb-8`}>
+            Is this right for <span className="text-red">your family business?</span>
+          </h2>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+            <div className="border-t border-ink pt-5">
+              <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-3">
+                A good fit
+              </h3>
+              <ul className="list-disc pl-5 text-[16px] text-mid leading-[1.7] marker:text-light">
+                {GOOD_FIT.map((line) => (
+                  <li key={line} className="mb-2">
+                    {line}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="border-t border-ink pt-5">
+              <h3 className="text-[20px] font-bold leading-[1.3] text-ink mb-3">
+                Probably not the right help
+              </h3>
+              <ul className="list-disc pl-5 text-[16px] text-mid leading-[1.7] marker:text-light">
+                <li className="mb-2">
+                  If you need advice on shares, wills or dividing the business:
+                  that is work for your CA and lawyer
+                </li>
+                <li className="mb-2">
+                  If the family needs a mediator before it can sit at one table
+                </li>
+                <li className="mb-2">
+                  If you run a startup:{" "}
+                  <Link href="/startup-mentor-bengaluru" className={TEXT_LINK}>
+                    see startup mentoring →
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. FAQ */}
+      <section id="faq" className={SECTION}>
+        <div className={WRAP}>
+          <div className="mb-6 md:mb-8 max-w-[860px]">
+            <Eyebrow>Frequently asked questions</Eyebrow>
+            <h2 className={H2}>
+              Questions families ask{" "}
+              <span className="text-red">before starting.</span>
+            </h2>
+          </div>
+          <div className="max-w-[860px] border-b border-rule">
+            {FAQS.map((item, i) => (
+              <details
+                key={item.q}
+                open={i === 0}
+                className="group border-t border-rule"
+              >
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 [&::-webkit-details-marker]:hidden">
+                  <span className="text-[17px] md:text-[19px] font-bold leading-snug text-ink">
+                    {item.q}
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    className="mt-1.5 h-4 w-4 shrink-0 text-ink"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                  >
+                    <path d="M2 8h12" />
+                    <path d="M8 2v12" className="group-open:hidden" />
+                  </svg>
+                </summary>
+                <p className="pb-6 pr-10 text-[16px] leading-[1.7] text-mid">
+                  {item.a}
+                </p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 5 — THREE AREAS */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Our Work</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Three areas we work in <span className="text-red">for family businesses</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          Family business consulting at Simpleworks Consulting always addresses all
-          three of these areas — because they are inseparable. You cannot
-          professionalise without a succession plan. You cannot plan
-          succession without a strategy for what the business is becoming.
-        </p>
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-3">
-          {AREAS.map((area) => (
-            <div key={area.num} className="bg-bg px-7 py-9">
-              <p className="mb-5 text-[44px] font-bold leading-none tracking-tight-2 text-rule md:text-[48px]">
-                {area.num}
-              </p>
-              <h3 className="mb-3 text-[18px] font-bold leading-[1.3] text-ink">
-                {area.title}
-              </h3>
-              <p className="text-[15px] leading-[1.75] text-mid">{area.body}</p>
-            </div>
-          ))}
+      {/* 12. CLOSING */}
+      <section id="close" className="border-t border-rule py-10 md:py-14">
+        <div className={WRAP}>
+          <div className="max-w-[760px]">
+            <Eyebrow>Next step</Eyebrow>
+            <h2 className={`${H2} mb-5`}>
+              Start with <span className="text-red">an introductory call.</span>
+            </h2>
+            <p className={`${BODY} mb-8`}>
+              Handover conversations are easier to start with someone outside
+              the family. A short WhatsApp message is enough. Premraj replies
+              himself.
+            </p>
+            <WhatsAppButton cta="final-cta" />
+            <p className="mt-6 text-[14px] text-light">
+              Or call{" "}
+              <a href="tel:+919036099000" className={TEXT_LINK}>
+                {FACTS.phone}
+              </a>{" "}
+              ·{" "}
+              <a href={`mailto:${FACTS.email}`} className={TEXT_LINK}>
+                {FACTS.email}
+              </a>{" "}
+              · In person in Bangalore · Online across India
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* SECTION 6 — SPOKE ARTICLES */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>From the Blog</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Going deeper — <span className="text-red">articles on family business</span>
-        </h2>
-        <p className="mb-12 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:mb-14 md:text-[18px]">
-          These articles explore the challenges specific to Indian family
-          businesses — professionalisation, succession, and what it takes to
-          lead a business you didn&rsquo;t build.
-        </p>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {LIVE_SPOKES.map((spoke) => (
-            <Link
-              key={spoke.href}
-              href={spoke.href}
-              className="block rounded-sm border-[0.5px] border-rule p-7 transition-all duration-200 hover:-translate-y-[3px] hover:border-red hover:shadow-[0_6px_24px_rgba(0,0,0,0.07)]"
-            >
-              <span className="mb-3.5 inline-block rounded-[1px] border border-red px-2 py-[3px] text-[9px] font-bold uppercase tracking-wide-6 text-red">
-                {spoke.tag}
-              </span>
-              <p className="mb-2.5 text-[16px] font-bold leading-[1.4] text-ink">
-                {spoke.title}
-              </p>
-              <p className="mb-4 text-[14px] italic leading-[1.65] text-light">
-                {spoke.excerpt}
-              </p>
-              <span className="text-[13px] font-semibold text-red">
-                Read article →
-              </span>
-            </Link>
-          ))}
-          {COMING_SOON_SPOKES.map((title) => (
-            <div
-              key={title}
-              className="rounded-sm border border-dashed border-rule p-7 opacity-50"
-            >
-              <p className="mb-2.5 text-[9px] font-bold uppercase tracking-wide-6 text-light">
-                Coming soon
-              </p>
-              <p className="text-[16px] font-bold leading-[1.4] text-mid">
-                {title}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 7 — FAQ */}
-      <section className="border-b-[0.5px] border-rule px-6 py-14 md:py-20 md:pr-[60px] md:pl-[132px]">
-        <SectionEyebrow>Common Questions</SectionEyebrow>
-        <h2 className="mb-3.5 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-          Frequently asked <span className="text-red">questions</span>
-        </h2>
-        <p className="mb-10 max-w-body-text text-[16px] italic leading-[1.75] text-mid md:text-[18px]">
-          Everything you need to know before we speak.
-        </p>
-
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-x-16">
-          {[FAQ_COLUMN_1, FAQ_COLUMN_2].map((column, colIndex) => (
-            <div key={colIndex} className="flex flex-col">
-              {column.map((item) => (
-                <div
-                  key={item.q}
-                  className="border-t-[0.5px] border-rule py-[26px] md:[&:last-child]:border-b-[0.5px]"
+      {/* 13. READ MORE */}
+      <section id="read" className={`${SECTION} border-b`}>
+        <div className={WRAP}>
+          <div className="mb-6 md:mb-8">
+            <Eyebrow>Not ready to talk yet?</Eyebrow>
+            <h2 className={H2}>
+              Read first, <span className="text-red">talk when you are ready.</span>
+            </h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {READING.map((post) => (
+              <article key={post.href} className="flex flex-col border-t border-ink pt-5">
+                <h3 className="text-[17px] md:text-[18px] font-bold leading-snug mb-4">
+                  <Link href={post.href} className="text-ink hover:text-red">
+                    {post.title}
+                  </Link>
+                </h3>
+                <Link
+                  href={post.href}
+                  className="mt-auto text-[14px] text-red hover:underline"
+                  aria-hidden="true"
+                  tabIndex={-1}
                 >
-                  <h3 className="mb-3 text-[17px] font-bold leading-[1.4] text-ink">
-                    {item.q}
-                  </h3>
-                  <p className="text-[16px] leading-[1.8] text-mid md:text-[17px]">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          ))}
+                  Read article →
+                </Link>
+              </article>
+            ))}
+          </div>
+          <p className="mt-10">
+            <Link href="/blog" className={`${TEXT_LINK} text-[16px]`}>
+              All articles on the blog →
+            </Link>
+          </p>
         </div>
       </section>
 
-      {/* CTA BAND */}
-      <section
-        id="contact"
-        className="flex flex-col items-start gap-10 border-b-[0.5px] border-rule px-6 py-14 md:flex-row md:items-center md:justify-between md:py-20 md:pr-[60px] md:pl-[132px]"
-      >
-        <div>
-          <h2 className="mb-3 text-[32px] leading-[1.18] font-bold tracking-tight-1 md:text-sec-h2">
-            Start with <span className="text-red">an introductory call.</span>
-          </h2>
-          <p className="max-w-[420px] text-[17px] italic leading-[1.65] text-mid">
-            Tell us where your family business is right now — what&rsquo;s
-            working, what isn&rsquo;t, and what&rsquo;s been avoided.
-            We&rsquo;ll tell you honestly whether and how Simpleworks Consulting can
-            help.
-          </p>
-        </div>
-        <div className="flex flex-shrink-0 flex-col gap-3">
-          <Link
-            href="/contact"
-            className="rounded-[1px] bg-red px-9 py-[15px] text-center text-[15px] font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
-          >
-            Let&rsquo;s Talk
-          </Link>
-          <a
-            href={whatsappHref()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-[1px] border-[1.5px] border-rule px-9 py-3.5 text-center text-[15px] font-semibold whitespace-nowrap text-ink transition-colors hover:border-ink"
-          >
-            <WhatsAppIcon />
-            WhatsApp Premraj Menon
-          </a>
-          <p className="text-center text-[12px] text-light">
-            Response within one business day · Based in Bengaluru · Working
-            across India
-          </p>
-        </div>
-      </section>
-    </>
+      {/* FLOATING WHATSAPP (phones only) */}
+      <FloatingWhatsApp href={CONTACT_LINK} heroId="hero" hideWhileVisibleId="close" />
+    </main>
   );
 }
